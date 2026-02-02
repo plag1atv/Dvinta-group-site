@@ -1,9 +1,203 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
+<section class="bg-gradient-to-br from-gray-50 to-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#111111] mb-6">
+        О нас
+      </h1>
+      <p class="text-lg text-gray-600">
+        МЦ Севр Групп — современный метрологический центр, предоставляющий полный спектр услуг в области обеспечения единства измерений.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h2 class="text-3xl font-bold text-[#111111] mb-6">Наша миссия</h2>
+        <p class="text-gray-600 mb-4">
+          Обеспечение высокого качества метрологических услуг и содействие в создании надежной системы измерений для предприятий различных отраслей промышленности.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Мы стремимся быть надежным партнером для наших клиентов, предоставляя профессиональные услуги в области метрологии, стандартизации и поставки измерительного оборудования.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#1FA463] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Высокие стандарты качества выполнения работ</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#1FA463] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Современное оборудование и методики измерений</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#1FA463] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Индивидуальный подход к каждому клиенту</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#1FA463] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Оперативность и точность выполнения заказов</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1742206594477-15139139c0df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwc2NpZW50aXN0fGVufDF8fHx8MTc2OTM0NjE4OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          alt="Лаборатория МЦ Севр Групп"
+          class="rounded-2xl shadow-lg w-full"
+        />
+        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-[#1FA463] bg-opacity-10 rounded-full flex items-center justify-center">
+              <i data-lucide="award" class="w-6 h-6 text-[#1FA463]"></i>
+            </div>
+            <div>
+              <div class="font-semibold text-[#111111]">Аккредитованы</div>
+              <div class="text-sm text-gray-600">Росаккредитация</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-16 bg-gray-50 rounded-3xl mb-16">
+      <div class="px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-[#111111] mb-4">Наша статистика</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            За годы работы мы достигли значительных результатов и завоевали доверие множества клиентов
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="award" class="w-8 h-8 text-[#1FA463]"></i>
+            </div>
+            <div class="text-3xl font-bold text-[#111111] mb-2">10+</div>
+            <div class="text-gray-600">Лет опыта</div>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="target" class="w-8 h-8 text-[#1FA463]"></i>
+            </div>
+            <div class="text-3xl font-bold text-[#111111] mb-2">5000+</div>
+            <div class="text-gray-600">Поверок в год</div>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="users" class="w-8 h-8 text-[#1FA463]"></i>
+            </div>
+            <div class="text-3xl font-bold text-[#111111] mb-2">200+</div>
+            <div class="text-gray-600">Клиентов</div>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="trending-up" class="w-8 h-8 text-[#1FA463]"></i>
+            </div>
+            <div class="text-3xl font-bold text-[#111111] mb-2">99%</div>
+            <div class="text-gray-600">Точность</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#111111] mb-4">Наши ценности</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Основные принципы, которыми мы руководствуемся в своей работе
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 bg-[#1FA463] bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="award" class="w-6 h-6 text-[#1FA463]"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-[#111111] mb-4">Качество</h3>
+          <p class="text-gray-600">
+            Мы гарантируем высокое качество всех предоставляемых услуг и соблюдение всех нормативных требований.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 bg-[#1FA463] bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="target" class="w-6 h-6 text-[#1FA463]"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-[#111111] mb-4">Точность</h3>
+          <p class="text-gray-600">
+            Используем современное оборудование и методики для обеспечения максимальной точности измерений.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 bg-[#1FA463] bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="users" class="w-6 h-6 text-[#1FA463]"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-[#111111] mb-4">Клиентоориентированность</h3>
+          <p class="text-gray-600">
+            Индивидуальный подход к каждому клиенту и оперативное решение всех возникающих вопросов.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#1FA463] to-[#1A8F56] rounded-3xl p-12 text-white mb-16">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Аккредитация и лицензии</h2>
+        <p class="text-lg text-white text-opacity-90 mb-8">
+          МЦ Севр Групп имеет все необходимые аккредитации и лицензии для проведения метрологических работ.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white bg-opacity-10 rounded-2xl p-6">
+            <div class="text-2xl font-bold mb-2">RA.RU</div>
+            <div class="text-white text-opacity-80">Аккредитация</div>
+          </div>
+          <div class="bg-white bg-opacity-10 rounded-2xl p-6">
+            <div class="text-2xl font-bold mb-2">ISO 17025</div>
+            <div class="text-white text-opacity-80">Стандарт</div>
+          </div>
+          <div class="bg-white bg-opacity-10 rounded-2xl p-6">
+            <div class="text-2xl font-bold mb-2">Госреестр</div>
+            <div class="text-white text-opacity-80">Регистрация</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#111111] mb-4">Наша команда</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Команда высококвалифицированных специалистов с многолетним опытом работы
+        </p>
+      </div>
+
+      <div class="bg-gray-50 rounded-3xl p-12">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <div class="w-20 h-20 bg-[#1FA463] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="users" class="w-10 h-10 text-[#1FA463]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-[#111111] mb-4">Профессионалы своего дела</h3>
+            <p class="text-gray-600">
+              Наши специалисты имеют высшее техническое образование и регулярно проходят повышение квалификации и аттестацию, что позволяет нам гарантировать высокое качество предоставляемых услуг.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </section>
 {% endblock %}

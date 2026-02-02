@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template
+from flask import request, redirect, url_for
 
 def create_app() -> Flask:
     app = Flask(__name__)
@@ -49,9 +50,15 @@ def create_app() -> Flask:
     def metrology_equipment_testing():
         return render_template("metrology_equipment_testing.html", title="Испытания оборудования")
 
-    @app.get("/metrology/online-application")
+    @app.route("/metrology/online-application", methods=["GET", "POST"])
     def metrology_online_application():
-        return render_template("metrology_online_application.html", title="Онлайн-заявка")
+        if request.method == "POST":
+            # Пока ничего не отправляем (email/БД подключим позже).
+            # Здесь можно будет: отправка email / запись в БД / телеграм уведомление и т.п.
+            return redirect(url_for("metrology_online_application", success="1"))
+
+        success = request.args.get("success") == "1"
+        return render_template("metrology_online_application.html", title="Онлайн-заявка", success=success)
 
     @app.get("/metrology/acceptance-rules")
     def metrology_acceptance_rules():

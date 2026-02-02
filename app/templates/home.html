@@ -1,35 +1,135 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="inline-block bg-[#3e5c76] bg-opacity-10 text-[#3e5c76] px-4 py-2 rounded-full text-sm font-medium mb-6">
-          Аккредитованный метрологический центр
-        </div>
-        <h1 class="text-4xl lg:text-5xl font-bold text-[#111111] mb-6">
-          Метрологические услуги и испытания средств измерений
-        </h1>
-        <p class="text-lg text-gray-600 mb-8">
-          Это стартовый перенос (Flask + Jinja). Дальше мы поэтапно перенесём все секции из React/TSX.
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel" style="padding:46px; border-radius: 26px;">
+      <div class="reveal">
+        <div class="kicker">Метрология • Испытания • Стандартизация</div>
+        <h1 class="h1" style="margin-top:10px;">Двинта — поверка, калибровка и испытания средств измерений</h1>
+        <p class="p-lead" style="margin-top:14px; max-width: 860px;">
+          Помогаем пройти поверку и калибровку, организовать испытания, подготовить документацию и оформить результаты.
+          Уточним комплектность и сроки по вашей задаче.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="{{ url_for('metrology_online_application') }}" class="bg-[#3e5c76] hover:bg-[#1A8A54] text-white px-8 py-4 rounded-xl font-medium text-center transition-colors">
+
+        <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+            <i data-lucide="send" class="w-5 h-5"></i>
             Оставить заявку
           </a>
-          <a href="{{ url_for('about') }}" class="border-2 border-gray-300 hover:border-[#3e5c76] text-gray-700 hover:text-[#3e5c76] px-8 py-4 rounded-xl font-medium text-center transition-colors">
-            О компании
+          <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
+            <i data-lucide="receipt" class="w-5 h-5"></i>
+            Прайс-лист
+          </a>
+          <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+            <i data-lucide="phone" class="w-5 h-5"></i>
+            Связаться
           </a>
         </div>
       </div>
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-        <div class="flex items-center mb-4">
-          <i class="w-6 h-6 text-[#3e5c76] mr-2" data-lucide="award"></i>
-          <div class="font-semibold text-[#111111]">Каркас готов</div>
+
+      <div class="reveal" style="margin-top:26px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:12px;">
+        <div class="card card-pad hover-lift">
+          <div class="kicker">Сроки</div>
+          <div style="font-weight:900; margin-top:6px;">Быстрый старт</div>
+          <div style="color: rgba(13,19,33,.68); margin-top:6px;">Скажем, что подготовить, и оценим сроки.</div>
         </div>
-        <p class="text-gray-600">Здесь будет контент из Home.tsx (перенесём секциями).</p>
+
+        <div class="card card-pad hover-lift">
+          <div class="kicker">Документы</div>
+          <div style="font-weight:900; margin-top:6px;">Оформление результатов</div>
+          <div style="color: rgba(13,19,33,.68); margin-top:6px;">Протоколы и сопроводительные документы.</div>
+        </div>
+
+        <div class="card card-pad hover-lift">
+          <div class="kicker">Под ключ</div>
+          <div style="font-weight:900; margin-top:6px;">Сопровождение</div>
+          <div style="color: rgba(13,19,33,.68); margin-top:6px;">От заявки до финального результата.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Услуги</div>
+        <h2 class="h2" style="margin-top:8px;">Основные направления</h2>
+      </div>
+      <a class="btn btn-ghost" href="{{ url_for('metrology_online_application') }}">
+        Рассчитать срок и стоимость
+      </a>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:18px;">
+      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_verification') }}" style="text-decoration:none;">
+        <div class="kicker">Поверка</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Поверка средств измерений</div>
+        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+          Проверка соответствия и оформление результатов.
+        </div>
+      </a>
+
+      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_calibration') }}" style="text-decoration:none;">
+        <div class="kicker">Калибровка</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Калибровка средств измерений</div>
+        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+          Программа работ и сертификаты по согласованию.
+        </div>
+      </a>
+
+      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_type_approval') }}" style="text-decoration:none;">
+        <div class="kicker">Утверждение типа</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания для утверждения типа</div>
+        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+          Подготовка документов, организация испытаний, сопровождение.
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top:18px; display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:18px;">
+      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_equipment_testing') }}" style="text-decoration:none;">
+        <div class="kicker">Испытания</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания оборудования</div>
+        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+          Приёмочные / по ТЗ / по программе.
+        </div>
+      </a>
+
+      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_standard_documents') }}" style="text-decoration:none;">
+        <div class="kicker">Документы</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Нормативные документы</div>
+        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+          Перечень стандартов и требований для работ.
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Быстрый старт</div>
+      <div class="h2" style="margin-top:10px;">Нужна оценка сроков и стоимости?</div>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px;">
+        Оставьте заявку: тип приборов, количество и требования к документам — и мы быстро дадим ответ.
+      </p>
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('about') }}">
+          О компании
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

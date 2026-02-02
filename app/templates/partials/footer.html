@@ -1,29 +1,36 @@
-<footer class="bg-[#111111] text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid md:grid-cols-3 gap-8">
+<footer style="background: var(--c-100); border-top: 1px solid rgba(13,19,33,.12);">
+  <div class="container section-sm">
+    <div style="display:grid; gap:18px; grid-template-columns: 1.4fr 1fr 1fr;">
       <div>
-        <div class="text-xl font-bold mb-3">Севр Групп</div>
-        <p class="text-gray-300">Метрологические услуги, испытания и стандартизация.</p>
+        <div style="font-weight: 900; font-size: 18px; color: var(--c-900);">Двинта</div>
+        <p style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.6;">
+          Метрологические услуги, испытания и стандартизация.
+        </p>
       </div>
+
       <div>
-        <div class="font-semibold mb-3">Навигация</div>
-        <ul class="space-y-2 text-gray-300">
-          <li><a class="hover:text-white" href="{{ url_for('home') }}">Главная</a></li>
-          <li><a class="hover:text-white" href="{{ url_for('about') }}">О компании</a></li>
-          <li><a class="hover:text-white" href="{{ url_for('contacts') }}">Контакты</a></li>
-        </ul>
+        <div style="font-weight:900; margin-bottom:10px; color: var(--c-900);">Навигация</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a class="nav-link" style="padding:0; border-radius:0; display:inline-block;" href="{{ url_for('home') }}">Главная</a>
+          <a class="nav-link" style="padding:0; border-radius:0; display:inline-block;" href="{{ url_for('about') }}">О компании</a>
+          <a class="nav-link" style="padding:0; border-radius:0; display:inline-block;" href="{{ url_for('contacts') }}">Контакты</a>
+        </div>
       </div>
+
       <div>
-        <div class="font-semibold mb-3">Заявка</div>
-        <p class="text-gray-300 mb-3">Оставьте заявку онлайн — мы ответим на почту.</p>
-        <a class="inline-block bg-[#3e5c76] hover:bg-[#1A8A54] text-white px-5 py-3 rounded-xl font-medium transition-colors"
-           href="{{ url_for('metrology_online_application') }}">
+        <div style="font-weight:900; margin-bottom:10px; color: var(--c-900);">Заявка</div>
+        <p style="color: rgba(13,19,33,.70); margin-bottom:12px; line-height:1.6;">
+          Оставьте заявку онлайн — мы свяжемся с вами по телефону или email.
+        </p>
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
           Оставить заявку
         </a>
       </div>
     </div>
-    <div class="border-t border-white/10 mt-10 pt-6 text-sm text-gray-400">
-      © {{ current_year }} Севр Групп. Все права защищены.
+
+    <div style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(13,19,33,.12); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color: rgba(13,19,33,.60); font-size: 12px;">
+      <div>© {{ current_year }} Двинта. Все права защищены.</div>
+      <div>Политика конфиденциальности</div>
     </div>
   </div>
 </footer>

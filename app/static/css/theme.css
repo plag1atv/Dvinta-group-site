@@ -1,0 +1,193 @@
+:root{
+  --c-900:#0d1321;
+  --c-800:#1d2d44;
+  --c-600:#3e5c76;
+  --c-400:#748cab;
+  --c-100:#f0ebd8;
+
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(13,19,33,.10);
+  --shadow-soft: 0 8px 20px rgba(13,19,33,.08);
+}
+
+/* База */
+html, body { height: 100%; }
+body{
+  background:#fff;
+  color: var(--c-900);
+}
+
+/* Контейнер и секции (чтобы “не было всё рядом”) */
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.section{
+  padding: 72px 0;
+}
+.section-sm{
+  padding: 44px 0;
+}
+
+/* Карточки */
+.card{
+  background:#fff;
+  border: 1px solid rgba(13,19,33,.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.card-pad{ padding: 26px; }
+.card-pad-lg{ padding: 34px; }
+
+/* Кнопки */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  border:1px solid transparent;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  user-select:none;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--c-600);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+.btn-primary:hover{
+  background: var(--c-800);
+  box-shadow: var(--shadow);
+}
+
+.btn-ghost{
+  background: transparent;
+  border-color: rgba(13,19,33,.18);
+  color: var(--c-900);
+}
+.btn-ghost:hover{
+  background: rgba(116,140,171,.14);
+}
+
+/* Текстовые стили */
+.kicker{
+  color: var(--c-600);
+  font-weight: 800;
+  letter-spacing:.02em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.h1{
+  font-size: clamp(34px, 3vw, 52px);
+  line-height: 1.05;
+  font-weight: 900;
+}
+.h2{
+  font-size: clamp(26px, 2.2vw, 38px);
+  line-height: 1.15;
+  font-weight: 900;
+}
+.p-lead{
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(13,19,33,.70);
+}
+
+/* Блоки с мягким фоном */
+.panel{
+  background: rgba(116,140,171,.14);
+  border: 1px solid rgba(13,19,33,.10);
+  border-radius: var(--radius);
+}
+
+/* АНИМАЦИИ (современные и лёгкие) */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+.hover-lift{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.hover-lift:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+/* FAQ (чтобы не выглядело скомкано) */
+.faq-item{
+  border: 1px solid rgba(13,19,33,.12);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background:#fff;
+}
+.faq-btn{
+  width:100%;
+  text-align:left;
+  padding: 18px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:#fff;
+}
+.faq-btn:hover{ background: rgba(116,140,171,.12); }
+.faq-body{
+  padding: 0 20px 18px;
+  color: rgba(13,19,33,.72);
+  line-height:1.65;
+}
+
+
+/* Header dropdown hover (desktop) */
+.nav-dd { position: relative; }
+.nav-dd-menu{
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  width: 340px;
+  padding: 10px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(13,19,33,.12);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.nav-dd:hover .nav-dd-menu{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dd-item{
+  display:block;
+  padding: 12px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: var(--c-900);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.nav-dd-item:hover{ background: rgba(116,140,171,.14); }
+
+.nav-dd-sub{
+  display:block;
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(13,19,33,.60);
+}

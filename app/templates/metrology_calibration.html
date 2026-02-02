@@ -1,204 +1,268 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="bg-gradient-to-br from-gray-50 to-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
-        Калибровка средств измерений
-      </h1>
-      <p class="text-lg text-gray-600">
-        Калибровка — это установление зависимости между показаниями средства измерений и значениями величины,
-        воспроизводимыми эталонами. Помогаем выбрать оптимальный формат калибровки под ваши задачи.
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Метрология</div>
+      <h1 class="h1" style="margin-top:10px;">Калибровка средств измерений</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 920px;">
+        Калибровка — это определение метрологических характеристик СИ и оценка отклонений по согласованной программе.
+        Подберём формат результата (сертификат/протокол), уточним условия и поможем подготовить комплект.
       </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
+          <i data-lucide="receipt" class="w-5 h-5"></i>
+          Прайс-лист
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Консультация
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="grid lg:grid-cols-3 gap-8 mb-14">
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
-          <i data-lucide="ruler" class="w-6 h-6 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Точность и неопределённость</h3>
-        <p class="text-gray-600 text-sm">
-          Оцениваем метрологические характеристики, оформляем результаты и учитываем неопределённость.
+<!-- QUICK BENEFITS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Сроки</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Обычно 2–7 дней</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Срок зависит от программы калибровки и сложности работ.
         </p>
       </div>
 
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
-          <i data-lucide="workflow" class="w-6 h-6 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Под задачи клиента</h3>
-        <p class="text-gray-600 text-sm">
-          Подберём программу калибровки под требования производства, контроля качества или испытаний.
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Результат</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Сертификат / протокол</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Формат согласуем заранее — под вашу задачу и требования.
         </p>
       </div>
 
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
-          <i data-lucide="file-text" class="w-6 h-6 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Оформление документов</h3>
-        <p class="text-gray-600 text-sm">
-          Оформляем сертификат калибровки/протокол по согласованному формату.
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Точность</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Контроль неопределённости</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Учитываем условия и методику, фиксируем важные параметры.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Процесс</div>
+        <h2 class="h2" style="margin-top:8px;">Как проходит калибровка</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 900px;">
+          Типовой путь от заявки до выдачи результатов. Для разных СИ этапы могут отличаться.
         </p>
       </div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 mb-16">
-      <div>
-        <h2 class="text-3xl font-bold text-[#0d1321] mb-6">Когда нужна калибровка</h2>
-
-        <div class="space-y-4">
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Если поверка не требуется, но нужно подтвердить точность и характеристики</p>
-          </div>
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Для внутреннего контроля качества и прослеживаемости измерений</p>
-          </div>
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Для испытаний, НИОКР и производственных процессов</p>
-          </div>
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">При необходимости указать неопределённость измерений</p>
-          </div>
-        </div>
-
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="{{ url_for('metrology_online_application') }}"
-             class="btn-primary inline-flex items-center justify-center">
-            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
-            Подать заявку онлайн
-          </a>
-          <a href="{{ url_for('contacts') }}"
-             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
-            <i data-lucide="message-circle" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
-            Консультация
-          </a>
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:14px;">
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 1</div>
+        <div style="font-weight:900; margin-top:8px;">Требования</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Согласуем диапазоны, точки, формат результата.
         </div>
       </div>
 
-      <div class="bg-gray-50 rounded-3xl p-10 border border-gray-100">
-        <h3 class="text-2xl font-bold text-[#0d1321] mb-6">Оценка сроков</h3>
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 2</div>
+        <div style="font-weight:900; margin-top:8px;">Приём</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Проверяем комплектность, состояние, подготовку.
+        </div>
+      </div>
 
-        <p class="text-sm text-gray-600 mb-6">
-          Выберите тип прибора и количество — калькулятор покажет ориентировочный срок выполнения.
-          (Оценка предварительная, точный срок уточняем после согласования.)
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 3</div>
+        <div style="font-weight:900; margin-top:8px;">Калибровка</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Выполняем измерения по программе, фиксируем условия.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 4</div>
+        <div style="font-weight:900; margin-top:8px;">Документы</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Выдаём сертификат/протокол и результаты.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM DETAILS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
+      <div class="card card-pad-lg">
+        <div class="kicker">Программа</div>
+        <h2 class="h2" style="margin-top:10px;">Что важно указать в заявке</h2>
+        <p class="p-lead" style="margin-top:12px;">
+          Чтобы калибровка прошла быстрее, заранее уточняем ключевые параметры.
         </p>
 
-        <div class="space-y-5">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Тип средства измерений</label>
-            <select id="calType"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent bg-white">
-              <option value="simple">Простой прибор (1–2 точки)</option>
-              <option value="standard">Стандартный (несколько диапазонов)</option>
-              <option value="complex">Сложный/многоканальный</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Количество приборов</label>
-            <input id="calQty" type="number" min="1" value="1"
-                   class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                   placeholder="Например: 5" />
-          </div>
-
-          <div class="bg-white rounded-2xl border border-gray-200 p-6">
-            <div class="flex items-start gap-3">
-              <i data-lucide="clock" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+        <div style="margin-top:18px; display:grid; gap:12px;">
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
               <div>
-                <p class="font-semibold text-[#0d1321] mb-1">Ориентировочный срок</p>
-                <p class="text-sm text-gray-600">
-                  <span id="calResult" class="font-semibold text-[#3e5c76]">1–2 рабочих дня</span>
-                </p>
+                <div style="font-weight:900;">Диапазоны и точки</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Какие диапазоны/точки измерений нужны и в каких условиях.
+                </div>
               </div>
             </div>
           </div>
 
-          <a href="{{ url_for('metrology_online_application') }}"
-             class="btn-primary inline-flex items-center justify-center w-full">
-            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-            Оставить заявку на калибровку
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Формат результата</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Сертификат/протокол, требования к содержанию, печати/подписи.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Комплектность и питание</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Датчики, кабели, адаптеры, питание — что нужно для выполнения программы.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Срочность</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Если нужно быстро — отметьте это в заявке, предложим варианты.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
+          <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">Правила приёма</a>
+        </div>
+      </div>
+
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Подсказка</div>
+        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Когда калибровка особенно полезна</h3>
+
+        <div style="margin-top:14px; display:grid; gap:10px;">
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Внутренний контроль качества</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Нужна реальная картина отклонений</div>
+          </div>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Сопоставимость измерений</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Прослеживаемость и условия важны</div>
+          </div>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Под проект / ТЗ</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Нужен сертификат по заданной программе</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Заполнить онлайн-заявку
           </a>
         </div>
       </div>
+
     </div>
-
-    <section class="bg-white rounded-3xl p-10 lg:p-12 border border-gray-200 mb-16">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Этапы калибровки</h2>
-        <p class="text-gray-600 max-w-3xl mx-auto">
-          Прозрачный процесс: от заявки до выдачи документов. Используем утверждённые методики и согласуем программу работ.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
-            <span class="font-bold text-[#3e5c76]">1</span>
-          </div>
-          <h3 class="font-semibold text-[#0d1321] mb-2">Заявка</h3>
-          <p class="text-sm text-gray-600">Уточняем приборы, диапазоны, комплектность и требования.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
-            <span class="font-bold text-[#3e5c76]">2</span>
-          </div>
-          <h3 class="font-semibold text-[#0d1321] mb-2">Приём</h3>
-          <p class="text-sm text-gray-600">Идентификация, проверка состояния и регистрация.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
-            <span class="font-bold text-[#3e5c76]">3</span>
-          </div>
-          <h3 class="font-semibold text-[#0d1321] mb-2">Калибровка</h3>
-          <p class="text-sm text-gray-600">Выполняем измерения, расчёты и оценку неопределённости.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
-            <span class="font-bold text-[#3e5c76]">4</span>
-          </div>
-          <h3 class="font-semibold text-[#0d1321] mb-2">Документы</h3>
-          <p class="text-sm text-gray-600">Выдаём сертификат/протокол и передаём приборы заказчику.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-gradient-to-r from-[#3e5c76] to-[#1d2d44] rounded-3xl p-12 text-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Нужна консультация по калибровке?</h2>
-        <p class="text-lg text-white text-opacity-90 mb-8">
-          Подскажем, что выбрать — поверку или калибровку, и подготовим план работ под ваши задачи.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="{{ url_for('contacts') }}"
-             class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold">
-            Связаться
-          </a>
-          <a href="{{ url_for('metrology_online_application') }}"
-             class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-semibold">
-            Подать заявку онлайн
-          </a>
-        </div>
-      </div>
-    </section>
-
   </div>
 </section>
 
-<script src="{{ url_for('static', filename='js/calibration_calc.js') }}"></script>
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 900px; margin-left:auto; margin-right:auto;">
+        Ответы на популярные вопросы по калибровке.
+      </p>
+    </div>
+
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {"q":"Чем калибровка отличается от поверки?", "a":"Поверка — подтверждение соответствия требованиям. Калибровка — определение характеристик и отклонений по программе (часто под задачу клиента)."},
+        {"q":"Какие сроки калибровки?", "a":"Обычно 2–7 рабочих дней. Зависит от объёма программы, диапазонов, точек и комплектности."},
+        {"q":"Можно ли сделать калибровку “по нашему ТЗ”?", "a":"Да. Укажите точки/условия/формат результата — мы согласуем программу."},
+        {"q":"Что обязательно предоставить с прибором?", "a":"Маркировка, комплектность (датчики/кабели/питание), и если есть — паспорт/РЭ. Если что-то нестандартное — напишите заранее."}
+      ] %}
+
+      {% for item in faq %}
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          {{ item.a }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Следующий шаг</div>
+      <h2 class="h2" style="margin-top:10px;">Оставьте заявку — согласуем программу калибровки</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 900px; margin-left:auto; margin-right:auto;">
+        Укажите тип прибора, диапазоны, точки и формат результата — мы предложим план работ.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Подать заявку онлайн
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
+          Связаться
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
 
 {% endblock %}

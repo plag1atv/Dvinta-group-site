@@ -3,7 +3,7 @@
     <div class="flex justify-between items-center h-20">
       <a href="{{ url_for('home') }}" class="flex items-center">
         <div class="flex items-center">
-          <div class="w-10 h-10 bg-[#1FA463] rounded-lg flex items-center justify-center text-white font-bold text-lg mr-3">S</div>
+          <div class="w-10 h-10 bg-[#3e5c76] rounded-lg flex items-center justify-center text-white font-bold text-lg mr-3">S</div>
           <div>
             <div class="text-lg font-bold text-[#111111]">Севр Групп</div>
             <div class="text-sm text-gray-600">Метрологический центр</div>
@@ -14,7 +14,7 @@
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center space-x-8">
         <div class="relative">
-          <button class="flex items-center text-gray-700 hover:text-[#1FA463] font-medium" data-dropdown="metrology">
+          <button class="flex items-center text-gray-700 hover:text-[#3e5c76] font-medium" data-dropdown="metrology">
             Метрология <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
           </button>
           <div class="absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-lg p-2 hidden" data-dropdown-menu="metrology">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="relative">
-          <button class="flex items-center text-gray-700 hover:text-[#1FA463] font-medium" data-dropdown="standardization">
+          <button class="flex items-center text-gray-700 hover:text-[#3e5c76] font-medium" data-dropdown="standardization">
             Стандартизация <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
           </button>
           <div class="absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-lg p-2 hidden" data-dropdown-menu="standardization">
@@ -40,13 +40,13 @@
           </div>
         </div>
 
-        <a class="text-gray-700 hover:text-[#1FA463] font-medium" href="{{ url_for('equipment') }}">Оборудование</a>
-        <a class="text-gray-700 hover:text-[#1FA463] font-medium" href="{{ url_for('about') }}">О компании</a>
-        <a class="text-gray-700 hover:text-[#1FA463] font-medium" href="{{ url_for('contacts') }}">Контакты</a>
+        <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('equipment') }}">Оборудование</a>
+        <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('about') }}">О компании</a>
+        <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('contacts') }}">Контакты</a>
       </nav>
 
       <div class="hidden lg:flex items-center">
-        <a href="{{ url_for('metrology_online_application') }}" class="bg-[#1FA463] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors">
+        <a href="{{ url_for('metrology_online_application') }}" class="bg-[#3e5c76] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors">
           Оставить заявку
         </a>
       </div>
@@ -92,7 +92,7 @@
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('about') }}">О компании</a>
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('contacts') }}">Контакты</a>
 
-      <a href="{{ url_for('metrology_online_application') }}" class="block text-center bg-[#1FA463] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors mt-3">
+      <a href="{{ url_for('metrology_online_application') }}" class="block text-center bg-[#3e5c76] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors mt-3">
         Оставить заявку
       </a>
     </div>

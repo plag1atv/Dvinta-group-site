@@ -1,3 +1,40 @@
+:root{
+  --c-ink: #0d1321;      /* самый тёмный */
+  --c-navy: #1d2d44;     /* тёмно-синий */
+  --c-steel: #3e5c76;    /* основной синий */
+  --c-sky: #748cab;      /* светлый синий */
+  --c-cream: #f0ebd8;    /* фон */
+}
+
+/* Базовые подстройки под новую тему */
+html, body { background: var(--c-cream); color: var(--c-ink); }
+
+/* Маленький “набор токенов”, чтобы удобно использовать по сайту */
+.bg-primary { background: var(--c-steel); }
+.bg-primary-dark { background: var(--c-navy); }
+.bg-soft { background: var(--c-cream); }
+
+.text-primary { color: var(--c-steel); }
+.text-dark { color: var(--c-ink); }
+.text-muted { color: var(--c-navy); opacity: .8; }
+
+.border-primary { border-color: var(--c-sky); }
+.ring-primary { --tw-ring-color: var(--c-steel) !important; }
+
+/* Кнопка как единый компонент (удобно дальше) */
+.btn-primary{
+  background: var(--c-steel);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: filter .2s ease, transform .05s ease;
+}
+.btn-primary:hover{ filter: brightness(0.95); }
+.btn-primary:active{ transform: translateY(1px); }
+
+
+
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -957,8 +994,8 @@
     background-color: #1a1a1a;
   }
 
-  .bg-\[\#1FA463\] {
-    background-color: #1fa463;
+  .bg-\[\#3e5c76\] {
+    background-color: #3e5c76;
   }
 
   .bg-blue-50 {
@@ -1168,8 +1205,8 @@
     font-weight: var(--font-weight-semibold);
   }
 
-  .text-\[\#1FA463\] {
-    color: #1fa463;
+  .text-\[\#3e5c76\] {
+    color: #3e5c76;
   }
 
   .text-\[\#111111\] {
@@ -1312,8 +1349,8 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:bg-\[\#1FA463\]:is(:where(.group):hover *) {
-      background-color: #1fa463;
+    .group-hover\:bg-\[\#3e5c76\]:is(:where(.group):hover *) {
+      background-color: #3e5c76;
     }
   }
 
@@ -1330,8 +1367,8 @@
   }
 
   @media (hover: hover) {
-    .hover\:border-\[\#1FA463\]:hover {
-      border-color: #1fa463;
+    .hover\:border-\[\#3e5c76\]:hover {
+      border-color: #3e5c76;
     }
   }
 
@@ -1366,8 +1403,8 @@
   }
 
   @media (hover: hover) {
-    .hover\:text-\[\#1FA463\]:hover {
-      color: #1fa463;
+    .hover\:text-\[\#3e5c76\]:hover {
+      color: #3e5c76;
     }
   }
 
@@ -1396,12 +1433,12 @@
     }
   }
 
-  .focus\:border-\[\#1FA463\]:focus {
-    border-color: #1fa463;
+  .focus\:border-\[\#3e5c76\]:focus {
+    border-color: #3e5c76;
   }
 
-  .focus\:ring-\[\#1FA463\]:focus {
-    --tw-ring-color: #1fa463;
+  .focus\:ring-\[\#3e5c76\]:focus {
+    --tw-ring-color: #3e5c76;
   }
 
   .focus\:outline-none:focus {

@@ -6,7 +6,7 @@
   <title>{{ title or "Севр Групп" }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body class="min-h-screen flex flex-col bg-white">
+<body class="min-h-screen flex flex-col bg-soft">
   {% include "partials/header.html" %}
   <main class="flex-1">
     {% block content %}{% endblock %}

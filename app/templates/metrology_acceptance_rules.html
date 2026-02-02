@@ -1,9 +1,219 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
+
+<section class="bg-gradient-to-br from-gray-50 to-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
+        Правила приёма средств измерений
+      </h1>
+      <p class="text-lg text-gray-600">
+        Чтобы выполнить работы быстрее и без задержек, просим соблюдать правила приёма.
+        Ниже — основные требования и чеклист подготовки.
+      </p>
+    </div>
   </div>
 </section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-14">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="package-check" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Комплектность</h3>
+        <p class="text-gray-600 text-sm">
+          Принимаем оборудование с необходимыми аксессуарами и документацией (если требуется).
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="shield-alert" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Безопасность</h3>
+        <p class="text-gray-600 text-sm">
+          Оборудование должно быть безопасно для персонала, без утечек и загрязнений.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="clipboard-list" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Идентификация</h3>
+        <p class="text-gray-600 text-sm">
+          Маркировка, серийный номер и тип должны быть читаемыми и соответствовать документам.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+
+      <div>
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-6">Основные правила приёма</h2>
+
+        <div class="space-y-5">
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-[#0d1321] mb-1">Маркировка и серийный номер</p>
+                <p class="text-sm text-gray-600">Номер, тип и модель должны быть читаемыми и соответствовать заявке.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-[#0d1321] mb-1">Комплектность и аксессуары</p>
+                <p class="text-sm text-gray-600">Питание, датчики, щупы, кабели, блоки, переходники — по необходимости.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-[#0d1321] mb-1">Чистота и безопасность</p>
+                <p class="text-sm text-gray-600">Оборудование должно быть очищено, без утечек и опасных загрязнений.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-[#0d1321] mb-1">Упаковка и транспортировка</p>
+                <p class="text-sm text-gray-600">При доставке обеспечьте защиту от ударов, влаги и статического электричества.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-[#0d1321] mb-1">Документы (если требуются)</p>
+                <p class="text-sm text-gray-600">Паспорт/РЭ, прошлые протоколы, особенности эксплуатации — при наличии.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="{{ url_for('metrology_online_application') }}"
+             class="btn-primary inline-flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+            Подать заявку онлайн
+          </a>
+          <a href="{{ url_for('contacts') }}"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
+            <i data-lucide="phone" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
+            Уточнить детали
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-gray-200 p-8">
+        <h3 class="text-2xl font-bold text-[#0d1321] mb-4">Чеклист подготовки</h3>
+        <p class="text-sm text-gray-600 mb-6">
+          Отметьте пункты перед передачей оборудования. Это уменьшит риск отказа в приёме и ускорит работу.
+        </p>
+
+        {% set checklist = [
+          "Маркировка и серийный номер читаемы",
+          "Оборудование очищено и безопасно",
+          "Есть необходимые аксессуары (датчики/кабели/питание)",
+          "Комплектность соответствует заявке",
+          "Упаковка защищает от повреждений при доставке",
+          "Подготовлены документы (если есть/требуются)",
+        ] %}
+
+        <div class="space-y-3">
+          {% for item in checklist %}
+          <label class="flex items-start gap-3 p-4 rounded-2xl border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer">
+            <input type="checkbox" class="mt-1 w-5 h-5 accent-[#3e5c76]">
+            <span class="text-sm text-gray-700">{{ item }}</span>
+          </label>
+          {% endfor %}
+        </div>
+
+        <div class="mt-8 p-6 rounded-2xl border border-gray-200 bg-gray-50">
+          <div class="flex items-start gap-3">
+            <i data-lucide="info" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+            <div>
+              <p class="font-semibold text-[#0d1321] mb-1">Если есть особенности</p>
+              <p class="text-sm text-gray-600">
+                Укажите в заявке нестандартные условия, ограничения, историю ремонта или важные замечания.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <section class="mb-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">FAQ</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Частые вопросы по приёму средств измерений
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        {% set faq = [
+          {"q":"Почему могут отказать в приёме?", "a":"Обычно это связано с отсутствием маркировки/идентификации, опасным состоянием, загрязнениями, отсутствием необходимых аксессуаров или несоответствием заявке."},
+          {"q":"Нужны ли документы на прибор?", "a":"Не всегда. Но если есть паспорт/РЭ и прошлые документы — это помогает быстрее идентифицировать прибор и уточнить особенности."},
+          {"q":"Можно ли привезти прибор без питания/кабелей?", "a":"Если для выполнения работ требуется питание/кабели/датчики — без них часть проверок может быть невозможна. Лучше уточнить заранее."},
+          {"q":"Что делать, если маркировка стёрлась?", "a":"Сообщите заранее. Возможно потребуется дополнительная идентификация или согласование с заказчиком по данным прибора."}
+        ] %}
+        {% for item in faq %}
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button type="button"
+                  class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                  data-acc-btn>
+            <span class="font-semibold text-[#0d1321]">{{ item.q }}</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-[#3e5c76] transition-transform" data-acc-icon></i>
+          </button>
+          <div class="px-6 pb-6 text-gray-600 hidden" data-acc-body>
+            {{ item.a }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<section class="py-16 bg-[#1d2d44]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Хотите передать оборудование без ошибок?</h2>
+    <p class="text-lg text-white text-opacity-90 mb-8">
+      Оставьте заявку — мы подскажем, что подготовить именно для вашего типа средств измерений.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ url_for('metrology_online_application') }}"
+         class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold">
+        Подать заявку онлайн
+      </a>
+      <a href="{{ url_for('contacts') }}"
+         class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-semibold">
+        Связаться
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
 {% endblock %}

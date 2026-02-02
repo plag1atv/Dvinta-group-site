@@ -1,0 +1,100 @@
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <a href="{{ url_for('home') }}" class="flex items-center">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-[#1FA463] rounded-lg flex items-center justify-center text-white font-bold text-lg mr-3">S</div>
+          <div>
+            <div class="text-lg font-bold text-[#111111]">Севр Групп</div>
+            <div class="text-sm text-gray-600">Метрологический центр</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center space-x-8">
+        <div class="relative">
+          <button class="flex items-center text-gray-700 hover:text-[#1FA463] font-medium" data-dropdown="metrology">
+            Метрология <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-lg p-2 hidden" data-dropdown-menu="metrology">
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_competence') }}">Компетентность</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_verification') }}">Поверка</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_calibration') }}">Калибровка</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_type_approval') }}">Испытания для утверждения типа</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_equipment_testing') }}">Испытания оборудования</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_online_application') }}">Онлайн-заявка</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_acceptance_rules') }}">Правила приема</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('metrology_standard_documents') }}">Нормативные документы</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button class="flex items-center text-gray-700 hover:text-[#1FA463] font-medium" data-dropdown="standardization">
+            Стандартизация <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-lg p-2 hidden" data-dropdown-menu="standardization">
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('standardization_tu_development') }}">Разработка ТУ</a>
+            <a class="block px-4 py-2 rounded-lg hover:bg-gray-50" href="{{ url_for('standardization_sto_development') }}">Разработка СТО</a>
+          </div>
+        </div>
+
+        <a class="text-gray-700 hover:text-[#1FA463] font-medium" href="{{ url_for('equipment') }}">Оборудование</a>
+        <a class="text-gray-700 hover:text-[#1FA463] font-medium" href="{{ url_for('about') }}">О компании</a>
+        <a class="text-gray-700 hover:text-[#1FA463] font-medium" href="{{ url_for('contacts') }}">Контакты</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center">
+        <a href="{{ url_for('metrology_online_application') }}" class="bg-[#1FA463] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors">
+          Оставить заявку
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="lg:hidden p-2 rounded-lg hover:bg-gray-50" id="mobileMenuBtn" aria-label="Меню">
+        <i class="w-6 h-6" data-lucide="menu"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div class="lg:hidden hidden border-t border-gray-200" id="mobileMenu">
+    <div class="px-4 py-4 space-y-2">
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2 font-medium text-gray-700">
+          Метрология <i class="w-4 h-4" data-lucide="chevron-down"></i>
+        </summary>
+        <div class="pl-3 pb-2 space-y-1">
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_competence') }}">Компетентность</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_verification') }}">Поверка</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_calibration') }}">Калибровка</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_type_approval') }}">Испытания для утверждения типа</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_equipment_testing') }}">Испытания оборудования</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_online_application') }}">Онлайн-заявка</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_acceptance_rules') }}">Правила приема</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_standard_documents') }}">Нормативные документы</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2 font-medium text-gray-700">
+          Стандартизация <i class="w-4 h-4" data-lucide="chevron-down"></i>
+        </summary>
+        <div class="pl-3 pb-2 space-y-1">
+          <a class="block py-1 text-gray-600" href="{{ url_for('standardization_tu_development') }}">Разработка ТУ</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('standardization_sto_development') }}">Разработка СТО</a>
+        </div>
+      </details>
+
+      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('equipment') }}">Оборудование</a>
+      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('about') }}">О компании</a>
+      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('contacts') }}">Контакты</a>
+
+      <a href="{{ url_for('metrology_online_application') }}" class="block text-center bg-[#1FA463] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors mt-3">
+        Оставить заявку
+      </a>
+    </div>
+  </div>
+</header>

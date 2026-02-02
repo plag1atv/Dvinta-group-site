@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or "Севр Групп" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+  {% include "partials/header.html" %}
+  <main class="flex-1">
+    {% block content %}{% endblock %}
+  </main>
+  {% include "partials/footer.html" %}
+
+  <!-- Lucide icons (for <i data-lucide="..."></i>) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{{ url_for('static', filename='js/site.js') }}"></script>
+  <script>
+    if (window.lucide) { lucide.createIcons(); }
+  </script>
+</body>
+</html>

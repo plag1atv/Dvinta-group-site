@@ -1,0 +1,29 @@
+<footer class="bg-[#111111] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="text-xl font-bold mb-3">Севр Групп</div>
+        <p class="text-gray-300">Метрологические услуги, испытания и стандартизация.</p>
+      </div>
+      <div>
+        <div class="font-semibold mb-3">Навигация</div>
+        <ul class="space-y-2 text-gray-300">
+          <li><a class="hover:text-white" href="{{ url_for('home') }}">Главная</a></li>
+          <li><a class="hover:text-white" href="{{ url_for('about') }}">О компании</a></li>
+          <li><a class="hover:text-white" href="{{ url_for('contacts') }}">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold mb-3">Заявка</div>
+        <p class="text-gray-300 mb-3">Оставьте заявку онлайн — мы ответим на почту.</p>
+        <a class="inline-block bg-[#1FA463] hover:bg-[#1A8A54] text-white px-5 py-3 rounded-xl font-medium transition-colors"
+           href="{{ url_for('metrology_online_application') }}">
+          Оставить заявку
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-10 pt-6 text-sm text-gray-400">
+      © {{ current_year }} Севр Групп. Все права защищены.
+    </div>
+  </div>
+</footer>

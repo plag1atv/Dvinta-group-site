@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-block bg-[#1FA463] bg-opacity-10 text-[#1FA463] px-4 py-2 rounded-full text-sm font-medium mb-6">
+          Аккредитованный метрологический центр
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-[#111111] mb-6">
+          Метрологические услуги и испытания средств измерений
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+          Это стартовый перенос (Flask + Jinja). Дальше мы поэтапно перенесём все секции из React/TSX.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="{{ url_for('metrology_online_application') }}" class="bg-[#1FA463] hover:bg-[#1A8A54] text-white px-8 py-4 rounded-xl font-medium text-center transition-colors">
+            Оставить заявку
+          </a>
+          <a href="{{ url_for('about') }}" class="border-2 border-gray-300 hover:border-[#1FA463] text-gray-700 hover:text-[#1FA463] px-8 py-4 rounded-xl font-medium text-center transition-colors">
+            О компании
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+        <div class="flex items-center mb-4">
+          <i class="w-6 h-6 text-[#1FA463] mr-2" data-lucide="award"></i>
+          <div class="font-semibold text-[#111111]">Каркас готов</div>
+        </div>
+        <p class="text-gray-600">Здесь будет контент из Home.tsx (перенесём секциями).</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

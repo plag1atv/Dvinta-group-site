@@ -1,9 +1,204 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
+
+<section class="bg-gradient-to-br from-gray-50 to-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
+        Поверка средств измерений
+      </h1>
+      <p class="text-lg text-gray-600">
+        Проводим поверку средств измерений с оформлением результатов и соблюдением требований.
+        Подскажем по срокам, комплектности и подготовке оборудования.
+      </p>
+    </div>
   </div>
 </section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-14">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="shield-check" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Требования и прослеживаемость</h3>
+        <p class="text-gray-600 text-sm">
+          Соблюдаем методики и обеспечиваем прослеживаемость результатов.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="clock" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Сроки и планирование</h3>
+        <p class="text-gray-600 text-sm">
+          Оценим сроки, подберём удобный формат: у нас или с выездом (если предусмотрено).
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="file-check" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Оформление результата</h3>
+        <p class="text-gray-600 text-sm">
+          Выдаём документы по итогам поверки в соответствии с установленным порядком.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-6">Что мы поверяем</h2>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Манометры, вакуумметры и средства измерения давления</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Термометры, термопары и средства измерения температуры</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Электрические измерительные приборы (по согласованию)</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Геометрические средства измерений (штангенинструмент, микрометры)</p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="{{ url_for('metrology_online_application') }}" class="btn-primary inline-flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+            Подать заявку онлайн
+          </a>
+          <a href="{{ url_for('contacts') }}"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
+            <i data-lucide="phone" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
+            Связаться
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-3xl p-10 border border-gray-100">
+        <h3 class="text-2xl font-bold text-[#0d1321] mb-6">Как проходит поверка</h3>
+
+        <div class="space-y-3">
+          {% set steps = [
+            {"t":"1) Заявка и консультация", "d":"Уточняем тип СИ, диапазоны, комплектность и требования. Согласуем сроки."},
+            {"t":"2) Приём и идентификация", "d":"Проверяем комплектность, маркировку, состояние. Фиксируем входные данные."},
+            {"t":"3) Проведение поверки", "d":"Выполняем операции по методике, фиксируем результаты и условия измерений."},
+            {"t":"4) Оформление результата", "d":"Оформляем итоговые документы и передаём оборудование заказчику."}
+          ] %}
+          {% for s in steps %}
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+            <button type="button"
+                    class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                    data-acc-btn>
+              <span class="font-semibold text-[#0d1321]">{{ s.t }}</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-[#3e5c76] transition-transform" data-acc-icon></i>
+            </button>
+            <div class="px-6 pb-6 text-gray-600 hidden" data-acc-body>
+              {{ s.d }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="mt-8 p-6 rounded-2xl border border-gray-200 bg-white">
+          <div class="flex items-start gap-3">
+            <i data-lucide="info" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+            <div>
+              <p class="font-semibold text-[#0d1321] mb-1">Подготовка к поверке</p>
+              <p class="text-sm text-gray-600">
+                Перед передачей СИ проверьте комплектность, наличие документации и возможность безопасной эксплуатации.
+                Если есть особенности — сообщите заранее.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <section class="bg-white rounded-3xl p-10 lg:p-12 border border-gray-200">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Нужны сроки и стоимость?</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Оставьте заявку — укажите тип средства измерений, диапазон и количество.
+          Мы уточним детали и предложим оптимальный вариант.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-2">
+            <i data-lucide="list-checks" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Перечень СИ</h3>
+          </div>
+          <p class="text-sm text-gray-600">Составьте список приборов и характеристик.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-2">
+            <i data-lucide="calendar" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Сроки</h3>
+          </div>
+          <p class="text-sm text-gray-600">Укажите желаемые даты или срочность.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-2">
+            <i data-lucide="truck" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Логистика</h3>
+          </div>
+          <p class="text-sm text-gray-600">Согласуем доставку/передачу оборудования.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 flex justify-center gap-4 flex-col sm:flex-row">
+        <a href="{{ url_for('metrology_online_application') }}"
+           class="btn-primary inline-flex items-center justify-center">
+          <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+          Подать заявку онлайн
+        </a>
+        <a href="{{ url_for('equipment') }}"
+           class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
+          <i data-lucide="package" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
+          Перейти к оборудованию
+        </a>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<section class="py-16 bg-[#1d2d44]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Готовы начать?</h2>
+    <p class="text-lg text-white text-opacity-90 mb-8">
+      Оставьте заявку, и мы свяжемся с вами для уточнения деталей по поверке.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ url_for('metrology_online_application') }}"
+         class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold">
+        Подать заявку онлайн
+      </a>
+      <a href="{{ url_for('contacts') }}"
+         class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-semibold">
+        Связаться
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Используем тот же accordion.js, что и на competence -->
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
 {% endblock %}

@@ -1,9 +1,204 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
+
+<section class="bg-gradient-to-br from-gray-50 to-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
+        Калибровка средств измерений
+      </h1>
+      <p class="text-lg text-gray-600">
+        Калибровка — это установление зависимости между показаниями средства измерений и значениями величины,
+        воспроизводимыми эталонами. Помогаем выбрать оптимальный формат калибровки под ваши задачи.
+      </p>
+    </div>
   </div>
 </section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-14">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="ruler" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Точность и неопределённость</h3>
+        <p class="text-gray-600 text-sm">
+          Оцениваем метрологические характеристики, оформляем результаты и учитываем неопределённость.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="workflow" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Под задачи клиента</h3>
+        <p class="text-gray-600 text-sm">
+          Подберём программу калибровки под требования производства, контроля качества или испытаний.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="file-text" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Оформление документов</h3>
+        <p class="text-gray-600 text-sm">
+          Оформляем сертификат калибровки/протокол по согласованному формату.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-6">Когда нужна калибровка</h2>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Если поверка не требуется, но нужно подтвердить точность и характеристики</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Для внутреннего контроля качества и прослеживаемости измерений</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Для испытаний, НИОКР и производственных процессов</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">При необходимости указать неопределённость измерений</p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="{{ url_for('metrology_online_application') }}"
+             class="btn-primary inline-flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+            Подать заявку онлайн
+          </a>
+          <a href="{{ url_for('contacts') }}"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
+            <i data-lucide="message-circle" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
+            Консультация
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-3xl p-10 border border-gray-100">
+        <h3 class="text-2xl font-bold text-[#0d1321] mb-6">Оценка сроков</h3>
+
+        <p class="text-sm text-gray-600 mb-6">
+          Выберите тип прибора и количество — калькулятор покажет ориентировочный срок выполнения.
+          (Оценка предварительная, точный срок уточняем после согласования.)
+        </p>
+
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Тип средства измерений</label>
+            <select id="calType"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent bg-white">
+              <option value="simple">Простой прибор (1–2 точки)</option>
+              <option value="standard">Стандартный (несколько диапазонов)</option>
+              <option value="complex">Сложный/многоканальный</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Количество приборов</label>
+            <input id="calQty" type="number" min="1" value="1"
+                   class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
+                   placeholder="Например: 5" />
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="flex items-start gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-[#0d1321] mb-1">Ориентировочный срок</p>
+                <p class="text-sm text-gray-600">
+                  <span id="calResult" class="font-semibold text-[#3e5c76]">1–2 рабочих дня</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a href="{{ url_for('metrology_online_application') }}"
+             class="btn-primary inline-flex items-center justify-center w-full">
+            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+            Оставить заявку на калибровку
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-white rounded-3xl p-10 lg:p-12 border border-gray-200 mb-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Этапы калибровки</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Прозрачный процесс: от заявки до выдачи документов. Используем утверждённые методики и согласуем программу работ.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">1</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Заявка</h3>
+          <p class="text-sm text-gray-600">Уточняем приборы, диапазоны, комплектность и требования.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">2</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Приём</h3>
+          <p class="text-sm text-gray-600">Идентификация, проверка состояния и регистрация.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">3</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Калибровка</h3>
+          <p class="text-sm text-gray-600">Выполняем измерения, расчёты и оценку неопределённости.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">4</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Документы</h3>
+          <p class="text-sm text-gray-600">Выдаём сертификат/протокол и передаём приборы заказчику.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#3e5c76] to-[#1d2d44] rounded-3xl p-12 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Нужна консультация по калибровке?</h2>
+        <p class="text-lg text-white text-opacity-90 mb-8">
+          Подскажем, что выбрать — поверку или калибровку, и подготовим план работ под ваши задачи.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="{{ url_for('contacts') }}"
+             class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold">
+            Связаться
+          </a>
+          <a href="{{ url_for('metrology_online_application') }}"
+             class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-semibold">
+            Подать заявку онлайн
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/calibration_calc.js') }}"></script>
+
 {% endblock %}

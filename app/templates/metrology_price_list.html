@@ -1,9 +1,161 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
+
+<section class="bg-gradient-to-br from-gray-50 to-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
+        Прайс-лист на услуги метрологии
+      </h1>
+      <p class="text-lg text-gray-600">
+        Ниже приведены ориентировочные цены. Итоговая стоимость зависит от типа средств измерений,
+        диапазонов, количества и требований к оформлению документов.
+      </p>
+    </div>
   </div>
 </section>
+
+{% set categories = [
+  {"id":"all","name":"Все услуги"},
+  {"id":"verification","name":"Поверка"},
+  {"id":"calibration","name":"Калибровка"},
+  {"id":"testing","name":"Испытания"},
+  {"id":"docs","name":"Документы"},
+  {"id":"other","name":"Прочее"},
+] %}
+
+{% set prices = [
+  {"cat":"verification", "service":"Поверка манометров", "unit":"шт", "from":"900", "notes":"Диапазон и класс точности уточняются"},
+  {"cat":"verification", "service":"Поверка вакуумметров", "unit":"шт", "from":"900", "notes":"По согласованию"},
+  {"cat":"verification", "service":"Поверка термометров цифровых", "unit":"шт", "from":"800", "notes":"Зависит от диапазона"},
+  {"cat":"verification", "service":"Поверка термопар", "unit":"шт", "from":"1 200", "notes":"Класс/диапазон уточняются"},
+  {"cat":"verification", "service":"Поверка штангенинструмента", "unit":"шт", "from":"600", "notes":"Штангенциркули/глубиномеры"},
+  {"cat":"verification", "service":"Поверка микрометров", "unit":"шт", "from":"700", "notes":"Диапазон уточняется"},
+
+  {"cat":"calibration", "service":"Калибровка простых СИ (1–2 точки)", "unit":"шт", "from":"1 200", "notes":"Базовый формат"},
+  {"cat":"calibration", "service":"Калибровка стандартная (несколько диапазонов)", "unit":"шт", "from":"2 500", "notes":"По программе работ"},
+  {"cat":"calibration", "service":"Калибровка сложных/многоканальных", "unit":"шт", "from":"4 500", "notes":"Требует согласования"},
+
+  {"cat":"testing", "service":"Испытания оборудования (предварительные)", "unit":"услуга", "from":"от 10 000", "notes":"Состав работ уточняется"},
+  {"cat":"testing", "service":"Испытания для утверждения типа", "unit":"услуга", "from":"от 20 000", "notes":"По ТЗ/программе испытаний"},
+
+  {"cat":"docs", "service":"Оформление/восстановление документации", "unit":"услуга", "from":"от 3 000", "notes":"По объёму"},
+  {"cat":"docs", "service":"Консультация по выбору поверка/калибровка", "unit":"услуга", "from":"0", "notes":"Базовая консультация"},
+
+  {"cat":"other", "service":"Срочное выполнение (приоритет)", "unit":"коэф.", "from":"x1.5", "notes":"Возможность уточняется"},
+  {"cat":"other", "service":"Логистика/доставка", "unit":"услуга", "from":"по договору", "notes":"По региону и объёму"},
+] %}
+
+<section class="py-8 bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-4">
+
+      <div class="flex-1 relative">
+        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+        <input
+          id="priceSearch"
+          type="text"
+          placeholder="Поиск по услугам..."
+          class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent transition-colors"
+        />
+      </div>
+
+      <div class="relative">
+        <i data-lucide="filter" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+        <select
+          id="priceCategory"
+          class="pl-12 pr-8 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent transition-colors appearance-none bg-white min-w-[240px]"
+        >
+          {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <a href="{{ url_for('metrology_online_application') }}"
+         class="btn-primary inline-flex items-center justify-center whitespace-nowrap">
+        <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+        Запросить расчёт
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Услуга</th>
+              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Ед.</th>
+              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Цена от</th>
+              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Примечание</th>
+            </tr>
+          </thead>
+          <tbody id="priceTbody" class="divide-y divide-gray-200">
+            {% for row in prices %}
+            <tr
+              data-price-row
+              data-name="{{ row.service|lower }}"
+              data-cat="{{ row.cat }}"
+              class="hover:bg-gray-50 transition-colors"
+            >
+              <td class="px-6 py-4">
+                <div class="font-medium text-[#0d1321]">{{ row.service }}</div>
+                <div class="text-xs text-gray-500 mt-1">
+                  Категория:
+                  <span class="text-[#3e5c76] font-semibold">
+                    {% if row.cat == 'verification' %}Поверка{% elif row.cat == 'calibration' %}Калибровка{% elif row.cat == 'testing' %}Испытания{% elif row.cat == 'docs' %}Документы{% else %}Прочее{% endif %}
+                  </span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">{{ row.unit }}</td>
+              <td class="px-6 py-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#748cab] bg-opacity-20 text-[#1d2d44] font-semibold">
+                  {{ row.from }}
+                </span>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">{{ row.notes }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="priceEmpty" class="text-center py-12 hidden">
+      <p class="text-gray-500">По вашему запросу ничего не найдено</p>
+    </div>
+
+    <div class="mt-10 bg-gray-50 rounded-3xl p-10 border border-gray-100">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-2xl font-bold text-[#0d1321] mb-2">Нужен точный расчёт?</h2>
+          <p class="text-gray-600">
+            Отправьте список средств измерений, количество и требования — подготовим коммерческое предложение.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+          <a href="{{ url_for('metrology_online_application') }}" class="btn-primary inline-flex items-center justify-center">
+            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+            Оставить заявку
+          </a>
+          <a href="{{ url_for('contacts') }}"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors font-semibold text-[#0d1321]">
+            <i data-lucide="phone" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
+            Связаться
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/price_list.js') }}"></script>
+
 {% endblock %}

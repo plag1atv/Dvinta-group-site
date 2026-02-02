@@ -1,9 +1,276 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
+
+<section class="bg-gradient-to-br from-gray-50 to-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
+        Утверждение типа средств измерений
+      </h1>
+      <p class="text-lg text-gray-600">
+        Сопровождаем процедуру утверждения типа: подготовка документов, организация испытаний,
+        консультации по требованиям и оформлению результатов.
+      </p>
+    </div>
   </div>
 </section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-14">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="clipboard-check" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Подготовка пакета</h3>
+        <p class="text-gray-600 text-sm">
+          Сформируем комплект документов и поможем привести материалы в соответствие требованиям.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="flask-conical" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Испытания</h3>
+        <p class="text-gray-600 text-sm">
+          Организуем испытания для целей утверждения типа и согласуем программу работ.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+          <i data-lucide="file-check" class="w-6 h-6 text-[#3e5c76]"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Результат</h3>
+        <p class="text-gray-600 text-sm">
+          Поможем корректно оформить результаты и пройти этапы до итогового решения.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-6">Что такое утверждение типа</h2>
+        <p class="text-gray-600 mb-4">
+          Утверждение типа — это процедура подтверждения соответствия средств измерений установленным требованиям
+          с последующей регистрацией и возможностью применения в регулируемой сфере.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Мы помогаем пройти путь “под ключ”: от подготовки материалов и консультаций до организации испытаний
+          и сопровождения на каждом этапе.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Анализ изделия и требований к документации</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Подготовка материалов и рекомендаций по доработкам</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Согласование программы испытаний</p>
+          </div>
+          <div class="flex items-start">
+            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <p class="text-gray-600">Сопровождение до получения результата</p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="{{ url_for('metrology_online_application') }}" class="btn-primary inline-flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+            Подать заявку онлайн
+          </a>
+          <a href="{{ url_for('contacts') }}"
+             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
+            <i data-lucide="message-circle" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
+            Консультация
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1711007567386-7a98e26d8e24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRyb2xvZ3klMjBsYWJ8ZW58MXx8fHwxNzY5MzQ2MTg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          alt="Утверждение типа средств измерений"
+          class="rounded-2xl shadow-lg w-full"
+          loading="lazy"
+        />
+        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-full flex items-center justify-center">
+              <i data-lucide="shield" class="w-6 h-6 text-[#3e5c76]"></i>
+            </div>
+            <div>
+              <div class="font-semibold text-[#0d1321]">Сопровождение</div>
+              <div class="text-sm text-gray-600">Документы и испытания</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-gray-50 rounded-3xl p-10 lg:p-12 border border-gray-100 mb-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Этапы работы</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Ниже — типовой порядок. Конкретные шаги и сроки зависят от категории СИ и исходных материалов.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">1</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Анализ</h3>
+          <p class="text-sm text-gray-600">Определяем требования и состав материалов.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">2</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Документы</h3>
+          <p class="text-sm text-gray-600">Подготавливаем/дорабатываем пакет документов.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">3</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Испытания</h3>
+          <p class="text-sm text-gray-600">Согласуем программу и проводим испытания.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-[#748cab] bg-opacity-20 flex items-center justify-center mb-4">
+            <span class="font-bold text-[#3e5c76]">4</span>
+          </div>
+          <h3 class="font-semibold text-[#0d1321] mb-2">Результат</h3>
+          <p class="text-sm text-gray-600">Оформляем итог и сопровождаем завершение процедуры.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-3xl p-10 lg:p-12 border border-gray-200 mb-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Что обычно нужно подготовить</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Точный перечень зависит от типа средства измерений. Ниже — типовой набор, с которого удобно стартовать.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-3">
+            <i data-lucide="file-text" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Описание и ТУ</h3>
+          </div>
+          <p class="text-sm text-gray-600">Технические условия, описание конструкции и принципа работы.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-3">
+            <i data-lucide="book-open" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">РЭ/Паспорт</h3>
+          </div>
+          <p class="text-sm text-gray-600">Руководство по эксплуатации, паспорт/формуляр, маркировка.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Метрологические характеристики</h3>
+          </div>
+          <p class="text-sm text-gray-600">Диапазоны, погрешности, условия эксплуатации, комплектность.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-3">
+            <i data-lucide="package" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Образцы</h3>
+          </div>
+          <p class="text-sm text-gray-600">Образец(ы) СИ для испытаний, комплект ЗИП и аксессуары.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-3">
+            <i data-lucide="clipboard-list" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Программа испытаний</h3>
+          </div>
+          <p class="text-sm text-gray-600">Черновик/предложение по программе, если есть.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div class="flex items-center mb-3">
+            <i data-lucide="folder" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
+            <h3 class="font-semibold text-[#0d1321]">Доп. материалы</h3>
+          </div>
+          <p class="text-sm text-gray-600">Сертификаты, схемы, фото, результаты внутренних испытаний (если есть).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">FAQ</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Частые вопросы по утверждению типа и подготовке материалов
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        {% set faq = [
+          {"q":"Сколько времени занимает процедура?", "a":"Срок зависит от готовности документации, сложности изделия и графика испытаний. На старте поможем оценить порядок сроков и критические точки."},
+          {"q":"Можно ли подготовить документы без испытаний?", "a":"Документы можно подготовить заранее, но для утверждения типа обычно требуются испытания по согласованной программе. Мы подскажем оптимальную последовательность."},
+          {"q":"Нужны ли образцы изделия?", "a":"Как правило, да — для проведения испытаний. Количество и комплектация образцов зависит от программы испытаний и категории СИ."},
+          {"q":"Вы помогаете с доработками документации?", "a":"Да. Поможем оформить структуру, привести формулировки к требованиям и согласовать комплектность материалов."}
+        ] %}
+        {% for item in faq %}
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <button type="button"
+                  class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                  data-acc-btn>
+            <span class="font-semibold text-[#0d1321]">{{ item.q }}</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-[#3e5c76] transition-transform" data-acc-icon></i>
+          </button>
+          <div class="px-6 pb-6 text-gray-600 hidden" data-acc-body>
+            {{ item.a }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<section class="py-16 bg-[#1d2d44]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Нужно сопровождение “под ключ”?</h2>
+    <p class="text-lg text-white text-opacity-90 mb-8">
+      Оставьте заявку — мы уточним данные по изделию и предложим план действий.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ url_for('metrology_online_application') }}"
+         class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold">
+        Подать заявку онлайн
+      </a>
+      <a href="{{ url_for('contacts') }}"
+         class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-semibold">
+        Связаться
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- accordion.js уже существует -->
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
 {% endblock %}

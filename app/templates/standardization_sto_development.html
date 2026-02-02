@@ -1,9 +1,252 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius:26px;">
+      <div class="kicker">Стандартизация</div>
+      <h1 class="h1" style="margin-top:10px;">Разработка стандартов организации (СТО)</h1>
+      <p class="p-lead" style="margin-top:14px; max-width:980px;">
+        Разрабатываем СТО под процессы, продукцию или услуги компании.
+        Структурируем требования, контроль качества и документы так, чтобы ими реально пользовались в работе.
+      </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_standard_documents') }}">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          Нормативные документы
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Консультация
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- BENEFITS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Порядок</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Единые правила</div>
+        <p style="margin-top:10px; color:rgba(13,19,33,.7); line-height:1.65;">
+          СТО фиксирует, “как у нас принято”: требования, контроль, ответственность.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Качество</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Снижение ошибок</div>
+        <p style="margin-top:10px; color:rgba(13,19,33,.7); line-height:1.65;">
+          Описанные процедуры и чек-листы уменьшают брак и несоответствия.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Аудиты</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Проще проверки</div>
+        <p style="margin-top:10px; color:rgba(13,19,33,.7); line-height:1.65;">
+          Когда всё структурировано — проще обучать людей и проходить проверки.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <div class="kicker">Процесс</div>
+      <h2 class="h2" style="margin-top:8px;">Как мы разрабатываем СТО</h2>
+      <p class="p-lead" style="margin-top:10px; max-width:980px;">
+        Делаем документ “под реальность”: чтобы он работал в вашем процессе, а не лежал в папке.
+      </p>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px;">
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 1</div>
+        <div style="font-weight:900; margin-top:8px;">Сбор информации</div>
+        <div style="color:rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Определяем объект стандартизации: продукция / процесс / услуга.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 2</div>
+        <div style="font-weight:900; margin-top:8px;">Нормативная база</div>
+        <div style="color:rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Подбираем стандарты, требования, лучшие практики.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 3</div>
+        <div style="font-weight:900; margin-top:8px;">Структура СТО</div>
+        <div style="color:rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Требования, контроль, формы записей, ответственность, термины.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 4</div>
+        <div style="font-weight:900; margin-top:8px;">Согласование</div>
+        <div style="color:rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Уточняем, редактируем, финализируем и передаём результат.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE NEED -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
+      <div class="card card-pad-lg">
+        <div class="kicker">На старте</div>
+        <h2 class="h2" style="margin-top:10px;">Что нужно от вас</h2>
+        <p class="p-lead" style="margin-top:12px;">
+          Минимальный набор данных поможет быстро оценить сроки и объём работ.
+        </p>
+
+        <div style="margin-top:18px; display:grid; gap:12px;">
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Что стандартизируем</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Продукция / процесс / услуга — и какие цели (качество, аудит, регулятор).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Требования и критерии</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Какие параметры важны, что считать “нормой”, как контролировать.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Текущие документы</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Регламенты, инструкции, формы — если уже есть (не обязательно).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
+          <a class="btn btn-ghost" href="{{ url_for('contacts') }}">Задать вопрос</a>
+        </div>
+      </div>
+
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Результат</div>
+        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Что вы получите</h3>
+
+        <div style="margin-top:14px; display:grid; gap:10px;">
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">СТО в структуре</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Понятные разделы и логика</div>
+          </div>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Формы и чек-листы</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Чтобы документ работал</div>
+          </div>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Рекомендации внедрения</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Кого обучить и что закрепить</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Заполнить онлайн-заявку
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы</h2>
+      <p class="p-lead" style="margin-top:10px; max-width:980px; margin-left:auto; margin-right:auto;">
+        Вопросы, которые обычно задают перед разработкой СТО.
+      </p>
+    </div>
+
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {"q":"Сколько времени занимает разработка СТО?", "a":"Зависит от объёма и наличия исходных материалов. На старте мы оцениваем сроки и фиксируем план."},
+        {"q":"Можно ли сделать СТО под конкретный процесс?", "a":"Да. Это один из самых частых сценариев — стандартизировать процесс для стабильного качества и обучения."},
+        {"q":"Вы делаете формы и журналы?", "a":"Да. Обычно мы добавляем формы записей/чек-листы, чтобы документ был применим в работе."},
+        {"q":"Что нужно, чтобы начать?", "a":"Кратко: что стандартизируем, какие цели, какие требования/критерии, и есть ли текущие документы."}
+      ] %}
+      {% for item in faq %}
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          {{ item.a }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background:var(--c-800); border-radius:26px; padding:48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Следующий шаг</div>
+      <h2 class="h2" style="margin-top:10px;">Нужен СТО под ваш процесс или продукт?</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width:980px; margin-left:auto; margin-right:auto;">
+        Опишите задачу — предложим структуру документа и сроки.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
+          Связаться
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
 {% endblock %}

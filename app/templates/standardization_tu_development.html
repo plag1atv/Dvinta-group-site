@@ -1,9 +1,116 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius:26px;">
+      <div class="kicker">Стандартизация</div>
+      <h1 class="h1" style="margin-top:10px;">Разработка технических условий (ТУ)</h1>
+      <p class="p-lead" style="margin-top:14px; max-width:980px;">
+        Разрабатываем технические условия под конкретное изделие с учётом требований,
+        нормативной базы и дальнейшего применения (испытания, производство, поставки).
+      </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_standard_documents') }}">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          Нормативные документы
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- WHY -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Зачем</div>
+        <div style="font-weight:900; margin-top:8px;">Соответствие требованиям</div>
+        <p style="margin-top:10px; color:rgba(13,19,33,.7); line-height:1.65;">
+          ТУ фиксируют характеристики изделия и требования к качеству.
+        </p>
+      </div>
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Гибко</div>
+        <div style="font-weight:900; margin-top:8px;">Под конкретный продукт</div>
+        <p style="margin-top:10px; color:rgba(13,19,33,.7); line-height:1.65;">
+          В отличие от ГОСТ, ТУ учитывают особенности именно вашего изделия.
+        </p>
+      </div>
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Практично</div>
+        <div style="font-weight:900; margin-top:8px;">Основа для испытаний</div>
+        <p style="margin-top:10px; color:rgba(13,19,33,.7); line-height:1.65;">
+          ТУ используются при испытаниях, сертификации и поставках.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <div class="kicker">Процесс</div>
+      <h2 class="h2" style="margin-top:8px;">Как проходит разработка ТУ</h2>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+      <div class="card card-pad reveal">
+        <div class="kicker">Шаг 1</div>
+        <div style="font-weight:900;">Анализ изделия</div>
+        <p style="margin-top:8px; color:rgba(13,19,33,.7);">
+          Назначение, характеристики, условия эксплуатации.
+        </p>
+      </div>
+      <div class="card card-pad reveal">
+        <div class="kicker">Шаг 2</div>
+        <div style="font-weight:900;">Нормативная база</div>
+        <p style="margin-top:8px; color:rgba(13,19,33,.7);">
+          Подбор ГОСТ, ТР, методик и требований.
+        </p>
+      </div>
+      <div class="card card-pad reveal">
+        <div class="kicker">Шаг 3</div>
+        <div style="font-weight:900;">Подготовка ТУ</div>
+        <p style="margin-top:8px; color:rgba(13,19,33,.7);">
+          Структура, требования, методы контроля.
+        </p>
+      </div>
+      <div class="card card-pad reveal">
+        <div class="kicker">Шаг 4</div>
+        <div style="font-weight:900;">Согласование</div>
+        <p style="margin-top:8px; color:rgba(13,19,33,.7);">
+          Уточнения, корректировки и финальная версия.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background:var(--c-800); border-radius:26px; padding:48px; color:#fff; text-align:center;">
+      <h2 class="h2">Нужна разработка ТУ?</h2>
+      <p class="p-lead" style="margin-top:12px; color:rgba(240,235,216,.85);">
+        Опишите изделие и цель — мы предложим структуру и сроки.
+      </p>
+      <div style="margin-top:18px;">
+        <a class="btn" style="background:#fff; color:var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Оставить заявку
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

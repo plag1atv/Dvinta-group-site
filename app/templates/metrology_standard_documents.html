@@ -1,9 +1,243 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-[#111111] mb-4">{{ title }}</h1>
-    <p class="text-gray-600">Шаблон-заглушка. Следующим шагом перенесём разметку из React-страницы.</p>
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Документы</div>
+      <h1 class="h1" style="margin-top:10px;">Нормативные документы</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Подбор нормативной базы зависит от вида работ: поверка, калибровка, испытания, компетентность.
+        Ниже — удобный перечень по категориям. Если не уверены, что нужно — оставьте заявку, подскажем.
+      </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_competence') }}">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+          Компетентность
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_verification') }}">
+          <i data-lucide="check" class="w-5 h-5"></i>
+          Поверка
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- FILTERS + LIST -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Категории</div>
+        <h2 class="h2" style="margin-top:8px;">Быстрый подбор</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Нажмите на категорию — список ниже отфильтруется. Это удобно, когда не хочется читать всё.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="reveal" style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button type="button" class="btn btn-ghost" data-doc-filter="all">Все</button>
+      <button type="button" class="btn btn-ghost" data-doc-filter="metrology">Метрология</button>
+      <button type="button" class="btn btn-ghost" data-doc-filter="verification">Поверка</button>
+      <button type="button" class="btn btn-ghost" data-doc-filter="calibration">Калибровка</button>
+      <button type="button" class="btn btn-ghost" data-doc-filter="testing">Испытания</button>
+      <button type="button" class="btn btn-ghost" data-doc-filter="qms">СМК / компетентность</button>
+    </div>
+
+    {% set docs = [
+      {"cat":"metrology", "title":"Методы измерений и требования к СИ", "desc":"База для выбора методик, диапазонов, условий и прослеживаемости.", "tag":"Метрология"},
+      {"cat":"verification", "title":"Поверка средств измерений", "desc":"Требования к выполнению поверки и оформлению результатов.", "tag":"Поверка"},
+      {"cat":"calibration", "title":"Калибровка средств измерений", "desc":"Программа калибровки, точки, условия, формат сертификата/протокола.", "tag":"Калибровка"},
+      {"cat":"testing", "title":"Испытания оборудования", "desc":"Испытания по программе/ТЗ, критерии приемки и фиксация условий.", "tag":"Испытания"},
+      {"cat":"testing", "title":"Испытания для утверждения типа", "desc":"Подготовка пакета, программа испытаний, требования к оформлению.", "tag":"Испытания"},
+      {"cat":"qms", "title":"Система менеджмента качества (СМК)", "desc":"Процедуры, записи, управление изменениями, внутренние аудиты.", "tag":"СМК"},
+      {"cat":"qms", "title":"Компетентность персонала и обучение", "desc":"Требования к квалификации, допускам, планам обучения и оценке.", "tag":"Компетентность"},
+      {"cat":"metrology", "title":"Прослеживаемость и эталоны", "desc":"Требования к эталонам, состоянию и поверке/калибровке средств.", "tag":"Метрология"},
+      {"cat":"verification", "title":"Правила приёма и комплектность", "desc":"Что должно быть с прибором: маркировка, питание, датчики, безопасность.", "tag":"Поверка"},
+      {"cat":"calibration", "title":"Неопределённость измерений (по согласованию)", "desc":"Когда нужна расширенная оценка неопределённости и условия расчётов.", "tag":"Калибровка"}
+    ] %}
+
+    <!-- Cards -->
+    <div class="reveal" style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;" id="docsGrid">
+      {% for d in docs %}
+      <div class="card card-pad hover-lift doc-card" data-doc-cat="{{ d.cat }}">
+        <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+          <div class="kicker">{{ d.tag }}</div>
+          <span style="font-size:12px; font-weight:900; padding:6px 10px; border-radius:999px; background: rgba(116,140,171,.14); color: var(--c-900);">
+            {{ d.cat }}
+          </span>
+        </div>
+        <div style="font-weight:900; font-size:18px; margin-top:10px; color: var(--c-900);">
+          {{ d.title }}
+        </div>
+        <div style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          {{ d.desc }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO CHOOSE -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
+      <div class="card card-pad-lg">
+        <div class="kicker">Подбор</div>
+        <h2 class="h2" style="margin-top:10px;">Как быстро понять, что нужно именно вам</h2>
+        <p class="p-lead" style="margin-top:12px;">
+          Если у вас типовая задача — ориентируйтесь на подсказки ниже.
+        </p>
+
+        <div style="margin-top:18px; display:grid; gap:12px;">
+          <div class="panel" style="padding:16px;">
+            <div style="font-weight:900;">Нужна поверка</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:6px; line-height:1.6;">
+              Обычно важны требования к выполнению поверки, комплектность и формат документов.
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="font-weight:900;">Нужна калибровка</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:6px; line-height:1.6;">
+              Важно согласовать программу: диапазоны, точки, условия, формат сертификата/протокола.
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="font-weight:900;">Нужны испытания</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:6px; line-height:1.6;">
+              Нужны ТЗ/программа, критерии приемки и понятные условия проведения испытаний.
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
+          <a class="btn btn-ghost" href="{{ url_for('contacts') }}">Задать вопрос</a>
+        </div>
+      </div>
+
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Совет</div>
+        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Если сомневаетесь — это нормально</h3>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Лучший вариант — коротко описать задачу: тип прибора/оборудования, количество, сроки и желаемый формат документов.
+          Мы подскажем, какие нормативные документы применимы.
+        </p>
+
+        <div style="margin-top:16px;">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Заполнить онлайн-заявку
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Пояснения, которые обычно помогают с выбором документов.
+      </p>
+    </div>
+
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {"q":"Вы можете прислать точный список документов под наш случай?", "a":"Да. Оставьте заявку и опишите задачу (тип прибора/оборудования, количество, сроки, формат результата). Мы сформируем перечень."},
+        {"q":"Нужно ли всегда прикладывать ТЗ/программу?", "a":"Для испытаний — почти всегда да. Для поверки/калибровки достаточно описания, но ТЗ ускоряет согласование."},
+        {"q":"Можно ли начать без части документов?", "a":"Можно начать с предварительной оценки. Но для выполнения работ потребуется довести комплект до требований."},
+        {"q":"Почему документы зависят от типа СИ?", "a":"Потому что методики, диапазоны, условия и оформление результатов различаются для разных видов средств измерений."}
+      ] %}
+
+      {% for item in faq %}
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          {{ item.a }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Подбор под ваш случай</div>
+      <h2 class="h2" style="margin-top:10px;">Оставьте заявку — подберём нормативную базу</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Опишите задачу — мы предложим перечень документов и план работ.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Подать заявку онлайн
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
+          Связаться
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
+<script>
+  // Simple filter (no external libs)
+  (function(){
+    const btns = document.querySelectorAll('[data-doc-filter]');
+    const cards = document.querySelectorAll('.doc-card');
+
+    function setActive(btn){
+      btns.forEach(b => b.classList.remove('btn-primary'));
+      btns.forEach(b => b.classList.add('btn-ghost'));
+      btn.classList.remove('btn-ghost');
+      btn.classList.add('btn-primary');
+    }
+
+    function filter(cat){
+      cards.forEach(c => {
+        const ccat = c.getAttribute('data-doc-cat');
+        const show = (cat === 'all') || (ccat === cat);
+        c.style.display = show ? '' : 'none';
+      });
+    }
+
+    if (btns.length) {
+      setActive(btns[0]);
+      filter('all');
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-doc-filter');
+          setActive(btn);
+          filter(cat);
+        });
+      });
+    }
+  })();
+</script>
+
 {% endblock %}

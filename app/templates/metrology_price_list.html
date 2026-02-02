@@ -1,125 +1,189 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="bg-gradient-to-br from-gray-50 to-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
-        Прайс-лист на услуги метрологии
-      </h1>
-      <p class="text-lg text-gray-600">
-        Ниже приведены ориентировочные цены. Итоговая стоимость зависит от типа средств измерений,
-        диапазонов, количества и требований к оформлению документов.
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Метрология</div>
+      <h1 class="h1" style="margin-top:10px;">Прайс-лист</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Ниже — ориентировочные цены. Итоговая стоимость зависит от типа средства измерений,
+        количества, требований к документам и срочности. Для точного расчёта оставьте заявку.
       </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Рассчитать стоимость
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Задать вопрос
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-{% set categories = [
-  {"id":"all","name":"Все услуги"},
-  {"id":"verification","name":"Поверка"},
-  {"id":"calibration","name":"Калибровка"},
-  {"id":"testing","name":"Испытания"},
-  {"id":"docs","name":"Документы"},
-  {"id":"other","name":"Прочее"},
-] %}
-
-{% set prices = [
-  {"cat":"verification", "service":"Поверка манометров", "unit":"шт", "from":"900", "notes":"Диапазон и класс точности уточняются"},
-  {"cat":"verification", "service":"Поверка вакуумметров", "unit":"шт", "from":"900", "notes":"По согласованию"},
-  {"cat":"verification", "service":"Поверка термометров цифровых", "unit":"шт", "from":"800", "notes":"Зависит от диапазона"},
-  {"cat":"verification", "service":"Поверка термопар", "unit":"шт", "from":"1 200", "notes":"Класс/диапазон уточняются"},
-  {"cat":"verification", "service":"Поверка штангенинструмента", "unit":"шт", "from":"600", "notes":"Штангенциркули/глубиномеры"},
-  {"cat":"verification", "service":"Поверка микрометров", "unit":"шт", "from":"700", "notes":"Диапазон уточняется"},
-
-  {"cat":"calibration", "service":"Калибровка простых СИ (1–2 точки)", "unit":"шт", "from":"1 200", "notes":"Базовый формат"},
-  {"cat":"calibration", "service":"Калибровка стандартная (несколько диапазонов)", "unit":"шт", "from":"2 500", "notes":"По программе работ"},
-  {"cat":"calibration", "service":"Калибровка сложных/многоканальных", "unit":"шт", "from":"4 500", "notes":"Требует согласования"},
-
-  {"cat":"testing", "service":"Испытания оборудования (предварительные)", "unit":"услуга", "from":"от 10 000", "notes":"Состав работ уточняется"},
-  {"cat":"testing", "service":"Испытания для утверждения типа", "unit":"услуга", "from":"от 20 000", "notes":"По ТЗ/программе испытаний"},
-
-  {"cat":"docs", "service":"Оформление/восстановление документации", "unit":"услуга", "from":"от 3 000", "notes":"По объёму"},
-  {"cat":"docs", "service":"Консультация по выбору поверка/калибровка", "unit":"услуга", "from":"0", "notes":"Базовая консультация"},
-
-  {"cat":"other", "service":"Срочное выполнение (приоритет)", "unit":"коэф.", "from":"x1.5", "notes":"Возможность уточняется"},
-  {"cat":"other", "service":"Логистика/доставка", "unit":"услуга", "from":"по договору", "notes":"По региону и объёму"},
-] %}
-
-<section class="py-8 bg-white border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col lg:flex-row gap-4">
-
-      <div class="flex-1 relative">
-        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
-        <input
-          id="priceSearch"
-          type="text"
-          placeholder="Поиск по услугам..."
-          class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent transition-colors"
-        />
+<!-- PACKS / HIGHLIGHTS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Прозрачно</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Ориентиры по ценам</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Даём диапазон и уточняем итог после понимания комплекта и требований.
+        </p>
       </div>
 
-      <div class="relative">
-        <i data-lucide="filter" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
-        <select
-          id="priceCategory"
-          class="pl-12 pr-8 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent transition-colors appearance-none bg-white min-w-[240px]"
-        >
-          {% for cat in categories %}
-            <option value="{{ cat.id }}">{{ cat.name }}</option>
-          {% endfor %}
-        </select>
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Удобно</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Пакеты и партии</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Для партий часто выгоднее. Укажи количество в заявке — предложим вариант.
+        </p>
       </div>
 
-      <a href="{{ url_for('metrology_online_application') }}"
-         class="btn-primary inline-flex items-center justify-center whitespace-nowrap">
-        <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
-        Запросить расчёт
-      </a>
-
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Быстро</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Срочные работы</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          По возможности берём в приоритет. Зависит от загрузки и типа СИ.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- PRICING CARDS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Пакеты</div>
+        <h2 class="h2" style="margin-top:8px;">Популярные варианты</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 920px;">
+          Если не хочется разбираться в нюансах — выбери близкий вариант и оставь заявку.
+        </p>
+      </div>
+    </div>
 
-    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden">
-      <div class="overflow-x-auto">
-        <table class="min-w-full">
-          <thead class="bg-gray-50 border-b border-gray-200">
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Базовый</div>
+        <div style="font-weight:900; font-size:20px; margin-top:10px;">Стандартные работы</div>
+        <div style="margin-top:10px; color: rgba(13,19,33,.70); line-height:1.65;">
+          Подходит для типовых СИ без нестандартных требований.
+        </div>
+        <div class="panel" style="padding:14px; margin-top:14px;">
+          <div style="font-weight:900;">Что входит</div>
+          <ul style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65; padding-left:18px;">
+            <li>Работы по стандартной методике</li>
+            <li>Оформление результата</li>
+            <li>Проверка комплектности при приёме</li>
+          </ul>
+        </div>
+        <div style="margin-top:16px;">
+          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Выбрать
+          </a>
+        </div>
+      </div>
+
+      <div class="card card-pad-lg hover-lift reveal" style="border-color: rgba(62,92,118,.45); box-shadow: var(--shadow);">
+        <div class="kicker">Оптимальный</div>
+        <div style="font-weight:900; font-size:20px; margin-top:10px;">Партии / регулярные работы</div>
+        <div style="margin-top:10px; color: rgba(13,19,33,.70); line-height:1.65;">
+          Для компаний с регулярными поверками/калибровками и партиями приборов.
+        </div>
+        <div class="panel" style="padding:14px; margin-top:14px;">
+          <div style="font-weight:900;">Что входит</div>
+          <ul style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65; padding-left:18px;">
+            <li>Согласование списка СИ и требований</li>
+            <li>Оптимизация сроков под партию</li>
+            <li>Единый пакет документов</li>
+          </ul>
+        </div>
+        <div style="margin-top:16px;">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Оставить заявку
+          </a>
+        </div>
+      </div>
+
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Срочно</div>
+        <div style="font-weight:900; font-size:20px; margin-top:10px;">Ускорение по возможности</div>
+        <div style="margin-top:10px; color: rgba(13,19,33,.70); line-height:1.65;">
+          Когда нужно “как можно быстрее”. Доступность зависит от загрузки.
+        </div>
+        <div class="panel" style="padding:14px; margin-top:14px;">
+          <div style="font-weight:900;">Что важно</div>
+          <ul style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65; padding-left:18px;">
+            <li>Нужна полная комплектность</li>
+            <li>Маркировка и номера читаемы</li>
+            <li>Заранее укажите даты/дедлайн</li>
+          </ul>
+        </div>
+        <div style="margin-top:16px;">
+          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Запросить срочно
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE TABLE -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Таблица</div>
+        <h2 class="h2" style="margin-top:8px;">Ориентировочные цены</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Это примерные ориентиры. Если у вас специфические требования — лучше оставить заявку, мы уточним детали.
+        </p>
+      </div>
+    </div>
+
+    {% set rows = [
+      {"service":"Поверка средств измерений", "from":"от 1 500 ₽", "to":"от 6 000 ₽", "note":"Зависит от типа СИ и диапазонов"},
+      {"service":"Калибровка средств измерений", "from":"от 2 500 ₽", "to":"от 12 000 ₽", "note":"По программе/точкам и формату результата"},
+      {"service":"Испытания для утверждения типа", "from":"по запросу", "to":"—", "note":"Определяется программой испытаний и документами"},
+      {"service":"Испытания оборудования", "from":"по запросу", "to":"—", "note":"По ТЗ, объёму и условиям"},
+      {"service":"Подготовка/сопровождение документации", "from":"по запросу", "to":"—", "note":"Зависит от объёма и сроков"}
+    ] %}
+
+    <div class="card reveal" style="margin-top:22px; overflow:hidden;">
+      <div style="overflow-x:auto;">
+        <table style="min-width: 900px; width:100%; border-collapse: collapse;">
+          <thead style="background: rgba(116,140,171,.14);">
             <tr>
-              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Услуга</th>
-              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Ед.</th>
-              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Цена от</th>
-              <th class="text-left text-sm font-semibold text-[#0d1321] px-6 py-4">Примечание</th>
+              <th style="text-align:left; padding:16px; font-weight:900; color: var(--c-900);">Услуга</th>
+              <th style="text-align:left; padding:16px; font-weight:900; color: var(--c-900);">Стоимость</th>
+              <th style="text-align:left; padding:16px; font-weight:900; color: var(--c-900);">Комментарий</th>
             </tr>
           </thead>
-          <tbody id="priceTbody" class="divide-y divide-gray-200">
-            {% for row in prices %}
-            <tr
-              data-price-row
-              data-name="{{ row.service|lower }}"
-              data-cat="{{ row.cat }}"
-              class="hover:bg-gray-50 transition-colors"
-            >
-              <td class="px-6 py-4">
-                <div class="font-medium text-[#0d1321]">{{ row.service }}</div>
-                <div class="text-xs text-gray-500 mt-1">
-                  Категория:
-                  <span class="text-[#3e5c76] font-semibold">
-                    {% if row.cat == 'verification' %}Поверка{% elif row.cat == 'calibration' %}Калибровка{% elif row.cat == 'testing' %}Испытания{% elif row.cat == 'docs' %}Документы{% else %}Прочее{% endif %}
-                  </span>
-                </div>
+          <tbody>
+            {% for r in rows %}
+            <tr style="border-top:1px solid rgba(13,19,33,.10);">
+              <td style="padding:16px; font-weight:900; color: var(--c-900);">
+                {{ r.service }}
               </td>
-              <td class="px-6 py-4 text-sm text-gray-600">{{ row.unit }}</td>
-              <td class="px-6 py-4">
-                <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#748cab] bg-opacity-20 text-[#1d2d44] font-semibold">
-                  {{ row.from }}
-                </span>
+              <td style="padding:16px; color: rgba(13,19,33,.75);">
+                <span style="font-weight:900; color: var(--c-600);">{{ r.from }}</span>
+                {% if r.to != "—" %}
+                  <span style="color: rgba(13,19,33,.55);"> — </span>
+                  <span style="font-weight:900; color: var(--c-600);">{{ r.to }}</span>
+                {% endif %}
               </td>
-              <td class="px-6 py-4 text-sm text-gray-600">{{ row.notes }}</td>
+              <td style="padding:16px; color: rgba(13,19,33,.70); line-height:1.6;">
+                {{ r.note }}
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -127,35 +191,68 @@
       </div>
     </div>
 
-    <div id="priceEmpty" class="text-center py-12 hidden">
-      <p class="text-gray-500">По вашему запросу ничего не найдено</p>
+    <div class="reveal" style="margin-top:16px; color: rgba(13,19,33,.65); font-size: 13px; line-height:1.6;">
+      * Указанные цены — ориентиры. Итоговая стоимость фиксируется после уточнения типа СИ, количества, состояния, комплектности и требований к документам.
     </div>
-
-    <div class="mt-10 bg-gray-50 rounded-3xl p-10 border border-gray-100">
-      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-        <div>
-          <h2 class="text-2xl font-bold text-[#0d1321] mb-2">Нужен точный расчёт?</h2>
-          <p class="text-gray-600">
-            Отправьте список средств измерений, количество и требования — подготовим коммерческое предложение.
-          </p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-          <a href="{{ url_for('metrology_online_application') }}" class="btn-primary inline-flex items-center justify-center">
-            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-            Оставить заявку
-          </a>
-          <a href="{{ url_for('contacts') }}"
-             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors font-semibold text-[#0d1321]">
-            <i data-lucide="phone" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
-            Связаться
-          </a>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<script src="{{ url_for('static', filename='js/price_list.js') }}"></script>
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы по стоимости</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 920px; margin-left:auto; margin-right:auto;">
+        Поясняем, от чего зависит цена и как получить точный расчёт.
+      </p>
+    </div>
+
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {"q":"Почему нельзя сразу назвать точную цену?", "a":"Стоимость зависит от типа средства измерений, программы работ, количества, требований к документам и срочности. После заявки мы уточняем детали и фиксируем итог."},
+        {"q":"Есть ли скидки на партии?", "a":"Часто да. Для партий мы можем оптимизировать план работ и предложить более выгодные условия."},
+        {"q":"Сколько стоит срочно?", "a":"Ускорение зависит от загрузки и возможности лаборатории. Укажите срочность в заявке — предложим варианты."},
+        {"q":"Что нужно, чтобы быстро рассчитать стоимость?", "a":"Тип/модель СИ, количество, диапазоны/точки, требования к документам и город/логистика. Это можно указать в онлайн-заявке."}
+      ] %}
+
+      {% for item in faq %}
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          {{ item.a }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Точный расчёт</div>
+      <h2 class="h2" style="margin-top:10px;">Хотите точную стоимость под ваш список СИ?</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Оставьте заявку — мы уточним параметры и пришлём расчёт, сроки и список того, что нужно подготовить.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Подать заявку онлайн
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
+          Связаться
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
 
 {% endblock %}

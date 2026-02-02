@@ -53,12 +53,9 @@ def create_app() -> Flask:
     @app.route("/metrology/online-application", methods=["GET", "POST"])
     def metrology_online_application():
         if request.method == "POST":
-            # Пока ничего не отправляем (email/БД подключим позже).
-            # Здесь можно будет: отправка email / запись в БД / телеграм уведомление и т.п.
-            return redirect(url_for("metrology_online_application", success="1"))
-
-        success = request.args.get("success") == "1"
-        return render_template("metrology_online_application.html", title="Онлайн-заявка", success=success)
+            # TODO: обработка формы (письмо/сохранение)
+            return render_template("metrology_online_application.html", title="Онлайн-заявка")
+        return render_template("metrology_online_application.html", title="Онлайн-заявка")
 
     @app.get("/metrology/acceptance-rules")
     def metrology_acceptance_rules():

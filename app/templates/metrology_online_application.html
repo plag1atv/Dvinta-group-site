@@ -1,195 +1,232 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="bg-gradient-to-br from-gray-50 to-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
-        Онлайн-заявка
-      </h1>
-      <p class="text-lg text-gray-600">
-        Заполните форму — мы уточним детали и свяжемся с вами. Чем больше исходных данных, тем точнее сроки и стоимость.
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Заявка</div>
+      <h1 class="h1" style="margin-top:10px;">Онлайн-заявка</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Заполните форму — мы уточним детали и ответим с расчётом сроков и стоимости.
+        Чем подробнее данные, тем точнее будет оценка.
       </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
+          <i data-lucide="receipt" class="w-5 h-5"></i>
+          Прайс-лист
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Контакты
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- STEPS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Шаг 1</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Контакты</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Как с вами связаться и куда отправить расчёт.
+        </p>
+      </div>
 
-    {% if success %}
-    <div class="mb-10 rounded-2xl border border-gray-200 bg-gray-50 p-6">
-      <div class="flex items-start gap-3">
-        <i data-lucide="check-circle-2" class="w-6 h-6 text-[#3e5c76] mt-0.5"></i>
-        <div>
-          <p class="font-semibold text-[#0d1321]">Заявка принята</p>
-          <p class="text-sm text-gray-600 mt-1">
-            Мы получили вашу заявку. В ближайшее время свяжемся с вами для уточнения деталей.
-          </p>
-        </div>
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Шаг 2</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Задача</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Выберите услугу и укажите описание оборудования/СИ.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Шаг 3</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Детали</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Срочность, формат документов, дополнительные требования.
+        </p>
       </div>
     </div>
-    {% endif %}
+  </div>
+</section>
 
-    <div class="grid lg:grid-cols-3 gap-10 items-start">
-
-      <!-- Левая колонка: форма -->
-      <div class="lg:col-span-2 bg-white rounded-3xl border border-gray-200 p-8">
-        <h2 class="text-2xl font-bold text-[#0d1321] mb-2">Заполните данные</h2>
-        <p class="text-sm text-gray-600 mb-8">
-          Поля со звёздочкой обязательны. Мы используем контакты только для связи по заявке.
+<!-- FORM -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:start;">
+      <!-- Left: form -->
+      <div class="card card-pad-lg">
+        <div class="kicker">Форма</div>
+        <h2 class="h2" style="margin-top:10px;">Заполните заявку</h2>
+        <p class="p-lead" style="margin-top:12px;">
+          Поля можно заполнить кратко — главное, чтобы мы понимали тип работ и ваш запрос.
         </p>
 
-        <form id="onlineAppForm" method="post" action="{{ url_for('metrology_online_application') }}" novalidate class="space-y-6">
+        <form method="POST" action="{{ url_for('metrology_online_application') }}" style="margin-top:18px;">
+          <!-- Contacts -->
+          <div class="panel" style="padding:16px; margin-bottom:14px;">
+            <div style="font-weight:900; margin-bottom:10px;">Контактные данные</div>
 
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Имя *</label>
-              <input name="name" id="fName" type="text" required
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="Как к вам обращаться?" />
-              <p class="mt-2 text-xs text-red-600 hidden" data-err-for="fName">Укажите имя</p>
-            </div>
+            <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px;">
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Имя *</label>
+                <input name="name" required
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                       placeholder="Например: Иван" />
+              </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Компания</label>
-              <input name="company" id="fCompany" type="text"
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="ООО / ИП (если есть)" />
-            </div>
-          </div>
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Компания</label>
+                <input name="company"
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                       placeholder="ООО «…»" />
+              </div>
 
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Телефон *</label>
-              <input name="phone" id="fPhone" type="tel" required
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="+7 (___) ___-__-__" />
-              <p class="mt-2 text-xs text-red-600 hidden" data-err-for="fPhone">Укажите телефон (минимум 10 цифр)</p>
-            </div>
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Телефон *</label>
+                <input name="phone" required
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                       placeholder="+7 (___) ___-__-__" />
+              </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-              <input name="email" id="fEmail" type="email" required
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="name@example.com" />
-              <p class="mt-2 text-xs text-red-600 hidden" data-err-for="fEmail">Укажите корректный email</p>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Услуга *</label>
-              <select name="service" id="fService" required
-                      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent bg-white">
-                <option value="">Выберите услугу</option>
-                <option value="verification">Поверка</option>
-                <option value="calibration">Калибровка</option>
-                <option value="type-approval">Утверждение типа</option>
-                <option value="equipment-testing">Испытания оборудования</option>
-                <option value="other">Другое</option>
-              </select>
-              <p class="mt-2 text-xs text-red-600 hidden" data-err-for="fService">Выберите услугу</p>
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Количество (шт)</label>
-              <input name="qty" id="fQty" type="number" min="1" value="1"
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="Например: 5" />
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Email *</label>
+                <input type="email" name="email" required
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                       placeholder="name@company.ru" />
+              </div>
             </div>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Город / Регион</label>
-              <input name="region" id="fRegion" type="text"
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="Например: Москва" />
-            </div>
+          <!-- Service -->
+          <div class="panel" style="padding:16px; margin-bottom:14px;">
+            <div style="font-weight:900; margin-bottom:10px;">Запрос</div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Срочность</label>
-              <select name="urgency" id="fUrgency"
-                      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent bg-white">
-                <option value="normal">Обычная</option>
-                <option value="urgent">Срочно</option>
-                <option value="asap">Как можно быстрее</option>
-              </select>
+            <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px;">
+              <div style="grid-column: 1 / -1;">
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Услуга *</label>
+                <select name="service" required
+                        style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;">
+                  <option value="" selected disabled>Выберите услугу</option>
+                  <option value="verification">Поверка</option>
+                  <option value="calibration">Калибровка</option>
+                  <option value="type_approval">Испытания для утверждения типа</option>
+                  <option value="equipment_testing">Испытания оборудования</option>
+                  <option value="competence">Компетентность (документы/СМК)</option>
+                  <option value="standard_documents">Нормативные документы</option>
+                  <option value="tu_development">Разработка ТУ</option>
+                  <option value="sto_development">Разработка СТО</option>
+                  <option value="other">Другое</option>
+                </select>
+                <div style="margin-top:6px; color: rgba(13,19,33,.60); font-size: 12px; line-height:1.5;">
+                  Если не уверены — выберите “Другое” и опишите задачу.
+                </div>
+              </div>
+
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Количество</label>
+                <input name="quantity"
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                       placeholder="Например: 5" />
+              </div>
+
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Срочность</label>
+                <select name="urgency"
+                        style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;">
+                  <option value="standard" selected>Стандартно</option>
+                  <option value="urgent">Срочно</option>
+                  <option value="date">К определённой дате</option>
+                </select>
+              </div>
+
+              <div style="grid-column: 1 / -1;">
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Описание (модель, диапазоны, особенности) *</label>
+                <textarea name="details" required rows="5"
+                          style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                          placeholder="Например: манометр 0–10 бар, 5 шт, нужно оформить протокол + сроки до 15 числа"></textarea>
+              </div>
+
+              <div style="grid-column: 1 / -1;">
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Требования к документам</label>
+                <input name="docs"
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18);"
+                       placeholder="Например: сертификат / протокол / акт, печать/подпись" />
+              </div>
             </div>
           </div>
 
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Описание заявки *</label>
-            <textarea name="message" id="fMessage" rows="6" required
-                      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                      placeholder="Тип оборудования, модель, диапазоны, требования к документам, дополнительные условия..."></textarea>
-            <p class="mt-2 text-xs text-red-600 hidden" data-err-for="fMessage">Опишите заявку (минимум 10 символов)</p>
-          </div>
+          <!-- Submit -->
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <button class="btn btn-primary" type="submit">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Отправить заявку
+            </button>
 
-          <div class="rounded-2xl border border-gray-200 bg-gray-50 p-5">
-            <div class="flex items-start gap-3">
-              <i data-lucide="shield-check" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-              <p class="text-sm text-gray-600">
-                Нажимая “Отправить”, вы соглашаетесь на обработку персональных данных и получение ответа по указанным контактам.
-              </p>
+            <div style="color: rgba(13,19,33,.60); font-size: 12px; line-height:1.5;">
+              Нажимая “Отправить”, вы соглашаетесь на обработку данных для ответа на запрос.
             </div>
           </div>
-
-          <button type="submit" class="btn-primary inline-flex items-center justify-center w-full">
-            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-            Отправить заявку
-          </button>
-
-          <p id="formTopError" class="text-sm text-red-600 hidden">
-            Проверьте поля формы — есть ошибки.
-          </p>
         </form>
       </div>
 
-      <!-- Правая колонка: подсказки -->
-      <aside class="bg-gray-50 rounded-3xl border border-gray-100 p-8">
-        <h3 class="text-xl font-bold text-[#0d1321] mb-4">Что указать, чтобы мы ответили быстрее</h3>
+      <!-- Right: info -->
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Как мы ответим</div>
+        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Что вы получите</h3>
 
-        <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <i data-lucide="list-checks" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-            <p class="text-sm text-gray-600">Перечень СИ: модель, диапазон, класс точности, количество.</p>
+        <div style="margin-top:14px; display:grid; gap:10px;">
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Оценка сроков</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">С учётом загрузки и типа работ</div>
           </div>
-          <div class="flex items-start gap-3">
-            <i data-lucide="file-text" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-            <p class="text-sm text-gray-600">Какие документы нужны: протокол, сертификат, отметки и т.п.</p>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Оценка стоимости</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Диапазон или точный расчёт после уточнений</div>
           </div>
-          <div class="flex items-start gap-3">
-            <i data-lucide="calendar" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-            <p class="text-sm text-gray-600">Сроки: обычный/срочно/к конкретной дате.</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <i data-lucide="truck" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-            <p class="text-sm text-gray-600">Логистика: доставка, самовывоз, упаковка.</p>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Список подготовки</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Что нужно принести/приложить, чтобы стартовать</div>
           </div>
         </div>
 
-        <div class="mt-8 p-6 rounded-2xl border border-gray-200 bg-white">
-          <p class="font-semibold text-[#0d1321] mb-2">Альтернатива</p>
-          <p class="text-sm text-gray-600 mb-4">Если удобнее — напишите напрямую:</p>
-          <div class="space-y-2 text-sm">
-            <div class="flex items-center gap-2">
-              <i data-lucide="mail" class="w-4 h-4 text-[#3e5c76]"></i>
-              <span class="text-gray-600">info@your-company.ru</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="phone" class="w-4 h-4 text-[#3e5c76]"></i>
-              <span class="text-gray-600">+7 (___) ___-__-__</span>
-            </div>
-          </div>
+        <div style="margin-top:18px;">
+          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_acceptance_rules') }}">
+            Правила приёма и комплектность
+          </a>
         </div>
-      </aside>
-
+      </div>
     </div>
   </div>
 </section>
 
-<script src="{{ url_for('static', filename='js/online_application_validate.js') }}"></script>
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Если удобнее иначе</div>
+      <h2 class="h2" style="margin-top:10px;">Можно связаться напрямую</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Напишите нам или позвоните — мы подскажем, какие данные нужны и как быстрее запустить процесс.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('contacts') }}">
+          Контакты
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('metrology_price_list') }}">
+          Прайс-лист
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

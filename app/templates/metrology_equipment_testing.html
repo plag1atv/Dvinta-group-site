@@ -1,325 +1,282 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="bg-gradient-to-br from-gray-50 to-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
-        Испытания измерительного оборудования
-      </h1>
-      <p class="text-lg text-gray-600">
-        Проводим испытания измерительного оборудования по согласованной программе. Помогаем подготовить материалы,
-        определить состав работ и оформить результаты.
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Испытания</div>
+      <h1 class="h1" style="margin-top:10px;">Испытания оборудования</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Выполняем испытания оборудования по программе, ТЗ или согласованному перечню проверок.
+        Помогаем подготовить комплектность, фиксируем условия и оформляем результаты.
+      </p>
+
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
+          <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+          Правила приёма
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Консультация
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Виды испытаний</div>
+        <h2 class="h2" style="margin-top:8px;">Под разные задачи</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Выберите формат: приёмочные, предварительные, периодические или по ТЗ/программе.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Приёмочные</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Перед вводом в эксплуатацию</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Проверки по перечню требований, подготовка итогового акта/протокола.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Предварительные</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Перед основными работами</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Выявляем слабые места и риски до финальных испытаний.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">По ТЗ / программе</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Под проект</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Согласуем программу, точки, условия, критерии и формат результата.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Процесс</div>
+        <h2 class="h2" style="margin-top:8px;">Как проходят испытания</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Типовая последовательность этапов — чтобы всё было прозрачно и предсказуемо.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:14px;">
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 1</div>
+        <div style="font-weight:900; margin-top:8px;">Согласование</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Уточняем цель, требования, критерии, формат результата.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 2</div>
+        <div style="font-weight:900; margin-top:8px;">Приём</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Проверяем комплектность, состояние, безопасность.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 3</div>
+        <div style="font-weight:900; margin-top:8px;">Испытания</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Выполняем проверки, фиксируем параметры и условия.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 4</div>
+        <div style="font-weight:900; margin-top:8px;">Документы</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Оформляем протокол/акт по согласованному формату.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE NEED -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
+      <div class="card card-pad-lg">
+        <div class="kicker">На старте</div>
+        <h2 class="h2" style="margin-top:10px;">Что нужно для расчёта и старта</h2>
+        <p class="p-lead" style="margin-top:12px;">
+          Минимальный набор данных поможет быстро согласовать программу и сроки.
+        </p>
+
+        <div style="margin-top:18px; display:grid; gap:12px;">
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Цель испытаний</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Приёмочные / по ТЗ / предварительные — и зачем они нужны.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Описание и характеристики</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Модель/модификация, диапазоны, условия, ограничения.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Комплектность</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Датчики, щупы, кабели, питание, ПО/драйверы (если нужно).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:16px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
+              <div>
+                <div style="font-weight:900;">Формат результата</div>
+                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+                  Протокол/акт, перечень параметров, требования к подписи/печати.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
+          <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">Правила приёма</a>
+        </div>
+      </div>
+
+      <div class="card card-pad-lg hover-lift reveal">
+        <div class="kicker">Совет</div>
+        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Что ускоряет испытания</h3>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Самая частая причина задержек — отсутствие части комплектности и неясные критерии “что считать успехом”.
+          Мы снимаем это на этапе согласования.
+        </p>
+
+        <div style="margin-top:14px; display:grid; gap:10px;">
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Укажите критерии</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Допуски/пределы/условия “OK”</div>
+          </div>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Приложите ТЗ</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Или список проверок и параметров</div>
+          </div>
+          <div class="panel" style="padding:14px;">
+            <div style="font-weight:900;">Проверьте питание/ПО</div>
+            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Чтобы тесты не “встали” на старте</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Заполнить онлайн-заявку
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Ответы на популярные вопросы по испытаниям оборудования.
       </p>
     </div>
-  </div>
-</section>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {"q":"Сколько длятся испытания?", "a":"Срок зависит от программы/ТЗ, количества проверок и готовности комплекта. После заявки мы оцениваем план и сроки."},
+        {"q":"Можно ли провести испытания по нашему ТЗ?", "a":"Да. Приложите ТЗ или список параметров/критериев — мы согласуем программу и формат результата."},
+        {"q":"Что чаще всего мешает начать сразу?", "a":"Неполная комплектность (кабели/питание/датчики/ПО) и отсутствие ясных критериев приемки. Уточним это на первом шаге."},
+        {"q":"Какие документы выдаёте по итогам?", "a":"Обычно протокол испытаний и/или акт по согласованному формату с фиксацией условий и результатов."}
+      ] %}
 
-    <div class="grid lg:grid-cols-3 gap-8 mb-14">
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
-          <i data-lucide="flask-conical" class="w-6 h-6 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Программа испытаний</h3>
-        <p class="text-gray-600 text-sm">
-          Согласуем цели, условия, методы и критерии, чтобы результаты были применимы для вашей задачи.
-        </p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
-          <i data-lucide="clipboard-check" class="w-6 h-6 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Контроль и фиксация</h3>
-        <p class="text-gray-600 text-sm">
-          Фиксируем результаты, условия и исходные данные — для воспроизводимости и проверки.
-        </p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="w-12 h-12 bg-[#748cab] bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
-          <i data-lucide="file-text" class="w-6 h-6 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-[#0d1321] mb-3">Оформление результатов</h3>
-        <p class="text-gray-600 text-sm">
-          Подготовим протокол испытаний и сопроводительные документы по согласованному формату.
-        </p>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-12 mb-16">
-      <div>
-        <h2 class="text-3xl font-bold text-[#0d1321] mb-6">Какие испытания выполняем</h2>
-        <p class="text-gray-600 mb-6">
-          Состав испытаний зависит от вида оборудования и цели: предварительная оценка,
-          подтверждение характеристик, подготовка к утверждению типа и т.д.
-        </p>
-
-        <div class="space-y-4">
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Функциональные проверки и подтверждение диапазонов измерений</p>
-          </div>
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Оценка точностных характеристик и стабильности</p>
-          </div>
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Проверки в заданных условиях эксплуатации (по программе)</p>
-          </div>
-          <div class="flex items-start">
-            <div class="w-2 h-2 bg-[#3e5c76] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <p class="text-gray-600">Подготовка к испытаниям для целей утверждения типа (по согласованию)</p>
-          </div>
-        </div>
-
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="{{ url_for('metrology_online_application') }}"
-             class="btn-primary inline-flex items-center justify-center">
-            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
-            Подать заявку онлайн
-          </a>
-          <a href="{{ url_for('contacts') }}"
-             class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors font-semibold text-[#0d1321]">
-            <i data-lucide="message-circle" class="w-5 h-5 mr-2 text-[#3e5c76]"></i>
-            Консультация
-          </a>
+      {% for item in faq %}
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          {{ item.a }}
         </div>
       </div>
-
-      <div class="bg-gray-50 rounded-3xl p-10 border border-gray-100">
-        <h3 class="text-2xl font-bold text-[#0d1321] mb-6">Популярные форматы</h3>
-
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="bg-white rounded-2xl p-6 border border-gray-200">
-            <div class="flex items-center mb-3">
-              <i data-lucide="sparkles" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-              <h4 class="font-semibold text-[#0d1321]">Предварительные</h4>
-            </div>
-            <p class="text-sm text-gray-600">
-              Первичная оценка характеристик и работоспособности, выявление рисков.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl p-6 border border-gray-200">
-            <div class="flex items-center mb-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-              <h4 class="font-semibold text-[#0d1321]">Приёмочные</h4>
-            </div>
-            <p class="text-sm text-gray-600">
-              Подтверждение соответствия заданным требованиям перед внедрением/поставкой.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl p-6 border border-gray-200">
-            <div class="flex items-center mb-3">
-              <i data-lucide="shield-check" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-              <h4 class="font-semibold text-[#0d1321]">Периодические</h4>
-            </div>
-            <p class="text-sm text-gray-600">
-              Регулярные проверки стабильности и сохранения характеристик во времени.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl p-6 border border-gray-200">
-            <div class="flex items-center mb-3">
-              <i data-lucide="clipboard-list" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-              <h4 class="font-semibold text-[#0d1321]">По ТЗ</h4>
-            </div>
-            <p class="text-sm text-gray-600">
-              Испытания по техническому заданию и согласованной программе работ.
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-8 bg-white rounded-2xl border border-gray-200 p-6">
-          <div class="flex items-start gap-3">
-            <i data-lucide="info" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-            <div>
-              <p class="font-semibold text-[#0d1321] mb-1">Важно</p>
-              <p class="text-sm text-gray-600">
-                Для точной оценки стоимости и сроков нужны: тип оборудования, диапазоны, цель испытаний и комплектность.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <section class="bg-white rounded-3xl p-10 lg:p-12 border border-gray-200 mb-16">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Что нужно для старта</h2>
-        <p class="text-gray-600 max-w-3xl mx-auto">
-          Ниже — типовой перечень. Точный состав зависит от цели испытаний и типа оборудования.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-center mb-3">
-            <i data-lucide="package" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-            <h3 class="font-semibold text-[#0d1321]">Образцы</h3>
-          </div>
-          <p class="text-sm text-gray-600">Оборудование, комплектность, ЗИП/аксессуары, маркировка.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-center mb-3">
-            <i data-lucide="book-open" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-            <h3 class="font-semibold text-[#0d1321]">Документация</h3>
-          </div>
-          <p class="text-sm text-gray-600">РЭ/паспорт, ТУ, описание, заявленные характеристики.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-center mb-3">
-            <i data-lucide="clipboard-list" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-            <h3 class="font-semibold text-[#0d1321]">Цель и ТЗ</h3>
-          </div>
-          <p class="text-sm text-gray-600">Для чего нужны испытания: приёмка, подтверждение, разработка и т.п.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-center mb-3">
-            <i data-lucide="settings" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-            <h3 class="font-semibold text-[#0d1321]">Условия</h3>
-          </div>
-          <p class="text-sm text-gray-600">Условия эксплуатации и ограничения (температура, влажность и т.д.).</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-center mb-3">
-            <i data-lucide="calendar" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-            <h3 class="font-semibold text-[#0d1321]">Сроки</h3>
-          </div>
-          <p class="text-sm text-gray-600">Желаемые сроки, срочность, ограничения по графику.</p>
-        </div>
-
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-center mb-3">
-            <i data-lucide="truck" class="w-5 h-5 text-[#3e5c76] mr-2"></i>
-            <h3 class="font-semibold text-[#0d1321]">Логистика</h3>
-          </div>
-          <p class="text-sm text-gray-600">Передача/доставка, упаковка, требования по безопасности.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-gray-50 rounded-3xl p-10 lg:p-12 border border-gray-100">
-      <div class="grid lg:grid-cols-2 gap-10 items-start">
-        <div>
-          <h2 class="text-3xl font-bold text-[#0d1321] mb-4">Запросить консультацию</h2>
-          <p class="text-gray-600 mb-6">
-            Оставьте контакты и коротко опишите оборудование и цель испытаний — мы уточним детали и вернёмся с предложением.
-          </p>
-
-          <!-- Пока без отправки. Потом подключим POST + отправку на email -->
-          <form action="#" method="post" class="space-y-5">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Компания / Имя</label>
-              <input type="text" name="name"
-                     class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                     placeholder="ООО / Контактное лицо" />
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Телефон</label>
-                <input type="tel" name="phone"
-                       class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                       placeholder="+7 (___) ___-__-__" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input type="email" name="email"
-                       class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                       placeholder="name@example.com" />
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Описание</label>
-              <textarea name="message" rows="5"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                        placeholder="Тип оборудования, диапазоны, цель испытаний, количество..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary inline-flex items-center justify-center w-full">
-              <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-              Отправить запрос
-            </button>
-
-            <p class="text-xs text-gray-500">
-              Нажимая “Отправить”, вы соглашаетесь на обработку персональных данных.
-            </p>
-          </form>
-        </div>
-
-        <div class="bg-white rounded-3xl p-8 border border-gray-200">
-          <h3 class="text-xl font-bold text-[#0d1321] mb-4">Что мы уточним</h3>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <i data-lucide="help-circle" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-              <p class="text-sm text-gray-600">
-                Название и тип оборудования, производитель, модель, диапазоны и характеристики.
-              </p>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="help-circle" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-              <p class="text-sm text-gray-600">
-                Цель испытаний: предварительные / приёмочные / периодические / по ТЗ.
-              </p>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="help-circle" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-              <p class="text-sm text-gray-600">
-                Условия эксплуатации и ограничения по срокам, логистика передачи.
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-8 p-6 rounded-2xl border border-gray-200 bg-gray-50">
-            <div class="flex items-start gap-3">
-              <i data-lucide="phone" class="w-5 h-5 text-[#3e5c76] mt-0.5"></i>
-              <div>
-                <p class="font-semibold text-[#0d1321] mb-1">Можно быстрее?</p>
-                <p class="text-sm text-gray-600">
-                  Да. Напишите “срочно” в описании — предложим приоритетный график при наличии возможности.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </div>
-</section>
-
-<section class="py-16 bg-[#1d2d44]">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold text-white mb-4">Нужно испытание по ТЗ?</h2>
-    <p class="text-lg text-white text-opacity-90 mb-8">
-      Оставьте заявку — мы уточним исходные данные и предложим программу испытаний.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="{{ url_for('metrology_online_application') }}"
-         class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold">
-        Подать заявку онлайн
-      </a>
-      <a href="{{ url_for('contacts') }}"
-         class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-semibold">
-        Связаться
-      </a>
+      {% endfor %}
     </div>
   </div>
 </section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Следующий шаг</div>
+      <h2 class="h2" style="margin-top:10px;">Оставьте заявку — согласуем программу испытаний</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Прикрепите ТЗ/программу или опишите требования — мы предложим план, сроки и формат результата.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+          Подать заявку онлайн
+        </a>
+        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
+          Связаться
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
 
 {% endblock %}

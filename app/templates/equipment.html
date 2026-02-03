@@ -157,44 +157,7 @@
 </div>
 
 
-        <div style="padding:18px;">
-          <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
-            <div style="font-weight:900; font-size:16px; line-height:1.25;">{{ item.name }}</div>
-            <div class="panel" style="padding:6px 10px; border-radius: 999px; font-weight:900; font-size:12px;">
-              {{ item.price }} ₽
-            </div>
-          </div>
 
-          <div style="margin-top:12px; display:grid; gap:8px;">
-            <div class="panel" style="padding:12px;">
-              <div style="display:flex; justify-content:space-between; gap:12px;">
-                <div style="font-weight:800;">Диапазон</div>
-                <div style="color: rgba(13,19,33,.72); font-weight:800;">{{ item.range }}</div>
-              </div>
-            </div>
-            <div class="panel" style="padding:12px;">
-              <div style="display:flex; justify-content:space-between; gap:12px;">
-                <div style="font-weight:800;">Точность</div>
-                <div style="color: rgba(13,19,33,.72); font-weight:800;">{{ item.accuracy }}</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px; display:flex; gap:10px;">
-            <a class="btn btn-primary" style="flex:1;" href="{{ url_for('contacts') }}">
-              <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-              Запросить
-            </a>
-            <a class="btn btn-ghost" style="flex:1;" href="{{ url_for('metrology_online_application') }}">
-              <i data-lucide="send" class="w-5 h-5"></i>
-              Заявка
-            </a>
-          </div>
-
-          <div style="margin-top:10px; color: rgba(13,19,33,.55); font-size: 12px; line-height:1.5;">
-            Цена ориентировочная. Итог зависит от модели, комплектации и наличия.
-          </div>
-        </div>
       </div>
       {% endfor %}
     </div>

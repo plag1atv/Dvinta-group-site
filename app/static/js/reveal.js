@@ -4,10 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add("show");
-        io.unobserve(e.target);
-      }
+      if (!e.isIntersecting) continue;
+
+      // поддержка data-delay="0.1s" / "120ms"
+      const delay = e.target.dataset.delay;
+      if (delay) e.target.style.transitionDelay = delay;
+
+      e.target.classList.add("show");
+      io.unobserve(e.target);
     }
   }, { threshold: 0.12 });
 

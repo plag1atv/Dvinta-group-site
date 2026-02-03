@@ -1,20 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="bg-gradient-to-br from-gray-50 to-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#0d1321] mb-6">
-        Измерительное оборудование
-      </h1>
-      <p class="text-lg text-gray-600">
-        Широкий ассортимент измерительного оборудования и средств измерений от ведущих производителей.
-        Гарантия качества и официальная поддержка.
-      </p>
-    </div>
-  </div>
-</section>
-
 {% set categories = [
   {"id":"all", "name":"Все"},
   {"id":"geometric", "name":"Геометрические"},
@@ -26,174 +12,270 @@
 
 {% set equipment = [
   {"id":1, "name":"Штангенциркуль цифровой", "category":"geometric", "range":"0-150 мм", "accuracy":"±0.02 мм", "price":"2 500",
-   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobmljYWwlMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY5MzQ2MTg4fDA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?auto=format&fit=crop&w=1200&q=80"},
   {"id":2, "name":"Микрометр гладкий", "category":"geometric", "range":"0-25 мм", "accuracy":"±0.004 мм", "price":"3 200",
-   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobmljYWwlMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY5MzQ2MTg4fDA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?auto=format&fit=crop&w=1200&q=80"},
   {"id":3, "name":"Манометр образцовый", "category":"pressure", "range":"0-25 МПа", "accuracy":"Класс 0.4", "price":"8 500",
-   "image":"https://images.unsplash.com/photo-1758873263563-5ba4aa330799?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzY5MzQ2MTg3fDA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1758873263563-5ba4aa330799?auto=format&fit=crop&w=1200&q=80"},
   {"id":4, "name":"Термометр цифровой", "category":"temperature", "range":"-50...+300°C", "accuracy":"±0.5°C", "price":"4 800",
-   "image":"https://images.unsplash.com/photo-1614451558153-e4f8fadbbfd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsYWJvcmF0b3J5fGVufDF8fHx8MTc2OTM0NjE4N3ww&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1614451558153-e4f8fadbbfd0?auto=format&fit=crop&w=1200&q=80"},
   {"id":5, "name":"Мультиметр цифровой", "category":"electrical", "range":"Универсальный", "accuracy":"Класс 0.5", "price":"6 500",
-   "image":"https://images.unsplash.com/photo-1767042286381-9587c6a7322a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWxpYnJhdGlvbiUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjkzNDYxODd8MA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1767042286381-9587c6a7322a?auto=format&fit=crop&w=1200&q=80"},
   {"id":6, "name":"Весы лабораторные", "category":"mass", "range":"0-500 г", "accuracy":"±0.01 г", "price":"12 000",
-   "image":"https://images.unsplash.com/photo-1614451558153-e4f8fadbbfd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxtb2Rlcm4lMjBsYWJvcmF0b3J5fGVufDF8fHx8MTc2OTM0NjE4N3ww&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1614451558153-e4f8fadbbfd0?auto=format&fit=crop&w=1200&q=80"},
   {"id":7, "name":"Угломер универсальный", "category":"geometric", "range":"0-360°", "accuracy":"±5'", "price":"5 200",
-   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobmljYWwlMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY5MzQ2MTg4fDA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?auto=format&fit=crop&w=1200&q=80"},
   {"id":8, "name":"Термопара хромель-алюмель", "category":"temperature", "range":"0-1000°C", "accuracy":"Класс 1", "price":"3 800",
-   "image":"https://images.unsplash.com/photo-1758873263563-5ba4aa330799?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzY5MzQ2MTg3fDA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1758873263563-5ba4aa330799?auto=format&fit=crop&w=1200&q=80"},
   {"id":9, "name":"Вакуумметр", "category":"pressure", "range":"0-0.1 МПа", "accuracy":"Класс 1.5", "price":"4 200",
-   "image":"https://images.unsplash.com/photo-1767042286381-9587c6a7322a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWxpYnJhdGlvbiUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjkzNDYxODd8MA&ixlib=rb-4.1.0&q=80&w=1080"},
+   "image":"https://images.unsplash.com/photo-1767042286381-9587c6a7322a?auto=format&fit=crop&w=1200&q=80"},
 ] %}
 
-<section class="py-8 bg-white border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row gap-4">
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Оборудование</div>
+      <h1 class="h1" style="margin-top:10px;">Измерительное оборудование</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Подберём измерительные приборы под задачу, поможем с выбором, характеристиками и сопроводительными документами.
+      </p>
 
-      <div class="flex-1 relative">
-        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
-        <input
-          id="equipmentSearch"
-          type="text"
-          placeholder="Поиск оборудования..."
-          class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent transition-colors"
-        />
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Уточнить наличие/подбор
+        </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
       </div>
-
-      <div class="relative">
-        <i data-lucide="filter" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
-        <select
-          id="equipmentCategory"
-          class="pl-12 pr-8 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent transition-colors appearance-none bg-white min-w-[220px]"
-        >
-          {% for cat in categories %}
-            <option value="{{ cat.id }}">{{ cat.name }}</option>
-          {% endfor %}
-        </select>
-      </div>
-
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- FILTERS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="card reveal" style="padding:18px;">
+      <div style="display:grid; grid-template-columns: 1.2fr .8fr; gap:12px; align-items:center;">
+        <div>
+          <div style="font-weight:900; margin-bottom:8px;">Поиск</div>
+          <div style="position:relative;">
+            <i data-lucide="search" class="w-5 h-5" style="position:absolute; left:12px; top:50%; transform: translateY(-50%); opacity:.6;"></i>
+            <input
+              id="equipmentSearch"
+              type="text"
+              placeholder="Например: манометр, микрометр, термометр…"
+              style="width:100%; padding:12px 12px 12px 42px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+            />
+          </div>
+        </div>
 
-    <div id="equipmentGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
+          <div style="font-weight:900; margin-bottom:8px;">Категория</div>
+          <div style="position:relative;">
+            <i data-lucide="filter" class="w-5 h-5" style="position:absolute; left:12px; top:50%; transform: translateY(-50%); opacity:.6;"></i>
+            <select
+              id="equipmentCategory"
+              style="width:100%; padding:12px 12px 12px 42px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+            >
+              {% for cat in categories %}
+                <option value="{{ cat.id }}">{{ cat.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; color: rgba(13,19,33,.60); font-size: 12px; line-height:1.6;">
+        Подсказка: фильтр работает по названию и категории. Если ничего не найдено — попробуй упростить запрос.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Каталог</div>
+        <h2 class="h2" style="margin-top:8px;">Популярные позиции</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Это примеры ассортимента. Для точного подбора — напишите нам: подскажем аналоги и комплектацию.
+        </p>
+      </div>
+    </div>
+
+    <div id="equipmentGrid" style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
       {% for item in equipment %}
       <div
         data-equip-card
         data-name="{{ item.name|lower }}"
         data-category="{{ item.category }}"
-        class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 group"
+        class="card hover-lift reveal equip-card"
+        data-delay="{{ (loop.index0 % 10) * 60 }}ms"
+        style="overflow:hidden;"
       >
-        <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-          <img
-            src="{{ item.image }}"
-            alt="{{ item.name }}"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        </div>
+        <div class="equip-img">
+  <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy">
+</div>
 
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#0d1321] mb-2">{{ item.name }}</h3>
+<div class="equip-body">
+  <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+    <div class="equip-title">{{ item.name }}</div>
+    <div class="equip-price">{{ item.price }} ₽</div>
+  </div>
 
-          <div class="space-y-2 mb-4">
-            <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Диапазон:</span>
-              <span class="font-medium text-[#0d1321]">{{ item.range }}</span>
-            </div>
-            <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Точность:</span>
-              <span class="font-medium text-[#0d1321]">{{ item.accuracy }}</span>
+  <div class="equip-meta">
+    <div class="equip-row">
+      <b>Диапазон</b>
+      <span>{{ item.range }}</span>
+    </div>
+    <div class="equip-row">
+      <b>Точность</b>
+      <span>{{ item.accuracy }}</span>
+    </div>
+  </div>
+
+  <div class="equip-actions">
+    <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+      <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+      Запросить
+    </a>
+    <a class="btn btn-ghost" href="{{ url_for('metrology_online_application') }}">
+      <i data-lucide="send" class="w-5 h-5"></i>
+      Заявка
+    </a>
+  </div>
+
+  <div class="equip-note">
+    Цена ориентировочная. Итог зависит от модели, комплектации и наличия.
+  </div>
+</div>
+
+
+        <div style="padding:18px;">
+          <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+            <div style="font-weight:900; font-size:16px; line-height:1.25;">{{ item.name }}</div>
+            <div class="panel" style="padding:6px 10px; border-radius: 999px; font-weight:900; font-size:12px;">
+              {{ item.price }} ₽
             </div>
           </div>
 
-          <div class="flex items-center justify-between pt-4 border-t border-gray-200">
-            <div>
-              <p class="text-sm text-gray-600">Цена</p>
-              <p class="text-2xl font-bold text-[#3e5c76]">{{ item.price }} ₽</p>
+          <div style="margin-top:12px; display:grid; gap:8px;">
+            <div class="panel" style="padding:12px;">
+              <div style="display:flex; justify-content:space-between; gap:12px;">
+                <div style="font-weight:800;">Диапазон</div>
+                <div style="color: rgba(13,19,33,.72); font-weight:800;">{{ item.range }}</div>
+              </div>
             </div>
-            <button class="btn-primary">
-              Купить
-            </button>
+            <div class="panel" style="padding:12px;">
+              <div style="display:flex; justify-content:space-between; gap:12px;">
+                <div style="font-weight:800;">Точность</div>
+                <div style="color: rgba(13,19,33,.72); font-weight:800;">{{ item.accuracy }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px;">
+            <a class="btn btn-primary" style="flex:1;" href="{{ url_for('contacts') }}">
+              <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+              Запросить
+            </a>
+            <a class="btn btn-ghost" style="flex:1;" href="{{ url_for('metrology_online_application') }}">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Заявка
+            </a>
+          </div>
+
+          <div style="margin-top:10px; color: rgba(13,19,33,.55); font-size: 12px; line-height:1.5;">
+            Цена ориентировочная. Итог зависит от модели, комплектации и наличия.
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
 
-    <div id="equipmentEmpty" class="text-center py-12 hidden">
-      <p class="text-gray-500">По вашему запросу ничего не найдено</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-[#0d1321] mb-8 text-center">Преимущества покупки у нас</h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl p-8 text-center border border-gray-100">
-        <div class="w-16 h-16 bg-[#748cab] bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <i data-lucide="badge-check" class="w-8 h-8 text-[#3e5c76]"></i>
+    <div id="equipmentEmpty" class="reveal" style="display:none; text-align:center; padding:44px 0;">
+      <div class="card" style="padding:24px;">
+        <div style="font-weight:900; font-size:18px;">Ничего не найдено</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Попробуйте изменить запрос или выбрать другую категорию.
         </div>
-        <h3 class="text-lg font-semibold text-[#0d1321] mb-2">Гарантия качества</h3>
-        <p class="text-sm text-gray-600">
-          Официальная гарантия производителя на все оборудование
-        </p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 text-center border border-gray-100">
-        <div class="w-16 h-16 bg-[#748cab] bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <i data-lucide="banknote" class="w-8 h-8 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-[#0d1321] mb-2">Конкурентные цены</h3>
-        <p class="text-sm text-gray-600">
-          Прямые поставки от производителей и выгодные условия
-        </p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 text-center border border-gray-100">
-        <div class="w-16 h-16 bg-[#748cab] bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <i data-lucide="settings" class="w-8 h-8 text-[#3e5c76]"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-[#0d1321] mb-2">Техническая поддержка</h3>
-        <p class="text-sm text-gray-600">
-          Консультации специалистов и помощь в выборе оборудования
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-[#1d2d44]">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold text-white mb-4">
-      Не нашли нужное оборудование?
-    </h2>
-    <p class="text-lg text-white text-opacity-90 mb-8">
-      Свяжитесь с нами, и мы поможем подобрать необходимое измерительное оборудование
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href="tel:+74951234567"
-        class="bg-white text-[#1d2d44] px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors font-medium"
-      >
-        Позвонить
-      </a>
-      <a
-        href="mailto:info@sevrgroup.ru"
-        class="bg-transparent text-white px-8 py-3 rounded-xl border-2 border-white hover:bg-white hover:text-[#1d2d44] transition-colors font-medium"
-      >
-        Написать email
-      </a>
+<!-- ADVANTAGES -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Преимущества</div>
+        <h2 class="h2" style="margin-top:8px;">Почему удобно покупать у нас</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Подбор под задачу, прозрачные условия и помощь с документами.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Качество</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Официальные поставки</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Работаем с проверенными производителями и поставщиками, помогаем подобрать аналог под ТЗ.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" data-delay="80ms">
+        <div class="kicker">Подбор</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Под задачу и бюджет</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Уточним требования (диапазоны/класс/условия), чтобы не переплачивать и закрыть задачу точно.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" data-delay="160ms">
+        <div class="kicker">Сервис</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Документы и сопровождение</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Поможем с сопроводительной документацией и консультациями по эксплуатации.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- JS для поиска/фильтра -->
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(240,235,216,.85);">Нужен точный подбор?</div>
+      <h2 class="h2" style="margin-top:10px;">Подскажем вариант под вашу задачу</h2>
+      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Напишите, какое оборудование нужно и какие параметры важны — мы предложим подходящий вариант.
+      </p>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Связаться
+        </a>
+        <a class="btn btn-ghost" style="color:#fff; border-color: rgba(240,235,216,.45);" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JS для поиска/фильтра (оставляем как было) -->
 <script src="{{ url_for('static', filename='js/equipment.js') }}"></script>
 
 {% endblock %}

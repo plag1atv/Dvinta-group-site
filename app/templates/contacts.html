@@ -1,125 +1,150 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="bg-gradient-to-br from-gray-50 to-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#111111] mb-6">
-        Контакты
-      </h1>
-      <p class="text-lg text-gray-600">
-        Свяжитесь с нами любым удобным способом. Мы ответим на ваши вопросы и поможем оформить заявку.
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Контакты</div>
+      <h1 class="h1" style="margin-top:10px;">Связаться с нами</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Напишите или позвоните — ответим на вопросы, уточним задачу и подскажем следующий шаг.
       </p>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-3 gap-8">
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: .9fr 1.1fr; gap:18px; align-items:start;">
 
-      <div class="lg:col-span-1 space-y-6">
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-[#3e5c76] bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <i data-lucide="map-pin" class="w-6 h-6 text-[#3e5c76]"></i>
+      <!-- LEFT: CONTACT CARDS -->
+      <div style="display:grid; gap:14px;">
+        <div class="card card-pad hover-lift reveal">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div class="panel" style="padding:10px; border-radius: 14px;">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
             </div>
             <div>
-              <h3 class="font-semibold text-[#111111] mb-1">Адрес</h3>
-              <p class="text-gray-600">
+              <div style="font-weight:900;">Адрес</div>
+              <div style="margin-top:6px; color: rgba(13,19,33,.72); line-height:1.6;">
                 Россия, (уточнить адрес в контенте заказчика)
-              </p>
+              </div>
+              <div style="margin-top:8px; color: rgba(13,19,33,.55); font-size: 12px;">
+                Можно добавить схему проезда / ориентиры
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-[#3e5c76] bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <i data-lucide="phone" class="w-6 h-6 text-[#3e5c76]"></i>
+        <div class="card card-pad hover-lift reveal" data-delay="80ms">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div class="panel" style="padding:10px; border-radius: 14px;">
+              <i data-lucide="phone" class="w-5 h-5"></i>
             </div>
             <div>
-              <h3 class="font-semibold text-[#111111] mb-1">Телефон</h3>
-              <p class="text-gray-600">
-                +7 (___) ___-__-__
-              </p>
-              <p class="text-sm text-gray-500 mt-1">
+              <div style="font-weight:900;">Телефон</div>
+              <div style="margin-top:6px; color: rgba(13,19,33,.72); line-height:1.6;">
+                <a href="tel:+70000000000" style="font-weight:900; color: var(--c-600); text-decoration:none;">
+                  +7 (___) ___-__-__
+                </a>
+              </div>
+              <div style="margin-top:8px; color: rgba(13,19,33,.55); font-size: 12px;">
                 Пн–Пт: 9:00–18:00
-              </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-[#3e5c76] bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <i data-lucide="mail" class="w-6 h-6 text-[#3e5c76]"></i>
+        <div class="card card-pad hover-lift reveal" data-delay="160ms">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div class="panel" style="padding:10px; border-radius: 14px;">
+              <i data-lucide="mail" class="w-5 h-5"></i>
             </div>
             <div>
-              <h3 class="font-semibold text-[#111111] mb-1">Email</h3>
-              <p class="text-gray-600">
-                info@your-company.ru
-              </p>
-              <p class="text-sm text-gray-500 mt-1">
+              <div style="font-weight:900;">Email</div>
+              <div style="margin-top:6px; color: rgba(13,19,33,.72); line-height:1.6;">
+                <a href="mailto:info@your-company.ru" style="font-weight:900; color: var(--c-600); text-decoration:none;">
+                  info@your-company.ru
+                </a>
+              </div>
+              <div style="margin-top:8px; color: rgba(13,19,33,.55); font-size: 12px;">
                 Ответим в течение рабочего дня
-              </p>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <div class="panel reveal" data-delay="240ms" style="padding:16px;">
+          <div style="font-weight:900;">Быстрые действия</div>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Оставить заявку
+            </a>
+            <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
+              <i data-lucide="receipt" class="w-5 h-5"></i>
+              Прайс-лист
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="lg:col-span-2">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-          <h2 class="text-2xl font-bold text-[#111111] mb-6">Напишите нам</h2>
+      <!-- RIGHT: FORM -->
+      <div class="card card-pad-lg reveal" data-delay="120ms">
+        <div class="kicker">Сообщение</div>
+        <h2 class="h2" style="margin-top:10px;">Напишите нам</h2>
+        <p class="p-lead" style="margin-top:12px;">
+          Пока форма без отправки (как и была). На следующем этапе подключим POST и отправку на почту компании.
+        </p>
 
-          <!-- Пока это просто форма без отправки.
-               На следующем этапе подключим POST + отправку на почту компании -->
-          <form method="post" action="#" class="space-y-5">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Имя</label>
-              <input
-                type="text"
-                name="name"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                placeholder="Как к вам обращаться?"
-              />
+        <form method="post" action="#" style="margin-top:18px;">
+          <div class="panel" style="padding:16px; margin-bottom:14px;">
+            <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px;">
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Имя</label>
+                <input name="name"
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+                       placeholder="Как к вам обращаться?" />
+              </div>
+
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Email</label>
+                <input type="email" name="email"
+                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+                       placeholder="name@example.com" />
+              </div>
+
+              <div style="grid-column: 1 / -1;">
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Сообщение</label>
+                <textarea name="message" rows="6"
+                          style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+                          placeholder="Опишите задачу или задайте вопрос…"></textarea>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-              <input
-                type="email"
-                name="email"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                placeholder="name@example.com"
-              />
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Сообщение</label>
-              <textarea
-                name="message"
-                rows="6"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3e5c76] focus:border-transparent"
-                placeholder="Опишите задачу или задайте вопрос…"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="inline-flex items-center justify-center bg-[#3e5c76] hover:bg-[#1d2d44] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-            >
-              <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <button class="btn btn-primary" type="submit">
+              <i data-lucide="send" class="w-5 h-5"></i>
               Отправить
             </button>
-
-            <p class="text-sm text-gray-500">
+            <div style="color: rgba(13,19,33,.60); font-size: 12px; line-height:1.5;">
               Нажимая “Отправить”, вы соглашаетесь на обработку персональных данных.
-            </p>
-          </form>
+            </div>
+          </div>
+        </form>
+
+        <div class="panel" style="padding:14px; margin-top:16px;">
+          <div style="font-weight:900;">Что лучше указать</div>
+          <div style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65;">
+            Тип оборудования/СИ, количество, желаемые сроки и какие документы нужны (протокол/акт/сертификат).
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 {% endblock %}

@@ -124,25 +124,32 @@ body{
 }
 
 /* FAQ (чтобы не выглядело скомкано) */
+.faq-item{
+  border: 1px solid rgba(13,19,33,.12);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background:#fff;
+}
+.faq-btn{
+  width:100%;
+  text-align:left;
+  padding: 18px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:#fff;
+}
+.faq-btn:hover{ background: rgba(116,140,171,.12); }
+.faq-body{
+  padding: 0 20px 18px;
+  color: rgba(13,19,33,.72);
+  line-height:1.65;
+}
+
 
 /* Header dropdown hover (desktop) */
-/* ===== Header dropdown (desktop): анимация + мостик ===== */
-.nav-dd{
-  position: relative;
-}
-
-/* Мостик между названием и выпадашкой */
-.nav-dd::after{
-  content:"";
-  position:absolute;
-  left:0;
-  top:100%;
-  width:100%;
-  height: 12px;
-  background: transparent;
-}
-
-/* Меню: приятная анимация */
+.nav-dd { position: relative; }
 .nav-dd-menu{
   position: absolute;
   left: 0;
@@ -153,36 +160,83 @@ body{
   background: #fff;
   border: 1px solid rgba(13,19,33,.12);
   box-shadow: var(--shadow);
-  z-index: 9999;
 
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(6px);
   pointer-events: none;
   visibility: hidden;
 
-  /* закрытие быстро, но с маленькой задержкой */
+  /* ВАЖНО: закрытие с задержкой */
   transition:
-    opacity .18s ease .12s,
-    transform .18s ease .12s,
-    visibility 0s linear .12s;
+    opacity .18s ease .35s,
+    transform .18s ease .35s,
+    visibility 0s linear .35s;
 }
 
-/* открытие без задержки */
-.nav-dd:hover .nav-dd-menu{
+/* ===== Dropdown: стабилизация hover (мостик) ===== */
+/* ===== Header dropdown (desktop): smoother + no overlap ===== */
+.nav-dd{
+  position: relative;
+}
+
+/* Увеличенный "мостик" между названием и меню
+   (чтобы курсор спокойно доезжал и меню не пропадало) */
+.nav-dd::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+  height: 22px;          /* было 12px — увеличили */
+  background: transparent;
+}
+
+/* Dropdown меню: плавное появление/исчезание + быстрый уход
+   (чтобы не висело и не накладывалось на другое меню) */
+.nav-dd-menu{
+  position: absolute;
+  left: 0;
+  top: calc(100% + 14px);     /* чуть ниже, под мостик */
+  width: 340px;
+  padding: 10px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(13,19,33,.12);
+  box-shadow: var(--shadow);
+  z-index: 9999;
+
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  pointer-events: none;
+  visibility: hidden;
+
+  /* без задержек на закрытие — чтобы не успевало накладываться */
+  transition:
+    opacity .14s ease,
+    transform .14s ease,
+    visibility 0s linear .14s;
+}
+
+/* Открытие: сразу (и по hover, и по фокусу с клавиатуры) */
+.nav-dd:hover .nav-dd-menu,
+.nav-dd:focus-within .nav-dd-menu{
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
   visibility: visible;
 
-  transition-delay: 0s, 0s, 0s;
+  transition:
+    opacity .14s ease,
+    transform .14s ease,
+    visibility 0s linear 0s;
 }
 
-/* Пункты внутри dropdown — чтобы не накладывались */
+/* Пункты внутри dropdown — чтобы точно не накладывались */
 .nav-dd-menu a{
   display: block;
   padding: 10px 12px;
   border-radius: 12px;
-  line-height: 1.2;
+  line-height: 1.25;
   text-decoration: none;
 }
 
@@ -194,7 +248,13 @@ body{
   background: rgba(116,140,171,.10);
 }
 
-
+/* На всякий случай — если у пользователя включено "уменьшение анимаций" */
+@media (prefers-reduced-motion: reduce){
+  .nav-dd-menu{
+    transition: none;
+    transform: none;
+  }
+}
 
 
 /* FAQ polish */

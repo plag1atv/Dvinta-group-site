@@ -1,13 +1,19 @@
 :root{
-  --c-ink: #0d1321;      /* самый тёмный */
-  --c-navy: #1d2d44;     /* тёмно-синий */
-  --c-steel: #3e5c76;    /* основной синий */
-  --c-sky: #748cab;      /* светлый синий */
-  --c-cream: #f0ebd8;    /* фон */
+  --c-ink: #0A1128;     /* основной текст */
+  --c-navy: #001F54;   /* primary */
+  --c-steel: #034078;  /* secondary */
+  --c-sky: #1282A2;    /* accent */
+  --c-cream: #FEFCFB;  /* фон */
 }
 
+
 /* Базовые подстройки под новую тему */
-html, body { background: var(--c-cream); color: var(--c-ink); }
+html, body {
+  background: var(--c-cream);
+  color: var(--c-ink);
+  font-weight: 500;
+}
+
 
 /* Маленький “набор токенов”, чтобы удобно использовать по сайту */
 .bg-primary { background: var(--c-steel); }
@@ -16,7 +22,8 @@ html, body { background: var(--c-cream); color: var(--c-ink); }
 
 .text-primary { color: var(--c-steel); }
 .text-dark { color: var(--c-ink); }
-.text-muted { color: var(--c-navy); opacity: .8; }
+.text-muted { color: rgba(10,17,40,.65); }
+
 
 .border-primary { border-color: var(--c-sky); }
 .ring-primary { --tw-ring-color: var(--c-steel) !important; }

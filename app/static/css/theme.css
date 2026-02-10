@@ -1,14 +1,19 @@
 :root{
-  --c-900:#0d1321;
-  --c-800:#1d2d44;
-  --c-600:#3e5c76;
-  --c-400:#748cab;
-  --c-100:#f0ebd8;
+  /* Основная палитра */
+  --c-900:#0A1128;   /* ОСНОВНОЙ ТЕКСТ */
+  --c-800:#001F54;   /* primary */
+  --c-600:#034078;   /* secondary */
+  --c-400:#1282A2;   /* accent */
+  --c-100:#FEFCFB;   /* ОСНОВНОЙ ФОН */
+
+  /* RGB для теней и rgba */
+  --ink-rgb: 10,17,40;
 
   --radius: 18px;
-  --shadow: 0 10px 30px rgba(13,19,33,.10);
-  --shadow-soft: 0 8px 20px rgba(13,19,33,.08);
+  --shadow: 0 10px 30px rgba(var(--ink-rgb),.12);
+  --shadow-soft: 0 8px 20px rgba(var(--ink-rgb),.08);
 }
+
 
 /* База */
 html, body { height: 100%; }
@@ -33,7 +38,7 @@ body{
 /* Карточки */
 .card{
   background:#fff;
-  border: 1px solid rgba(13,19,33,.12);
+  border: 1px solid rgba(var(--ink-rgb),.12);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
@@ -67,11 +72,11 @@ body{
 
 .btn-ghost{
   background: transparent;
-  border-color: rgba(13,19,33,.18);
+  border-color: rgba(var(--ink-rgb),.18);
   color: var(--c-900);
 }
 .btn-ghost:hover{
-  background: rgba(116,140,171,.14);
+  background: rgba(18,130,162,.14);
 }
 
 /* Текстовые стили */
@@ -95,13 +100,13 @@ body{
 .p-lead{
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(13,19,33,.70);
+  color: rgba(var(--ink-rgb),.70);
 }
 
 /* Блоки с мягким фоном */
 .panel{
-  background: rgba(116,140,171,.14);
-  border: 1px solid rgba(13,19,33,.10);
+  background: rgba(18,130,162,.14);
+  border: 1px solid rgba(var(--ink-rgb),.10);
   border-radius: var(--radius);
 }
 
@@ -125,7 +130,7 @@ body{
 
 /* FAQ (чтобы не выглядело скомкано) */
 .faq-item{
-  border: 1px solid rgba(13,19,33,.12);
+  border: 1px solid rgba(var(--ink-rgb),.12);
   border-radius: var(--radius);
   overflow:hidden;
   background:#fff;
@@ -140,10 +145,10 @@ body{
   gap:12px;
   background:#fff;
 }
-.faq-btn:hover{ background: rgba(116,140,171,.12); }
+.faq-btn:hover{ background: rgba(18,130,162,.12); }
 .faq-body{
   padding: 0 20px 18px;
-  color: rgba(13,19,33,.72);
+  color: rgba(var(--ink-rgb),.72);
   line-height:1.65;
 }
 
@@ -158,7 +163,7 @@ body{
   padding: 10px;
   border-radius: 16px;
   background: #fff;
-  border: 1px solid rgba(13,19,33,.12);
+  border: 1px solid rgba(var(--ink-rgb),.12);
   box-shadow: var(--shadow);
 
   opacity: 0;
@@ -201,7 +206,7 @@ body{
   padding: 10px;
   border-radius: 16px;
   background: #fff;
-  border: 1px solid rgba(13,19,33,.12);
+  border: 1px solid rgba(var(--ink-rgb),.12);
   box-shadow: var(--shadow);
   z-index: 9999;
 
@@ -245,7 +250,7 @@ body{
 }
 
 .nav-dd-menu a:hover{
-  background: rgba(116,140,171,.10);
+  background: rgba(18,130,162,.10);
 }
 
 /* На всякий случай — если у пользователя включено "уменьшение анимаций" */
@@ -276,11 +281,11 @@ body{
 
 .faq-body{
   padding: 14px 20px 18px;            /* добавили верхний отступ */
-  color: rgba(13,19,33,.72);
+  color: rgba(var(--ink-rgb),.72);
   line-height: 1.65;
 
-  background: rgba(116,140,171,.08);  /* мягкий фон в палитре сайта */
-  border-top: 1px solid rgba(13,19,33,.08);
+  background: rgba(18,130,162,.08);  /* мягкий фон в палитре сайта */
+  border-top: 1px solid rgba(var(--ink-rgb),.08);
 }
 
 
@@ -288,7 +293,7 @@ body{
 .equip-card .equip-img {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: rgba(116,140,171,.12);
+  background: rgba(18,130,162,.12);
 }
 .equip-card .equip-img img{
   width:100%;
@@ -320,8 +325,8 @@ body{
   font-size: 14px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(116,140,171,.10);
-  border: 1px solid rgba(13,19,33,.10);
+  background: rgba(18,130,162,.10);
+  border: 1px solid rgba(var(--ink-rgb),.10);
   white-space: nowrap;
 }
 
@@ -336,14 +341,14 @@ body{
   gap:12px;
   padding: 12px 14px;
   border-radius: 16px;
-  background: rgba(116,140,171,.08);
-  border: 1px solid rgba(13,19,33,.08);
+  background: rgba(18,130,162,.08);
+  border: 1px solid rgba(var(--ink-rgb),.08);
 }
 .equip-card .equip-row b{
   font-weight: 900;
 }
 .equip-card .equip-row span{
-  color: rgba(13,19,33,.72);
+  color: rgba(var(--ink-rgb),.72);
   font-weight: 800;
 }
 
@@ -369,5 +374,5 @@ body{
 .equip-card .equip-note{
   font-size: 12px;
   line-height: 1.55;
-  color: rgba(13,19,33,.55);
+  color: rgba(var(--ink-rgb),.55);
 }

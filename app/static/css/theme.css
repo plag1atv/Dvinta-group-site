@@ -22,6 +22,53 @@ body{
   color: var(--c-900);
 }
 
+/* ===== Parallax background: mountains ===== */
+/* Включается классом .has-mountain на <body> */
+body.has-mountain{
+  /* чтобы фон-элемент был виден */
+  background: transparent !important;
+}
+html{
+  background: var(--c-100);
+}
+
+#mountain-bg{
+  position: fixed;
+  left: 0;
+  bottom: -16vh;
+  width: 100%;
+  height: 70vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .38;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+
+  /* SVG слоями (без отдельного файла) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23034078' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23001F54' stop-opacity='.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 420 L160 310 L320 380 L520 240 L720 360 L920 210 L1120 340 L1280 280 L1440 360 L1440 600 L0 600 Z' fill='url(%23g)'/%3E%3Cpath d='M0 470 L220 390 L420 460 L620 340 L820 450 L1020 310 L1220 440 L1440 380 L1440 600 L0 600 Z' fill='%230A1128' opacity='.22'/%3E%3C/svg%3E");
+}
+
+/* Контент поверх гор */
+/*
+  Важно: у шапки должен быть самый высокий z-index,
+  иначе выпадающее меню может "уходить" под контент <main>
+  (создаётся эффект прозрачности и на подменю сложно навести).
+*/
+body.has-mountain header{
+  position: relative;
+  z-index: 10000;
+}
+body.has-mountain main,
+body.has-mountain footer{
+  position: relative;
+  z-index: 1;
+}
+
+
+
 /* Контейнер и секции (чтобы “не было всё рядом”) */
 .container{
   max-width: 1200px;
@@ -184,45 +231,56 @@ body{
   position: relative;
 }
 
-/* Увеличенный "мостик" между названием и меню
-   (чтобы курсор спокойно доезжал и меню не пропадало) */
+/* "Мостик" между названием и меню (чтобы курсор успевал доехать) */
 .nav-dd::after{
   content:"";
   position:absolute;
   left:0;
   top:100%;
-  width:100%;
-  height: 22px;          /* было 12px — увеличили */
+  /*
+    "Мостик" должен перекрывать всю ширину выпадающего меню,
+    иначе при движении курсора по диагонали подменю может закрываться.
+  */
+  width: max(100%, 340px);
+  height: 28px;
   background: transparent;
 }
 
-/* Dropdown меню: плавное появление/исчезание + быстрый уход
-   (чтобы не висело и не накладывалось на другое меню) */
+/* Dropdown меню: читаемый фон + высокий z-index */
 .nav-dd-menu{
   position: absolute;
   left: 0;
-  top: calc(100% + 14px);     /* чуть ниже, под мостик */
+  top: calc(100% + 14px);
   width: 340px;
   padding: 10px;
   border-radius: 16px;
-  background: #fff;
+
+  /* менее прозрачный фон + blur для читабельности */
+  background: rgba(255,255,255,.98);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
   border: 1px solid rgba(var(--ink-rgb),.12);
   box-shadow: var(--shadow);
-  z-index: 9999;
+  z-index: 20000;
 
   opacity: 0;
   transform: translateY(10px) scale(.985);
   pointer-events: none;
   visibility: hidden;
 
-  /* без задержек на закрытие — чтобы не успевало накладываться */
+  /*
+    Небольшая задержка на закрытие помогает "поймать" подменю курсором,
+    если пользователь двигается не идеально по прямой.
+    В состоянии :hover задержка убирается (см. ниже).
+  */
   transition:
-    opacity .14s ease,
-    transform .14s ease,
-    visibility 0s linear .14s;
+    opacity .14s ease .12s,
+    transform .14s ease .12s,
+    visibility 0s linear .26s;
 }
 
-/* Открытие: сразу (и по hover, и по фокусу с клавиатуры) */
+/* Открытие: сразу */
 .nav-dd:hover .nav-dd-menu,
 .nav-dd:focus-within .nav-dd-menu{
   opacity: 1;
@@ -231,10 +289,20 @@ body{
   visibility: visible;
 
   transition:
-    opacity .14s ease,
-    transform .14s ease,
+    opacity .14s ease 0s,
+    transform .14s ease 0s,
     visibility 0s linear 0s;
 }
+
+/* Подзаголовок в пункте меню (чтобы читалось лучше) */
+.nav-dd-sub{
+  display:block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgba(var(--ink-rgb),.65);
+  font-weight: 600;
+}
+
 
 /* Пункты внутри dropdown — чтобы точно не накладывались */
 .nav-dd-menu a{

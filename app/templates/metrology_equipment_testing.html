@@ -4,170 +4,258 @@
 <!-- HERO -->
 <section class="section">
   <div class="container">
-    <div class="panel reveal" style="padding:46px; border-radius:26px;">
-      <div class="kicker">Лаборатория</div>
-      <h1 class="h1" style="margin-top:10px;">Оборудование</h1>
-      <p class="p-lead" style="margin-top:14px; max-width:980px;">
-        Ниже — примеры оборудования и направлений, с которыми мы работаем.
-        Если нужно уточнить возможность работ по конкретной модели — оставьте заявку, мы быстро ответим.
+    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
+      <div class="kicker">Метрология</div>
+      <h1 class="h1" style="margin-top:10px;">Аттестация испытательного оборудования</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Выполняем первичную и периодическую аттестацию испытательного оборудования (ИО).
+        Поможем определить возможность работ по вашей модели, согласовать формат результата и маршрут проведения.
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
         <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
-          Уточнить возможность работ
+          Оставить заявку
         </a>
-        <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
-          <i data-lucide="receipt" class="w-5 h-5"></i>
-          Прайс-лист
+        <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+          Правила приёма
         </a>
         <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
           <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Контакты
+          Консультация
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FILTERS + GRID -->
+<!-- QUICK BENEFITS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Определение</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Что такое ИО</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Испытательное оборудование (ИО) – технические устройства, предназначенные для воспроизведения условий испытаний
+          при экспериментальном определении характеристик объектов.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Суть услуги</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Что такое аттестация</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Аттестация ИО — определение нормированных точностных характеристик, проверка соответствия требованиям
+          нормативно-технической документации и установление пригодности оборудования к эксплуатации.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div class="kicker">Сроки</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">По ТЗ и заявке</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Сроки определяются после анализа заявки и зависят от технического задания заказчика и вида оборудования.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
-        <div class="kicker">Каталог</div>
-        <h2 class="h2" style="margin-top:8px;">Категории оборудования</h2>
-        <p class="p-lead" style="margin-top:10px; max-width:980px;">
-          Нажмите на категорию — карточки отфильтруются. Это просто и удобно.
+        <div class="kicker">Возможности</div>
+        <h2 class="h2" style="margin-top:8px;">Какое оборудование мы аттестуем</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Оказываем услуги по первичной и периодической аттестации испытательного оборудования.
+          Если сомневаетесь по конкретной модели — пришлите данные, мы быстро подскажем маршрут.
         </p>
       </div>
     </div>
 
-    <!-- Filter buttons -->
-    <div class="reveal" style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
-      <button type="button" class="btn btn-ghost" data-eq-filter="all">Все</button>
-      <button type="button" class="btn btn-ghost" data-eq-filter="pressure">Давление</button>
-      <button type="button" class="btn btn-ghost" data-eq-filter="temperature">Температура</button>
-      <button type="button" class="btn btn-ghost" data-eq-filter="electrical">Электрические</button>
-      <button type="button" class="btn btn-ghost" data-eq-filter="mass">Масса/вес</button>
-      <button type="button" class="btn btn-ghost" data-eq-filter="geometry">Геометрия</button>
-      <button type="button" class="btn btn-ghost" data-eq-filter="other">Другое</button>
-    </div>
+    <div class="reveal" style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px;">
+      <div class="card card-pad-lg">
+        <div class="kicker">Перечень</div>
+        <div style="font-weight:900; font-size:18px; margin-top:10px;">Примеры оборудования</div>
+        <ul style="margin-top:12px; padding-left:18px; line-height:1.8; color: rgba(13,19,33,.78);">
+          <li>климатические камеры;</li>
+          <li>термостаты;</li>
+          <li>прессы, испытательные машины, разрывные машины;</li>
+          <li>печи, плиты, сушильные шкафы, холодильные камеры;</li>
+          <li>оборудование для создания специфических условий испытаний;</li>
+          <li>оборудование для испытания грунтов, песка, земли;</li>
+          <li>оборудование для определения жёсткости бетонной смеси;</li>
+          <li>оборудование для испытаний пищевой и нефтегазовой продукции.</li>
+        </ul>
+      </div>
 
-    {% set items = [
-      {"cat":"pressure", "title":"Манометры и датчики давления", "desc":"Поверка/калибровка, проверка диапазонов, оценка отклонений, оформление результатов."},
-      {"cat":"pressure", "title":"Редукторы/линии давления (проверки)", "desc":"Испытания по программе/ТЗ, фиксация условий, протоколирование."},
-      {"cat":"temperature", "title":"Термометры и датчики температуры", "desc":"Работы по согласованной программе, рекомендации по подготовке и комплектности."},
-      {"cat":"temperature", "title":"Термокамеры/термостаты (проверки)", "desc":"Проверки режимов, равномерности/стабильности по согласованию."},
-      {"cat":"electrical", "title":"Мультиметры и измерители", "desc":"Калибровка/оценка характеристик, рекомендации по условиям измерений."},
-      {"cat":"electrical", "title":"Источники питания (испытания)", "desc":"Испытания по ТЗ: режимы, нагрузки, контроль параметров."},
-      {"cat":"mass", "title":"Весы и гиревой инструмент", "desc":"Проверки, рекомендации по условиям эксплуатации и подготовке."},
-      {"cat":"geometry", "title":"Штангенинструмент/микрометры", "desc":"Оценка характеристик и отклонений по согласованной программе."},
-      {"cat":"other", "title":"Оборудование по ТЗ", "desc":"Если у вас нестандартное оборудование — опишите задачу, подскажем маршрут работ."}
-    ] %}
+      <div class="card card-pad-lg hover-lift">
+        <div class="kicker">Поддержка</div>
+        <div style="font-weight:900; font-size:18px; margin-top:10px;">Поможем разобраться</div>
+        <p style="color: rgba(13,19,33,.70); margin-top:12px; line-height:1.7;">
+          Наши специалисты подскажут, возможна ли первичная или периодическая аттестация вашего оборудования,
+          какой набор документов нужен и как организовать передачу/выезд специалиста.
+        </p>
 
-    <div class="reveal" style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;" id="eqGrid">
-      {% for it in items %}
-      <div class="card card-pad hover-lift eq-card" data-eq-cat="{{ it.cat }}">
-        <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
-          <div class="kicker">Категория</div>
-          <span style="font-size:12px; font-weight:900; padding:6px 10px; border-radius:999px; background: rgba(116,140,171,.14); color: var(--c-900);">
-            {{ it.cat }}
-          </span>
+        <div class="panel" style="margin-top:14px; padding:14px;">
+          <div style="font-weight:900;">По запросу</div>
+          <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
+            Возможна разработка методик аттестации испытательного оборудования.
+          </div>
         </div>
 
-        <div style="font-weight:900; font-size:18px; margin-top:10px; color: var(--c-900);">
-          {{ it.title }}
-        </div>
-
-        <div style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          {{ it.desc }}
-        </div>
-
-        <div style="margin-top:14px;">
-          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
-            Уточнить по модели
+        <div style="margin-top:18px;">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+            Уточнить возможность работ
           </a>
         </div>
       </div>
-      {% endfor %}
-    </div>
-
-    <div class="reveal" style="margin-top:16px; color: rgba(13,19,33,.60); font-size: 13px; line-height:1.6;">
-      * Список — примерный. Наличие и возможность работ по конкретной модели уточняются по заявке.
     </div>
   </div>
 </section>
 
-<!-- HOW TO CHOOSE -->
+<!-- WHAT WE NEED FROM YOU -->
 <section class="section">
   <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
-      <div class="card card-pad-lg">
-        <div class="kicker">Подбор</div>
-        <h2 class="h2" style="margin-top:10px;">Как быстро понять, что указать в заявке</h2>
-        <p class="p-lead" style="margin-top:12px;">
-          Мы сможем точнее сказать сроки и стоимость, если вы добавите эти данные.
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Следующий шаг</div>
+        <h2 class="h2" style="margin-top:8px;">Что необходимо от вас</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Ниже — понятная последовательность действий, чтобы запустить аттестацию и получить результат без лишних согласований.
         </p>
+      </div>
+    </div>
 
-        <div style="margin-top:18px; display:grid; gap:12px;">
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Тип / модель / модификация</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Название и основная комплектация.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Количество и состояние</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Партия или единично, есть ли замечания/ремонт.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Требования к документам</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Протокол/сертификат/акт + подпись/печать (если важно).
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
-          <a class="btn btn-ghost" href="{{ url_for('contacts') }}">Задать вопрос</a>
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 1</div>
+        <div style="font-weight:900; margin-top:8px;">Подать заявку</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Отправить на почту или заполнить онлайн-заявку.
         </div>
       </div>
 
-      <div class="card card-pad-lg hover-lift reveal">
-        <div class="kicker">Быстро</div>
-        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Нужна помощь с выбором услуги?</h3>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Если вы не уверены, что вам нужно (поверка/калибровка/испытания) —
-          просто опишите задачу и приложите данные по оборудованию.
-        </p>
-
-        <div style="margin-top:18px;">
-          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
-            Заполнить онлайн-заявку
-          </a>
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 2</div>
+        <div style="font-weight:900; margin-top:8px;">Получить документы</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Проект договора или договор-счёт на выполнение работ.
         </div>
       </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 3</div>
+        <div style="font-weight:900; margin-top:8px;">Оплатить счёт</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Оплата счёта на оказание услуг по аттестации испытательного оборудования.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 4</div>
+        <div style="font-weight:900; margin-top:8px;">Передать оборудование</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Привезти ИО к нам, отправить транспортной компанией или согласовать дату выезда специалиста к вам.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 5</div>
+        <div style="font-weight:900; margin-top:8px;">Забрать ИО и документы</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Получить оборудование и закрывающие документы.
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div class="kicker">Шаг 6</div>
+        <div style="font-weight:900; margin-top:8px;">Подписать закрывающие</div>
+        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
+          Направить нам подписанные вами закрывающие документы.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
+      <a class="btn btn-ghost" href="{{ url_for('contacts') }}">Задать вопрос</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">Вопросы и ответы</div>
+      <h2 class="h2" style="margin-top:8px;">Аттестация испытательного оборудования</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 980px; margin-left:auto; margin-right:auto;">
+        Коротко объясняем определения, сроки и что понадобится для старта.
+      </p>
+    </div>
+
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>Что такое испытательное оборудование?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          Испытательное оборудование (ИО) – технические устройства, предназначенные для воспроизведения условий испытаний
+          при экспериментальном определении характеристик объектов.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>Что такое аттестация испытательного оборудования?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          Аттестация ИО — определение нормированных точностных характеристик испытательного оборудования,
+          их соответствия требованиям нормативно-технической документации и установление пригодности этого оборудования к эксплуатации.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>Какое испытательное оборудование мы можем аттестовать?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          Оказываем услуги по первичной и периодической аттестации:
+          <ul style="margin-top:8px; padding-left:18px; line-height:1.7;">
+            <li>климатических камер;</li>
+            <li>термостатов;</li>
+            <li>прессов, испытательных машин, разрывных машин;</li>
+            <li>печей, плит, сушильных шкафов, холодильных камер;</li>
+            <li>оборудования для создания специфических условий испытаний;</li>
+            <li>оборудования для испытания грунтов, песка, земли;</li>
+            <li>оборудования для определения жёсткости бетонной смеси;</li>
+            <li>оборудования для испытаний пищевой и нефтегазовой продукции.</li>
+          </ul>
+          <div style="margin-top:10px;">
+            По вашему запросу возможна разработка методик аттестации испытательного оборудования.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn>
+          <span>Какие сроки аттестации испытательного оборудования у нас?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
+        </button>
+        <div class="faq-body hidden" data-acc-body>
+          Сроки выполнения аттестации определяются после анализа заявки на аттестацию и зависят от технического задания заказчика.
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -177,9 +265,9 @@
   <div class="container">
     <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
       <div class="kicker" style="color: rgba(240,235,216,.85);">Следующий шаг</div>
-      <h2 class="h2" style="margin-top:10px;">Хотите уточнить по конкретной модели?</h2>
+      <h2 class="h2" style="margin-top:10px;">Оставьте заявку — уточним возможность работ и сроки</h2>
       <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
-        Оставьте заявку — мы быстро скажем, какие работы возможны, сроки и формат результата.
+        Укажите тип/модель оборудования и техническое задание — мы предложим понятный план и формат результата.
       </p>
 
       <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
@@ -193,41 +281,5 @@
     </div>
   </div>
 </section>
-
-<script>
-  // Simple filter (no external libs)
-  (function(){
-    const btns = document.querySelectorAll('[data-eq-filter]');
-    const cards = document.querySelectorAll('.eq-card');
-
-    function setActive(btn){
-      btns.forEach(b => b.classList.remove('btn-primary'));
-      btns.forEach(b => b.classList.add('btn-ghost'));
-      btn.classList.remove('btn-ghost');
-      btn.classList.add('btn-primary');
-    }
-
-    function filter(cat){
-      cards.forEach(c => {
-        const ccat = c.getAttribute('data-eq-cat');
-        const show = (cat === 'all') || (ccat === cat);
-        c.style.display = show ? '' : 'none';
-      });
-    }
-
-    if (btns.length) {
-      setActive(btns[0]);
-      filter('all');
-
-      btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const cat = btn.getAttribute('data-eq-filter');
-          setActive(btn);
-          filter(cat);
-        });
-      });
-    }
-  })();
-</script>
 
 {% endblock %}

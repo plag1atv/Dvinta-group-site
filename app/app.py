@@ -48,7 +48,7 @@ def create_app() -> Flask:
 
     @app.get("/metrology/equipment-testing")
     def metrology_equipment_testing():
-        return render_template("metrology_equipment_testing.html", title="Испытания оборудования")
+        return render_template("metrology_equipment_testing.html", title="Аттестация испытательного оборудования")
 
     @app.route("/metrology/online-application", methods=["GET", "POST"])
     def metrology_online_application():

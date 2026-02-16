@@ -65,49 +65,68 @@
       </a>
     </div>
 
-    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:18px;">
-      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_verification') }}" style="text-decoration:none;">
-        <div class="kicker">Поверка</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Поверка средств измерений</div>
-        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
-          Проверка соответствия и оформление результатов.
-        </div>
-      </a>
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px;">
 
-      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_calibration') }}" style="text-decoration:none;">
-        <div class="kicker">Калибровка</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Калибровка средств измерений</div>
-        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
-          Программа работ и сертификаты по согласованию.
-        </div>
-      </a>
-
-      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_type_approval') }}" style="text-decoration:none;">
-        <div class="kicker">Утверждение типа</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания для утверждения типа</div>
-        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
-          Подготовка документов, организация испытаний, сопровождение.
-        </div>
-      </a>
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_verification') }}" style="text-decoration:none;">
+    <div class="kicker">1. Поверка СИ</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Поверка средств измерений</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Подтверждение соответствия метрологическим требованиям и оформление результатов.
     </div>
+  </a>
 
-    <div style="margin-top:18px; display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:18px;">
-      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_equipment_testing') }}" style="text-decoration:none;">
-        <div class="kicker">Испытания</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания оборудования</div>
-        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
-          Приёмочные / по ТЗ / по программе.
-        </div>
-      </a>
-
-      <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_standard_documents') }}" style="text-decoration:none;">
-        <div class="kicker">Документы</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Нормативные документы</div>
-        <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
-          Перечень стандартов и требований для работ.
-        </div>
-      </a>
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_calibration') }}" style="text-decoration:none;">
+    <div class="kicker">2. Калибровка СИ</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Калибровка средств измерений</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Калибровка по согласованной программе с оформлением документов.
     </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_type_approval') }}" style="text-decoration:none;">
+    <div class="kicker">3. Утверждение типа</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания в целях утверждения типа СИ</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Подготовка документов, организация испытаний и сопровождение процедуры.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_equipment_testing') }}" style="text-decoration:none;">
+    <div class="kicker">4. Аттестация</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Аттестация испытательного оборудования</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проверка характеристик, оформление результатов и сопровождение по требованиям.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('equipment') }}" style="text-decoration:none;">
+    <div class="kicker">5. Оборудование</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Измерительное оборудование (продажа)</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Подбор приборов под задачу, консультация и помощь с документами.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('contacts') }}" style="text-decoration:none;">
+    <div class="kicker">6. Сервис</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Ремонт измерительного оборудования</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Диагностика, ремонт и консультации по восстановлению работоспособности.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('standardization_tu_development') }}" style="text-decoration:none;">
+    <div class="kicker">7. Стандартизация</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">
+      Разработка документов (ТУ, СТО, методики)
+    </div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      ТУ, СТО, методики поверки и калибровки — под требования и задачу заказчика.
+    </div>
+  </a>
+
+</div>
+
   </div>
 </section>
 

@@ -1,9 +1,9 @@
 :root{
-  --c-ink: #0A1128;     /* основной текст */
-  --c-navy: #001F54;   /* primary */
-  --c-steel: #034078;  /* secondary */
-  --c-sky: #1282A2;    /* accent */
-  --c-cream: #FEFCFB;  /* фон */
+  --c-ink: #162B45;    /* основной текст */
+  --c-navy: #182E4B;   /* primary */
+  --c-steel: #17324C;  /* secondary */
+  --c-sky: #0975AE;    /* accent */
+  --c-cream: #FDFEFD;  /* фон */
 }
 
 
@@ -22,7 +22,7 @@ html, body {
 
 .text-primary { color: var(--c-steel); }
 .text-dark { color: var(--c-ink); }
-.text-muted { color: rgba(10,17,40,.65); }
+.text-muted { color: rgba(22,43,69,.65); }
 
 
 .border-primary { border-color: var(--c-sky); }

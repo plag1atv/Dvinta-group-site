@@ -1,13 +1,13 @@
 :root{
   /* Основная палитра */
-  --c-900:#0A1128;   /* ОСНОВНОЙ ТЕКСТ */
-  --c-800:#001F54;   /* primary */
-  --c-600:#034078;   /* secondary */
-  --c-400:#1282A2;   /* accent */
-  --c-100:#FEFCFB;   /* ОСНОВНОЙ ФОН */
+  --c-900:#162B45;   /* ОСНОВНОЙ ТЕКСТ */
+  --c-800:#182E4B;  /* primary */
+  --c-600:#17324C;   /* secondary */
+  --c-400:#0975AE;   /* accent */
+  --c-100:#FDFEFD;   /* ОСНОВНОЙ ФОН */
 
   /* RGB для теней и rgba */
-  --ink-rgb: 10,17,40;
+  --ink-rgb: 22,43,69;
 
   --radius: 18px;
   --shadow: 0 10px 30px rgba(var(--ink-rgb),.12);
@@ -48,7 +48,7 @@ html{
   will-change: transform;
 
   /* SVG слоями (без отдельного файла) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23034078' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23001F54' stop-opacity='.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 420 L160 310 L320 380 L520 240 L720 360 L920 210 L1120 340 L1280 280 L1440 360 L1440 600 L0 600 Z' fill='url(%23g)'/%3E%3Cpath d='M0 470 L220 390 L420 460 L620 340 L820 450 L1020 310 L1220 440 L1440 380 L1440 600 L0 600 Z' fill='%230A1128' opacity='.22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2317324C' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23182E4B' stop-opacity='.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 420 L160 310 L320 380 L520 240 L720 360 L920 210 L1120 340 L1280 280 L1440 360 L1440 600 L0 600 Z' fill='url(%23g)'/%3E%3Cpath d='M0 470 L220 390 L420 460 L620 340 L820 450 L1020 310 L1220 440 L1440 380 L1440 600 L0 600 Z' fill='%23162B45' opacity='.22'/%3E%3C/svg%3E");
 }
 
 /* ===== Background snow (starts under header) ===== */
@@ -177,7 +177,7 @@ body.has-mountain footer{
   color: var(--c-900);
 }
 .btn-ghost:hover{
-  background: rgba(18,130,162,.14);
+  background: rgba(9,117,174,.14);
 }
 
 /* Текстовые стили */
@@ -206,7 +206,7 @@ body.has-mountain footer{
 
 /* Блоки с мягким фоном */
 .panel{
-  background: rgba(18,130,162,.14);
+  background: rgba(9,117,174,.14);
   border: 1px solid rgba(var(--ink-rgb),.10);
   border-radius: var(--radius);
 }
@@ -246,7 +246,7 @@ body.has-mountain footer{
   gap:12px;
   background:#fff;
 }
-.faq-btn:hover{ background: rgba(18,130,162,.12); }
+.faq-btn:hover{ background: rgba(9,117,174,.12); }
 .faq-body{
   padding: 0 20px 18px;
   color: rgba(var(--ink-rgb),.72);
@@ -372,7 +372,7 @@ body.has-mountain footer{
 }
 
 .nav-dd-menu a:hover{
-  background: rgba(18,130,162,.10);
+  background: rgba(9,117,174,.10);
 }
 
 /* На всякий случай — если у пользователя включено "уменьшение анимаций" */
@@ -406,7 +406,7 @@ body.has-mountain footer{
   color: rgba(var(--ink-rgb),.72);
   line-height: 1.65;
 
-  background: rgba(18,130,162,.08);  /* мягкий фон в палитре сайта */
+  background: rgba(9,117,174,.08);  /* мягкий фон в палитре сайта */
   border-top: 1px solid rgba(var(--ink-rgb),.08);
 }
 
@@ -415,7 +415,7 @@ body.has-mountain footer{
 .equip-card .equip-img {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: rgba(18,130,162,.12);
+  background: rgba(9,117,174,.12);
 }
 .equip-card .equip-img img{
   width:100%;
@@ -447,7 +447,7 @@ body.has-mountain footer{
   font-size: 14px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(18,130,162,.10);
+  background: rgba(9,117,174,.10);
   border: 1px solid rgba(var(--ink-rgb),.10);
   white-space: nowrap;
 }
@@ -463,7 +463,7 @@ body.has-mountain footer{
   gap:12px;
   padding: 12px 14px;
   border-radius: 16px;
-  background: rgba(18,130,162,.08);
+  background: rgba(9,117,174,.08);
   border: 1px solid rgba(var(--ink-rgb),.08);
 }
 .equip-card .equip-row b{

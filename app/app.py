@@ -55,7 +55,6 @@ def create_app() -> Flask:
         if request.method == "POST":
             # TODO: обработка формы (письмо/сохранение)
             return render_template("metrology_online_application.html", title="Онлайн-заявка")
-        return render_template("metrology_online_application.html", title="Онлайн-заявка")
 
     @app.get("/metrology/acceptance-rules")
     def metrology_acceptance_rules():

@@ -3,7 +3,13 @@
     <div class="flex justify-between items-center h-20">
       <a href="{{ url_for('home') }}" class="flex items-center">
         <div class="flex items-center">
-          <div class="w-10 h-10 bg-[#3e5c76] rounded-lg flex items-center justify-center text-white font-bold text-lg mr-3">D</div>
+          <img
+            src="{{ url_for('static', filename='img/dvinta_mark_256.png') }}"
+            alt="Двинта"
+            class="w-10 h-10 mr-3"
+            loading="eager"
+            decoding="async"
+          />
           <div>
             <div class="text-lg font-bold text-[#111111]">Двинта</div>
             <div class="text-sm text-gray-600">Метрологический центр</div>

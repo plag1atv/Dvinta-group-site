@@ -26,43 +26,25 @@
       Метрология <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
     </a>
 
-    <div class="nav-dd-menu">
-      <a class="nav-dd-item" href="{{ url_for('metrology_competence') }}">
-        Компетентность
-        <span class="nav-dd-sub">Документы, персонал, методики</span>
-      </a>
+        <div class="nav-dd-menu">
       <a class="nav-dd-item" href="{{ url_for('metrology_verification') }}">
         Поверка
-        <span class="nav-dd-sub">Порядок работ и оформление</span>
       </a>
+
       <a class="nav-dd-item" href="{{ url_for('metrology_calibration') }}">
         Калибровка
-        <span class="nav-dd-sub">Программа работ и сертификаты</span>
       </a>
-      <a class="nav-dd-item" href="{{ url_for('metrology_price_list') }}">
-        Прайс-лист
-        <span class="nav-dd-sub">Ориентировочные цены</span>
-      </a>
-      <a class="nav-dd-item" href="{{ url_for('metrology_type_approval') }}">
-        Испытания для утверждения типа
-        <span class="nav-dd-sub">Подготовка и сопровождение</span>
-      </a>
-      <a class="nav-dd-item" href="{{ url_for('metrology_equipment_testing') }}">
-  Аттестация испытательного оборудования
-  <span class="nav-dd-sub">Первичная и периодическая</span>
-</a>
 
-      <a class="nav-dd-item" href="{{ url_for('metrology_online_application') }}">
-        Онлайн-заявка
-        <span class="nav-dd-sub">Оставить запрос на расчёт</span>
+      <a class="nav-dd-item" href="{{ url_for('metrology_type_approval') }}">
+        Испытания в целях утверждения типа СИ
       </a>
-      <a class="nav-dd-item" href="{{ url_for('metrology_acceptance_rules') }}">
-        Правила приёма
-        <span class="nav-dd-sub">Комплектность, безопасность</span>
+
+      <a class="nav-dd-item" href="{{ url_for('metrology_equipment_testing') }}">
+        Аттестация
       </a>
-      <a class="nav-dd-item" href="{{ url_for('metrology_standard_documents') }}">
-        Нормативные документы
-        <span class="nav-dd-sub">Стандарты и требования</span>
+
+      <a class="nav-dd-item" href="{{ url_for('metrology_competence') }}">
+        Компетентность
       </a>
     </div>
   </div>
@@ -85,6 +67,7 @@
   </div>
 
   <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('equipment') }}">Оборудование</a>
+  <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
   <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('about') }}">О компании</a>
   <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('contacts') }}">Контакты</a>
 </nav>
@@ -98,15 +81,11 @@
           Метрология <i class="w-4 h-4" data-lucide="chevron-down"></i>
         </summary>
         <div class="pl-3 pb-2 space-y-1">
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_competence') }}">Компетентность</a>
           <a class="block py-1 text-gray-600" href="{{ url_for('metrology_verification') }}">Поверка</a>
           <a class="block py-1 text-gray-600" href="{{ url_for('metrology_calibration') }}">Калибровка</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_type_approval') }}">Испытания для утверждения типа</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_equipment_testing') }}">Аттестация испытательного оборудования</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_online_application') }}">Онлайн-заявка</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_acceptance_rules') }}">Правила приема</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_standard_documents') }}">Нормативные документы</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_type_approval') }}">Испытания в целях утверждения типа СИ</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_equipment_testing') }}">Аттестация</a>
+          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_competence') }}">Компетентность</a>
         </div>
       </details>
 
@@ -121,6 +100,7 @@
       </details>
 
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('equipment') }}">Оборудование</a>
+      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('about') }}">О компании</a>
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('contacts') }}">Контакты</a>
 

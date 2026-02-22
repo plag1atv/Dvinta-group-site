@@ -6,10 +6,13 @@
   <div class="container">
     <div class="panel reveal" style="padding:46px; border-radius: 26px;">
       <div class="kicker">Метрология</div>
-      <h1 class="h1" style="margin-top:10px;">Поверка средств измерений</h1>
-      <p class="p-lead" style="margin-top:14px; max-width: 920px;">
-        Выполняем поверку средств измерений с оформлением результатов. Подскажем комплектность,
-        требования к подготовке и поможем пройти процесс без задержек.
+
+      <h1 class="h1" style="margin-top:10px;">
+        Поверка средств измерений в Центре Стандартизации и Метрологии Двинта
+      </h1>
+
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Выполним поверку средств измерений за 5 рабочих дней, включая передачу сведений в ФИФ Аршин. Предоставим свидетельство и протокол поверки СИ.
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -25,352 +28,287 @@
           <i data-lucide="receipt" class="w-5 h-5"></i>
           Прайс-лист
         </a>
+        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Задать вопрос
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUICK BENEFITS -->
+
+<!-- WHAT WE VERIFY -->
+<section class="section">
+  <div class="container">
+    <div class="card card-pad reveal" style="border-radius: 26px;">
+      <h2 class="h2" style="margin-top:8px;">Какие СИ поверяем</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+        ООО «ЦСМ Двинта» аккредитован в национальной системе аккредитации на проведение поверки —
+        <a href="https://pub.fsa.gov.ru/ral" target="_blank" rel="noopener"
+           style="color: var(--c-400); font-weight: 800; text-decoration: none;">
+          смотреть аккредитацию
+        </a>.
+      </p>
+
+      <div class="grid gap-4 md:grid-cols-2" style="margin-top:18px;">
+        <div class="card" style="padding:18px; border-radius: 18px;">
+          <ul style="margin:0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+            <li>геометрических средств измерений</li>
+            <li>механических средств измерений</li>
+            <li>средств измерений параметров потока, расхода, уровня, объёма веществ</li>
+            <li>средств измерений давления и вакуумных измерений</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:18px; border-radius: 18px;">
+          <ul style="margin:0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+            <li>средств измерений физико-химического состава и свойств веществ</li>
+            <li>средств измерений теплофизических и температурных измерений</li>
+            <li>средств измерений времени и частоты</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINES -->
 <section class="section-sm">
   <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+    <div class="grid gap-4 lg:grid-cols-2 reveal">
       <div class="card card-pad hover-lift">
-        <div class="kicker">Сроки</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">До 5 рабочих дней</div>
-<p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-  Стандартный срок поверки, включая передачу сведений в Федеральный информационный фонд.
-  По желанию заказчика возможна ускоренная поверка: 1 день или 2–3 рабочих дня.
-</p>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i data-lucide="timer" class="w-5 h-5" style="color: var(--c-400);"></i>
+          <div style="font-weight:900; font-size:18px;">Какие сроки поверки СИ и передачи сведений у нас?</div>
+        </div>
+        <p class="text-muted" style="margin-top:10px; line-height:1.7;">
+          Стандартные сроки поверки СИ, включая передачу сведений в Федеральный информационный фонд
+          по обеспечению единства измерений, — не более 5 рабочих дней.
+        </p>
       </div>
 
       <div class="card card-pad hover-lift">
-        <div class="kicker">Подготовка</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Подскажем требования</div>
-<p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-  Уточним комплектность, маркировку и условия приёма — чтобы снизить риск отказа и задержек.
-</p>
-      </div>
-
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Документы</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Результаты поверки</div>
-<p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-  Подтверждаем результаты сведениями в ФИФ по обеспечению единства измерений и оформляем документы по запросу.
-</p>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i data-lucide="zap" class="w-5 h-5" style="color: var(--c-400);"></i>
+          <div style="font-weight:900; font-size:18px;">Ускоренные сроки по желанию заказчика</div>
+        </div>
+        <ul style="margin:10px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+          <li>1 рабочий день</li>
+          <li>2–3 рабочих дней</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <!-- WHAT WE NEED FROM YOU -->
 <section class="section">
   <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-      <div>
-        <div class="kicker">Следующий шаг</div>
-        <h2 class="h2" style="margin-top:8px;">Что необходимо от вас</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 900px;">
-          Ниже — понятная последовательность действий, чтобы быстро запустить поверку и получить результат без лишних согласований.
-        </p>
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">Процесс</div>
+      <h2 class="h2" style="margin-top:8px;">Что необходимо от вас?</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 920px; margin-left:auto; margin-right:auto;">
+        Короткий и понятный путь: заявка → документы → поверка → выдача → закрывающие.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2 reveal" style="margin-top:22px;">
+      <div class="card card-pad hover-lift">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">1</div>
+          <div>
+            <div style="font-weight:900;">Заявка</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Заполнить онлайн-заявку</li>
+              <li>Отправить заявку на <a href="mailto:info@csmdvinta.ru" style="color: var(--c-400); font-weight: 800; text-decoration:none;">info@csmdvinta.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">2</div>
+          <div>
+            <div style="font-weight:900;">Документы</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Согласовать и подписать проект договора</li>
+              <li>Согласовать договор-счёт</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">3</div>
+          <div>
+            <div style="font-weight:900;">Счёт</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Оплатить счёт на оказание услуг</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">4</div>
+          <div>
+            <div style="font-weight:900;">Доставка СИ или выездные работы</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Доставить самостоятельно</li>
+              <li>Отправить СИ транспортной компанией</li>
+              <li>Согласовать дату выезда инженера к Вам</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">5</div>
+          <div>
+            <div style="font-weight:900;">Оповещение</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>По завершению работ отправим уведомление о готовности СИ к выдаче</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">6</div>
+          <div>
+            <div style="font-weight:900;">Отправка СИ</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Забрать самостоятельно</li>
+              <li>Отправить к нам транспортную компанию</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad hover-lift md:col-span-2">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 36px; text-align:center;">7</div>
+          <div>
+            <div style="font-weight:900;">Закрывающие документы</div>
+            <ul style="margin:8px 0 0; padding-left: 18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Подписать и отправить закрывающие документы нам</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 1</div>
-        <div style="font-weight:900; margin-top:8px;">Подать заявку</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Отправить на почту или заполнить онлайн-заявку.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 2</div>
-        <div style="font-weight:900; margin-top:8px;">Получить документы</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Проект договора или договор-счёт на выполнение работ.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 3</div>
-        <div style="font-weight:900; margin-top:8px;">Оплатить счёт</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Оплата счёта на оказание услуг по поверке СИ.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 4</div>
-        <div style="font-weight:900; margin-top:8px;">Передать СИ</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Привезти к нам или отправить транспортной компанией (ТК).
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 5</div>
-        <div style="font-weight:900; margin-top:8px;">Ожидать выполнение</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          До 5 рабочих дней (или быстрее при срочности). Мы сообщим о готовности.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 6</div>
-        <div style="font-weight:900; margin-top:8px;">Забрать СИ</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Получить СИ и закрывающие документы.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 7</div>
-        <div style="font-weight:900; margin-top:8px;">Подписать закрывающие</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Направить нам подписанные вами закрывающие документы.
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
-      <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">Правила приёма</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- WHAT TO PREPARE -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
-      <div class="card card-pad-lg">
-        <div class="kicker">Подготовка</div>
-        <h2 class="h2" style="margin-top:10px;">Что подготовить перед сдачей</h2>
-        <p class="p-lead" style="margin-top:12px;">
-          Чем лучше подготовлен комплект — тем меньше риск задержек и дополнительных согласований.
-        </p>
-
-        <div style="margin-top:18px; display:grid; gap:12px;">
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Маркировка и серийный номер</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Должны быть читаемыми и совпадать с заявкой/паспортом.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Комплектность</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Датчики, щупы, кабели, блок питания — всё, что нужно для проверки.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Чистота и безопасность</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Без утечек и загрязнений, безопасно для персонала.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
-          <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">Смотреть правила приёма</a>
-        </div>
-      </div>
-
-      <div class="card card-pad-lg hover-lift reveal">
-        <div class="kicker">Подсказка</div>
-        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Что часто забывают</h3>
-
-        <div style="margin-top:14px; display:grid; gap:10px;">
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Питание / адаптеры</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Без них часть проверок невозможна</div>
-          </div>
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Аксессуары/датчики</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Если они требуются по методике</div>
-          </div>
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Описание особенностей</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">История ремонта / ограничения / замечания</div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px;">
-          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
-            Заполнить онлайн-заявку
-          </a>
-        </div>
-      </div>
-
+    <div class="reveal" style="margin-top:18px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+        <i data-lucide="send" class="w-5 h-5"></i>
+        Заполнить онлайн-заявку
+      </a>
+      <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+        Написать на почту
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <!-- FAQ -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="text-align:center;">
-      <div class="kicker">Вопросы и ответы</div>
-      <h2 class="h2" style="margin-top:8px;">Поверка средств измерений</h2>
-      <p class="p-lead" style="margin-top:10px; max-width: 900px; margin-left:auto; margin-right:auto;">
-        Собрали ключевые определения, требования и порядок оформления результатов.
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Вопросы и ответы</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 920px; margin-left:auto; margin-right:auto;">
+        Собрали ответы на самые частые вопросы по поверке средств измерений.
       </p>
     </div>
 
     <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {
+          "q":"Что такое средство измерений?",
+          "a":"Средство измерений (СИ) — техническое средство, предназначенное для измерений."
+        },
+        {
+          "q":"Какие требования существуют к средствам измерений?",
+          "a":"К применению в сфере государственного регулирования обеспечения единства измерений допускаются СИ утвержденного типа, прошедшие поверку. Сведения об утвержденном типе можно проверить в ФГИС «АРШИН» (раздел МИТС)."
+        },
+        {
+          "q":"Что такое поверка СИ?",
+          "a":"Поверка СИ — совокупность операций, выполняемых в целях подтверждения соответствия СИ метрологическим требованиям."
+        },
+        {
+          "q":"Какие СИ необходимо поверять?",
+          "a":"Средства измерений, предназначенные для применения в сфере государственного регулирования обеспечения единства измерений, до ввода в эксплуатацию подлежат первичной поверке, а в процессе эксплуатации и после ремонта — периодической поверке. Юридические лица и индивидуальные предприниматели, использующие СИ в сфере государственного регулирования, обязаны своевременно представлять эти СИ на поверку."
+        },
+        {
+          "q":"Как подтверждаются результаты поверки средств измерений?",
+          "a":"Результаты поверки подтверждаются сведениями, включёнными в Федеральный информационный фонд по обеспечению единства измерений (ФИФ). По заявлению владельца СИ возможно нанесение знака поверки; выдача свидетельства о поверке или извещения о непригодности; внесение записи в паспорт (формуляр) о проведенной поверке."
+        }
+      ] %}
 
+      {% for item in faq %}
       <div class="faq-item">
         <button type="button" class="faq-btn" data-acc-btn>
-          <span>Что такое средство измерений?</span>
+          <span>{{ item.q }}</span>
           <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
         </button>
         <div class="faq-body hidden" data-acc-body>
-          Средство измерений (СИ) – техническое средство, предназначенное для измерений.
+          {{ item.a }}
+          {% if loop.index == 2 %}
+            <div style="margin-top:10px;">
+              <a href="https://fgis.gost.ru/fundmetrology/cm/mits" target="_blank" rel="noopener"
+                 style="color: var(--c-400); font-weight: 800; text-decoration:none;">
+                Открыть ФГИС «АРШИН» (МИТС)
+              </a>
+            </div>
+          {% endif %}
+          {% if loop.index == 5 %}
+            <div style="margin-top:10px;">
+              <a href="https://fgis.gost.ru/fundmetrology/cm/results" target="_blank" rel="noopener"
+                 style="color: var(--c-400); font-weight: 800; text-decoration:none;">
+                Проверить результаты поверки в ФИФ
+              </a>
+            </div>
+          {% endif %}
         </div>
       </div>
+      {% endfor %}
+    </div>
 
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Какие требования существуют к средствам измерений?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          К применению в сфере государственного регулирования обеспечения единства измерений допускаются СИ
-          <a href="https://fgis.gost.ru/fundmetrology/cm/mits" target="_blank" rel="noopener">утверждённого типа</a>,
-          прошедшие поверку.
-          <div style="margin-top:8px; color: rgba(13,19,33,.70);">
-            Нормативная база: Федеральный закон № 102-ФЗ
-            (<a href="https://pravo.gov.ru/proxy/ips/?docbody=&nd=102122832" target="_blank" rel="noopener">официальный текст</a>).
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Что такое поверка СИ?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          Поверка СИ – совокупность операций, выполняемых в целях подтверждения соответствия СИ метрологическим требованиям.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Какие СИ необходимо поверять?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          Средства измерений, предназначенные для применения в сфере государственного регулирования обеспечения единства измерений,
-          до ввода в эксплуатацию подлежат первичной поверке, а в процессе эксплуатации и после ремонта – периодической поверке.
-          Юридические лица и индивидуальные предприниматели, использующие СИ в сфере государственного регулирования, обязаны своевременно
-          представлять эти СИ на поверку.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Какие СИ можем поверять мы?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          Поверку СИ осуществляют аккредитованные в национальной системе аккредитации юридические лица и индивидуальные предприниматели.
-          ООО «ЦСМ Двинта» аккредитован в национальной системе аккредитации на проведение поверки
-          (<a href="https://pub.fsa.gov.ru/ral" target="_blank" rel="noopener">реестр аккредитованных лиц</a>)
-          по направлениям:
-          <ul style="margin-top:10px; padding-left:18px; line-height:1.7;">
-            <li>геометрических средств измерений;</li>
-            <li>механических средств измерений;</li>
-            <li>средств измерений параметров потока, расхода, уровня, объёма веществ;</li>
-            <li>средств измерений давления и вакуумных измерений;</li>
-            <li>средств измерений физико-химического состава и свойств веществ;</li>
-            <li>средств измерений теплофизических и температурных измерений;</li>
-            <li>средств измерений времени и частоты.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Как подтверждаются результаты поверки средств измерений?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          Результаты поверки средств измерений подтверждаются сведениями, включёнными в Федеральный информационный фонд по обеспечению единства измерений
-          (<a href="https://fgis.gost.ru/fundmetrology/cm/results" target="_blank" rel="noopener">проверить результат</a>).
-          <div style="margin-top:10px;">По заявлению владельца СИ (лица, представившего его на поверку) возможно:</div>
-          <ul style="margin-top:8px; padding-left:18px; line-height:1.7;">
-            <li>нанесение на СИ знака поверки;</li>
-            <li>выдача свидетельства о поверке СИ или извещения о непригодности к применению СИ;</li>
-            <li>внесение записи в паспорт (формуляр) о проведённой поверке.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Какие сроки поверки СИ и передачи сведений у нас?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          Стандартные сроки поверки СИ, включая передачу сведений в Федеральный информационный фонд по обеспечению единства измерений, — не более 5 рабочих дней.
-          По желанию заказчика сроки могут быть сокращены до:
-          <ul style="margin-top:8px; padding-left:18px; line-height:1.7;">
-            <li>1 рабочего дня;</li>
-            <li>2–3 рабочих дней.</li>
-          </ul>
-        </div>
-      </div>
-
+    <div class="reveal" style="margin-top:14px; text-align:center;">
+      <a class="btn btn-ghost" href="{{ url_for('metrology_standard_documents') }}">
+        <i data-lucide="book-open" class="w-5 h-5"></i>
+        Нормативные документы и стандарты
+      </a>
     </div>
   </div>
 </section>
-
 
 <!-- CTA -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
-      <div class="kicker" style="color: rgba(240,235,216,.85);">Следующий шаг</div>
-      <h2 class="h2" style="margin-top:10px;">Оставьте заявку — уточним срок и комплектность</h2>
-      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 900px; margin-left:auto; margin-right:auto;">
-        Укажите тип прибора и количество — мы свяжемся и предложим план работ.
-      </p>
+      <div class="kicker" style="color: rgba(253,254,253,.85);">Готовы начать?</div>
+      <h2 class="h2" style="margin-top:8px;">Оставьте заявку - мы свяжемся с вами в течение часа</h2>
 
-      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
-          Подать заявку онлайн
+      <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}" style="background:#fff; color: var(--c-800); border-color:#fff;">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
         </a>
-        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
-          Связаться
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru" style="border-color: rgba(255,255,255,.35); color:#fff;">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
         </a>
       </div>
     </div>
   </div>
 </section>
-
-<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
 
 {% endblock %}

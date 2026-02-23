@@ -6,10 +6,15 @@
   <div class="container">
     <div class="panel reveal" style="padding:46px; border-radius: 26px;">
       <div class="kicker">Метрология</div>
-      <h1 class="h1" style="margin-top:10px;">Калибровка средств измерений</h1>
-      <p class="p-lead" style="margin-top:14px; max-width: 920px;">
-        Калибровка — это определение метрологических характеристик СИ и оценка отклонений по согласованной программе.
-        Подберём формат результата (сертификат/протокол), уточним условия и поможем подготовить комплект.
+
+      <h1 class="h1" style="margin-top:10px;">
+        Калибровка средств измерений в Центре Стандартизации и Метрологии Двинта
+      </h1>
+
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        Выполним калибровку средств измерений за <b>5 рабочих дней</b>.<br>
+        Калибруем СИ по техническим заданиям, работаем с чертежами и спецификациями.
+        Предоставляем <b>сертификат калибровки</b> с действительными значениями.
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -17,233 +22,243 @@
           <i data-lucide="send" class="w-5 h-5"></i>
           Оставить заявку
         </a>
+        <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
+          <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+          Правила приёма
+        </a>
         <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
           <i data-lucide="receipt" class="w-5 h-5"></i>
           Прайс-лист
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY ADVANTAGES -->
+<section class="section-sm">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Сроки</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">До 5 рабочих дней</div>
+        <p style="color: rgba(var(--ink-rgb), .72); margin-top:10px; line-height:1.7;">
+          Стандартный срок выполнения работ — не более 5 рабочих дней.
+          По согласованию возможно ускорение: 1 день или 2–3 рабочих дня.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Работаем по ТЗ</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Чертежи и спецификации</div>
+        <p style="color: rgba(var(--ink-rgb), .72); margin-top:10px; line-height:1.7;">
+          Калибруем СИ по техническим заданиям заказчика, учитываем особенности изделий и условий эксплуатации.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Документы</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Сертификат калибровки</div>
+        <p style="color: rgba(var(--ink-rgb), .72); margin-top:10px; line-height:1.7;">
+          Выдаём сертификат калибровки с действительными значениями.
+          При необходимости — протокол калибровки.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE CALIBRATE -->
+<section class="section">
+  <div class="container">
+    <div class="card card-pad reveal" style="border-radius: 26px;">
+      <div class="kicker">Область работ</div>
+      <h2 class="h2" style="margin-top:8px;">Что калибруем мы?</h2>
+
+      <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+        ООО «ЦСМ Двинта» оказывает комплексные и профессиональные услуги по калибровке средств измерений,
+        средств контроля, испытательного и вспомогательного оборудования.
+        Специалисты нашей организации выполняют операции для определения действительных значений характеристик СИ,
+        что гарантирует корректную работу и соответствие стандартам и техническим заданиям заказчиков.
+      </p>
+
+      <div class="grid gap-4 md:grid-cols-2" style="margin-top:18px;">
+        <div class="card" style="padding:18px; border-radius: 18px;">
+          <div style="font-weight:900; margin-bottom:10px;">Область признания компетентности (РСК)</div>
+          <ul style="margin:0; padding-left:18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+            <li>средства измерений геометрических величин</li>
+            <li>средства измерений механических величин</li>
+            <li>средства измерений параметров потока, расхода, уровня, объёма веществ</li>
+            <li>средства измерений давления и вакуумных измерений</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:18px; border-radius: 18px;">
+          <div style="font-weight:900; margin-bottom:10px;">Также выполняем калибровку</div>
+          <ul style="margin:0; padding-left:18px; line-height: 1.85; color: rgba(var(--ink-rgb), .85);">
+            <li>средства измерений физико-химического состава и свойств веществ</li>
+            <li>средства измерений теплофизических и температурных измерений</li>
+            <li>средства измерений времени и частоты</li>
+          </ul>
+
+          <div style="margin-top:14px; padding:12px 14px; border-radius: 16px; background: rgba(9,117,174,.08); border: 1px solid rgba(9,117,174,.18); color: rgba(var(--ink-rgb), .86);">
+            <b>Нестандартные СИ?</b> Разработаем индивидуальную методику калибровки под ваше ТЗ.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS + RESULTS -->
+<section class="section">
+  <div class="container">
+    <div class="grid gap-4 md:grid-cols-2">
+      <div class="card card-pad hover-lift reveal" style="border-radius: 26px;">
+        <div class="kicker">Как мы калибруем</div>
+        <h2 class="h2" style="margin-top:8px;">Методики и инструкции</h2>
+        <p class="p-lead" style="margin-top:10px;">
+          Выполняем калибровку по методикам (методам) измерений, инструкциям, методикам поверки и калибровки,
+          учитывая техническое задание заказчика.
+        </p>
+        <ul style="margin-top:14px; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .82);">
+          <li>согласование программы и точек</li>
+          <li>проведение операций и фиксация значений</li>
+          <li>подготовка результата в согласованном формате</li>
+        </ul>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 26px;">
+        <div class="kicker">Результаты</div>
+        <h2 class="h2" style="margin-top:8px;">Как оформляются документы</h2>
+        <p class="p-lead" style="margin-top:10px;">
+          По завершению работ оформляется сертификат калибровки с уникальным номером и информацией о СИ,
+          методике, полученных действительных значениях, а также эталонах и средствах измерений.
+        </p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <span style="display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background: rgba(var(--ink-rgb),.04); border: 1px solid rgba(var(--ink-rgb),.10); font-weight:800;">
+            <i data-lucide="badge-check" class="w-4 h-4" style="color: var(--c-400);"></i>Сертификат
+          </span>
+          <span style="display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background: rgba(var(--ink-rgb),.04); border: 1px solid rgba(var(--ink-rgb),.10); font-weight:800;">
+            <i data-lucide="file-text" class="w-4 h-4" style="color: var(--c-400);"></i>Протокол (по запросу)
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-pad reveal" style="border-radius: 26px; margin-top:16px;">
+      <div class="kicker">Сроки</div>
+      <h2 class="h2" style="margin-top:8px;">Какие сроки выполнения калибровки у нас?</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+        Стандартные сроки выполнения работ по калибровки — <b>не более 5 рабочих дней</b>.
+        По желанию заказчика сроки могут быть сокращены.
+      </p>
+
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <span style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background: rgba(9,117,174,.10); border: 1px solid rgba(9,117,174,.22); font-weight:900;">
+          <i data-lucide="zap" class="w-4 h-4" style="color: var(--c-400);"></i>1 рабочий день
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background: rgba(9,117,174,.10); border: 1px solid rgba(9,117,174,.22); font-weight:900;">
+          <i data-lucide="timer" class="w-4 h-4" style="color: var(--c-400);"></i>2–3 рабочих дней
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background: rgba(9,117,174,.10); border: 1px solid rgba(9,117,174,.22); font-weight:900;">
+          <i data-lucide="calendar-check" class="w-4 h-4" style="color: var(--c-400);"></i>до 5 рабочих дней
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE NEED -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Запуск работ</div>
+        <h2 class="h2" style="margin-top:8px;">Что необходимо от Вас?</h2>
+        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
+          Порядок действий — по шагам. Так быстрее согласуем и выполним калибровку.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Заявка</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Подайте заявку</div>
+        <ul style="margin-top:10px; color: rgba(var(--ink-rgb), .75); line-height:1.7; padding-left:18px;">
+          <li>Заполнить онлайн-заявку</li>
+          <li>Отправить на <a href="mailto:info@csmdvinta.ru" style="color: var(--c-400); font-weight: 800; text-decoration:none;">info@csmdvinta.ru</a></li>
+        </ul>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Документы</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Согласование</div>
+        <ul style="margin-top:10px; color: rgba(var(--ink-rgb), .75); line-height:1.7; padding-left:18px;">
+          <li>Согласовать и подписать проект договора</li>
+          <li>Согласовать договор-счёт</li>
+        </ul>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Счёт</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Оплата</div>
+        <ul style="margin-top:10px; color: rgba(var(--ink-rgb), .75); line-height:1.7; padding-left:18px;">
+          <li>Оплатить счёт на оказание услуг</li>
+        </ul>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Доставка / выезд</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Передача СИ</div>
+        <ul style="margin-top:10px; color: rgba(var(--ink-rgb), .75); line-height:1.7; padding-left:18px;">
+          <li>Доставить самостоятельно</li>
+          <li>Отправить транспортной компанией</li>
+          <li>Согласовать дату выезда инженера</li>
+        </ul>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Оповещение</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Готовность</div>
+        <p style="margin-top:10px; color: rgba(var(--ink-rgb), .72); line-height:1.7;">
+          По завершению работ отправим уведомление о готовности СИ к выдаче.
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal" style="border-radius: 22px;">
+        <div class="kicker">Получение</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Отправка / самовывоз</div>
+        <ul style="margin-top:10px; color: rgba(var(--ink-rgb), .75); line-height:1.7; padding-left:18px;">
+          <li>Забрать самостоятельно</li>
+          <li>Отправить к нам транспортную компанию</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card card-pad reveal" style="border-radius: 26px; margin-top:16px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Финиш</div>
+        <div style="font-weight:900; font-size:18px; margin-top:8px;">Закрывающие документы</div>
+        <div style="margin-top:8px; color: rgba(var(--ink-rgb), .72); line-height:1.7;">
+          Подписать и отправить закрывающие документы нам.
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Заполнить онлайн-заявку
+        </a>
         <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Консультация
+          Связаться
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUICK BENEFITS -->
-<section class="section-sm">
-  <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Сроки</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">До 5 рабочих дней</div>
-<p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-  Стандартный срок выполнения калибровки — не более 5 рабочих дней.
-  По желанию заказчика возможна срочная калибровка: 1 день или 2–3 рабочих дня.
-</p>
-      </div>
-
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Результат</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">По ТЗ и методикам</div>
-<p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-  Выполняем калибровку по инструкциям и методикам поверки/калибровки с учётом технического задания заказчика.
-  Для нестандартных СИ разработаем индивидуальную методику.
-</p>
-
-      </div>
-
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Точность</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Документы по итогам</div>
-<p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-  Оформляем сертификат калибровки с уникальным номером и результатами.
-  При необходимости подготовим протокол калибровки.
-</p>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<!-- WHAT WE NEED FROM YOU -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-      <div>
-        <div class="kicker">Следующий шаг</div>
-        <h2 class="h2" style="margin-top:8px;">Что необходимо от вас</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 900px;">
-          Простой порядок действий, чтобы быстро запустить калибровку и получить корректно оформленный результат.
-        </p>
-      </div>
-    </div>
-
-    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 1</div>
-        <div style="font-weight:900; margin-top:8px;">Подать заявку</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Отправить на почту или заполнить онлайн-заявку.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 2</div>
-        <div style="font-weight:900; margin-top:8px;">Получить документы</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Проект договора или договор-счёт на выполнение работ.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 3</div>
-        <div style="font-weight:900; margin-top:8px;">Оплатить счёт</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Оплата счёта на оказание услуг по калибровке СИ.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 4</div>
-        <div style="font-weight:900; margin-top:8px;">Передать СИ</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Привезти к нам или отправить транспортной компанией (ТК).
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 5</div>
-        <div style="font-weight:900; margin-top:8px;">Ожидать выполнение</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          До 5 рабочих дней (или быстрее при срочности). Мы сообщим о завершении работ.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 6</div>
-        <div style="font-weight:900; margin-top:8px;">Забрать СИ</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Получить СИ и закрывающие документы.
-        </div>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Шаг 7</div>
-        <div style="font-weight:900; margin-top:8px;">Подписать закрывающие</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Направить нам подписанные вами закрывающие документы.
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
-      <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">Правила приёма</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- PROGRAM DETAILS -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; align-items:start;">
-      <div class="card card-pad-lg">
-        <div class="kicker">Программа</div>
-        <h2 class="h2" style="margin-top:10px;">Что важно указать в заявке</h2>
-        <p class="p-lead" style="margin-top:12px;">
-          Чтобы калибровка прошла быстрее, заранее уточняем ключевые параметры.
-        </p>
-
-        <div style="margin-top:18px; display:grid; gap:12px;">
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Диапазоны и точки</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Какие диапазоны/точки измерений нужны и в каких условиях.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Формат результата</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Сертификат/протокол, требования к содержанию, печати/подписи.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Комплектность и питание</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Датчики, кабели, адаптеры, питание — что нужно для выполнения программы.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" style="padding:16px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle-2" class="w-5 h-5" style="color: var(--c-600); margin-top:2px;"></i>
-              <div>
-                <div style="font-weight:900;">Срочность</div>
-                <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-                  Если нужно быстро — отметьте это в заявке, предложим варианты.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">Оставить заявку</a>
-          <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">Правила приёма</a>
-        </div>
-      </div>
-
-      <div class="card card-pad-lg hover-lift reveal">
-        <div class="kicker">Подсказка</div>
-        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Когда калибровка особенно полезна</h3>
-
-        <div style="margin-top:14px; display:grid; gap:10px;">
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Внутренний контроль качества</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Нужна реальная картина отклонений</div>
-          </div>
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Сопоставимость измерений</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Прослеживаемость и условия важны</div>
-          </div>
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Под проект / ТЗ</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Нужен сертификат по заданной программе</div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px;">
-          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
-            Заполнить онлайн-заявку
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
 <!-- FAQ -->
 <section class="section">
   <div class="container">
@@ -256,7 +271,7 @@
     </div>
 
     <div class="faq-wrap reveal" style="margin-top:22px;">
-
+      <!-- FAQ оставлен в стиле проекта -->
       <div class="faq-item">
         <button type="button" class="faq-btn" data-acc-btn>
           <span>Что такое калибровка?</span>
@@ -278,23 +293,8 @@
           <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
         </button>
         <div class="faq-body hidden" data-acc-body>
-          ООО «ЦСМ Двинта» оказывает комплексные услуги по калибровке средств измерений, средств контроля,
+          ООО «ЦСМ Двинта» оказывает комплексные и профессиональные услуги по калибровке средств измерений, средств контроля,
           испытательного и вспомогательного оборудования.
-          <div style="margin-top:10px; color: rgba(13,19,33,.70);">
-            Выполняем полный набор операций для определения действительных значений характеристик СИ — чтобы обеспечить корректную работу
-            и соответствие стандартам и техническим заданиям заказчиков.
-          </div>
-
-          <div style="margin-top:12px;">Область признания компетентности в Российской системе калибровки (РСК) включает:</div>
-          <ul style="margin-top:8px; padding-left:18px; line-height:1.7;">
-            <li>средства измерений геометрических величин;</li>
-            <li>средства измерений механических величин;</li>
-            <li>средства измерений параметров потока, расхода, уровня, объёма веществ;</li>
-            <li>средства измерений давления и вакуумных измерений;</li>
-            <li>средства измерений физико-химического состава и свойств веществ;</li>
-            <li>средства измерений теплофизических и температурных измерений;</li>
-            <li>средства измерений времени и частоты.</li>
-          </ul>
         </div>
       </div>
 
@@ -304,8 +304,7 @@
           <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
         </button>
         <div class="faq-body hidden" data-acc-body>
-          ООО «ЦСМ Двинта» выполняет калибровку по методам измерений, установленным в инструкциях, методиках поверки и калибровки,
-          с учётом технического задания заказчика.
+          Калибровка выполняется по методикам (методам) измерений, инструкциям, методикам поверки и калибровки с учетом технического задания заказчика.
           <div style="margin-top:10px;">
             Для нестандартных средств измерений могут быть разработаны индивидуальные методики калибровки.
           </div>
@@ -318,12 +317,10 @@
           <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
         </button>
         <div class="faq-body hidden" data-acc-body>
-          По завершении работ оформляется сертификат калибровки с уникальным номером, информацией о калибруемом СИ,
-          методике калибровки, полученных действительных значениях метрологических характеристик, а также об эталонах и средствах измерений,
+          По завершению калибровочных работ оформляется сертификат калибровки, содержащий уникальный номер, информацию о калибруемом СИ,
+          методике калибровки, полученных действительных значениях метрологических характеристик, а также эталонах и средствах измерений,
           применяемых при калибровке.
-          <div style="margin-top:10px;">
-            При необходимости заказчик может запросить протокол калибровки.
-          </div>
+          <div style="margin-top:10px;">При необходимости заказчик может запросить протокол калибровки.</div>
         </div>
       </div>
 
@@ -333,19 +330,15 @@
           <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
         </button>
         <div class="faq-body hidden" data-acc-body>
-          Стандартные сроки выполнения работ по калибровке — не более 5 рабочих дней.
-          По желанию заказчика сроки могут быть сокращены до:
-          <ul style="margin-top:8px; padding-left:18px; line-height:1.7;">
-            <li>1 рабочего дня;</li>
-            <li>2–3 рабочих дней.</li>
-          </ul>
+          Стандартные сроки выполнения работ по калибровки не более 5 рабочих дней.
+          <div style="margin-top:10px;">
+            По желанию заказчика сроки поверки СИ могут быть сокращены до 1 рабочего дня или 2-3 рабочих дней.
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
 
 <!-- CTA -->
 <section class="section">

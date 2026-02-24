@@ -1,9 +1,24 @@
 :root{
-  --c-ink: #162B45;    /* основной текст */
-  --c-navy: #182E4B;   /* primary */
-  --c-steel: #17324C;  /* secondary */
-  --c-sky: #0975AE;    /* accent */
-  --c-cream: #FDFEFD;  /* фон */
+  /* БАЗА (обновлённая, ярче/сочнее, но без кислотности) */
+  --c-ink: #0B1B3A;      /* основной текст */
+  --c-navy: #1B3A8A;     /* brand primary (royal blue) */
+  --c-steel: #0E7490;    /* secondary (teal) */
+  --c-sky: #06B6D4;      /* accent (cyan) */
+  --c-cream: #F7FBFF;    /* фон (слегка голубой, свежий) */
+
+  /* ДОП. АКЦЕНТЫ (для бейджей/иконок/подсветок) */
+  --c-violet: #7C3AED;   /* доп. яркий акцент */
+  --c-warm: #F97316;     /* предупреждения/акценты (оранжевый) */
+  --c-success: #22C55E;  /* успех/CTA hover */
+
+  /* Поверхности и границы */
+  --c-surface: #FFFFFF;
+  --c-surface-2: #EFF6FF;
+  --c-border: rgba(11,27,58,.12);
+
+  /* RGB (для rgba/теней/фокусов) */
+  --ink-rgb: 11,27,58;
+  --accent-rgb: 6,182,212;
 }
 
 
@@ -15,30 +30,65 @@ html, body {
 }
 
 
-/* Маленький “набор токенов”, чтобы удобно использовать по сайту */
+/* Токены/утилиты для сайта (чтобы не хардкодить hex в html) */
 .bg-primary { background: var(--c-steel); }
 .bg-primary-dark { background: var(--c-navy); }
 .bg-soft { background: var(--c-cream); }
+.bg-surface { background: var(--c-surface); }
+.bg-surface-2 { background: var(--c-surface-2); }
 
-.text-primary { color: var(--c-steel); }
+.text-primary { color: var(--c-navy); }
 .text-dark { color: var(--c-ink); }
-.text-muted { color: rgba(22,43,69,.75); }
-
+.text-muted { color: rgba(var(--ink-rgb),.72); }
+.text-accent { color: var(--c-sky); }
+.text-warn { color: var(--c-warm); }
+.text-success { color: var(--c-success); }
 
 .border-primary { border-color: var(--c-sky); }
-.ring-primary { --tw-ring-color: var(--c-steel) !important; }
+.border-soft { border-color: var(--c-border); }
+.ring-primary { --tw-ring-color: rgba(var(--accent-rgb), .45) !important; }
 
-/* Кнопка как единый компонент (удобно дальше) */
-.btn-primary{
-  background: var(--c-steel);
-  color: white;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  transition: filter .2s ease, transform .05s ease;
+
+/* Навигационные ссылки (вместо хардкода #3e5c76 в шаблонах) */
+.nav-link{
+  color: rgba(var(--ink-rgb), .78);
 }
-.btn-primary:hover{ filter: brightness(0.90); }
+.nav-link:hover{
+  color: var(--c-navy);
+}
+
+
+/* Кнопки (делаем более “брендовые”: градиент + лёгкое свечение) */
+.btn-primary{
+  background: linear-gradient(135deg, var(--c-navy), var(--c-sky));
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 22px rgba(var(--accent-rgb), .18);
+  transition: transform .10s ease, filter .18s ease, box-shadow .18s ease;
+}
+.btn-primary:hover{
+  filter: brightness(1.04) saturate(1.06);
+  box-shadow: 0 12px 26px rgba(var(--accent-rgb), .22);
+}
 .btn-primary:active{ transform: translateY(1px); }
+
+/* CTA для мобильного меню */
+.btn-cta{
+  background: linear-gradient(135deg, var(--c-sky), var(--c-success));
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 22px rgba(34,197,94,.14);
+  transition: transform .10s ease, filter .18s ease, box-shadow .18s ease;
+}
+.btn-cta:hover{
+  filter: brightness(1.04) saturate(1.06);
+  box-shadow: 0 12px 26px rgba(34,197,94,.18);
+}
+.btn-cta:active{ transform: translateY(1px); }
 
 
 

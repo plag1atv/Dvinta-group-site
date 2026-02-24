@@ -12,7 +12,7 @@
           />
 
           <div>
-            <div class="text-lg font-bold text-[#111111]">Двинта</div>
+            <div class="text-lg font-bold text-dark">Двинта</div>
             <div class="text-sm text-gray-600">Центр Стандартизации и Метрологии</div>
           </div>
         </div>
@@ -22,7 +22,7 @@
 <nav class="hidden lg:flex items-center space-x-8">
 
   <div class="nav-dd">
-    <a class="flex items-center text-gray-700 hover:text-[#3e5c76] font-medium" href="javascript:void(0)">
+    <a class="flex items-center nav-link font-medium" href="javascript:void(0)">
       Метрология <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
     </a>
 
@@ -50,7 +50,7 @@
   </div>
 
   <div class="nav-dd">
-    <a class="flex items-center text-gray-700 hover:text-[#3e5c76] font-medium" href="javascript:void(0)">
+    <a class="flex items-center nav-link font-medium" href="javascript:void(0)">
       Стандартизация <i class="ml-1 w-4 h-4" data-lucide="chevron-down"></i>
     </a>
 
@@ -66,10 +66,10 @@
     </div>
   </div>
 
-  <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('equipment') }}">Оборудование</a>
-  <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
-  <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('about') }}">О компании</a>
-  <a class="text-gray-700 hover:text-[#3e5c76] font-medium" href="{{ url_for('contacts') }}">Контакты</a>
+  <a class="nav-link font-medium" href="{{ url_for('equipment') }}">Оборудование</a>
+  <a class="nav-link font-medium href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
+  <a class="nav-link font-medium" href="{{ url_for('about') }}">О компании</a>
+  <a class="nav-link font-medium" href="{{ url_for('contacts') }}">Контакты</a>
 </nav>
 
 
@@ -104,7 +104,7 @@
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('about') }}">О компании</a>
       <a class="block py-2 font-medium text-gray-700" href="{{ url_for('contacts') }}">Контакты</a>
 
-      <a href="{{ url_for('metrology_online_application') }}" class="block text-center bg-[#3e5c76] hover:bg-[#1A8A54] text-white px-6 py-3 rounded-xl font-medium transition-colors mt-3">
+      <a href="{{ url_for('metrology_online_application') }}" class="btn-cta block text-center mt-3">
         Оставить заявку
       </a>
     </div>

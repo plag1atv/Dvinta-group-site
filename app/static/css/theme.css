@@ -1,13 +1,13 @@
 :root{
-  /* Основная палитра */
-  --c-900:#162B45;   /* ОСНОВНОЙ ТЕКСТ */
-  --c-800:#182E4B;  /* primary */
-  --c-600:#17324C;   /* secondary */
-  --c-400:#0975AE;   /* accent */
-  --c-100:#FDFEFD;   /* ОСНОВНОЙ ФОН */
+  /* Основная палитра (обновлённая) */
+  --c-900:#0B1B3A;   /* ОСНОВНОЙ ТЕКСТ */
+  --c-800:#1B3A8A;   /* primary */
+  --c-600:#0E7490;   /* secondary */
+  --c-400:#06B6D4;   /* accent */
+  --c-100:#F7FBFF;   /* ОСНОВНОЙ ФОН */
 
   /* RGB для теней и rgba */
-  --ink-rgb: 22,43,69;
+  --ink-rgb: 11,27,58;
 
   --radius: 18px;
   --shadow: 0 10px 30px rgba(var(--ink-rgb),.16);
@@ -49,7 +49,7 @@ a, .nav-dd-menu a, summary{
 
 /* Плавные фокусы (приятнее табом) */
 :where(a, button, input, textarea, select, summary):focus-visible{
-  outline: 2px solid rgba(9,117,174,.35);
+  outline: 2px solid rgba(6,182,212,.35);
   outline-offset: 2px;
   transition: outline-color var(--dur-fast) var(--ease-ui);
 }
@@ -106,8 +106,7 @@ html{
   will-change: transform;
 
   /* SVG слоями (без отдельного файла) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2317324C' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23182E4B' stop-opacity='.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 420 L160 310 L320 380 L520 240 L720 360 L920 210 L1120 340 L1280 280 L1440 360 L1440 600 L0 600 Z' fill='url(%23g)'/%3E%3Cpath d='M0 470 L220 390 L420 460 L620 340 L820 450 L1020 310 L1220 440 L1440 380 L1440 600 L0 600 Z' fill='%23162B45' opacity='.22'/%3E%3C/svg%3E");
-}
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231B3A8A' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%230E7490' stop-opacity='.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 420 L160 310 L320 380 L520 240 L720 360 L920 210 L1120 340 L1280 280 L1440 360 L1440 600 L0 600 Z' fill='url(%23g)'/%3E%3Cpath d='M0 470 L220 390 L420 460 L620 340 L820 450 L1020 310 L1220 440 L1440 380 L1440 600 L0 600 Z' fill='%230B1B3A' opacity='.22'/%3E%3C/svg%3E");}
 
 /* ===== Layer: bare trees on mountains ===== */
 #trees-bg{
@@ -129,7 +128,7 @@ html{
   will-change: transform;
 
   /* деревья без листьев — лёгкий силуэт поверх гор */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cg stroke='%2317324C' stroke-opacity='.65' fill='none' stroke-linecap='round'%3E%3Cpath stroke-width='5' d='M120 540 L120 430 M120 460 L90 430 M120 470 L150 430 M120 445 L105 410 M120 445 L135 410'/%3E%3Cpath stroke-width='4' d='M260 560 L260 450 M260 485 L230 455 M260 500 L290 460 M260 470 L245 435 M260 470 L275 435'/%3E%3Cpath stroke-width='5' d='M420 550 L420 420 M420 470 L380 430 M420 485 L465 440 M420 450 L400 405 M420 450 L445 405'/%3E%3Cpath stroke-width='4' d='M610 565 L610 455 M610 500 L575 465 M610 510 L645 470 M610 480 L595 445 M610 480 L628 445'/%3E%3Cpath stroke-width='5' d='M780 550 L780 420 M780 470 L740 430 M780 490 L825 445 M780 452 L760 408 M780 452 L806 408'/%3E%3Cpath stroke-width='4' d='M980 565 L980 455 M980 500 L945 465 M980 510 L1015 470 M980 480 L965 445 M980 480 L998 445'/%3E%3Cpath stroke-width='5' d='M1140 552 L1140 422 M1140 472 L1100 432 M1140 492 L1185 447 M1140 454 L1120 410 M1140 454 L1166 410'/%3E%3Cpath stroke-width='4' d='M1300 560 L1300 450 M1300 490 L1270 460 M1300 505 L1330 465 M1300 475 L1286 440 M1300 475 L1316 440'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cg stroke='%231B3A8A' stroke-opacity='.65' fill='none' stroke-linecap='round'%3E%3Cpath stroke-width='5' d='M120 540 L120 430 M120 460 L90 430 M120 470 L150 430 M120 445 L105 410 M120 445 L135 410'/%3E%3Cpath stroke-width='4' d='M260 560 L260 450 M260 485 L230 455 M260 500 L290 460 M260 470 L245 435 M260 470 L275 435'/%3E%3Cpath stroke-width='5' d='M420 550 L420 420 M420 470 L380 430 M420 485 L465 440 M420 450 L400 405 M420 450 L445 405'/%3E%3Cpath stroke-width='4' d='M610 565 L610 455 M610 500 L575 465 M610 510 L645 470 M610 480 L595 445 M610 480 L628 445'/%3E%3Cpath stroke-width='5' d='M780 550 L780 420 M780 470 L740 430 M780 490 L825 445 M780 452 L760 408 M780 452 L806 408'/%3E%3Cpath stroke-width='4' d='M980 565 L980 455 M980 500 L945 465 M980 510 L1015 470 M980 480 L965 445 M980 480 L998 445'/%3E%3Cpath stroke-width='5' d='M1140 552 L1140 422 M1140 472 L1100 432 M1140 492 L1185 447 M1140 454 L1120 410 M1140 454 L1166 410'/%3E%3Cpath stroke-width='4' d='M1300 560 L1300 450 M1300 490 L1270 460 M1300 505 L1330 465 M1300 475 L1286 440 M1300 475 L1316 440'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ===== Background snow (starts under header) ===== */
@@ -609,4 +608,165 @@ body.has-mountain footer{
   font-size: 12px;
   line-height: 1.55;
   color: rgba(var(--ink-rgb),.55);
+}
+
+/* TIMELINES (white premium cards with right-side pill) */
+.tline{
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 18px;
+
+  padding: 22px;
+  border-radius: 26px;
+
+  background: #fff;
+  border: 1px solid rgba(var(--ink-rgb), .12);
+  box-shadow: 0 16px 40px rgba(0,0,0,.06);
+}
+
+.tline-main{
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.tline-ico{
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#fff;
+  border: 2px solid #17324C;
+  color: #17324C;
+  flex: 0 0 auto;
+}
+
+.tline-title{
+  font-weight: 950;
+  font-size: 18px;
+  line-height: 1.25;
+  color: rgba(var(--ink-rgb), .92);
+}
+
+.tline-sub{
+  margin-top: 6px;
+  font-weight: 750;
+  line-height: 1.5;
+  color: rgba(var(--ink-rgb), .62);
+  max-width: 62ch;
+}
+
+.tline-tags{
+  margin-top: 12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+}
+
+.tline-tag{
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  background:#fff;
+  border: 1px solid rgba(var(--ink-rgb), .14);
+  color: rgba(var(--ink-rgb), .78);
+
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.tline-tag-soft{
+  border-color: rgba(23,50,76,.22);
+  background: rgba(23,50,76,.06);
+  color: #17324C;
+}
+
+/* right side pill */
+.tline-side{
+  position: relative;
+  z-index: 1;
+
+  border-radius: 22px;
+  padding: 14px 12px;
+
+  background: transparent;      /* без плашки/рамки */
+  border: 0;                    /* убрали рамку */
+  box-shadow: none;             /* на всякий */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.tline-side-strong{
+  border-color: #17324C;
+}
+
+.tline-side-top{
+  font-weight: 950;
+  font-size: 14px;       /* больше */
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(var(--ink-rgb), .55);
+}
+
+.tline-side-num{
+  margin-top: 10px;
+  font-weight: 980;
+  font-size: 44px;       /* больше */
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #17324C;
+}
+
+.tline-side-unit{
+  margin-top: 8px;
+  font-weight: 900;
+  font-size: 15px;       /* больше */
+  color: rgba(var(--ink-rgb), .58);
+}
+
+/* subtle dot pattern */
+.tline-pattern{
+  position:absolute;
+  right: -40px;
+  top: -30px;
+  width: 220px;
+  height: 220px;
+  opacity: .28;
+  background-image:
+    radial-gradient(rgba(23,50,76,.22) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  transform: rotate(10deg);
+  pointer-events:none;
+}
+
+/* responsive */
+@media (max-width: 720px){
+  .tline{
+    grid-template-columns: 1fr;
+  }
+  .tline-side{
+    align-items:flex-start;
+    text-align:left;
+    flex-direction:row;
+    gap: 12px;
+    justify-content:flex-start;
+  }
+  .tline-side-num{
+    margin-top: 0;
+  }
+  .tline-side-top{
+    display:none;
+  }
 }

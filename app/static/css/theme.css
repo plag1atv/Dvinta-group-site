@@ -14,6 +14,64 @@
   --shadow-soft: 0 8px 20px rgba(var(--ink-rgb),.11);
 }
 
+/* ===== Global smoothness tokens ===== */
+:root{
+  --ease-ui: cubic-bezier(.2,.8,.2,1);
+  --dur-fast: .10s;
+  --dur-ui: .16s;
+  --dur-slow: .28s;
+}
+
+/* Плавный скролл по якорям */
+html{ scroll-behavior: smooth; }
+
+/* Глобальная плавность для всего интерактива */
+a,
+button,
+summary,
+input,
+textarea,
+select,
+.btn,
+.card,
+.panel,
+.faq-item,
+.nav-dd-menu a{
+  transition-timing-function: var(--ease-ui);
+  transition-duration: var(--dur-ui);
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity, filter;
+}
+
+/* Чуть быстрее для мелких hover-эффектов */
+a, .nav-dd-menu a, summary{
+  transition-duration: var(--dur-fast);
+}
+
+/* Плавные фокусы (приятнее табом) */
+:where(a, button, input, textarea, select, summary):focus-visible{
+  outline: 2px solid rgba(9,117,174,.35);
+  outline-offset: 2px;
+  transition: outline-color var(--dur-fast) var(--ease-ui);
+}
+
+/* Иконки/chevron (в меню и FAQ) — чтобы повороты не были резкими */
+i[data-lucide]{
+  transition: transform var(--dur-ui) var(--ease-ui), opacity var(--dur-ui) var(--ease-ui);
+}
+
+/* Глобально отключаем анимации, если пользователь просит меньше движения */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after{
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 
 /* База */
 html, body { height: 100%; }
@@ -215,7 +273,7 @@ body.has-mountain footer{
 .reveal{
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity .65s ease, transform .65s ease;
+  transition: opacity .55s var(--ease-ui), transform .55s var(--ease-ui);
 }
 .reveal.show{
   opacity: 1;

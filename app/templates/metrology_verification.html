@@ -387,15 +387,18 @@
         </button>
 
         <div class="faq-body hidden" data-acc-body>
-          <div>{{ item.a }}</div>
 
           {% if loop.index == 2 %}
-            <div style="margin-top:10px;">
+            <div>
+              К применению в сфере государственного регулирования обеспечения единства измерений допускаются СИ утвержденного типа, прошедшие поверку. Сведения об утвержденном типе можно проверить в
               <a href="https://fgis.gost.ru/fundmetrology/cm/mits" target="_blank" rel="noopener"
                  style="color: var(--c-400); font-weight: 800; text-decoration:none;">
-                Открыть ФГИС «АРШИН» (МИТС)
+                ФГИС «АРШИН»
               </a>
+              (раздел МИТС).
             </div>
+          {% else %}
+            <div>{{ item.a }}</div>
           {% endif %}
 
           {% if loop.index == 5 %}

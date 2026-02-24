@@ -13,7 +13,7 @@
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
           Оставить заявку
         </a>
@@ -99,14 +99,18 @@
 <!-- CTA -->
 <section class="section">
   <div class="container">
-    <div class="reveal" style="background:var(--c-800); border-radius:26px; padding:48px; color:#fff; text-align:center;">
-      <h2 class="h2">Нужна разработка ТУ?</h2>
-      <p class="p-lead" style="margin-top:12px; color:rgba(240,235,216,.85);">
-        Опишите изделие и цель — мы предложим структуру и сроки.
-      </p>
-      <div style="margin-top:18px;">
-        <a class="btn" style="background:#fff; color:var(--c-800);" href="{{ url_for('metrology_online_application') }}">
+    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
+      <div class="kicker" style="color: rgba(253,254,253,.85);">Готовы начать?</div>
+      <h2 class="h2" style="margin-top:8px;">Оставьте заявку - мы свяжемся с вами в течение часа</h2>
+
+      <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('contacts') }}" style="background:#fff; color: var(--c-800); border-color:#fff;">
+          <i data-lucide="send" class="w-5 h-5"></i>
           Оставить заявку
+        </a>
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru" style="border-color: rgba(255,255,255,.35); color:#fff;">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
         </a>
       </div>
     </div>

@@ -13,7 +13,7 @@
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="{{ url_for('metrology_online_application') }}">
+        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
           Рассчитать стоимость
         </a>
@@ -86,7 +86,7 @@
           </ul>
         </div>
         <div style="margin-top:16px;">
-          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('contacts') }}">
             Выбрать
           </a>
         </div>
@@ -107,7 +107,7 @@
           </ul>
         </div>
         <div style="margin-top:16px;">
-          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('contacts') }}">
             Оставить заявку
           </a>
         </div>
@@ -128,7 +128,7 @@
           </ul>
         </div>
         <div style="margin-top:16px;">
-          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_online_application') }}">
+          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('contacts') }}">
             Запросить срочно
           </a>
         </div>
@@ -235,18 +235,17 @@
 <section class="section">
   <div class="container">
     <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
-      <div class="kicker" style="color: rgba(240,235,216,.85);">Точный расчёт</div>
-      <h2 class="h2" style="margin-top:10px;">Хотите точную стоимость под ваш список СИ?</h2>
-      <p class="p-lead" style="color: rgba(240,235,216,.85); margin-top:12px; max-width: 980px; margin-left:auto; margin-right:auto;">
-        Оставьте заявку — мы уточним параметры и пришлём расчёт, сроки и список того, что нужно подготовить.
-      </p>
+      <div class="kicker" style="color: rgba(253,254,253,.85);">Готовы начать?</div>
+      <h2 class="h2" style="margin-top:8px;">Оставьте заявку - мы свяжемся с вами в течение часа</h2>
 
-      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-        <a class="btn" style="background:#fff; color: var(--c-800);" href="{{ url_for('metrology_online_application') }}">
-          Подать заявку онлайн
+      <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ url_for('contacts') }}" style="background:#fff; color: var(--c-800); border-color:#fff;">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Оставить заявку
         </a>
-        <a class="btn btn-ghost" style="border-color: rgba(240,235,216,.35); color:#fff;" href="{{ url_for('contacts') }}">
-          Связаться
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru" style="border-color: rgba(255,255,255,.35); color:#fff;">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
         </a>
       </div>
     </div>

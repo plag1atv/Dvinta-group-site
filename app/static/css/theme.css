@@ -211,13 +211,13 @@ body.has-mountain footer{
   justify-content:center;
   gap:10px;
   padding: 12px 18px;
-  border-radius: 14px;
-  font-weight: 700;
-  border:1px solid transparent;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  border-radius: 35px;
+  font-weight: 7100;
+  border: 3px solid #17324C;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .3s ease;
   user-select:none;
 }
-.btn:active{ transform: translateY(1px); }
+.btn:active{ transform: translateY(5px); }
 
 .btn-primary{
   background: var(--c-600);
@@ -225,9 +225,10 @@ body.has-mountain footer{
   box-shadow: var(--shadow-soft);
 }
 .btn-primary:hover{
-  background: var(--c-800);
+  background: var(--c-900);
   box-shadow: var(--shadow);
 }
+
 
 .btn-ghost{
   background: transparent;
@@ -556,4 +557,33 @@ body.has-mountain footer{
   font-size: 12px;
   line-height: 1.55;
   color: rgba(var(--ink-rgb),.55);
+}
+
+
+/* Чипы (рамки) для списка "какие СИ ..." */
+.si-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.si-chip{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  padding:10px 12px;
+  border:2px solid rgba(var(--ink-rgb), .18);
+  border-radius:14px;
+  background:#fff;
+
+  color: rgba(var(--ink-rgb), .85);
+  font-weight:700;
+  line-height:1.25;
+}
+
+.si-chip i{
+  flex: 0 0 auto;
+  margin-top:2px;
+  color: var(--c-400);
 }

@@ -587,3 +587,166 @@ body.has-mountain footer{
   margin-top:2px;
   color: var(--c-400);
 }
+
+/* TIMELINES (white premium cards with right-side pill) */
+.tline{
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 18px;
+
+  padding: 22px;
+  border-radius: 26px;
+
+  background: #fff;
+  border: 1px solid rgba(var(--ink-rgb), .12);
+  box-shadow: 0 16px 40px rgba(0,0,0,.06);
+}
+
+.tline-main{
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.tline-ico{
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#fff;
+  border: 2px solid #17324C;
+  color: #17324C;
+  flex: 0 0 auto;
+}
+
+.tline-title{
+  font-weight: 950;
+  font-size: 18px;
+  line-height: 1.25;
+  color: rgba(var(--ink-rgb), .92);
+}
+
+.tline-sub{
+  margin-top: 6px;
+  font-weight: 750;
+  line-height: 1.5;
+  color: rgba(var(--ink-rgb), .62);
+  max-width: 62ch;
+}
+
+.tline-tags{
+  margin-top: 12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+}
+
+.tline-tag{
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  background:#fff;
+  border: 1px solid rgba(var(--ink-rgb), .14);
+  color: rgba(var(--ink-rgb), .78);
+
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.tline-tag-soft{
+  border-color: rgba(23,50,76,.22);
+  background: rgba(23,50,76,.06);
+  color: #17324C;
+}
+
+/* right side pill */
+.tline-side{
+  position: relative;
+  z-index: 1;
+
+  border-radius: 22px;
+  padding: 14px 12px;
+
+  background: #fff;
+  border: none; /* <-- убрали рамки */
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+/* .tline-side-strong больше не нужен — удалить */
+
+.tline-side-strong{
+  border-color: #17324C;
+}
+
+.tline-side-top{
+  font-weight: 950;
+  font-size: 14px;       /* больше */
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(var(--ink-rgb), .55);
+}
+
+.tline-side-num{
+  margin-top: 10px;
+  font-weight: 980;
+  font-size: 44px;       /* больше */
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #17324C;
+}
+
+.tline-side-unit{
+  margin-top: 8px;
+  font-weight: 900;
+  font-size: 15px;       /* больше */
+  color: rgba(var(--ink-rgb), .58);
+}
+
+/* subtle dot pattern */
+.tline-pattern{
+  position:absolute;
+  right: -40px;
+  top: -30px;
+  width: 220px;
+  height: 220px;
+  opacity: .28;
+  background-image:
+    radial-gradient(rgba(23,50,76,.22) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  transform: rotate(10deg);
+  pointer-events:none;
+}
+
+/* responsive */
+@media (max-width: 720px){
+  .tline{
+    grid-template-columns: 1fr;
+  }
+  .tline-side{
+    align-items:flex-start;
+    text-align:left;
+    flex-direction:row;
+    gap: 12px;
+    justify-content:flex-start;
+  }
+  .tline-side-num{
+    margin-top: 0;
+  }
+  .tline-side-top{
+    display:none;
+  }
+}

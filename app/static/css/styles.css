@@ -22,7 +22,7 @@ html, body {
 
 .text-primary { color: var(--c-steel); }
 .text-dark { color: var(--c-ink); }
-.text-muted { color: rgba(22,43,69,.65); }
+.text-muted { color: rgba(22,43,69,.75); }
 
 
 .border-primary { border-color: var(--c-sky); }
@@ -37,7 +37,7 @@ html, body {
   border-radius: 0.75rem;
   transition: filter .2s ease, transform .05s ease;
 }
-.btn-primary:hover{ filter: brightness(0.95); }
+.btn-primary:hover{ filter: brightness(0.90); }
 .btn-primary:active{ transform: translateY(1px); }
 
 

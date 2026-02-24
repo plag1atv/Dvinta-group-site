@@ -10,8 +10,8 @@
   --ink-rgb: 22,43,69;
 
   --radius: 18px;
-  --shadow: 0 10px 30px rgba(var(--ink-rgb),.12);
-  --shadow-soft: 0 8px 20px rgba(var(--ink-rgb),.08);
+  --shadow: 0 10px 30px rgba(var(--ink-rgb),.16);
+  --shadow-soft: 0 8px 20px rgba(var(--ink-rgb),.11);
 }
 
 
@@ -40,7 +40,7 @@ html{
   height: 70vh;
   pointer-events: none;
   z-index: 0;
-  opacity: .38;
+  opacity: .50;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -64,9 +64,9 @@ html{
 
   /* Снег без картинок: точки из radial-gradient (слоями) — заметно на белом */
   background-image:
-    radial-gradient(circle, rgba(10, 35, 80, .20) 0 1px, rgba(10, 35, 80, 0) 2px),
-    radial-gradient(circle, rgba(20, 20, 35, .16) 0 1px, rgba(20, 20, 35, 0) 2px),
-    radial-gradient(circle, rgba(0, 80, 140, .12) 0 2px, rgba(0, 80, 140, 0) 3px);
+    radial-gradient(circle, rgba(10, 35, 80, .26) 0 1px, rgba(10, 35, 80, 0) 2px),
+    radial-gradient(circle, rgba(20, 20, 35, .20) 0 1px, rgba(20, 20, 35, 0) 2px),
+    radial-gradient(circle, rgba(0, 80, 140, .16) 0 2px, rgba(0, 80, 140, 0) 3px);
 
   background-size:
     130px 130px,
@@ -80,7 +80,7 @@ html{
 
   background-repeat: repeat;
 
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,.08));
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.12));
   will-change: background-position;
   animation: snow-fall 10s linear infinite;
 }
@@ -139,7 +139,7 @@ body.has-mountain footer{
 /* Карточки */
 .card{
   background:#fff;
-  border: 1px solid rgba(var(--ink-rgb),.12);
+  border: 1px solid rgba(var(--ink-rgb),.16);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
@@ -201,13 +201,13 @@ body.has-mountain footer{
 .p-lead{
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(var(--ink-rgb),.70);
+  color: rgba(var(--ink-rgb),.78);
 }
 
 /* Блоки с мягким фоном */
 .panel{
-  background: rgba(9,117,174,.14);
-  border: 1px solid rgba(var(--ink-rgb),.10);
+  background: rgba(9,117,174,.18);
+  border: 1px solid rgba(var(--ink-rgb),.14);
   border-radius: var(--radius);
 }
 
@@ -268,15 +268,16 @@ body.has-mountain footer{
   box-shadow: var(--shadow);
 
   opacity: 0;
-  transform: translateY(6px);
+  transform: translateY(6px) scale(.99);
+  will-change: opacity, transform;
   pointer-events: none;
   visibility: hidden;
 
   /* ВАЖНО: закрытие с задержкой */
   transition:
-    opacity .18s ease .35s,
-    transform .18s ease .35s,
-    visibility 0s linear .35s;
+    opacity .10s cubic-bezier(.2,.8,.2,1) 0s,
+    transform .10s cubic-bezier(.2,.8,.2,1) 0s,
+    visibility 0s linear .5s;
 }
 
 /* ===== Dropdown: стабилизация hover (мостик) ===== */
@@ -343,8 +344,8 @@ body.has-mountain footer{
   visibility: visible;
 
   transition:
-    opacity .14s ease 0s,
-    transform .14s ease 0s,
+    opacity .12s cubic-bezier(.2,.8,.2,1) 0s,
+    transform .12s cubic-bezier(.2,.8,.2,1) 0s,
     visibility 0s linear 0s;
 }
 
@@ -353,7 +354,7 @@ body.has-mountain footer{
   display:block;
   margin-top: 2px;
   font-size: 12px;
-  color: rgba(var(--ink-rgb),.65);
+  color: rgba(var(--ink-rgb),.75);
   font-weight: 600;
 }
 
@@ -372,7 +373,7 @@ body.has-mountain footer{
 }
 
 .nav-dd-menu a:hover{
-  background: rgba(9,117,174,.10);
+  background: rgba(9,117,174,.14);
 }
 
 /* На всякий случай — если у пользователя включено "уменьшение анимаций" */

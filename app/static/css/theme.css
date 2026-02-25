@@ -770,3 +770,115 @@ body.has-mountain footer{
     display:none;
   }
 }
+
+/* =====================================================
+   Intro splash (ONLY home page)
+===================================================== */
+
+body.no-scroll{ overflow: hidden; }
+
+.intro-splash{
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.intro-splash__content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px;
+}
+
+.intro-splash__bar{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 38vw;
+  min-width: 220px;
+  height: 100%;
+  background: #B0B6BD;
+  opacity: .95;
+  z-index: 1;
+  animation: intro-bar 1.8s var(--ease-ui) forwards;
+  animation-delay: .45s;
+}
+
+@keyframes intro-bar{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-140vw); }
+}
+
+.intro-splash__title{
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--c-900);
+  font-size: clamp(34px, 6vw, 56px);
+  opacity: 0;
+  transform: translateX(22px);
+  animation: intro-title .7s var(--ease-ui) forwards;
+  animation-delay: 1.35s;
+}
+
+@keyframes intro-title{
+  from{ opacity: 0; transform: translateX(22px); }
+  to{ opacity: 1; transform: translateX(0); }
+}
+
+.intro-splash__underline{
+  height: 4px;
+  width: 0;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: var(--c-900);
+  opacity: 0;
+  animation: intro-underline .7s var(--ease-ui) forwards;
+  animation-delay: 1.75s;
+}
+
+@keyframes intro-underline{
+  from{ width: 0; opacity: 0; }
+  to{ width: min(260px, 70vw); opacity: 1; }
+}
+
+.intro-splash__subtitle{
+  margin-top: 10px;
+  font-size: clamp(12px, 1.6vw, 14px);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(13,19,33,.72);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: intro-subtitle .7s var(--ease-ui) forwards;
+  animation-delay: 2.05s;
+}
+
+@keyframes intro-subtitle{
+  from{ opacity: 0; transform: translateY(10px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+/* fade-out controlled by JS */
+.intro-splash.is-done{
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .38s var(--ease-ui);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .intro-splash__bar,
+  .intro-splash__title,
+  .intro-splash__underline,
+  .intro-splash__subtitle{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    width: auto !important;
+  }
+}

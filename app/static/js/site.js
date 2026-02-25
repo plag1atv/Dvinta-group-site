@@ -60,4 +60,26 @@ if ((trees || snow) && !prefersReduced) {
 
   scheduleNext();
 }
+
+// Intro splash (ONLY on home page where #introSplash exists)
+const splash = document.getElementById('introSplash');
+if (splash) {
+  document.body.classList.add('no-scroll');
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // total timeline (ms): bar + title + underline + subtitle + small hold
+  const fadeOutAt = prefersReduced ? 150 : 3200;
+  const removeAt  = prefersReduced ? 300 : 3650;
+
+  window.setTimeout(() => {
+    splash.classList.add('is-done');
+  }, fadeOutAt);
+
+  window.setTimeout(() => {
+    splash.remove();
+    document.body.classList.remove('no-scroll');
+  }, removeAt);
+}
+
 });

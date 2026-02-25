@@ -74,6 +74,8 @@ html, body {
 }
 .btn-primary:active{ transform: translateY(1px); }
 
+
+
 /* CTA для мобильного меню */
 .btn-cta{
   background: linear-gradient(135deg, var(--c-sky), var(--c-success));

@@ -610,6 +610,50 @@ body.has-mountain footer{
   color: rgba(var(--ink-rgb),.55);
 }
 
+/* =====================================================
+   Verification: "Какие СИ поверяем" chips
+===================================================== */
+
+.si-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.si-chip{
+  display:inline-flex;
+  align-items:center;            /* иконка наравне с текстом */
+  gap: 10px;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 2px solid #1B3A8A;     /* обводка у каждого измерения */
+
+  font-size: 18px;               /* текст больше */
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Чередование цветов облачков */
+.si-chip:nth-child(odd){
+  background: #0E7490;
+  color: #F7FBFF;
+}
+
+/* Иконка ровно по центру строки */
+.si-chip i[data-lucide],
+.si-chip svg{
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display:block;
+}
+
+.si-chip span{
+  display:block;
+}
+
 /* TIMELINES (white premium cards with right-side pill) */
 .tline{
   position: relative;
@@ -881,4 +925,44 @@ body.no-scroll{ overflow: hidden; }
     transform: none !important;
     width: auto !important;
   }
+}
+
+/* Verification: chips ("Какие СИ поверяем") */
+.si-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+}
+
+.si-chip{
+  display:inline-flex;
+  align-items:center;     /* иконка наравне с текстом */
+  gap: 10px;
+
+  width: 500px;                  /* ✅ одинаковая ширина у всех */
+  min-height: 52px;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0) ;
+  background: rgba(255,255,255,.08);
+
+  font-size: 18px;        /* текст измерений больше */
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Чередование цветов */
+.si-chip:nth-child(even){
+  background: #F7FBFF;
+  color: #0E7490;
+}
+
+/* Иконка ровно по центру строки */
+.si-chip i[data-lucide],
+.si-chip svg{
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display:block;
 }

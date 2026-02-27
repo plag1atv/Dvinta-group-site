@@ -630,7 +630,7 @@ body.has-mountain footer{
   border-radius: 999px;
   border: 2px solid #1B3A8A;     /* обводка у каждого измерения */
 
-  font-size: 18px;               /* текст больше */
+  font-size: 15px;               /* текст больше */
   font-weight: 800;
   line-height: 1.2;
 }

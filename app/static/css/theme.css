@@ -235,15 +235,15 @@ body.has-mountain footer{
 
 /* Контейнер и секции (чтобы “не было всё рядом”) */
 .container{
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 14px;
 }
 .section{
-  padding: 72px 0;
+  padding: 64px 0;
 }
 .section-sm{
-  padding: 44px 0;
+  padding: 34px 0;
 }
 
 /* Карточки */
@@ -299,17 +299,17 @@ body.has-mountain footer{
   font-size: 12px;
 }
 .h1{
-  font-size: clamp(34px, 3vw, 52px);
+  font-size: 40px;
   line-height: 1.05;
   font-weight: 900;
 }
 .h2{
-  font-size: clamp(26px, 2.2vw, 38px);
+  font-size: 29px;
   line-height: 1.15;
   font-weight: 900;
 }
 .p-lead{
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   color: rgba(var(--ink-rgb),.78);
 }
@@ -611,47 +611,165 @@ body.has-mountain footer{
 }
 
 /* =====================================================
-   Verification: "Какие СИ поверяем" chips
+   Verification: redesigned "Какие СИ поверяем"
 ===================================================== */
 
-.si-chips{
-  display:flex;
-  flex-wrap:wrap;
+.verify-types{
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(248,251,255,.96) 100%);
+  border: 1px solid rgba(var(--ink-rgb), .10);
+  box-shadow: 0 18px 40px rgba(0,0,0,.05);
+}
+
+.verify-types::before{
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(23,50,76,.08) 0%, rgba(23,50,76,0) 68%);
+  pointer-events: none;
+}
+
+.verify-types__head{
+  position: relative;
+  z-index: 1;
+}
+
+.verify-types__lead{
+  color: rgba(var(--ink-rgb), .72);
+}
+
+.verify-types__grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.verify-types__col{
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.verify-type-item{
+  display: grid;
+  grid-template-columns: 40px 1fr;
   gap: 12px;
-  margin-top: 12px;
+  align-items: center;
+
+  padding: 12px 14px;
+  min-height: 68px;
+
+  border-radius: 18px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(var(--ink-rgb), .10);
+  box-shadow: 0 10px 24px rgba(0,0,0,.04);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
 }
 
-.si-chip{
-  display:inline-flex;
-  align-items:center;            /* иконка наравне с текстом */
-  gap: 10px;
+.verify-type-item:nth-child(odd){
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(var(--ink-rgb), .10);
+}
 
-  padding: 12px 16px;
-  border-radius: 999px;
-  border: 2px solid #1B3A8A;     /* обводка у каждого измерения */
+.verify-type-item:nth-child(even){
+  background: var(--c-600);
+  border: none;
+}
 
-  font-size: 15px;               /* текст больше */
+.verify-type-item:nth-child(odd) .verify-type-item__text{
+  color: rgba(var(--ink-rgb), .90);
+}
+
+.verify-type-item:nth-child(odd) .verify-type-item__icon{
+  background: rgba(23,50,76,.07);
+  border: 1px solid rgba(23,50,76,.10);
+  color: #17324C;
+}
+
+.verify-type-item:nth-child(even) .verify-type-item__icon{
+  background: rgba(255,255,255,.18);
+  border: none;
+  color: #ffffff;
+}
+
+.verify-type-item:nth-child(even) .verify-type-item__text{
+  color: #ffffff;
+}
+
+.verify-type-item:hover{
+  transform: translateY(-2px);
+  border-color: rgba(23,50,76,.18);
+  box-shadow: 0 16px 30px rgba(0,0,0,.06);
+}
+
+.verify-type-item__icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(23,50,76,.07);
+  border: 1px solid rgba(23,50,76,.10);
+  color: #17324C;
+}
+
+.verify-type-item__icon i,
+.verify-type-item__icon svg{
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+.verify-type-item__text{
+  align-self: center;
+  font-size: 14px;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.35;
+  color: rgba(var(--ink-rgb), .90);
 }
 
-/* Чередование цветов облачков */
-.si-chip:nth-child(odd){
-  background: #0E7490;
-  color: #F7FBFF;
+@media (max-width: 900px){
+  .verify-types__grid{
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Иконка ровно по центру строки */
-.si-chip i[data-lucide],
-.si-chip svg{
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
-  display:block;
-}
+@media (max-width: 640px){
+  .verify-type-item{
+    grid-template-columns: 36px 1fr;
+    gap: 10px;
+    padding: 11px 12px;
+    min-height: auto;
+    border-radius: 16px;
+  }
 
-.si-chip span{
-  display:block;
+  .verify-type-item__icon{
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+
+  .verify-type-item__icon i,
+  .verify-type-item__icon svg{
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+  }
+
+  .verify-type-item__text{
+    font-size: 13px;
+  }
 }
 
 /* TIMELINES (white premium cards with right-side pill) */
@@ -863,7 +981,7 @@ body.no-scroll{ overflow: hidden; }
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--c-900);
-  font-size: clamp(34px, 6vw, 56px);
+  font-size: 48px;
   opacity: 0;
   transform: translateX(22px);
   animation: intro-title .7s var(--ease-ui) forwards;
@@ -893,7 +1011,7 @@ body.no-scroll{ overflow: hidden; }
 
 .intro-splash__subtitle{
   margin-top: 10px;
-  font-size: clamp(12px, 1.6vw, 14px);
+  font-size: 13px;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: rgba(13,19,33,.72);
@@ -925,44 +1043,4 @@ body.no-scroll{ overflow: hidden; }
     transform: none !important;
     width: auto !important;
   }
-}
-
-/* Verification: chips ("Какие СИ поверяем") */
-.si-chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 12px;
-}
-
-.si-chip{
-  display:inline-flex;
-  align-items:center;     /* иконка наравне с текстом */
-  gap: 10px;
-
-  width: 500px;                  /* ✅ одинаковая ширина у всех */
-  min-height: 52px;
-
-  padding: 12px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0) ;
-  background: rgba(255,255,255,.08);
-
-  font-size: 18px;        /* текст измерений больше */
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-/* Чередование цветов */
-.si-chip:nth-child(even){
-  background: #F7FBFF;
-  color: #0E7490;
-}
-
-/* Иконка ровно по центру строки */
-.si-chip i[data-lucide],
-.si-chip svg{
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
-  display:block;
 }

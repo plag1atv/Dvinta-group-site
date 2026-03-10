@@ -212,8 +212,8 @@
       </div>
     </div>
 
-    <!-- Steps grid (no paraphrasing)) -->
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 reveal" style="margin-top:18px; align-items:stretch;">
+    <!-- Steps grid -->
+    <div class="grid gap-4 md:grid-cols-2 reveal" style="margin-top:18px; align-items:stretch;">
 
       <!-- 1 -->
       <div class="card card-pad hover-lift" style="border-radius: 22px;">
@@ -224,12 +224,20 @@
           <div style="flex:1;">
             <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
               <i data-lucide="file-plus" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Заявка
+              Направить заявку
             </div>
-            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Заполнить онлайн-заявку</li>
-              <li>Отправить заявку на <a href="mailto:info@csmdvinta.ru" style="color: var(--c-400); font-weight:800; text-decoration:none;">info@csmdvinta.ru</a></li>
-            </ul>
+
+            <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
+              <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Онлайн
+              </a>
+
+              <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                info@csmdvinta.ru
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -242,12 +250,11 @@
           </div>
           <div style="flex:1;">
             <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
-              <i data-lucide="file-signature" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Документы
+              <i data-lucide="credit-card" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Оплатить счет
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Согласовать и подписать проект договора</li>
-              <li>Согласовать договор-счет</li>
+              <li>Оплатить счет на оказание услуг</li>
             </ul>
           </div>
         </div>
@@ -261,11 +268,12 @@
           </div>
           <div style="flex:1;">
             <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
-              <i data-lucide="credit-card" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Счет
+              <i data-lucide="truck" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Доставить СИ к нам или Мы едем к Вам
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Оплатить счет на оказание услуг</li>
+              <li>Привезти СИ самостоятельно / Транспортной компанией</li>
+              <li>Согласовать дату приезда специалиста</li>
             </ul>
           </div>
         </div>
@@ -279,72 +287,12 @@
           </div>
           <div style="flex:1;">
             <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
-              <i data-lucide="truck" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Доставка СИ
-            </div>
-            <div style="display:flex; align-items:center; gap:10px; font-weight:800;">
-              <i class="w-5 h-5" style="color: var(--c-400);"></i>
-              Выездные работы
-            </div>
-            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Доставить самостоятельно</li>
-              <li>Отправить СИ транспортной компанией</li>
-              <li>Согласовать дату выезда инженера к Вам</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="card card-pad hover-lift" style="border-radius: 22px;">
-        <div style="display:flex; align-items:flex-start; gap:12px;">
-          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
-            5
-          </div>
-          <div style="flex:1;">
-            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
               <i data-lucide="bell" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Оповещение
+              Подождать оповещения и Забрать СИ
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>По завершению работ, мы отправим Вам уведомление о готовности СИ к выдаче</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="card card-pad hover-lift" style="border-radius: 22px;">
-        <div style="display:flex; align-items:flex-start; gap:12px;">
-          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
-            6
-          </div>
-          <div style="flex:1;">
-            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
-              <i data-lucide="package" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Отправка СИ
-            </div>
-            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Забрать самостоятельно</li>
-              <li>Отправить к нам транспортную компанию</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7 (wide on desktop) -->
-      <div class="card card-pad hover-lift lg:col-span-3" style="border-radius: 22px;">
-        <div style="display:flex; align-items:flex-start; gap:12px;">
-          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
-            7
-          </div>
-          <div style="flex:1;">
-            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
-              <i data-lucide="file-check-2" class="w-5 h-5" style="color: var(--c-400);"></i>
-              Закрывающие документы
-            </div>
-            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Подписать и отправить закрывающие документы нам</li>
+              <li>Сообщим о завершении выполнения услуги</li>
+              <li>Забрать СИ самостоятельно / Транспортной компанией</li>
             </ul>
           </div>
         </div>

@@ -1,35 +1,92 @@
-<footer style="background: var(--c-100); border-top: 1px solid rgba(13,19,33,.12);">
+<footer class="site-footer">
   <div class="container section-sm">
-    <div style="display:grid; gap:14px; grid-template-columns: 1.4fr 1fr 1fr;">
-      <div>
-        <div style="font-weight: 900; font-size: 16px; color: var(--c-900);">Двинта</div>
-        <p style="margin-top:6px; color: rgba(13,19,33,.70); line-height:1.5; font-size:14px;">
-          Метрологические услуги, испытания и стандартизация.
-        </p>
-      </div>
+    <div class="site-footer__card">
+      <div class="site-footer__grid">
 
-      <div>
-        <div style="font-weight:900; margin-bottom:10px; color: var(--c-900);">Навигация</div>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <a class="nav-link" style="padding:0; border-radius:0; display:inline-block;" href="{{ url_for('home') }}">Главная</a>
-          <a class="nav-link" style="padding:0; border-radius:0; display:inline-block;" href="{{ url_for('about') }}">О компании</a>
-          <a class="nav-link" style="padding:0; border-radius:0; display:inline-block;" href="{{ url_for('contacts') }}">Контакты</a>
+        <div class="site-footer__brand">
+          <div class="site-footer__logo-row">
+            <img
+              src="{{ url_for('static', filename='img/dvinta_mark_256.png') }}"
+              alt="Двинта"
+              class="site-footer__logo"
+              loading="lazy"
+              decoding="async"
+            />
+            <div>
+              <div class="site-footer__title">Двинта</div>
+              <div class="site-footer__subtitle">Центр стандартизации и метрологии</div>
+            </div>
+          </div>
+
+          <p class="site-footer__text">
+            Метрологические услуги, поверка, калибровка, испытания, стандартизация
+            и оформление технической документации для предприятий и организаций.
+          </p>
+
+          <div class="site-footer__actions">
+            <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Оставить заявку
+            </a>
+          </div>
         </div>
+
+        <div>
+          <div class="site-footer__heading">Быстрые ссылки</div>
+          <div class="site-footer__links">
+            <a class="site-footer__link" href="{{ url_for('home') }}">Главная</a>
+            <a class="site-footer__link" href="{{ url_for('about') }}">О компании</a>
+            <a class="site-footer__link" href="{{ url_for('equipment') }}">Оборудование</a>
+            <a class="site-footer__link" href="{{ url_for('contacts') }}">Контакты</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="site-footer__heading">Метрология</div>
+          <div class="site-footer__links">
+            <a class="site-footer__link" href="{{ url_for('metrology_competence') }}">Компетентность</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_verification') }}">Поверка</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_calibration') }}">Калибровка</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_type_approval') }}">Испытания для утверждения типа</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_equipment_testing') }}">Аттестация испытательного оборудования</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_acceptance_rules') }}">Правила приема</a>
+            <a class="site-footer__link" href="{{ url_for('metrology_standard_documents') }}">Нормативные документы</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="site-footer__heading">Стандартизация</div>
+          <div class="site-footer__links">
+            <a class="site-footer__link" href="{{ url_for('standardization_tu_development') }}">Разработка ТУ</a>
+            <a class="site-footer__link" href="{{ url_for('standardization_sto_development') }}">Разработка СТО</a>
+          </div>
+
+          <div class="site-footer__heading" style="margin-top:22px;">Контакты</div>
+          <div class="site-footer__contacts">
+            <a class="site-footer__contact" href="tel:+78122007282">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <span>+7 (812) 200-72-82</span>
+            </a>
+
+            <a class="site-footer__contact" href="mailto:info@csmdvinta.ru">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>info@csmdvinta.ru</span>
+            </a>
+
+            <div class="site-footer__contact site-footer__contact--static">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              <span>Россия, Санкт-Петербург, вн.тер. г. Муниципальный округ Гагаринское, ул. Типанова д. 25 к. 1 стр. 1, помещ. 16Н, офис 4</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div>
-        <div style="font-weight:900; margin-bottom:10px; color: var(--c-900);">Заявка</div>
-        <p style="color: rgba(13,19,33,.70); margin-bottom:12px; line-height:1.6;">
-          Оставьте заявку онлайн — мы свяжемся с вами по телефону или email.
-        </p>
-        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
-          Оставить заявку
-        </a>
+      <div class="site-footer__bottom">
+        <div>© {{ current_year }} Двинта. Все права защищены.</div>
+        <div>Метрологические услуги и стандартизация</div>
       </div>
-    </div>
-
-    <div style="margin-top:16px; padding-top:12px; border-top:1px solid rgba(13,19,33,.12); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; color: rgba(13,19,33,.60); font-size: 11px;">      <div>© {{ current_year }} Двинта. Все права защищены.</div>
-      <div>Политика конфиденциальности</div>
     </div>
   </div>
 </footer>

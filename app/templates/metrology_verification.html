@@ -194,15 +194,20 @@
     </div>
 
     <!-- Wide top banner -->
-    <div class="panel reveal" style="margin-top:18px; border-radius: 26px; padding: 22px;">
-      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%;">
-        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+    <div class="panel reveal" style="margin-top:18px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
           Заполнить онлайн-заявку
         </a>
+
         <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
           <i data-lucide="mail" class="w-5 h-5"></i>
           info@csmdvinta.ru
+        </a>
+
+        <a class="btn btn-primary" href="tel:+70000000000">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          +7 (812) 200-72-82
         </a>
       </div>
     </div>

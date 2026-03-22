@@ -33,33 +33,6 @@ if (mountain && !prefersReduced) {
 
   update();
 }
-// Subtle wind gusts (trees + snow)
-const trees = document.getElementById('trees-bg');
-const snow = document.getElementById('snow-bg');
-
-if ((trees || snow) && !prefersReduced) {
-  const body = document.body;
-
-  const gust = () => {
-    // не спамим классом
-    body.classList.remove('wind');
-    // принудительный reflow, чтобы анимация стабильно перезапускалась
-    void body.offsetWidth;
-    body.classList.add('wind');
-    window.setTimeout(() => body.classList.remove('wind'), 1900);
-  };
-
-  const scheduleNext = () => {
-    // каждые ~4–9 секунд случайно
-    const next = 4000 + Math.random() * 5000;
-    window.setTimeout(() => {
-      gust();
-      scheduleNext();
-    }, next);
-  };
-
-  scheduleNext();
-}
 
 // Intro splash (ONLY on home page where #introSplash exists)
 const splash = document.getElementById('introSplash');

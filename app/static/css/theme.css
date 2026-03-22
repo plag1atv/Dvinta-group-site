@@ -728,9 +728,9 @@ body.has-mountain footer{
 
 .verify-type-item__text{
   align-self: center;
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.35;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
   color: rgba(var(--ink-rgb), .90);
 }
 
@@ -763,7 +763,7 @@ body.has-mountain footer{
   }
 
   .verify-type-item__text{
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -1066,21 +1066,15 @@ body.no-scroll{ overflow: hidden; }
   padding: 10px 0 0;
 }
 
-.site-footer__logo-row{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .site-footer__logo{
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  flex: 0 0 42px;
+  flex: 0 0 64px;
 }
 
 .site-footer__title{
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 900;
   color: var(--c-900);
   line-height: 1.1;
@@ -1208,6 +1202,16 @@ body.no-scroll{ overflow: hidden; }
 
   .site-footer__title{
     font-size: 16px;
+  }
+
+    .site-footer__logo{
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+  }
+
+  .site-footer__logo-row{
+    gap: 14px;
   }
 
   .site-footer__subtitle{

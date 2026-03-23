@@ -12,8 +12,8 @@
       </h1>
 
       <p class="p-lead" style="margin-top:14px; max-width: 980px;">
-        Проведем испытания в целях утверждения типа СИ. Разработаем и согласуем программу испытаний.<br>
-        Предоставим акт испытаний, положительное заключение по проверке испытаний и приказ об утверждении типа СИ.
+        Проведем испытаниям в целях утверждения типа СИ. Продлим срок действия сертификата утвержденного типа СИ.<br>
+        Внесем изменения в сведения об утвержденном типе СИ.
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -37,135 +37,243 @@
 </section>
 
 
-<!-- SERVICES -->
+
+<!-- WHAT WE VERIFY -->
 <section class="section">
   <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-      <div>
-        <div class="kicker">Услуги</div>
-        <h2 class="h2" style="margin-top:8px;">Что мы делаем</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
-          ООО «ЦСМ Двинта» предоставляет полный набор работ по сопровождению и оформлению испытаний
-          в целях утверждения типа средств измерений.
+    <div class="card card-pad reveal verify-types" style="border-radius: 26px;">
+      <div class="verify-types__head">
+        <h2 class="h2" style="margin-top:8px;">Какие СИ испытываем</h2>
+        <p class="p-lead verify-types__lead" style="margin-top:10px; max-width: 980px;">
+          ООО «ЦСМ Двинта» аккредитован в национальной системе аккредитации на<br>
+          проведение испытаний в целях утверждения типа СИ:
+          <!-- <a href="https://pub.fsa.gov.ru/ral" target="_blank" rel="noopener"
+             style="color: var(--c-400); font-weight: 800; text-decoration: none;">
+            смотреть аккредитацию
+          </a>. -->
         </p>
       </div>
-    </div>
 
-    <div class="reveal" style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px;">
-      <div class="card card-pad-lg">
-        <div class="kicker">Перечень услуг</div>
-        <div style="font-weight:900; font-size:18px; margin-top:10px;">Основные направления</div>
+      <div class="verify-types__grid" style="margin-top:20px;">
+        <div class="verify-types__col">
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="ruler" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">геометрических средств измерений</div>
+          </div>
 
-        <ul style="margin-top:12px; padding-left:18px; line-height:1.85; color: rgba(13,19,33,.78);">
-          <li>Проведение испытаний в целях утверждения типа СИ</li>
-          <li>Продление срока действия сертификата утвержденного типа СИ</li>
-          <li>Проведение испытаний при внесении изменений в сведения об утвержденных типах СИ, влияющих на метрологические характеристики СИ, изменений интервала между поверками</li>
-          <li>Внесение изменений в сведения об утвержденных типах СИ, не влияющих на метрологические характеристики типа СИ</li>
-        </ul>
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="settings-2" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">механических средств измерений</div>
+          </div>
 
-        <div class="panel" style="margin-top:14px; padding:14px;">
-          <div style="font-weight:900;">Важно</div>
-          <div style="color: rgba(13,19,33,.70); margin-top:4px; line-height:1.6;">
-            Подскажем состав документов и оптимальный маршрут испытаний под ваш тип СИ.
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="waves" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">параметров потока, расхода, уровня, объёма веществ</div>
+          </div>
+
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="gauge" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">средств измерений давления и вакуумных измерений</div>
           </div>
         </div>
-      </div>
 
-      <div class="card card-pad-lg hover-lift">
-        <div class="kicker">Быстрый старт</div>
-        <div style="font-weight:900; font-size:18px; margin-top:10px;">С чего начать</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:12px; line-height:1.7;">
-          Самый быстрый способ — оставить онлайн-заявку. Мы уточним тип СИ, образцы, комплект документов
-          и предложим следующий шаг.
-        </p>
+        <div class="verify-types__col">
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="flask-conical" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">физико-химического состава и свойств веществ</div>
+          </div>
 
-        <div style="margin-top:18px; display:grid; gap:10px;">
-          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('contacts') }}">
-            Подать заявку онлайн
-          </a>
-          <a class="btn btn-ghost" style="width:100%;" href="mailto:info@csmdvinta.ru">
-            <i data-lucide="mail" class="w-5 h-5"></i>
-            info@csmdvinta.ru
-          </a>
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="thermometer" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">теплофизических и температурных измерений</div>
+          </div>
+
+          <div class="verify-type-item">
+            <div class="verify-type-item__icon">
+              <i data-lucide="clock" class="w-5 h-5"></i>
+            </div>
+            <div class="verify-type-item__text">средств измерений времени и частоты</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT WE NEED FROM YOU -->
+<!-- What we do -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
-        <h2 class="h2" style="margin-top:8px;">Что необходимо от Вас</h2>
+        <div class="kicker">Продление и внесение изменений</div>
+        <h2 class="h2" style="margin-top:8px;">Сделаем быстро и качественно</h2>
       </div>
     </div>
 
-    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
-
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
       <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Заявка</div>
-        <div style="font-weight:900; margin-top:8px;">Подать заявку</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Заполнить онлайн-заявку</li>
-          <li>Отправить заявку на <a href="mailto:info@csmdvinta.ru" style="color: var(--c-400); font-weight:800; text-decoration:none;">info@csmdvinta.ru</a></li>
-        </ul>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Продление</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Продлим срок действия сертификата утвержденного типа СИ
+        </p>
       </div>
 
       <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Документы</div>
-        <div style="font-weight:900; margin-top:8px;">Согласование</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Согласовать и подписать проект договора</li>
-          <li>Согласовать договор-счет</li>
-        </ul>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Влияющие изменения</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Внесем изменения в сведения об утвержденном типе СИ, влияющие<br>
+          на метрологические характеристики типа СИ
+        </p>
       </div>
 
       <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Счёт</div>
-        <div style="font-weight:900; margin-top:8px;">Оплата</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Оплатить счет на оказание услуг</li>
-        </ul>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Не влияющие изменения</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Внесем изменения в сведения об утвержденных типах СИ, не<br>
+          влияющие на метрологические характеристики типа СИ
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT WE NEED -->
+<section class="section">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center;">
+      <h2 class="h2" style="margin-top:8px;">Что необходимо от вас</h2>
+    </div>
+
+    <!-- Wide top banner -->
+    <div class="panel reveal" style="margin-top:18px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Заполнить онлайн-заявку
+        </a>
+
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
+        </a>
+
+        <a class="btn btn-primary" href="tel:+70000000000">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          +7 (812) 200-72-82
+        </a>
+      </div>
+    </div>
+
+    <!-- Steps grid -->
+    <div class="grid gap-4 md:grid-cols-2 reveal" style="margin-top:18px; align-items:stretch;">
+
+      <!-- 1 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            1
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="file-plus" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Направить заявку и документы
+            </div>
+
+            <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
+              <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Онлайн
+              </a>
+
+              <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                info@csmdvinta.ru
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Программа испытаний</div>
-        <div style="font-weight:900; margin-top:8px;">Согласовать программу</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Согласовать программу испытаний СИ</li>
-        </ul>
+      <!-- 2 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            2
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="credit-card" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Оплатить счет
+            </div>
+            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Оплатить счет на оказание услуг</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Образцы испытаний</div>
-        <div style="font-weight:900; margin-top:8px;">Передать образцы</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Доставить самостоятельно</li>
-          <li>Отправить СИ транспортной компанией</li>
-        </ul>
+      <!-- 3 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            3
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="truck" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Доставить образцы к нам или Мы едем к Вам
+            </div>
+            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Привезти СИ самостоятельно / Транспортной компанией</li>
+              <li>Согласовать дату приезда метролога</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Пакет документов</div>
-        <div style="font-weight:900; margin-top:8px;">Согласовать документы</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Согласовать описание типа и методику поверки СИ, и иные документы</li>
-          <li>Согласовать и подписать акт испытаний СИ</li>
-        </ul>
-      </div>
-
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Результаты</div>
-        <div style="font-weight:900; margin-top:8px;">Получить итог</div>
-        <ul style="margin-top:10px; padding-left:18px; color: rgba(13,19,33,.72); line-height:1.65;">
-          <li>Пришлем положительное заключение по проверке испытаний</li>
-          <li>Пришлем приказ об утверждении типа СИ</li>
-        </ul>
+      <!-- 4 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            4
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="bell" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Подождать оповещения и Забрать образцы
+            </div>
+            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Вышлем приказ об утверждении типа СИ</li>
+              <li>Забрать СИ самостоятельно / Транспортной компанией</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
+
   </div>
 </section>
 

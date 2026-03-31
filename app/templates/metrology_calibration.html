@@ -13,7 +13,7 @@
       </h1>
 
       <p class="p-lead" style="margin-top:14px; max-width: 980px;">
-        Выполним калибровку средств измерений за <b>5 рабочих дней</b>.<br>
+        Выполним калибровку средств измерений до <b>5 рабочих дней</b>.<br>
         Калибруем СИ по техническим заданиям, работаем с чертежами и спецификациями.
         Предоставляем <b>сертификат калибровки</b> с действительными значениями.
       </p>
@@ -26,7 +26,7 @@
 
         <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
           <i data-lucide="clipboard-check" class="w-5 h-5"></i>
-          Правила приёма
+          Правила приёма и выдачи СИ
         </a>
 
         <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
@@ -40,6 +40,34 @@
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- contant -->
+<section class="section">
+  <div class="container">
+
+
+    <!-- Wide top banner -->
+    <div class="panel reveal" style="margin-top:-100px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Заполнить онлайн-заявку
+        </a>
+
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
+        </a>
+
+        <a class="btn btn-primary" href="tel:+70000000000">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          +7 (812) 200-72-82
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -305,7 +333,7 @@
               Доставить СИ к нам или Мы едем к Вам
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Привезти СИ самостоятельно / Транспортной компанией</li>
+              <li>Привезти самостоятельно / Транспортной компанией</li>
               <li>Согласовать дату приезда метролога</li>
             </ul>
           </div>
@@ -325,7 +353,7 @@
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
               <li>Сообщим о завершении выполнения услуги</li>
-              <li>Забрать СИ самостоятельно / Транспортной компанией</li>
+              <li>Забрать самостоятельно / Транспортной компанией</li>
             </ul>
           </div>
         </div>
@@ -364,29 +392,6 @@
         </div>
       </div>
 
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Что калибруем мы?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          ООО «ЦСМ Двинта» оказывает комплексные и профессиональные услуги по калибровке средств измерений, средств контроля,
-          испытательного и вспомогательного оборудования.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button type="button" class="faq-btn" data-acc-btn>
-          <span>Как мы калибруем?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600);" data-acc-icon></i>
-        </button>
-        <div class="faq-body hidden" data-acc-body>
-          Калибровка выполняется по методикам (методам) измерений, инструкциям, методикам поверки и калибровки с учетом технического задания заказчика.
-          <div style="margin-top:10px;">
-            Для нестандартных средств измерений могут быть разработаны индивидуальные методики калибровки.
-          </div>
-        </div>
-      </div>
 
       <div class="faq-item">
         <button type="button" class="faq-btn" data-acc-btn>
@@ -409,7 +414,7 @@
         <div class="faq-body hidden" data-acc-body>
           Стандартные сроки выполнения работ по калибровки не более 5 рабочих дней.
           <div style="margin-top:10px;">
-            По желанию заказчика сроки поверки СИ могут быть сокращены до 1 рабочего дня или 2-3 рабочих дней.
+            По желанию заказчика сроки калибровки СИ могут быть сокращены до 1 рабочего дня, 2 или 3 рабочих дней.
           </div>
         </div>
       </div>

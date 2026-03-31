@@ -24,7 +24,7 @@
 
         <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
           <i data-lucide="clipboard-check" class="w-5 h-5"></i>
-          Правила приёма
+          Правила приёма и выдачи СИ
         </a>
 
         <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
@@ -37,6 +37,33 @@
 </section>
 
 
+<!-- contant -->
+<section class="section">
+  <div class="container">
+
+
+    <!-- Wide top banner -->
+    <div class="panel reveal" style="margin-top:-100px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Заполнить онлайн-заявку
+        </a>
+
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
+        </a>
+
+        <a class="btn btn-primary" href="tel:+70000000000">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          +7 (812) 200-72-82
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- WHAT WE VERIFY -->
 <section class="section">
@@ -45,8 +72,7 @@
       <div class="verify-types__head">
         <h2 class="h2" style="margin-top:8px;">Какие СИ испытываем</h2>
         <p class="p-lead verify-types__lead" style="margin-top:10px; max-width: 980px;">
-          ООО «ЦСМ Двинта» аккредитован в национальной системе аккредитации на<br>
-          проведение испытаний в целях утверждения типа СИ:
+          «ЦСМ Двинта» аккредитован в национальной системе аккредитации на проведение испытаний в целях утверждения типа СИ:
           <!-- <a href="https://pub.fsa.gov.ru/ral" target="_blank" rel="noopener"
              style="color: var(--c-400); font-weight: 800; text-decoration: none;">
             смотреть аккредитацию
@@ -117,8 +143,8 @@
   <div class="container">
     <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
-        <div class="kicker">Продление и внесение изменений</div>
-        <h2 class="h2" style="margin-top:8px;">Сделаем быстро и качественно</h2>
+        <div class="kicker">Сделаем быстро и качественно</div>
+        <h2 class="h2" style="margin-top:8px;">Продление и внесение изменений</h2>
       </div>
     </div>
 
@@ -246,7 +272,7 @@
               Доставить образцы к нам или Мы едем к Вам
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
-              <li>Привезти СИ самостоятельно / Транспортной компанией</li>
+              <li>Привезти самостоятельно / Транспортной компанией</li>
               <li>Согласовать дату приезда метролога</li>
             </ul>
           </div>
@@ -266,7 +292,7 @@
             </div>
             <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
               <li>Вышлем приказ об утверждении типа СИ</li>
-              <li>Забрать СИ самостоятельно / Транспортной компанией</li>
+              <li>Забрать самостоятельно / Транспортной компанией</li>
             </ul>
           </div>
         </div>

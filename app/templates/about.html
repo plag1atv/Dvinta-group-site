@@ -26,66 +26,97 @@
   </div>
 </section>
 
-<!-- MISSION + VALUES -->
+<!-- contant -->
 <section class="section">
   <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:start;">
-      <div class="card card-pad-lg hover-lift">
-        <div class="kicker">Миссия</div>
-        <h2 class="h2" style="margin-top:10px;">Надёжность измерений — основа решений</h2>
-        <p class="p-lead" style="margin-top:12px;">
-          Наша задача — сделать метрологию понятной и удобной: от консультации и приёма оборудования
-          до результата и комплекта документов.
-        </p>
 
-        <div class="panel" style="padding:16px; margin-top:16px;">
-          <div style="font-weight:900;">Как мы работаем</div>
-          <div style="margin-top:10px; display:grid; gap:10px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle" class="w-5 h-5" style="margin-top:2px;"></i>
-              <div style="color: rgba(13,19,33,.72); line-height:1.6;">
-                Уточняем задачу и требования к документам (форматы, сроки, акты/протоколы)
-              </div>
-            </div>
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle" class="w-5 h-5" style="margin-top:2px;"></i>
-              <div style="color: rgba(13,19,33,.72); line-height:1.6;">
-                Делаем работы по методикам и нормативам, фиксируем результат
-              </div>
-            </div>
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <i data-lucide="check-circle" class="w-5 h-5" style="margin-top:2px;"></i>
-              <div style="color: rgba(13,19,33,.72); line-height:1.6;">
-                Передаём документы и даём рекомендации по дальнейшим действиям
-              </div>
-            </div>
-          </div>
+
+    <!-- Wide top banner -->
+    <div class="panel reveal" style="margin-top:-100px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Заполнить онлайн-заявку
+        </a>
+
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
+        </a>
+
+        <a class="btn btn-primary" href="tel:+70000000000">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          +7 (812) 200-72-82
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DVINTA NAME / CHARTER BLOCK -->
+<section class="section-sm">
+  <div class="container">
+    <div class="dvinta-charter reveal">
+      <div class="dvinta-charter__top">
+        <div class="dvinta-charter__badge">
+          <img
+            src="{{ url_for('static', filename='img/dvinta-crown.png') }}"
+            alt="Символ Двинты"
+            class="dvinta-charter__badge-img"
+          >
+        </div>
+
+        <div class="dvinta-charter__intro">
+          <div class="kicker" style="color: rgba(255,255,255,.82);">Название</div>
+          <h2 class="h2 dvinta-charter__title">Двинта</h2>
+          <p class="dvinta-charter__subtitle">
+            В название нашего Центра Стандартизации и Метрологии заложены глубокие исторические вехи, которые способствовали развитию метрологии в стране.
+          </p>
         </div>
       </div>
 
-      <div class="card card-pad-lg reveal" data-delay="120ms">
-        <div class="kicker">Фокус</div>
-        <h3 style="font-weight:900; font-size:18px; margin-top:10px;">Что для нас важно</h3>
-
-        <div style="margin-top:14px; display:grid; gap:10px;">
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Точность</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Проверяем, фиксируем, объясняем результат</div>
-          </div>
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Скорость</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Оптимизируем процесс и сроки</div>
-          </div>
-          <div class="panel" style="padding:14px;">
-            <div style="font-weight:900;">Прозрачность</div>
-            <div style="color: rgba(13,19,33,.70); margin-top:4px;">Понятно, что делаем и какие документы выдаём</div>
-          </div>
+      <div class="dvinta-charter__body">
+        <div class="dvinta-charter__lead">
+          Первым и основополагающим документом в метрологии являлась
+          Двинская грамота Ивана Грозного
+          <span>(1550 год, 21 декабря)</span>.
+          Её цель — упорядочить систему мер и весов и обеспечить единство измерений.
         </div>
 
-        <div style="margin-top:16px;">
-          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('metrology_acceptance_rules') }}">
-            Правила приёма и комплектность
-          </a>
+        <div class="dvinta-charter__quote">
+          <div class="dvinta-charter__quote-mark">Двинская грамота</div>
+
+          <p>
+            «От Великого Государя Царя и Великого Князя Ивана Васильевича всея Руси
+          </p>
+
+          <p>
+            По нашему царскому указу посылаем вам меру медяную новую, осьмину зело точную,
+            дабы по всей земле нашей меры были ровны и справедливы.
+          </p>
+
+          <p><strong>Повелеваем вам:</strong></p>
+
+          <ul class="dvinta-charter__list">
+            <li>С меры медяной новой сделать спуски новые деревянные</li>
+            <li>На всех мерах учинить по пятну клейменному</li>
+            <li>Хранить меру медяную как зеницу ока</li>
+            <li>Передать знания о мерах верным людям</li>
+          </ul>
+
+          <p>
+            И дабы во всех городах наших меры были равны, как одна, так и другая,
+            и чтобы не было меж людьми никакого раздора и неправедного суда
+            из-за мер неточностей.
+          </p>
+
+          <p>
+            Кто ослушается повеления нашего царского — тому быть в опале великой.
+          </p>
+
+          <p class="dvinta-charter__date">
+            Дано в лето 7058-е (1550 год) декабря в 21 день»
+          </p>
         </div>
       </div>
     </div>
@@ -98,38 +129,64 @@
     <div class="card reveal" style="padding:28px;">
       <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
         <div>
-          <div class="kicker">Статистика</div>
-          <h2 class="h2" style="margin-top:8px;">Опыт, которому доверяют</h2>
-          <p class="p-lead" style="margin-top:10px; max-width: 980px;">
-            Показатели можно уточнить и заменить на реальные цифры заказчика (это макет).
-          </p>
+          <div class="kicker"></div>
+          <h2 class="h2" style="margin-top:8px;">Команда</h2>
         </div>
       </div>
 
       <div style="margin-top:18px; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
         <div class="panel hover-lift reveal" style="padding:16px;">
-          <div class="kicker">Опыт</div>
-          <div style="font-weight:900; font-size:26px; margin-top:6px;">10+ лет</div>
-          <div style="color: rgba(13,19,33,.70); margin-top:4px;">в метрологии и стандартизации</div>
+          <div style="color: rgba(13,19,33,.70); margin-top:4px;">В «ЦСМ Двинта» работают профессионалы, имеющие большой опыт в области аккредитации, метрологии и стандартизации.
+          Нами движет единство, понимание стратегических целей и желание их реализовать в полной мере.
+          Высокое качество и быстрые сроки выполнения услуг являются для наших специалистов первостепенными задачами, которые заложены в основу нашей политики.
+          </div>
         </div>
 
-        <div class="panel hover-lift reveal" data-delay="80ms" style="padding:16px;">
-          <div class="kicker">Объём</div>
-          <div style="font-weight:900; font-size:26px; margin-top:6px;">5000+</div>
-          <div style="color: rgba(13,19,33,.70); margin-top:4px;">работ в год (пример)</div>
-        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="panel hover-lift reveal" data-delay="160ms" style="padding:16px;">
-          <div class="kicker">Клиенты</div>
-          <div style="font-weight:900; font-size:26px; margin-top:6px;">200+</div>
-          <div style="color: rgba(13,19,33,.70); margin-top:4px;">компаний (пример)</div>
-        </div>
 
-        <div class="panel hover-lift reveal" data-delay="240ms" style="padding:16px;">
-          <div class="kicker">Качество</div>
-          <div style="font-weight:900; font-size:26px; margin-top:6px;">99%</div>
-          <div style="color: rgba(13,19,33,.70); margin-top:4px;">точность и контроль</div>
+<!-- What we do -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Сотрудничество</div>
+        <h2 class="h2" style="margin-top:8px;">Сотрудничество с нами</h2>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Услуги</div>
         </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Мы предоставляем услуги высокого качества
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Сроки</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Мы гарантируем быстрые сроки выполнения услуг
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Взаимодействие</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Мы взаимодействуем с заказчиками на основе взаимопонимания и доверия
+        </p>
       </div>
     </div>
   </div>
@@ -138,13 +195,11 @@
 <!-- CTA -->
 <section class="section">
   <div class="container">
-    <div class="reveal" style="background: var(--c-800); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">
-      <div class="kicker" style="color: rgba(253,254,253,.85);">Готовы начать?</div>
+    <div class="reveal" style="background: var(--c-600); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">      <div class="kicker" style="color: rgba(253,254,253,.85);">Остались вопросы?</div>
       <h2 class="h2" style="margin-top:8px;">Оставьте заявку - мы свяжемся с вами в течение часа</h2>
 
       <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="{{ url_for('contacts') }}" style="background:#fff; color: var(--c-800); border-color:#fff;">
-          <i data-lucide="send" class="w-5 h-5"></i>
+        <a href="{{ url_for('metrology_online_application') }}" class="btn bg-white px-6 py-3 rounded-xl font-semibold shadow-soft" style="color: var(--c-600);">
           Оставить заявку
         </a>
         <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru" style="border-color: rgba(255,255,255,.35); color:#fff;">

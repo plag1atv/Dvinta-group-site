@@ -1,13 +1,85 @@
+import os
+import smtplib
 from datetime import datetime
-from flask import Flask, render_template
-from flask import request, redirect, url_for
+from email.message import EmailMessage
+
+from flask import Flask, render_template, request, redirect, url_for
+
+def load_env_file() -> None:
+    env_path = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        ".env",
+    )
+
+    if not os.path.exists(env_path):
+        return
+
+    with open(env_path, "r", encoding="utf-8") as env_file:
+        for raw_line in env_file:
+            line = raw_line.strip()
+
+            if not line or line.startswith("#"):
+                continue
+
+            if "=" not in line:
+                continue
+
+            key, value = line.split("=", 1)
+            key = key.strip()
+            value = value.strip()
+
+            if key and key not in os.environ:
+                os.environ[key] = value
+
 
 def create_app() -> Flask:
     app = Flask(__name__)
 
+    load_env_file()
+
+    app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-secret-key")
+
+    app.config["MAIL_HOST"] = os.environ.get("MAIL_HOST", "smtp.gmail.com")
+    app.config["MAIL_PORT"] = int(os.environ.get("MAIL_PORT", "465"))
+    app.config["MAIL_USE_SSL"] = os.environ.get("MAIL_USE_SSL", "true").lower() == "true"
+
+    app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME", "")
+    app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD", "")
+    app.config["MAIL_TO"] = os.environ.get("MAIL_TO", "multpro228@gmail.com")
+
     @app.context_processor
     def inject_globals():
         return {"current_year": datetime.now().year}
+
+    def send_contact_email(name: str, email: str, message: str) -> None:
+        mail_username = app.config["MAIL_USERNAME"]
+        mail_password = app.config["MAIL_PASSWORD"]
+        mail_to = app.config["MAIL_TO"]
+
+        if not mail_username or not mail_password or not mail_to:
+            raise ValueError(
+                "Не заполнены MAIL_USERNAME, MAIL_PASSWORD или MAIL_TO."
+            )
+
+        email_message = EmailMessage()
+        email_message["Subject"] = "Новая заявка с сайта: страница Контакты"
+        email_message["From"] = mail_username
+        email_message["To"] = mail_to
+        email_message["Reply-To"] = email
+
+        email_message.set_content(
+            f"Новая заявка с формы контактов.\n\n"
+            f"Имя: {name}\n"
+            f"Email клиента: {email}\n\n"
+            f"Сообщение:\n{message}\n"
+        )
+
+        with smtplib.SMTP_SSL(
+            app.config["MAIL_HOST"],
+            app.config["MAIL_PORT"],
+        ) as server:
+            server.login(mail_username, mail_password)
+            server.send_message(email_message)
 
     @app.get("/")
     def home():
@@ -17,9 +89,51 @@ def create_app() -> Flask:
     def about():
         return render_template("about.html", title="О компании")
 
-    @app.get("/contacts")
+    @app.route("/contacts", methods=["GET", "POST"])
     def contacts():
-        return render_template("contacts.html", title="Контакты")
+        form_data = {
+            "name": "",
+            "email": "",
+            "message": "",
+        }
+        success_message = None
+        error_message = None
+
+        if request.method == "POST":
+            form_data["name"] = request.form.get("name", "").strip()
+            form_data["email"] = request.form.get("email", "").strip()
+            form_data["message"] = request.form.get("message", "").strip()
+
+            if not form_data["name"] or not form_data["email"] or not form_data["message"]:
+                error_message = "Пожалуйста, заполните все поля формы."
+            else:
+                try:
+                    send_contact_email(
+                        name=form_data["name"],
+                        email=form_data["email"],
+                        message=form_data["message"],
+                    )
+                    success_message = (
+                        "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время."
+                    )
+                    form_data = {
+                        "name": "",
+                        "email": "",
+                        "message": "",
+                    }
+                except Exception as exc:
+                    error_message = (
+                        "Не удалось отправить заявку. Проверь настройки Gmail SMTP."
+                    )
+                    print(f"Ошибка отправки письма: {exc}")
+
+        return render_template(
+            "contacts.html",
+            title="Контакты",
+            success_message=success_message,
+            error_message=error_message,
+            form_data=form_data,
+        )
 
     @app.get("/equipment")
     def equipment():

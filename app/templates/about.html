@@ -15,29 +15,8 @@
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
         <a class="btn btn-primary" href="{{ url_for('contacts') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
-          Оставить заявку
-        </a>
-        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Контакты
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- contant -->
-<section class="section">
-  <div class="container">
-
-
-    <!-- Wide top banner -->
-    <div class="panel reveal" style="margin-top:-100px; border-radius: 26px; padding: 22px; text-align:center;">
-      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
-          <i data-lucide="send" class="w-5 h-5"></i>
           Заполнить онлайн-заявку
         </a>
-
         <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
           <i data-lucide="mail" class="w-5 h-5"></i>
           info@csmdvinta.ru
@@ -49,76 +28,19 @@
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- DVINTA NAME / CHARTER BLOCK -->
-<section class="section-sm">
+<!-- HERO -->
+<section class="section" style="margin-top: -20px;">
   <div class="container">
-    <div class="dvinta-charter reveal">
-      <div class="dvinta-charter__top">
-        <div class="dvinta-charter__badge">
-          <img
-            src="{{ url_for('static', filename='img/dvinta-crown.png') }}"
-            alt="Символ Двинты"
-            class="dvinta-charter__badge-img"
-          >
-        </div>
-
-        <div class="dvinta-charter__intro">
-          <div class="kicker" style="color: rgba(255,255,255,.82);">Название</div>
-          <h2 class="h2 dvinta-charter__title">Двинта</h2>
-          <p class="dvinta-charter__subtitle">
-            В название нашего Центра Стандартизации и Метрологии заложены глубокие исторические вехи, которые способствовали развитию метрологии в стране.
-          </p>
-        </div>
-      </div>
-
-      <div class="dvinta-charter__body">
-        <div class="dvinta-charter__lead">
-          Первым и основополагающим документом в метрологии являлась
-          Двинская грамота Ивана Грозного
-          <span>(1550 год, 21 декабря)</span>.
-          Её цель — упорядочить систему мер и весов и обеспечить единство измерений.
-        </div>
-
-        <div class="dvinta-charter__quote">
-          <div class="dvinta-charter__quote-mark">Двинская грамота</div>
-
-          <p>
-            «От Великого Государя Царя и Великого Князя Ивана Васильевича всея Руси
-          </p>
-
-          <p>
-            По нашему царскому указу посылаем вам меру медяную новую, осьмину зело точную,
-            дабы по всей земле нашей меры были ровны и справедливы.
-          </p>
-
-          <p><strong>Повелеваем вам:</strong></p>
-
-          <ul class="dvinta-charter__list">
-            <li>С меры медяной новой сделать спуски новые деревянные</li>
-            <li>На всех мерах учинить по пятну клейменному</li>
-            <li>Хранить меру медяную как зеницу ока</li>
-            <li>Передать знания о мерах верным людям</li>
-          </ul>
-
-          <p>
-            И дабы во всех городах наших меры были равны, как одна, так и другая,
-            и чтобы не было меж людьми никакого раздора и неправедного суда
-            из-за мер неточностей.
-          </p>
-
-          <p>
-            Кто ослушается повеления нашего царского — тому быть в опале великой.
-          </p>
-
-          <p class="dvinta-charter__date">
-            Дано в лето 7058-е (1550 год) декабря в 21 день»
-          </p>
-        </div>
-      </div>
+    <div class="panel reveal" style="padding:46px; border-radius: 26px; background-color: #ffffff;" >
+      <div class="kicker">Немного о нас</div>
+      <h1 class="h1" style="margin-top:10px;">Кто мы</h1>
+      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
+        «ЦСМ Двинта» – аккредитованная организация, обеспечивающая единство измерений. Мы объединяем опыт квалифицированных специалистов и передовые технологии для обеспечения качественной поверки и калибровки и испытаний средств измерений. Мы создаем стандарты, нормативные и технические документы, чтобы вы работали системно, структурировано и комплексно.<br>
+        Мы понимаем: точность измерений и соответствие стандартам — не просто формальность, а основа доверия наших клиентов и партнёров.
+      </p>
     </div>
   </div>
 </section>
@@ -130,15 +52,15 @@
       <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
         <div>
           <div class="kicker"></div>
-          <h2 class="h2" style="margin-top:8px;">Команда</h2>
+          <h2 class="h2" style="margin-top:8px;">Наша команда</h2>
         </div>
       </div>
 
       <div style="margin-top:18px; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
         <div class="panel hover-lift reveal" style="padding:16px;">
-          <div style="color: rgba(13,19,33,.70); margin-top:4px;">В «ЦСМ Двинта» работают профессионалы, имеющие большой опыт в области аккредитации, метрологии и стандартизации.
-          Нами движет единство, понимание стратегических целей и желание их реализовать в полной мере.
-          Высокое качество и быстрые сроки выполнения услуг являются для наших специалистов первостепенными задачами, которые заложены в основу нашей политики.
+          <div style="color: rgba(13,19,33,.70); margin-top:4px;">Команда Центра – это сплав опыта и современных компетенций.
+            В нашем коллективе работают аттестованные метрологи с большим опытом поверки, калибровки и испытаний средств измерений.
+            Нами движет единство, понимание стратегических целей и желание их реализовать в полной мере.
           </div>
         </div>
 
@@ -148,13 +70,78 @@
 </section>
 
 
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">направления</div>
+        <h2 class="h2" style="margin-top:8px;">Наши направления</h2>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px;">
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_verification') }}" style="text-decoration:none;">
+    <div class="kicker">1. Поверка СИ</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Поверка средств измерений</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проверим СИ на соответствие установленным метрологическим требованиям. Быстро и качественно
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_calibration') }}" style="text-decoration:none;">
+    <div class="kicker">2. Калибровка СИ</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Калибровка средств измерений</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Выдадим сертификат с действительными значениями метрологических характеристик СИ.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_type_approval') }}" style="text-decoration:none;">
+    <div class="kicker">3. Утверждение типа</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания в целях утверждения типа СИ</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проведем испытания в целях утверждения типа СИ. Разработаем все необходимые документы.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_equipment_testing') }}" style="text-decoration:none;">
+    <div class="kicker">4. Аттестация ИО</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Аттестация испытательного оборудования</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проведем первичную и периодическую аттестацию ИО в соответствии с ГОСТ Р 8.568-2017.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('equipment') }}" style="text-decoration:none;">
+    <div class="kicker">5. Оборудование</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Измерительное оборудование</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Подберем оборудование под ваши задачи. Проведем диагностику, ремонт и модернизацию.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('contacts') }}" style="text-decoration:none;">
+    <div class="kicker">6. Стандартизация</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Разработка документов</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Разработаем техническую и нормативную документацию под ваши требования и задачи.
+    </div>
+  </a>
+
+</div>
+
+  </div>
+</section>
+
 <!-- What we do -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
         <div class="kicker">Сотрудничество</div>
-        <h2 class="h2" style="margin-top:8px;">Сотрудничество с нами</h2>
+        <h2 class="h2" style="margin-top:8px;">Преимущества сотрудничества с нами</h2>
       </div>
     </div>
 
@@ -162,10 +149,40 @@
       <div class="card card-pad hover-lift reveal">
         <div style="display:flex; gap:10px; align-items:center;">
           <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
-          <div style="font-weight:900;">Услуги</div>
+          <div style="font-weight:900;">Аккредитация</div>
         </div>
         <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Мы предоставляем услуги высокого качества
+          аккредитация в национальной системе
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">База</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          современная эталонная база
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Команда</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          команда аттестованных метрологов и экспертов по стандартизации
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Подход</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          индивидуальный подход к каждому клиенту
         </p>
       </div>
 
@@ -175,18 +192,384 @@
           <div style="font-weight:900;">Сроки</div>
         </div>
         <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Мы гарантируем быстрые сроки выполнения услуг
+          минимальные сроки оказания услуг
         </p>
       </div>
 
       <div class="card card-pad hover-lift reveal">
         <div style="display:flex; gap:10px; align-items:center;">
           <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
-          <div style="font-weight:900;">Взаимодействие</div>
+          <div style="font-weight:900;">Консультация</div>
         </div>
         <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Мы взаимодействуем с заказчиками на основе взаимопонимания и доверия
+          консультация с персональным менеджером
         </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Госзакупки</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          участие в госзакупках
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal">
+        <div style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clipboard-check" class="w-5 h-5" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Качество</div>
+        </div>
+        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          гарантия качества
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DVINTA NAME / CHARTER BLOCK – Старинный свиток -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Наше название</div>
+        <h2 class="h2" style="margin-top:8px;">Историческая справка</h2>
+      </div>
+    </div>
+
+    <!-- Старинный свиток / грамота -->
+    <div class="reveal" style="margin-top:28px; max-width:980px; margin-left:auto; margin-right:auto;">
+      <div style="
+        background: #f8f1e0;
+        border: 18px solid #d4a97c;
+        border-radius: 12px;
+        box-shadow: 0 25px 50px -12px rgba(11,27,58,.28),
+                    inset 0 0 80px rgba(212,169,124,.15);
+        padding: 58px 52px 52px;
+        position: relative;
+        overflow: hidden;
+      ">
+        <!-- Лёгкий эффект «бумаги» и верхний бейдж -->
+        <div style="text-align:center; margin-bottom:28px;">
+          <div style="
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            background: rgba(14,116,144,.12);
+            color: #0E7490;
+            font-weight:900;
+            font-size:13px;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            padding:8px 24px 8px 20px;
+            border-radius:9999px;
+            border:2px solid #0E7490;
+          ">
+            <i data-lucide="scroll-text" class="w-5 h-5"></i>
+            ДВИНСКАЯ ГРАМОТА • 1550
+          </div>
+        </div>
+
+        <!-- Основной текст свитка -->
+        <div style="color:#2c210f; line-height:1.85; font-size:17.5px; text-align:justify; max-width:820px; margin:0 auto;">
+          В название нашего Центра заложены глубокие исторические вехи, которые способствовали развитию метрологии в стране.<br><br>
+          Первым и основополагающим документом в метрологии являлась Двинская грамота Ивана Грозного (1550 год, 21 декабря). Её цель — упорядочить систему мер и весов и обеспечить единство измерений.
+        </div>
+
+        <div style="
+          margin:42px auto 0;
+          max-width:820px;
+          background:rgba(255,255,255,.75);
+          border:3px solid #d4a97c;
+          border-radius:8px;
+          padding:32px 36px;
+          box-shadow:inset 0 4px 12px rgba(0,0,0,.08);
+        ">
+          <div style="color:#2c210f; line-height:1.9; font-size:17px; text-align:justify;">
+            «От Великого Государя Царя и Великого Князя Ивана Васильевича всея Руси<br><br>
+            По нашему царскому указу посылаем вам меру медяную новую, осьмину зело точную, дабы по всей земле нашей меры были ровны и справедливы.<br><br>
+            <strong>Повелеваем вам:</strong><br><br>
+            • С меры медяной новой сделать спуски новые деревянные<br>
+            • На всех мерах учинить по пятну клейменному<br>
+            • Хранить меру медяную как зеницу ока<br>
+            • Передать знания о мерах верным людям<br><br>
+            И дабы во всех городах наших меры были равны, как одна, так и другая, и чтобы не было меж людьми никакого раздора и неправедного суда из-за мер неточностей.<br><br>
+            Кто ослушается повеления нашего царского — тому быть в опале великой.<br><br>
+            Дано в лето 7058-е (1550 год) декабря в 21 день»
+          </div>
+        </div>
+
+        <!-- Нижний эффект свитка (лёгкая тень) -->
+        <div style="position:absolute; bottom:0; left:0; right:0; height:28px; background:linear-gradient(transparent, rgba(212,169,124,.25)); pointer-events:none;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DVINTA NAME / CHARTER BLOCK – Старинный свиток в цветах сайта -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Наше название</div>
+        <h2 class="h2" style="margin-top:8px;">Историческая справка</h2>
+      </div>
+    </div>
+
+    <!-- Старинный свиток в брендовых цветах -->
+    <div class="reveal" style="margin-top:28px; max-width:980px; margin-left:auto; margin-right:auto;">
+      <div style="
+        background: #F7FBFF;
+        border: 16px solid var(--c-600);
+        border-radius: 14px;
+        box-shadow: 0 25px 50px -12px rgba(var(--ink-rgb), .25),
+                    inset 0 0 60px rgba(14,116,144,.12);
+        padding: 54px 48px 48px;
+        position: relative;
+        overflow: hidden;
+      ">
+        <!-- Верхний бейдж в стиле сайта -->
+        <div style="text-align:center; margin-bottom:32px;">
+          <div style="
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            background: var(--c-600);
+            color: #fff;
+            font-weight:900;
+            font-size:13px;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            padding:10px 26px;
+            border-radius:9999px;
+            box-shadow: 0 4px 12px rgba(14,116,144,.3);
+          ">
+            <i data-lucide="scroll-text" class="w-5 h-5"></i>
+            ДВИНСКАЯ ГРАМОТА • 1550
+          </div>
+        </div>
+
+        <!-- Вводный текст -->
+        <div style="color: var(--c-900); line-height:1.85; font-size:17.5px; text-align:justify; max-width:820px; margin:0 auto;">
+          В название нашего Центра заложены глубокие исторические вехи, которые способствовали развитию метрологии в стране.<br><br>
+          Первым и основополагающим документом в метрологии являлась Двинская грамота Ивана Грозного (1550 год, 21 декабря). Её цель — упорядочить систему мер и весов и обеспечить единство измерений.
+        </div>
+
+        <!-- Сама грамота (внутренний блок) -->
+        <div style="
+          margin:42px auto 0;
+          max-width:820px;
+          background: rgba(255,255,255,.95);
+          border: 4px solid var(--c-600);
+          border-radius: 10px;
+          padding: 34px 38px;
+          box-shadow: inset 0 6px 20px rgba(var(--ink-rgb), .08);
+        ">
+          <div style="color: var(--c-900); line-height:1.9; font-size:17px; text-align:justify;">
+            «От Великого Государя Царя и Великого Князя Ивана Васильевича всея Руси<br><br>
+            По нашему царскому указу посылаем вам меру медяную новую, осьмину зело точную, дабы по всей земле нашей меры были ровны и справедливы.<br><br>
+            <strong>Повелеваем вам:</strong><br><br>
+            • С меры медяной новой сделать спуски новые деревянные<br>
+            • На всех мерах учинить по пятну клейменному<br>
+            • Хранить меру медяную как зеницу ока<br>
+            • Передать знания о мерах верным людям<br><br>
+            И дабы во всех городах наших меры были равны, как одна, так и другая, и чтобы не было меж людьми никакого раздора и неправедного суда из-за мер неточностей.<br><br>
+            Кто ослушается повеления нашего царского — тому быть в опале великой.<br><br>
+            Дано в лето 7058-е (1550 год) декабря в 21 день»
+          </div>
+        </div>
+
+        <!-- Лёгкий эффект нижнего свитка -->
+        <div style="position:absolute; bottom:0; left:0; right:0; height:32px; background:linear-gradient(transparent, rgba(14,116,144,.15)); pointer-events:none;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DVINTA NAME / CHARTER BLOCK – Старый свиток в цветах сайта -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Наше название</div>
+        <h2 class="h2" style="margin-top:8px;">Историческая справка</h2>
+      </div>
+    </div>
+
+    <!-- Старый свиток / грамота -->
+    <div class="reveal" style="margin-top:28px; max-width:980px; margin-left:auto; margin-right:auto;">
+      <div style="
+        background: #F7FBFF;
+        border: 22px solid var(--c-600);
+        border-radius: 18px;
+        box-shadow: var(--shadow),
+                    0 30px 60px -15px rgba(var(--ink-rgb), .35),
+                    inset 0 0 90px rgba(14,116,144,.15);
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+      ">
+        <!-- Верхняя печать-бейдж -->
+        <div style="text-align:center; padding: 34px 0 18px;">
+          <div style="
+            display:inline-flex;
+            align-items:center;
+            gap:12px;
+            background: var(--c-600);
+            color: #fff;
+            font-weight:900;
+            font-size:13.5px;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+            padding:14px 34px;
+            border-radius:9999px;
+            box-shadow: var(--shadow-soft);
+            border: 3px solid #fff;
+          ">
+            <i data-lucide="scroll-text" class="w-6 h-6"></i>
+            ДВИНСКАЯ ГРАМОТА • 1550
+          </div>
+        </div>
+
+        <!-- Основной текст + грамота -->
+        <div style="padding: 0 52px 42px;">
+          <div style="color: var(--c-900); line-height:1.85; font-size:17.5px; text-align:justify; max-width:820px; margin:0 auto;">
+            В название нашего Центра заложены глубокие исторические вехи, которые способствовали развитию метрологии в стране.<br><br>
+            Первым и основополагающим документом в метрологии являлась Двинская грамота Ивана Грозного (1550 год, 21 декабря). Её цель — упорядочить систему мер и весов и обеспечить единство измерений.
+          </div>
+
+          <!-- Сам текст грамоты — РУКОПИСНЫЙ ШРИФТ -->
+          <div style="
+            margin-top: 42px;
+            background: rgba(255,255,255,.96);
+            border: 6px solid var(--c-600);
+            border-radius: 12px;
+            padding: 42px 46px;
+            box-shadow: inset 0 12px 40px rgba(var(--ink-rgb), .12),
+                        0 15px 35px rgba(var(--ink-rgb), .15);
+          ">
+            <div style="
+              color: var(--c-900);
+              line-height: 2.05;
+              font-size: 17.8px;
+              text-align: justify;
+              font-family: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+              font-style: italic;
+              letter-spacing: 0.4px;
+            ">
+              «От Великого Государя Царя и Великого Князя Ивана Васильевича всея Руси<br><br>
+              По нашему царскому указу посылаем вам меру медяную новую, осьмину зело точную, дабы по всей земле нашей меры были ровны и справедливы.<br><br>
+              <strong>Повелеваем вам:</strong><br><br>
+              • С меры медяной новой сделать спуски новые деревянные<br>
+              • На всех мерах учинить по пятну клейменному<br>
+              • Хранить меру медяную как зеницу ока<br>
+              • Передать знания о мерах верным людям<br><br>
+              И дабы во всех городах наших меры были равны, как одна, так и другая, и чтобы не было меж людьми никакого раздора и неправедного суда из-за мер неточностей.<br><br>
+              Кто ослушается повеления нашего царского — тому быть в опале великой.<br><br>
+              Дано в лето 7058-е (1550 год) декабря в 21 день»
+            </div>
+          </div>
+        </div>
+
+        <!-- Нижний эффект старого свитка -->
+        <div style="position:absolute; bottom:0; left:0; right:0; height:48px; background:linear-gradient(transparent, rgba(14,116,144,.22)); pointer-events:none;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DVINTA NAME / CHARTER BLOCK – Старый свиток в цветах сайта -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Наше название</div>
+        <h2 class="h2" style="margin-top:8px;">Историческая справка</h2>
+      </div>
+    </div>
+
+    <!-- Старый свиток / грамота -->
+    <div class="reveal" style="margin-top:28px; max-width:980px; margin-left:auto; margin-right:auto;">
+      <div style="
+        background: #F7FBFF;
+        border: 22px solid var(--c-600);
+        border-radius: 18px;
+        box-shadow: var(--shadow),
+                    0 30px 60px -15px rgba(var(--ink-rgb), .35),
+                    inset 0 0 90px rgba(14,116,144,.15);
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+      ">
+        <!-- Верхняя печать-бейдж -->
+        <div style="text-align:center; padding: 34px 0 18px;">
+          <div style="
+            display:inline-flex;
+            align-items:center;
+            gap:12px;
+            background: var(--c-600);
+            color: #fff;
+            font-weight:900;
+            font-size:13.5px;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+            padding:14px 34px;
+            border-radius:9999px;
+            box-shadow: var(--shadow-soft);
+            border: 3px solid #fff;
+          ">
+            <i data-lucide="scroll-text" class="w-6 h-6"></i>
+            ДВИНСКАЯ ГРАМОТА • 1550
+          </div>
+        </div>
+
+        <!-- Основной текст + грамота -->
+        <div style="padding: 0 52px 42px;">
+          <div style="color: var(--c-900); line-height:1.85; font-size:17.5px; text-align:justify; max-width:820px; margin:0 auto;">
+            В название нашего Центра заложены глубокие исторические вехи, которые способствовали развитию метрологии в стране.<br><br>
+            Первым и основополагающим документом в метрологии являлась Двинская грамота Ивана Грозного (1550 год, 21 декабря). Её цель — упорядочить систему мер и весов и обеспечить единство измерений.
+          </div>
+
+          <!-- Сам текст грамоты — ТОЛЬКО ЗДЕСЬ ШРИФТ Flores del Sol -->
+          <div style="
+            margin-top: 42px;
+            background: rgba(255,255,255,.96);
+            border: 6px solid var(--c-600);
+            border-radius: 12px;
+            padding: 42px 46px;
+            box-shadow: inset 0 12px 40px rgba(var(--ink-rgb), .12),
+                        0 15px 35px rgba(var(--ink-rgb), .15);
+          ">
+            <div style="
+              color: var(--c-900);
+              line-height: 2.05;
+              font-size: 17.8px;
+              text-align: justify;
+              font-family: 'Flores del Sol', 'Segoe Script', 'Brush Script MT', 'Palatino Linotype', 'Georgia', serif;
+              font-style: normal;
+              letter-spacing: 0.4px;
+            ">
+              «От Великого Государя Царя и Великого Князя Ивана Васильевича всея Руси<br><br>
+              По нашему царскому указу посылаем вам меру медяную новую, осьмину зело точную, дабы по всей земле нашей меры были ровны и справедливы.<br><br>
+              <strong>Повелеваем вам:</strong><br><br>
+              • С меры медяной новой сделать спуски новые деревянные<br>
+              • На всех мерах учинить по пятну клейменному<br>
+              • Хранить меру медяную как зеницу ока<br>
+              • Передать знания о мерах верным людям<br><br>
+              И дабы во всех городах наших меры были равны, как одна, так и другая, и чтобы не было меж людьми никакого раздора и неправедного суда из-за мер неточностей.<br><br>
+              Кто ослушается повеления нашего царского — тому быть в опале великой.<br><br>
+              Дано в лето 7058-е (1550 год) декабря в 21 день»
+            </div>
+          </div>
+        </div>
+
+        <!-- Нижний эффект старого свитка -->
+        <div style="position:absolute; bottom:0; left:0; right:0; height:48px; background:linear-gradient(transparent, rgba(14,116,144,.22)); pointer-events:none;"></div>
       </div>
     </div>
   </div>

@@ -1,19 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- HERO -->
-<section class="section">
-  <div class="container">
-    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
-      <div class="kicker">Контакты</div>
-      <h1 class="h1" style="margin-top:10px;">Связаться с нами</h1>
-      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
-        Напишите или позвоните — ответим на вопросы, уточним задачу и подскажем следующий шаг.
-      </p>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
     <div class="reveal" style="display:grid; grid-template-columns: .9fr 1.1fr; gap:18px; align-items:start;">
@@ -84,28 +71,64 @@
           Ответим в течение часа
         </p>
 
-        <form method="post" action="#" style="margin-top:18px;">
+        <form method="post" action="{{ url_for('contacts') }}" style="margin-top:18px;">
+          {% if success_message %}
+          <div class="panel"
+               style="padding:14px; margin-bottom:14px; border:1px solid rgba(34, 139, 34, 0.22); background: rgba(34, 139, 34, 0.08); color:#1f5f2b;">
+            {{ success_message }}
+          </div>
+          {% endif %}
+
+          {% if error_message %}
+          <div class="panel"
+               style="padding:14px; margin-bottom:14px; border:1px solid rgba(180, 40, 40, 0.22); background: rgba(180, 40, 40, 0.08); color:#8a1f1f;">
+            {{ error_message }}
+          </div>
+          {% endif %}
+
           <div class="panel" style="padding:16px; margin-bottom:14px;">
-            <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+
+              <!-- Имя -->
               <div>
-                <label style="display:block; font-weight:800; margin-bottom:6px;">Имя</label>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Имя <span style="color:#e11d48;">*</span></label>
                 <input name="name"
-                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+                       value="{{ form_data.name }}"
+                       required
+                       style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
                        placeholder="Как к вам обращаться?" />
               </div>
 
+              <!-- Email -->
               <div>
-                <label style="display:block; font-weight:800; margin-bottom:6px;">Email</label>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Email <span style="color:#e11d48;">*</span></label>
                 <input type="email" name="email"
-                       style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+                       value="{{ form_data.email }}"
+                       required
+                       style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
                        placeholder="name@example.com" />
               </div>
 
+              <!-- Телефон (новое поле) -->
+              <div>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Телефон <span style="color:#e11d48;">*</span></label>
+                <input type="tel"
+                       name="phone"
+                       value="{{ form_data.phone|default('') }}"
+                       required
+                       style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff; font-family: monospace;"
+                       placeholder="+7 (___) ___-__-__"
+                       pattern="^\+?7?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{2}[\s.-]?\d{2}$"
+                       title="Введите номер телефона в формате +7 (XXX) XXX-XX-XX" />
+              </div>
+
+              <!-- Сообщение -->
               <div style="grid-column: 1 / -1;">
-                <label style="display:block; font-weight:800; margin-bottom:6px;">Сообщение</label>
+                <label style="display:block; font-weight:800; margin-bottom:6px;">Сообщение <span style="color:#e11d48;">*</span></label>
                 <textarea name="message" rows="6"
-                          style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
-                          placeholder="Опишите задачу или задайте вопрос…"></textarea>
+                          required
+                          style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff; resize:vertical;"
+                          placeholder="Опишите задачу или задайте вопрос…">{{ form_data.message }}</textarea>
               </div>
             </div>
           </div>
@@ -116,7 +139,7 @@
               Отправить
             </button>
             <div style="color: rgba(13,19,33,.60); font-size: 12px; line-height:1.5;">
-              Нажимая “Отправить”, вы соглашаетесь на обработку персональных данных.
+              Нажимая «Отправить», вы соглашаетесь на обработку персональных данных.
             </div>
           </div>
         </form>

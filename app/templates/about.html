@@ -1,22 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- HERO -->
+<!-- contant -->
 <section class="section">
   <div class="container">
-    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
-      <div class="kicker">Компания</div>
-      <h1 class="h1" style="margin-top:10px;">О нас</h1>
-      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
-        Мы — метрологический центр, который помогает компаниям поддерживать точность измерений,
-        проходить проверки и выстраивать систему контроля качества.
-      </p>
 
-      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+
+    <!-- Wide top banner -->
+    <div class="panel reveal" style="margin-top: -5px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
           Заполнить онлайн-заявку
         </a>
+
         <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
           <i data-lucide="mail" class="w-5 h-5"></i>
           info@csmdvinta.ru
@@ -28,6 +24,7 @@
         </a>
       </div>
     </div>
+
   </div>
 </section>
 

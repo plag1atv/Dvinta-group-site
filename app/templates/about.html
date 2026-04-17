@@ -8,7 +8,7 @@
 
     <!-- Wide top banner -->
     <div class="panel reveal" style="margin-top: -5px; border-radius: 26px; padding: 22px; text-align:center;">
-      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; width:100%; transform: translateX(-18px);">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+      <div class="actions-row center">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
           <i data-lucide="send" class="w-5 h-5"></i>
           Заполнить онлайн-заявку
         </a>
@@ -31,36 +31,56 @@
 <!-- HERO -->
 <section class="section" style="margin-top: -20px;">
   <div class="container">
-    <div class="panel reveal" style="padding:46px; border-radius: 26px; background-color: #ffffff;" >
-      <div class="kicker">Немного о нас</div>
-      <h1 class="h1" style="margin-top:10px;">Кто мы</h1>
-      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
-        «ЦСМ Двинта» – аккредитованная организация, обеспечивающая единство измерений. Мы объединяем опыт квалифицированных специалистов и передовые технологии для обеспечения качественной поверки и калибровки и испытаний средств измерений. Мы создаем стандарты, нормативные и технические документы, чтобы вы работали системно, структурировано и комплексно.<br>
-        Мы понимаем: точность измерений и соответствие стандартам — не просто формальность, а основа доверия наших клиентов и партнёров.
-      </p>
+    <div class="about-highlight reveal">
+      <div class="about-highlight__inner">
+        <div class="about-highlight__top">
+          <div class="about-highlight__icon">
+            <i data-lucide="building-2" class="w-6 h-6"></i>
+          </div>
+
+          <div>
+            <div class="kicker">о компании</div>
+            <h1 class="h1 about-highlight__title" style="margin-top:6px;">Немного о нас</h1>
+          </div>
+        </div>
+
+        <p class="about-highlight__text">
+          <strong>«ЦСМ Двинта»</strong> – аккредитованная организация, обеспечивающая единство измерений.
+          Мы объединяем опыт квалифицированных специалистов и передовые технологии для обеспечения
+          качественной поверки, калибровки и испытаний средств измерений.
+          Мы создаем стандарты, нормативные и технические документы, чтобы вы работали системно,
+          структурировано и комплексно.<br><br>
+          <strong>Точность измерений и соответствие стандартам</strong> — не просто формальность,
+          а основа доверия наших клиентов и партнёров.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- TEAM -->
 <section class="section-sm">
   <div class="container">
-    <div class="card reveal" style="padding:28px;">
-      <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-        <div>
-          <div class="kicker"></div>
-          <h2 class="h2" style="margin-top:8px;">Наша команда</h2>
-        </div>
-      </div>
+    <div class="about-highlight about-highlight--team reveal">
+      <div class="about-highlight__inner">
+        <div class="about-highlight__top">
+          <div class="about-highlight__icon">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
 
-      <div style="margin-top:18px; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
-        <div class="panel hover-lift reveal" style="padding:16px;">
-          <div style="color: rgba(13,19,33,.70); margin-top:4px;">Команда Центра – это сплав опыта и современных компетенций.
-            В нашем коллективе работают аттестованные метрологи с большим опытом поверки, калибровки и испытаний средств измерений.
-            Нами движет единство, понимание стратегических целей и желание их реализовать в полной мере.
+          <div>
+            <div class="kicker">команда</div>
+            <h2 class="h2 about-highlight__title" style="margin-top:6px;">Наша команда</h2>
           </div>
         </div>
 
+        <p class="about-highlight__text">
+          <strong>Команда Центра</strong> – это сплав опыта и современных компетенций.
+          В нашем коллективе работают аттестованные метрологи с большим опытом поверки,
+          калибровки и испытаний средств измерений.<br><br>
+          <strong>Нас объединяют</strong> профессионализм, понимание стратегических целей
+          и стремление реализовывать их в полной мере.
+        </p>
       </div>
     </div>
   </div>

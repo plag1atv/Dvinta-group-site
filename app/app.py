@@ -57,6 +57,8 @@ def create_app() -> Flask:
         mail_username = app.config["MAIL_USERNAME"]
         mail_password = app.config["MAIL_PASSWORD"]
         mail_to = app.config["MAIL_TO"]
+        mail_host = app.config["MAIL_HOST"]
+        mail_port = app.config["MAIL_PORT"]
 
         if not mail_username or not mail_password or not mail_to:
             raise ValueError("Не заполнены MAIL_USERNAME, MAIL_PASSWORD или MAIL_TO.")
@@ -69,23 +71,20 @@ def create_app() -> Flask:
 
         body = f"""Новая заявка с формы контактов
 
-Имя: {name}
-Email: {email}
-Телефон: {phone}
+    Имя: {name}
+    Email: {email}
+    Телефон: {phone}
 
-Сообщение:
-{message}
-"""
+    Сообщение:
+    {message}
+    """
         email_message.set_content(body)
 
-        # ←←← НОВЫЙ ВАРИАНТ ДЛЯ REG.RU (самый стабильный)
-        with smtplib.SMTP("mail.hosting.reg.ru", 587) as server:
+        with smtplib.SMTP(mail_host, mail_port) as server:
             server.set_debuglevel(1)
             server.ehlo()
-
-            server.starttls()  # ← ВАЖНО!!!
+            server.starttls()
             server.ehlo()
-
             server.login(mail_username, mail_password)
             server.send_message(email_message)
 

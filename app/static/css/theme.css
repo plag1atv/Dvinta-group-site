@@ -424,6 +424,24 @@ body.has-mountain footer{
 }
 
 @media (max-width: 640px){
+
+  .dvinta-scroll--animated .dvinta-scroll__paper{
+  min-height: 88px;
+}
+
+.dvinta-scroll--animated .dvinta-scroll__roller--top{
+  transform: translateY(24px);
+}
+
+.dvinta-scroll--animated .dvinta-scroll__roller--bottom{
+  transform: translateY(-24px);
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__sheet{
+  margin: 16px 0;
+  padding: 30px 0;
+}
+
   .about-highlight{
     border-radius: 22px;
     padding: 22px 18px;
@@ -1592,4 +1610,514 @@ table{
 /* защита от горизонтального скролла */
 html, body{
   overflow-x: clip;
+}
+
+/* ===== Dvinta charter scroll ===== */
+.dvinta-scroll{
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 44px 34px;
+}
+
+.dvinta-scroll__paper{
+  position: relative;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(255,255,255,.24), transparent 24%),
+    radial-gradient(circle at 82% 86%, rgba(120,72,29,.10), transparent 28%),
+    linear-gradient(180deg, #f1ddb3 0%, #e8cc96 48%, #ddb97f 100%);
+  border: 1px solid rgba(109, 69, 31, .22);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 42px rgba(58, 33, 14, .18),
+    inset 0 0 0 1px rgba(255,255,255,.18),
+    inset 0 0 70px rgba(123, 82, 43, .10);
+  overflow: visible;
+}
+
+.dvinta-scroll__paper::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255,255,255,.10), transparent 18%),
+    radial-gradient(circle at 82% 22%, rgba(128,78,38,.06), transparent 20%),
+    radial-gradient(circle at 24% 78%, rgba(120,72,29,.05), transparent 16%),
+    radial-gradient(circle at 76% 72%, rgba(255,255,255,.06), transparent 18%);
+  pointer-events: none;
+  opacity: 1;
+}
+
+.dvinta-scroll__paper::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  box-shadow:
+    inset 0 18px 28px rgba(255,255,255,.12),
+    inset 0 -18px 24px rgba(111, 67, 31, .08);
+  pointer-events: none;
+}
+
+.dvinta-scroll__content{
+  position: relative;
+  z-index: 3;
+  padding: 40px 54px 36px;
+}
+
+/* верхний и нижний рулоны */
+.dvinta-scroll__roller{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 26px;
+  border-radius: 999px;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, #f7e7c5 0%, #d9ad6f 18%, #b67c47 52%, #8b572d 100%);
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.30),
+    inset 0 -4px 6px rgba(79,45,20,.20),
+    0 10px 18px rgba(61,34,15,.16);
+}
+
+.dvinta-scroll__roller--top{
+  top: -8px;
+}
+
+.dvinta-scroll__roller--bottom{
+  bottom: -8px;
+}
+
+.dvinta-scroll__roller::before,
+.dvinta-scroll__roller::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background:
+    radial-gradient(circle at 35% 35%, #f8e8c8 0%, #d5a56a 38%, #9d6437 72%, #72421f 100%);
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.22),
+    0 3px 8px rgba(60, 32, 13, .18);
+}
+
+.dvinta-scroll__roller::before{
+  left: -10px;
+}
+
+.dvinta-scroll__roller::after{
+  right: -10px;
+}
+
+/* бумага между рулонами */
+.dvinta-scroll__sheet{
+  position: relative;
+  z-index: 1;
+  margin: 20px 0;
+  padding: 42px 0;
+}
+
+.dvinta-scroll--animated .dvinta-scroll__sheet{
+  margin: 0;
+  padding: 0;
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__sheet{
+  margin: 20px 0;
+  padding: 42px 0;
+  transition:
+    margin 1.45s cubic-bezier(.22,.9,.2,1),
+    padding 1.45s cubic-bezier(.22,.9,.2,1),
+    transform 1.45s cubic-bezier(.22,.9,.2,1),
+    opacity .95s ease,
+    clip-path 1.45s cubic-bezier(.22,.9,.2,1);
+}
+
+/* рваные боковые края */
+.dvinta-scroll__sheet::before,
+.dvinta-scroll__sheet::after{
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  width: 22px;
+  background: linear-gradient(180deg, #f0ddb4 0%, #e2bf88 100%);
+  z-index: 2;
+  pointer-events: none;
+  opacity: .95;
+}
+
+.dvinta-scroll__sheet::before{
+  left: -12px;
+  clip-path: polygon(
+    100% 0%,
+    58% 3%,
+    78% 8%,
+    44% 13%,
+    70% 19%,
+    36% 27%,
+    68% 35%,
+    42% 43%,
+    74% 51%,
+    34% 61%,
+    66% 70%,
+    40% 80%,
+    72% 90%,
+    54% 96%,
+    100% 100%
+  );
+}
+
+.dvinta-scroll__sheet::after{
+  right: -12px;
+  clip-path: polygon(
+    0% 0%,
+    42% 4%,
+    20% 10%,
+    56% 16%,
+    28% 23%,
+    64% 31%,
+    30% 40%,
+    60% 48%,
+    24% 58%,
+    66% 68%,
+    32% 78%,
+    58% 87%,
+    26% 95%,
+    0% 100%
+  );
+}
+
+
+
+.dvinta-scroll__title-wrap{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 3;
+}
+
+.dvinta-scroll__title-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  min-height: 52px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255,248,234,.92) 0%, rgba(236,214,174,.95) 100%);
+  border: 1px solid rgba(108, 67, 30, .24);
+  box-shadow:
+    0 10px 22px rgba(80, 47, 20, .10),
+    inset 0 1px 0 rgba(255,255,255,.45);
+  color: #5b3517;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: .01em;
+}
+
+.dvinta-scroll__charter{
+  margin-top: 14px;
+  color: #503118;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-style: italic;
+  position: relative;
+  z-index: 3;
+}
+
+.dvinta-scroll__charter strong{
+  font-weight: 700;
+}
+
+@media (max-width: 900px){
+  .dvinta-scroll{
+    padding: 34px 18px;
+  }
+
+  .dvinta-scroll__content{
+    padding: 28px 34px 30px;
+  }
+
+  .dvinta-scroll__roller{
+    left: 0;
+    right: 0;
+    height: 22px;
+  }
+
+  .dvinta-scroll__roller--top{
+    top: -6px;
+  }
+
+  .dvinta-scroll__roller--bottom{
+    bottom: -6px;
+  }
+}
+
+@media (max-width: 640px){
+  .dvinta-scroll{
+    padding: 22px 0;
+  }
+
+  .dvinta-scroll__content{
+    padding: 22px 20px 24px;
+  }
+
+  .dvinta-scroll__sheet{
+    padding: 30px 0;
+    margin: 16px 0;
+  }
+
+  .dvinta-scroll__roller{
+    left: 0;
+    right: 0;
+    height: 18px;
+  }
+
+  .dvinta-scroll__roller::before,
+  .dvinta-scroll__roller::after{
+    width: 16px;
+    height: 16px;
+  }
+
+  .dvinta-scroll__roller::before{
+    left: -7px;
+  }
+
+  .dvinta-scroll__roller::after{
+    right: -7px;
+  }
+
+  .dvinta-scroll__sheet::before,
+  .dvinta-scroll__sheet::after{
+    width: 12px;
+    top: 12px;
+    bottom: 12px;
+  }
+
+
+  .dvinta-scroll__sheet::before{
+    left: -5px;
+  }
+
+  .dvinta-scroll__sheet::after{
+    right: -5px;
+  }
+
+
+  .dvinta-scroll__title-wrap{
+    margin-bottom: 14px;
+  }
+
+  .dvinta-scroll__title-pill{
+    padding: 10px 18px;
+    min-height: 44px;
+    font-size: 20px;
+  }
+
+  .dvinta-scroll__charter{
+    font-size: 16px;
+    line-height: 1.55;
+  }
+}
+
+/* ===== Dvinta scroll opening animation ===== */
+.dvinta-scroll--animated .dvinta-scroll__paper{
+  overflow: hidden;
+  min-height: 118px;
+  transition: min-height 1.45s cubic-bezier(.22,.9,.2,1);
+}
+
+.dvinta-scroll--animated .dvinta-scroll__sheet{
+  transform-origin: center center;
+  transform: scaleY(.02);
+  opacity: 0;
+  clip-path: inset(48% 0 48% 0 round 18px);
+  transition:
+    transform 1.45s cubic-bezier(.22,.9,.2,1),
+    opacity .95s ease,
+    clip-path 1.45s cubic-bezier(.22,.9,.2,1);
+  will-change: transform, opacity, clip-path;
+}
+
+.dvinta-scroll--animated .dvinta-scroll__content{
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity .55s ease 1.02s,
+    transform .7s ease 1.02s;
+}
+
+.dvinta-scroll--animated .dvinta-scroll__roller--top{
+  transform: translateY(34px);
+  transition: transform 1.35s cubic-bezier(.22,.9,.2,1);
+}
+
+.dvinta-scroll--animated .dvinta-scroll__roller--bottom{
+  transform: translateY(-34px);
+  transition: transform 1.35s cubic-bezier(.22,.9,.2,1);
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__paper{
+  min-height: 100%;
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__sheet{
+  transform: scaleY(1);
+  opacity: 1;
+  clip-path: inset(0 0 0 0 round 18px);
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__content{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__roller--top{
+  transform: translateY(0);
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__roller--bottom{
+  transform: translateY(0);
+}
+
+/* ===== Title animation ===== */
+.dvinta-scroll__title-pill{
+  position: relative;
+  overflow: hidden;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.dvinta-scroll__title-main,
+.dvinta-scroll__title-tail,
+.dvinta-scroll__title-tail-strike{
+  display: inline-block;
+}
+
+.dvinta-scroll__title-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.dvinta-scroll__title-tail-wrap{
+  position: relative;
+  display: inline-block;
+}
+
+.dvinta-scroll__title-tail{
+  position: relative;
+  z-index: 2;
+}
+
+.dvinta-scroll__title-tail-strike{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  color: #5b3517;
+  opacity: 0;
+  transform: translateY(0) scale(1);
+  pointer-events: none;
+}
+
+.dvinta-scroll__title-tail-strike::after{
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 52%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: .95;
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__title-pill{
+  animation: dvintaTitlePulse 1.8s ease 1.5s both;
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__title-tail-strike{
+  animation: dvintaStrikeText 2.1s ease 1.95s both;
+}
+
+.dvinta-scroll--animated.is-opened .dvinta-scroll__title-tail-strike::after{
+  animation: dvintaStrikeLine 2.1s ease 1.95s both;
+}
+
+@keyframes dvintaTitlePulse{
+  0%{
+    transform: scale(1);
+  }
+  35%{
+    transform: scale(1.16);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes dvintaStrikeText{
+  0%{
+    opacity: 0;
+  }
+  16%{
+    opacity: 1;
+  }
+  78%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes dvintaStrikeLine{
+  0%{
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: left center;
+  }
+  20%{
+    transform: scaleX(1);
+    opacity: .95;
+    transform-origin: left center;
+  }
+  76%{
+    transform: scaleX(1);
+    opacity: .95;
+    transform-origin: left center;
+  }
+  100%{
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: right center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .dvinta-scroll--animated .dvinta-scroll__sheet,
+  .dvinta-scroll--animated .dvinta-scroll__content,
+  .dvinta-scroll--animated .dvinta-scroll__title-pill,
+  .dvinta-scroll--animated .dvinta-scroll__title-tail-strike,
+  .dvinta-scroll--animated .dvinta-scroll__title-tail-strike::after{
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+  }
 }

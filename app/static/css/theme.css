@@ -2101,3 +2101,99 @@ html, body{
 .dvinta-scroll__title-main{
   display: inline-block;
 }
+
+/* =====================================================
+   Verification page: stable overlap between hero and white banner
+===================================================== */
+
+.verification-hero-section{
+  padding-bottom: 88px;
+}
+
+@media (min-width: 1600px){
+  .verification-hero-section{
+    padding-bottom: 150px;
+  }
+}
+
+@media (min-width: 1920px){
+  .verification-hero-section{
+    padding-bottom: 220px;
+  }
+}
+
+.verification-banner-section{
+  padding-top: 0;
+}
+
+.verification-top-banner{
+  margin-top: clamp(-42px, -3vw, -18px);
+  border-radius: 26px;
+  padding: 22px;
+  text-align: center;
+}
+
+.verification-top-banner__inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Большие ноутбуки и обычные мониторы */
+@media (max-width: 1366px){
+  .verification-top-banner{
+    margin-top: -34px;
+  }
+}
+
+@media (max-width: 1200px){
+  .verification-top-banner{
+    margin-top: -28px;
+  }
+}
+
+@media (max-width: 992px){
+  .verification-hero-section{
+    padding-bottom: 52px;
+  }
+
+  .verification-top-banner{
+    margin-top: -20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px){
+  .verification-hero-section{
+    padding-bottom: 40px;
+  }
+
+  .verification-top-banner{
+    margin-top: -10px;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .verification-top-banner__inner{
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px){
+  .verification-hero-section{
+    padding-bottom: 28px;
+  }
+
+  .verification-top-banner{
+    margin-top: 0;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .verification-top-banner__inner{
+    gap: 8px;
+  }
+}

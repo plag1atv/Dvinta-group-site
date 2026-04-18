@@ -55,29 +55,25 @@ if (splash) {
   }, removeAt);
 }
 
-// Dvinta scroll opening animation
+// Dvinta scroll opening on click
 const dvintaScroll = document.getElementById('dvintaScroll');
 
 if (dvintaScroll) {
-  const reducedMotion = window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const openDvintaScroll = () => {
+    if (dvintaScroll.classList.contains('is-opened')) return;
 
-  if (reducedMotion) {
     dvintaScroll.classList.add('is-opened');
-  } else {
-    const io = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+    dvintaScroll.setAttribute('aria-expanded', 'true');
+  };
 
-        dvintaScroll.classList.add('is-opened');
-        observer.unobserve(entry.target);
-      });
-    }, {
-      threshold: 0.42
-    });
+  dvintaScroll.addEventListener('click', openDvintaScroll);
 
-    io.observe(dvintaScroll);
-  }
+  dvintaScroll.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openDvintaScroll();
+    }
+  });
 }
 
 });

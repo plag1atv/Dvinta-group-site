@@ -1098,7 +1098,7 @@ body.no-scroll{ overflow: hidden; }
 
 @keyframes intro-bar{
   from{ transform: translateX(0); }
-  to{ transform: translateX(-140vw); }
+  to{ transform: translateX(-165vw); }
 }
 
 .intro-splash__title{
@@ -2399,5 +2399,60 @@ body.mobile-menu-open{
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* ===== Mobile: type approval change cards ===== */
+.type-approval-change-card__head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.type-approval-change-card__title{
+  font-weight: 900;
+}
+
+.type-approval-change-card__text{
+  color: rgba(13,19,33,.70);
+  margin-top: 10px;
+  line-height: 1.65;
+}
+
+.type-approval-change-card__icon{
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px){
+  .type-approval-change-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .type-approval-change-card{
+    min-width: 0;
+    overflow: hidden;
+    padding: 18px;
+  }
+
+  .type-approval-change-card__head{
+    align-items: flex-start;
+  }
+
+  .type-approval-change-card__icon{
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+  }
+
+  .type-approval-change-card__title{
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .type-approval-change-card__text{
+    font-size: 14px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }

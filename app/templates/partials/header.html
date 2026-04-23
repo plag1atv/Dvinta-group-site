@@ -18,6 +18,19 @@
         </div>
       </a>
 
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        class="lg:hidden mobile-menu-toggle"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+
       <!-- Desktop nav -->
 <nav class="hidden lg:flex items-center space-x-8">
 
@@ -73,40 +86,66 @@
 </nav>
 
 
-  <!-- Mobile menu panel -->
-  <div class="lg:hidden hidden border-t border-gray-200" id="mobileMenu">
-    <div class="px-4 py-4 space-y-2">
-      <details class="group">
-        <summary class="flex items-center justify-between cursor-pointer py-2 font-medium text-gray-700">
-          Метрология <i class="w-4 h-4" data-lucide="chevron-down"></i>
-        </summary>
-        <div class="pl-3 pb-2 space-y-1">
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_verification') }}">Поверка</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_calibration') }}">Калибровка</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_type_approval') }}">Испытания в целях утверждения типа СИ</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_equipment_testing') }}">Аттестация</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('metrology_competence') }}">Компетентность</a>
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay hidden lg:hidden" id="mobileMenu">
+    <div class="mobile-menu-overlay__panel">
+      <div class="mobile-menu-overlay__top">
+        <div class="mobile-menu-overlay__brand">
+          <img
+            src="{{ url_for('static', filename='img/dvinta_mark_256.png') }}"
+            alt="Двинта"
+            class="w-10 h-10"
+            loading="eager"
+            decoding="async"
+          />
+          <div>
+            <div class="text-base font-bold text-dark">Двинта</div>
+            <div class="text-sm text-gray-600">Центр Стандартизации и Метрологии</div>
+          </div>
         </div>
-      </details>
 
-      <details class="group">
-        <summary class="flex items-center justify-between cursor-pointer py-2 font-medium text-gray-700">
-          Стандартизация <i class="w-4 h-4" data-lucide="chevron-down"></i>
-        </summary>
-        <div class="pl-3 pb-2 space-y-1">
-          <a class="block py-1 text-gray-600" href="{{ url_for('standardization_tu_development') }}">Разработка ТУ</a>
-          <a class="block py-1 text-gray-600" href="{{ url_for('standardization_sto_development') }}">Разработка СТО</a>
-        </div>
-      </details>
+        <button
+          id="mobileMenuCloseBtn"
+          type="button"
+          class="mobile-menu-close"
+          aria-label="Закрыть меню"
+        >
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
 
-      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('equipment') }}">Оборудование</a>
-      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
-      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('about') }}">О компании</a>
-      <a class="block py-2 font-medium text-gray-700" href="{{ url_for('contacts') }}">Контакты</a>
+      <nav class="mobile-menu-overlay__nav">
+        <details class="mobile-menu-group">
+          <summary class="mobile-menu-summary">
+            <span>Метрология</span>
+            <i class="w-5 h-5" data-lucide="chevron-down"></i>
+          </summary>
+          <div class="mobile-menu-sublist">
+            <a href="{{ url_for('metrology_verification') }}">Поверка</a>
+            <a href="{{ url_for('metrology_calibration') }}">Калибровка</a>
+            <a href="{{ url_for('metrology_type_approval') }}">Испытания в целях утверждения типа СИ</a>
+            <a href="{{ url_for('metrology_equipment_testing') }}">Аттестация оборудования</a>
+            <a href="{{ url_for('metrology_competence') }}">Компетентность</a>
+          </div>
+        </details>
 
-      <a href="{{ url_for('metrology_online_application') }}" class="btn-cta block text-center mt-3">
-        Оставить заявку
-      </a>
+        <details class="mobile-menu-group">
+          <summary class="mobile-menu-summary">
+            <span>Стандартизация</span>
+            <i class="w-5 h-5" data-lucide="chevron-down"></i>
+          </summary>
+          <div class="mobile-menu-sublist">
+            <a href="{{ url_for('standardization_tu_development') }}">Разработка ТУ</a>
+            <a href="{{ url_for('standardization_sto_development') }}">Разработка СТО</a>
+          </div>
+        </details>
+
+        <a class="mobile-menu-link" href="{{ url_for('equipment') }}">Оборудование</a>
+        <a class="mobile-menu-link" href="{{ url_for('metrology_price_list') }}">Прайс-лист</a>
+        <a class="mobile-menu-link" href="{{ url_for('about') }}">О компании</a>
+        <a class="mobile-menu-link" href="{{ url_for('contacts') }}">Контакты</a>
+      </nav>
     </div>
   </div>
+
 </header>

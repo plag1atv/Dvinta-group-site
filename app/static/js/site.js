@@ -1,10 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('mobileMenuBtn');
+  const closeBtn = document.getElementById('mobileMenuCloseBtn');
   const menu = document.getElementById('mobileMenu');
 
   if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    const openMenu = () => {
+      menu.classList.remove('hidden');
+      document.body.classList.add('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      menu.classList.add('hidden');
+      document.body.classList.remove('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+    };
+
+    btn.addEventListener('click', openMenu);
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeMenu);
+    }
+
+    menu.addEventListener('click', (event) => {
+      if (event.target === menu) {
+        closeMenu();
+      }
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
+        closeMenu();
+      }
     });
   }
   // Parallax background (mountains)

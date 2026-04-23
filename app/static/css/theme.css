@@ -2513,3 +2513,45 @@ body.mobile-menu-open{
     word-break: break-word;
   }
 }
+
+/* ===== Mobile: contacts form fix ===== */
+@media (max-width: 640px){
+  .contacts-top-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .contacts-form-card{
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .contacts-form-panel{
+    overflow: hidden;
+  }
+
+  .contacts-form-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .contacts-form-grid > div{
+    min-width: 0;
+  }
+
+  .contacts-form-grid input,
+  .contacts-form-grid textarea{
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contacts-form-actions{
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .contacts-form-actions .btn{
+    width: 100%;
+    justify-content: center;
+  }
+}

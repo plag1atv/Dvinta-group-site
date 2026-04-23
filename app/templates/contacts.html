@@ -3,7 +3,7 @@
 
 <section class="section">
   <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: .9fr 1.1fr; gap:18px; align-items:start;">
+    <div class="reveal contacts-top-grid" style="display:grid; grid-template-columns: .9fr 1.1fr; gap:18px; align-items:start;">
 
       <!-- LEFT: CONTACT CARDS -->
       <div style="display:grid; gap:14px;">
@@ -64,7 +64,7 @@
       </div>
 
       <!-- RIGHT: FORM -->
-      <div class="card card-pad-lg reveal" data-delay="120ms">
+      <div class="card card-pad-lg reveal contacts-form-card" data-delay="120ms">
         <div class="kicker">Сообщение</div>
         <h2 class="h2" style="margin-top:10px;">Напишите нам</h2>
         <p class="p-lead" style="margin-top:12px;">
@@ -86,8 +86,8 @@
           </div>
           {% endif %}
 
-          <div class="panel" style="padding:16px; margin-bottom:14px;">
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+          <div class="panel contacts-form-panel" style="padding:16px; margin-bottom:14px;">
+            <div class="contacts-form-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
 
               <!-- Имя -->
               <div>
@@ -133,7 +133,7 @@
             </div>
           </div>
 
-          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+          <div class="contacts-form-actions" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
             <button class="btn btn-primary" type="submit">
               <i data-lucide="send" class="w-5 h-5"></i>
               Отправить

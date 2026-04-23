@@ -1735,7 +1735,7 @@ html, body{
 .dvinta-scroll__content{
   position: relative;
   z-index: 3;
-  padding: 40px 54px 36px;
+  padding: 28px 54px 36px;
   overflow: hidden;
 }
 

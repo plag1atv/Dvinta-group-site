@@ -2456,3 +2456,60 @@ body.mobile-menu-open{
     word-break: break-word;
   }
 }
+
+/* ===== Mobile: about advantages cards ===== */
+.about-advantages-card__head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-advantages-card__title{
+  font-weight: 900;
+}
+
+.about-advantages-card__text{
+  color: rgba(13,19,33,.70);
+  margin-top: 10px;
+  line-height: 1.65;
+}
+
+.about-advantages-card__icon{
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px){
+  .about-advantages-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-advantages-card{
+    min-width: 0;
+    overflow: hidden;
+    padding: 18px;
+  }
+
+  .about-advantages-card__head{
+    align-items: flex-start;
+  }
+
+  .about-advantages-card__icon{
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+  }
+
+  .about-advantages-card__title{
+    font-size: 15px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .about-advantages-card__text{
+    font-size: 14px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}

@@ -265,7 +265,11 @@
 
       <div class="dvinta-scroll dvinta-scroll--animated" id="dvintaScroll" role="button" tabindex="0" aria-expanded="false">
         <div class="dvinta-scroll__seal" aria-hidden="true">
-          <div class="dvinta-scroll__seal-inner">Открыть</div>
+          <img
+            src="{{ url_for('static', filename='img/open-seal.png') }}"
+            alt="Открыть"
+            class="dvinta-scroll__seal-img"
+          >
         </div>
 
         <div class="dvinta-scroll__paper">

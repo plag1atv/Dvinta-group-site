@@ -89,76 +89,70 @@
 
 
 <!-- SERVICES -->
+<!-- SERVICES -->
 <section class="section">
   <div class="container">
     <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
-        <div class="kicker">направления</div>
-        <h2 class="h2" style="margin-top:8px;">Наши направления</h2>
+        <div class="kicker">Услуги</div>
+        <h2 class="h2" style="margin-top:8px;">Основные направления</h2>
       </div>
+      <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
+        Рассчитать срок и стоимость
+      </a>
     </div>
 
-    <div class="about-advantages-grid" style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
-      <div class="card card-pad hover-lift reveal about-advantages-card">
-        <div class="about-advantages-card__head">
-          <i data-lucide="badge-check" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
-          <div class="about-advantages-card__title">Аккредитация</div>
-        </div>
-        <p class="about-advantages-card__text">
-          Аккредитация в национальной системе
-        </p>
-      </div>
+    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px;">
 
-      <div class="card card-pad hover-lift reveal about-advantages-card">
-        <div class="about-advantages-card__head">
-          <i data-lucide="flask-conical" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
-          <div class="about-advantages-card__title">Эталоны</div>
-        </div>
-        <p class="about-advantages-card__text">
-          Современная эталонная база и оборудование
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift reveal about-advantages-card">
-        <div class="about-advantages-card__head">
-          <i data-lucide="briefcase-business" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
-          <div class="about-advantages-card__title">Опыт</div>
-        </div>
-        <p class="about-advantages-card__text">
-          Опытная команда метрологов и экспертов
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift reveal about-advantages-card">
-        <div class="about-advantages-card__head">
-          <i data-lucide="handshake" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
-          <div class="about-advantages-card__title">Клиентоориентированность</div>
-        </div>
-        <p class="about-advantages-card__text">
-          Индивидуальный подход, консультирование и гарантии качества
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift reveal about-advantages-card">
-        <div class="about-advantages-card__head">
-          <i data-lucide="clock-3" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
-          <div class="about-advantages-card__title">Сроки</div>
-        </div>
-        <p class="about-advantages-card__text">
-          Минимальные сроки оказания услуг
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift reveal about-advantages-card">
-        <div class="about-advantages-card__head">
-          <i data-lucide="folder-symlink" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
-          <div class="about-advantages-card__title">Гибкие условия работы</div>
-        </div>
-        <p class="about-advantages-card__text">
-          Участие в госзакупках, разные формы расчетов
-        </p>
-      </div>
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_verification') }}" style="text-decoration:none;">
+    <div class="kicker">1. Поверка СИ</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Поверка средств измерений</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проверим СИ на соответствие установленным метрологическим требованиям. Быстро и качественно
     </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_calibration') }}" style="text-decoration:none;">
+    <div class="kicker">2. Калибровка СИ</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Калибровка средств измерений</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Выдадим сертификат с действительными значениями метрологических характеристик СИ.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_type_approval') }}" style="text-decoration:none;">
+    <div class="kicker">3. Утверждение типа</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Испытания в целях утверждения типа СИ</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проведем испытания в целях утверждения типа СИ. Разработаем все необходимые документы.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('metrology_equipment_testing') }}" style="text-decoration:none;">
+    <div class="kicker">4. Аттестация ИО</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Аттестация испытательного оборудования</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Проведем первичную и периодическую аттестацию ИО в соответствии с ГОСТ Р 8.568-2017.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('equipment') }}" style="text-decoration:none;">
+    <div class="kicker">5. Оборудование</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Измерительное оборудование</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Подберем оборудование под ваши задачи. Проведем диагностику, ремонт и модернизацию.
+    </div>
+  </a>
+
+  <a class="card card-pad-lg hover-lift reveal" href="{{ url_for('contacts') }}" style="text-decoration:none;">
+    <div class="kicker">6. Стандартизация</div>
+    <div style="font-weight:900; font-size:18px; margin-top:8px; color: var(--c-900);">Разработка документов</div>
+    <div style="color: rgba(13,19,33,.68); margin-top:10px; line-height:1.6;">
+      Разработаем техническую и нормативную документацию под ваши требования и задачи.
+    </div>
+  </a>
+
+</div>
 
   </div>
 </section>

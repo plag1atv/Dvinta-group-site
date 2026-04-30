@@ -86,25 +86,22 @@ if (splash) {
   }, removeAt);
 }
 
-// Dvinta scroll opening on click
-const dvintaScroll = document.getElementById('dvintaScroll');
+  // Floating request button bubble
+  const floatingRequestBubble = document.getElementById('floatingRequestBubble');
+  const floatingRequestClose = document.getElementById('floatingRequestClose');
 
-if (dvintaScroll) {
-  const openDvintaScroll = () => {
-    if (dvintaScroll.classList.contains('is-opened')) return;
+  if (floatingRequestBubble && floatingRequestClose) {
+    const showFloatingRequestBubble = window.setTimeout(() => {
+      floatingRequestBubble.classList.add('is-visible');
+    }, 30000);
 
-    dvintaScroll.classList.add('is-opened');
-    dvintaScroll.setAttribute('aria-expanded', 'true');
-  };
-
-  dvintaScroll.addEventListener('click', openDvintaScroll);
-
-  dvintaScroll.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+    floatingRequestClose.addEventListener('click', (event) => {
       event.preventDefault();
-      openDvintaScroll();
-    }
-  });
-}
+      event.stopPropagation();
+
+      window.clearTimeout(showFloatingRequestBubble);
+      floatingRequestBubble.classList.remove('is-visible');
+    });
+  }
 
 });

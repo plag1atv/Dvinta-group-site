@@ -24,7 +24,31 @@
   <main class="flex-1">
     {% block content %}{% endblock %}
   </main>
-  {% include "partials/footer.html" %}
+    {% include "partials/footer.html" %}
+
+  {% if request.endpoint != "contacts" %}
+    <div class="floating-request" id="floatingRequest">
+      <div class="floating-request__bubble" id="floatingRequestBubble">
+        <button
+          class="floating-request__close"
+          id="floatingRequestClose"
+          type="button"
+          aria-label="Закрыть подсказку"
+        >
+          ×
+        </button>
+        <span>Оставить заявку</span>
+      </div>
+
+      <a
+        class="floating-request__button"
+        href="{{ url_for('contacts') }}"
+        aria-label="Перейти на страницу контактов"
+      >
+        <i data-lucide="message-circle-heart"></i>
+      </a>
+    </div>
+  {% endif %}
 
   <!-- Lucide icons (for <i data-lucide="..."></i>) -->
   <script src="https://unpkg.com/lucide@latest"></script>

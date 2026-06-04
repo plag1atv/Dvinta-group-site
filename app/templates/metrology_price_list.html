@@ -26,173 +26,69 @@
   </div>
 </section>
 
-<!-- PACKS / HIGHLIGHTS -->
-<section class="section-sm">
-  <div class="container">
-    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Прозрачно</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Ориентиры по ценам</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Даём диапазон и уточняем итог после понимания комплекта и требований.
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Удобно</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Пакеты и партии</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Для партий часто выгоднее. Укажи количество в заявке — предложим вариант.
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift">
-        <div class="kicker">Быстро</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Срочные работы</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          По возможности берём в приоритет. Зависит от загрузки и типа СИ.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING CARDS -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-      <div>
-        <div class="kicker">Пакеты</div>
-        <h2 class="h2" style="margin-top:8px;">Популярные варианты</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 920px;">
-          Если не хочется разбираться в нюансах — выбери близкий вариант и оставь заявку.
-        </p>
-      </div>
-    </div>
-
-    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
-      <div class="card card-pad-lg hover-lift reveal">
-        <div class="kicker">Базовый</div>
-        <div style="font-weight:900; font-size:20px; margin-top:10px;">Стандартные работы</div>
-        <div style="margin-top:10px; color: rgba(13,19,33,.70); line-height:1.65;">
-          Подходит для типовых СИ без нестандартных требований.
-        </div>
-        <div class="panel" style="padding:14px; margin-top:14px;">
-          <div style="font-weight:900;">Что входит</div>
-          <ul style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65; padding-left:18px;">
-            <li>Работы по стандартной методике</li>
-            <li>Оформление результата</li>
-            <li>Проверка комплектности при приёме</li>
-          </ul>
-        </div>
-        <div style="margin-top:16px;">
-          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('contacts') }}">
-            Выбрать
-          </a>
-        </div>
-      </div>
-
-      <div class="card card-pad-lg hover-lift reveal" style="border-color: rgba(62,92,118,.45); box-shadow: var(--shadow);">
-        <div class="kicker">Оптимальный</div>
-        <div style="font-weight:900; font-size:20px; margin-top:10px;">Партии / регулярные работы</div>
-        <div style="margin-top:10px; color: rgba(13,19,33,.70); line-height:1.65;">
-          Для компаний с регулярными поверками/калибровками и партиями приборов.
-        </div>
-        <div class="panel" style="padding:14px; margin-top:14px;">
-          <div style="font-weight:900;">Что входит</div>
-          <ul style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65; padding-left:18px;">
-            <li>Согласование списка СИ и требований</li>
-            <li>Оптимизация сроков под партию</li>
-            <li>Единый пакет документов</li>
-          </ul>
-        </div>
-        <div style="margin-top:16px;">
-          <a class="btn btn-primary" style="width:100%;" href="{{ url_for('contacts') }}">
-            Оставить заявку
-          </a>
-        </div>
-      </div>
-
-      <div class="card card-pad-lg hover-lift reveal">
-        <div class="kicker">Срочно</div>
-        <div style="font-weight:900; font-size:20px; margin-top:10px;">Ускорение по возможности</div>
-        <div style="margin-top:10px; color: rgba(13,19,33,.70); line-height:1.65;">
-          Когда нужно “как можно быстрее”. Доступность зависит от загрузки.
-        </div>
-        <div class="panel" style="padding:14px; margin-top:14px;">
-          <div style="font-weight:900;">Что важно</div>
-          <ul style="margin-top:8px; color: rgba(13,19,33,.70); line-height:1.65; padding-left:18px;">
-            <li>Нужна полная комплектность</li>
-            <li>Маркировка и номера читаемы</li>
-            <li>Заранее укажите даты/дедлайн</li>
-          </ul>
-        </div>
-        <div style="margin-top:16px;">
-          <a class="btn btn-ghost" style="width:100%;" href="{{ url_for('contacts') }}">
-            Запросить срочно
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PRICE TABLE -->
-<section class="section">
+<section class="price-catalog section">
   <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+        <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
-        <div class="kicker">Таблица</div>
-        <h2 class="h2" style="margin-top:8px;">Ориентировочные цены</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
-          Это примерные ориентиры. Если у вас специфические требования — лучше оставить заявку, мы уточним детали.
-        </p>
+        <div class="kicker">Прайс-лист</div>
+        <h2 class="h2" style="margin-top:8px;">Найдите нужное средство измерений по названию, разделу или диапазону</h2>
       </div>
     </div>
 
-    {% set rows = [
-      {"service":"Поверка средств измерений", "from":"от 1 500 ₽", "to":"от 6 000 ₽", "note":"Зависит от типа СИ и диапазонов"},
-      {"service":"Калибровка средств измерений", "from":"от 2 500 ₽", "to":"от 12 000 ₽", "note":"По программе/точкам и формату результата"},
-      {"service":"Испытания для утверждения типа", "from":"по запросу", "to":"—", "note":"Определяется программой испытаний и документами"},
-      {"service":"Испытания оборудования", "from":"по запросу", "to":"—", "note":"По ТЗ, объёму и условиям"},
-      {"service":"Подготовка/сопровождение документации", "from":"по запросу", "to":"—", "note":"Зависит от объёма и сроков"}
-    ] %}
+    <div class="price-toolbar">
+      <input
+        class="price-search"
+        id="priceSearch"
+        type="search"
+        placeholder="Поиск по названию, коду или диапазону"
+      >
 
-    <div class="card reveal" style="margin-top:22px; overflow:hidden;">
-      <div style="overflow-x:auto;">
-        <table style="min-width: 900px; width:100%; border-collapse: collapse;">
-          <thead style="background: rgba(116,140,171,.14);">
-            <tr>
-              <th style="text-align:left; padding:16px; font-weight:900; color: var(--c-900);">Услуга</th>
-              <th style="text-align:left; padding:16px; font-weight:900; color: var(--c-900);">Стоимость</th>
-              <th style="text-align:left; padding:16px; font-weight:900; color: var(--c-900);">Комментарий</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for r in rows %}
-            <tr style="border-top:1px solid rgba(13,19,33,.10);">
-              <td style="padding:16px; font-weight:900; color: var(--c-900);">
-                {{ r.service }}
-              </td>
-              <td style="padding:16px; color: rgba(13,19,33,.75);">
-                <span style="font-weight:900; color: var(--c-600);">{{ r.from }}</span>
-                {% if r.to != "—" %}
-                  <span style="color: rgba(13,19,33,.55);"> — </span>
-                  <span style="font-weight:900; color: var(--c-600);">{{ r.to }}</span>
-                {% endif %}
-              </td>
-              <td style="padding:16px; color: rgba(13,19,33,.70); line-height:1.6;">
-                {{ r.note }}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+      <select class="price-select" id="priceSectionFilter">
+        <option value="all">Все разделы</option>
+      </select>
+
+      <select class="price-select" id="priceTypeFilter">
+        <option value="all">Все услуги</option>
+        <option value="verification">Поверка</option>
+        <option value="calibration">Калибровка</option>
+      </select>
+
+      <button class="btn btn-ghost price-reset" id="priceReset" type="button">
+        Сбросить
+      </button>
     </div>
 
-    <div class="reveal" style="margin-top:16px; color: rgba(13,19,33,.65); font-size: 13px; line-height:1.6;">
-      * Указанные цены — ориентиры. Итоговая стоимость фиксируется после уточнения типа СИ, количества, состояния, комплектности и требований к документам.
+    <div class="price-result-line">
+      <span id="priceResultCount">Загрузка прайс-листа...</span>
+    </div>
+
+    <div class="price-grid" id="priceGrid"></div>
+
+    <div class="price-empty" id="priceEmpty" hidden>
+      Ничего не найдено. Попробуйте изменить запрос или фильтр.
+    </div>
+
+    <div class="price-pagination">
+      <button class="price-page-btn" id="pricePrev" type="button">
+        ← Назад
+      </button>
+
+      <span class="price-page-info" id="pricePageInfo">
+        1 из 1
+      </span>
+
+      <button class="price-page-btn" id="priceNext" type="button">
+        Вперёд →
+      </button>
+    </div>
+
+    <div class="price-note">
+      <p>
+        Стоимость выполнения работ указана без налога на добавленную
+        стоимость (НДС). НДС взимается дополнительно по установленной
+        законодательством РФ ставке.
+      </p>
     </div>
   </div>
 </section>
@@ -250,6 +146,7 @@
   </div>
 </section>
 
-<script src="{{ url_for('static', filename='js/accordion.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/price_catalog.js') }}"></script>
 
 {% endblock %}

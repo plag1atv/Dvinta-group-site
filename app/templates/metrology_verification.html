@@ -20,7 +20,12 @@
       </p>
 
       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+        <a
+          class="btn btn-primary"
+          href="{{ url_for('static', filename='docs/oa-poverka-si-dvinta.pdf') }}"
+          target="_blank"
+          rel="noopener"
+        >
           <i data-lucide="send" class="w-5 h-5"></i>
           Область аккредитации
         </a>
@@ -79,10 +84,10 @@
         <h2 class="h2" style="margin-top:8px;">Какие СИ поверяем</h2>
         <p class="p-lead verify-types__lead" style="margin-top:10px; max-width: 980px;">
           «ЦСМ Двинта» аккредитован в национальной системе аккредитации на проведение поверки:
-          <!-- <a href="https://pub.fsa.gov.ru/ral" target="_blank" rel="noopener"
+           <a href="https://pub.fsa.gov.ru/ral/view/38727/accredited-entity" target="_blank" rel="noopener"
              style="color: var(--c-400); font-weight: 800; text-decoration: none;">
             смотреть аккредитацию
-          </a>. -->
+          </a>
         </p>
       </div>
 

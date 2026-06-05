@@ -2030,8 +2030,9 @@ html {
   align-items: center;
   justify-content: space-between;
   margin: 0 0 18px;
-  color: var(--muted);
-  font-weight: 600;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .price-grid {
@@ -2060,12 +2061,12 @@ html {
 .price-card::before {
   content: "";
   position: absolute;
-  top: -70px;
-  right: -70px;
-  width: 160px;
-  height: 160px;
+  top: -50px;
+  right: -50px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background: rgba(56, 116, 143, 0.09);
+  background: rgba(56, 116, 143, 0.08);
 }
 
 .price-card::after {
@@ -2135,9 +2136,10 @@ html {
 
 .price-card-range {
   margin: 0 0 18px;
-  color: var(--muted);
+  color: var(--text);
   font-size: 15px;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 .price-card-prices {
@@ -2163,9 +2165,9 @@ html {
 .price-card-prices span {
   display: block;
   margin-bottom: 5px;
-  color: var(--muted);
+  color: var(--text);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .price-card-prices strong {
@@ -2240,9 +2242,12 @@ html {
 
 .price-page-info {
   min-width: 90px;
-  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--c-600);
   text-align: center;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .price-note {

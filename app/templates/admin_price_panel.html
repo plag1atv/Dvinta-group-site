@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section admin-price">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Админ-панель</p>
+      <h1>Управление прайс-листом</h1>
+      <p>
+        Здесь можно искать позиции, фильтровать разделы и удалять товары из прайс-листа.
+      </p>
+    </div>
+
+    <div class="price-toolbar">
+      <input
+        class="price-search"
+        id="adminPriceSearch"
+        type="search"
+        placeholder="Поиск по названию, коду, диапазону или цене"
+      >
+
+      <select class="price-select" id="adminSectionFilter">
+        <option value="all">Все разделы</option>
+      </select>
+
+      <button class="btn btn-ghost price-reset" id="adminReset" type="button">
+        Сбросить
+      </button>
+
+      <a class="btn btn-ghost" href="{{ url_for('admin_price_logout') }}">
+        Выйти
+      </a>
+    </div>
+
+        <form class="admin-add-form" id="adminAddForm">
+      <h2>Добавить позицию</h2>
+
+      <div class="admin-add-grid">
+        <label>
+          Код
+          <input id="addCode" type="text" placeholder="Например: 1.011">
+        </label>
+
+        <label>
+          Раздел
+          <select id="addSection" required>
+            <option value="">Выберите раздел</option>
+          </select>
+        </label>
+
+        <label>
+          Название
+          <input id="addName" type="text" placeholder="Например: Штангенциркуль" required>
+        </label>
+
+        <label>
+          Диапазон
+          <input id="addRange" type="text" placeholder="Например: (0…150) мм">
+        </label>
+
+        <label>
+          Цена поверки
+          <input id="addVerificationPrice" type="text" placeholder="Например: 650">
+        </label>
+
+        <label>
+          Цена калибровки
+          <input id="addCalibrationPrice" type="text" placeholder="Например: 650">
+        </label>
+
+        <label class="admin-add-wide">
+          Примечание / замечание
+          <textarea id="addNote" rows="3" placeholder="Например: Цена указана за 1 единицу"></textarea>
+        </label>
+      </div>
+
+      <button class="btn btn-primary" type="submit">
+        Добавить товар
+      </button>
+    </form>
+
+    <div class="price-result-line">
+      <span id="adminPriceCount">Загрузка...</span>
+    </div>
+
+    <div class="admin-price-list" id="adminPriceList"></div>
+
+    <div class="price-empty" id="adminPriceEmpty" hidden>
+      Ничего не найдено.
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/admin_price.js') }}"></script>
+
+{% endblock %}

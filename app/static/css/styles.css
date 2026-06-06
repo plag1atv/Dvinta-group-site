@@ -2297,3 +2297,196 @@ html {
     flex-wrap: wrap;
   }
 }
+
+/* Admin price panel */
+
+.admin-price-list {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-price-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px auto;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid rgba(46, 70, 89, 0.14);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(24, 43, 58, 0.07);
+}
+
+.admin-price-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.admin-price-meta span {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(56, 116, 143, 0.1);
+  color: var(--c-600);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.admin-price-main h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 19px;
+}
+
+.admin-price-main p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.admin-price-note {
+  margin-top: 8px !important;
+  color: var(--muted) !important;
+  font-size: 13px;
+}
+
+.admin-price-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.admin-price-values div {
+  padding: 12px;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.admin-price-values span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-price-values strong {
+  color: var(--c-600);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.admin-delete-btn {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(180, 40, 40, 0.22);
+  border-radius: 999px;
+  background: rgba(180, 40, 40, 0.08);
+  color: #9f1d1d;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.admin-delete-btn:hover {
+  background: #9f1d1d;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .admin-price-item {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-price-values {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-delete-btn {
+    width: 100%;
+  }
+}
+
+/* Admin add price form */
+
+.admin-add-form {
+  margin: 28px 0 24px;
+  padding: 24px;
+  border: 1px solid rgba(46, 70, 89, 0.14);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(24, 43, 58, 0.08);
+}
+
+.admin-add-form h2 {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.admin-add-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.admin-add-grid label {
+  display: grid;
+  gap: 7px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.admin-add-grid input,
+.admin-add-grid select,
+.admin-add-grid textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(46, 70, 89, 0.18);
+  border-radius: 16px;
+  background: #f8fafc;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.admin-add-grid textarea {
+  min-height: 92px;
+  padding-top: 12px;
+  resize: vertical;
+}
+
+.admin-add-grid input:focus,
+.admin-add-grid select:focus,
+.admin-add-grid textarea:focus {
+  border-color: var(--c-500);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(56, 116, 143, 0.12);
+}
+
+.admin-add-wide {
+  grid-column: 1 / -1;
+}
+
+.admin-price-note {
+  display: inline-block;
+  margin-top: 10px !important;
+  padding: 8px 12px;
+  border-left: 3px solid var(--c-500);
+  border-radius: 12px;
+  background: rgba(56, 116, 143, 0.1);
+  color: var(--text) !important;
+  font-size: 14px;
+  font-weight: 700 !important;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .admin-add-grid {
+    grid-template-columns: 1fr;
+  }
+}

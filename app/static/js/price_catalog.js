@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("keydown", (event) => {
+    const isAdminShortcut =
+      event.ctrlKey &&
+      event.altKey &&
+      event.code === "KeyP";
+
+    if (isAdminShortcut) {
+      event.preventDefault();
+      window.location.href = "/admin/price-login";
+    }
+  });
   const priceGrid = document.getElementById("priceGrid");
   const priceSearch = document.getElementById("priceSearch");
   const sectionFilter = document.getElementById("priceSectionFilter");

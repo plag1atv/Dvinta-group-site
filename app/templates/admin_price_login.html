@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section">
+  <div class="container">
+    <div class="panel" style="max-width: 520px; margin: 0 auto; padding: 42px; border-radius: 28px;">
+      <div class="kicker">Админ-панель</div>
+
+      <h1 class="h1" style="margin-top: 10px; font-size: 38px;">
+        Вход
+      </h1>
+
+      <p class="p-lead" style="margin-top: 12px;">
+        Введите логин и пароль для управления прайс-листом.
+      </p>
+
+      {% if error_message %}
+        <div style="margin-top: 18px; padding: 14px 16px; border-radius: 16px; background: rgba(180, 40, 40, 0.1); color: #9f1d1d; font-weight: 700;">
+          {{ error_message }}
+        </div>
+      {% endif %}
+
+      <form method="post" style="margin-top: 24px; display: grid; gap: 14px;">
+        <input
+          type="text"
+          name="login"
+          placeholder="Логин"
+          required
+          style="min-height: 52px; padding: 0 16px; border-radius: 16px; border: 1px solid rgba(46, 70, 89, 0.18); font: inherit;"
+        >
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Пароль"
+          required
+          style="min-height: 52px; padding: 0 16px; border-radius: 16px; border: 1px solid rgba(46, 70, 89, 0.18); font: inherit;"
+        >
+
+        <button class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">
+          Войти
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

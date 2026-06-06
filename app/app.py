@@ -1,9 +1,11 @@
 import os
 import smtplib
+import json
+from pathlib import Path
 from datetime import datetime
 from email.message import EmailMessage
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 def load_env_file() -> None:
     env_path = os.path.join(
@@ -47,6 +49,10 @@ def create_app() -> Flask:
     app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME", "")
     app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD", "")
     app.config["MAIL_TO"] = os.environ.get("MAIL_TO", "info@csmdvinta.ru")
+    app.config["ADMIN_LOGIN"] = os.environ.get("ADMIN_LOGIN", "admin_panel_dvinta")
+    app.config["ADMIN_PASSWORD"] = os.environ.get("ADMIN_PASSWORD", "Dvinta_tpa3B_Px")
+    app.config["PRICE_ITEMS_PATH"] = (Path(app.root_path) / "static" / "data" / "price_items.json"
+    )
 
     @app.context_processor
     def inject_globals():
@@ -159,6 +165,129 @@ def create_app() -> Flask:
     @app.get("/metrology/price-list")
     def metrology_price_list():
         return render_template("metrology_price_list.html", title="Прайс-лист")
+
+    def is_price_admin():
+        return session.get("price_admin_logged_in") is True
+
+
+    def read_price_items():
+        price_path = app.config["PRICE_ITEMS_PATH"]
+
+        if not price_path.exists():
+            return []
+
+        with price_path.open("r", encoding="utf-8") as file:
+            return json.load(file)
+
+
+    def write_price_items(items):
+        price_path = app.config["PRICE_ITEMS_PATH"]
+
+        with price_path.open("w", encoding="utf-8") as file:
+            json.dump(items, file, ensure_ascii=False, indent=2)
+
+    @app.route("/admin/price-login", methods=["GET", "POST"])
+    def admin_price_login():
+        error_message = None
+
+        if request.method == "POST":
+            login = request.form.get("login", "").strip()
+            password = request.form.get("password", "").strip()
+
+            if (
+                login == app.config["ADMIN_LOGIN"]
+                and password == app.config["ADMIN_PASSWORD"]
+            ):
+                session["price_admin_logged_in"] = True
+                return redirect(url_for("admin_price_panel"))
+
+            error_message = "Неверный логин или пароль."
+
+        return render_template(
+            "admin_price_login.html",
+            title="Вход в админ-панель",
+            error_message=error_message,
+        )
+
+
+    @app.get("/admin/price")
+    def admin_price_panel():
+        if not session.get("price_admin_logged_in"):
+            return redirect(url_for("admin_price_login"))
+
+        return render_template(
+            "admin_price_panel.html",
+            title="Управление прайс-листом",
+        )
+
+
+    @app.get("/admin/api/price-items")
+    def admin_get_price_items():
+        if not is_price_admin():
+            return jsonify({"error": "unauthorized"}), 401
+
+        items = read_price_items()
+
+        return jsonify(items)
+
+
+    @app.post("/admin/api/price-items")
+    def admin_add_price_item():
+        if not is_price_admin():
+            return jsonify({"error": "unauthorized"}), 401
+
+        data = request.get_json() or {}
+        items = read_price_items()
+
+        new_id = max([int(item.get("id", 0)) for item in items], default=0) + 1
+
+        new_item = {
+            "id": new_id,
+            "code": data.get("code", "").strip(),
+            "section": data.get("section", "").strip(),
+            "name": data.get("name", "").strip(),
+            "range": data.get("range", "").strip(),
+            "verification_price": data.get("verification_price", "").strip(),
+            "calibration_price": data.get("calibration_price", "").strip(),
+            "note": data.get("note", "").strip(),
+        }
+
+        if not new_item["name"]:
+            return jsonify({"error": "name_required"}), 400
+
+        if not new_item["section"]:
+            return jsonify({"error": "section_required"}), 400
+
+        items.append(new_item)
+        write_price_items(items)
+
+        return jsonify(new_item), 201
+
+
+    @app.delete("/admin/api/price-items/<int:item_id>")
+    def admin_delete_price_item(item_id):
+        if not is_price_admin():
+            return jsonify({"error": "unauthorized"}), 401
+
+        items = read_price_items()
+
+        new_items = [
+            item for item in items
+            if int(item.get("id", 0)) != item_id
+        ]
+
+        if len(new_items) == len(items):
+            return jsonify({"error": "not_found"}), 404
+
+        write_price_items(new_items)
+
+        return jsonify({"success": True})
+
+
+    @app.get("/admin/price-logout")
+    def admin_price_logout():
+        session.pop("price_admin_logged_in", None)
+        return redirect(url_for("metrology_price_list"))
 
     @app.get("/metrology/type-approval")
     def metrology_type_approval():

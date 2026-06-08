@@ -220,7 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  fetch("/static/data/price_items.json")
+  fetch("/api/price-items", {
+    cache: "no-store"
+  })
     .then((response) => response.json())
     .then((items) => {
       allItems = items;

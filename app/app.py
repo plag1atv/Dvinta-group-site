@@ -220,6 +220,17 @@ def create_app() -> Flask:
             title="Управление прайс-листом",
         )
 
+    @app.get("/api/price-items")
+    def public_get_price_items():
+        items = read_price_items()
+
+        response = jsonify(items)
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+
+        return response
+
 
     @app.get("/admin/api/price-items")
     def admin_get_price_items():

@@ -2171,9 +2171,13 @@ html {
 }
 
 .price-card-prices strong {
+  display: block;
+  max-width: 100%;
   color: var(--c-600);
-  font-size: 22px;
-  line-height: 1;
+  font-size: 18px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .price-card-prices strong::after {

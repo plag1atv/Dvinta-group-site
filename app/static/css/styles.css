@@ -2381,6 +2381,51 @@ html {
   font-weight: 800;
 }
 
+
+.admin-price-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-edit-btn {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(56, 116, 143, 0.25);
+  border-radius: 999px;
+  background: rgba(56, 116, 143, 0.1);
+  color: var(--c-600);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.admin-edit-btn:hover {
+  background: var(--c-600);
+  color: #ffffff;
+}
+
+.admin-edit-form {
+  margin-top: -4px;
+  padding: 22px;
+  border: 1px solid rgba(56, 116, 143, 0.18);
+  border-radius: 22px;
+  background: #f8fafc;
+  box-shadow: 0 12px 30px rgba(24, 43, 58, 0.06);
+}
+
+.admin-edit-form h3 {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: 21px;
+}
+
+.admin-edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
 .admin-delete-btn {
   min-height: 44px;
   padding: 0 16px;
@@ -2407,6 +2452,11 @@ html {
     grid-template-columns: 1fr 1fr;
   }
 
+  .admin-price-actions {
+    width: 100%;
+  }
+
+  .admin-edit-btn,
   .admin-delete-btn {
     width: 100%;
   }

@@ -274,6 +274,35 @@ def create_app() -> Flask:
 
         return jsonify(new_item), 201
 
+    @app.put("/admin/api/price-items/<int:item_id>")
+    def admin_update_price_item(item_id):
+        if not is_price_admin():
+            return jsonify({"error": "unauthorized"}), 401
+
+        data = request.get_json() or {}
+        items = read_price_items()
+
+        for item in items:
+            if int(item.get("id", 0)) == item_id:
+                item["code"] = data.get("code", "").strip()
+                item["section"] = data.get("section", "").strip()
+                item["name"] = data.get("name", "").strip()
+                item["range"] = data.get("range", "").strip()
+                item["verification_price"] = data.get("verification_price", "").strip()
+                item["calibration_price"] = data.get("calibration_price", "").strip()
+                item["note"] = data.get("note", "").strip()
+
+                if not item["name"]:
+                    return jsonify({"error": "name_required"}), 400
+
+                if not item["section"]:
+                    return jsonify({"error": "section_required"}), 400
+
+                write_price_items(items)
+                return jsonify(item)
+
+        return jsonify({"error": "not_found"}), 404
+
 
     @app.delete("/admin/api/price-items/<int:item_id>")
     def admin_delete_price_item(item_id):

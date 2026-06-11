@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let allItems = [];
   let filteredItems = [];
 
+  function escapeHtml(value) {
+    return String(value || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
   function normalizeText(value) {
     return String(value || "").toLowerCase().trim();
   }
@@ -55,17 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <article class="admin-price-item" data-id="${item.id}">
         <div class="admin-price-main">
           <div class="admin-price-meta">
-            <span>${item.code || "Без кода"}</span>
-            <span>${item.section || "Без раздела"}</span>
+            <span>${escapeHtml(item.code || "Без кода")}</span>
+            <span>${escapeHtml(item.section || "Без раздела")}</span>
           </div>
 
-          <h3>${item.name || "Без названия"}</h3>
+          <h3>${escapeHtml(item.name || "Без названия")}</h3>
 
-          <p>${item.range || "Диапазон не указан"}</p>
+          <p>${escapeHtml(item.range || "Диапазон не указан")}</p>
 
           ${
             item.note
-              ? `<p class="admin-price-note">Замечание: ${item.note}</p>`
+              ? `<p class="admin-price-note">Замечание: ${escapeHtml(item.note)}</p>`
               : ""
           }
         </div>
@@ -73,25 +82,84 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="admin-price-values">
           <div>
             <span>Поверка</span>
-            <strong>${item.verification_price || "—"}</strong>
+            <strong>${escapeHtml(item.verification_price || "—")}</strong>
           </div>
 
           <div>
             <span>Калибровка</span>
-            <strong>${item.calibration_price || "—"}</strong>
+            <strong>${escapeHtml(item.calibration_price || "—")}</strong>
           </div>
         </div>
 
-        <button
-          class="admin-delete-btn"
-          type="button"
-          data-id="${item.id}"
-        >
-          Удалить
-        </button>
+        <div class="admin-price-actions">
+          <button class="admin-edit-btn" type="button" data-id="${item.id}">
+            Редактировать
+          </button>
+
+          <button class="admin-delete-btn" type="button" data-id="${item.id}">
+            Удалить
+          </button>
+        </div>
       </article>
     `;
   }
+
+
+  function createEditForm(item) {
+  return `
+    <form class="admin-edit-form" data-id="${item.id}">
+      <h3>Редактирование позиции</h3>
+
+      <div class="admin-add-grid">
+        <label>
+          Код
+          <input name="code" type="text" value="${escapeHtml(item.code)}">
+        </label>
+
+        <label>
+          Раздел
+          <input name="section" type="text" value="${escapeHtml(item.section)}" required>
+        </label>
+
+        <label>
+          Название
+          <input name="name" type="text" value="${escapeHtml(item.name)}" required>
+        </label>
+
+        <label>
+          Диапазон
+          <input name="range" type="text" value="${escapeHtml(item.range)}">
+        </label>
+
+        <label>
+          Цена поверки
+          <input name="verification_price" type="text" value="${escapeHtml(item.verification_price)}">
+        </label>
+
+        <label>
+          Цена калибровки
+          <input name="calibration_price" type="text" value="${escapeHtml(item.calibration_price)}">
+        </label>
+
+        <label class="admin-add-wide">
+          Примечание / замечание
+          <textarea name="note" rows="3">${escapeHtml(item.note)}</textarea>
+        </label>
+      </div>
+
+      <div class="admin-edit-actions">
+        <button class="btn btn-primary" type="submit">
+          Сохранить изменения
+        </button>
+
+        <button class="btn btn-ghost admin-cancel-edit" type="button">
+          Отмена
+        </button>
+      </div>
+    </form>
+  `;
+}
+
 
   function applyFilters() {
     const searchValue = normalizeText(searchInput.value);
@@ -112,9 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       const matchesSearch = searchText.includes(searchValue);
-
-      const matchesSection =
-        selectedSection === "all" || item.section === selectedSection;
+      const matchesSection = selectedSection === "all" || item.section === selectedSection;
 
       return matchesSearch && matchesSection;
     });
@@ -124,9 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderList() {
     list.innerHTML = filteredItems.map(createItemRow).join("");
-
     countText.textContent = `Найдено позиций: ${filteredItems.length}`;
-
     emptyBlock.hidden = filteredItems.length > 0;
   }
 
@@ -168,6 +232,58 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(() => {
         alert("Не удалось удалить позицию.");
+      });
+  }
+
+  function updateItem(itemId, form) {
+    const formData = new FormData(form);
+
+    const payload = {
+      code: formData.get("code").trim(),
+      section: formData.get("section").trim(),
+      name: formData.get("name").trim(),
+      range: formData.get("range").trim(),
+      verification_price: formData.get("verification_price").trim(),
+      calibration_price: formData.get("calibration_price").trim(),
+      note: formData.get("note").trim(),
+    };
+
+    if (!payload.section) {
+      alert("Введите раздел.");
+      return;
+    }
+
+    if (!payload.name) {
+      alert("Введите название товара.");
+      return;
+    }
+
+    fetch(`/admin/api/price-items/${itemId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Ошибка сохранения");
+        }
+
+        return response.json();
+      })
+      .then((updatedItem) => {
+        allItems = allItems.map((item) =>
+          Number(item.id) === Number(itemId) ? updatedItem : item
+        );
+
+        refreshSectionSelects();
+        applyFilters();
+
+        alert("Позиция обновлена.");
+      })
+      .catch(() => {
+        alert("Не удалось сохранить изменения.");
       });
   }
 
@@ -234,12 +350,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
   list.addEventListener("click", (event) => {
     const deleteButton = event.target.closest(".admin-delete-btn");
+    const editButton = event.target.closest(".admin-edit-btn");
+    const cancelButton = event.target.closest(".admin-cancel-edit");
 
-    if (!deleteButton) {
+    if (deleteButton) {
+      deleteItem(deleteButton.dataset.id);
       return;
     }
 
-    deleteItem(deleteButton.dataset.id);
+    if (editButton) {
+      const itemId = editButton.dataset.id;
+      const item = allItems.find((priceItem) => Number(priceItem.id) === Number(itemId));
+      const card = editButton.closest(".admin-price-item");
+
+      if (!item || !card) {
+        return;
+      }
+
+      const openedForm = list.querySelector(".admin-edit-form");
+
+      if (openedForm) {
+        openedForm.remove();
+      }
+
+      card.insertAdjacentHTML("afterend", createEditForm(item));
+
+      return;
+    }
+
+    if (cancelButton) {
+      const editForm = cancelButton.closest(".admin-edit-form");
+
+      if (editForm) {
+        editForm.hidden = true;
+      }
+    }
+  });
+
+  list.addEventListener("submit", (event) => {
+    const editForm = event.target.closest(".admin-edit-form");
+
+    if (!editForm) {
+      return;
+    }
+
+    event.preventDefault();
+    updateItem(editForm.dataset.id, editForm);
   });
 
   loadItems();

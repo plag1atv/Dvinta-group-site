@@ -5,6 +5,7 @@ from pathlib import Path
 from datetime import datetime
 from email.message import EmailMessage
 
+
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 def load_env_file() -> None:
@@ -114,13 +115,25 @@ def create_app() -> Flask:
         success_message = None
         error_message = None
 
+        # === CAPTCHA ===
+        import random
+        if request.method == "GET" or 'captcha_answer' not in session:
+            a = random.randint(1, 20)
+            b = random.randint(1, 20)
+            session['captcha_a'] = a
+            session['captcha_b'] = b
+            session['captcha_answer'] = a + b
+
         if request.method == "POST":
             form_data["name"] = request.form.get("name", "").strip()
             form_data["email"] = request.form.get("email", "").strip()
             form_data["phone"] = request.form.get("phone", "").strip()
             form_data["message"] = request.form.get("message", "").strip()
+            user_answer = request.form.get("captcha", "").strip()
 
-            if not all([form_data["name"], form_data["email"], form_data["phone"], form_data["message"]]):
+            if not user_answer or int(user_answer) != session.get('captcha_answer'):
+                error_message = "Неверный ответ на проверку. Попробуйте ещё раз."
+            elif not all([form_data["name"], form_data["email"], form_data["phone"], form_data["message"]]):
                 error_message = "Пожалуйста, заполните все обязательные поля формы."
             else:
                 try:
@@ -132,6 +145,14 @@ def create_app() -> Flask:
                     )
                     success_message = "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время."
                     form_data = {"name": "", "email": "", "phone": "", "message": ""}
+
+                    # === Генерируем новую CAPTCHA для следующей формы ===
+                    a = random.randint(1, 20)
+                    b = random.randint(1, 20)
+                    session['captcha_a'] = a
+                    session['captcha_b'] = b
+                    session['captcha_answer'] = a + b
+
                 except Exception as exc:
                     error_message = "Не удалось отправить заявку. Попробуйте позже или напишите нам напрямую."
                     print(f"Ошибка отправки письма: {exc}")
@@ -142,6 +163,9 @@ def create_app() -> Flask:
             success_message=success_message,
             error_message=error_message,
             form_data=form_data,
+            # Передаём CAPTCHA только если она нужна
+            captcha_a=session.get('captcha_a'),
+            captcha_b=session.get('captcha_b')
         )
 
     # === Остальные маршруты (без изменений) ===

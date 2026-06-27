@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+
 {% block content %}
 
 <section class="section">
@@ -132,6 +138,20 @@
               </div>
             </div>
           </div>
+
+          <!-- CAPTCHA -->
+          {% if captcha_a is not none and captcha_b is not none %}
+          <div style="margin: 20px 0 16px; padding: 16px; background: #f8fafc; border-radius: 14px; border: 1px solid rgba(13,19,33,.12);">
+            <label style="font-weight:800; display:block; margin-bottom:8px; color: var(--c-ink);">
+              Проверка: сколько будет <strong style="color:var(--c-600);">{{ captcha_a }} + {{ captcha_b }}</strong>?
+            </label>
+            <input type="number"
+                   name="captcha"
+                   required
+                   style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
+                   placeholder="Введите сумму" />
+          </div>
+          {% endif %}
 
           <div class="contacts-form-actions" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
             <button class="btn btn-primary" type="submit">

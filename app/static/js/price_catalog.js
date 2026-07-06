@@ -58,6 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const calibrationPrice = item.calibration_price || "—";
     const range = item.range || "Диапазон не указан";
     const note = item.note || "";
+    const formattedNote = note
+      ? note
+          .replace(/\s+2\./g, "<br>2.")
+          .replace(/^1\./, "1.")
+      : "";
 
     let priceHtml = `
       <div class="price-card-prices">
@@ -98,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ${
           note
-            ? `<p class="price-card-note">${note}</p>`
+            ? `<p class="price-card-note">${formattedNote}</p>`
             : ""
         }
 

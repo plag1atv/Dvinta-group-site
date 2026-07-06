@@ -2185,14 +2185,15 @@ html {
 }
 
 .price-card-note {
-  margin: 12px 0 0;
-  padding: 10px 12px;
-  border-left: 3px solid var(--c-500);
-  border-radius: 12px;
-  background: rgba(56, 116, 143, 0.08);
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.4;
+  margin: 14px 0 0;
+  padding: 13px 14px;
+  border-left: 4px solid var(--c-600);
+  border-radius: 14px;
+  background: rgba(56, 116, 143, 0.16);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 700;
 }
 
 .price-card-btn {

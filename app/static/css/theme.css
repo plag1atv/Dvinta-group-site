@@ -791,12 +791,16 @@ body.has-mountain footer{
 
 .verify-type-item{
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 40px 1fr auto;
   gap: 12px;
   align-items: center;
 
   padding: 12px 14px;
   min-height: 68px;
+
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 
   border-radius: 18px;
   background: rgba(255,255,255,.92);
@@ -869,6 +873,42 @@ body.has-mountain footer{
   color: rgba(var(--ink-rgb), .90);
 }
 
+.verify-type-item__more{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: end;
+
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+
+  color: rgba(var(--ink-rgb), .62);
+}
+
+.verify-type-item__more svg{
+  width: 15px;
+  height: 15px;
+  transition: transform .18s ease;
+}
+
+.verify-type-item:hover .verify-type-item__more svg{
+  transform: translateX(3px);
+}
+
+.verify-type-item:nth-child(even) .verify-type-item__more{
+  color: rgba(255,255,255,.86);
+}
+
+.verify-type-item:nth-child(odd) .verify-type-item__more{
+  color: rgba(var(--ink-rgb), .62);
+}
+
+.verify-type-item:focus-visible{
+  outline: 3px solid rgba(23,50,76,.28);
+  outline-offset: 3px;
+}
+
 @media (max-width: 900px){
   .verify-types__grid{
     grid-template-columns: 1fr;
@@ -900,7 +940,16 @@ body.has-mountain footer{
   .verify-type-item__text{
     font-size: 16px;
   }
+
+  .verify-type-item__more{
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 2px;
+    font-size: 12px;
+  }
 }
+
+
 
 /* TIMELINES (white premium cards with right-side pill) */
 .tline{

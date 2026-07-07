@@ -173,6 +173,28 @@ def create_app() -> Flask:
     def equipment():
         return render_template("equipment.html", title="Оборудование")
 
+    @app.route("/equipment_calipers.html")
+    @app.route("/equipment/shtangentsirkuli")
+    def equipment_calipers():
+
+        price_file = Path(app.static_folder) / "data" / "price_items.json"
+
+        with open(price_file, "r", encoding="utf-8") as f:
+            price_items = json.load(f)
+
+        calipers = []
+
+        for item in price_items:
+
+            if "штангенциркул" in item["name"].lower():
+                calipers.append(item)
+
+        return render_template(
+            "equipment_calipers.html",
+            title="Поверка штангенциркулей",
+            equipment_type="calipers"
+        )
+
     # Метrology
     @app.get("/metrology/competence")
     def metrology_competence():

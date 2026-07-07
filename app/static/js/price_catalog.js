@@ -230,6 +230,15 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then((response) => response.json())
     .then((items) => {
+      const equipmentType = document.body.dataset.equipment;
+
+      if (equipmentType === "calipers") {
+
+          items = items.filter(item =>
+              item.name.toLowerCase().includes("штангенциркул")
+          );
+
+      }
       allItems = items;
       filteredItems = items;
 

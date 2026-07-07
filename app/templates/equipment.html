@@ -1,239 +1,49 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-{% set categories = [
-  {"id":"all", "name":"Все"},
-  {"id":"geometric", "name":"Геометрические"},
-  {"id":"pressure", "name":"Давление"},
-  {"id":"temperature", "name":"Температура"},
-  {"id":"electrical", "name":"Электрические"},
-  {"id":"mass", "name":"Масса"},
-] %}
+<section class="equipment-page">
 
-{% set equipment = [
-  {"id":1, "name":"Штангенциркуль цифровой", "category":"geometric", "range":"0-150 мм", "accuracy":"±0.02 мм", "price":"2 500",
-   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?auto=format&fit=crop&w=1200&q=80"},
-  {"id":2, "name":"Микрометр гладкий", "category":"geometric", "range":"0-25 мм", "accuracy":"±0.004 мм", "price":"3 200",
-   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?auto=format&fit=crop&w=1200&q=80"},
-  {"id":3, "name":"Манометр образцовый", "category":"pressure", "range":"0-25 МПа", "accuracy":"Класс 0.4", "price":"8 500",
-   "image":"https://images.unsplash.com/photo-1758873263563-5ba4aa330799?auto=format&fit=crop&w=1200&q=80"},
-  {"id":4, "name":"Термометр цифровой", "category":"temperature", "range":"-50...+300°C", "accuracy":"±0.5°C", "price":"4 800",
-   "image":"https://images.unsplash.com/photo-1614451558153-e4f8fadbbfd0?auto=format&fit=crop&w=1200&q=80"},
-  {"id":5, "name":"Мультиметр цифровой", "category":"electrical", "range":"Универсальный", "accuracy":"Класс 0.5", "price":"6 500",
-   "image":"https://images.unsplash.com/photo-1767042286381-9587c6a7322a?auto=format&fit=crop&w=1200&q=80"},
-  {"id":6, "name":"Весы лабораторные", "category":"mass", "range":"0-500 г", "accuracy":"±0.01 г", "price":"12 000",
-   "image":"https://images.unsplash.com/photo-1614451558153-e4f8fadbbfd0?auto=format&fit=crop&w=1200&q=80"},
-  {"id":7, "name":"Угломер универсальный", "category":"geometric", "range":"0-360°", "accuracy":"±5'", "price":"5 200",
-   "image":"https://images.unsplash.com/photo-1550524756-d07d631274cc?auto=format&fit=crop&w=1200&q=80"},
-  {"id":8, "name":"Термопара хромель-алюмель", "category":"temperature", "range":"0-1000°C", "accuracy":"Класс 1", "price":"3 800",
-   "image":"https://images.unsplash.com/photo-1758873263563-5ba4aa330799?auto=format&fit=crop&w=1200&q=80"},
-  {"id":9, "name":"Вакуумметр", "category":"pressure", "range":"0-0.1 МПа", "accuracy":"Класс 1.5", "price":"4 200",
-   "image":"https://images.unsplash.com/photo-1767042286381-9587c6a7322a?auto=format&fit=crop&w=1200&q=80"},
-] %}
+    <div class="container">
 
-<!-- HERO -->
-<section class="section">
-  <div class="container">
-    <div class="panel reveal" style="padding:46px; border-radius: 26px;">
-      <div class="kicker">Оборудование</div>
-      <h1 class="h1" style="margin-top:10px;">Измерительное оборудование</h1>
-      <p class="p-lead" style="margin-top:14px; max-width: 980px;">
-        Подберём измерительные приборы под задачу, поможем с выбором, характеристиками и сопроводительными документами.
-      </p>
+        <div class="equipment-header">
 
-      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Уточнить наличие/подбор
-        </a>
-        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
-          <i data-lucide="send" class="w-5 h-5"></i>
-          Оставить заявку
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+            <h1>Оборудование</h1>
 
-<!-- FILTERS -->
-<section class="section-sm">
-  <div class="container">
-    <div class="card reveal" style="padding:18px;">
-      <div style="display:grid; grid-template-columns: 1.2fr .8fr; gap:12px; align-items:center;">
-        <div>
-          <div style="font-weight:900; margin-bottom:8px;">Поиск</div>
-          <div style="position:relative;">
-            <i data-lucide="search" class="w-5 h-5" style="position:absolute; left:12px; top:50%; transform: translateY(-50%); opacity:.6;"></i>
-            <input
-              id="equipmentSearch"
-              type="text"
-              placeholder="Например: манометр, микрометр, термометр…"
-              style="width:100%; padding:12px 12px 12px 42px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
-            />
-          </div>
+            <p>
+                Выберите средство измерений, чтобы узнать подробную информацию
+                о поверке, стоимости услуг и порядке проведения работ.
+            </p>
+
         </div>
 
-        <div>
-          <div style="font-weight:900; margin-bottom:8px;">Категория</div>
-          <div style="position:relative;">
-            <i data-lucide="filter" class="w-5 h-5" style="position:absolute; left:12px; top:50%; transform: translateY(-50%); opacity:.6;"></i>
-            <select
-              id="equipmentCategory"
-              style="width:100%; padding:12px 12px 12px 42px; border-radius:14px; border:1px solid rgba(13,19,33,.18); background:#fff;"
-            >
-              {% for cat in categories %}
-                <option value="{{ cat.id }}">{{ cat.name }}</option>
-              {% endfor %}
-            </select>
-          </div>
+
+        <div class="equipment-grid">
+
+            <a href="/equipment_calipers.html" class="equipment-card">
+
+                <div class="equipment-card-icon">
+                    📏
+                </div>
+
+                <h2>Штангенциркули</h2>
+
+                <p>
+                    Поверка всех типов штангенциркулей:
+                    ШЦ, ШЦЦ, ШЦК, специальные,
+                    разметочные и другие.
+                </p>
+
+                <span class="equipment-card-link">
+                    Подробнее →
+                </span>
+
+            </a>
+
         </div>
-      </div>
 
-      <div style="margin-top:12px; color: rgba(13,19,33,.60); font-size: 12px; line-height:1.6;">
-        Подсказка: фильтр работает по названию и категории. Если ничего не найдено — попробуй упростить запрос.
-      </div>
     </div>
-  </div>
+
 </section>
-
-<!-- GRID -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-      <div>
-        <div class="kicker">Каталог</div>
-        <h2 class="h2" style="margin-top:8px;">Популярные позиции</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
-          Это примеры ассортимента. Для точного подбора — напишите нам: подскажем аналоги и комплектацию.
-        </p>
-      </div>
-    </div>
-
-    <div id="equipmentGrid" style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-      {% for item in equipment %}
-      <div
-        data-equip-card
-        data-name="{{ item.name|lower }}"
-        data-category="{{ item.category }}"
-        class="card hover-lift reveal equip-card"
-        data-delay="{{ (loop.index0 % 10) * 60 }}ms"
-        style="overflow:hidden;"
-      >
-        <div class="equip-img">
-  <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy">
-</div>
-
-<div class="equip-body">
-  <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
-    <div class="equip-title">{{ item.name }}</div>
-    <div class="equip-price">{{ item.price }} ₽</div>
-  </div>
-
-  <div class="equip-meta">
-    <div class="equip-row">
-      <b>Диапазон</b>
-      <span>{{ item.range }}</span>
-    </div>
-    <div class="equip-row">
-      <b>Точность</b>
-      <span>{{ item.accuracy }}</span>
-    </div>
-  </div>
-
-  <div class="equip-actions">
-    <a class="btn btn-primary" href="{{ url_for('contacts') }}">
-      <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-      Запросить
-    </a>
-    <a class="btn btn-ghost" href="{{ url_for('metrology_online_application') }}">
-      <i data-lucide="send" class="w-5 h-5"></i>
-      Заявка
-    </a>
-  </div>
-
-  <div class="equip-note">
-    Цена ориентировочная. Итог зависит от модели, комплектации и наличия.
-  </div>
-</div>
-
-
-
-      </div>
-      {% endfor %}
-    </div>
-
-    <div id="equipmentEmpty" class="reveal" style="display:none; text-align:center; padding:44px 0;">
-      <div class="card" style="padding:24px;">
-        <div style="font-weight:900; font-size:18px;">Ничего не найдено</div>
-        <div style="color: rgba(13,19,33,.70); margin-top:8px; line-height:1.6;">
-          Попробуйте изменить запрос или выбрать другую категорию.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ADVANTAGES -->
-<section class="section-sm">
-  <div class="container">
-    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
-      <div>
-        <div class="kicker">Преимущества</div>
-        <h2 class="h2" style="margin-top:8px;">Почему удобно покупать у нас</h2>
-        <p class="p-lead" style="margin-top:10px; max-width: 980px;">
-          Подбор под задачу, прозрачные условия и помощь с документами.
-        </p>
-      </div>
-    </div>
-
-    <div style="margin-top:22px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-      <div class="card card-pad hover-lift reveal">
-        <div class="kicker">Качество</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Официальные поставки</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Работаем с проверенными производителями и поставщиками, помогаем подобрать аналог под ТЗ.
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift reveal" data-delay="80ms">
-        <div class="kicker">Подбор</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Под задачу и бюджет</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Уточним требования (диапазоны/класс/условия), чтобы не переплачивать и закрыть задачу точно.
-        </p>
-      </div>
-
-      <div class="card card-pad hover-lift reveal" data-delay="160ms">
-        <div class="kicker">Сервис</div>
-        <div style="font-weight:900; font-size:18px; margin-top:8px;">Документы и сопровождение</div>
-        <p style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
-          Поможем с сопроводительной документацией и консультациями по эксплуатации.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="background: var(--c-600); border-radius: 26px; padding: 48px; color:#fff; text-align:center;">      <div class="kicker" style="color: rgba(253,254,253,.85);">Остались вопросы?</div>
-      <h2 class="h2" style="margin-top:8px;">Оставьте заявку - мы свяжемся с вами в течение часа</h2>
-
-      <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a href="{{ url_for('contacts') }}" class="btn bg-white px-6 py-3 rounded-xl font-semibold shadow-soft" style="color: var(--c-600);">
-          Оставить заявку
-        </a>
-        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru" style="border-color: rgba(255,255,255,.35); color:#fff;">
-          <i data-lucide="mail" class="w-5 h-5"></i>
-          info@csmdvinta.ru
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JS для поиска/фильтра (оставляем как было) -->
-<script src="{{ url_for('static', filename='js/equipment.js') }}"></script>
 
 {% endblock %}

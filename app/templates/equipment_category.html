@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="measure-category-page">
+  <div class="container">
+
+    <div class="measure-category-hero reveal">
+      <div class="measure-category-hero__bg" aria-hidden="true"></div>
+
+      <div class="measure-category-hero__content">
+        <div class="kicker">{{ category.kicker }}</div>
+
+        <h1>{{ category.title }}</h1>
+
+        <p>
+          {{ category.description }}
+        </p>
+      </div>
+    </div>
+
+    {% if category.cards %}
+      <div class="measure-category-grid reveal">
+
+        {% for card in category.cards %}
+          <a href="{{ card.href }}" class="measure-card">
+            <div class="measure-card__icon">
+              <i data-lucide="{{ card.icon }}"></i>
+            </div>
+
+            <div class="measure-card__body">
+              <h2>{{ card.title }}</h2>
+
+              <p>
+                {{ card.description }}
+              </p>
+
+              <span>
+                Подробнее
+                <i data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </a>
+        {% endfor %}
+
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

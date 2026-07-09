@@ -2,11 +2,10 @@
 
 {% block content %}
 
-<!-- HERO: Поверка штангенциркулей -->
+<!-- HERO: Поверка микрометров -->
 <section class="caliper-hero">
   <div class="container">
     <div class="caliper-hero-box">
-
       <div class="caliper-hero-bg" aria-hidden="true"></div>
 
       <div class="caliper-hero-grid">
@@ -16,12 +15,12 @@
             Средства измерений
           </div>
 
-          <h1>Поверка штангенциркулей</h1>
+          <h1>Поверка микрометров</h1>
 
           <p class="hero-description">
-            Выполняем поверку штангенциркулей различных типов: нониусных,
-            цифровых, с круговой шкалой, специальных, разметочных и путевых.
-            Передаём сведения о результатах поверки во ФГИС «Аршин».
+            В ЦСМ ДВИНТА выполняется поверка микрометров различных типов:
+            гладких, цифровых, специальных, листовых, трубных, рычажных,
+            зубомерных, призматических и других средств измерений.
           </p>
 
           <div class="caliper-hero-features">
@@ -46,7 +45,7 @@
               Оставить заявку
             </a>
 
-            <a href="{{ url_for('metrology_price_list') }}" class="btn btn-ghost">
+            <a href="#micrometers-price" class="btn btn-ghost">
               Посмотреть прайс
             </a>
           </div>
@@ -54,18 +53,16 @@
 
         <div class="caliper-hero-image">
           <div class="caliper-image-frame">
-
-            <img src="{{ url_for('static', filename='img/equipment/caliper.png') }}"
-                 alt="Штангенциркуль">
+            <img src="{{ url_for('static', filename='img/equipment/micrometer.png') }}"
+                 alt="Микрометр">
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- Виды штангенциркулей -->
+<!-- Виды микрометров -->
 <section class="caliper-types-section">
   <div class="container">
 
@@ -73,11 +70,12 @@
       <div class="caliper-types-head">
         <div class="kicker">Виды средств измерений</div>
 
-        <h2>Какие штангенциркули мы поверяем</h2>
+        <h2>Какие микрометры мы поверяем</h2>
 
         <p>
-          Мы выполняем поверку штангенциркулей разных исполнений: от классических
-          нониусных, цифровых до специальных, разметочных и путевых.
+          Мы выполняем поверку популярных типов микрометров: классических,
+          цифровых, специальных, трубных, листовых, рычажных, зубомерных,
+          призматических и других исполнений.
         </p>
       </div>
 
@@ -90,24 +88,34 @@
             </div>
 
             <div>
-              <h2>Основные типы</h2>
+              <h3>Основные типы</h3>
             </div>
           </div>
 
           <div class="caliper-type-list">
             <div class="caliper-type-row">
               <span>01</span>
-              <strong>Штангенциркули нониусные ШЦ</strong>
+              <strong>Микрометры гладкие МК</strong>
             </div>
 
             <div class="caliper-type-row">
               <span>02</span>
-              <strong>Штангенциркули цифровые ШЦЦ</strong>
+              <strong>Микрометры специальные</strong>
             </div>
 
             <div class="caliper-type-row">
               <span>03</span>
-              <strong>Штангенциркули с круговой шкалой ШЦК</strong>
+              <strong>Микрометры электронные и цифровые</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>04</span>
+              <strong>Микрометры с ценой деления 0,01 и 0,001 мм</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>05</span>
+              <strong>Микрометрические головки МГ</strong>
             </div>
           </div>
         </div>
@@ -119,24 +127,34 @@
             </div>
 
             <div>
-              <h2>По ГОСТ 166-89</h2>
+              <h3>По назначению</h3>
             </div>
           </div>
 
           <div class="caliper-type-list">
             <div class="caliper-type-row">
-              <span>04</span>
-              <strong>Штангенциркули двусторонние с глубиномером ШЦ-I по ГОСТ 166-89</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>05</span>
-              <strong>Штангенциркули двусторонние ШЦ-II по ГОСТ 166-89</strong>
-            </div>
-
-            <div class="caliper-type-row">
               <span>06</span>
-              <strong>Штангенциркули односторонние ШЦ-III по ГОСТ 166-89</strong>
+              <strong>Микрометры листовые МЛ</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>07</span>
+              <strong>Микрометры для измерения толщины проволочки МП</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>08</span>
+              <strong>Микрометры трубные МТ</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>09</span>
+              <strong>Микрометры зубомерные МЗ</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>10</span>
+              <strong>Микрометры с боковыми губками</strong>
             </div>
           </div>
         </div>
@@ -148,24 +166,34 @@
             </div>
 
             <div>
-              <h2>Специальные исполнения</h2>
+              <h3>Специальные исполнения</h3>
             </div>
           </div>
 
           <div class="caliper-type-list">
             <div class="caliper-type-row">
-              <span>07</span>
-              <strong>Штангенциркули специальные</strong>
+              <span>11</span>
+              <strong>Микрометры по ГОСТ 6807-90</strong>
             </div>
 
             <div class="caliper-type-row">
-              <span>08</span>
-              <strong>Штангенциркули разметочные и с твердосплавными губками</strong>
+              <span>12</span>
+              <strong>Микрометры со вставками МВМ и МВУ</strong>
             </div>
 
             <div class="caliper-type-row">
-              <span>09</span>
-              <strong>Путевые штангенциркули ПШВ</strong>
+              <span>13</span>
+              <strong>Микрометры рычажные ГОСТ 4381-87</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>14</span>
+              <strong>Микрометры окулярные винтовые</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>15</span>
+              <strong>Микрометры призматические</strong>
             </div>
           </div>
         </div>
@@ -178,12 +206,12 @@
 
 
 <!-- PRICE TABLE -->
-<section class="price-catalog section">
+<section class="price-catalog section" id="micrometers-price">
   <div class="container">
         <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
         <div class="kicker">Прайс-лист</div>
-        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку штангенциркулей в ЦСМ ДВИНТА </h2>
+        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку микрометров в ЦСМ ДВИНТА</h2>
       </div>
     </div>
 
@@ -257,7 +285,7 @@
           </div>
 
           <div class="tline-text">
-            <div class="tline-title">Какие сроки поверки штангенциркулей у нас?</div>
+            <div class="tline-title">Какие сроки поверки микрометров у нас?</div>
             <div class="tline-sub">
               Стандартно, включая передачу сведений в ФИФ «Аршин»
             </div>
@@ -319,7 +347,7 @@
   <div class="container">
 
     <div class="reveal" style="text-align:center;">
-      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить штангенциркуль в ЦСМ ДВИНТА</h2>
+      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить микрометр в ЦСМ ДВИНТА</h2>
     </div>
 
     <!-- Wide top banner -->
@@ -521,12 +549,12 @@
 
     <div class="faq-wrap reveal" style="margin-top:22px;">
       {% set faq = [
-        {"q":"Какие штангенциркули можно поверить?",
-         "a":"Штангенциркули, применяющиеся в сфере государственного регулирования обеспечения единства измерений, и утвержденного типа – поверяются."},
-        {"q":"Как подтверждаются результаты поверки штангенциркулей?",
+        {"q":"Какие микрометры можно поверить?",
+         "a":"Микрометры, применяющиеся в сфере государственного регулирования обеспечения единства измерений, и утвержденного типа – поверяются."},
+        {"q":"Как подтверждаются результаты поверки микрометров?",
          "a":"Результаты поверки подтверждаются сведениями, включёнными в Федеральный информационный фонд по обеспечению единства измерений (ФИФ). По заявлению владельца СИ возможно: выдача свидетельства о поверке или извещения о непригодности."},
-        {"q":"Какие штангенциркули поверяют в ЦСМ Двинта?",
-         "a":"В ЦСМ Двинта поверяют все типы штангенциркулей. Мы работаем со всеми мировыми и российскими брендами-производителями."}
+        {"q":"Какие микрометры поверяют в ЦСМ Двинта?",
+         "a":"В ЦСМ Двинта поверяют все типы микрометров. Мы работаем со всеми мировыми и российскими брендами-производителями."}
       ] %}
 
       {% for item in faq %}
@@ -541,7 +569,7 @@
 
           {% if loop.index == 1 %}
           <div style="margin-top:12px;">
-            Проверить утвержден ли тип штангенциркуля можно на официальном сайте
+            Проверить утвержден ли тип микрометра можно на официальном сайте
             <a href="https://fgis.gost.ru/fundmetrology/cm/mits?page=1&size=20&sort=number&sort=desc&text=Штангенциркули"
                target="_blank" rel="noopener" style="color:var(--c-400);font-weight:800;">Федерального информационного фонда по обеспечению единства измерений</a>
           </div>

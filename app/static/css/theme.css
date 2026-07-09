@@ -2997,3 +2997,63 @@ body.mobile-menu-open{
 .dvinta-scroll--animated.is-opened .dvinta-scroll__content{
   padding-top: 0;
 }
+
+/* ===== Кликабельные виды СИ на странице "Поверка" ===== */
+
+.verify-type-item{
+  grid-template-columns: 40px 1fr auto;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.verify-type-item__more{
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+
+  color: rgba(var(--ink-rgb), .60);
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.verify-type-item__more i,
+.verify-type-item__more svg{
+  width: 15px;
+  height: 15px;
+  transition: transform .18s ease;
+}
+
+.verify-type-item:hover .verify-type-item__more i,
+.verify-type-item:hover .verify-type-item__more svg{
+  transform: translateX(3px);
+}
+
+.verify-type-item:nth-child(even) .verify-type-item__more{
+  color: rgba(255,255,255,.84);
+}
+
+.verify-type-item:nth-child(odd) .verify-type-item__more{
+  color: rgba(var(--ink-rgb), .60);
+}
+
+.verify-type-item:focus-visible{
+  outline: 3px solid rgba(23,50,76,.28);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px){
+  .verify-type-item{
+    grid-template-columns: 36px 1fr;
+  }
+
+  .verify-type-item__more{
+    grid-column: 2;
+    justify-content: flex-start;
+    margin-top: 2px;
+    font-size: 12px;
+  }
+}

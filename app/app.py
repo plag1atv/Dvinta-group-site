@@ -168,10 +168,83 @@ def create_app() -> Flask:
             captcha_b=session.get('captcha_b')
         )
 
-    # === Остальные маршруты (без изменений) ===
+    # === Категории средств измерений ===
+    EQUIPMENT_CATEGORIES = {
+        "geometric": {
+            "title": "Поверка геометрических средств измерений",
+            "kicker": "Геометрические средства измерений",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [
+                {
+                    "title": "Штангенциркули",
+                    "description": "Поверка нониусных, цифровых, специальных, разметочных, путевых штангенциркулей и моделей по ГОСТ 166-89.",
+                    "icon": "ruler",
+                    "href": "/equipment_calipers.html",
+                },
+                {
+                    "title": "Микрометры",
+                    "description": "Поверка гладких, цифровых, листовых, трубных, рычажных, зубомерных, призматических и специальных микрометров.",
+                    "icon": "settings-2",
+                    "href": "/equipment_micrometers.html",
+                },
+            ],
+        },
+        "mechanical": {
+            "title": "Поверка механических средств измерений",
+            "kicker": "Механические средства измерений",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [],
+        },
+        "flow": {
+            "title": "Поверка средств измерений параметров потока, расхода, уровня и объёма веществ",
+            "kicker": "Поток, расход, уровень и объём",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [],
+        },
+        "pressure": {
+            "title": "Поверка средств измерений давления и вакуумных измерений",
+            "kicker": "Давление и вакуумные измерения",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [],
+        },
+        "physicochemical": {
+            "title": "Поверка средств измерений физико-химического состава и свойств веществ",
+            "kicker": "Физико-химический состав и свойства веществ",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [],
+        },
+        "temperature": {
+            "title": "Поверка средств измерений теплофизических и температурных измерений",
+            "kicker": "Теплофизические и температурные измерения",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [],
+        },
+        "time-frequency": {
+            "title": "Поверка средств измерений времени и частоты",
+            "kicker": "Время и частота",
+            "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
+            "cards": [],
+        },
+    }
+
     @app.get("/equipment")
     def equipment():
-        return render_template("equipment.html", title="Оборудование")
+        return redirect(url_for("equipment_category", category_slug="geometric"))
+
+    @app.get("/equipment/<category_slug>")
+    def equipment_category(category_slug):
+        category = EQUIPMENT_CATEGORIES.get(category_slug)
+
+        if category is None:
+            return redirect(url_for("metrology_verification"))
+
+        return render_template(
+            "equipment_category.html",
+            title=category["title"],
+            category=category,
+            equipment_type=category_slug,
+        )
+
 
     @app.route("/equipment_calipers.html")
     @app.route("/equipment/shtangentsirkuli")
@@ -193,6 +266,15 @@ def create_app() -> Flask:
             "equipment_calipers.html",
             title="Поверка штангенциркулей",
             equipment_type="calipers"
+        )
+
+    @app.route("/equipment_micrometers.html")
+    @app.route("/equipment/micrometers")
+    def equipment_micrometers():
+        return render_template(
+            "equipment_micrometers.html",
+            title="Поверка микрометров",
+            equipment_type="micrometers"
         )
 
     # Метrology

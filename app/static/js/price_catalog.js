@@ -239,6 +239,14 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
       }
+
+      if (equipmentType === "micrometers") {
+
+          items = items.filter(item =>
+              item.name.toLowerCase().includes("микрометр")
+          );
+
+      }
       allItems = items;
       filteredItems = items;
 

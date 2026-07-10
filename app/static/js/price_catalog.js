@@ -247,6 +247,22 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
       }
+
+      if (equipmentType === "depth_gauges") {
+
+          items = items.filter(item =>
+              item.name.toLowerCase().includes("штангенглубиномер")
+          );
+
+      }
+
+      if (equipmentType === "height_gauges") {
+
+          items = items.filter(item =>
+              item.name.toLowerCase().includes("штангенрейсмас")
+          );
+
+      }
       allItems = items;
       filteredItems = items;
 

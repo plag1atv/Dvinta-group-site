@@ -187,6 +187,18 @@ def create_app() -> Flask:
                     "icon": "settings-2",
                     "href": "/equipment_micrometers.html",
                 },
+                {
+                    "title": "Штангенглубино-  меры",
+                    "description": "Поверка цифровых штангенглубиномеров, моделей по ГОСТ 162-90, по ТУ, а также поверка по МИ 965-85 и МИ 2196-92.",
+                    "icon": "move-vertical",
+                    "href": "/equipment_depth_gauges.html",
+                },
+                {
+                    "title": "Штангенрейсмасы",
+                    "description": "Поверка штангенрейсмасов с отсчётом по нониусу, с круговой шкалой, цифровых моделей, по ГОСТ 164-90 и МИ 2190-92.",
+                    "icon": "bar-chart-3",
+                    "href": "/equipment_height_gauges.html",
+                },
             ],
         },
         "mechanical": {
@@ -275,6 +287,24 @@ def create_app() -> Flask:
             "equipment_micrometers.html",
             title="Поверка микрометров",
             equipment_type="micrometers"
+        )
+
+    @app.route("/equipment_depth_gauges.html")
+    @app.route("/equipment/depth-gauges")
+    def equipment_depth_gauges():
+        return render_template(
+            "equipment_depth_gauges.html",
+            title="Поверка штангенглубиномеров",
+            equipment_type="depth_gauges"
+        )
+
+    @app.route("/equipment_height_gauges.html")
+    @app.route("/equipment/height-gauges")
+    def equipment_height_gauges():
+        return render_template(
+            "equipment_height_gauges.html",
+            title="Поверка штангенрейсмасов",
+            equipment_type="height_gauges"
         )
 
     # Метrology

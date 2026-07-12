@@ -263,6 +263,26 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
       }
+
+      if (equipmentType === "pipe_calipers") {
+
+          items = items.filter(item =>
+              item.name.toLowerCase().includes("штангентрубомер")
+          );
+      }
+
+      if (equipmentType === "gear_tooth_calipers") {
+
+          items = items.filter(item => {
+              const name = item.name.toLowerCase();
+
+              return (
+                  name.includes("штангензубомер") ||
+                  name.startsWith("зубомер")
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

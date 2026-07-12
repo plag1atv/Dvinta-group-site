@@ -199,6 +199,18 @@ def create_app() -> Flask:
                     "icon": "bar-chart-3",
                     "href": "/equipment_height_gauges.html",
                 },
+                {
+                    "title": "Штангентрубомеры",
+                    "description": "Поверка штангентрубомеров по госреестрам 89360-23, 73265-18, 32950-12 и 32950-06.",
+                    "icon": "circle",
+                    "href": "/equipment_pipe_calipers.html",
+                },
+                {
+                    "title": "Штангензубомеры",
+                    "description": "Поверка штангензубомеров, тангенциальных, хордовых и кромочных зубомеров различных моделей.",
+                    "icon": "settings-2",
+                    "href": "/equipment_gear_tooth_calipers.html",
+                },
             ],
         },
         "mechanical": {
@@ -305,6 +317,24 @@ def create_app() -> Flask:
             "equipment_height_gauges.html",
             title="Поверка штангенрейсмасов",
             equipment_type="height_gauges"
+        )
+
+    @app.route("/equipment_pipe_calipers.html")
+    @app.route("/equipment/pipe-calipers")
+    def equipment_pipe_calipers():
+        return render_template(
+            "equipment_pipe_calipers.html",
+            title="Поверка штангентрубомеров",
+            equipment_type="pipe_calipers"
+        )
+
+    @app.route("/equipment_gear_tooth_calipers.html")
+    @app.route("/equipment/gear-tooth-calipers")
+    def equipment_gear_tooth_calipers():
+        return render_template(
+            "equipment_gear_tooth_calipers.html",
+            title="Поверка штангензубомеров",
+            equipment_type="gear_tooth_calipers"
         )
 
     # Метrology

@@ -211,6 +211,18 @@ def create_app() -> Flask:
                     "icon": "settings-2",
                     "href": "/equipment_gear_tooth_calipers.html",
                 },
+                {
+                    "title": "Глубиномеры микрометрические и индикаторные",
+                    "description": "Поверка микрометрических и индикаторных глубиномеров ГМ, ГМЦ и ГИ, изготовленных по ГОСТ и техническим условиям.",
+                    "icon": "scan-line",
+                    "href": "/equipment_micrometric_depth_gauges.html",
+                },
+                {
+                    "title": "Скобы с отсчётным устройством",
+                    "description": "Поверка рычажных и индикаторных скоб СРП, СР и СИ с различной ценой деления.",
+                    "icon": "between-horizontal-start",
+                    "href": "/equipment_snap_gauges.html",
+                },
             ],
         },
         "mechanical": {
@@ -335,6 +347,24 @@ def create_app() -> Flask:
             "equipment_gear_tooth_calipers.html",
             title="Поверка штангензубомеров",
             equipment_type="gear_tooth_calipers"
+        )
+
+    @app.route("/equipment_micrometric_depth_gauges.html")
+    @app.route("/equipment/micrometric-depth-gauges")
+    def equipment_micrometric_depth_gauges():
+        return render_template(
+            "equipment_micrometric_depth_gauges.html",
+            title="Поверка микрометрических и индикаторных глубиномеров",
+            equipment_type="micrometric_depth_gauges"
+        )
+
+    @app.route("/equipment_snap_gauges.html")
+    @app.route("/equipment/snap-gauges")
+    def equipment_snap_gauges():
+        return render_template(
+            "equipment_snap_gauges.html",
+            title="Поверка скоб с отсчётным устройством",
+            equipment_type="snap_gauges"
         )
 
     # Метrology

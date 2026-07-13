@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- HERO: Поверка микрометров -->
+<!-- HERO: Поверка скоб с отсчётным устройством -->
 <section class="caliper-hero">
   <div class="container">
     <div class="caliper-hero-box">
@@ -15,12 +15,12 @@
             Средства измерений
           </div>
 
-          <h1>Поверка микрометров</h1>
+          <h1>Поверка скоб с отсчётным устройством</h1>
 
           <p class="hero-description">
-            В ЦСМ ДВИНТА выполняется поверка микрометров различных типов:
-            гладких, цифровых, специальных, листовых, трубных, рычажных,
-            зубомерных, призматических и других средств измерений.
+            В ЦСМ ДВИНТА проводится поверка всех типов рычажных
+            и индикаторных скоб. Поверяем скобы, изготовленные
+            по ГОСТ и техническим условиям.
           </p>
 
           <div class="caliper-hero-features">
@@ -53,8 +53,10 @@
 
         <div class="caliper-hero-image">
           <div class="caliper-image-frame">
-            <img src="{{ url_for('static', filename='img/equipment/micrometer.png') }}"
-                 alt="Микрометр">
+            <img
+              src="{{ url_for('static', filename='img/equipment/snap_gauge.png') }}"
+              alt="Скоба с отсчётным устройством"
+            >
           </div>
         </div>
       </div>
@@ -62,7 +64,7 @@
   </div>
 </section>
 
-<!-- Виды микрометров -->
+<!-- Виды скоб с отсчётным устройством -->
 <section class="caliper-types-section">
   <div class="container">
 
@@ -70,12 +72,11 @@
       <div class="caliper-types-head">
         <div class="kicker">Виды средств измерений</div>
 
-        <h2>Какие микрометры мы поверяем</h2>
+        <h2>Какие скобы мы поверяем</h2>
 
         <p>
-          Мы выполняем поверку популярных типов микрометров: классических,
-          цифровых, специальных, трубных, листовых, рычажных, зубомерных,
-          призматических и других исполнений.
+          Проводим поверку рычажных и индикаторных скоб различных типов,
+          изготовленных по ГОСТ и техническим условиям, с разной ценой деления.
         </p>
       </div>
 
@@ -84,38 +85,69 @@
         <div class="caliper-type-group">
           <div class="caliper-type-group__top">
             <div class="caliper-type-group__icon">
-              <i data-lucide="ruler"></i>
+              <i data-lucide="between-horizontal-start"></i>
             </div>
 
             <div>
-              <h3>Основные типы</h3>
+              <h2>Основные типы</h2>
             </div>
           </div>
 
           <div class="caliper-type-list">
             <div class="caliper-type-row">
               <span>01</span>
-              <strong>Микрометры гладкие МК</strong>
+              <strong>
+                Скобы рычажные СРП по ГОСТ 11098-75
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>02</span>
-              <strong>Микрометры специальные</strong>
+              <strong>
+                Скобы рычажные СР по ГОСТ 11098-75
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>03</span>
-              <strong>Микрометры электронные и цифровые</strong>
+              <strong>
+                Скобы индикаторные СИ по ГОСТ 11098-75
+              </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="caliper-type-group">
+          <div class="caliper-type-group__top">
+            <div class="caliper-type-group__icon">
+              <i data-lucide="gauge"></i>
             </div>
 
+            <div>
+              <h2>Цена деления</h2>
+            </div>
+          </div>
+
+          <div class="caliper-type-list">
             <div class="caliper-type-row">
               <span>04</span>
-              <strong>Микрометры с ценой деления 0,01 и 0,001 мм</strong>
+              <strong>
+                Скобы рычажные с ценой деления 0,001 мм
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>05</span>
-              <strong>Микрометрические головки МГ</strong>
+              <strong>
+                Скобы рычажные с ценой деления 0,002 мм
+              </strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>06</span>
+              <strong>
+                Скобы индикаторные с ценой деления 0,01 мм
+              </strong>
             </div>
           </div>
         </div>
@@ -127,73 +159,30 @@
             </div>
 
             <div>
-              <h3>По назначению</h3>
+              <h2>Методики поверки</h2>
             </div>
           </div>
 
           <div class="caliper-type-list">
             <div class="caliper-type-row">
-              <span>06</span>
-              <strong>Микрометры листовые МЛ</strong>
-            </div>
-
-            <div class="caliper-type-row">
               <span>07</span>
-              <strong>Микрометры для измерения толщины проволочки МП</strong>
+              <strong>
+                Поверка скоб рычажных СРП и СР по ГОСТ 8.359-79
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>08</span>
-              <strong>Микрометры трубные МТ</strong>
+              <strong>
+                Поверка скоб индикаторных СИ по ГОСТ 8.359-79
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>09</span>
-              <strong>Микрометры зубомерные МЗ</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>10</span>
-              <strong>Микрометры с боковыми губками</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="caliper-type-group">
-          <div class="caliper-type-group__top">
-            <div class="caliper-type-group__icon">
-              <i data-lucide="settings-2"></i>
-            </div>
-
-            <div>
-              <h3>Специальные исполнения</h3>
-            </div>
-          </div>
-
-          <div class="caliper-type-list">
-            <div class="caliper-type-row">
-              <span>11</span>
-              <strong>Микрометры по ГОСТ 6807-90</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>12</span>
-              <strong>Микрометры со вставками МВМ и МВУ</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>13</span>
-              <strong>Микрометры рычажные ГОСТ 4381-87</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>14</span>
-              <strong>Микрометры окулярные винтовые</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>15</span>
-              <strong>Микрометры призматические</strong>
+              <strong>
+                Поверка скоб по всем методикам поверки
+              </strong>
             </div>
           </div>
         </div>
@@ -206,12 +195,12 @@
 
 
 <!-- PRICE TABLE -->
-<section class="price-catalog section" id="micrometers-price">
+<section class="price-catalog section" id="pipe-calipers-price">
   <div class="container">
         <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
         <div class="kicker">Прайс-лист</div>
-        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку микрометров в ЦСМ ДВИНТА</h2>
+        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку скоб с отсчётным устройством в ЦСМ ДВИНТА</h2>
       </div>
     </div>
 
@@ -285,7 +274,7 @@
           </div>
 
           <div class="tline-text">
-            <div class="tline-title">Какие сроки поверки микрометров у нас?</div>
+            <div class="tline-title">Какие сроки поверки скоб у нас?</div>
             <div class="tline-sub">
               Стандартно, включая передачу сведений в ФИФ «Аршин»
             </div>
@@ -347,7 +336,7 @@
   <div class="container">
 
     <div class="reveal" style="text-align:center;">
-      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить микрометр в ЦСМ ДВИНТА</h2>
+      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить скобы в ЦСМ ДВИНТА</h2>
     </div>
 
     <!-- Wide top banner -->
@@ -541,7 +530,7 @@
   <div class="container">
     <div class="reveal" style="text-align:center;">
       <div class="kicker">FAQ</div>
-      <h2 class="h2" style="margin-top:8px;">Частые вопросы по поверке микрометров</h2>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы по поверке сбок с отсчётным устройством</h2>
         <p class="p-lead" style="margin-top:10px; max-width: 920px; margin-left:auto; margin-right:auto;">
           Собрали ответы на самые частые вопросы по поверке средств измерений.
         </p>
@@ -549,12 +538,12 @@
 
     <div class="faq-wrap reveal" style="margin-top:22px;">
       {% set faq = [
-        {"q":"Какие микрометры можно поверить?",
-         "a":"Микрометры, применяющиеся в сфере государственного регулирования обеспечения единства измерений, и утвержденного типа – поверяются."},
-        {"q":"Как подтверждаются результаты поверки микрометров?",
+        {"q":"Какие скобы можно поверить?",
+         "a":"Скобы, применяющиеся в сфере государственного регулирования обеспечения единства измерений и имеющие утверждённый тип, поверяются."},
+        {"q":"Как подтверждаются результаты поверки скоб?",
          "a":"Результаты поверки подтверждаются сведениями, включёнными в Федеральный информационный фонд по обеспечению единства измерений (ФИФ). По заявлению владельца СИ возможно: выдача свидетельства о поверке или извещения о непригодности."},
-        {"q":"Какие микрометры поверяют в ЦСМ Двинта?",
-         "a":"В ЦСМ Двинта поверяют все типы микрометров. Мы работаем со всеми мировыми и российскими брендами-производителями."}
+        {"q":"Какие скобы поверяют в ЦСМ Двинта?",
+         "a":"В ЦСМ Двинта поверяют скобы утверждённых типов. Работаем с указанными российскими производителями."}
       ] %}
 
       {% for item in faq %}
@@ -569,8 +558,8 @@
 
           {% if loop.index == 1 %}
           <div style="margin-top:12px;">
-            Проверить утвержден ли тип микрометра можно на официальном сайте
-            <a href="https://fgis.gost.ru/fundmetrology/cm/mits?page=1&size=20&sort=number&sort=desc&text=Штангенциркули"
+            Проверить, утверждён ли тип штангентрубомера, можно на официальном сайте
+            <a href="https://fgis.gost.ru/fundmetrology/cm/mits?page=1&size=20&sort=number&sort=desc&text=Штангентрубомеры"
                target="_blank" rel="noopener" style="color:var(--c-400);font-weight:800;">Федерального информационного фонда по обеспечению единства измерений</a>
           </div>
           {% endif %}

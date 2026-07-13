@@ -283,6 +283,27 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "micrometric_depth_gauges") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .includes("глубиномеры микрометрические")
+          );
+      }
+
+      if (equipmentType === "snap_gauges") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase();
+
+              return (
+                  itemName.includes("скобы рычажные") ||
+                  itemName.includes("скобы индикаторные")
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

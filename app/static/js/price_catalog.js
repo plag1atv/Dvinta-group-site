@@ -304,6 +304,25 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "measuring_heads") {
+
+          items = items.filter(item =>
+              item.name.toLowerCase().includes("головки измерительные")
+          );
+      }
+
+      if (equipmentType === "inductive_transducers") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase();
+
+              return (
+                  itemName.includes("преобразователи, щупы индуктивные") ||
+                  itemName.includes("преобразователи линейных перемещений")
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

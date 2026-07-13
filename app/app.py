@@ -223,6 +223,18 @@ def create_app() -> Flask:
                     "icon": "between-horizontal-start",
                     "href": "/equipment_snap_gauges.html",
                 },
+                {
+                    "title": "Головки и индикаторы измерительные",
+                    "description": "Поверка пружинных, рычажно-зубчатых, многооборотных, боковых и часовых измерительных головок и индикаторов.",
+                    "icon": "gauge",
+                    "href": "/equipment_measuring_heads.html",
+                },
+                {
+                    "title": "Преобразователи и датчики линейных перемещений",
+                    "description": "Поверка индуктивных преобразователей и щупов, многоканальных систем, тросовых, стержневых, профильных и лазерных датчиков.",
+                    "icon": "move-horizontal",
+                    "href": "/equipment_inductive_transducers.html",
+                },
             ],
         },
         "mechanical": {
@@ -365,6 +377,24 @@ def create_app() -> Flask:
             "equipment_snap_gauges.html",
             title="Поверка скоб с отсчётным устройством",
             equipment_type="snap_gauges"
+        )
+
+    @app.route("/equipment_measuring_heads.html")
+    @app.route("/equipment/measuring-heads")
+    def equipment_measuring_heads():
+        return render_template(
+            "equipment_measuring_heads.html",
+            title="Поверка измерительных головок и индикаторов",
+            equipment_type="measuring_heads"
+        )
+
+    @app.route("/equipment_inductive_transducers.html")
+    @app.route("/equipment/inductive-transducers")
+    def equipment_inductive_transducers():
+        return render_template(
+            "equipment_inductive_transducers.html",
+            title="Поверка преобразователей и датчиков линейных перемещений",
+            equipment_type="inductive_transducers"
         )
 
     # Метrology

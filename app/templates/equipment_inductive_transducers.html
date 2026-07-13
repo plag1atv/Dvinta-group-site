@@ -1,0 +1,586 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO: Поверка преобразователей и датчиков линейных перемещений -->
+<section class="caliper-hero">
+  <div class="container">
+    <div class="caliper-hero-box">
+      <div class="caliper-hero-bg" aria-hidden="true"></div>
+
+      <div class="caliper-hero-grid">
+        <div class="caliper-hero-content">
+          <div class="caliper-eyebrow">
+            <span class="caliper-eyebrow__dot"></span>
+            Средства измерений
+          </div>
+
+          <h1>Поверка преобразователей и датчиков линейных перемещений</h1>
+
+          <p class="hero-description">
+            В ЦСМ Двинта проводится поверка индуктивных преобразователей,
+            щупов, многоканальных систем с индуктивными преобразователями,
+            а также датчиков и измерителей линейных перемещений.
+          </p>
+
+          <div class="caliper-hero-features">
+            <div class="caliper-hero-feature">
+              <i data-lucide="shield-check"></i>
+              <span>Официальная поверка</span>
+            </div>
+
+            <div class="caliper-hero-feature">
+              <i data-lucide="database"></i>
+              <span>Передача во ФГИС «Аршин»</span>
+            </div>
+
+            <div class="caliper-hero-feature">
+              <i data-lucide="timer"></i>
+              <span>Сроки от 1 рабочего дня</span>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="{{ url_for('contacts') }}" class="btn btn-primary">
+              Оставить заявку
+            </a>
+
+            <a href="{{ url_for('metrology_price_list') }}" class="btn btn-ghost">
+              Посмотреть прайс
+            </a>
+          </div>
+        </div>
+
+        <div class="caliper-hero-image">
+          <div class="caliper-image-frame">
+            <img src="{{ url_for('static', filename='img/equipment/inductive_transducer.png') }}"
+                 alt="Индуктивный преобразователь и датчик линейных перемещений">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Виды преобразователей, щупов и датчиков -->
+<section class="caliper-types-section">
+  <div class="container">
+
+    <div class="caliper-types-panel">
+      <div class="caliper-types-head">
+        <div class="kicker">Виды средств измерений</div>
+
+        <h2>Какие преобразователи, щупы и датчики мы поверяем</h2>
+
+        <p>
+          Выполняем поверку индуктивных преобразователей и щупов,
+          многоканальных измерительных систем, а также датчиков линейных
+          перемещений различных конструкций и принципов действия.
+        </p>
+      </div>
+
+      <div class="caliper-types-groups">
+
+        <div class="caliper-type-group">
+          <div class="caliper-type-group__top">
+            <div class="caliper-type-group__icon">
+              <i data-lucide="activity"></i>
+            </div>
+
+            <div>
+              <h2>Индуктивные преобразователи и щупы</h2>
+            </div>
+          </div>
+
+          <div class="caliper-type-list">
+            <div class="caliper-type-row">
+              <span>01</span>
+              <strong>Поверка преобразователей индуктивных BG PK-01</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>02</span>
+              <strong>Поверка преобразователей индуктивных М-021, М-022, М-023, М-024, М-025</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>03</span>
+              <strong>Поверка индуктивных щупов Millimar и многоканальных систем с индуктивными преобразователями</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="caliper-type-group">
+          <div class="caliper-type-group__top">
+            <div class="caliper-type-group__icon">
+              <i data-lucide="move-horizontal"></i>
+            </div>
+
+            <div>
+              <h2>Датчики линейных перемещений</h2>
+            </div>
+          </div>
+
+          <div class="caliper-type-list">
+            <div class="caliper-type-row">
+              <span>04</span>
+              <strong>Поверка тросовых датчиков линейных перемещений</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>05</span>
+              <strong>Поверка стержневых и профильных датчиков линейных перемещений</strong>
+            </div>
+
+            <div class="caliper-type-row">
+              <span>06</span>
+              <strong>Поверка лазерных триангуляционных датчиков линейных перемещений</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICE TABLE -->
+<section class="price-catalog section" id="inductive-transducers-price">
+  <div class="container">
+        <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Прайс-лист</div>
+        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку преобразователей и датчиков линейных перемещений в ЦСМ ДВИНТА</h2>
+      </div>
+    </div>
+
+    <div class="price-toolbar">
+      <input
+        class="price-search"
+        id="priceSearch"
+        type="search"
+        placeholder="Поиск по названию, коду или диапазону"
+      >
+
+      <select class="price-select" id="priceSectionFilter">
+        <option value="all">Все разделы</option>
+      </select>
+
+      <select class="price-select" id="priceTypeFilter">
+        <option value="all">Все услуги</option>
+        <option value="verification">Поверка</option>
+        <option value="calibration">Калибровка</option>
+      </select>
+
+      <button class="btn btn-ghost price-reset" id="priceReset" type="button">
+        Сбросить
+      </button>
+    </div>
+
+    <div class="price-result-line">
+      <span id="priceResultCount">Загрузка прайс-листа...</span>
+    </div>
+
+    <div class="price-grid" id="priceGrid"></div>
+
+    <div class="price-empty" id="priceEmpty" hidden>
+      Ничего не найдено. Попробуйте изменить запрос или фильтр.
+    </div>
+
+    <div class="price-pagination">
+      <button class="price-page-btn" id="pricePrev" type="button">
+        ← Назад
+      </button>
+
+      <span class="price-page-info" id="pricePageInfo">
+        1 из 1
+      </span>
+
+      <button class="price-page-btn" id="priceNext" type="button">
+        Вперёд →
+      </button>
+    </div>
+
+    <div class="price-note">
+      <p>
+        Стоимость выполнения работ указана без налога на добавленную
+        стоимость (НДС). НДС взимается дополнительно по установленной
+        законодательством РФ ставке.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINES -->
+<section class="section-sm">
+  <div class="container">
+    <div class="grid gap-4 lg:grid-cols-2 reveal">
+
+      <!-- card 1 -->
+      <div class="tline">
+        <div class="tline-main">
+          <div class="tline-ico">
+            <i data-lucide="timer" class="w-5 h-5"></i>
+          </div>
+
+          <div class="tline-text">
+            <div class="tline-title">Какие сроки поверки преобразователей и датчиков линейных перемещений у нас?</div>
+            <div class="tline-sub">
+              Стандартно, включая передачу сведений в ФИФ «Аршин»
+            </div>
+
+            <div class="tline-tags">
+              <span class="tline-tag">Поверка</span>
+              <span class="tline-tag">Передача сведений во ФГИС</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tline-side">
+          <div class="tline-side-top">Срок</div>
+          <div class="tline-side-num">до 5</div>
+          <div class="tline-side-unit">раб. дней</div>
+        </div>
+
+        <div class="tline-pattern" aria-hidden="true"></div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="tline">
+        <div class="tline-main">
+          <div class="tline-ico">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+
+          <div class="tline-text">
+            <div class="tline-title">Ускоренные сроки по желанию заказчика</div>
+            <div class="tline-sub">
+              Если нужно быстрее — согласуем и выполним в ускоренном режиме
+            </div>
+
+            <div class="tline-tags">
+              <span class="tline-tag">1 день</span>
+              <span class="tline-tag">2 дня</span>
+              <span class="tline-tag">3 дня</span>
+              <span class="tline-tag tline-tag-soft">По согласованию</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tline-side tline-side-strong">
+          <div class="tline-side-top">Срок</div>
+          <div class="tline-side-num">1–3</div>
+          <div class="tline-side-unit">раб. дня</div>
+        </div>
+
+        <div class="tline-pattern" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT WE NEED FROM YOU (STRICT TEXT) -->
+<section class="section">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center;">
+      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить преобразователь или датчик в ЦСМ ДВИНТА</h2>
+    </div>
+
+    <!-- Wide top banner -->
+    <div class="panel reveal verification-mobile-center-banner" style="margin-top:18px; border-radius: 26px; padding: 22px; text-align:center;">
+      <div class="verification-mobile-center-banner__actions">        <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Заполнить онлайн-заявку
+        </a>
+
+        <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          info@csmdvinta.ru
+        </a>
+
+        <a class="btn btn-primary" href="tel:+70000000000">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          +7 (812) 200-72-82
+        </a>
+      </div>
+    </div>
+
+    <!-- Steps grid -->
+    <div class="grid gap-4 md:grid-cols-2 reveal" style="margin-top:18px; align-items:stretch;">
+
+      <!-- 1 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            1
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="file-plus" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Направить заявку
+            </div>
+
+            <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
+              <a class="btn btn-primary" href="{{ url_for('contacts') }}">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Онлайн
+              </a>
+
+              <a class="btn btn-ghost" href="mailto:info@csmdvinta.ru">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                info@csmdvinta.ru
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            2
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="credit-card" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Оплатить счет
+            </div>
+            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Оплатить счет на оказание услуг</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            3
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="truck" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Доставить СИ к нам или Мы едем к Вам
+            </div>
+            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Привезти самостоятельно / Транспортной компанией</li>
+              <li>Согласовать дату приезда метролога</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card card-pad hover-lift" style="border-radius: 22px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div class="badge" style="min-width: 42px; height: 42px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-weight:900;">
+            4
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:900;">
+              <i data-lucide="bell" class="w-5 h-5" style="color: var(--c-400);"></i>
+              Подождать оповещения и Забрать СИ
+            </div>
+            <ul style="margin:10px 0 0; padding-left:18px; line-height:1.85; color: rgba(var(--ink-rgb), .85);">
+              <li>Сообщим о завершении выполнения услуги</li>
+              <li>Забрать самостоятельно / Транспортной компанией</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- What we do -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div class="kicker">Сотрудничество</div>
+        <h2 class="h2" style="margin-top:8px;">Преимущества сотрудничества с нами</h2>
+      </div>
+    </div>
+
+    <div class="about-advantages-grid" style="margin-top:22px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:16px;">
+      <div class="card card-pad hover-lift reveal about-advantages-card">
+        <div class="about-advantages-card__head" style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="badge-check" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Аккредитация</div>
+        </div>
+        <p class="about-advantages-card__text" style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Аккредитация в национальной системе
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal about-advantages-card">
+        <div class="about-advantages-card__head" style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="flask-conical" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Эталоны</div>
+        </div>
+        <p class="about-advantages-card__text" style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Современная эталонная база и оборудование
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal about-advantages-card">
+        <div class="about-advantages-card__head" style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="briefcase-business" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Опыт</div>
+        </div>
+        <p class="about-advantages-card__text" style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Опытная команда метрологов и экспертов
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal about-advantages-card">
+        <div class="about-advantages-card__head" style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="handshake" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Клиентоориентированность</div>
+        </div>
+        <p class="about-advantages-card__text" style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Индивидуальный подход, консультирование и гарантии качества
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal about-advantages-card">
+        <div class="about-advantages-card__head" style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="clock-3" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Сроки</div>
+        </div>
+        <p class="about-advantages-card__text" style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Минимальные сроки оказания услуг
+        </p>
+      </div>
+
+      <div class="card card-pad hover-lift reveal about-advantages-card">
+        <div class="about-advantages-card__head" style="display:flex; gap:10px; align-items:center;">
+          <i data-lucide="folder-symlink" class="w-5 h-5 about-advantages-card__icon" style="color: var(--c-600);"></i>
+          <div style="font-weight:900;">Гибкие условия работы</div>
+        </div>
+        <p class="about-advantages-card__text" style="color: rgba(13,19,33,.70); margin-top:10px; line-height:1.65;">
+          Участие в госзакупках, разные формы расчетов
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ - СТАНДАРТНЫЙ БЛОК -->
+<!-- FAQ - УНИФИЦИРОВАННЫЙ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="kicker">FAQ</div>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы по поверке преобразователей и датчиков линейных перемещений</h2>
+      <p class="p-lead" style="margin-top:10px; max-width: 920px; margin-left:auto; margin-right:auto;">
+        Собрали ответы на самые частые вопросы по поверке средств измерений.
+      </p>
+    </div>
+
+    <div class="faq-wrap reveal" style="margin-top:22px;">
+      {% set faq = [
+        {"q":"Какие преобразователи и датчики можно поверить?",
+         "a":"Поверке подлежат индуктивные преобразователи, щупы, многоканальные системы и датчики линейных перемещений утверждённого типа, применяемые в сфере государственного регулирования обеспечения единства измерений."},
+        {"q":"Как подтверждаются результаты поверки?",
+         "a":"Результаты поверки подтверждаются сведениями, включёнными в Федеральный информационный фонд по обеспечению единства измерений. По заявлению владельца возможно оформление свидетельства о поверке или извещения о непригодности."},
+        {"q":"Какие исполнения поверяют в ЦСМ Двинта?",
+         "a":"Мы поверяем индуктивные преобразователи и щупы, многоканальные системы, а также тросовые, стержневые, профильные и лазерные триангуляционные датчики линейных перемещений."}
+      ] %}
+
+      {% for item in faq %}
+      <div class="faq-item">
+        <button type="button" class="faq-btn" data-acc-btn aria-expanded="false">
+          <span>{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-5 h-5" style="color: var(--c-600); transition: transform .2s ease;" data-acc-icon></i>
+        </button>
+
+        <div class="faq-body hidden" data-acc-body>
+          {{ item.a }}
+
+          {% if loop.index == 1 %}
+          <div style="margin-top:12px;">
+            Проверить утверждение типа можно на официальном сайте
+            <a href="https://fgis.gost.ru/fundmetrology/cm/mits"
+               target="_blank" rel="noopener" style="color:var(--c-400);font-weight:800;">Федерального информационного фонда по обеспечению единства измерений</a>
+          </div>
+          {% endif %}
+
+          {% if loop.index == 2 %}
+          <div style="margin-top:12px;">
+            <a href="https://fgis.gost.ru/fundmetrology/cm/results" target="_blank" rel="noopener"
+               style="color:var(--c-400);font-weight:800;">Проверить результаты поверки в ФИФ</a>
+          </div>
+          {% endif %}
+
+          {% if loop.index == 3 %}
+          <div style="margin-top:16px;">
+            <div class="brand-grid" style="margin-top:12px;">
+              <span>Mitutoyo</span><span>Dasqua</span><span>Mahr</span><span>INSIZE</span>
+              <span>Shahe</span><span>GuangLu</span><span>ЧИЗ</span><span>КРИН</span>
+              <span>ACCUD</span><span>RGK</span><span>Micron</span><span>Калиброн</span>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ script (inline, because accordion.js is not loaded in base.html) -->
+<script>
+  (function () {
+    const buttons = Array.from(document.querySelectorAll("[data-acc-btn]"));
+    if (!buttons.length) return;
+
+    function closeAll() {
+      for (const b of buttons) {
+        const item = b.closest(".faq-item");
+        if (!item) continue;
+
+        const body = item.querySelector("[data-acc-body]");
+        const icon = b.querySelector("[data-acc-icon]");
+        if (body) body.classList.add("hidden");
+        if (icon) icon.style.transform = "rotate(0deg)";
+        b.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    for (const btn of buttons) {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".faq-item");
+        if (!item) return;
+
+        const body = item.querySelector("[data-acc-body]");
+        const icon = btn.querySelector("[data-acc-icon]");
+        if (!body) return;
+
+        const isOpen = !body.classList.contains("hidden");
+
+        closeAll();
+
+        if (!isOpen) {
+          body.classList.remove("hidden");
+          if (icon) icon.style.transform = "rotate(180deg)";
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    }
+  })();
+</script>
+
+
+<script src="{{ url_for('static', filename='js/price_catalog.js') }}"></script>
+
+{% endblock %}

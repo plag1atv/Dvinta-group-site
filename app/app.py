@@ -235,6 +235,12 @@ def create_app() -> Flask:
                     "icon": "move-horizontal",
                     "href": "/equipment_inductive_transducers.html",
                 },
+                {
+                    "title": "Меры длины концевые плоскопараллельные",
+                    "description": "Поверка КМД 0–3 классов точности, длиной от 0,1 до 1000 мм, по ГОСТ 9038-90 и установленным методикам поверки.",
+                    "icon": "layers-3",
+                    "href": "/equipment_gauge_blocks.html",
+                },
             ],
         },
         "mechanical": {
@@ -395,6 +401,15 @@ def create_app() -> Flask:
             "equipment_inductive_transducers.html",
             title="Поверка преобразователей и датчиков линейных перемещений",
             equipment_type="inductive_transducers"
+        )
+
+    @app.route("/equipment_gauge_blocks.html")
+    @app.route("/equipment/gauge-blocks")
+    def equipment_gauge_blocks():
+        return render_template(
+            "equipment_gauge_blocks.html",
+            title="Поверка мер длины концевых плоскопараллельных",
+            equipment_type="gauge_blocks"
         )
 
     # Метrology

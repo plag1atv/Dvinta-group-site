@@ -323,6 +323,15 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "gauge_blocks") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .includes("меры длины концевые плоскопараллельные")
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

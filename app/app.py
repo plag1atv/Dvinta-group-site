@@ -265,6 +265,12 @@ def create_app() -> Flask:
                     "icon": "ruler",
                     "href": "/equipment_measuring_rulers.html",
                 },
+                {
+                    "title": "Рулетки, метроштоки и измерительные рейки",
+                    "description": "Поверка металлических и электронных рулеток, рулеток с лотом, метроштоков, нивелирных, водомерных, гидрометрических и снегомерных реек.",
+                    "icon": "move-horizontal",
+                    "href": "/equipment_tape_measures_meter_rods.html",
+                },
             ],
         },
         "mechanical": {
@@ -470,6 +476,15 @@ def create_app() -> Flask:
             "equipment_measuring_rulers.html",
             title="Поверка линеек и циркометров",
             equipment_type="measuring_rulers"
+        )
+
+    @app.route("/equipment_tape_measures_meter_rods.html")
+    @app.route("/equipment/tape-measures-meter-rods")
+    def equipment_tape_measures_meter_rods():
+        return render_template(
+            "equipment_tape_measures_meter_rods.html",
+            title="Поверка рулеток, метроштоков и измерительных реек",
+            equipment_type="tape_measures_meter_rods"
         )
 
     # Метrology

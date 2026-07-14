@@ -380,6 +380,21 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "tape_measures_meter_rods") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase();
+
+              return (
+                  itemName.startsWith("рулетки металлические измерительные") ||
+                  itemName.startsWith("рулетки измерительные с лотом") ||
+                  itemName.startsWith("метроштоки") ||
+                  itemName.startsWith("рейки нивелирные") ||
+                  itemName.startsWith("рейки водомерные")
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

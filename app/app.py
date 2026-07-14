@@ -247,6 +247,12 @@ def create_app() -> Flask:
                     "icon": "circle-dot",
                     "href": "/equipment_measuring_rings.html",
                 },
+                {
+                    "title": "Наборы принадлежностей к концевым мерам длины ПК",
+                    "description": "Поверка наборов ПК-1, ПК-2 и ПК-3 по ГОСТ, МИ и другим утверждённым методикам поверки.",
+                    "icon": "blocks",
+                    "href": "/equipment_gauge_block_accessories.html",
+                },
             ],
         },
         "mechanical": {
@@ -425,6 +431,15 @@ def create_app() -> Flask:
             "equipment_measuring_rings.html",
             title="Поверка установочных, измерительных, образцовых и эталонных колец",
             equipment_type="measuring_rings"
+        )
+
+    @app.route("/equipment_gauge_block_accessories.html")
+    @app.route("/equipment/gauge-block-accessories")
+    def equipment_gauge_block_accessories():
+        return render_template(
+            "equipment_gauge_block_accessories.html",
+            title="Поверка наборов принадлежностей к концевым мерам длины ПК",
+            equipment_type="gauge_block_accessories"
         )
 
     # Метrology

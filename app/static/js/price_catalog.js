@@ -341,6 +341,15 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "gauge_block_accessories") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .includes("наборы принадлежностей к концевым мерам длины")
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

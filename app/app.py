@@ -271,6 +271,12 @@ def create_app() -> Flask:
                     "icon": "move-horizontal",
                     "href": "/equipment_tape_measures_meter_rods.html",
                 },
+                {
+                    "title": "Плиты поверочные и разметочные",
+                    "description": "Поверка чугунных и твердокаменных плит различных размеров, исполнений и классов точности.",
+                    "icon": "grid-3x3",
+                    "href": "/equipment_surface_plates.html",
+                },
             ],
         },
         "mechanical": {
@@ -485,6 +491,15 @@ def create_app() -> Flask:
             "equipment_tape_measures_meter_rods.html",
             title="Поверка рулеток, метроштоков и измерительных реек",
             equipment_type="tape_measures_meter_rods"
+        )
+
+    @app.route("/equipment_surface_plates.html")
+    @app.route("/equipment/surface-plates")
+    def equipment_surface_plates():
+        return render_template(
+            "equipment_surface_plates.html",
+            title="Поверка поверочных и разметочных плит",
+            equipment_type="surface_plates"
         )
 
     # Метrology

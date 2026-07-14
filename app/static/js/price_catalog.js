@@ -395,6 +395,15 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "surface_plates") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .startsWith("плиты поверочные")
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

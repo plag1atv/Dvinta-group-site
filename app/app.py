@@ -241,6 +241,12 @@ def create_app() -> Flask:
                     "icon": "layers-3",
                     "href": "/equipment_gauge_blocks.html",
                 },
+                {
+                    "title": "Кольца установочные, измерительные, образцовые и эталонные",
+                    "description": "Поверка колец внутренних диаметров различных типов, моделей, диапазонов и классов точности.",
+                    "icon": "circle-dot",
+                    "href": "/equipment_measuring_rings.html",
+                },
             ],
         },
         "mechanical": {
@@ -410,6 +416,15 @@ def create_app() -> Flask:
             "equipment_gauge_blocks.html",
             title="Поверка мер длины концевых плоскопараллельных",
             equipment_type="gauge_blocks"
+        )
+
+    @app.route("/equipment_measuring_rings.html")
+    @app.route("/equipment/measuring-rings")
+    def equipment_measuring_rings():
+        return render_template(
+            "equipment_measuring_rings.html",
+            title="Поверка установочных, измерительных, образцовых и эталонных колец",
+            equipment_type="measuring_rings"
         )
 
     # Метrology

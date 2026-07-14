@@ -332,6 +332,15 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "measuring_rings") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .includes("меры внутренних диаметров")
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

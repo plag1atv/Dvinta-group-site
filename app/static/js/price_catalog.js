@@ -362,6 +362,24 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "measuring_rulers") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase();
+
+              return (
+                  itemName.includes("линейки измерительные металлические") ||
+                  itemName.includes("линейки контрольные рабочие") ||
+                  itemName.includes("линейки для подбора очковых оправ") ||
+                  itemName.includes("линейки для измерения расстояния") ||
+                  itemName.includes("линейки поверочные") ||
+                  itemName.includes("линейки синусные") ||
+                  itemName.includes("линейки охватывающие") ||
+                  itemName.includes("линейки усадочные")
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

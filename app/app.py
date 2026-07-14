@@ -259,6 +259,12 @@ def create_app() -> Flask:
                     "icon": "gauge",
                     "href": "/equipment_bore_gauges.html",
                 },
+                {
+                    "title": "Линейки и циркометры",
+                    "description": "Поверка металлических, контрольных, поверочных, синусных, охватывающих, усадочных и специальных линеек.",
+                    "icon": "ruler",
+                    "href": "/equipment_measuring_rulers.html",
+                },
             ],
         },
         "mechanical": {
@@ -455,6 +461,15 @@ def create_app() -> Flask:
             "equipment_bore_gauges.html",
             title="Поверка нутромеров",
             equipment_type="bore_gauges"
+        )
+
+    @app.route("/equipment_measuring_rulers.html")
+    @app.route("/equipment/measuring-rulers")
+    def equipment_measuring_rulers():
+        return render_template(
+            "equipment_measuring_rulers.html",
+            title="Поверка линеек и циркометров",
+            equipment_type="measuring_rulers"
         )
 
     # Метrology

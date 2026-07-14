@@ -404,6 +404,15 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "levels") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .startsWith("уровни")
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

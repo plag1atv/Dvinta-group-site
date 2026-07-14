@@ -277,6 +277,12 @@ def create_app() -> Flask:
                     "icon": "grid-3x3",
                     "href": "/equipment_surface_plates.html",
                 },
+                {
+                    "title": "Уровни",
+                    "description": "Поверка рамных, брусковых, строительных, электронных уровней и уровней-угломеров.",
+                    "icon": "square",
+                    "href": "/equipment_levels.html",
+                },
             ],
         },
         "mechanical": {
@@ -500,6 +506,15 @@ def create_app() -> Flask:
             "equipment_surface_plates.html",
             title="Поверка поверочных и разметочных плит",
             equipment_type="surface_plates"
+        )
+
+    @app.route("/equipment_levels.html")
+    @app.route("/equipment/levels")
+    def equipment_levels():
+        return render_template(
+            "equipment_levels.html",
+            title="Поверка уровней",
+            equipment_type="levels"
         )
 
     # Метrology

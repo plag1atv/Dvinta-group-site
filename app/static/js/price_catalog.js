@@ -350,6 +350,18 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "bore_gauges") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase();
+
+              return (
+                  itemName.startsWith("нутромеры") ||
+                  itemName.includes("вставок к нутромерам")
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

@@ -253,6 +253,12 @@ def create_app() -> Flask:
                     "icon": "blocks",
                     "href": "/equipment_gauge_block_accessories.html",
                 },
+                {
+                    "title": "Нутромеры",
+                    "description": "Поверка индикаторных, цанговых, микрометрических, трёхточечных и специальных нутромеров.",
+                    "icon": "gauge",
+                    "href": "/equipment_bore_gauges.html",
+                },
             ],
         },
         "mechanical": {
@@ -440,6 +446,15 @@ def create_app() -> Flask:
             "equipment_gauge_block_accessories.html",
             title="Поверка наборов принадлежностей к концевым мерам длины ПК",
             equipment_type="gauge_block_accessories"
+        )
+
+    @app.route("/equipment_bore_gauges.html")
+    @app.route("/equipment/bore-gauges")
+    def equipment_bore_gauges():
+        return render_template(
+            "equipment_bore_gauges.html",
+            title="Поверка нутромеров",
+            equipment_type="bore_gauges"
         )
 
     # Метrology

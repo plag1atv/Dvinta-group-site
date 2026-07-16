@@ -912,6 +912,9 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     margin-top: 30px;
 }
 
@@ -921,10 +924,14 @@
 
     display: flex;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
 
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     min-height: 220px;
     padding: 26px;
+    box-sizing: border-box;
 
     border-radius: 28px;
 
@@ -992,26 +999,47 @@
     z-index: 1;
 
     display: flex;
+    flex: 1 1 0;
     flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     min-height: 168px;
 }
 
 .measure-card h2{
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     margin: 0;
 
     color: var(--c-900);
-    font-size: 23px;
-    line-height: 1.18;
+    font-size: 21px;
+    line-height: 1.25;
     font-weight: 900;
     letter-spacing: -.02em;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
 }
 
 .measure-card p{
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     margin: 13px 0 0;
 
     color: rgba(var(--ink-rgb), .68);
     font-size: 15px;
     line-height: 1.65;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
 }
 
 .measure-card span{
@@ -1038,7 +1066,7 @@
     transform: translateX(4px);
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1200px){
     .measure-category-grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1065,9 +1093,60 @@
     }
 
     .measure-card{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
         min-height: auto;
-        padding: 22px;
+        padding: 20px;
+        box-sizing: border-box;
+
         border-radius: 24px;
+    }
+
+        .measure-card__icon{
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
+        border-radius: 17px;
+    }
+
+    .measure-card__icon i,
+    .measure-card__icon svg{
+        width: 23px;
+        height: 23px;
+    }
+
+    .measure-card__body{
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .measure-card h2{
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 20px;
+        line-height: 1.28;
+
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    .measure-card p{
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px;
+        line-height: 1.6;
+
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 
     .measure-card__body{

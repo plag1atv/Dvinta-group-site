@@ -236,7 +236,7 @@ def create_app() -> Flask:
                     "href": "/equipment_inductive_transducers.html",
                 },
                 {
-                    "title": "Меры длины концевые плоскопараллельные",
+                    "title": "Меры длины кольцевые плоскопараллельные",
                     "description": "Поверка КМД 0–3 классов точности, длиной от 0,1 до 1000 мм, по ГОСТ 9038-90 и установленным методикам поверки.",
                     "icon": "layers-3",
                     "href": "/equipment_gauge_blocks.html",

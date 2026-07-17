@@ -375,6 +375,7 @@ def create_app() -> Flask:
         with open(price_file, "r", encoding="utf-8") as f:
             price_items = json.load(f)
 
+
         calipers = []
 
         for item in price_items:

@@ -283,6 +283,30 @@ def create_app() -> Flask:
                     "icon": "square",
                     "href": "/equipment_levels.html",
                 },
+                {
+                    "title": "Мерзлотомеры",
+                    "description": "Поверка приборов серий АМ-21 и АМ-21М для измерения глубины промерзания почвы.",
+                    "icon": "snowflake",
+                    "href": "/equipment_frost_depth_gauges.html",
+                },
+                {
+                    "title": "Гриндометры",
+                    "description": "Поверка гриндометров ПРОМТ, ГК, BGD-T, Elcometer, Константа-Клин и приборов Хегмана.",
+                    "icon": "scan-line",
+                    "href": "/equipment_grindometers.html",
+                },
+                {
+                    "title": "Нормалемеры и приборы Multimar",
+                    "description": "Поверка зубоизмерительных нормалемеров различных моделей и универсальных приборов Multimar 844 T.",
+                    "icon": "settings",
+                    "href": "/equipment_normalemeters_multimar.html",
+                },
+                {
+                    "title": "Проволочки и ролики",
+                    "description": "Поверка гладких и ступенчатых проволочек, а также измерительных роликов 0 и 1 классов точности.",
+                    "icon": "circle-dot",
+                    "href": "/equipment_measuring_wires_rollers.html",
+                },
             ],
         },
         "mechanical": {
@@ -515,6 +539,42 @@ def create_app() -> Flask:
             "equipment_levels.html",
             title="Поверка уровней",
             equipment_type="levels"
+        )
+
+    @app.route("/equipment_frost_depth_gauges.html")
+    @app.route("/equipment/frost-depth-gauges")
+    def equipment_frost_depth_gauges():
+        return render_template(
+            "equipment_frost_depth_gauges.html",
+            title="Поверка мерзлотомеров",
+            equipment_type="frost_depth_gauges"
+        )
+
+    @app.route("/equipment_grindometers.html")
+    @app.route("/equipment/grindometers")
+    def equipment_grindometers():
+        return render_template(
+            "equipment_grindometers.html",
+            title="Поверка гриндометров",
+            equipment_type="grindometers"
+        )
+
+    @app.route("/equipment_normalemeters_multimar.html")
+    @app.route("/equipment/normalemeters-multimar")
+    def equipment_normalemeters_multimar():
+        return render_template(
+            "equipment_normalemeters_multimar.html",
+            title="Поверка нормалемеров и приборов Multimar 844 T",
+            equipment_type="normalemeters_multimar"
+        )
+
+    @app.route("/equipment_measuring_wires_rollers.html")
+    @app.route("/equipment/measuring-wires-rollers")
+    def equipment_measuring_wires_rollers():
+        return render_template(
+            "equipment_measuring_wires_rollers.html",
+            title="Поверка проволочек и роликов",
+            equipment_type="measuring_wires_rollers"
         )
 
     # Метrology

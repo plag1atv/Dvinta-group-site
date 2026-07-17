@@ -413,6 +413,45 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "frost_depth_gauges") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() === "мерзлотомеры"
+          );
+      }
+
+      if (equipmentType === "grindometers") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() === "гриндометры"
+          );
+      }
+
+      if (equipmentType === "normalemeters_multimar") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase();
+
+              return (
+                  itemName.startsWith("нормалемеры универсальные") &&
+                  itemName.includes("multimar 844")
+              );
+          });
+      }
+
+      if (equipmentType === "measuring_wires_rollers") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .startsWith("проволочки, ролики")
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

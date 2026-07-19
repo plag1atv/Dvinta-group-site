@@ -452,6 +452,54 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "verification_squares") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase().trim();
+
+              return (
+                  itemName.startsWith("угольники поверочные") ||
+                  itemName.startsWith("угольники лекальные цилиндрические") ||
+                  itemName === "приборы для поверки угольников"
+              );
+          });
+      }
+
+      if (equipmentType === "thickness_wall_gauges") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase().trim();
+
+              return (
+                  itemName.startsWith("толщиномеры индикаторные") ||
+                  itemName === "толщиномеры контактные" ||
+                  itemName === "толщиномеры-гребенки" ||
+                  itemName.startsWith("стенкомеры")
+              );
+          });
+      }
+
+      if (equipmentType === "medical_stadiometers") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() === "ростомеры"
+          );
+      }
+
+      if (equipmentType === "height_vertical_length_gauges") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase().trim();
+
+              return (
+                  itemName === "высотомеры" ||
+                  itemName === "длиномеры вертикальные"
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

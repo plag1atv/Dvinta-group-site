@@ -307,6 +307,30 @@ def create_app() -> Flask:
                     "icon": "circle-dot",
                     "href": "/equipment_measuring_wires_rollers.html",
                 },
+                {
+                    "title": "Угольники и приборы для их поверки",
+                    "description": "Поверка лекальных, слесарных, цилиндрических и твердокаменных угольников, приборов ППУ-630 и модели 2401.",
+                    "icon": "triangle-right",
+                    "href": "/equipment_verification_squares.html",
+                },
+                {
+                    "title": "Толщиномеры и стенкомеры",
+                    "description": "Поверка индикаторных, цифровых, настольных, ручных и контактных толщиномеров, стенкомеров и толщиномеров-гребёнок.",
+                    "icon": "scan-line",
+                    "href": "/equipment_thickness_wall_gauges.html",
+                },
+                {
+                    "title": "Медицинские ростомеры",
+                    "description": "Поверка медицинских, детских и бесконтактных ростомеров различных моделей и исполнений.",
+                    "icon": "ruler",
+                    "href": "/equipment_medical_stadiometers.html",
+                },
+                {
+                    "title": "Высотомеры и вертикальные длиномеры",
+                    "description": "Поверка цифровых, оптических, проекционных высотомеров и вертикальных длиномеров различных производителей.",
+                    "icon": "move-vertical",
+                    "href": "/equipment_height_vertical_length_gauges.html",
+                },
             ],
         },
         "mechanical": {
@@ -575,6 +599,42 @@ def create_app() -> Flask:
             "equipment_measuring_wires_rollers.html",
             title="Поверка проволочек и роликов",
             equipment_type="measuring_wires_rollers"
+        )
+
+    @app.route("/equipment_verification_squares.html")
+    @app.route("/equipment/verification-squares")
+    def equipment_verification_squares():
+        return render_template(
+            "equipment_verification_squares.html",
+            title="Поверка угольников и приборов для поверки угольников",
+            equipment_type="verification_squares"
+        )
+
+    @app.route("/equipment_thickness_wall_gauges.html")
+    @app.route("/equipment/thickness-wall-gauges")
+    def equipment_thickness_wall_gauges():
+        return render_template(
+            "equipment_thickness_wall_gauges.html",
+            title="Поверка толщиномеров и стенкомеров",
+            equipment_type="thickness_wall_gauges"
+        )
+
+    @app.route("/equipment_medical_stadiometers.html")
+    @app.route("/equipment/medical-stadiometers")
+    def equipment_medical_stadiometers():
+        return render_template(
+            "equipment_medical_stadiometers.html",
+            title="Поверка медицинских ростомеров",
+            equipment_type="medical_stadiometers"
+        )
+
+    @app.route("/equipment_height_vertical_length_gauges.html")
+    @app.route("/equipment/height-vertical-length-gauges")
+    def equipment_height_vertical_length_gauges():
+        return render_template(
+            "equipment_height_vertical_length_gauges.html",
+            title="Поверка высотомеров и вертикальных длиномеров",
+            equipment_type="height_vertical_length_gauges"
         )
 
     # Метrology

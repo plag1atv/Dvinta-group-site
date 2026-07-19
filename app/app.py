@@ -349,6 +349,36 @@ def create_app() -> Flask:
                     "icon": "radio-tower",
                     "href": "/equipment_kipr_connection_gauges.html",
                 },
+                {
+                    "title": "Приборы контроля подшипников",
+                    "description": "Поверка приборов для контроля радиальных и осевых зазоров, а также внутреннего диаметра подшипников.",
+                    "icon": "circle-gauge",
+                    "href": "/equipment_bearing_clearance_diameter_gauges.html",
+                },
+                {
+                    "title": "Сита лабораторные",
+                    "description": "Поверка лабораторных сит всех типоразмеров и модификаций для анализа сыпучих материалов.",
+                    "icon": "filter",
+                    "href": "/equipment_laboratory_sieves.html",
+                },
+                {
+                    "title": "Измерительные лупы",
+                    "description": "Поверка измерительных луп и луп с подсветкой для контроля линейных и угловых размеров.",
+                    "icon": "search",
+                    "href": "/equipment_measuring_illuminated_magnifiers.html",
+                },
+                {
+                    "title": "Контрольные бруски БК",
+                    "description": "Поверка контрольных брусков для проверки прямолинейности лекальных линеек и угольников.",
+                    "icon": "ruler",
+                    "href": "/equipment_control_bars_bk.html",
+                },
+                {
+                    "title": "Стеклянные пластины ПИ и ПМ",
+                    "description": "Поверка плоских и плоскопараллельных стеклянных пластин для интерференционного контроля плоскостности.",
+                    "icon": "layers-3",
+                    "href": "/equipment_flat_parallel_glass_plates.html",
+                },
             ],
         },
         "mechanical": {
@@ -680,6 +710,51 @@ def create_app() -> Flask:
             "equipment_kipr_connection_gauges.html",
             title="Поверка комплектов измерителей присоединительных размеров КИПР",
             equipment_type="kipr_connection_gauges"
+        )
+
+    @app.route("/equipment_bearing_clearance_diameter_gauges.html")
+    @app.route("/equipment/bearing-clearance-diameter-gauges")
+    def equipment_bearing_clearance_diameter_gauges():
+        return render_template(
+            "equipment_bearing_clearance_diameter_gauges.html",
+            title="Поверка приборов для контроля зазора и диаметра подшипников",
+            equipment_type="bearing_clearance_diameter_gauges"
+        )
+
+    @app.route("/equipment_laboratory_sieves.html")
+    @app.route("/equipment/laboratory-sieves")
+    def equipment_laboratory_sieves():
+        return render_template(
+            "equipment_laboratory_sieves.html",
+            title="Поверка лабораторных сит",
+            equipment_type="laboratory_sieves"
+        )
+
+    @app.route("/equipment_measuring_illuminated_magnifiers.html")
+    @app.route("/equipment/measuring-illuminated-magnifiers")
+    def equipment_measuring_illuminated_magnifiers():
+        return render_template(
+            "equipment_measuring_illuminated_magnifiers.html",
+            title="Поверка измерительных луп и луп с подсветкой",
+            equipment_type="measuring_illuminated_magnifiers"
+        )
+
+    @app.route("/equipment_control_bars_bk.html")
+    @app.route("/equipment/control-bars-bk")
+    def equipment_control_bars_bk():
+        return render_template(
+            "equipment_control_bars_bk.html",
+            title="Поверка контрольных брусков БК",
+            equipment_type="control_bars_bk"
+        )
+
+    @app.route("/equipment_flat_parallel_glass_plates.html")
+    @app.route("/equipment/flat-parallel-glass-plates")
+    def equipment_flat_parallel_glass_plates():
+        return render_template(
+            "equipment_flat_parallel_glass_plates.html",
+            title="Поверка плоских и плоскопараллельных стеклянных пластин",
+            equipment_type="flat_parallel_glass_plates"
         )
 
     # Метrology

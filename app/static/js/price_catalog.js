@@ -533,6 +533,60 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "bearing_clearance_diameter_gauges") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "приборы для контроля радиального зазора подшипников"
+          );
+      }
+
+      if (equipmentType === "laboratory_sieves") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "сита лабораторные"
+          );
+      }
+
+      if (equipmentType === "measuring_illuminated_magnifiers") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "лупы измерительные, с подсветкой"
+          );
+      }
+
+      if (equipmentType === "control_bars_bk") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "бруски контрольные (бк)"
+          );
+      }
+
+      if (equipmentType === "flat_parallel_glass_plates") {
+
+          items = items.filter(item => {
+              const itemName = item.name
+                .toLowerCase()
+                .trim();
+
+              return (
+                  itemName === "пластины плоские стеклянные пи" ||
+                  itemName === "пластины плоскопараллельные стеклянные пм"
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

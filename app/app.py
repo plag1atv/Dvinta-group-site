@@ -331,6 +331,24 @@ def create_app() -> Flask:
                     "icon": "move-vertical",
                     "href": "/equipment_height_vertical_length_gauges.html",
                 },
+                {
+                    "title": "Кронциркули и калибры-скобы",
+                    "description": "Поверка измерительных и индикаторных кронциркулей, механических и цифровых калибров-скоб.",
+                    "icon": "gauge",
+                    "href": "/equipment_calipers_snap_gauges.html",
+                },
+                {
+                    "title": "Щупы, клинья и клиновые высотомеры",
+                    "description": "Поверка измерительных щупов, клиньев для измерения зазоров и клиновых высотомеров.",
+                    "icon": "layers-3",
+                    "href": "/equipment_feeler_gauges_wedges.html",
+                },
+                {
+                    "title": "Комплекты измерителей КИПР",
+                    "description": "Поверка комплектов для измерения присоединительных размеров соединителей в коаксиальных волноводах и трактах.",
+                    "icon": "radio-tower",
+                    "href": "/equipment_kipr_connection_gauges.html",
+                },
             ],
         },
         "mechanical": {
@@ -635,6 +653,33 @@ def create_app() -> Flask:
             "equipment_height_vertical_length_gauges.html",
             title="Поверка высотомеров и вертикальных длиномеров",
             equipment_type="height_vertical_length_gauges"
+        )
+
+    @app.route("/equipment_calipers_snap_gauges.html")
+    @app.route("/equipment/calipers-snap-gauges")
+    def equipment_calipers_snap_gauges():
+        return render_template(
+            "equipment_calipers_snap_gauges.html",
+            title="Поверка кронциркулей и калибров-скоб",
+            equipment_type="calipers_snap_gauges"
+        )
+
+    @app.route("/equipment_feeler_gauges_wedges.html")
+    @app.route("/equipment/feeler-gauges-wedges")
+    def equipment_feeler_gauges_wedges():
+        return render_template(
+            "equipment_feeler_gauges_wedges.html",
+            title="Поверка измерительных щупов, клиньев и клиновых высотомеров",
+            equipment_type="feeler_gauges_wedges"
+        )
+
+    @app.route("/equipment_kipr_connection_gauges.html")
+    @app.route("/equipment/kipr-connection-gauges")
+    def equipment_kipr_connection_gauges():
+        return render_template(
+            "equipment_kipr_connection_gauges.html",
+            title="Поверка комплектов измерителей присоединительных размеров КИПР",
+            equipment_type="kipr_connection_gauges"
         )
 
     # Метrology

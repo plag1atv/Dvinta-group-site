@@ -500,6 +500,39 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "calipers_snap_gauges") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "кронциркули, кронциркули индикаторные, калибры-скобы"
+          );
+      }
+
+      if (equipmentType === "feeler_gauges_wedges") {
+
+          items = items.filter(item => {
+              const itemName = item.name.toLowerCase().trim();
+
+              return (
+                  itemName === "щупы измерительные" ||
+                  itemName === "клинья для измерения зазоров" ||
+                  itemName === "высотомеры клиновые"
+              );
+          });
+      }
+
+      if (equipmentType === "kipr_connection_gauges") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "комплекты измерителей присоединительных размеров"
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

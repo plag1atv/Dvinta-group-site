@@ -379,6 +379,42 @@ def create_app() -> Flask:
                     "icon": "layers-3",
                     "href": "/equipment_flat_parallel_glass_plates.html",
                 },
+                {
+                    "title": "Образцы шероховатости ОШС",
+                    "description": "Поверка образцов шероховатости поверхности для визуальной и тактильной оценки параметров Ra.",
+                    "icon": "waves",
+                    "href": "/equipment_surface_roughness_samples.html",
+                },
+                {
+                    "title": "Профилометры и профилографы",
+                    "description": "Поверка приборов для измерения параметров шероховатости поверхности и характеристик профиля.",
+                    "icon": "activity",
+                    "href": "/equipment_surface_roughness_profilometers.html",
+                },
+                {
+                    "title": "Микроскопы и видеоизмерительные системы",
+                    "description": "Поверка измерительных микроскопов, видеоизмерительных систем и машин для линейного и углового контроля.",
+                    "icon": "microscope",
+                    "href": "/equipment_microscopes_video_measurement_systems.html",
+                },
+                {
+                    "title": "Комплексы анализа микроструктуры",
+                    "description": "Поверка аппаратно-программных комплексов и систем анализа изображений микроструктуры материалов.",
+                    "icon": "scan-search",
+                    "href": "/equipment_microstructure_image_analysis_systems.html",
+                },
+                {
+                    "title": "Объект-микрометры",
+                    "description": "Поверка объект-микрометров для калибровки микроскопов, видеоизмерительных машин и систем анализа изображений.",
+                    "icon": "ruler",
+                    "href": "/equipment_object_micrometers.html",
+                },
+                {
+                    "title": "Измерительные проекторы",
+                    "description": "Поверка оптических, профильных и цифровых проекторов для контроля линейных и угловых размеров.",
+                    "icon": "scan-search",
+                    "href": "/equipment_measuring_projectors.html",
+                },
             ],
         },
         "mechanical": {
@@ -755,6 +791,60 @@ def create_app() -> Flask:
             "equipment_flat_parallel_glass_plates.html",
             title="Поверка плоских и плоскопараллельных стеклянных пластин",
             equipment_type="flat_parallel_glass_plates"
+        )
+
+    @app.route("/equipment_surface_roughness_samples.html")
+    @app.route("/equipment/surface-roughness-samples")
+    def equipment_surface_roughness_samples():
+        return render_template(
+            "equipment_surface_roughness_samples.html",
+            title="Поверка образцов шероховатости поверхности",
+            equipment_type="surface_roughness_samples"
+        )
+
+    @app.route("/equipment_surface_roughness_profilometers.html")
+    @app.route("/equipment/surface-roughness-profilometers")
+    def equipment_surface_roughness_profilometers():
+        return render_template(
+            "equipment_surface_roughness_profilometers.html",
+            title="Поверка приборов для измерений параметров шероховатости и профилометров",
+            equipment_type="surface_roughness_profilometers"
+        )
+
+    @app.route("/equipment_microscopes_video_measurement_systems.html")
+    @app.route("/equipment/microscopes-video-measurement-systems")
+    def equipment_microscopes_video_measurement_systems():
+        return render_template(
+            "equipment_microscopes_video_measurement_systems.html",
+            title="Поверка микроскопов и видеоизмерительных систем",
+            equipment_type="microscopes_video_measurement_systems"
+        )
+
+    @app.route("/equipment_microstructure_image_analysis_systems.html")
+    @app.route("/equipment/microstructure-image-analysis-systems")
+    def equipment_microstructure_image_analysis_systems():
+        return render_template(
+            "equipment_microstructure_image_analysis_systems.html",
+            title="Поверка комплексов анализа изображений микроструктуры",
+            equipment_type="microstructure_image_analysis_systems"
+        )
+
+    @app.route("/equipment_object_micrometers.html")
+    @app.route("/equipment/object-micrometers")
+    def equipment_object_micrometers():
+        return render_template(
+            "equipment_object_micrometers.html",
+            title="Поверка объект-микрометров",
+            equipment_type="object_micrometers"
+        )
+
+    @app.route("/equipment_measuring_projectors.html")
+    @app.route("/equipment/measuring-projectors")
+    def equipment_measuring_projectors():
+        return render_template(
+            "equipment_measuring_projectors.html",
+            title="Поверка измерительных проекторов",
+            equipment_type="measuring_projectors"
         )
 
     # Метrology

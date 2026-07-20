@@ -587,6 +587,74 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "surface_roughness_samples") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "образцы шероховатости поверхности (сравнения) ошс"
+          );
+      }
+
+      if (equipmentType === "surface_roughness_profilometers") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "приборы для измерений параметров шероховатости поверхности, профилометры, профилографы-профилометры"
+          );
+      }
+
+      if (equipmentType === "microscopes_video_measurement_systems") {
+
+          items = items.filter(item => {
+              const itemName = item.name
+                .toLowerCase()
+                .trim();
+
+              return (
+                  itemName ===
+                    "микроскопы отсчетные, микроскопы измерительные упрощенные" ||
+                  itemName ===
+                    "микроскопы двухкоординатные, инструментальные, универсальные измерительные" ||
+                  itemName ===
+                    "системы, комплексы и микроскопы видеоизмерительные (консольные, портативные)"
+              );
+          });
+      }
+
+      if (equipmentType === "microstructure_image_analysis_systems") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "комплексы аппаратно-программные анализа изображений микроструктуры поверхности твердых тел; анализаторы фрагментов микроструктуры твердых тел; системы анализа микроструктуры объектов"
+          );
+      }
+
+      if (equipmentType === "object_micrometers") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "объект-микрометры"
+          );
+      }
+
+      if (equipmentType === "measuring_projectors") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "проекторы измерительные"
+          );
+      }
+
       allItems = items;
       filteredItems = items;
 

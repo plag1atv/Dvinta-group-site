@@ -655,6 +655,99 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      if (equipmentType === "automated_optimeters") {
+
+          items = items.filter(item => {
+              const itemName = item.name
+                .toLowerCase()
+                .trim();
+
+              return (
+                  itemName ===
+                    "оптиметры (автоматизированные) вертикальные" ||
+                  itemName ===
+                    "оптиметры(автоматизированные) горизонтальные"
+              );
+          });
+      }
+
+      if (equipmentType === "length_measuring_machines_comparators") {
+
+          items = items.filter(item => {
+              const itemName = item.name
+                .toLowerCase()
+                .trim();
+
+              return (
+                  itemName === "длиномеры вертикальные" ||
+                  itemName === "длиномеры горизонтальные" ||
+                  itemName === "длиномеры голографические"
+              );
+          });
+      }
+
+      if (equipmentType === "universal_length_measuring_instruments") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "приборы универсальные для измерений длины"
+          );
+      }
+
+      if (equipmentType === "izm_length_measuring_machines") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "машины измерительные (электронные, автоматизированные)"
+          );
+      }
+
+      if (equipmentType === "coordinate_measuring_machines") {
+
+          items = items.filter(item =>
+              item.name
+                .toLowerCase()
+                .trim() ===
+                "машины координатно-измерительные"
+          );
+      }
+
+      if (equipmentType === "contact_interferometers") {
+
+          items = items.filter(item => {
+              const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+              return (
+                  itemName ===
+                    "интерферометры контактные (окулярные, компьютеризированные) вертикальные" ||
+                  itemName ===
+                    "интерферометры контактные (окулярные, компьютеризированные) горизонтальные"
+              );
+          });
+      }
+
+      if (equipmentType === "gauge_block_verification_systems") {
+
+          items = items.filter(item => {
+              const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+              return (
+                  itemName ===
+                  "приборы, установки для поверки концевых мер длины, компараторы"
+              );
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

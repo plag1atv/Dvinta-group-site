@@ -1157,3 +1157,452 @@
         margin-top: 18px;
     }
 }
+
+/* =========================================================
+   ГЛОБАЛЬНОЕ ИСПРАВЛЕНИЕ МОБИЛЬНОГО ПЕРЕПОЛНЕНИЯ
+   для страниц геометрических средств измерений
+   ========================================================= */
+.caliper-hero,
+.caliper-hero .container,
+.caliper-hero-box,
+.caliper-hero-grid,
+.caliper-hero-content,
+.caliper-hero-image,
+.caliper-image-frame,
+.caliper-hero-features,
+.caliper-hero-feature,
+.caliper-hero-feature span,
+.hero-description,
+.caliper-types-section,
+.caliper-types-section .container,
+.caliper-types-panel,
+.caliper-types-head,
+.caliper-types-groups,
+.caliper-type-group,
+.caliper-type-list,
+.caliper-type-row,
+.caliper-type-row strong,
+.caliper-type-group__top,
+.caliper-type-group__top > div:last-child,
+.price-catalog,
+.price-catalog .container,
+.price-toolbar,
+.price-grid,
+.price-card,
+.tline,
+.tline-main,
+.tline-text,
+.tline-side,
+.about-advantages-grid,
+.about-advantages-card,
+.faq-item,
+.faq-btn,
+.faq-btn span,
+.brand-grid,
+.panel,
+.card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Безопасный перенос длинных заголовков, описаний, моделей и ГРСИ. */
+.caliper-hero h1,
+.hero-description,
+.caliper-hero-feature span,
+.caliper-types-head h2,
+.caliper-types-head p,
+.caliper-type-group__top h2,
+.caliper-type-group__top h3,
+.caliper-type-row strong,
+.tline-title,
+.tline-sub,
+.faq-btn span,
+.price-card,
+.card {
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+/* Изображение никогда не должно расширять родительский блок. */
+.caliper-image-frame img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Дополнительная защита для строк оборудования. */
+.caliper-type-row {
+    width: 100%;
+    grid-template-columns: 34px minmax(0, 1fr);
+}
+
+.caliper-type-row strong {
+    display: block;
+    width: 100%;
+}
+
+/* =========================================================
+   ПЛАНШЕТЫ
+   ========================================================= */
+@media (max-width: 1100px) {
+    .caliper-hero-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .caliper-hero-content,
+    .caliper-hero-image {
+        width: 100%;
+    }
+
+    .caliper-hero-image {
+        justify-content: center;
+    }
+
+    .caliper-image-frame {
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    .caliper-types-groups {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Убирает принудительное растягивание карточек,
+       в которых раньше использовался grid-column: 1 / -1. */
+    .caliper-type-group {
+        grid-column: auto !important;
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   МОБИЛЬНЫЕ УСТРОЙСТВА
+   ========================================================= */
+@media (max-width: 640px) {
+    /* Не скрываем ошибку одним overflow-x, а сначала
+       реально ограничиваем ширину всех проблемных блоков. */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .caliper-hero {
+        padding: 30px 0 26px;
+    }
+
+    .caliper-hero-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 22px 16px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .caliper-hero-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .caliper-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .caliper-eyebrow {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .caliper-hero h1 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: clamp(27px, 8vw, 34px);
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+    }
+
+    .hero-description {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    /* Три блока:
+       Официальная поверка
+       Передача во ФГИС «Аршин»
+       Сроки от 1 рабочего дня */
+    .caliper-hero-features {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .caliper-hero-feature {
+        width: 100%;
+        max-width: 100%;
+        min-height: 54px;
+        padding: 11px 12px;
+        gap: 10px;
+    }
+
+    .caliper-hero-feature i,
+    .caliper-hero-feature svg {
+        flex: 0 0 20px;
+    }
+
+    .caliper-hero-feature span {
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .caliper-hero-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .caliper-image-frame {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    /* Блоки «Какие СИ поверяем». */
+    .caliper-types-section {
+        padding: 24px 0 48px;
+    }
+
+    .caliper-types-panel {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px 14px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .caliper-types-head {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .caliper-types-head h2 {
+        font-size: clamp(24px, 7vw, 31px);
+        line-height: 1.15;
+    }
+
+    .caliper-types-head p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .caliper-types-groups {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .caliper-type-group {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 12px;
+        border-radius: 20px;
+    }
+
+    .caliper-type-group__top {
+        width: 100%;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .caliper-type-group__icon {
+        flex: 0 0 auto;
+    }
+
+    .caliper-type-group__top > div:last-child {
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+    }
+
+    .caliper-type-group__top h2,
+    .caliper-type-group__top h3 {
+        width: 100%;
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    .caliper-type-row {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 8px;
+        align-items: start;
+        min-height: auto;
+        padding: 11px 9px;
+    }
+
+    .caliper-type-row strong {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Акцентные блоки с inline display:flex. */
+    .caliper-types-panel > .reveal {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px !important;
+        overflow: hidden;
+    }
+
+    .caliper-types-panel > .reveal > div {
+        width: 100%;
+        max-width: 100%;
+        gap: 12px !important;
+    }
+
+    .caliper-types-panel > .reveal > div > div:last-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    /* Прайс-лист. */
+    .price-toolbar {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .price-search,
+    .price-toolbar input,
+    .price-toolbar select,
+    .price-toolbar button {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .price-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .price-card {
+        width: 100%;
+    }
+
+    /* Карточки сроков поверки. */
+    .tline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tline-main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tline-text {
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+    }
+
+    .tline-side {
+        width: 100%;
+        min-width: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(var(--ink-rgb), .10);
+    }
+
+    .tline-tags {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    /* Преимущества и пошаговые карточки. */
+    .about-advantages-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card > div,
+    .card > div > div {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .card .btn {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: normal;
+    }
+
+    /* FAQ и бренды. */
+    .faq-btn {
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .faq-btn span {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .brand-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .brand-grid span {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: normal;
+    }
+}

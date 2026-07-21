@@ -2044,6 +2044,7 @@ html {
 .price-card {
   position: relative;
   display: flex;
+  min-width: 0;
   flex-direction: column;
   min-height: 390px;
   padding: 22px;
@@ -2129,9 +2130,13 @@ html {
 
 .price-card h3 {
   margin: 0 0 12px;
+  min-width: 0;
+  max-width: 100%;
   color: var(--text);
   font-size: 20px;
   line-height: 1.25;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .price-card-range {

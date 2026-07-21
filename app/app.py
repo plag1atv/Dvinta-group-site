@@ -415,6 +415,48 @@ def create_app() -> Flask:
                     "icon": "scan-search",
                     "href": "/equipment_measuring_projectors.html",
                 },
+                {
+                    "title": "Автоматизированные оптиметры",
+                    "description": "Поверка горизонтальных и вертикальных оптиметров для измерения наружных и внутренних линейных размеров.",
+                    "icon": "gauge",
+                    "href": "/equipment_automated_optimeters.html",
+                },
+                {
+                    "title": "Длиномеры и цифровые компараторы",
+                    "description": "Поверка горизонтальных и вертикальных длиномеров, цифровых компараторов и рабочих эталонов.",
+                    "icon": "move-horizontal",
+                    "href": "/equipment_length_measuring_machines_comparators.html",
+                },
+                {
+                    "title": "Универсальные приборы для измерений длины",
+                    "description": "Поверка высокоточных приборов для абсолютных и относительных измерений наружных и внутренних размеров.",
+                    "icon": "ruler",
+                    "href": "/equipment_universal_length_measuring_instruments.html",
+                },
+                {
+                    "title": "Оптико-механические машины ИЗМ",
+                    "description": "Поверка электронных и оптико-механических машин ИЗМ для измерений длины и контроля прецизионных изделий.",
+                    "icon": "settings-2",
+                    "href": "/equipment_izm_length_measuring_machines.html",
+                },
+                {
+                    "title": "Координатно-измерительные машины",
+                    "description": "Поверка портальных, мостовых и портативных КИМ для контроля геометрии деталей и 3D-сканирования.",
+                    "icon": "scan",
+                    "href": "/equipment_coordinate_measuring_machines.html",
+                },
+                {
+                    "title": "Контактные интерферометры",
+                    "description": "Поверка вертикальных и горизонтальных окулярных и компьютеризированных контактных интерферометров.",
+                    "icon": "waves",
+                    "href": "/equipment_contact_interferometers.html",
+                },
+                {
+                    "title": "Установки и компараторы для КМД",
+                    "description": "Поверка установок, приборов и компараторов для поверки и калибровки концевых мер длины.",
+                    "icon": "ruler",
+                    "href": "/equipment_gauge_block_verification_systems.html",
+                },
             ],
         },
         "mechanical": {
@@ -845,6 +887,69 @@ def create_app() -> Flask:
             "equipment_measuring_projectors.html",
             title="Поверка измерительных проекторов",
             equipment_type="measuring_projectors"
+        )
+
+    @app.route("/equipment_automated_optimeters.html")
+    @app.route("/equipment/automated-optimeters")
+    def equipment_automated_optimeters():
+        return render_template(
+            "equipment_automated_optimeters.html",
+            title="Поверка автоматизированных оптиметров",
+            equipment_type="automated_optimeters"
+        )
+
+    @app.route("/equipment_length_measuring_machines_comparators.html")
+    @app.route("/equipment/length-measuring-machines-comparators")
+    def equipment_length_measuring_machines_comparators():
+        return render_template(
+            "equipment_length_measuring_machines_comparators.html",
+            title="Поверка длиномеров и цифровых компараторов",
+            equipment_type="length_measuring_machines_comparators"
+        )
+
+    @app.route("/equipment_universal_length_measuring_instruments.html")
+    @app.route("/equipment/universal-length-measuring-instruments")
+    def equipment_universal_length_measuring_instruments():
+        return render_template(
+            "equipment_universal_length_measuring_instruments.html",
+            title="Поверка универсальных приборов для измерений длины",
+            equipment_type="universal_length_measuring_instruments"
+        )
+
+    @app.route("/equipment_izm_length_measuring_machines.html")
+    @app.route("/equipment/izm-length-measuring-machines")
+    def equipment_izm_length_measuring_machines():
+        return render_template(
+            "equipment_izm_length_measuring_machines.html",
+            title="Поверка оптико-механических машин ИЗМ",
+            equipment_type="izm_length_measuring_machines"
+        )
+
+    @app.route("/equipment_coordinate_measuring_machines.html")
+    @app.route("/equipment/coordinate-measuring-machines")
+    def equipment_coordinate_measuring_machines():
+        return render_template(
+            "equipment_coordinate_measuring_machines.html",
+            title="Поверка координатно-измерительных машин",
+            equipment_type="coordinate_measuring_machines"
+        )
+
+    @app.route("/equipment_contact_interferometers.html")
+    @app.route("/equipment/contact-interferometers")
+    def equipment_contact_interferometers():
+        return render_template(
+            "equipment_contact_interferometers.html",
+            title="Поверка контактных интерферометров",
+            equipment_type="contact_interferometers"
+        )
+
+    @app.route("/equipment_gauge_block_verification_systems.html")
+    @app.route("/equipment/gauge-block-verification-systems")
+    def equipment_gauge_block_verification_systems():
+        return render_template(
+            "equipment_gauge_block_verification_systems.html",
+            title="Поверка установок и компараторов для КМД",
+            equipment_type="gauge_block_verification_systems"
         )
 
     # Метrology

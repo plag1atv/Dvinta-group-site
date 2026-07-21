@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- HERO: Поверка автоматизированных оптиметров -->
+<!-- HERO: Поверка прогибомеров -->
 <section class="caliper-hero">
   <div class="container">
     <div class="caliper-hero-box">
@@ -15,13 +15,12 @@
             Средства измерений
           </div>
 
-          <h1>Поверка оптических и автоматизированных оптиметров</h1>
+          <h1>Поверка прогибомеров</h1>
 
           <p class="hero-description">
-            В ЦСМ «Двинта» осуществляется поверка оптических
-            и автоматизированных оптиметров — средств измерений,
-            предназначенных для определения наружных и внутренних
-            линейных размеров методом сравнения с установочной мерой.
+            В ЦСМ Двинта осуществляется поверка прогибомеров,
+              предназначенных для измерений линейных перемещений
+              отдельных точек конструкции при нагружении их статическими нагрузками.
           </p>
 
           <div class="caliper-hero-features">
@@ -54,8 +53,8 @@
 
         <div class="caliper-hero-image">
           <div class="caliper-image-frame">
-            <img src="{{ url_for('static', filename='img/equipment/automated_optimeters.png') }}"
-                 alt="Горизонтальный и вертикальный автоматизированный оптиметр">
+            <img src="{{ url_for('static', filename='img/equipment/deflection_gauges.png') }}"
+                 alt="Прогибомер для измерения линейных перемещений конструкций">
           </div>
         </div>
       </div>
@@ -63,119 +62,77 @@
   </div>
 </section>
 
-<!-- Виды автоматизированных оптиметров -->
+<!-- Виды прогибомеров -->
 <section class="caliper-types-section">
   <div class="container">
     <div class="caliper-types-panel">
       <div class="caliper-types-head">
         <div class="kicker">Виды средств измерений</div>
-        <h2>Какие оптиметры мы поверяем</h2>
+        <h2>Какие прогибомеры мы поверяем</h2>
         <p>
-          Выполняем поверку вертикальных и горизонтальных оптиметров всех модификаций и исполнений.
+          Выполняем поверку всех типов и модификаций прогибомеров.<br>
+            У нас возможна:
         </p>
       </div>
 
-      <div class="reveal"
-           style="
-             margin:24px 0;
-             padding:24px;
-             border:1px solid rgba(var(--c-rgb), .34);
-             border-radius:24px;
-             background:linear-gradient(135deg, rgba(var(--c-rgb), .14), rgba(var(--c-rgb), .04));
-             box-shadow:0 16px 36px rgba(13, 19, 33, .08);
-           ">
-        <div style="display:flex; align-items:flex-start; gap:16px;">
-          <div style="
-                 width:52px;
-                 height:52px;
-                 flex:0 0 52px;
-                 display:flex;
-                 align-items:center;
-                 justify-content:center;
-                 border-radius:17px;
-                 background:var(--c-600);
-                 color:#fff;
-               ">
-            <i data-lucide="badge-check" class="w-6 h-6"></i>
-          </div>
-
-          <div style="min-width:0;">
-            <div class="kicker" style="margin-bottom:7px;">Метрологическая прослеживаемость</div>
-            <h3 style="margin:0; font-size:clamp(20px, 2vw, 28px); line-height:1.2;">
-              Поверка оптиметров в качестве рабочих эталонов
-            </h3>
-            <p style="margin:12px 0 0; line-height:1.75; color:rgba(var(--ink-rgb), .78);">
-              Поверяем приборы на соответствие требованиям рабочих эталонов
-              в соответствии с локальной поверочной схемой, обеспечивания прослеживаемость
-              к Государственной поверочной схеме.
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div class="caliper-types-groups">
-        <div class="caliper-type-group">
+        <div class="caliper-type-group" style="grid-column:1 / -1;">
           <div class="caliper-type-group__top">
             <div class="caliper-type-group__icon">
-              <i data-lucide="move-horizontal"></i>
+              <i data-lucide="activity"></i>
             </div>
             <div>
-              <h2>Горизонтальные оптиметры</h2>
+              <h2>Механические и электронные прогибомеры</h2>
             </div>
           </div>
 
           <div class="caliper-type-list">
             <div class="caliper-type-row">
               <span>01</span>
-              <strong>Оптиметры горизонтальные ИКГ-300 и ИКГ-500</strong>
+              <strong>
+                Прогибомеры ПМ производства ООО «ВИНС» —
+                ГРСИ № 95033-25
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>02</span>
-              <strong>Автоматизированные оптиметры ИКГа-300, ИКГа-500, ИКГм-300 и ИКГм-500</strong>
+              <strong>
+                Прогибомеры ПМ производства ООО «НПО «КировИнструмент» —
+                ГРСИ № 77412-20
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>03</span>
-              <strong>Модели ИКГа и ИКГм по ГРСИ № 97427-26 производства ООО «МЦ Севр групп»</strong>
+              <strong>
+                Прогибомеры ПСК-МГ4 производства ООО «СКБ Стройприбор» —
+                ГРСИ № 55861-13
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>04</span>
-              <strong>Электронные оптиметры ИКГэ и ИКГ-3э по ГРСИ № 52617-13 производства АО «РИК»</strong>
+              <strong>
+                Прогибомеры ПМ производства ООО «КРИН» —
+                ГРСИ № 35819-12
+              </strong>
             </div>
-          </div>
-        </div>
 
-        <div class="caliper-type-group">
-          <div class="caliper-type-group__top">
-            <div class="caliper-type-group__icon">
-              <i data-lucide="move-vertical"></i>
-            </div>
-            <div>
-              <h2>Вертикальные оптиметры</h2>
-            </div>
-          </div>
-
-          <div class="caliper-type-list">
             <div class="caliper-type-row">
               <span>05</span>
-              <strong>Оптиметры на вертикальном штативе ИКВ и ИКВ-3</strong>
+              <strong>
+                Прогибомеры ПМ производства ЗАО «КРИН» —
+                ГРСИ № 35819-07
+              </strong>
             </div>
 
             <div class="caliper-type-row">
               <span>06</span>
-              <strong>Автоматизированные вертикальные оптиметры ИКВа-180 и ИКВм-180</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>07</span>
-              <strong>Модели ИКВа и ИКВм по ГРСИ № 97427-26</strong>
-            </div>
-
-            <div class="caliper-type-row">
-              <span>08</span>
-              <strong>Вертикальные электронные оптиметры ИКВэ по ГРСИ № 52617-13</strong>
+              <strong>
+                Прогибомеры 6ПАО производства АО «Измерон» —
+                ГРСИ № 3828-73
+              </strong>
             </div>
           </div>
         </div>
@@ -185,12 +142,12 @@
 </section>
 
 <!-- PRICE TABLE -->
-<section class="price-catalog section" id="automated-optimeters-price">
+<section class="price-catalog section" id="deflection-gauges-price">
   <div class="container">
         <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
       <div>
         <div class="kicker">Прайс-лист</div>
-        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку автоматизированных оптиметров в ЦСМ ДВИНТА</h2>
+        <h2 class="h2" style="margin-top:8px;">Прайс-лист на поверку прогибомеров в ЦСМ ДВИНТА</h2>
       </div>
     </div>
 
@@ -264,7 +221,7 @@
           </div>
 
           <div class="tline-text">
-            <div class="tline-title">Какие сроки поверки автоматизированных оптиметров у нас?</div>
+            <div class="tline-title">Какие сроки поверки прогибомеров у нас?</div>
             <div class="tline-sub">
               Стандартно, включая передачу сведений в ФИФ «Аршин»
             </div>
@@ -326,7 +283,7 @@
   <div class="container">
 
     <div class="reveal" style="text-align:center;">
-      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить оптиметр в ЦСМ ДВИНТА</h2>
+      <h2 class="h2" style="margin-top:8px;">Что нужно сделать, чтобы поверить прогибомер в ЦСМ ДВИНТА</h2>
     </div>
 
     <!-- Wide top banner -->
@@ -519,7 +476,7 @@
   <div class="container">
     <div class="reveal" style="text-align:center;">
       <div class="kicker">FAQ</div>
-      <h2 class="h2" style="margin-top:8px;">Частые вопросы по поверке автоматизированных оптиметров</h2>
+      <h2 class="h2" style="margin-top:8px;">Частые вопросы по поверке прогибомеров</h2>
         <p class="p-lead" style="margin-top:10px; max-width: 920px; margin-left:auto; margin-right:auto;">
           Собрали ответы на самые частые вопросы по поверке средств измерений.
         </p>
@@ -527,12 +484,12 @@
 
     <div class="faq-wrap reveal" style="margin-top:22px;">
       {% set faq = [
-        {"q":"Какие автоматизированные оптиметры можно поверить?",
-         "a":"Автоматизированные оптиметры, применяющиеся в сфере государственного регулирования обеспечения единства измерений, и утвержденного типа – поверяются."},
-        {"q":"Как подтверждаются результаты поверки автоматизированных оптиметров?",
+        {"q":"Какие прогибомеры можно поверить?",
+         "a":"Прогибомеры, применяющиеся в сфере государственного регулирования обеспечения единства измерений, и утвержденного типа – поверяются."},
+        {"q":"Как подтверждаются результаты поверки прогибомеров?",
          "a":"Результаты поверки подтверждаются сведениями, включёнными в Федеральный информационный фонд по обеспечению единства измерений (ФИФ). По заявлению владельца СИ возможно: выдача свидетельства о поверке или извещения о непригодности."},
-        {"q":"Какие автоматизированные оптиметры поверяют в ЦСМ Двинта?",
-         "a":"В ЦСМ Двинта поверяют все типы автоматизированных оптиметров. Мы работаем со всеми мировыми и российскими брендами-производителями."}
+        {"q":"Какие прогибомеры поверяют в ЦСМ Двинта?",
+         "a":"В ЦСМ Двинта поверяют все типы прогибомеров. Мы работаем со всеми мировыми и российскими брендами-производителями."}
       ] %}
 
       {% for item in faq %}
@@ -547,8 +504,8 @@
 
           {% if loop.index == 1 %}
           <div style="margin-top:12px;">
-            Проверить утвержден ли тип автоматизированного оптиметра можно на официальном сайте
-            <a href="https://fgis.gost.ru/fundmetrology/cm/mits?page=1&size=20&sort=number&sort=desc&text=Оптиметры"
+            Проверить утвержден ли тип прогибомера можно на официальном сайте
+            <a href="https://fgis.gost.ru/fundmetrology/cm/mits?page=1&size=20&sort=number&sort=desc&text=Прогибомеры"
                target="_blank" rel="noopener" style="color:var(--c-400);font-weight:800;">Федерального информационного фонда по обеспечению единства измерений</a>
           </div>
           {% endif %}
@@ -575,7 +532,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- FAQ script (inline, because accordion.js is not loaded in base.html) -->
 <script>

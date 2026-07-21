@@ -748,6 +748,149 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "measuring_head_indicator_verification_instruments") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для поверки измерительных головок, индикаторов и индикаторных нутромеров";
+        });
+      }
+
+      if (equipmentType === "pb_runout_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return (
+                itemName ===
+                "приборы для измерений (проверки) изделий на биение в центрах"
+            );
+        });
+      }
+
+      if (equipmentType === "deflection_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return (
+                itemName === "прогибомеры" ||
+                itemName === "прогибомеры электронные"
+            );
+        });
+      }
+
+      if (equipmentType === "kmf_strain_sensor_calibrators") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "калибраторы датчиков деформаций";
+        });
+      }
+
+      if (equipmentType === "gluten_deformation_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "измерители деформации клейковины";
+        });
+      }
+
+      if (equipmentType === "groove_sensitivity_standards") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "эталоны чувствительности канавочные";
+        });
+      }
+
+      if (equipmentType === "kdsk_control_equipment_delivery_complexes") {
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "комплексы доставки средств контроля";
+        });
+      }
+
+      if (equipmentType === "holex_chamfer_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "шаблоны для фасок";
+        });
+      }
+
+      if (equipmentType === "welder_and_ndt_inspection_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return (
+                itemName === "шаблоны сварщика универсальные" ||
+                itemName === "шаблоны специалиста неразрушающего контроля"
+            );
+        });
+      }
+
+      if (equipmentType === "cable_and_extended_object_length_measuring_devices") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители, устройства для измерений длины кабеля, материалов, протяженных объектов";
+        });
+      }
+
+      if (equipmentType === "scantrack_2000_bulk_material_volume_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "установки для измерения объема сыпучих материалов";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

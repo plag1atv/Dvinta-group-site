@@ -457,6 +457,72 @@ def create_app() -> Flask:
                     "icon": "ruler",
                     "href": "/equipment_gauge_block_verification_systems.html",
                 },
+                {
+                    "title": "Приборы для поверки головок и индикаторов",
+                    "description": "Поверка приборов ППГ, ППИ, Precimar, i-Checker, Optimar и Mitutoyo для измерительных головок, датчиков и индикаторов.",
+                    "icon": "gauge",
+                    "href": "/equipment_measuring_head_indicator_verification_instruments.html",
+                },
+                {
+                    "title": "Биениемеры ПБ",
+                    "description": "Поверка приборов ПБ для контроля радиального и торцевого биения деталей, закреплённых в центрах.",
+                    "icon": "scan-line",
+                    "href": "/equipment_pb_runout_testers.html",
+                },
+                {
+                    "title": "Прогибомеры",
+                    "description": "Поверка механических и электронных прогибомеров ПМ, ПСК-МГ4 и 6ПАО для измерения перемещений конструкций.",
+                    "icon": "move-vertical",
+                    "href": "/equipment_deflection_gauges.html",
+                },
+                {
+                    "title": "Калибраторы датчиков деформаций KMF",
+                    "description": "Поверка калибраторов KMF-01, KMF-3 и KMF-100 для проверки линейности датчиков деформации и калибровки усилителей.",
+                    "icon": "sliders-horizontal",
+                    "href": "/equipment_kmf_strain_sensor_calibrators.html",
+                },
+                {
+                    "title": "Измерители деформации клейковины ИДК",
+                    "description": "Поверка измерителей ИДК-М, ИДК-10, ИДК-3М, ИДК-7 и других модификаций для определения качества клейковины.",
+                    "icon": "wheat",
+                    "href": "/equipment_gluten_deformation_meters.html",
+                },
+                {
+                    "title": "Эталоны чувствительности канавочные",
+                    "description": "Поверка канавочных эталонов МЕТР, АРГО, Спрут ЭЧК, ЭЧК1 и ЭЧК2 для радиографического контроля.",
+                    "icon": "scan-line",
+                    "href": "/equipment_groove_sensitivity_standards.html",
+                },
+                {
+                    "title": "Комплексы доставки средств контроля КДСК",
+                    "description": "Поверка всех 16 исполнений КДСК для измерения линейных и угловых координат при неразрушающем контроле.",
+                    "icon": "crosshair",
+                    "href": "/equipment_kdsk_control_equipment_delivery_complexes.html",
+                },
+                {
+                    "title": "Шаблоны для фасок Holex",
+                    "description": "Поверка шаблонов Holex для измерения угла скоса и линейной длины фаски по ГРСИ № 86698-22.",
+                    "icon": "ruler",
+                    "href": "/equipment_holex_chamfer_gauges.html",
+                },
+                {
+                    "title": "Шаблоны сварщика и специалиста НК",
+                    "description": "Поверка универсальных шаблонов сварщика Калиброн, WG, УШК, УШС, Элитест и шаблонов специалиста НК TapiRUS.",
+                    "icon": "scan-search",
+                    "href": "/equipment_welder_and_ndt_inspection_gauges.html",
+                },
+                {
+                    "title": "Устройства для измерений длины кабеля и материалов",
+                    "description": "Поверка измерителей длины кабеля, проводов, рулонных и текстильных материалов, кабельной продукции и протяженных объектов.",
+                    "icon": "route",
+                    "href": "/equipment_cable_and_extended_object_length_measuring_devices.html",
+                },
+                {
+                    "title": "Установки «СканТрек-2000»",
+                    "description": "Поверка установок для автоматического измерения объема и линейных размеров сыпучих материалов в движущихся объектах.",
+                    "icon": "scan-line",
+                    "href": "/equipment_scantrack_2000_bulk_material_volume_systems.html",
+                },
             ],
         },
         "mechanical": {
@@ -950,6 +1016,105 @@ def create_app() -> Flask:
             "equipment_gauge_block_verification_systems.html",
             title="Поверка установок и компараторов для КМД",
             equipment_type="gauge_block_verification_systems"
+        )
+
+    @app.route("/equipment_measuring_head_indicator_verification_instruments.html")
+    @app.route("/equipment/measuring-head-indicator-verification-instruments")
+    def equipment_measuring_head_indicator_verification_instruments():
+        return render_template(
+            "equipment_measuring_head_indicator_verification_instruments.html",
+            title="Поверка приборов для измерительных головок и индикаторов",
+            equipment_type="measuring_head_indicator_verification_instruments"
+        )
+
+    @app.route("/equipment_pb_runout_testers.html")
+    @app.route("/equipment/pb-runout-testers")
+    def equipment_pb_runout_testers():
+        return render_template(
+            "equipment_pb_runout_testers.html",
+            title="Поверка биениемеров ПБ",
+            equipment_type="pb_runout_testers"
+        )
+
+    @app.route("/equipment_deflection_gauges.html")
+    @app.route("/equipment/deflection-gauges")
+    def equipment_deflection_gauges():
+        return render_template(
+            "equipment_deflection_gauges.html",
+            title="Поверка прогибомеров",
+            equipment_type="deflection_gauges"
+        )
+
+    @app.route("/equipment_kmf_strain_sensor_calibrators.html")
+    @app.route("/equipment/kmf-strain-sensor-calibrators")
+    def equipment_kmf_strain_sensor_calibrators():
+        return render_template(
+            "equipment_kmf_strain_sensor_calibrators.html",
+            title="Поверка калибраторов датчиков деформаций KMF",
+            equipment_type="kmf_strain_sensor_calibrators"
+        )
+
+    @app.route("/equipment_gluten_deformation_meters.html")
+    @app.route("/equipment/gluten-deformation-meters")
+    def equipment_gluten_deformation_meters():
+        return render_template(
+            "equipment_gluten_deformation_meters.html",
+            title="Поверка измерителей деформации клейковины ИДК",
+            equipment_type="gluten_deformation_meters"
+        )
+
+    @app.route("/equipment_groove_sensitivity_standards.html")
+    @app.route("/equipment/groove-sensitivity-standards")
+    def equipment_groove_sensitivity_standards():
+        return render_template(
+            "equipment_groove_sensitivity_standards.html",
+            title="Поверка эталонов чувствительности канавочных",
+            equipment_type="groove_sensitivity_standards"
+        )
+
+    @app.route("/equipment_kdsk_control_equipment_delivery_complexes.html")
+    @app.route("/equipment/kdsk-control-equipment-delivery-complexes")
+    def equipment_kdsk_control_equipment_delivery_complexes():
+        return render_template(
+            "equipment_kdsk_control_equipment_delivery_complexes.html",
+            title="Поверка комплекса доставки средств контроля КДСК",
+            equipment_type="kdsk_control_equipment_delivery_complexes"
+        )
+
+    @app.route("/equipment_holex_chamfer_gauges.html")
+    @app.route("/equipment/holex-chamfer-gauges")
+    def equipment_holex_chamfer_gauges():
+        return render_template(
+            "equipment_holex_chamfer_gauges.html",
+            title="Поверка шаблонов для фасок Holex",
+            equipment_type="holex_chamfer_gauges"
+        )
+
+    @app.route("/equipment_welder_and_ndt_inspection_gauges.html")
+    @app.route("/equipment/welder-and-ndt-inspection-gauges")
+    def equipment_welder_and_ndt_inspection_gauges():
+        return render_template(
+            "equipment_welder_and_ndt_inspection_gauges.html",
+            title="Поверка шаблонов сварщика универсальных и шаблонов специалиста неразрушающего контроля",
+            equipment_type="welder_and_ndt_inspection_gauges"
+        )
+
+    @app.route("/equipment_cable_and_extended_object_length_measuring_devices.html")
+    @app.route("/equipment/cable-and-extended-object-length-measuring-devices")
+    def equipment_cable_and_extended_object_length_measuring_devices():
+        return render_template(
+            "equipment_cable_and_extended_object_length_measuring_devices.html",
+            title="Поверка устройств для измерений длины кабеля, материалов и протяженных объектов",
+            equipment_type="cable_and_extended_object_length_measuring_devices"
+        )
+
+    @app.route("/equipment_scantrack_2000_bulk_material_volume_systems.html")
+    @app.route("/equipment/scantrack-2000-bulk-material-volume-systems")
+    def equipment_scantrack_2000_bulk_material_volume_systems():
+        return render_template(
+            "equipment_scantrack_2000_bulk_material_volume_systems.html",
+            title="Поверка установок для измерения объема сыпучих материалов СканТрек-2000",
+            equipment_type="scantrack_2000_bulk_material_volume_systems"
         )
 
     # Метrology

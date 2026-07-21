@@ -673,7 +673,6 @@ def create_app() -> Flask:
             equipment_type="tape_measures_meter_rods"
         )
 
-
     @app.route("/equipment_surface_plates.html")
     @app.route("/equipment/surface-plates")
     def equipment_surface_plates():

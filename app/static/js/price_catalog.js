@@ -891,6 +891,81 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "cargo_dimension_measurement_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "установки для измерений габаритных размеров грузов, геометрических параметров движущихся объектов";
+        });
+      }
+
+      if (equipmentType === "scantrack_moving_object_geometry_system") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "установки для измерений габаритных размеров грузов, геометрических параметров движущихся объектов";
+        });
+      }
+
+      if (equipmentType === "laser_length_measurement_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "системы для измерений длины лазерные";
+        });
+      }
+
+      if (equipmentType === "elcometer_224_surface_profile_gauge") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "профилемеры поверхности";
+        });
+      }
+
+      if (equipmentType === "measuring_video_endoscopes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "видеоэндоскопы измерительные";
+        });
+      }
+
+      if (equipmentType === "coating_thickness_measures") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "меры толщины покрытий";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

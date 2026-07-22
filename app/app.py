@@ -523,6 +523,42 @@ def create_app() -> Flask:
                     "icon": "scan-line",
                     "href": "/equipment_scantrack_2000_bulk_material_volume_systems.html",
                 },
+                {
+                    "title": "Установки измерения габаритов грузов",
+                    "description": "Поверка комплексов КАИГ, КАИГ 2 и установок СканТрек-2100 для бесконтактного измерения длины, ширины и высоты грузов.",
+                    "icon": "scan-line",
+                    "href": "/equipment_cargo_dimension_measurement_systems.html",
+                },
+                {
+                    "title": "Установки «СканТрек»",
+                    "description": "Поверка установок для автоматизированного измерения ширины, высоты, длины, площади сечения и объема движущихся объектов.",
+                    "icon": "scan-line",
+                    "href": "/equipment_scantrack_moving_object_geometry_system.html",
+                },
+                {
+                    "title": "Лазерные системы измерения длины",
+                    "description": "Поверка лазерных систем LDM42A, DP и бесконтактных измерителей длины SL mini и SL.",
+                    "icon": "scan-line",
+                    "href": "/equipment_laser_length_measurement_systems.html",
+                },
+                {
+                    "title": "Профилемер Elcometer 224",
+                    "description": "Поверка цифрового профилемера Elcometer 224 для измерения высоты профиля металлических поверхностей после пескоструйной и дробеструйной очистки.",
+                    "icon": "gauge",
+                    "href": "/equipment_elcometer_224_surface_profile_gauge.html",
+                },
+                {
+                    "title": "Видеоэндоскопы измерительные",
+                    "description": "Поверка измерительных видеоэндоскопов для определения линейных размеров и глубины поверхностных дефектов при визуальном обследовании объектов.",
+                    "icon": "scan-search",
+                    "href": "/equipment_measuring_video_endoscopes.html",
+                },
+                {
+                    "title": "Меры толщины покрытий",
+                    "description": "Поверка мер МТ, натурных мер МТП и комплектов ELCOMETER 990 для калибровки и поверки толщиномеров покрытий.",
+                    "icon": "layers-3",
+                    "href": "/equipment_coating_thickness_measures.html",
+                },
             ],
         },
         "mechanical": {
@@ -1115,6 +1151,60 @@ def create_app() -> Flask:
             "equipment_scantrack_2000_bulk_material_volume_systems.html",
             title="Поверка установок для измерения объема сыпучих материалов СканТрек-2000",
             equipment_type="scantrack_2000_bulk_material_volume_systems"
+        )
+
+    @app.route("/equipment_cargo_dimension_measurement_systems.html")
+    @app.route("/equipment/cargo-dimension-measurement-systems")
+    def equipment_cargo_dimension_measurement_systems():
+        return render_template(
+            "equipment_cargo_dimension_measurement_systems.html",
+            title="Поверка установок для измерений габаритных размеров грузов",
+            equipment_type="cargo_dimension_measurement_systems"
+        )
+
+    @app.route("/equipment_scantrack_moving_object_geometry_system.html")
+    @app.route("/equipment/scantrack-moving-object-geometry-system")
+    def equipment_scantrack_moving_object_geometry_system():
+        return render_template(
+            "equipment_scantrack_moving_object_geometry_system.html",
+            title="Поверка установок для измерения геометрических параметров движущихся объектов СканТрек",
+            equipment_type="scantrack_moving_object_geometry_system"
+        )
+
+    @app.route("/equipment_laser_length_measurement_systems.html")
+    @app.route("/equipment/laser-length-measurement-systems")
+    def equipment_laser_length_measurement_systems():
+        return render_template(
+            "equipment_laser_length_measurement_systems.html",
+            title="Поверка систем для измерений длины лазерных",
+            equipment_type="laser_length_measurement_systems"
+        )
+
+    @app.route("/equipment_elcometer_224_surface_profile_gauge.html")
+    @app.route("/equipment/elcometer-224-surface-profile-gauge")
+    def equipment_elcometer_224_surface_profile_gauge():
+        return render_template(
+            "equipment_elcometer_224_surface_profile_gauge.html",
+            title="Поверка профилемера поверхности цифрового Elcometer 224",
+            equipment_type="elcometer_224_surface_profile_gauge"
+        )
+
+    @app.route("/equipment_measuring_video_endoscopes.html")
+    @app.route("/equipment/measuring-video-endoscopes")
+    def equipment_measuring_video_endoscopes():
+        return render_template(
+            "equipment_measuring_video_endoscopes.html",
+            title="Поверка видеоэндоскопов измерительных",
+            equipment_type="measuring_video_endoscopes"
+        )
+
+    @app.route("/equipment_coating_thickness_measures.html")
+    @app.route("/equipment/coating-thickness-measures")
+    def equipment_coating_thickness_measures():
+        return render_template(
+            "equipment_coating_thickness_measures.html",
+            title="Поверка мер толщины покрытий",
+            equipment_type="coating_thickness_measures"
         )
 
     # Метrology

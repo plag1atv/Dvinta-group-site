@@ -55,7 +55,7 @@
   -->
 
 </head>
-<body class="min-h-screen flex flex-col bg-soft has-mountain" data-equipment="{{ equipment_type }}">
+<body class="min-h-screen flex flex-col bg-soft has-modern-background" data-equipment="{{ equipment_type }}">
 
   <noscript>
       <div>
@@ -65,10 +65,38 @@
       </div>
   </noscript>
 
-  <!-- Parallax background -->
-  <div id="sun-bg" aria-hidden="true"></div>
-  <div id="mountain-bg" aria-hidden="true"></div>
-  <div id="trees-bg" aria-hidden="true"></div>
+  <!-- Modern animated background -->
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__grid"></div>
+
+    <div class="site-background__glow site-background__glow--top"></div>
+    <div class="site-background__glow site-background__glow--bottom"></div>
+    <div class="site-background__glow site-background__glow--center"></div>
+
+    <div class="site-background__shape site-background__shape--ring">
+      <div class="site-background__shape-core"></div>
+    </div>
+
+    <div class="site-background__shape site-background__shape--square">
+      <div class="site-background__shape-core"></div>
+    </div>
+
+    <div class="site-background__shape site-background__shape--plate">
+      <div class="site-background__shape-core"></div>
+    </div>
+
+    <div class="site-background__shape site-background__shape--pill">
+      <div class="site-background__shape-core"></div>
+    </div>
+
+    <div class="site-background__shape site-background__shape--measure">
+      <div class="site-background__shape-core"></div>
+    </div>
+
+    <div class="site-background__shape site-background__shape--dots">
+      <div class="site-background__shape-core"></div>
+    </div>
+  </div>
 
   {% include "partials/header.html" %}
   <main class="flex-1">

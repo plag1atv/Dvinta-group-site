@@ -55,7 +55,7 @@
   -->
 
 </head>
-<body class="min-h-screen flex flex-col bg-soft has-modern-background" data-equipment="{{ equipment_type }}">
+<body class="min-h-screen flex flex-col bg-soft has-modern-bg" data-equipment="{{ equipment_type }}">
 
   <noscript>
       <div>
@@ -65,13 +65,15 @@
       </div>
   </noscript>
 
-  <!-- Modern animated background -->
-  <div class="modern-background" aria-hidden="true">
-    <span class="modern-background__shape modern-background__shape--ring"></span>
-    <span class="modern-background__shape modern-background__shape--square"></span>
-    <span class="modern-background__shape modern-background__shape--circle"></span>
-    <span class="modern-background__shape modern-background__shape--pill"></span>
-    <span class="modern-background__shape modern-background__shape--small-ring"></span>
+  <!-- Современный анимированный фон -->
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__scene" id="modernBackgroundScene">
+      <span class="bg-shape bg-shape--circle"></span>
+      <span class="bg-shape bg-shape--square"></span>
+      <span class="bg-shape bg-shape--ring"></span>
+      <span class="bg-shape bg-shape--pill"></span>
+      <span class="bg-shape bg-shape--small"></span>
+    </div>
   </div>
 
   {% include "partials/header.html" %}

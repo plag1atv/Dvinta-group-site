@@ -1198,6 +1198,7 @@ def create_app() -> Flask:
             equipment_type="measuring_video_endoscopes"
         )
 
+
     @app.route("/equipment_coating_thickness_measures.html")
     @app.route("/equipment/coating-thickness-measures")
     def equipment_coating_thickness_measures():

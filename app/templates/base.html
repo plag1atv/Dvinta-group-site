@@ -65,15 +65,9 @@
       </div>
   </noscript>
 
-  <!-- Современный анимированный фон -->
-  <div class="site-background" aria-hidden="true">
-    <div class="site-background__scene" id="modernBackgroundScene">
-      <span class="bg-shape bg-shape--circle"></span>
-      <span class="bg-shape bg-shape--square"></span>
-      <span class="bg-shape bg-shape--ring"></span>
-      <span class="bg-shape bg-shape--pill"></span>
-      <span class="bg-shape bg-shape--small"></span>
-    </div>
+  <!-- Процедурная 3D-гора -->
+  <div id="mountain-scene" aria-hidden="true">
+    <canvas id="mountain-canvas"></canvas>
   </div>
 
   {% include "partials/header.html" %}
@@ -108,6 +102,7 @@
 
   <!-- Lucide icons (for <i data-lucide="..."></i>) -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{{ url_for('static', filename='js/mountain.js') }}"></script>
   <script src="{{ url_for('static', filename='js/site.js') }}"></script>
   <script>
     if (window.lucide) { lucide.createIcons(); }

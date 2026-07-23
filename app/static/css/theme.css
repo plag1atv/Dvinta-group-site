@@ -85,472 +85,221 @@ body{
   letter-spacing: -0.01em;
 }
 
-/* ===== Современный анимированный фон ===== */
+/* =========================================================
+   ПРОЦЕДУРНЫЙ ФОН С ОБЪЁМНОЙ 3D-ГОРОЙ
+   ========================================================= */
 
-html{
-  background: #f3f8fc;
+html {
+  background: #f3f7f6;
 }
 
-body.has-modern-bg{
+body.has-mountain {
   position: relative;
-  isolation: isolate;
   background: transparent !important;
 }
 
 /*
-  Основной цветной слой.
-
-  Расположение цветов:
-  - бирюзовый — сверху слева;
-  - глубокий синий — сверху справа;
-  - светло-голубой — снизу слева;
-  - морской синий — снизу справа;
-  - центральная область остаётся светлой.
-*/
-.site-background{
+ * Общий неподвижный слой фона.
+ * Он остаётся на месте при прокрутке страницы.
+ */
+#mountain-scene {
   position: fixed;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
 
   overflow: hidden;
   pointer-events: none;
 
   z-index: 0;
+  isolation: isolate;
 
-  background:
-    radial-gradient(
-      circle at 7% 13%,
-      rgba(6, 182, 212, .32) 0%,
-      rgba(6, 182, 212, .15) 19%,
-      rgba(6, 182, 212, 0) 43%
-    ),
-
-    radial-gradient(
-      circle at 92% 17%,
-      rgba(27, 58, 138, .27) 0%,
-      rgba(27, 58, 138, .12) 21%,
-      rgba(27, 58, 138, 0) 46%
-    ),
-
-    radial-gradient(
-      circle at 15% 91%,
-      rgba(125, 211, 252, .29) 0%,
-      rgba(125, 211, 252, .13) 22%,
-      rgba(125, 211, 252, 0) 47%
-    ),
-
-    radial-gradient(
-      circle at 84% 88%,
-      rgba(14, 116, 144, .28) 0%,
-      rgba(14, 116, 144, .12) 22%,
-      rgba(14, 116, 144, 0) 48%
-    ),
-
-    linear-gradient(
-      135deg,
-      #f9fcff 0%,
-      #eef9fb 35%,
-      #f7f9ff 67%,
-      #edf8ff 100%
-    );
+  background: #f3f7f6;
 }
 
-/* Светлая область в центре для хорошей читаемости текста */
-.site-background::before{
-  content: "";
-
-  position: absolute;
-  inset: -10%;
-
-  z-index: 0;
-
-  background:
-    radial-gradient(
-      ellipse at 50% 44%,
-      rgba(255, 255, 255, .88) 0%,
-      rgba(255, 255, 255, .57) 30%,
-      rgba(255, 255, 255, 0) 68%
-    );
-}
-
-/* Лёгкая современная сетка */
-.site-background::after{
+/*
+ * Основной градиент.
+ *
+ * Мятный цвет расположен сверху слева,
+ * холодный сине-фиолетовый — справа,
+ * тёплый кремовый — снизу слева.
+ */
+#mountain-scene::before {
   content: "";
 
   position: absolute;
   inset: 0;
 
-  z-index: 1;
+  z-index: -2;
 
-  opacity: .55;
-
-  background-image:
-    linear-gradient(
-      rgba(11, 27, 58, .035) 1px,
-      transparent 1px
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(145, 217, 191, 0.66) 0%,
+      rgba(145, 217, 191, 0.30) 17%,
+      rgba(145, 217, 191, 0) 39%
     ),
-    linear-gradient(
-      90deg,
-      rgba(11, 27, 58, .035) 1px,
-      transparent 1px
-    );
 
-  background-size: 48px 48px;
+    radial-gradient(
+      circle at 94% 23%,
+      rgba(173, 191, 235, 0.64) 0%,
+      rgba(173, 191, 235, 0.28) 20%,
+      rgba(173, 191, 235, 0) 43%
+    ),
+
+    radial-gradient(
+      circle at 18% 92%,
+      rgba(241, 204, 164, 0.50) 0%,
+      rgba(241, 204, 164, 0.20) 21%,
+      rgba(241, 204, 164, 0) 44%
+    ),
+
+    radial-gradient(
+      circle at 70% 76%,
+      rgba(152, 205, 199, 0.28) 0%,
+      rgba(152, 205, 199, 0) 38%
+    ),
+
+    linear-gradient(
+      145deg,
+      #fbfdfc 0%,
+      #edf5f5 43%,
+      #f8f2e9 100%
+    );
 }
 
 /*
-  Общая сцена двигается за курсором.
-  Отдельные фигуры дополнительно двигаются через CSS-анимации.
-*/
-.site-background__scene{
+ * Незаметная точечная текстура.
+ * Она делает фон менее пустым и более современным.
+ */
+#mountain-scene::after {
+  content: "";
+
   position: absolute;
-  inset: -40px;
+  inset: 0;
 
-  z-index: 2;
+  z-index: -1;
 
-  transform: translate3d(0, 0, 0);
-  transition: transform .55s cubic-bezier(.2, .8, .2, 1);
+  opacity: 0.28;
 
-  will-change: transform;
+  background-image:
+    radial-gradient(
+      rgba(34, 78, 82, 0.16) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 28px 28px;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.42),
+      rgba(0, 0, 0, 0.12) 48%,
+      transparent 82%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.42),
+      rgba(0, 0, 0, 0.12) 48%,
+      transparent 82%
+    );
 }
 
-/* Общие параметры фигур */
-.bg-shape{
+/*
+ * Canvas, внутри которого JavaScript рисует гору.
+ */
+#mountain-canvas {
   position: absolute;
+  inset: 0;
+
   display: block;
 
-  opacity: .88;
+  width: 100%;
+  height: 100%;
 
-  border: 1px solid rgba(255, 255, 255, .82);
+  opacity: 0.96;
 
-  box-shadow:
-    0 24px 60px rgba(11, 27, 58, .20),
-    inset 0 1px 0 rgba(255, 255, 255, .72);
+  filter:
+    saturate(1.06)
+    contrast(1.04);
 
-  filter: saturate(1.12);
+  transform: translateZ(0);
 
-  will-change: transform;
+  will-change: contents;
 }
 
-/* Круг сверху слева */
-.bg-shape--circle{
-  top: 13%;
-  left: 5%;
-
-  width: 132px;
-  height: 132px;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(6, 182, 212, .96),
-      rgba(14, 116, 144, .64)
-    );
-
-  animation: modern-float-one 11s ease-in-out infinite;
-}
-
-/* Скруглённый квадрат сверху справа */
-.bg-shape--square{
-  top: 14%;
-  right: 7%;
-
-  width: 164px;
-  height: 164px;
-
-  border-radius: 34px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(27, 58, 138, .91),
-      rgba(6, 182, 212, .56)
-    );
-
-  transform: rotate(12deg);
-
-  animation: modern-float-two 15s ease-in-out infinite;
-}
-
-/* Простое кольцо снизу слева */
-.bg-shape--ring{
-  left: 13%;
-  bottom: 9%;
-
-  width: 172px;
-  height: 172px;
-
-  border: 18px solid rgba(14, 116, 144, .67);
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, .20);
-
-  box-shadow:
-    0 24px 60px rgba(14, 116, 144, .22),
-    inset 0 0 24px rgba(255, 255, 255, .35);
-
-  animation: modern-float-three 17s ease-in-out infinite;
-}
-
-/* Вытянутая фигура снизу справа */
-.bg-shape--pill{
-  right: 10%;
-  bottom: 13%;
-
-  width: 224px;
-  height: 86px;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      110deg,
-      rgba(14, 116, 144, .90),
-      rgba(6, 182, 212, .72)
-    );
-
-  transform: rotate(-10deg);
-
-  animation: modern-float-four 13s ease-in-out infinite;
-}
-
-/* Небольшой дополнительный круг */
-.bg-shape--small{
-  top: 50%;
-  right: 29%;
-
-  width: 68px;
-  height: 68px;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(27, 58, 138, .86),
-      rgba(14, 116, 144, .60)
-    );
-
-  animation: modern-float-five 10s ease-in-out infinite;
-}
-
-/* Движение большого круга */
-@keyframes modern-float-one{
-  0%,
-  100%{
-    transform: translate3d(0, 0, 0);
-  }
-
-  50%{
-    transform: translate3d(28px, -20px, 0);
-  }
-}
-
-/* Движение квадрата */
-@keyframes modern-float-two{
-  0%,
-  100%{
-    transform: translate3d(0, 0, 0) rotate(12deg);
-  }
-
-  50%{
-    transform: translate3d(-22px, 24px, 0) rotate(19deg);
-  }
-}
-
-/* Движение кольца */
-@keyframes modern-float-three{
-  0%,
-  100%{
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  50%{
-    transform: translate3d(24px, -18px, 0) scale(1.05);
-  }
-}
-
-/* Движение вытянутой фигуры */
-@keyframes modern-float-four{
-  0%,
-  100%{
-    transform: translate3d(0, 0, 0) rotate(-10deg);
-  }
-
-  50%{
-    transform: translate3d(-25px, -20px, 0) rotate(-5deg);
-  }
-}
-
-/* Движение маленького круга */
-@keyframes modern-float-five{
-  0%,
-  100%{
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  50%{
-    transform: translate3d(18px, 22px, 0) scale(1.12);
-  }
-}
-
-/* Контент должен находиться поверх фона */
-body.has-modern-bg header{
+/*
+ * Шапка и содержимое сайта должны
+ * располагаться поверх фона.
+ */
+body.has-mountain header {
   position: relative;
   z-index: 10000;
 }
 
-body.has-modern-bg main,
-body.has-modern-bg footer{
+body.has-mountain main,
+body.has-mountain footer {
   position: relative;
   z-index: 1;
 }
 
-/* Планшеты */
-@media (max-width: 900px){
-  .bg-shape{
-    opacity: .78;
+/*
+ * На телефонах немного уменьшаем контраст горы,
+ * чтобы она не мешала читать текст.
+ */
+@media (max-width: 760px) {
+  #mountain-canvas {
+    opacity: 0.84;
+
+    filter:
+      saturate(0.96)
+      contrast(0.98);
   }
 
-  .bg-shape--circle{
-    top: 14%;
-    left: -18px;
-
-    width: 106px;
-    height: 106px;
-  }
-
-  .bg-shape--square{
-    top: 18%;
-    right: -32px;
-
-    width: 128px;
-    height: 128px;
-
-    border-radius: 28px;
-  }
-
-  .bg-shape--ring{
-    left: -42px;
-    bottom: 17%;
-
-    width: 138px;
-    height: 138px;
-
-    border-width: 15px;
-  }
-
-  .bg-shape--pill{
-    right: -45px;
-    bottom: 9%;
-
-    width: 172px;
-    height: 66px;
-  }
-
-  .bg-shape--small{
-    top: 54%;
-    right: 21%;
-
-    width: 54px;
-    height: 54px;
-  }
-}
-
-/* Телефоны */
-@media (max-width: 560px){
-  .site-background{
+  #mountain-scene::before {
     background:
       radial-gradient(
-        circle at 3% 10%,
-        rgba(6, 182, 212, .28) 0%,
-        rgba(6, 182, 212, 0) 40%
+        circle at 5% 10%,
+        rgba(145, 217, 191, 0.60) 0%,
+        rgba(145, 217, 191, 0) 40%
       ),
 
       radial-gradient(
-        circle at 97% 22%,
-        rgba(27, 58, 138, .23) 0%,
-        rgba(27, 58, 138, 0) 42%
+        circle at 95% 26%,
+        rgba(173, 191, 235, 0.56) 0%,
+        rgba(173, 191, 235, 0) 43%
       ),
 
       radial-gradient(
-        circle at 92% 92%,
-        rgba(14, 116, 144, .23) 0%,
-        rgba(14, 116, 144, 0) 45%
+        circle at 12% 94%,
+        rgba(241, 204, 164, 0.40) 0%,
+        rgba(241, 204, 164, 0) 43%
       ),
 
       linear-gradient(
-        160deg,
-        #f9fcff 0%,
-        #eef9fb 47%,
-        #f1f6ff 100%
+        150deg,
+        #fbfdfc 0%,
+        #eef5f5 48%,
+        #f8f3ec 100%
       );
   }
 
-  .site-background::after{
-    opacity: .40;
-    background-size: 38px 38px;
-  }
-
-  .bg-shape{
-    opacity: .68;
-
-    box-shadow:
-      0 18px 42px rgba(11, 27, 58, .17),
-      inset 0 1px 0 rgba(255, 255, 255, .70);
-  }
-
-  .bg-shape--circle{
-    top: 11%;
-    left: -34px;
-
-    width: 90px;
-    height: 90px;
-  }
-
-  .bg-shape--square{
-    top: 24%;
-    right: -48px;
-
-    width: 104px;
-    height: 104px;
-
-    border-radius: 24px;
-  }
-
-  .bg-shape--ring{
-    left: -55px;
-    bottom: 18%;
-
-    width: 116px;
-    height: 116px;
-
-    border-width: 13px;
-  }
-
-  .bg-shape--pill{
-    right: -64px;
-    bottom: 7%;
-
-    width: 152px;
-    height: 58px;
-  }
-
-  .bg-shape--small{
-    display: none;
+  #mountain-scene::after {
+    opacity: 0.18;
   }
 }
 
-/* Отключение движения по настройкам системы */
-@media (prefers-reduced-motion: reduce){
-  .site-background__scene{
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .bg-shape{
-    animation: none !important;
+/*
+ * Если пользователь отключил анимации
+ * в настройках операционной системы,
+ * гора останется неподвижной.
+ */
+@media (prefers-reduced-motion: reduce) {
+  #mountain-canvas {
+    will-change: auto;
   }
 }
 
@@ -648,6 +397,144 @@ body.has-modern-bg footer{
   background: rgba(9,117,174,.18);
   border: 1px solid rgba(var(--ink-rgb),.14);
   border-radius: var(--radius);
+}
+
+/* =====================================================
+   Главный синий блок на главной странице
+===================================================== */
+
+.home-hero-panel{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 46px;
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(34, 211, 238, .34) 0%,
+      rgba(34, 211, 238, 0) 34%
+    ),
+    radial-gradient(
+      circle at 10% 100%,
+      rgba(96, 165, 250, .30) 0%,
+      rgba(96, 165, 250, 0) 42%
+    ),
+    linear-gradient(
+      135deg,
+      #102d70 0%,
+      #164b91 45%,
+      #087895 100%
+    );
+
+  border: 1px solid rgba(255, 255, 255, .28);
+
+  box-shadow:
+    0 24px 60px rgba(11, 27, 58, .22),
+    inset 0 1px 0 rgba(255, 255, 255, .22);
+
+  color: #ffffff;
+}
+
+/* Светлое декоративное пятно */
+.home-hero-panel::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 340px;
+  height: 340px;
+
+  top: -210px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, .10);
+  border: 1px solid rgba(255, 255, 255, .14);
+
+  pointer-events: none;
+}
+
+/* Тонкая декоративная линия */
+.home-hero-panel::after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 260px;
+  height: 1px;
+
+  right: 46px;
+  bottom: 38px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, .42),
+    rgba(255, 255, 255, 0)
+  );
+
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.home-hero-panel .kicker{
+  color: rgba(255, 255, 255, .78);
+}
+
+.home-hero-panel .h1{
+  color: #ffffff;
+  max-width: 850px;
+  text-shadow: 0 4px 22px rgba(2, 18, 48, .18);
+}
+
+.home-hero-panel .btn-primary{
+  background: #ffffff;
+  color: #123875;
+  border-color: #ffffff;
+  box-shadow: 0 12px 28px rgba(4, 23, 58, .20);
+}
+
+.home-hero-panel .btn-primary:hover{
+  background: #f0f8ff;
+  color: #0b2a64;
+  transform: translateY(-2px);
+}
+
+.home-hero-panel .btn-ghost{
+  color: #ffffff;
+  background: rgba(255, 255, 255, .09);
+  border-color: rgba(255, 255, 255, .32);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.home-hero-panel .btn-ghost:hover{
+  color: #ffffff;
+  background: rgba(255, 255, 255, .17);
+  border-color: rgba(255, 255, 255, .48);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px){
+  .home-hero-panel{
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .home-hero-panel::before{
+    width: 250px;
+    height: 250px;
+    top: -165px;
+    right: -100px;
+  }
+
+  .home-hero-panel::after{
+    display: none;
+  }
 }
 
 /* АНИМАЦИИ (современные и лёгкие) */
@@ -1553,9 +1440,18 @@ body.no-scroll{ overflow: hidden; }
 ===================================================== */
 
 .site-footer{
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+
   background:
-    linear-gradient(180deg, rgba(247,251,255,1) 0%, rgba(240,248,252,1) 100%);
-  border-top: 1px solid rgba(var(--ink-rgb), .10);
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, .92) 0%,
+      rgba(255, 255, 255, .98) 100%
+    );
+
+  border-top: 1px solid rgba(var(--ink-rgb), .12);
 }
 
 .site-footer__card{
@@ -1704,8 +1600,8 @@ body.no-scroll{ overflow: hidden; }
   }
 
   .site-footer__card{
-    padding: 18px 16px 14px;
-    border-radius: 18px;
+    padding: 24px 18px 18px;
+    border-radius: 20px;
   }
 
   .site-footer__title{

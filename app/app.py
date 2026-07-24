@@ -6,7 +6,7 @@ from datetime import datetime
 from email.message import EmailMessage
 
 
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory
 
 def load_env_file() -> None:
     env_path = os.path.join(
@@ -96,6 +96,23 @@ def create_app() -> Flask:
             server.send_message(email_message)
 
     # ==================== МАРШРУТЫ ====================
+
+    @app.get("/favicon.png")
+    def favicon_png():
+        return send_from_directory(
+            os.path.join(app.root_path, "static", "img"),
+            "favicon-120x120.png",
+            mimetype="image/png",
+        )
+
+    @app.get("/favicon.ico")
+    def favicon_ico():
+        return send_from_directory(
+            os.path.join(app.root_path, "static", "img"),
+            "favicon.ico",
+            mimetype="image/vnd.microsoft.icon",
+        )
+
     @app.get("/")
     def home():
         return render_template("home.html", title="Главная")

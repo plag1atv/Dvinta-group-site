@@ -35,8 +35,10 @@
   </script>
   <!-- /Yandex.Metrika counter -->
 
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/dvinta_mark_256.png') }}">
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/dvinta_mark_256.png') }}">
+  <link rel="icon" type="image/png" sizes="120x120" href="{{ url_for('favicon_png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('favicon_ico') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -117,6 +117,7 @@ def create_app() -> Flask:
     def home():
         return render_template("home.html", title="Главная")
 
+
     @app.get("/about")
     def about():
         return render_template("about.html", title="О компании")

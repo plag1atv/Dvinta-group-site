@@ -38,32 +38,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  // Parallax background (mountains)
-const mountain = document.getElementById('mountain-bg');
-const prefersReduced = window.matchMedia &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (mountain && !prefersReduced) {
-  let latestScrollY = window.scrollY || 0;
-  let ticking = false;
+  // Современный интерактивный фон
+  const modernBackgroundScene = document.getElementById(
+    'modernBackgroundScene'
+  );
 
-  const update = () => {
-    // Чем больше коэффициент, тем сильнее «опускается» гора
-    const y = latestScrollY * 0.18;
-    mountain.style.transform = `translate3d(0, ${y}px, 0)`;
-    ticking = false;
-  };
+  const reduceBackgroundMotion =
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  window.addEventListener('scroll', () => {
-    latestScrollY = window.scrollY || 0;
-    if (!ticking) {
-      window.requestAnimationFrame(update);
-      ticking = true;
-    }
-  }, { passive: true });
+  if (modernBackgroundScene && !reduceBackgroundMotion) {
+    let targetX = 0;
+    let targetY = 0;
+    let animationFrameId = null;
 
-  update();
-}
+    const renderBackgroundMovement = () => {
+      modernBackgroundScene.style.transform =
+        `translate3d(${targetX}px, ${targetY}px, 0)`;
+
+      animationFrameId = null;
+    };
+
+    const requestBackgroundRender = () => {
+      if (animationFrameId !== null) {
+        return;
+      }
+
+      animationFrameId = window.requestAnimationFrame(
+        renderBackgroundMovement
+      );
+    };
+
+    window.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch') {
+        return;
+      }
+
+      const horizontalPosition =
+        event.clientX / window.innerWidth - 0.5;
+
+      const verticalPosition =
+        event.clientY / window.innerHeight - 0.5;
+
+      targetX = horizontalPosition * 18;
+      targetY = verticalPosition * 14;
+
+      requestBackgroundRender();
+    });
+
+    document.documentElement.addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+
+      requestBackgroundRender();
+    });
+  }
 
 // Intro splash (ONLY on home page where #introSplash exists)
 const splash = document.getElementById('introSplash');

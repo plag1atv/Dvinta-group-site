@@ -57,7 +57,7 @@
   -->
 
 </head>
-<body class="min-h-screen flex flex-col bg-soft has-mountain" data-equipment="{{ equipment_type }}">
+<body class="min-h-screen flex flex-col bg-soft has-modern-bg" data-equipment="{{ equipment_type }}">
 
   <noscript>
       <div>
@@ -67,10 +67,10 @@
       </div>
   </noscript>
 
-  <!-- Parallax background -->
-  <div id="sun-bg" aria-hidden="true"></div>
-  <div id="mountain-bg" aria-hidden="true"></div>
-  <div id="trees-bg" aria-hidden="true"></div>
+  <!-- Процедурная 3D-гора -->
+  <div id="mountain-scene" aria-hidden="true">
+    <canvas id="mountain-canvas"></canvas>
+  </div>
 
   {% include "partials/header.html" %}
   <main class="flex-1">
@@ -104,6 +104,7 @@
 
   <!-- Lucide icons (for <i data-lucide="..."></i>) -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{{ url_for('static', filename='js/mountain.js') }}"></script>
   <script src="{{ url_for('static', filename='js/site.js') }}"></script>
   <script>
     if (window.lucide) { lucide.createIcons(); }

@@ -73,6 +73,29 @@
   <div id="trees-bg" aria-hidden="true"></div>
 
   {% include "partials/header.html" %}
+
+  <section class="onsite-notice" aria-label="Информация о выездных работах">
+    <div class="onsite-notice__container">
+      <div class="onsite-notice__content">
+        <div class="onsite-notice__icon" aria-hidden="true">
+          <i data-lucide="truck"></i>
+        </div>
+
+        <div class="onsite-notice__text">
+          <span class="onsite-notice__title">Выполняем работы с выездом</span>
+          <span class="onsite-notice__description">
+            Наши специалисты могут провести работы непосредственно на территории заказчика
+          </span>
+        </div>
+
+        <a class="onsite-notice__link" href="{{ url_for('contacts') }}">
+          <span>Уточнить условия</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <main class="flex-1">
     {% block content %}{% endblock %}
   </main>

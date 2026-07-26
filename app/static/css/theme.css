@@ -85,150 +85,222 @@ body{
   letter-spacing: -0.01em;
 }
 
-/* ===== Parallax background: mountains ===== */
-/* Включается классом .has-mountain на <body> */
-body.has-mountain{
-  /* чтобы фон-элемент был виден */
+/* =========================================================
+   ПРОЦЕДУРНЫЙ ФОН С ОБЪЁМНОЙ 3D-ГОРОЙ
+   ========================================================= */
+
+html {
+  background: #f3f7f6;
+}
+
+body.has-mountain {
+  position: relative;
   background: transparent !important;
 }
-html {
-  background: linear-gradient(180deg, #f8fff2 0%, #eef8ff 48%, #f7fbef 100%);
-}
 
-#sun-bg{
+/*
+ * Общий неподвижный слой фона.
+ * Он остаётся на месте при прокрутке страницы.
+ */
+#mountain-scene {
   position: fixed;
-  top: -150px;
-  right: -150px;
-  width: 420px;
-  height: 420px;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
   pointer-events: none;
+
   z-index: 0;
-  opacity: .82;
-  border-radius: 50%;
-  transform: translate3d(0,0,0);
-  will-change: transform, opacity;
-  filter: blur(.2px);
+  isolation: isolate;
+
+  background: #f3f7f6;
 }
 
-#sun-bg::before{
+/*
+ * Основной градиент.
+ *
+ * Мятный цвет расположен сверху слева,
+ * холодный сине-фиолетовый — справа,
+ * тёплый кремовый — снизу слева.
+ */
+#mountain-scene::before {
   content: "";
+
   position: absolute;
   inset: 0;
-  border-radius: 50%;
+
+  z-index: -2;
+
   background:
-    radial-gradient(circle at 50% 50%,
-      rgba(255, 252, 235, .98) 0%,
-      rgba(255, 244, 200, .92) 10%,
-      rgba(255, 231, 160, .72) 22%,
-      rgba(255, 214, 130, .42) 38%,
-      rgba(255, 204, 120, .20) 54%,
-      rgba(255, 200, 120, .08) 66%,
-      rgba(255, 200, 120, 0) 82%);
-  box-shadow:
-    0 0 40px rgba(255, 235, 170, .20),
-    0 0 90px rgba(255, 220, 150, .14),
-    0 0 180px rgba(255, 210, 130, .10);
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(145, 217, 191, 0.66) 0%,
+      rgba(145, 217, 191, 0.30) 17%,
+      rgba(145, 217, 191, 0) 39%
+    ),
+
+    radial-gradient(
+      circle at 94% 23%,
+      rgba(173, 191, 235, 0.64) 0%,
+      rgba(173, 191, 235, 0.28) 20%,
+      rgba(173, 191, 235, 0) 43%
+    ),
+
+    radial-gradient(
+      circle at 18% 92%,
+      rgba(241, 204, 164, 0.50) 0%,
+      rgba(241, 204, 164, 0.20) 21%,
+      rgba(241, 204, 164, 0) 44%
+    ),
+
+    radial-gradient(
+      circle at 70% 76%,
+      rgba(152, 205, 199, 0.28) 0%,
+      rgba(152, 205, 199, 0) 38%
+    ),
+
+    linear-gradient(
+      145deg,
+      #fbfdfc 0%,
+      #edf5f5 43%,
+      #f8f2e9 100%
+    );
 }
 
-#sun-bg::after{
-  content: "";
-  position: absolute;
-  inset: -120px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%,
-      rgba(255, 235, 170, .14) 0%,
-      rgba(255, 225, 150, .10) 18%,
-      rgba(255, 215, 140, .06) 34%,
-      rgba(255, 210, 135, .03) 50%,
-      rgba(255, 205, 130, .015) 64%,
-      rgba(255, 200, 120, 0) 82%);
-  filter: blur(18px);
-  opacity: .95;
-}
-
-@keyframes sun-float{
-  0%{ transform: translate3d(0,0,0) scale(1); }
-  50%{ transform: translate3d(-3px,3px,0) scale(1.015); }
-  100%{ transform: translate3d(0,0,0) scale(1); }
-}
-
-#mountain-bg{
-  position: fixed;
-  left: 0;
-  bottom: -16vh;
-  width: 100%;
-  height: 70vh;
-  pointer-events: none;
-  z-index: 0;
-  opacity: .38;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-
-  /* SVG слоями (без отдельного файла) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231B3A8A' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%230E7490' stop-opacity='.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 420 L160 310 L320 380 L520 240 L720 360 L920 210 L1120 340 L1280 280 L1440 360 L1440 600 L0 600 Z' fill='url(%23g)'/%3E%3Cpath d='M0 470 L220 390 L420 460 L620 340 L820 450 L1020 310 L1220 440 L1440 380 L1440 600 L0 600 Z' fill='%230B1B3A' opacity='.22'/%3E%3C/svg%3E");}
-
-/* ===== Layer: summer blooming trees ===== */
-#trees-bg {
-  position: fixed;
-  left: 0;
-  bottom: -14vh;
-  width: 100%;
-  height: 72vh;
-  pointer-events: none;
-  z-index: 0;
-
-  opacity: 0.68;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-
-  transform: translate3d(0, 0, 0);
-  transform-origin: 50% 100%;
-  will-change: transform;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cg%3E%3Cpath d='M0 520 C160 475 250 500 380 455 C520 405 680 455 820 420 C980 380 1120 430 1440 365 L1440 600 L0 600 Z' fill='%236FAF5A' opacity='.30'/%3E%3Cpath d='M0 555 C180 510 330 535 500 495 C700 448 860 512 1050 455 C1220 405 1320 430 1440 390 L1440 600 L0 600 Z' fill='%238BCB63' opacity='.42'/%3E%3Cg fill='%235B7A3B' opacity='.72'%3E%3Crect x='116' y='425' width='9' height='135' rx='4'/%3E%3Crect x='255' y='440' width='8' height='130' rx='4'/%3E%3Crect x='416' y='410' width='10' height='150' rx='5'/%3E%3Crect x='606' y='438' width='8' height='132' rx='4'/%3E%3Crect x='775' y='410' width='10' height='150' rx='5'/%3E%3Crect x='976' y='438' width='8' height='132' rx='4'/%3E%3Crect x='1135' y='410' width='10' height='150' rx='5'/%3E%3Crect x='1296' y='438' width='8' height='132' rx='4'/%3E%3C/g%3E%3Cg fill='%237FBE55' opacity='.86'%3E%3Ccircle cx='120' cy='420' r='44'/%3E%3Ccircle cx='91' cy='446' r='35'/%3E%3Ccircle cx='150' cy='450' r='38'/%3E%3Ccircle cx='260' cy='435' r='40'/%3E%3Ccircle cx='232' cy='462' r='33'/%3E%3Ccircle cx='292' cy='462' r='35'/%3E%3Ccircle cx='420' cy='405' r='48'/%3E%3Ccircle cx='382' cy='438' r='38'/%3E%3Ccircle cx='464' cy='438' r='40'/%3E%3Ccircle cx='610' cy='435' r='42'/%3E%3Ccircle cx='575' cy='463' r='34'/%3E%3Ccircle cx='646' cy='463' r='36'/%3E%3Ccircle cx='780' cy='405' r='48'/%3E%3Ccircle cx='742' cy='438' r='38'/%3E%3Ccircle cx='824' cy='438' r='40'/%3E%3Ccircle cx='980' cy='435' r='42'/%3E%3Ccircle cx='945' cy='463' r='34'/%3E%3Ccircle cx='1016' cy='463' r='36'/%3E%3Ccircle cx='1140' cy='405' r='48'/%3E%3Ccircle cx='1102' cy='438' r='38'/%3E%3Ccircle cx='1184' cy='438' r='40'/%3E%3Ccircle cx='1300' cy='435' r='42'/%3E%3Ccircle cx='1265' cy='463' r='34'/%3E%3Ccircle cx='1336' cy='463' r='36'/%3E%3C/g%3E%3Cg fill='%23B7E58B' opacity='.75'%3E%3Ccircle cx='102' cy='402' r='17'/%3E%3Ccircle cx='142' cy='398' r='16'/%3E%3Ccircle cx='242' cy='417' r='15'/%3E%3Ccircle cx='282' cy='417' r='15'/%3E%3Ccircle cx='395' cy='385' r='18'/%3E%3Ccircle cx='452' cy='392' r='17'/%3E%3Ccircle cx='591' cy='416' r='15'/%3E%3Ccircle cx='632' cy='414' r='15'/%3E%3Ccircle cx='755' cy='385' r='18'/%3E%3Ccircle cx='812' cy='392' r='17'/%3E%3Ccircle cx='961' cy='416' r='15'/%3E%3Ccircle cx='1002' cy='414' r='15'/%3E%3Ccircle cx='1115' cy='385' r='18'/%3E%3Ccircle cx='1172' cy='392' r='17'/%3E%3Ccircle cx='1281' cy='416' r='15'/%3E%3Ccircle cx='1322' cy='414' r='15'/%3E%3C/g%3E%3Cg fill='%23F6D77A' opacity='.55'%3E%3Ccircle cx='134' cy='430' r='5'/%3E%3Ccircle cx='278' cy='448' r='5'/%3E%3Ccircle cx='438' cy='421' r='5'/%3E%3Ccircle cx='625' cy='446' r='5'/%3E%3Ccircle cx='798' cy='421' r='5'/%3E%3Ccircle cx='996' cy='446' r='5'/%3E%3Ccircle cx='1158' cy='421' r='5'/%3E%3Ccircle cx='1316' cy='446' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-body.has-mountain #sun-bg{
-  animation: sun-float 7s ease-in-out infinite;
-}
-
-@media (max-width: 900px){
-  #sun-bg{
-    width: 280px;
-    height: 280px;
-    top: -110px;
-    right: -110px;
-    opacity: .74;
-  }
-}
-
-@media (prefers-reduced-motion: reduce){
-  #sun-bg,
-  #sun-bg::after{
-    animation: none !important;
-  }
-}
-
-
-/* Контент поверх гор */
 /*
-  Важно: у шапки должен быть самый высокий z-index,
-  иначе выпадающее меню может "уходить" под контент <main>
-  (создаётся эффект прозрачности и на подменю сложно навести).
-*/
-body.has-mountain header{
+ * Незаметная точечная текстура.
+ * Она делает фон менее пустым и более современным.
+ */
+#mountain-scene::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: 0.28;
+
+  background-image:
+    radial-gradient(
+      rgba(34, 78, 82, 0.16) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 28px 28px;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.42),
+      rgba(0, 0, 0, 0.12) 48%,
+      transparent 82%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.42),
+      rgba(0, 0, 0, 0.12) 48%,
+      transparent 82%
+    );
+}
+
+/*
+ * Canvas, внутри которого JavaScript рисует гору.
+ */
+#mountain-canvas {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.96;
+
+  filter:
+    saturate(1.06)
+    contrast(1.04);
+
+  transform: translateZ(0);
+
+  will-change: contents;
+}
+
+/*
+ * Шапка и содержимое сайта должны
+ * располагаться поверх фона.
+ */
+body.has-mountain header {
   position: relative;
   z-index: 10000;
 }
+
 body.has-mountain main,
-body.has-mountain footer{
+body.has-mountain footer {
   position: relative;
   z-index: 1;
+}
+
+/*
+ * На телефонах немного уменьшаем контраст горы,
+ * чтобы она не мешала читать текст.
+ */
+@media (max-width: 760px) {
+  #mountain-canvas {
+    opacity: 0.84;
+
+    filter:
+      saturate(0.96)
+      contrast(0.98);
+  }
+
+  #mountain-scene::before {
+    background:
+      radial-gradient(
+        circle at 5% 10%,
+        rgba(145, 217, 191, 0.60) 0%,
+        rgba(145, 217, 191, 0) 40%
+      ),
+
+      radial-gradient(
+        circle at 95% 26%,
+        rgba(173, 191, 235, 0.56) 0%,
+        rgba(173, 191, 235, 0) 43%
+      ),
+
+      radial-gradient(
+        circle at 12% 94%,
+        rgba(241, 204, 164, 0.40) 0%,
+        rgba(241, 204, 164, 0) 43%
+      ),
+
+      linear-gradient(
+        150deg,
+        #fbfdfc 0%,
+        #eef5f5 48%,
+        #f8f3ec 100%
+      );
+  }
+
+  #mountain-scene::after {
+    opacity: 0.18;
+  }
+}
+
+/*
+ * Если пользователь отключил анимации
+ * в настройках операционной системы,
+ * гора останется неподвижной.
+ */
+@media (prefers-reduced-motion: reduce) {
+  #mountain-canvas {
+    will-change: auto;
+  }
 }
 
 
@@ -325,6 +397,144 @@ body.has-mountain footer{
   background: rgba(9,117,174,.18);
   border: 1px solid rgba(var(--ink-rgb),.14);
   border-radius: var(--radius);
+}
+
+/* =====================================================
+   Главный синий блок на главной странице
+===================================================== */
+
+.home-hero-panel{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 46px;
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(34, 211, 238, .34) 0%,
+      rgba(34, 211, 238, 0) 34%
+    ),
+    radial-gradient(
+      circle at 10% 100%,
+      rgba(96, 165, 250, .30) 0%,
+      rgba(96, 165, 250, 0) 42%
+    ),
+    linear-gradient(
+      135deg,
+      #102d70 0%,
+      #164b91 45%,
+      #087895 100%
+    );
+
+  border: 1px solid rgba(255, 255, 255, .28);
+
+  box-shadow:
+    0 24px 60px rgba(11, 27, 58, .22),
+    inset 0 1px 0 rgba(255, 255, 255, .22);
+
+  color: #ffffff;
+}
+
+/* Светлое декоративное пятно */
+.home-hero-panel::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 340px;
+  height: 340px;
+
+  top: -210px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, .10);
+  border: 1px solid rgba(255, 255, 255, .14);
+
+  pointer-events: none;
+}
+
+/* Тонкая декоративная линия */
+.home-hero-panel::after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 260px;
+  height: 1px;
+
+  right: 46px;
+  bottom: 38px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, .42),
+    rgba(255, 255, 255, 0)
+  );
+
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.home-hero-panel .kicker{
+  color: rgba(255, 255, 255, .78);
+}
+
+.home-hero-panel .h1{
+  color: #ffffff;
+  max-width: 850px;
+  text-shadow: 0 4px 22px rgba(2, 18, 48, .18);
+}
+
+.home-hero-panel .btn-primary{
+  background: #ffffff;
+  color: #123875;
+  border-color: #ffffff;
+  box-shadow: 0 12px 28px rgba(4, 23, 58, .20);
+}
+
+.home-hero-panel .btn-primary:hover{
+  background: #f0f8ff;
+  color: #0b2a64;
+  transform: translateY(-2px);
+}
+
+.home-hero-panel .btn-ghost{
+  color: #ffffff;
+  background: rgba(255, 255, 255, .09);
+  border-color: rgba(255, 255, 255, .32);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.home-hero-panel .btn-ghost:hover{
+  color: #ffffff;
+  background: rgba(255, 255, 255, .17);
+  border-color: rgba(255, 255, 255, .48);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px){
+  .home-hero-panel{
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .home-hero-panel::before{
+    width: 250px;
+    height: 250px;
+    top: -165px;
+    right: -100px;
+  }
+
+  .home-hero-panel::after{
+    display: none;
+  }
 }
 
 /* АНИМАЦИИ (современные и лёгкие) */
@@ -1230,9 +1440,18 @@ body.no-scroll{ overflow: hidden; }
 ===================================================== */
 
 .site-footer{
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+
   background:
-    linear-gradient(180deg, rgba(247,251,255,1) 0%, rgba(240,248,252,1) 100%);
-  border-top: 1px solid rgba(var(--ink-rgb), .10);
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, .92) 0%,
+      rgba(255, 255, 255, .98) 100%
+    );
+
+  border-top: 1px solid rgba(var(--ink-rgb), .12);
 }
 
 .site-footer__card{
@@ -1381,8 +1600,8 @@ body.no-scroll{ overflow: hidden; }
   }
 
   .site-footer__card{
-    padding: 18px 16px 14px;
-    border-radius: 18px;
+    padding: 24px 18px 18px;
+    border-radius: 20px;
   }
 
   .site-footer__title{

@@ -577,6 +577,24 @@ def create_app() -> Flask:
                     "icon": "layers-3",
                     "href": "/equipment_coating_thickness_measures.html",
                 },
+                {
+                    "title": "Толщиномеры покрытий",
+                    "description": "Поверка толщиномеров и измерителей для неразрушающего контроля толщины лакокрасочных, защитных, полимерных и гальванических покрытий.",
+                    "icon": "gauge",
+                    "href": "/equipment_coating_thickness_gauges.html",
+                },
+                {
+                    "title": "Измеритель прочности покрытий при ударе",
+                    "description": "Поверка измерителей и приборов для определения прочности лакокрасочных покрытий при воздействии ударной нагрузки.",
+                    "icon": "hammer",
+                    "href": "/equipment_coating_impact_resistance_testers.html",
+                },
+                {
+                    "title": "Контроль образцов арматуры",
+                    "description": "Поверка приборов RM для измерения геометрических параметров образцов арматуры при проведении контроля и испытаний.",
+                    "icon": "ruler",
+                    "href": "/equipment_rebar_sample_geometry_instruments.html",
+                },
             ],
         },
         "mechanical": {
@@ -1224,6 +1242,33 @@ def create_app() -> Flask:
             "equipment_coating_thickness_measures.html",
             title="Поверка мер толщины покрытий",
             equipment_type="coating_thickness_measures"
+        )
+
+    @app.route("/equipment_coating_thickness_gauges.html")
+    @app.route("/equipment/coating-thickness-gauges")
+    def equipment_coating_thickness_gauges():
+        return render_template(
+            "equipment_coating_thickness_gauges.html",
+            title="Поверка толщиномеров покрытий",
+            equipment_type="coating_thickness_gauges"
+        )
+
+    @app.route("/equipment_coating_impact_resistance_testers.html")
+    @app.route("/equipment/coating-impact-resistance-testers")
+    def equipment_coating_impact_resistance_testers():
+        return render_template(
+            "equipment_coating_impact_resistance_testers.html",
+            title="Поверка измерителей прочности покрытий при ударе",
+            equipment_type="coating_impact_resistance_testers"
+        )
+
+    @app.route("/equipment_rebar_sample_geometry_instruments.html")
+    @app.route("/equipment/rebar-sample-geometry-instruments")
+    def equipment_rebar_sample_geometry_instruments():
+        return render_template(
+            "equipment_rebar_sample_geometry_instruments.html",
+            title="Поверка приборов для измерений геометрических параметров образцов арматуры",
+            equipment_type="rebar_sample_geometry_instruments"
         )
 
     # Метrology

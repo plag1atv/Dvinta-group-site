@@ -966,6 +966,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "coating_thickness_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "толщиномеры (измерители) покрытий";
+        });
+      }
+
+      if (equipmentType === "coating_impact_resistance_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители, приборы прочности покрытий при ударе";
+        });
+      }
+
+      if (equipmentType === "rebar_sample_geometry_instruments") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для измерений геометрических параметров образцов арматуры";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

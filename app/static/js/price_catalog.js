@@ -1004,6 +1004,95 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "ultrasonic_uks_mg4_instruments") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "приборы ультразвуковые укс-мг4";
+        });
+      }
+
+      if (equipmentType === "rebar_diameter_and_depth_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители диаметров и глубины залегания арматуры";
+        });
+      }
+
+      if (equipmentType === "concrete_cover_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для измерений толщины защитного слоя бетона, измерители защитного слоя бетона";
+        });
+      }
+
+      if (equipmentType === "corrosion_erosion_monitoring_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "системы мониторинга коррозии и эрозии";
+        });
+      }
+
+      if (equipmentType === "erichsen_stamps_and_instruments") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "приборы, штампы эриксена";
+        });
+      }
+
+      if (equipmentType === "kotik_ak_television_measurement_control_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "комплексы телевизионного измерительного контроля";
+        });
+      }
+
+      if (equipmentType === "universal_track_templates_psh00316") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "шаблоны универсальные пш00316, пш00316а";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

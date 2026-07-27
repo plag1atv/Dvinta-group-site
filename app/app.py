@@ -595,6 +595,48 @@ def create_app() -> Flask:
                     "icon": "ruler",
                     "href": "/equipment_rebar_sample_geometry_instruments.html",
                 },
+                {
+                    "title": "Приборы ультразвуковые УКС-МГ4",
+                    "description": "Первичная и периодическая поверка ультразвуковых приборов УКС-МГ4 для контроля строительных материалов, конструкций и горных пород.",
+                    "icon": "waves",
+                    "href": "/equipment_ultrasonic_uks_mg4_instruments.html",
+                },
+                {
+                    "title": "Измерители арматуры",
+                    "description": "Первичная и периодическая поверка приборов HILTI Ferroscan для определения положения, диаметра и глубины залегания арматуры в бетоне.",
+                    "icon": "scan-search",
+                    "href": "/equipment_rebar_diameter_and_depth_meters.html",
+                },
+                {
+                    "title": "Измеритель защитного слоя бетона",
+                    "description": "Первичная и периодическая поверка измерителей толщины защитного слоя бетона и приборов для определения расположения стальной арматуры.",
+                    "icon": "layers-3",
+                    "href": "/equipment_concrete_cover_meters.html",
+                },
+                {
+                    "title": "Системы мониторинга коррозии и эрозии",
+                    "description": "Первичная и периодическая поверка систем дистанционного контроля толщины стенок трубопроводов, резервуаров и промышленного оборудования.",
+                    "icon": "activity",
+                    "href": "/equipment_corrosion_erosion_monitoring_systems.html",
+                },
+                {
+                    "title": "Штампы Эриксена",
+                    "description": "Первичная и периодическая поверка штампов и приборов Эриксена для измерения глубины вдавливания при испытаниях покрытий и металла.",
+                    "icon": "hammer",
+                    "href": "/equipment_erichsen_stamps_and_instruments.html",
+                },
+                {
+                    "title": "Комплексы КоТИК-АК",
+                    "description": "Поверка комплексов телевизионного измерительного контроля для измерения линейных размеров поверхностных несплошностей по цифровому изображению.",
+                    "icon": "camera",
+                    "href": "/equipment_kotik_ak_television_measurement_control_systems.html",
+                },
+                {
+                    "title": "Шаблоны ПШ00316 и ПШ00316А",
+                    "description": "Первичная и периодическая поверка универсальных шаблонов для измерения элементов железнодорожного пути и стрелочных переводов.",
+                    "icon": "layers-2",
+                    "href": "/equipment_universal_track_templates_psh00316.html",
+                },
             ],
         },
         "mechanical": {
@@ -1269,6 +1311,69 @@ def create_app() -> Flask:
             "equipment_rebar_sample_geometry_instruments.html",
             title="Поверка приборов для измерений геометрических параметров образцов арматуры",
             equipment_type="rebar_sample_geometry_instruments"
+        )
+
+    @app.route("/equipment_ultrasonic_uks_mg4_instruments.html")
+    @app.route("/equipment/ultrasonic-uks-mg4-instruments")
+    def equipment_ultrasonic_uks_mg4_instruments():
+        return render_template(
+            "equipment_ultrasonic_uks_mg4_instruments.html",
+            title="Поверка приборов ультразвуковых УКС-МГ4",
+            equipment_type="ultrasonic_uks_mg4_instruments"
+        )
+
+    @app.route("/equipment_rebar_diameter_and_depth_meters.html")
+    @app.route("/equipment/rebar-diameter-and-depth-meters")
+    def equipment_rebar_diameter_and_depth_meters():
+        return render_template(
+            "equipment_rebar_diameter_and_depth_meters.html",
+            title="Поверка измерителей диаметров и глубины залегания арматуры",
+            equipment_type="rebar_diameter_and_depth_meters"
+        )
+
+    @app.route("/equipment_concrete_cover_meters.html")
+    @app.route("/equipment/concrete-cover-meters")
+    def equipment_concrete_cover_meters():
+        return render_template(
+            "equipment_concrete_cover_meters.html",
+            title="Поверка измерителей защитного слоя бетона",
+            equipment_type="concrete_cover_meters"
+        )
+
+    @app.route("/equipment_corrosion_erosion_monitoring_systems.html")
+    @app.route("/equipment/corrosion-erosion-monitoring-systems")
+    def equipment_corrosion_erosion_monitoring_systems():
+        return render_template(
+            "equipment_corrosion_erosion_monitoring_systems.html",
+            title="Поверка систем мониторинга коррозии и эрозии",
+            equipment_type="corrosion_erosion_monitoring_systems"
+        )
+
+    @app.route("/equipment_erichsen_stamps_and_instruments.html")
+    @app.route("/equipment/erichsen-stamps-and-instruments")
+    def equipment_erichsen_stamps_and_instruments():
+        return render_template(
+            "equipment_erichsen_stamps_and_instruments.html",
+            title="Поверка штампов Эриксена",
+            equipment_type="erichsen_stamps_and_instruments"
+        )
+
+    @app.route("/equipment_kotik_ak_television_measurement_control_systems.html")
+    @app.route("/equipment/kotik-ak-television-measurement-control-systems")
+    def equipment_kotik_ak_television_measurement_control_systems():
+        return render_template(
+            "equipment_kotik_ak_television_measurement_control_systems.html",
+            title="Поверка комплексов телевизионного измерительного контроля КоТИК-АК",
+            equipment_type="kotik_ak_television_measurement_control_systems"
+        )
+
+    @app.route("/equipment_universal_track_templates_psh00316.html")
+    @app.route("/equipment/universal-track-templates-psh00316")
+    def equipment_universal_track_templates_psh00316():
+        return render_template(
+            "equipment_universal_track_templates_psh00316.html",
+            title="Поверка шаблонов универсальных ПШ00316, ПШ00316А",
+            equipment_type="universal_track_templates_psh00316"
         )
 
     # Метrology

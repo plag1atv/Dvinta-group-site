@@ -20,18 +20,72 @@
     </div>
 
     {% if category.cards %}
-      <div class="measure-category-grid">
 
+      <!-- Поиск по карточкам оборудования -->
+      <div class="measure-category-search" data-equipment-search>
+
+        <label
+          class="measure-category-search__field"
+          for="equipmentCardSearch"
+        >
+          <i data-lucide="search" aria-hidden="true"></i>
+
+          <input
+            type="search"
+            id="equipmentCardSearch"
+            class="measure-category-search__input"
+            placeholder="Поиск по названию или описанию..."
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Поиск по карточкам оборудования"
+          >
+
+          <button
+            type="button"
+            class="measure-category-search__clear"
+            id="equipmentCardSearchClear"
+            aria-label="Очистить поиск"
+            hidden
+          >
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </label>
+
+        <div
+          class="measure-category-search__meta"
+          aria-live="polite"
+        >
+          <span id="equipmentCardSearchCount">
+            Показано: {{ category.cards|length }}
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Карточки оборудования -->
+      <div
+        class="measure-category-grid"
+        id="equipmentCardGrid"
+        data-equipment-grid
+      >
         {% for card in category.cards %}
-          <a href="{{ card.href }}" class="measure-card">
+
+          <a
+            href="{{ card.href }}"
+            class="measure-card"
+            data-equipment-card
+          >
             <div class="measure-card__icon">
               <i data-lucide="{{ card.icon }}"></i>
             </div>
 
             <div class="measure-card__body">
-              <h2>{{ card.title }}</h2>
 
-              <p>
+              <h2 data-equipment-card-title>
+                {{ card.title }}
+              </h2>
+
+              <p data-equipment-card-description>
                 {{ card.description }}
               </p>
 
@@ -39,11 +93,35 @@
                 Подробнее
                 <i data-lucide="arrow-right"></i>
               </span>
+
             </div>
           </a>
-        {% endfor %}
 
+        {% endfor %}
       </div>
+
+      <!-- Сообщение, когда ничего не найдено -->
+      <div
+        class="measure-category-search-empty"
+        id="equipmentCardSearchEmpty"
+        role="status"
+        hidden
+      >
+        <div class="measure-category-search-empty__icon">
+          <i data-lucide="search-x" aria-hidden="true"></i>
+        </div>
+
+        <div>
+          <h2>Оборудование не найдено</h2>
+
+          <p>
+            Измените поисковый запрос или очистите строку поиска.
+          </p>
+        </div>
+      </div>
+
+      <script src="{{ url_for('static', filename='js/equipment_category_search.js') }}"></script>
+
     {% endif %}
 
   </div>

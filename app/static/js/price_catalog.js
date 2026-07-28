@@ -1093,6 +1093,162 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "railway_track_templates_and_measurement_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "шаблоны путевые, путеизмерительные, путевые электронные, комплексы измерительные железнодорожные прочие";
+        });
+      }
+
+      if (equipmentType === "track_template_verification_calibration_stands") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "стенды для поверки, калибровки, контроля путевых шаблонов";
+        });
+      }
+
+      if (equipmentType === "okhta_threshold_elevation_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители возвышения порогов металлоконструкций и криволинейных рельсов электронные";
+        });
+      }
+
+      if (equipmentType === "mga_contact_wire_wear_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители износа контактного провода ручные электронные";
+        });
+      }
+
+      if (equipmentType === "iznos_laser_contact_wire_geometry_modules") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "модули измерений геометрических параметров контактного провода лазерные";
+        });
+      }
+
+      if (equipmentType === "idk_wheelset_diameter_measuring_calipers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "скобы измерительные диаметров колесных пар";
+        });
+      }
+
+      if (equipmentType === "k624_wheel_alignment_checking_ruler") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "линейки для проверки схождения колес автомобиля";
+        });
+      }
+
+      if (equipmentType === "psk_front_wheel_alignment_control_devices") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для контроля схождения передних колес автомобилей";
+        });
+      }
+
+      if (equipmentType === "universal_road_rulers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "рейки дорожные универсальные";
+        });
+      }
+
+      if (equipmentType === "zehntner_zmm5000_road_marking_thickness_gauge") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители толщины дорожной разметки";
+        });
+      }
+
+      if (equipmentType === "road_field_curvimeters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "курвиметры дорожные, полевые, электронные";
+        });
+      }
+
+      if (equipmentType === "laser_alignment_surface_positioning_systems") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "системы лазерной центровки валов, системы центровки и измерения взаимного расположения поверхностей";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

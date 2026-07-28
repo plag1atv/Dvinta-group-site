@@ -637,6 +637,78 @@ def create_app() -> Flask:
                     "icon": "layers-2",
                     "href": "/equipment_universal_track_templates_psh00316.html",
                 },
+                {
+                    "title": "Путевые шаблоны и железнодорожные комплексы",
+                    "description": "Поверка путевых и электронных шаблонов ШЭП, ЦУП, ШП, ШПЭ и железнодорожных измерительных комплексов Amberg TGS FX.",
+                    "icon": "layers-2",
+                    "href": "/equipment_railway_track_templates_and_measurement_systems.html",
+                },
+                {
+                    "title": "Стенды для путевых шаблонов",
+                    "description": "Поверка стендов для поверки, калибровки и контроля путевых шаблонов: 31000 и СИ-1.",
+                    "icon": "route",
+                    "href": "/equipment_track_template_verification_calibration_stands.html",
+                },
+                {
+                    "title": "Измерители возвышения порогов ОХТА",
+                    "description": "Поверка электронных измерителей возвышения и понижения порогов металлоконструкций и криволинейных рельсов ОХТА.",
+                    "icon": "move-vertical",
+                    "href": "/equipment_okhta_threshold_elevation_meters.html",
+                },
+                {
+                    "title": "Измерители износа контактного провода «МГА»",
+                    "description": "Поверка ручных электронных измерителей остаточной высоты сечения контактного провода железных дорог и электротранспорта.",
+                    "icon": "ruler",
+                    "href": "/equipment_mga_contact_wire_wear_meters.html",
+                },
+                {
+                    "title": "Лазерные модули «ИЗНОС»",
+                    "description": "Поверка лазерных модулей для бесконтактного измерения остаточной высоты контактного провода и видеоконтроля.",
+                    "icon": "scan-line",
+                    "href": "/equipment_iznos_laser_contact_wire_geometry_modules.html",
+                },
+                {
+                    "title": "Скобы измерительные ИДК",
+                    "description": "Поверка скоб для измерения диаметра круга катания колесных пар железнодорожного транспорта и метрополитена.",
+                    "icon": "gauge",
+                    "href": "/equipment_idk_wheelset_diameter_measuring_calipers.html",
+                },
+                {
+                    "title": "Линейки для проверки схождения колес К624",
+                    "description": "Поверка линеек для проверки схождения колес легковых, грузовых автомобилей и автобусов.",
+                    "icon": "ruler",
+                    "href": "/equipment_k624_wheel_alignment_checking_ruler.html",
+                },
+                {
+                    "title": "Приборы контроля схождения колес ПСК",
+                    "description": "Поверка приборов ПСК для регулировки и контроля правильности установки схождения передних колес автомобилей.",
+                    "icon": "gauge",
+                    "href": "/equipment_psk_front_wheel_alignment_control_devices.html",
+                },
+                {
+                    "title": "Рейки дорожные универсальные",
+                    "description": "Поверка дорожных реек для измерения длины, уклонов, неровностей и толщины покрытий автомобильных дорог и аэродромов.",
+                    "icon": "ruler",
+                    "href": "/equipment_universal_road_rulers.html",
+                },
+                {
+                    "title": "Измерители толщины дорожной разметки",
+                    "description": "Поверка Zehntner ZMM 5000 для измерения толщины сухого слоя краски дорожной разметки.",
+                    "icon": "ruler",
+                    "href": "/equipment_zehntner_zmm5000_road_marking_thickness_gauge.html",
+                },
+                {
+                    "title": "Курвиметры дорожные и полевые",
+                    "description": "Поверка курвиметров для измерения длины пути по твердым дорожным и другим покрытиям.",
+                    "icon": "route",
+                    "href": "/equipment_road_field_curvimeters.html",
+                },
+                {
+                    "title": "Системы лазерной центровки",
+                    "description": "Поверка систем центровки валов и контроля взаимного расположения поверхностей, плоскостности, параллельности и углового положения.",
+                    "icon": "scan-line",
+                    "href": "/equipment_laser_alignment_surface_positioning_systems.html",
+                },
             ],
         },
         "mechanical": {
@@ -1374,6 +1446,114 @@ def create_app() -> Flask:
             "equipment_universal_track_templates_psh00316.html",
             title="Поверка шаблонов универсальных ПШ00316, ПШ00316А",
             equipment_type="universal_track_templates_psh00316"
+        )
+
+    @app.route("/equipment_railway_track_templates_and_measurement_systems.html")
+    @app.route("/equipment/railway-track-templates-and-measurement-systems")
+    def equipment_railway_track_templates_and_measurement_systems():
+        return render_template(
+            "equipment_railway_track_templates_and_measurement_systems.html",
+            title="Поверка шаблонов путевых и комплексов измерительных железнодорожных",
+            equipment_type="railway_track_templates_and_measurement_systems"
+        )
+
+    @app.route("/equipment_track_template_verification_calibration_stands.html")
+    @app.route("/equipment/track-template-verification-calibration-stands")
+    def equipment_track_template_verification_calibration_stands():
+        return render_template(
+            "equipment_track_template_verification_calibration_stands.html",
+            title="Поверка стендов для поверки и калибровки путевых шаблонов",
+            equipment_type="track_template_verification_calibration_stands"
+        )
+
+    @app.route("/equipment_okhta_threshold_elevation_meters.html")
+    @app.route("/equipment/okhta-threshold-elevation-meters")
+    def equipment_okhta_threshold_elevation_meters():
+        return render_template(
+            "equipment_okhta_threshold_elevation_meters.html",
+            title="Поверка измерителей возвышения порогов металлоконструкций и криволинейных рельсов",
+            equipment_type="okhta_threshold_elevation_meters"
+        )
+
+    @app.route("/equipment_mga_contact_wire_wear_meters.html")
+    @app.route("/equipment/mga-contact-wire-wear-meters")
+    def equipment_mga_contact_wire_wear_meters():
+        return render_template(
+            "equipment_mga_contact_wire_wear_meters.html",
+            title="Поверка измерителей износа контактного провода «МГА»",
+            equipment_type="mga_contact_wire_wear_meters"
+        )
+
+    @app.route("/equipment_iznos_laser_contact_wire_geometry_modules.html")
+    @app.route("/equipment/iznos-laser-contact-wire-geometry-modules")
+    def equipment_iznos_laser_contact_wire_geometry_modules():
+        return render_template(
+            "equipment_iznos_laser_contact_wire_geometry_modules.html",
+            title="Поверка лазерных модулей измерений геометрических параметров контактного провода «ИЗНОС»",
+            equipment_type="iznos_laser_contact_wire_geometry_modules"
+        )
+
+    @app.route("/equipment_idk_wheelset_diameter_measuring_calipers.html")
+    @app.route("/equipment/idk-wheelset-diameter-measuring-calipers")
+    def equipment_idk_wheelset_diameter_measuring_calipers():
+        return render_template(
+            "equipment_idk_wheelset_diameter_measuring_calipers.html",
+            title="Поверка скоб измерительных диаметров колесных пар ИДК",
+            equipment_type="idk_wheelset_diameter_measuring_calipers"
+        )
+
+    @app.route("/equipment_k624_wheel_alignment_checking_ruler.html")
+    @app.route("/equipment/k624-wheel-alignment-checking-ruler")
+    def equipment_k624_wheel_alignment_checking_ruler():
+        return render_template(
+            "equipment_k624_wheel_alignment_checking_ruler.html",
+            title="Поверка линейки для проверки схождения колес автомобиля К624",
+            equipment_type="k624_wheel_alignment_checking_ruler"
+        )
+
+    @app.route("/equipment_psk_front_wheel_alignment_control_devices.html")
+    @app.route("/equipment/psk-front-wheel-alignment-control-devices")
+    def equipment_psk_front_wheel_alignment_control_devices():
+        return render_template(
+            "equipment_psk_front_wheel_alignment_control_devices.html",
+            title="Поверка приборов для контроля схождения передних колес автомобилей ПСК",
+            equipment_type="psk_front_wheel_alignment_control_devices"
+        )
+
+    @app.route("/equipment_universal_road_rulers.html")
+    @app.route("/equipment/universal-road-rulers")
+    def equipment_universal_road_rulers():
+        return render_template(
+            "equipment_universal_road_rulers.html",
+            title="Поверка реек дорожных универсальных",
+            equipment_type="universal_road_rulers"
+        )
+
+    @app.route("/equipment_zehntner_zmm5000_road_marking_thickness_gauge.html")
+    @app.route("/equipment/zehntner-zmm5000-road-marking-thickness-gauge")
+    def equipment_zehntner_zmm5000_road_marking_thickness_gauge():
+        return render_template(
+            "equipment_zehntner_zmm5000_road_marking_thickness_gauge.html",
+            title="Поверка измерителя толщины дорожной разметки Zehntner ZMM 5000",
+            equipment_type="zehntner_zmm5000_road_marking_thickness_gauge"
+        )
+
+    @app.route("/equipment_road_field_curvimeters.html")
+    @app.route("/equipment/road-field-curvimeters")
+    def equipment_road_field_curvimeters():
+        return render_template(
+            "equipment_road_field_curvimeters.html",
+            title="Поверка дорожных и полевых курвиметров",
+            equipment_type="road_field_curvimeters"
+        )
+
+    @app.route("/equipment_laser_alignment_surface_positioning_systems.html")
+    @app.route("/equipment/laser-alignment-surface-positioning-systems")
+    def equipment_laser_alignment_surface_positioning_systems():
+        return render_template(
+            "equipment_laser_alignment_surface_positioning_systems.html",
+            title="Поверка систем центровки и измерения взаимного расположения поверхностей",
+            equipment_type="laser_alignment_surface_positioning_systems"
         )
 
     # Метrology

@@ -800,7 +800,14 @@ def create_app() -> Flask:
             "title": "Поверка средств измерений давления и вакуумных измерений",
             "kicker": "Давление и вакуумные измерения",
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
-            "cards": [],
+            "cards": [
+                {
+                    "title": "Манометры",
+                    "description": "Поверка показывающих манометров, вакуумметров и мановакуумметров для контроля избыточного и вакуумметрического давления.",
+                    "icon": "gauge",
+                    "href": "/equipment_indicating_pressure_gauges.html",
+                },
+            ],
         },
         "physicochemical": {
             "title": "Поверка средств измерений физико-химического состава и свойств веществ",
@@ -812,7 +819,14 @@ def create_app() -> Flask:
             "title": "Поверка средств измерений теплофизических и температурных измерений",
             "kicker": "Теплофизические и температурные измерения",
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
-            "cards": [],
+            "cards": [
+                {
+                    "title": "Термометры биметаллические",
+                    "description": "Поверка биметаллических термометров для контроля температуры жидких, газообразных и сыпучих сред.",
+                    "icon": "gauge",
+                    "href": "/equipment_bimetallic_thermometers.html",
+                },
+            ],
         },
         "time-frequency": {
             "title": "Поверка средств измерений времени и частоты",
@@ -1736,6 +1750,26 @@ def create_app() -> Flask:
             "equipment_spring_testing_machines.html",
             title="Поверка машин для испытания пружин",
             equipment_type="spring_testing_machines"
+        )
+
+    # pressure equipment cards
+    @app.route("/equipment_indicating_pressure_gauges.html")
+    @app.route("/equipment/indicating-pressure-gauges")
+    def equipment_indicating_pressure_gauges():
+        return render_template(
+            "equipment_indicating_pressure_gauges.html",
+            title="Поверка манометров",
+            equipment_type="indicating_pressure_gauges"
+        )
+
+    # temperature equipment cards
+    @app.route("/equipment_bimetallic_thermometers.html")
+    @app.route("/equipment/bimetallic-thermometers")
+    def equipment_bimetallic_thermometers():
+        return render_template(
+            "equipment_bimetallic_thermometers.html",
+            title="Поверка биметаллических термометров",
+            equipment_type="bimetallic_thermometers"
         )
 
     # Метrology

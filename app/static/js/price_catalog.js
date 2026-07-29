@@ -1400,6 +1400,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      // pressure equipment cards
+      if (equipmentType === "indicating_pressure_gauges") {
+
+          const allowedNames = [
+            "манометры показывающие (рабочие)",
+            "манометры для точных измерений",
+            "манометры электроконтактные",
+            "вакуумметры",
+            "мановакуумметры показывающие/сигнализирующие"
+        ];
+
+        items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return allowedNames.includes(itemName);
+        });
+      }
+
+      // temperature equipment cards
+      if (equipmentType === "bimetallic_thermometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "термометры биметаллические";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

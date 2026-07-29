@@ -1249,6 +1249,79 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "autocollimators") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "автоколлиматоры";
+        });
+      }
+
+      if (equipmentType === "mn2_microlevels") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "микронивелиры";
+        });
+      }
+
+      if (equipmentType === "electronic_levels") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "уровни электронные";
+        });
+      }
+
+      if (equipmentType === "level_examiners") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "экзаменаторы";
+        });
+      }
+
+      if (equipmentType === "prismatic_angle_measures") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "меры угловые призматические";
+        });
+      }
+
+      if (equipmentType === "kpu3_angle_measure_verification_devices") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для поверки угловых мер кпу-3";
+        });
+      }
+
       allItems = items;
       filteredItems = items;
 

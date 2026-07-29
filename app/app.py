@@ -709,6 +709,42 @@ def create_app() -> Flask:
                     "icon": "scan-line",
                     "href": "/equipment_laser_alignment_surface_positioning_systems.html",
                 },
+                {
+                    "title": "Автоколлиматоры",
+                    "description": "Поверка цифровых и унифицированных автоколлиматоров, в том числе как рабочих эталонов 2-го и 3-го разряда.",
+                    "icon": "crosshair",
+                    "href": "/equipment_autocollimators.html",
+                },
+                {
+                    "title": "Микронивелиры МН-2",
+                    "description": "Поверка микронивелиров для контроля прямолинейности направляющих, поверочных линеек и плоскостности поверочных плит.",
+                    "icon": "gauge",
+                    "href": "/equipment_mn2_microlevels.html",
+                },
+                {
+                    "title": "Уровни электронные",
+                    "description": "Поверка электронных уровней для контроля горизонтальности, вертикальности, прямолинейности и плоскостности поверхностей.",
+                    "icon": "gauge",
+                    "href": "/equipment_electronic_levels.html",
+                },
+                {
+                    "title": "Экзаменаторы",
+                    "description": "Поверка экзаменаторов для контроля пузырьковых и электронных уровней, ампул и автоколлиматоров.",
+                    "icon": "settings-2",
+                    "href": "/equipment_level_examiners.html",
+                },
+                {
+                    "title": "Меры угловые призматические",
+                    "description": "Поверка отдельных призматических угловых мер, наборов №1–5 и мер МУ по ГОСТ 2875-88.",
+                    "icon": "box",
+                    "href": "/equipment_prismatic_angle_measures.html",
+                },
+                {
+                    "title": "Приборы для поверки угловых мер КПУ-3",
+                    "description": "Поверка приборов КПУ-3 для контроля угловых мер типов 2 и 3 по ГОСТ 2875-88 сравнительным методом.",
+                    "icon": "settings-2",
+                    "href": "/equipment_kpu3_angle_measure_verification_devices.html",
+                },
             ],
         },
         "mechanical": {
@@ -1554,6 +1590,60 @@ def create_app() -> Flask:
             "equipment_laser_alignment_surface_positioning_systems.html",
             title="Поверка систем центровки и измерения взаимного расположения поверхностей",
             equipment_type="laser_alignment_surface_positioning_systems"
+        )
+
+    @app.route("/equipment_autocollimators.html")
+    @app.route("/equipment/autocollimators")
+    def equipment_autocollimators():
+        return render_template(
+            "equipment_autocollimators.html",
+            title="Поверка автоколлиматоров",
+            equipment_type="autocollimators"
+        )
+
+    @app.route("/equipment_mn2_microlevels.html")
+    @app.route("/equipment/mn2-microlevels")
+    def equipment_mn2_microlevels():
+        return render_template(
+            "equipment_mn2_microlevels.html",
+            title="Поверка микронивелиров МН-2",
+            equipment_type="mn2_microlevels"
+        )
+
+    @app.route("/equipment_electronic_levels.html")
+    @app.route("/equipment/electronic-levels")
+    def equipment_electronic_levels():
+        return render_template(
+            "equipment_electronic_levels.html",
+            title="Поверка электронных уровней",
+            equipment_type="electronic_levels"
+        )
+
+    @app.route("/equipment_level_examiners.html")
+    @app.route("/equipment/level-examiners")
+    def equipment_level_examiners():
+        return render_template(
+            "equipment_level_examiners.html",
+            title="Поверка экзаменаторов",
+            equipment_type="level_examiners"
+        )
+
+    @app.route("/equipment_prismatic_angle_measures.html")
+    @app.route("/equipment/prismatic-angle-measures")
+    def equipment_prismatic_angle_measures():
+        return render_template(
+            "equipment_prismatic_angle_measures.html",
+            title="Поверка мер угловых призматических",
+            equipment_type="prismatic_angle_measures"
+        )
+
+    @app.route("/equipment_kpu3_angle_measure_verification_devices.html")
+    @app.route("/equipment/kpu3-angle-measure-verification-devices")
+    def equipment_kpu3_angle_measure_verification_devices():
+        return render_template(
+            "equipment_kpu3_angle_measure_verification_devices.html",
+            title="Поверка приборов для поверки угловых мер КПУ-3",
+            equipment_type="kpu3_angle_measure_verification_devices"
         )
 
     # Метrology

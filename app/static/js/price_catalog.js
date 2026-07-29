@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((items) => {
       const equipmentType = document.body.dataset.equipment;
 
+      // geometric equipment cards
       if (equipmentType === "calipers") {
 
           items = items.filter(item =>
@@ -1319,6 +1320,83 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return itemName ===
                 "приборы для поверки угловых мер кпу-3";
+        });
+      }
+
+      // mechanical equipment cards
+      if (equipmentType === "roller_brake_test_stands") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "стенды тормозные, стенды тормозные роликовые силовые";
+        });
+      }
+
+      if (equipmentType === "wheel_balancing_stands_and_machines") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "стенды, станки балансировочные";
+        });
+      }
+
+      if (equipmentType === "torque_screwdrivers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "отвертки моментные динамометрические, предельные регулируемые (электронные)";
+        });
+      }
+
+      if (equipmentType === "torque_and_dynamometric_wrenches") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "ключи динамометрические, моментные шкальные, предельные (электронные)";
+        });
+      }
+
+      if (equipmentType === "testing_and_tensile_machines") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "машины разрывные, испытательные, прессы гидравлические измерительные";
+        });
+      }
+
+      if (equipmentType === "spring_testing_machines") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "машины для испытания пружин";
         });
       }
 

@@ -751,7 +751,44 @@ def create_app() -> Flask:
             "title": "Поверка механических средств измерений",
             "kicker": "Механические средства измерений",
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
-            "cards": [],
+            "cards": [
+                {
+                    "title": "Стенды тормозные",
+                    "description": "Поверка тормозных роликовых и силовых стендов для измерения тормозной силы, массы на ось и давления сжатого воздуха.",
+                    "icon": "gauge",
+                    "href": "/equipment_roller_brake_test_stands.html",
+                },
+                {
+                    "title": "Стенды и станки балансировочные",
+                    "description": "Поверка балансировочных стендов и станков для измерения массы дисбаланса и положения корректирующих грузов.",
+                    "icon": "settings-2",
+                    "href": "/equipment_wheel_balancing_stands_and_machines.html",
+                },
+                {
+                    "title": "Отвертки моментные",
+                    "description": "Поверка моментных и динамометрических отверток для воспроизведения заданного крутящего момента силы.",
+                    "icon": "settings-2",
+                    "href": "/equipment_torque_screwdrivers.html",
+                },
+                {
+                    "title": "Ключи моментные и динамометрические",
+                    "description": "Поверка моментных и динамометрических ключей для воспроизведения крутящего момента при затяжке резьбовых соединений.",
+                    "icon": "settings-2",
+                    "href": "/equipment_torque_and_dynamometric_wrenches.html",
+                },
+                {
+                    "title": "Машины испытательные и разрывные",
+                    "description": "Поверка разрывных и испытательных машин, универсального испытательного оборудования и гидравлических измерительных прессов.",
+                    "icon": "gauge",
+                    "href": "/equipment_testing_and_tensile_machines.html",
+                },
+                {
+                    "title": "Машины для испытания пружин",
+                    "description": "Поверка машин для определения усилия, деформации, жесткости и других механических характеристик пружин.",
+                    "icon": "gauge",
+                    "href": "/equipment_spring_testing_machines.html",
+                },
+            ],
         },
         "flow": {
             "title": "Поверка средств измерений параметров потока, расхода, уровня и объёма веществ",
@@ -803,7 +840,7 @@ def create_app() -> Flask:
             equipment_type=category_slug,
         )
 
-
+    # geometric equipment cards
     @app.route("/equipment_calipers.html")
     @app.route("/equipment/shtangentsirkuli")
     def equipment_calipers():
@@ -1644,6 +1681,61 @@ def create_app() -> Flask:
             "equipment_kpu3_angle_measure_verification_devices.html",
             title="Поверка приборов для поверки угловых мер КПУ-3",
             equipment_type="kpu3_angle_measure_verification_devices"
+        )
+
+    # mechanical equipment cards
+    @app.route("/equipment_roller_brake_test_stands.html")
+    @app.route("/equipment/roller-brake-test-stands")
+    def equipment_roller_brake_test_stands():
+        return render_template(
+            "equipment_roller_brake_test_stands.html",
+            title="Поверка тормозных роликовых и силовых стендов",
+            equipment_type="roller_brake_test_stands"
+        )
+
+    @app.route("/equipment_wheel_balancing_stands_and_machines.html")
+    @app.route("/equipment/wheel-balancing-stands-and-machines")
+    def equipment_wheel_balancing_stands_and_machines():
+        return render_template(
+            "equipment_wheel_balancing_stands_and_machines.html",
+            title="Поверка балансировочных стендов и станков",
+            equipment_type="wheel_balancing_stands_and_machines"
+        )
+
+    @app.route("/equipment_torque_screwdrivers.html")
+    @app.route("/equipment/torque-screwdrivers")
+    def equipment_torque_screwdrivers():
+        return render_template(
+            "equipment_torque_screwdrivers.html",
+            title="Поверка моментных отверток",
+            equipment_type="torque_screwdrivers"
+        )
+
+    @app.route("/equipment_torque_and_dynamometric_wrenches.html")
+    @app.route("/equipment/torque-and-dynamometric-wrenches")
+    def equipment_torque_and_dynamometric_wrenches():
+        return render_template(
+            "equipment_torque_and_dynamometric_wrenches.html",
+            title="Поверка моментных и динамометрических ключей",
+            equipment_type="torque_and_dynamometric_wrenches"
+        )
+
+    @app.route("/equipment_testing_and_tensile_machines.html")
+    @app.route("/equipment/testing-and-tensile-machines")
+    def equipment_testing_and_tensile_machines():
+        return render_template(
+            "equipment_testing_and_tensile_machines.html",
+            title="Поверка испытательных и разрывных машин",
+            equipment_type="testing_and_tensile_machines"
+        )
+
+    @app.route("/equipment_spring_testing_machines.html")
+    @app.route("/equipment/spring-testing-machines")
+    def equipment_spring_testing_machines():
+        return render_template(
+            "equipment_spring_testing_machines.html",
+            title="Поверка машин для испытания пружин",
+            equipment_type="spring_testing_machines"
         )
 
     # Метrology

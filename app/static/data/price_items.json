@@ -5,8 +5,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенциркули",
     "range": "(0…150) мм",
-    "verification_price": "650",
-    "calibration_price": "650",
+    "verification_price": "530",
+    "calibration_price": "530",
     "note": ""
   },
   {
@@ -15,8 +15,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенциркули",
     "range": "(150…320) мм",
-    "verification_price": "980",
-    "calibration_price": "980",
+    "verification_price": "710",
+    "calibration_price": "710",
     "note": ""
   },
   {
@@ -25,8 +25,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенциркули",
     "range": "(320…630) мм",
-    "verification_price": "1250",
-    "calibration_price": "1250",
+    "verification_price": "930",
+    "calibration_price": "930",
     "note": ""
   },
   {
@@ -35,8 +35,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенциркули",
     "range": "(630…2000) мм",
-    "verification_price": "2770",
-    "calibration_price": "2770",
+    "verification_price": "2570",
+    "calibration_price": "2570",
     "note": ""
   },
   {
@@ -45,8 +45,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенциркули",
     "range": "(2000…5000) мм",
-    "verification_price": "3000",
-    "calibration_price": "3000",
+    "verification_price": "3200",
+    "calibration_price": "3200",
     "note": ""
   },
   {
@@ -55,8 +55,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенглубиномеры",
     "range": "(0…200) мм",
-    "verification_price": "1000",
-    "calibration_price": "1000",
+    "verification_price": "795",
+    "calibration_price": "795",
     "note": ""
   },
   {
@@ -65,8 +65,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенглубиномеры",
     "range": "(200…400) мм",
-    "verification_price": "1400",
-    "calibration_price": "1400",
+    "verification_price": "990",
+    "calibration_price": "990",
     "note": ""
   },
   {
@@ -75,8 +75,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенглубиномеры",
     "range": "(400…1000) мм",
-    "verification_price": "2100",
-    "calibration_price": "2100",
+    "verification_price": "1690",
+    "calibration_price": "1690",
     "note": ""
   },
   {
@@ -85,8 +85,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенрейсмасы",
     "range": "(0…630) мм",
-    "verification_price": "1250",
-    "calibration_price": "1250",
+    "verification_price": "790",
+    "calibration_price": "790",
     "note": ""
   },
   {
@@ -95,8 +95,8 @@
     "section": "27. Геометрические величины",
     "name": "Штангенрейсмасы",
     "range": "(630…1000) мм",
-    "verification_price": "1900",
-    "calibration_price": "1900",
+    "verification_price": "1390",
+    "calibration_price": "1390",
     "note": ""
   },
   {
@@ -145,8 +145,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры (с одной установочной мерой)",
     "range": "(0…25) мм",
-    "verification_price": "900",
-    "calibration_price": "900",
+    "verification_price": "730",
+    "calibration_price": "730",
     "note": ""
   },
   {
@@ -155,8 +155,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры (с одной установочной мерой)",
     "range": "(25…300) мм",
-    "verification_price": "1030",
-    "calibration_price": "1030",
+    "verification_price": "950",
+    "calibration_price": "950",
     "note": ""
   },
   {
@@ -165,8 +165,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры (с одной установочной мерой)",
     "range": "(300…600) мм",
-    "verification_price": "1450",
-    "calibration_price": "1450",
+    "verification_price": "1250",
+    "calibration_price": "1250",
     "note": ""
   },
   {
@@ -245,8 +245,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры рычажные",
     "range": "(0…25) мм",
-    "verification_price": "1200",
-    "calibration_price": "1200",
+    "verification_price": "990",
+    "calibration_price": "990",
     "note": ""
   },
   {
@@ -255,8 +255,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры рычажные",
     "range": "(25…250) мм",
-    "verification_price": "1550",
-    "calibration_price": "1550",
+    "verification_price": "1350",
+    "calibration_price": "1350",
     "note": ""
   },
   {
@@ -265,8 +265,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры рычажные",
     "range": "(250…600) мм",
-    "verification_price": "2000",
-    "calibration_price": "2000",
+    "verification_price": "1700",
+    "calibration_price": "1700",
     "note": ""
   },
   {
@@ -295,8 +295,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры окулярные винтовые",
     "range": "(0…8) мм",
-    "verification_price": "3500",
-    "calibration_price": "3500",
+    "verification_price": "2600",
+    "calibration_price": "2600",
     "note": ""
   },
   {
@@ -305,8 +305,8 @@
     "section": "27. Геометрические величины",
     "name": "Микрометры призматические",
     "range": "(5…105) мм",
-    "verification_price": "1350",
-    "calibration_price": "1350",
+    "verification_price": "1090",
+    "calibration_price": "1090",
     "note": ""
   },
   {
@@ -315,8 +315,8 @@
     "section": "27. Геометрические величины",
     "name": "Глубиномеры микрометрические, индикаторные",
     "range": "(0…100) мм",
-    "verification_price": "1230",
-    "calibration_price": "1230",
+    "verification_price": "1020",
+    "calibration_price": "1020",
     "note": ""
   },
   {
@@ -325,8 +325,8 @@
     "section": "27. Геометрические величины",
     "name": "Глубиномеры микрометрические, индикаторные",
     "range": "(100…300) мм",
-    "verification_price": "2130",
-    "calibration_price": "2130",
+    "verification_price": "1500",
+    "calibration_price": "1500",
     "note": ""
   },
   {
@@ -335,8 +335,8 @@
     "section": "27. Геометрические величины",
     "name": "Скобы рычажные",
     "range": "(0…300) мм",
-    "verification_price": "1550",
-    "calibration_price": "1550",
+    "verification_price": "1100",
+    "calibration_price": "1100",
     "note": ""
   },
   {
@@ -345,8 +345,8 @@
     "section": "27. Геометрические величины",
     "name": "Скобы индикаторные",
     "range": "(0…100) мм",
-    "verification_price": "1130",
-    "calibration_price": "1130",
+    "verification_price": "1000",
+    "calibration_price": "1000",
     "note": ""
   },
   {
@@ -355,8 +355,8 @@
     "section": "27. Геометрические величины",
     "name": "Скобы индикаторные",
     "range": "(100…250) мм",
-    "verification_price": "1450",
-    "calibration_price": "1450",
+    "verification_price": "1150",
+    "calibration_price": "1150",
     "note": ""
   },
   {
@@ -365,8 +365,8 @@
     "section": "27. Геометрические величины",
     "name": "Скобы индикаторные",
     "range": "(250…1000) мм",
-    "verification_price": "3550",
-    "calibration_price": "3550",
+    "verification_price": "2580",
+    "calibration_price": "2580",
     "note": ""
   },
   {
@@ -375,8 +375,8 @@
     "section": "27. Геометрические величины",
     "name": "Скобы индикаторные",
     "range": "(1000…2000) мм",
-    "verification_price": "3950",
-    "calibration_price": "3950",
+    "verification_price": "2800",
+    "calibration_price": "2800",
     "note": ""
   },
   {
@@ -385,8 +385,8 @@
     "section": "27. Геометрические величины",
     "name": "Головки измерительные пружинные, пружинно-оптические",
     "range": "±(4…300) мкм     ц.д. от 1 мкм",
-    "verification_price": "1900",
-    "calibration_price": "1900",
+    "verification_price": "1550",
+    "calibration_price": "1550",
     "note": ""
   },
   {
@@ -395,8 +395,8 @@
     "section": "27. Геометрические величины",
     "name": "Головки измерительные пружинные, пружинно-оптические",
     "range": "±(4…300) мкм     ц.д. от 0,1 мкм",
-    "verification_price": "2450",
-    "calibration_price": "2450",
+    "verification_price": "1850",
+    "calibration_price": "1850",
     "note": ""
   },
   {
@@ -405,8 +405,8 @@
     "section": "27. Геометрические величины",
     "name": "Головки измерительные рычажно-зубчатые, рычажно-пружинные",
     "range": "±(0,025…0,1) мм ц.д. от 1 мкм",
-    "verification_price": "1090",
-    "calibration_price": "1090",
+    "verification_price": "750",
+    "calibration_price": "750",
     "note": ""
   },
   {
@@ -415,8 +415,8 @@
     "section": "27. Геометрические величины",
     "name": "Головки измерительные с отсчетом по шкале, головки измерительные электронные, цифровые",
     "range": "±(0,19…1,99) мм ц.д. от 0,1 мкм",
-    "verification_price": "2250",
-    "calibration_price": "2250",
+    "verification_price": "1300",
+    "calibration_price": "1300",
     "note": ""
   },
   {
@@ -425,8 +425,8 @@
     "section": "27. Геометрические величины",
     "name": "Головки измерительные с отсчетом по шкале, головки измерительные электронные, цифровые",
     "range": "±(0,19…1,99) мм ц.д. от 1 мкм",
-    "verification_price": "1800",
-    "calibration_price": "1800",
+    "verification_price": "950",
+    "calibration_price": "950",
     "note": ""
   },
   {
@@ -435,8 +435,8 @@
     "section": "27. Геометрические величины",
     "name": "Головки измерительные многооборотные (МИГ)",
     "range": "(0…12,7) мм           ц.д. от 1 мкм",
-    "verification_price": "1950",
-    "calibration_price": "1950",
+    "verification_price": "1720",
+    "calibration_price": "1720",
     "note": ""
   },
   {
@@ -445,8 +445,8 @@
     "section": "27. Геометрические величины",
     "name": "Индикаторы, головки измерительные рычажные, рычажно-зубчатые, бокового действия (ИРБ, ИРТ)",
     "range": "(0…1,6) мм         ц.д. от 1 мкм",
-    "verification_price": "2300",
-    "calibration_price": "2300",
+    "verification_price": "1250",
+    "calibration_price": "1250",
     "note": ""
   },
   {
@@ -455,8 +455,8 @@
     "section": "27. Геометрические величины",
     "name": "Индикаторы, головки измерительные рычажные, рычажно-зубчатые, бокового действия (ИРБ, ИРТ)",
     "range": "(0…1,6) мм         ц.д. от 10 мкм",
-    "verification_price": "1150",
-    "calibration_price": "1150",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -565,8 +565,8 @@
     "section": "27. Геометрические величины",
     "name": "Преобразователи, щупы индуктивные, системы многоканальные с индуктивными преобразователями",
     "range": "±(0,02…5) мм",
-    "verification_price": "3900",
-    "calibration_price": "3900",
+    "verification_price": "4200",
+    "calibration_price": "4200",
     "note": ""
   },
   {
@@ -585,8 +585,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №3, 112 мер              КТ 0",
-    "verification_price": "38200",
-    "calibration_price": "38200",
+    "verification_price": "31360",
+    "calibration_price": "31360",
     "note": ""
   },
   {
@@ -595,8 +595,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №3, 112 мер               КТ 1",
-    "verification_price": "30800",
-    "calibration_price": "30800",
+    "verification_price": "26880",
+    "calibration_price": "26880",
     "note": ""
   },
   {
@@ -605,8 +605,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №3, 112 мер                КТ 2; КТ 3-5",
-    "verification_price": "26000",
-    "calibration_price": "26000",
+    "verification_price": "22400",
+    "calibration_price": "22400",
     "note": ""
   },
   {
@@ -615,8 +615,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №1, 83 меры                    КТ 0",
-    "verification_price": "32500",
-    "calibration_price": "32500",
+    "verification_price": "23240",
+    "calibration_price": "23240",
     "note": ""
   },
   {
@@ -625,8 +625,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №1, 83 меры                    КТ 1",
-    "verification_price": "25000",
-    "calibration_price": "25000",
+    "verification_price": "19920",
+    "calibration_price": "19920",
     "note": ""
   },
   {
@@ -635,8 +635,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №1, 83 меры                    КТ 2; КТ 3-5",
-    "verification_price": "20000",
-    "calibration_price": "20000",
+    "verification_price": "16600",
+    "calibration_price": "16600",
     "note": ""
   },
   {
@@ -645,8 +645,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №2,   38 мер                     КТ 0",
-    "verification_price": "15500",
-    "calibration_price": "15500",
+    "verification_price": "10640",
+    "calibration_price": "10640",
     "note": ""
   },
   {
@@ -655,8 +655,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №2,   38 мер                     КТ 1",
-    "verification_price": "10200",
-    "calibration_price": "10200",
+    "verification_price": "9120",
+    "calibration_price": "9120",
     "note": ""
   },
   {
@@ -665,8 +665,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №2,   38 мер                     КТ 2; КТ 3-5",
-    "verification_price": "8500",
-    "calibration_price": "8500",
+    "verification_price": "7600",
+    "calibration_price": "7600",
     "note": ""
   },
   {
@@ -675,8 +675,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №4, №5, №6, №7,        11 мер                      КТ 0",
-    "verification_price": "4600",
-    "calibration_price": "4600",
+    "verification_price": "3080",
+    "calibration_price": "3080",
     "note": ""
   },
   {
@@ -685,8 +685,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №4, №5, №6, №7,          11 мер                 КТ 1",
-    "verification_price": "3100",
-    "calibration_price": "3100",
+    "verification_price": "2640",
+    "calibration_price": "2640",
     "note": ""
   },
   {
@@ -695,8 +695,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №4, №5, №6, №7,          11 мер                КТ 2; КТ 3-5",
-    "verification_price": "2475",
-    "calibration_price": "2475",
+    "verification_price": "2200",
+    "calibration_price": "2200",
     "note": ""
   },
   {
@@ -745,8 +745,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №10, 20 мер                   КТ 0",
-    "verification_price": "12750",
-    "calibration_price": "12750",
+    "verification_price": "5600",
+    "calibration_price": "5600",
     "note": ""
   },
   {
@@ -755,8 +755,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №10, 20 мер                 КТ 1",
-    "verification_price": "5750",
-    "calibration_price": "5750",
+    "verification_price": "4800",
+    "calibration_price": "4800",
     "note": ""
   },
   {
@@ -765,8 +765,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №10, 20 мер                 КТ 2; КТ 3-5",
-    "verification_price": "4900",
-    "calibration_price": "4900",
+    "verification_price": "4000",
+    "calibration_price": "4000",
     "note": ""
   },
   {
@@ -775,8 +775,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №11, 43 меры                КТ 0",
-    "verification_price": "16850",
-    "calibration_price": "16850",
+    "verification_price": "12040",
+    "calibration_price": "12040",
     "note": ""
   },
   {
@@ -785,8 +785,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №11, 43 меры                КТ 1",
-    "verification_price": "13350",
-    "calibration_price": "13350",
+    "verification_price": "10320",
+    "calibration_price": "10320",
     "note": ""
   },
   {
@@ -795,8 +795,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №11, 43 меры                КТ 2; КТ 3-5",
-    "verification_price": "10350",
-    "calibration_price": "10350",
+    "verification_price": "8600",
+    "calibration_price": "8600",
     "note": ""
   },
   {
@@ -805,8 +805,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №13, 11 мер                     КТ 0",
-    "verification_price": "4600",
-    "calibration_price": "4600",
+    "verification_price": "3080",
+    "calibration_price": "3080",
     "note": ""
   },
   {
@@ -815,8 +815,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №13, 11 мер                 КТ 1",
-    "verification_price": "3100",
-    "calibration_price": "3100",
+    "verification_price": "2640",
+    "calibration_price": "2640",
     "note": ""
   },
   {
@@ -825,8 +825,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №13, 11 мер                 КТ 2; КТ 3-5",
-    "verification_price": "2475",
-    "calibration_price": "2475",
+    "verification_price": "2200",
+    "calibration_price": "2200",
     "note": ""
   },
   {
@@ -835,8 +835,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №14, 38 мер                   КТ 0",
-    "verification_price": "15500",
-    "calibration_price": "15500",
+    "verification_price": "10640",
+    "calibration_price": "10640",
     "note": ""
   },
   {
@@ -845,8 +845,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №14, 38 мер                   КТ 1",
-    "verification_price": "10200",
-    "calibration_price": "10200",
+    "verification_price": "9120",
+    "calibration_price": "9120",
     "note": ""
   },
   {
@@ -855,8 +855,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №14, 38 мер                   КТ 2; КТ 3-5",
-    "verification_price": "8500",
-    "calibration_price": "8500",
+    "verification_price": "7600",
+    "calibration_price": "7600",
     "note": ""
   },
   {
@@ -865,8 +865,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №15, 29 мер                  КТ 0",
-    "verification_price": "11800",
-    "calibration_price": "11800",
+    "verification_price": "8120",
+    "calibration_price": "8120",
     "note": ""
   },
   {
@@ -875,8 +875,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №15, 29 мер                  КТ 1",
-    "verification_price": "7750",
-    "calibration_price": "7750",
+    "verification_price": "6960",
+    "calibration_price": "6960",
     "note": ""
   },
   {
@@ -885,8 +885,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №15, 29 мер                  КТ 2; КТ 3-5",
-    "verification_price": "6500",
-    "calibration_price": "6500",
+    "verification_price": "5800",
+    "calibration_price": "5800",
     "note": ""
   },
   {
@@ -895,8 +895,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №16, №17,                    19 мер                КТ 0",
-    "verification_price": "7950",
-    "calibration_price": "7950",
+    "verification_price": "5320",
+    "calibration_price": "5320",
     "note": ""
   },
   {
@@ -905,8 +905,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №16, №17,                            19 мер                     КТ 1",
-    "verification_price": "5350",
-    "calibration_price": "5350",
+    "verification_price": "4560",
+    "calibration_price": "4560",
     "note": ""
   },
   {
@@ -915,8 +915,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №16, №17,                     19 мер                      КТ 2; КТ 3-5",
-    "verification_price": "4275",
-    "calibration_price": "4275",
+    "verification_price": "3800",
+    "calibration_price": "3800",
     "note": ""
   },
   {
@@ -925,8 +925,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №20, 23 меры КТ 0",
-    "verification_price": "9000",
-    "calibration_price": "9000",
+    "verification_price": "6440",
+    "calibration_price": "6440",
     "note": ""
   },
   {
@@ -935,8 +935,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №20, 23 меры КТ 1",
-    "verification_price": "6900",
-    "calibration_price": "6900",
+    "verification_price": "5520",
+    "calibration_price": "5520",
     "note": ""
   },
   {
@@ -945,8 +945,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №20, 23 меры КТ 2-5",
-    "verification_price": "5550",
-    "calibration_price": "5550",
+    "verification_price": "4600",
+    "calibration_price": "4600",
     "note": ""
   },
   {
@@ -955,8 +955,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №21, 20 мер КТ 1",
-    "verification_price": "5000",
-    "calibration_price": "5000",
+    "verification_price": "4800",
+    "calibration_price": "4800",
     "note": ""
   },
   {
@@ -965,8 +965,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №21, 20 мер КТ 2; КТ 3-5",
-    "verification_price": "4300",
-    "calibration_price": "4300",
+    "verification_price": "4000",
+    "calibration_price": "4000",
     "note": ""
   },
   {
@@ -975,8 +975,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №22, 7 мер КТ 2-5",
-    "verification_price": "7250",
-    "calibration_price": "7250",
+    "verification_price": "7000",
+    "calibration_price": "7000",
     "note": ""
   },
   {
@@ -995,8 +995,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "Набор КМД №24, 25 мер КТ 2-5",
-    "verification_price": "17500",
-    "calibration_price": "17500",
+    "verification_price": "13000",
+    "calibration_price": "13000",
     "note": ""
   },
   {
@@ -1005,8 +1005,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "1 мера в составе набора         (0,1…100) мм   кл.т.0",
-    "verification_price": "300",
-    "calibration_price": "300",
+    "verification_price": "280",
+    "calibration_price": "280",
     "note": ""
   },
   {
@@ -1015,8 +1015,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "1 мера в составе набора      (0,1…100) мм    кл.т.1",
-    "verification_price": "225",
-    "calibration_price": "225",
+    "verification_price": "240",
+    "calibration_price": "240",
     "note": ""
   },
   {
@@ -1035,8 +1035,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "1 штучная мера (0,1…100) мм   кл.т.0",
-    "verification_price": "500",
-    "calibration_price": "500",
+    "verification_price": "450",
+    "calibration_price": "450",
     "note": ""
   },
   {
@@ -1045,8 +1045,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры длины концевые плоскопараллельные",
     "range": "1 штучная мера (0,1…100) мм   кл.т.1",
-    "verification_price": "300",
-    "calibration_price": "300",
+    "verification_price": "280",
+    "calibration_price": "280",
     "note": ""
   },
   {
@@ -1057,26 +1057,6 @@
     "range": "1 штучная мера (0,1…100) мм  кл.т.2; кл.т.3-5",
     "verification_price": "250",
     "calibration_price": "250",
-    "note": ""
-  },
-  {
-    "id": 107,
-    "code": "1.258.7",
-    "section": "27. Геометрические величины",
-    "name": "Меры длины концевые плоскопараллельные",
-    "range": "1 штучная мера (0,1…100) мм  кл.т.1",
-    "verification_price": "1300",
-    "calibration_price": "1300",
-    "note": ""
-  },
-  {
-    "id": 108,
-    "code": "1.258.8",
-    "section": "27. Геометрические величины",
-    "name": "Меры длины концевые плоскопараллельные",
-    "range": "1 штучная мера  (0,1…100) мм  кл.т.2; кл.т.3-5",
-    "verification_price": "1125",
-    "calibration_price": "1125",
     "note": ""
   },
   {
@@ -1164,7 +1144,7 @@
     "code": "1.275",
     "section": "27. Геометрические величины",
     "name": "Меры внутренних диаметров (кольца установочные и эталонные)",
-    "range": "(200…250) мм",
+    "range": "(200…300,05) мм",
     "verification_price": "3000",
     "calibration_price": "3000",
     "note": ""
@@ -1174,7 +1154,7 @@
     "code": "1.276",
     "section": "27. Геометрические величины",
     "name": "Меры внутренних диаметров (кольца установочные и эталонные)",
-    "range": "(250..500) мм",
+    "range": "(300,05..500) мм",
     "verification_price": "-",
     "calibration_price": "по запросу",
     "note": ""
@@ -1215,8 +1195,8 @@
     "section": "27. Геометрические величины",
     "name": "Нутромеры индикаторные, цанговые",
     "range": "(0,95…18) мм     ц.д. 0,01 мм",
-    "verification_price": "1450",
-    "calibration_price": "1450",
+    "verification_price": "950",
+    "calibration_price": "950",
     "note": "1. Цены за 1 измерительную вставку     2. Поверка/калибровка установочных колец не учтена"
   },
   {
@@ -1225,8 +1205,8 @@
     "section": "27. Геометрические величины",
     "name": "Нутромеры индикаторные, цанговые",
     "range": "(4,5…1000) мм   ц.д. 0,01 мм",
-    "verification_price": "1750",
-    "calibration_price": "1750",
+    "verification_price": "1150",
+    "calibration_price": "1150",
     "note": ""
   },
   {
@@ -1235,8 +1215,8 @@
     "section": "27. Геометрические величины",
     "name": "Нутромеры индикаторные повышенной точности, цанговые",
     "range": "(0,95…18) мм     ц.д. от 0,001 мм",
-    "verification_price": "1850",
-    "calibration_price": "1850",
+    "verification_price": "1050",
+    "calibration_price": "1050",
     "note": ""
   },
   {
@@ -1244,9 +1224,9 @@
     "code": "1.302",
     "section": "27. Геометрические величины",
     "name": "Нутромеры индикаторные повышенной точности, цанговые",
-    "range": "(6…1000) мм      ц.д. от 0,001 мм",
-    "verification_price": "2150",
-    "calibration_price": "2150",
+    "range": "(6…800) мм      ц.д. от 0,001 мм",
+    "verification_price": "1300",
+    "calibration_price": "1300",
     "note": ""
   },
   {
@@ -1255,8 +1235,8 @@
     "section": "27. Геометрические величины",
     "name": "Измерения дополнительных вставок к нутромерам индикаторным, цанговым (измерения дополнительных диапазонов измерений, входящих в комплект нутромера)",
     "range": "(0,95…18) мм     ц.д. 0,01 мм",
-    "verification_price": "957",
-    "calibration_price": "957",
+    "verification_price": "950",
+    "calibration_price": "950",
     "note": ""
   },
   {
@@ -1265,8 +1245,8 @@
     "section": "27. Геометрические величины",
     "name": "Измерения дополнительных вставок к нутромерам индикаторным, цанговым (измерения дополнительных диапазонов измерений, входящих в комплект нутромера)",
     "range": "(4,5…1000) мм   ц.д. 0,01 мм",
-    "verification_price": "1155",
-    "calibration_price": "1155",
+    "verification_price": "700",
+    "calibration_price": "700",
     "note": ""
   },
   {
@@ -1275,8 +1255,8 @@
     "section": "27. Геометрические величины",
     "name": "Измерения дополнительных вставок к нутромерам индикаторным, цанговым (измерения дополнительных диапазонов измерений, входящих в комплект нутромера)",
     "range": "(0,95…18) мм     ц.д. от 0,001 мм",
-    "verification_price": "1221",
-    "calibration_price": "1221",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -1284,9 +1264,9 @@
     "code": "1.314",
     "section": "27. Геометрические величины",
     "name": "Измерения дополнительных вставок к нутромерам индикаторным, цанговым (измерения дополнительных диапазонов измерений, входящих в комплект нутромера)",
-    "range": "(6…1000) мм      ц.д. от 0,001 мм",
-    "verification_price": "1419",
-    "calibration_price": "1419",
+    "range": "(6…800) мм      ц.д. от 0,001 мм",
+    "verification_price": "1000",
+    "calibration_price": "1000",
     "note": ""
   },
   {
@@ -1294,7 +1274,7 @@
     "code": "1.321",
     "section": "27. Геометрические величины",
     "name": "Нутромеры микрометрические",
-    "range": "(50...175) мм",
+    "range": "(2...175) мм",
     "verification_price": "1860",
     "calibration_price": "1860",
     "note": ""
@@ -1315,8 +1295,8 @@
     "section": "27. Геометрические величины",
     "name": "Нутромеры микрометрические",
     "range": "(1250...2500) мм",
-    "verification_price": "6250",
-    "calibration_price": "6250",
+    "verification_price": "5250",
+    "calibration_price": "5250",
     "note": ""
   },
   {
@@ -1335,8 +1315,8 @@
     "section": "27. Геометрические величины",
     "name": "Нутромеры трехточечные",
     "range": "(2…300) мм",
-    "verification_price": "1750",
-    "calibration_price": "1750",
+    "verification_price": "1250",
+    "calibration_price": "1250",
     "note": "1. Цены за 1 диапазон измерений                    2. Поверка/калибровка установочных колец не учтена"
   },
   {
@@ -1385,8 +1365,8 @@
     "section": "27. Геометрические величины",
     "name": "Линейки контрольные рабочие КЛ, в том числе визуально-цифровые",
     "range": "(0…1020) мм",
-    "verification_price": "6500",
-    "calibration_price": "6500",
+    "verification_price": "3700",
+    "calibration_price": "3700",
     "note": ""
   },
   {
@@ -1455,8 +1435,8 @@
     "section": "27. Геометрические величины",
     "name": "Линейки поверочные",
     "range": "ШП, ШД до 630 мм  КТ 2",
-    "verification_price": "1596.0000000000002",
-    "calibration_price": "1596.0000000000002",
+    "verification_price": "1596.02",
+    "calibration_price": "1596.02",
     "note": ""
   },
   {
@@ -1485,8 +1465,8 @@
     "section": "27. Геометрические величины",
     "name": "Линейки поверочные",
     "range": "ШД от 1000 до 1600 мм                           КТ 2",
-    "verification_price": "3839.0000000000005",
-    "calibration_price": "3839.0000000000005",
+    "verification_price": "3839.05",
+    "calibration_price": "3839.05",
     "note": ""
   },
   {
@@ -1615,8 +1595,8 @@
     "section": "27. Геометрические величины",
     "name": "Линейки охватывающие (циркометры)",
     "range": "(9…3600) мм",
-    "verification_price": "3750",
-    "calibration_price": "3750",
+    "verification_price": "2550",
+    "calibration_price": "2550",
     "note": ""
   },
   {
@@ -1674,9 +1654,9 @@
     "code": "1.424",
     "section": "27. Геометрические величины",
     "name": "Рулетки металлические измерительные (электронные, медицинские)",
-    "range": "(50...100) м\nКТ 2, КТ 3",
-    "verification_price": "650",
-    "calibration_price": "650",
+    "range": "(50...100) мКТ 2, КТ 3",
+    "verification_price": "780",
+    "calibration_price": "780",
     "note": ""
   },
   {
@@ -1684,9 +1664,9 @@
     "code": "1.425",
     "section": "27. Геометрические величины",
     "name": "Рулетки измерительные с лотом",
-    "range": "до 10 м\nКТ 2, КТ 3",
-    "verification_price": "800",
-    "calibration_price": "800",
+    "range": "до 10 мКТ 2, КТ 3",
+    "verification_price": "490",
+    "calibration_price": "490",
     "note": ""
   },
   {
@@ -1694,9 +1674,9 @@
     "code": "1.426",
     "section": "27. Геометрические величины",
     "name": "Рулетки измерительные с лотом",
-    "range": "(10...20) м\nКТ 2, КТ 3",
-    "verification_price": "1450",
-    "calibration_price": "1450",
+    "range": "(10...20) мКТ 2, КТ 3",
+    "verification_price": "690",
+    "calibration_price": "690",
     "note": ""
   },
   {
@@ -1704,9 +1684,9 @@
     "code": "1.427",
     "section": "27. Геометрические величины",
     "name": "Рулетки измерительные с лотом",
-    "range": "(20...50) м\nКТ 2, КТ 3",
-    "verification_price": "2100",
-    "calibration_price": "2100",
+    "range": "(20...50) мКТ 2, КТ 3",
+    "verification_price": "1200",
+    "calibration_price": "1200",
     "note": ""
   },
   {
@@ -1714,9 +1694,9 @@
     "code": "1.428",
     "section": "27. Геометрические величины",
     "name": "Рулетки измерительные с лотом",
-    "range": "(50...100) м\nКТ 2, КТ 3",
-    "verification_price": "4150",
-    "calibration_price": "4150",
+    "range": "(50...100) мКТ 2, КТ 3",
+    "verification_price": "1600",
+    "calibration_price": "1600",
     "note": ""
   },
   {
@@ -1825,8 +1805,8 @@
     "section": "27. Геометрические величины",
     "name": "Плиты поверочные гранитные, чугунные",
     "range": "2000х1000, 3000х1250, 3000х2000, 1600х1000, 2500х1500              КТ 2; КТ 3",
-    "verification_price": "8019.000000000001",
-    "calibration_price": "8019.000000000001",
+    "verification_price": "8019.01",
+    "calibration_price": "8019.01",
     "note": ""
   },
   {
@@ -1965,8 +1945,8 @@
     "section": "27. Геометрические величины",
     "name": "Угольники поверочные лекальные (плоские)",
     "range": "УЛ, УЛП      (0…160) мм          КТ 0, КТ 1, КТ 2",
-    "verification_price": "1500",
-    "calibration_price": "1500",
+    "verification_price": "650",
+    "calibration_price": "650",
     "note": ""
   },
   {
@@ -1975,8 +1955,8 @@
     "section": "27. Геометрические величины",
     "name": "Угольники поверочные лекальные (плоские)",
     "range": "УЛ, УЛП      (160…1000) мм     КТ 0, КТ 1, КТ 2",
-    "verification_price": "1850",
-    "calibration_price": "1850",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -1985,8 +1965,8 @@
     "section": "27. Геометрические величины",
     "name": "Угольники поверочные слесарные с широким основанием",
     "range": "УШ до 400 мм       КТ 0, КТ 1, КТ 2",
-    "verification_price": "1500",
-    "calibration_price": "1500",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -2005,8 +1985,8 @@
     "section": "27. Геометрические величины",
     "name": "Угольники поверочные слесарные плоские",
     "range": "УП до 400 мм            КТ 0, КТ 1, КТ 2",
-    "verification_price": "1500",
-    "calibration_price": "1500",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -2025,8 +2005,8 @@
     "section": "27. Геометрические величины",
     "name": "Приборы для поверки угольников",
     "range": "(40…630) мм",
-    "verification_price": "11000",
-    "calibration_price": "11000",
+    "verification_price": "15000",
+    "calibration_price": "15000",
     "note": ""
   },
   {
@@ -2035,8 +2015,8 @@
     "section": "27. Геометрические величины",
     "name": "Толщиномеры индикаторные",
     "range": "(0…50) мм",
-    "verification_price": "750",
-    "calibration_price": "750",
+    "verification_price": "650",
+    "calibration_price": "650",
     "note": ""
   },
   {
@@ -2045,8 +2025,8 @@
     "section": "27. Геометрические величины",
     "name": "Толщиномеры индикаторные повышенной точности",
     "range": "(0…50) мм",
-    "verification_price": "1500",
-    "calibration_price": "1500",
+    "verification_price": "1300",
+    "calibration_price": "1300",
     "note": ""
   },
   {
@@ -2085,8 +2065,8 @@
     "section": "27. Геометрические величины",
     "name": "Высотомеры",
     "range": "(0…1130) мм",
-    "verification_price": "7900",
-    "calibration_price": "7900",
+    "verification_price": "10000",
+    "calibration_price": "10000",
     "note": ""
   },
   {
@@ -2105,8 +2085,8 @@
     "section": "27. Геометрические величины",
     "name": "Рейки нивелирные телескопические",
     "range": "(3000…7000) мм",
-    "verification_price": "1550",
-    "calibration_price": "1550",
+    "verification_price": "1150",
+    "calibration_price": "1150",
     "note": ""
   },
   {
@@ -2115,8 +2095,8 @@
     "section": "27. Геометрические величины",
     "name": "Рейки водомерные, снегомерные, гидрометеорологические",
     "range": "(0…12000) мм",
-    "verification_price": "2100",
-    "calibration_price": "2100",
+    "verification_price": "1700",
+    "calibration_price": "1700",
     "note": ""
   },
   {
@@ -2135,8 +2115,8 @@
     "section": "27. Геометрические величины",
     "name": "Гриндометры",
     "range": "(0…250) мкм",
-    "verification_price": "4500",
-    "calibration_price": "4500",
+    "verification_price": "2800",
+    "calibration_price": "2800",
     "note": ""
   },
   {
@@ -2145,8 +2125,8 @@
     "section": "27. Геометрические величины",
     "name": "Нормалемеры универсальные Multimar 844 Т",
     "range": "(0…2575) мм",
-    "verification_price": "2400",
-    "calibration_price": "2400",
+    "verification_price": "1800",
+    "calibration_price": "1800",
     "note": ""
   },
   {
@@ -2155,8 +2135,8 @@
     "section": "27. Геометрические величины",
     "name": "Проволочки, ролики (за 1 комплект)",
     "range": "(0,045…35) мм",
-    "verification_price": "1550",
-    "calibration_price": "1550",
+    "verification_price": "1050",
+    "calibration_price": "1050",
     "note": ""
   },
   {
@@ -2165,8 +2145,8 @@
     "section": "27. Геометрические величины",
     "name": "Проволочки, ролики (за 1 шт)",
     "range": "(0,045…35) мм",
-    "verification_price": "480",
-    "calibration_price": "480",
+    "verification_price": "350",
+    "calibration_price": "350",
     "note": ""
   },
   {
@@ -2175,8 +2155,8 @@
     "section": "27. Геометрические величины",
     "name": "Калибры-ролики, ролики для поверки микрометров и штангензубомеров",
     "range": "(5…105) мм",
-    "verification_price": "1750",
-    "calibration_price": "1750",
+    "verification_price": "8500",
+    "calibration_price": "8500",
     "note": ""
   },
   {
@@ -2185,8 +2165,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры с цилиндрическими измерительными поверхностями",
     "range": "(10…99,75) мм",
-    "verification_price": "1550",
-    "calibration_price": "1550",
+    "verification_price": "7550",
+    "calibration_price": "7550",
     "note": ""
   },
   {
@@ -2195,8 +2175,8 @@
     "section": "27. Геометрические величины",
     "name": "Кронциркули, кронциркули индикаторные, калибры-скобы",
     "range": "(0…215) мм",
-    "verification_price": "1400",
-    "calibration_price": "1400",
+    "verification_price": "1270",
+    "calibration_price": "1270",
     "note": ""
   },
   {
@@ -2235,8 +2215,8 @@
     "section": "27. Геометрические величины",
     "name": "Высотомеры клиновые",
     "range": "(0…10) мм",
-    "verification_price": "7300",
-    "calibration_price": "7300",
+    "verification_price": "2800",
+    "calibration_price": "2800",
     "note": ""
   },
   {
@@ -2275,8 +2255,8 @@
     "section": "27. Геометрические величины",
     "name": "Сита лабораторные",
     "range": "(0,02…125) мм",
-    "verification_price": "1350",
-    "calibration_price": "1350",
+    "verification_price": "1050",
+    "calibration_price": "1050",
     "note": ""
   },
   {
@@ -2284,9 +2264,9 @@
     "code": "1.640",
     "section": "27. Геометрические величины",
     "name": "Лупы измерительные, с подсветкой",
-    "range": "(-15…20) мм\n(0…90) °",
-    "verification_price": "1250",
-    "calibration_price": "1250",
+    "range": "(-15…20) мм(0…90) °",
+    "verification_price": "1050",
+    "calibration_price": "1050",
     "note": ""
   },
   {
@@ -2295,8 +2275,8 @@
     "section": "27. Геометрические величины",
     "name": "Бруски контрольные (БК)",
     "range": "(100…1200) мм",
-    "verification_price": "2550",
-    "calibration_price": "2550",
+    "verification_price": "2750",
+    "calibration_price": "2750",
     "note": ""
   },
   {
@@ -2345,8 +2325,8 @@
     "section": "27. Геометрические величины",
     "name": "Микроскопы отсчетные, микроскопы измерительные упрощенные",
     "range": "(0…7) мм",
-    "verification_price": "1250",
-    "calibration_price": "1250",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -2394,9 +2374,9 @@
     "code": "1.705",
     "section": "27. Геометрические величины",
     "name": "Системы, комплексы и микроскопы видеоизмерительные (консольные, портативные)",
-    "range": "(0...400) мм\n0…360 °",
-    "verification_price": "от 21000",
-    "calibration_price": "от 21000",
+    "range": "(0...400) мм0…360 °",
+    "verification_price": "от 18000",
+    "calibration_price": "от 18000",
     "note": ""
   },
   {
@@ -2404,9 +2384,9 @@
     "code": "1.706",
     "section": "27. Геометрические величины",
     "name": "Системы, комплексы и микроскопы видеоизмерительные (консольные, портативные)",
-    "range": "(400…3000) мм\n0…360 °",
-    "verification_price": "от 28000",
-    "calibration_price": "от 28000",
+    "range": "(400…3000) мм0…360 °",
+    "verification_price": "от 26000",
+    "calibration_price": "от 26000",
     "note": ""
   },
   {
@@ -2414,9 +2394,9 @@
     "code": "1.707",
     "section": "27. Геометрические величины",
     "name": "Комплексы аппаратно-программные анализа изображений микроструктуры поверхности твердых тел; анализаторы фрагментов микроструктуры твердых тел; системы анализа микроструктуры объектов",
-    "range": "(0,08…300000) мкм\n(0…2000) мкм",
-    "verification_price": "33500",
-    "calibration_price": "33500",
+    "range": "(0,08…300000) мкм(0…2000) мкм",
+    "verification_price": "23500",
+    "calibration_price": "23500",
     "note": ""
   },
   {
@@ -2425,8 +2405,8 @@
     "section": "27. Геометрические величины",
     "name": "Объект-микрометры",
     "range": "(0…1) мм",
-    "verification_price": "4500",
-    "calibration_price": "4500",
+    "verification_price": "1050",
+    "calibration_price": "1050",
     "note": ""
   },
   {
@@ -2434,9 +2414,9 @@
     "code": "1.710",
     "section": "27. Геометрические величины",
     "name": "Проекторы измерительные",
-    "range": "(0…450) мм\n(0…360) °",
-    "verification_price": "17200",
-    "calibration_price": "17200",
+    "range": "(0…450) мм(0…360) °",
+    "verification_price": "15000",
+    "calibration_price": "15000",
     "note": ""
   },
   {
@@ -2525,8 +2505,8 @@
     "section": "27. Геометрические величины",
     "name": "Машины координатно-измерительные",
     "range": "(0…10000) мм",
-    "verification_price": "31500",
-    "calibration_price": "31500",
+    "verification_price": "от 23500",
+    "calibration_price": "от 23500",
     "note": ""
   },
   {
@@ -2555,8 +2535,8 @@
     "section": "27. Геометрические величины",
     "name": "Приборы, установки для поверки концевых мер длины, компараторы",
     "range": "(0,1…100) мм",
-    "verification_price": "16500",
-    "calibration_price": "16500",
+    "verification_price": "13500",
+    "calibration_price": "13500",
     "note": ""
   },
   {
@@ -2585,8 +2565,8 @@
     "section": "27. Геометрические величины",
     "name": "Приборы для измерений (проверки) изделий на биение в центрах",
     "range": "(140…2000) мм",
-    "verification_price": "4500",
-    "calibration_price": "4500",
+    "verification_price": "3500",
+    "calibration_price": "3500",
     "note": ""
   },
   {
@@ -2655,8 +2635,8 @@
     "section": "27. Геометрические величины",
     "name": "Калибраторы датчиков деформаций",
     "range": "(0…100) мм",
-    "verification_price": "20500",
-    "calibration_price": "20500",
+    "verification_price": "6800",
+    "calibration_price": "6800",
     "note": ""
   },
   {
@@ -2664,9 +2644,9 @@
     "code": "1.810",
     "section": "27. Геометрические величины",
     "name": "Измерители деформации клейковины",
-    "range": "(0…10,55) мм\n(0…150,7) усл. ед. (ед. ИДК)",
-    "verification_price": "5500",
-    "calibration_price": "5500",
+    "range": "(0…10,55) мм(0…150,7) усл. ед. (ед. ИДК)",
+    "verification_price": "3500",
+    "calibration_price": "3500",
     "note": ""
   },
   {
@@ -3085,8 +3065,8 @@
     "section": "27. Геометрические величины",
     "name": "Профилемеры поверхности",
     "range": "(0...500) мкм",
-    "verification_price": "6500",
-    "calibration_price": "6500",
+    "verification_price": "5800",
+    "calibration_price": "5800",
     "note": ""
   },
   {
@@ -3105,8 +3085,8 @@
     "section": "27. Геометрические величины",
     "name": "Меры толщины покрытий",
     "range": "за 1 меру из набора           (0,01…120) мм",
-    "verification_price": "650",
-    "calibration_price": "650",
+    "verification_price": "490",
+    "calibration_price": "490",
     "note": ""
   },
   {
@@ -3115,8 +3095,8 @@
     "section": "27. Геометрические величины",
     "name": "Толщиномеры (измерители) покрытий",
     "range": "(0…120) мм",
-    "verification_price": "5000",
-    "calibration_price": "5000",
+    "verification_price": "4100",
+    "calibration_price": "4100",
     "note": ""
   },
   {
@@ -3144,9 +3124,9 @@
     "code": "1.881",
     "section": "27. Геометрические величины",
     "name": "Приборы ультразвуковые УКС-МГ4",
-    "range": "(70…1200) мм\n(15…2000) мкс",
-    "verification_price": "9500",
-    "calibration_price": "9500",
+    "range": "(70…1200) мм(15…2000) мкс",
+    "verification_price": "4500",
+    "calibration_price": "4500",
     "note": ""
   },
   {
@@ -3155,8 +3135,8 @@
     "section": "27. Геометрические величины",
     "name": "Измерители диаметров и глубины залегания арматуры",
     "range": "(0…160) мм",
-    "verification_price": "8200",
-    "calibration_price": "8200",
+    "verification_price": "3200",
+    "calibration_price": "3200",
     "note": ""
   },
   {
@@ -3165,8 +3145,8 @@
     "section": "27. Геометрические величины",
     "name": "Приборы для измерений толщины защитного слоя бетона, измерители защитного слоя бетона",
     "range": "(2…200) мм",
-    "verification_price": "7000",
-    "calibration_price": "7000",
+    "verification_price": "4000",
+    "calibration_price": "4000",
     "note": ""
   },
   {
@@ -3285,8 +3265,8 @@
     "section": "27. Геометрические величины",
     "name": "Измерители возвышения порогов металлоконструкций и криволинейных рельсов электронные",
     "range": "(-70…50) мм",
-    "verification_price": "3500",
-    "calibration_price": "3500",
+    "verification_price": "2500",
+    "calibration_price": "2500",
     "note": ""
   },
   {
@@ -3295,8 +3275,8 @@
     "section": "27. Геометрические величины",
     "name": "Измерители износа контактного провода ручные электронные",
     "range": "(4…18) мм",
-    "verification_price": "2300",
-    "calibration_price": "2300",
+    "verification_price": "2500",
+    "calibration_price": "2500",
     "note": ""
   },
   {
@@ -3345,8 +3325,8 @@
     "section": "27. Геометрические величины",
     "name": "Рейки дорожные универсальные",
     "range": "(0…3000) мм",
-    "verification_price": "7000",
-    "calibration_price": "7000",
+    "verification_price": "3500",
+    "calibration_price": "3500",
     "note": ""
   },
   {
@@ -3374,9 +3354,9 @@
     "code": "1.909",
     "section": "27. Геометрические величины",
     "name": "Системы лазерной центровки валов, системы центровки и измерения взаимного расположения поверхностей",
-    "range": "±28 мм\n(0…360) °",
-    "verification_price": "20000",
-    "calibration_price": "20000",
+    "range": "±28 мм(0…360) °",
+    "verification_price": "15000",
+    "calibration_price": "15000",
     "note": ""
   },
   {
@@ -3425,8 +3405,8 @@
     "section": "27. Геометрические величины",
     "name": "Уровни электронные",
     "range": "±(2…200) мм/м",
-    "verification_price": "8500",
-    "calibration_price": "8500",
+    "verification_price": "16500",
+    "calibration_price": "16500",
     "note": ""
   },
   {
@@ -3455,8 +3435,8 @@
     "section": "27. Геометрические величины",
     "name": "Уровни-угломеры",
     "range": "(0…360) °",
-    "verification_price": "5500",
-    "calibration_price": "5500",
+    "verification_price": "2100",
+    "calibration_price": "2100",
     "note": ""
   },
   {
@@ -3685,8 +3665,8 @@
     "section": "28. Механические величины",
     "name": "Гайковерты аккумуляторные, электрические моментные",
     "range": "(0,2…1000) Н·м",
-    "verification_price": "7000",
-    "calibration_price": "7000",
+    "verification_price": "5000",
+    "calibration_price": "5000",
     "note": ""
   },
   {
@@ -3695,8 +3675,8 @@
     "section": "28. Механические величины",
     "name": "Гайковерты аккумуляторные, электрические моментные",
     "range": "(1000…3000) Н·м",
-    "verification_price": "16000",
-    "calibration_price": "16000",
+    "verification_price": "10000",
+    "calibration_price": "10000",
     "note": ""
   },
   {
@@ -3705,8 +3685,8 @@
     "section": "28. Механические величины",
     "name": "Отвертки моментные динамометрические, предельные регулируемые (электронные)",
     "range": "(0,2…20) Н·м",
-    "verification_price": "1350",
-    "calibration_price": "1350",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -3715,8 +3695,8 @@
     "section": "28. Механические величины",
     "name": "Ключи динамометрические, моментные шкальные, предельные (электронные)",
     "range": "(0,2…200) Нм,",
-    "verification_price": "1750",
-    "calibration_price": "1750",
+    "verification_price": "1250",
+    "calibration_price": "1250",
     "note": "За измерения при нагружении ключа в одном направлении"
   },
   {
@@ -3725,8 +3705,8 @@
     "section": "28. Механические величины",
     "name": "Ключи динамометрические, моментные шкальные, предельные (электронные)",
     "range": "(200…500) Нм,",
-    "verification_price": "2600",
-    "calibration_price": "2600",
+    "verification_price": "1800",
+    "calibration_price": "1800",
     "note": ""
   },
   {
@@ -3735,8 +3715,8 @@
     "section": "28. Механические величины",
     "name": "Ключи динамометрические, моментные шкальные, предельные (электронные)",
     "range": "(500…1000) Нм,",
-    "verification_price": "4200",
-    "calibration_price": "4200",
+    "verification_price": "3600",
+    "calibration_price": "3600",
     "note": ""
   },
   {
@@ -3745,8 +3725,8 @@
     "section": "28. Механические величины",
     "name": "Ключи динамометрические, моментные шкальные, предельные (электронные)",
     "range": "(1000…1500) Нм,",
-    "verification_price": "5600",
-    "calibration_price": "5600",
+    "verification_price": "4500",
+    "calibration_price": "4500",
     "note": ""
   },
   {
@@ -3755,8 +3735,8 @@
     "section": "28. Механические величины",
     "name": "Ключи динамометрические, моментные шкальные, предельные (электронные)",
     "range": "(1500…3000) Нм,",
-    "verification_price": "8500",
-    "calibration_price": "8500",
+    "verification_price": "6000",
+    "calibration_price": "6000",
     "note": ""
   },
   {
@@ -3765,8 +3745,8 @@
     "section": "28. Механические величины",
     "name": "Машины разрывные, испытательные, прессы гидравлические измерительные",
     "range": "Канал измерения перемещения траверсы",
-    "verification_price": "8500",
-    "calibration_price": "8500",
+    "verification_price": "6500",
+    "calibration_price": "6500",
     "note": "(0…100) кН\n(0…5000) мм\n(0,1…1000) мм/мин"
   },
   {
@@ -3785,8 +3765,8 @@
     "section": "28. Механические величины",
     "name": "Машины разрывные, испытательные, прессы гидравлические измерительные",
     "range": "Канал измерения скорости",
-    "verification_price": "8500",
-    "calibration_price": "8500",
+    "verification_price": "7500",
+    "calibration_price": "7500",
     "note": ""
   },
   {
@@ -3804,9 +3784,9 @@
     "code": "2.070",
     "section": "28. Механические величины",
     "name": "Адгезиметры покрытий (механические, гидравлические), измерители адгезии",
-    "range": "(0…30000) Н\n(0,1…75) кгс\n(0…100) Мпа",
-    "verification_price": "5800",
-    "calibration_price": "5800",
+    "range": "(0…30000) Н(0,1…75) кгс(0…100) Мпа",
+    "verification_price": "3800",
+    "calibration_price": "3800",
     "note": ""
   },
   {
@@ -3824,9 +3804,9 @@
     "code": "2.082",
     "section": "28. Механические величины",
     "name": "Измерители прочности бетона отрывом со скалыванием, измерители прочности материалов",
-    "range": "(0,1…100) кН\n(0,5…100) Мпа",
-    "verification_price": "5800",
-    "calibration_price": "5800",
+    "range": "(0,1…100) кН(0,5…100) Мпа",
+    "verification_price": "4200",
+    "calibration_price": "4200",
     "note": ""
   },
   {
@@ -3844,9 +3824,9 @@
     "code": "2.091",
     "section": "28. Механические величины",
     "name": "Пенетрометры грунтовые",
-    "range": "(0…50) мм\n(0…950) Н",
-    "verification_price": "6000",
-    "calibration_price": "6000",
+    "range": "(0…50) мм(0…950) Н",
+    "verification_price": "5300",
+    "calibration_price": "5300",
     "note": ""
   },
   {
@@ -3974,9 +3954,9 @@
     "code": "2.131.1",
     "section": "28. Механические величины",
     "name": "Весы эталонные и лабораторные",
-    "range": "0,01 мг…5000 г\nКТ специальный (I)\nКТ 1",
-    "verification_price": "3000",
-    "calibration_price": "3000",
+    "range": "0,01 мг…5000 гКТ специальный (I)КТ 1",
+    "verification_price": "2650",
+    "calibration_price": "2650",
     "note": ""
   },
   {
@@ -3984,9 +3964,9 @@
     "code": "2.131.2",
     "section": "28. Механические величины",
     "name": "Весы эталонные и лабораторные",
-    "range": "1 мг…35 кг\nКТ высокий (II)\nКТ 2",
-    "verification_price": "2100",
-    "calibration_price": "2100",
+    "range": "1 мг…35 кгКТ высокий (II)КТ 2",
+    "verification_price": "1900",
+    "calibration_price": "1900",
     "note": ""
   },
   {
@@ -3994,9 +3974,9 @@
     "code": "2.131.3",
     "section": "28. Механические величины",
     "name": "Весы эталонные и лабораторные",
-    "range": "1 мг…160 кг\nКТ средний (III)\nКТ 3; 4",
-    "verification_price": "1600",
-    "calibration_price": "1600",
+    "range": "1 мг…160 кгКТ средний (III)КТ 3; 4",
+    "verification_price": "1450",
+    "calibration_price": "1450",
     "note": ""
   },
   {
@@ -4354,7 +4334,7 @@
     "code": "4.011",
     "section": "30. Давление и вакуумные измерения",
     "name": "Манометры показывающие (рабочие)",
-    "range": "воздух/вода\nот -0,1 до 100 Мпа",
+    "range": "вода/жидкость от -0,1 до 100 Мпа",
     "verification_price": "160",
     "calibration_price": "320",
     "note": ""
@@ -4703,7 +4683,7 @@
     "id": 471,
     "code": "5.050",
     "section": "31. Физико-химический состав и свойства веществ",
-    "name": "Приборы комбинированне",
+    "name": "Приборы комбинированные",
     "range": "за 1 канал",
     "verification_price": "2000",
     "calibration_price": "2000",
@@ -5115,8 +5095,8 @@
     "section": "33. Измерения времени и частоты",
     "name": "Секундомеры электронные, цифровые",
     "range": "(0,001…99999,9) с",
-    "verification_price": "1000",
-    "calibration_price": "1000",
+    "verification_price": "850",
+    "calibration_price": "850",
     "note": ""
   },
   {
@@ -5243,10 +5223,660 @@
     "id": 525,
     "code": "9.070",
     "section": "Доплаты",
-    "name": "Консервация/расконссервация",
+    "name": "Консервация/расконсервация",
     "range": "",
     "verification_price": "10% от стоимости работ",
     "calibration_price": "",
     "note": "Доплата применяется к основной стоимости работ"
+  },
+  {
+    "id": 526,
+    "code": "1.258.11",
+    "section": "27. Геометрические величины",
+    "name": "Меры длины концевые плоскопараллельные",
+    "range": "32668-14 87 шт 0 к.т.",
+    "verification_price": "25000",
+    "calibration_price": "25000",
+    "note": ""
+  },
+  {
+    "id": 527,
+    "code": "1К.001",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие цилиндрические",
+    "range": "до 18 мм",
+    "verification_price": "-",
+    "calibration_price": "480",
+    "note": ""
+  },
+  {
+    "id": 528,
+    "code": "1К.002",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие цилиндрические",
+    "range": "от 18 до 120 мм",
+    "verification_price": "-",
+    "calibration_price": "450",
+    "note": ""
+  },
+  {
+    "id": 529,
+    "code": "1К.003",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие цилиндрические",
+    "range": "свыше 120 до 360 мм",
+    "verification_price": "-",
+    "calibration_price": "880",
+    "note": ""
+  },
+  {
+    "id": 530,
+    "code": "1К.004",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие цилиндрические",
+    "range": "свыше 360 до 500 мм",
+    "verification_price": "-",
+    "calibration_price": "1000",
+    "note": ""
+  },
+  {
+    "id": 531,
+    "code": "1К.011",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-скобы",
+    "range": "до 18 мм",
+    "verification_price": "-",
+    "calibration_price": "510",
+    "note": ""
+  },
+  {
+    "id": 532,
+    "code": "1К.012",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-скобы",
+    "range": "от 18…120 мм",
+    "verification_price": "-",
+    "calibration_price": "450",
+    "note": ""
+  },
+  {
+    "id": 533,
+    "code": "1К.013",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-скобы",
+    "range": "120…360 мм",
+    "verification_price": "-",
+    "calibration_price": "700",
+    "note": ""
+  },
+  {
+    "id": 534,
+    "code": "1К.014",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-скобы",
+    "range": "360…500 мм",
+    "verification_price": "-",
+    "calibration_price": "960",
+    "note": ""
+  },
+  {
+    "id": 535,
+    "code": "1К.021",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические М, G, UN",
+    "range": "\"от 1 до 2 мм для М от No. 0 до No. 2 для UN\"",
+    "verification_price": "-",
+    "calibration_price": "1050",
+    "note": ""
+  },
+  {
+    "id": 536,
+    "code": "1К.022",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические М, G, UN",
+    "range": "\"свыше 2 до 3,5 мм для М от No. 3 до No. 6 для UN\"",
+    "verification_price": "-",
+    "calibration_price": "1000",
+    "note": ""
+  },
+  {
+    "id": 537,
+    "code": "1К.023",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические М, G, UN",
+    "range": "\"свыше 3,5 до 50 мм для М от No. 8 до 2\"\" для G, UN\"",
+    "verification_price": "-",
+    "calibration_price": "910",
+    "note": ""
+  },
+  {
+    "id": 538,
+    "code": "1К.024",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические М, G, UN",
+    "range": "\"свыше 50 до 100 мм для М свыше 2\"\" до 4\"\" для G, UN\"",
+    "verification_price": "-",
+    "calibration_price": "1320",
+    "note": ""
+  },
+  {
+    "id": 539,
+    "code": "1К.025",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические М, G, UN",
+    "range": "\"свыше 100 до 260 мм для М свыше 4\"\" для G, UN\"",
+    "verification_price": "-",
+    "calibration_price": "2230",
+    "note": ""
+  },
+  {
+    "id": 540,
+    "code": "1К.026",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические М, G, UN",
+    "range": "свыше 260 до 360 мм",
+    "verification_price": "-",
+    "calibration_price": "4150",
+    "note": ""
+  },
+  {
+    "id": 541,
+    "code": "1К.031",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические М, G, UN (с исп. оптиметра)",
+    "range": "\"от 20 мм до 50 мм для М от 1\"\" до 2\"\" для G и UN\"",
+    "verification_price": "-",
+    "calibration_price": "1250",
+    "note": ""
+  },
+  {
+    "id": 542,
+    "code": "1К.032",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические М, G, UN (с исп. оптиметра)",
+    "range": "\"свыше 50 мм до 120 мм для М свыше 2\"\" до 4\"\" для G и UN\"",
+    "verification_price": "-",
+    "calibration_price": "2120",
+    "note": ""
+  },
+  {
+    "id": 543,
+    "code": "1К.033",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические М, G, UN (с исп. оптиметра)",
+    "range": "\"свыше 120 мм до 230 мм для М свыше 4\"\" до 6\"\" для G и UN\"",
+    "verification_price": "-",
+    "calibration_price": "4200",
+    "note": ""
+  },
+  {
+    "id": 544,
+    "code": "1К.034",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические М, G, UN (с исп. оптиметра)",
+    "range": "свыше 230 до 320 мм",
+    "verification_price": "-",
+    "calibration_price": "6130",
+    "note": ""
+  },
+  {
+    "id": 545,
+    "code": "1К.041",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические Tr",
+    "range": "до 50 мм",
+    "verification_price": "-",
+    "calibration_price": "1360",
+    "note": ""
+  },
+  {
+    "id": 546,
+    "code": "1К.042",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические Tr",
+    "range": "свыше 50 до 100 мм",
+    "verification_price": "-",
+    "calibration_price": "1870",
+    "note": ""
+  },
+  {
+    "id": 547,
+    "code": "1К.043",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические Tr",
+    "range": "свыше 100 до 260 мм",
+    "verification_price": "-",
+    "calibration_price": "3100",
+    "note": ""
+  },
+  {
+    "id": 548,
+    "code": "1К.044",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические Tr",
+    "range": "свыше 260 до 360 мм",
+    "verification_price": "-",
+    "calibration_price": "6130",
+    "note": ""
+  },
+  {
+    "id": 549,
+    "code": "1К.051",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические Tr (с исп. изм. приб.)",
+    "range": "от 20 мм до 50 мм",
+    "verification_price": "-",
+    "calibration_price": "1990",
+    "note": ""
+  },
+  {
+    "id": 550,
+    "code": "1К.052",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические Tr (с исп. изм. приб.)",
+    "range": "свыше 50 мм до 120 мм",
+    "verification_price": "-",
+    "calibration_price": "3220",
+    "note": ""
+  },
+  {
+    "id": 551,
+    "code": "1К.053",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические Tr (с исп. изм. приб.)",
+    "range": "свыше 120 мм до 230 мм",
+    "verification_price": "-",
+    "calibration_price": "6150",
+    "note": ""
+  },
+  {
+    "id": 552,
+    "code": "1К.054",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические Tr (с исп. изм. приб.)",
+    "range": "свыше 230 до 320 мм",
+    "verification_price": "-",
+    "calibration_price": "9200",
+    "note": ""
+  },
+  {
+    "id": 553,
+    "code": "1К.061",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые цилиндрические для обсадных и колонковых труб",
+    "range": "21,5...141 мм",
+    "verification_price": "-",
+    "calibration_price": "3200",
+    "note": ""
+  },
+  {
+    "id": 554,
+    "code": "1К.071",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические ACME, STUB ACME",
+    "range": "до 2\"",
+    "verification_price": "-",
+    "calibration_price": "1990",
+    "note": ""
+  },
+  {
+    "id": 555,
+    "code": "1К.072",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические ACME, STUB ACME",
+    "range": "свыше 2\" до 4\"",
+    "verification_price": "-",
+    "calibration_price": "2850",
+    "note": ""
+  },
+  {
+    "id": 556,
+    "code": "1К.073",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические ACME, STUB ACME",
+    "range": "свыше 4\" до 10\"",
+    "verification_price": "-",
+    "calibration_price": "4820",
+    "note": ""
+  },
+  {
+    "id": 557,
+    "code": "1К.074",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-пробки/ калибр-кольца резьбовые цилиндрические ACME, STUB ACME",
+    "range": "свыше 10\" до 14\"",
+    "verification_price": "-",
+    "calibration_price": "9150",
+    "note": ""
+  },
+  {
+    "id": 558,
+    "code": "1К.081",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические ACME, STUB ACME (с исп. оптим.)",
+    "range": "от 1\" до 2\"",
+    "verification_price": "-",
+    "calibration_price": "2900",
+    "note": ""
+  },
+  {
+    "id": 559,
+    "code": "1К.082",
+    "section": "27. Геометрические величины",
+    "name": "м",
+    "range": "2\" до 4\"",
+    "verification_price": "-",
+    "calibration_price": "4580",
+    "note": ""
+  },
+  {
+    "id": 560,
+    "code": "1К.083",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические ACME, STUB ACME (с исп. оптим.)",
+    "range": "свыше 4\" до 9\"",
+    "verification_price": "-",
+    "calibration_price": "9150",
+    "note": ""
+  },
+  {
+    "id": 561,
+    "code": "1К.084",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические ACME, STUB ACME (с исп. оптим.)",
+    "range": "свыше 9\" до 12\"",
+    "verification_price": "-",
+    "calibration_price": "13770",
+    "note": ""
+  },
+  {
+    "id": 562,
+    "code": "1К.091",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические рабочие R, K, NPT, NPTF, W, MK, Р3, НКТ и другие",
+    "range": "до 60 мм",
+    "verification_price": "-",
+    "calibration_price": "2240",
+    "note": ""
+  },
+  {
+    "id": 563,
+    "code": "1К.092",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические рабочие R, NPTF, Р3, НКТ и другие",
+    "range": "свыше 60 до 100 мм",
+    "verification_price": "-",
+    "calibration_price": "3100",
+    "note": ""
+  },
+  {
+    "id": 564,
+    "code": "1К.093",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические рабочие R, НКТ, РЗ, ОТТМ, БАТРЕСС и другие",
+    "range": "свыше 100 до 180 мм",
+    "verification_price": "-",
+    "calibration_price": "3590",
+    "note": ""
+  },
+  {
+    "id": 565,
+    "code": "1К.094",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические рабочие ОТТМ, БАТРЕСС и другие",
+    "range": "свыше 180 до 260 мм",
+    "verification_price": "-",
+    "calibration_price": "5190",
+    "note": ""
+  },
+  {
+    "id": 566,
+    "code": "1К.095",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические рабочие ОТТМ, БАТРЕСС и другие",
+    "range": "свыше 260 до 340 мм",
+    "verification_price": "-",
+    "calibration_price": "5800",
+    "note": ""
+  },
+  {
+    "id": 567,
+    "code": "1К.101",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические контрольные R, K, NPT, NPTF, W, MK, Р3, НКТ и другие",
+    "range": "до 60 мм",
+    "verification_price": "-",
+    "calibration_price": "2550",
+    "note": ""
+  },
+  {
+    "id": 568,
+    "code": "1К.102",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические контрольные R, NPTF, Р3, НКТ и другие",
+    "range": "свыше 60 до 100 мм",
+    "verification_price": "-",
+    "calibration_price": "3340",
+    "note": ""
+  },
+  {
+    "id": 569,
+    "code": "1К.103",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические контрольные R, НКТ, РЗ, ОТТМ, БАТРЕСС и другие",
+    "range": "свыше 100 до 180 мм",
+    "verification_price": "-",
+    "calibration_price": "4330,00",
+    "note": ""
+  },
+  {
+    "id": 570,
+    "code": "1К.104",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические контрольные ОТТМ, БАТРЕСС и другие",
+    "range": "свыше 180 до 260 мм",
+    "verification_price": "-",
+    "calibration_price": "5320",
+    "note": ""
+  },
+  {
+    "id": 571,
+    "code": "1К.105",
+    "section": "27. Геометрические величины",
+    "name": "Калибры резьбовые конические контрольные ОТТМ, БАТРЕСС и другие",
+    "range": "свыше 260 до 340 мм",
+    "verification_price": "-",
+    "calibration_price": "6050",
+    "note": ""
+  },
+  {
+    "id": 572,
+    "code": "1К.111",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие конические R, K, NPT, NPTF, W, MK, Г3, ГНК, ОТТГ, ОТТМ и другие",
+    "range": "до 100 мм",
+    "verification_price": "-",
+    "calibration_price": "1130",
+    "note": ""
+  },
+  {
+    "id": 573,
+    "code": "1К.112",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие конические R, NPTF, Г3, ГНК, ОТТГ, ОТТМ и другие",
+    "range": "свыше 100 до 160 мм",
+    "verification_price": "-",
+    "calibration_price": "1380",
+    "note": ""
+  },
+  {
+    "id": 574,
+    "code": "1К.113",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие конические ГНК, НКТГ, ОТТГ, ОТТМ и другие",
+    "range": "свыше 160 до 260 мм",
+    "verification_price": "-",
+    "calibration_price": "2610,00",
+    "note": ""
+  },
+  {
+    "id": 575,
+    "code": "1К.114",
+    "section": "27. Геометрические величины",
+    "name": "Калибры гладкие конические ГНК, НКТГ, ОТТГ, ОТТМ и другие",
+    "range": "свыше 260 мм",
+    "verification_price": "-",
+    "calibration_price": "3340",
+    "note": ""
+  },
+  {
+    "id": 576,
+    "code": "1К.121",
+    "section": "27. Геометрические величины",
+    "name": "\"Калибры для конусов инструментов/ Калибры для конусов с конусностью 7:24\"",
+    "range": "(4…260) мм",
+    "verification_price": "-",
+    "calibration_price": "2000",
+    "note": ""
+  },
+  {
+    "id": 577,
+    "code": "1К.13",
+    "section": "27. Геометрические величины",
+    "name": "Калибры комплексные для контроля шлицевых прямобочных соединений, эвольвентных соединений с углом профиля 30",
+    "range": "(5…200) мм",
+    "verification_price": "-",
+    "calibration_price": "650",
+    "note": ""
+  },
+  {
+    "id": 578,
+    "code": "1К.14",
+    "section": "27. Геометрические величины",
+    "name": "Калибры для шпоночных соединений",
+    "range": "(1…300) мм",
+    "verification_price": "-",
+    "calibration_price": "650",
+    "note": ""
+  },
+  {
+    "id": 579,
+    "code": "1К.15",
+    "section": "27. Геометрические величины",
+    "name": "Калибры для звездообразных углублений",
+    "range": "(1…23) мм",
+    "verification_price": "-",
+    "calibration_price": "1100",
+    "note": ""
+  },
+  {
+    "id": 580,
+    "code": "1К.16",
+    "section": "27. Геометрические величины",
+    "name": "Калибры нестанадартные или изготовленные по чертежам",
+    "range": "",
+    "verification_price": "",
+    "calibration_price": "договорная",
+    "note": ""
+  },
+  {
+    "id": 581,
+    "code": "1К.1.01",
+    "section": "27. Геометрические величины",
+    "name": "Приборы для измерения глубины резьбы",
+    "range": "(0…80) мм",
+    "verification_price": "-",
+    "calibration_price": "2500",
+    "note": ""
+  },
+  {
+    "id": 582,
+    "code": "1К.1.02",
+    "section": "27. Геометрические величины",
+    "name": "Приборы для измерения шага резьбы",
+    "range": "(12,7…101,6) мм",
+    "verification_price": "-",
+    "calibration_price": "850",
+    "note": ""
+  },
+  {
+    "id": 583,
+    "code": "1К.1.03",
+    "section": "27. Геометрические величины",
+    "name": "Приборы для измерения конусности наруж-ной, внутренней резьбы",
+    "range": "(0…406,4) мм",
+    "verification_price": "-",
+    "calibration_price": "2650",
+    "note": ""
+  },
+  {
+    "id": 584,
+    "code": "1К.1.04",
+    "section": "27. Геометрические величины",
+    "name": "Приборы для измерения высоты внутренней и наружной резьбы, резьбовых упорных со-единений, профиля резьбы",
+    "range": "(0…5) мм",
+    "verification_price": "-",
+    "calibration_price": "3000",
+    "note": ""
+  },
+  {
+    "id": 585,
+    "code": "1К.1.05",
+    "section": "27. Геометрические величины",
+    "name": "Приборы для измерения наружного диамет-ра внутренней, внешней резьбы",
+    "range": "(60…508) мм",
+    "verification_price": "-",
+    "calibration_price": "2500",
+    "note": ""
+  },
+  {
+    "id": 586,
+    "code": "1К.1.06",
+    "section": "27. Геометрические величины",
+    "name": "Глубиномеры шпоночного паза",
+    "range": "(0…30) мм",
+    "verification_price": "-",
+    "calibration_price": "3000",
+    "note": ""
+  },
+  {
+    "id": 587,
+    "code": "1К.1.07",
+    "section": "27. Геометрические величины",
+    "name": "Приборы для измерения диаметра, ширины паза",
+    "range": "(0…900) мм",
+    "verification_price": "-",
+    "calibration_price": "2650",
+    "note": ""
+  },
+  {
+    "id": 588,
+    "code": "1К.1.08",
+    "section": "27. Геометрические величины",
+    "name": "\"Заклепки с полукруглой головкой Заклепки «слепые» Заклепки общемашиностроительного при-менения\"",
+    "range": "\"(1…36) мм, (3…7) мм, (1…50) мм\"",
+    "verification_price": "-",
+    "calibration_price": "450",
+    "note": ""
+  },
+  {
+    "id": 589,
+    "code": "1К.1.09",
+    "section": "27. Геометрические величины",
+    "name": "Болты, винты, шпильки, гайки, шурупы и самонарезающие винты общемашинострои-тельного применения",
+    "range": "(2…50) мм",
+    "verification_price": "-",
+    "calibration_price": "договорная",
+    "note": ""
+  },
+  {
+    "id": 590,
+    "code": "1К.1.10",
+    "section": "27. Геометрические величины",
+    "name": "Патрубки конические",
+    "range": "(8,4…31) мм",
+    "verification_price": "-",
+    "calibration_price": "2590",
+    "note": ""
   }
 ]

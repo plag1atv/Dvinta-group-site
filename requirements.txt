@@ -1,3 +1,4 @@
 Flask==3.0.3
 openpyxl==3.1.5
 flask-recaptcha
+Flask-Compress==1.24

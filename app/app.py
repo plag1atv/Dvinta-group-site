@@ -1067,6 +1067,7 @@ def create_app() -> Flask:
             equipment_type="gauge_blocks"
         )
 
+
     @app.route("/equipment_measuring_rings.html")
     @app.route("/equipment/measuring-rings")
     def equipment_measuring_rings():

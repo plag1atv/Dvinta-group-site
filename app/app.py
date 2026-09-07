@@ -7,7 +7,6 @@ from email.message import EmailMessage
 
 
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory
-from flask_compress import Compress
 
 def load_env_file() -> None:
     env_path = os.path.join(
@@ -55,21 +54,6 @@ def create_app() -> Flask:
     app.config["ADMIN_PASSWORD"] = os.environ.get("ADMIN_PASSWORD", "Dvinta_tpa3B_Px")
     app.config["PRICE_ITEMS_PATH"] = (Path(app.root_path) / "static" / "data" / "price_items.json"
     )
-
-    # ==================== ОПТИМИЗАЦИЯ ====================
-
-
-    # Кеширование статических файлов браузером на 1 час.
-    # CSS, JS и изображения не будут повторно скачиваться
-    # при каждом переходе между страницами.
-    app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 1800
-
-    # Сжатие HTML / CSS / JS / JSON.
-    app.config["COMPRESS_ALGORITHM"] = ["gzip"]
-    app.config["COMPRESS_LEVEL"] = 6
-    app.config["COMPRESS_MIN_SIZE"] = 500
-
-    Compress(app)
 
     @app.context_processor
     def inject_globals():
@@ -1066,7 +1050,6 @@ def create_app() -> Flask:
             title="Поверка мер длины концевых плоскопараллельных",
             equipment_type="gauge_blocks"
         )
-
 
     @app.route("/equipment_measuring_rings.html")
     @app.route("/equipment/measuring-rings")

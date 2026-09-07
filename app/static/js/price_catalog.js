@@ -1400,6 +1400,186 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "coating_adhesion_testers") {
+
+        items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "адгезиметры покрытий (механические, гидравлические), измерители адгезии";
+        });
+      }
+
+      if (equipmentType === "concrete_strength_testers") {
+
+        items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы, измерители для определения прочности бетона (молотки шмидта), измерители прочности ударно-импульсные";
+        });
+      }
+
+      if (equipmentType === "pull_off_concrete_strength_testers") {
+
+
+        items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители прочности бетона отрывом со скалыванием, измерители прочности материалов";
+        });
+      }
+
+      if (equipmentType === "reinforcement_tension_force_meters") {
+
+        items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "измерители силы натяжения арматуры";
+        });
+      }
+
+      if (equipmentType === "soil_penetrometers") {
+
+        items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "пенетрометры грунтовые";
+        });
+      }
+
+      if (equipmentType === "static_soil_sounding_equipment") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "комплекты аппаратуры для статического зондирования грунтов";
+        });
+      }
+
+      if (equipmentType === "shore_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для измерения твердости материалов (резины, пластмасс) по шору а и d (твердомеры, дюрометры)";
+        });
+      }
+
+      if (equipmentType === "pendulum_coating_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры маятниковые лакокрасочных покрытий по методу кенига-персоза";
+        });
+      }
+
+      if (equipmentType === "buchholz_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "твердомеры бухгольца";
+        });
+      }
+
+      if (equipmentType === "portable_blade_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы переносные для измерения твердости клинков холодного оружия";
+        });
+      }
+
+      if (equipmentType === "rockwell_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры роквелла, стационарные портативные, динамические";
+        });
+      }
+
+      if (equipmentType === "super_rockwell_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры супер-роквелла, стационарные, портативные";
+        });
+      }
+
+      if (equipmentType === "brinell_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры бринелля стационарные, портативные, динамические";
+        });
+      }
+
+      if (equipmentType === "vickers_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры виккерса стационарные, портативные, динамические";
+        });
+      }
+
       // pressure equipment cards
       if (equipmentType === "indicating_pressure_gauges") {
 

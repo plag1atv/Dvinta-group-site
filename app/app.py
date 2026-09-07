@@ -755,38 +755,122 @@ def create_app() -> Flask:
                 {
                     "title": "Стенды тормозные",
                     "description": "Поверка тормозных роликовых и силовых стендов для измерения тормозной силы, массы на ось и давления сжатого воздуха.",
-                    "icon": "gauge",
+                    "icon": "car-front",
                     "href": "/equipment_roller_brake_test_stands.html",
                 },
                 {
                     "title": "Стенды и станки балансировочные",
                     "description": "Поверка балансировочных стендов и станков для измерения массы дисбаланса и положения корректирующих грузов.",
-                    "icon": "settings-2",
+                    "icon": "refresh-cw",
                     "href": "/equipment_wheel_balancing_stands_and_machines.html",
                 },
                 {
                     "title": "Отвертки моментные",
                     "description": "Поверка моментных и динамометрических отверток для воспроизведения заданного крутящего момента силы.",
-                    "icon": "settings-2",
+                    "icon": "clock",
                     "href": "/equipment_torque_screwdrivers.html",
                 },
                 {
                     "title": "Ключи моментные и динамометрические",
                     "description": "Поверка моментных и динамометрических ключей для воспроизведения крутящего момента при затяжке резьбовых соединений.",
-                    "icon": "settings-2",
+                    "icon": "wrench",
                     "href": "/equipment_torque_and_dynamometric_wrenches.html",
                 },
                 {
                     "title": "Машины испытательные и разрывные",
                     "description": "Поверка разрывных и испытательных машин, универсального испытательного оборудования и гидравлических измерительных прессов.",
-                    "icon": "gauge",
+                    "icon": "move-vertical",
                     "href": "/equipment_testing_and_tensile_machines.html",
                 },
                 {
                     "title": "Машины для испытания пружин",
                     "description": "Поверка машин для определения усилия, деформации, жесткости и других механических характеристик пружин.",
-                    "icon": "gauge",
+                    "icon": "waves",
                     "href": "/equipment_spring_testing_machines.html",
+                },
+                {
+                    "title": "Адгезиметры покрытий и измерители адгезии",
+                    "description": "Поверка механических и гидравлических адгезиметров покрытий, а также измерителей адгезии для определения прочности сцепления покрытий с основанием.",
+                    "icon": "link-2",
+                    "href": "/equipment_coating_adhesion_testers.html",
+                },
+                {
+                    "title": "Молотки Шмидта, склерометры и ударно-импульсных измерители",
+                    "description": "Поверка молотков Шмидта, склерометров и ударно-импульсных измерителей для неразрушающего определения прочности бетона.",
+                    "icon": "hammer",
+                    "href": "/equipment_concrete_strength_testers.html",
+                },
+                {
+                    "title": "Измерители прочности бетона отрывом со скалыванием, измерители прочности материалов",
+                    "description": "Поверка измерителей прочности бетона методом отрыва со скалыванием, а также измерителей прочности строительных и других материалов.",
+                    "icon": "arrow-up-from-line",
+                    "href": "/equipment_pull_off_concrete_strength_testers.html",
+                },
+                {
+                    "title": "Измерители силы натяжения арматуры",
+                    "description": "Поверка измерителей силы натяжения арматуры, применяемых для контроля усилия натяжения арматурных стержней и элементов железобетонных конструкций.",
+                    "icon": "move-horizontal",
+                    "href": "/equipment_reinforcement_tension_force_meters.html",
+                },
+                {
+                    "title": "Пенетрометры грунтовые",
+                    "description": "Поверка грунтовых пенетрометров, применяемых для определения сопротивления грунта проникновению, оценки его плотности, прочности и других механических характеристик.",
+                    "icon": "pickaxe",
+                    "href": "/equipment_soil_penetrometers.html",
+                },
+                {
+                    "title": "Комплекты аппаратуры для статического зондирования грунтов",
+                    "description": "Поверка комплектов аппаратуры для статического зондирования грунтов, применяемых при инженерно-геологических изысканиях и определении механических характеристик грунта.",
+                    "icon": "radar",
+                    "href": "/equipment_static_soil_sounding_equipment.html",
+                },
+                {
+                    "title": "Приборы для измерения твердости материалов (резины, пластмасс) по Шору А и D (твердомеры, дюрометры)",
+                    "description": "Поверка твердомеров и дюрометров для измерения твердости резины, пластмасс, эластомеров и других материалов по шкалам Шора А и D.",
+                    "icon": "ruler",
+                    "href": "/equipment_shore_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры маятниковые лакокрасочных покрытий по методу Кенига-Персоза",
+                    "description": "Поверка маятниковых твердомеров для определения твердости и степени отверждения лакокрасочных покрытий по методам Кенига и Персоза.",
+                    "icon": "clock",
+                    "href": "/equipment_pendulum_coating_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры Бухгольца",
+                    "description": "Поверка твердомеров Бухгольца, применяемых для определения твердости лакокрасочных покрытий методом вдавливания.",
+                    "icon": "stamp",
+                    "href": "/equipment_buchholz_hardness_testers.html",
+                },
+                {
+                    "title": "Приборы переносные для измерения твердости клинков холодного оружия",
+                    "description": "Поверка переносных приборов и твердомеров, предназначенных для измерения твердости клинков холодного оружия и металлических изделий в диапазоне HRC.",
+                    "icon": "swords",
+                    "href": "/equipment_portable_blade_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры Роквелла, стационарные портативные, динамические",
+                    "description": "Поверка стационарных, портативных и динамических твердомеров Роквелла для измерения твердости металлов и сплавов по шкалам HRA, HRB и HRC.",
+                    "icon": "gauge",
+                    "href": "/equipment_rockwell_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры Супер-Роквелла, стационарные, портативные",
+                    "description": "Поверка стационарных и портативных твердомеров Супер-Роквелла для измерения поверхностной твердости металлов, покрытий и упрочнённых слоёв по шкалам N и T.",
+                    "icon": "circle-gauge",
+                    "href": "/equipment_super_rockwell_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры Бринелля стационарные, портативные, динамические",
+                    "description": "Поверка стационарных, портативных и динамических твердомеров Бринелля для измерения твердости металлов и сплавов методом Бринелля.",
+                    "icon": "circle-dot",
+                    "href": "/equipment_brinell_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры Виккерса стационарные, портативные, динамические",
+                    "description": "Поверка стационарных, портативных и динамических твердомеров Виккерса для измерения твердости металлов, сплавов и упрочнённых поверхностных слоёв по шкале HV.",
+                    "icon": "diamond",
+                    "href": "/equipment_vickers_hardness_testers.html",
                 },
             ],
         },
@@ -1750,6 +1834,132 @@ def create_app() -> Flask:
             "equipment_spring_testing_machines.html",
             title="Поверка машин для испытания пружин",
             equipment_type="spring_testing_machines"
+        )
+
+    @app.route("/equipment_coating_adhesion_testers.html")
+    @app.route("/equipment/coating-adhesion-testers")
+    def equipment_coating_adhesion_testers():
+        return render_template(
+            "equipment_coating_adhesion_testers.html",
+            title="Поверка адгезиметров покрытий и измерителей адгезии",
+            equipment_type="coating_adhesion_testers"
+        )
+
+    @app.route("/equipment_concrete_strength_testers.html")
+    @app.route("/equipment/concrete-strength-testers")
+    def equipment_concrete_strength_testers():
+        return render_template(
+            "equipment_concrete_strength_testers.html",
+            title="Поверка приборов и измерителей прочности бетона",
+            equipment_type="concrete_strength_testers"
+        )
+
+    @app.route("/equipment_pull_off_concrete_strength_testers.html")
+    @app.route("/equipment/pull-off-concrete-strength-testers")
+    def equipment_pull_off_concrete_strength_testers():
+        return render_template(
+            "equipment_pull_off_concrete_strength_testers.html",
+            title="Поверка измерителей прочности бетона отрывом со скалыванием и измерителей прочности материалов",
+            equipment_type="pull_off_concrete_strength_testers"
+        )
+
+    @app.route("/equipment_reinforcement_tension_force_meters.html")
+    @app.route("/equipment/reinforcement-tension-force-meters")
+    def equipment_reinforcement_tension_force_meters():
+        return render_template(
+            "equipment_reinforcement_tension_force_meters.html",
+            title="Поверка измерителей силы натяжения арматуры",
+            equipment_type="reinforcement_tension_force_meters"
+        )
+
+    @app.route("/equipment_soil_penetrometers.html")
+    @app.route("/equipment/soil-penetrometers")
+    def equipment_soil_penetrometers():
+        return render_template(
+            "equipment_soil_penetrometers.html",
+            title="Поверка грунтовых пенетрометров",
+            equipment_type="soil_penetrometers"
+        )
+
+    @app.route("/equipment_static_soil_sounding_equipment.html")
+    @app.route("/equipment/static-soil-sounding-equipment")
+    def equipment_static_soil_sounding_equipment():
+        return render_template(
+            "equipment_static_soil_sounding_equipment.html",
+            title="Поверка комплектов аппаратуры для статического зондирования грунтов",
+            equipment_type="static_soil_sounding_equipment"
+        )
+
+    @app.route("/equipment_shore_hardness_testers.html")
+    @app.route("/equipment/shore-hardness-testers")
+    def equipment_shore_hardness_testers():
+        return render_template(
+            "equipment_shore_hardness_testers.html",
+            title="Поверка твердомеров и дюрометров по Шору А и D",
+            equipment_type="shore_hardness_testers"
+        )
+
+    @app.route("/equipment_pendulum_coating_hardness_testers.html")
+    @app.route("/equipment/pendulum-coating-hardness-testers")
+    def equipment_pendulum_coating_hardness_testers():
+        return render_template(
+            "equipment_pendulum_coating_hardness_testers.html",
+            title="Поверка маятниковых твердомеров лакокрасочных покрытий по методу Кенига-Персоза",
+            equipment_type="pendulum_coating_hardness_testers"
+        )
+
+    @app.route("/equipment_buchholz_hardness_testers.html")
+    @app.route("/equipment/buchholz-hardness-testers")
+    def equipment_buchholz_hardness_testers():
+        return render_template(
+            "equipment_buchholz_hardness_testers.html",
+            title="Поверка твердомеров Бухгольца",
+            equipment_type="buchholz_hardness_testers"
+        )
+
+    @app.route("/equipment_portable_blade_hardness_testers.html")
+    @app.route("/equipment/portable-blade-hardness-testers")
+    def equipment_portable_blade_hardness_testers():
+        return render_template(
+            "equipment_portable_blade_hardness_testers.html",
+            title="Поверка переносных приборов для измерения твердости клинков холодного оружия",
+            equipment_type="portable_blade_hardness_testers"
+        )
+
+    @app.route("/equipment_rockwell_hardness_testers.html")
+    @app.route("/equipment/rockwell-hardness-testers")
+    def equipment_rockwell_hardness_testers():
+        return render_template(
+            "equipment_rockwell_hardness_testers.html",
+            title="Поверка твердомеров Роквелла",
+            equipment_type="rockwell_hardness_testers"
+        )
+
+    @app.route("/equipment_super_rockwell_hardness_testers.html")
+    @app.route("/equipment/super-rockwell-hardness-testers")
+    def equipment_super_rockwell_hardness_testers():
+        return render_template(
+            "equipment_super_rockwell_hardness_testers.html",
+            title="Поверка твердомеров Супер-Роквелла",
+            equipment_type="super_rockwell_hardness_testers"
+        )
+
+    @app.route("/equipment_brinell_hardness_testers.html")
+    @app.route("/equipment/brinell-hardness-testers")
+    def equipment_brinell_hardness_testers():
+        return render_template(
+            "equipment_brinell_hardness_testers.html",
+            title="Поверка твердомеров Бринелля",
+            equipment_type="brinell_hardness_testers"
+        )
+
+    @app.route("/equipment_vickers_hardness_testers.html")
+    @app.route("/equipment/vickers-hardness-testers")
+    def equipment_vickers_hardness_testers():
+        return render_template(
+            "equipment_vickers_hardness_testers.html",
+            title="Поверка твердомеров Виккерса",
+            equipment_type="vickers_hardness_testers"
         )
 
     # pressure equipment cards

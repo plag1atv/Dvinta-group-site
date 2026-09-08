@@ -1580,6 +1580,97 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "universal_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры универсальные, комбинированные, портативные ультразвуковые";
+        });
+      }
+
+      if (equipmentType === "combined_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры универсальные, комбинированные, портативные ультразвуковые";
+        });
+      }
+
+      if (equipmentType === "portable_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры универсальные, комбинированные, портативные ультразвуковые";
+        });
+      }
+
+      if (equipmentType === "ultrasonic_hardness_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "твердомеры универсальные, комбинированные, портативные ультразвуковые";
+        });
+      }
+
+      if (equipmentType === "rockwell_reference_hardness_blocks") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "меры твердости эталонные роквелла";
+        });
+      }
+
+      if (equipmentType === "hand_dynamometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "динамометры кистевые, медицинские электронные ручные";
+        });
+      }
+
+      if (equipmentType === "medical_electronic_hand_dynamometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "динамометры кистевые, медицинские электронные ручные";
+        });
+      }
+
       // pressure equipment cards
       if (equipmentType === "indicating_pressure_gauges") {
 

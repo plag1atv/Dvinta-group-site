@@ -872,6 +872,48 @@ def create_app() -> Flask:
                     "icon": "diamond",
                     "href": "/equipment_vickers_hardness_testers.html",
                 },
+                {
+                    "title": "Твердомеры универсальные",
+                    "description": "Поверка универсальных, комбинированных и портативных ультразвуковых твердомеров для измерения твердости металлов и сплавов по различным шкалам.",
+                    "icon": "gauge",
+                    "href": "/equipment_universal_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры комбинированные",
+                    "description": "Поверка комбинированных твердомеров для измерения твердости металлов и сплавов различными методами, включая динамический и ультразвуковой.",
+                    "icon": "gauge",
+                    "href": "/equipment_combined_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры портативные",
+                    "description": "Поверка портативных ультразвуковых, динамических и комбинированных твердомеров для оперативного контроля твердости металлов и сплавов.",
+                    "icon": "gauge",
+                    "href": "/equipment_portable_hardness_testers.html",
+                },
+                {
+                    "title": "Твердомеры ультразвуковые",
+                    "description": "Поверка ультразвуковых твердомеров для измерения твердости металлов и сплавов методом ультразвукового контактного импеданса (UCI).",
+                    "icon": "gauge",
+                    "href": "/equipment_ultrasonic_hardness_testers.html",
+                },
+                {
+                    "title": "Меры твердости эталонные Роквелла",
+                    "description": "Поверка эталонных мер твердости Роквелла для контроля и поверки твердомеров по шкалам HRA, HRB и HRC.",
+                    "icon": "gauge",
+                    "href": "/equipment_rockwell_reference_hardness_blocks.html",
+                },
+                {
+                    "title": "Динамометры кистевые",
+                    "description": "Поверка кистевых, медицинских электронных и ручных динамометров для измерения силы кисти и оценки мышечной силы.",
+                    "icon": "gauge",
+                    "href": "/equipment_hand_dynamometers.html",
+                },
+                {
+                    "title": "Динамометры медицинские электронные ручные",
+                    "description": "Поверка медицинских электронных ручных динамометров для измерения силы кисти, оценки мышечной силы и функционального состояния пациента.",
+                    "icon": "gauge",
+                    "href": "/equipment_medical_electronic_hand_dynamometers.html",
+                },
             ],
         },
         "flow": {
@@ -1960,6 +2002,69 @@ def create_app() -> Flask:
             "equipment_vickers_hardness_testers.html",
             title="Поверка твердомеров Виккерса",
             equipment_type="vickers_hardness_testers"
+        )
+
+    @app.route("/equipment_universal_hardness_testers.html")
+    @app.route("/equipment/universal-hardness-testers")
+    def equipment_universal_hardness_testers():
+        return render_template(
+            "equipment_universal_hardness_testers.html",
+            title="Поверка универсальных твердомеров",
+            equipment_type="universal_hardness_testers"
+        )
+
+    @app.route("/equipment_combined_hardness_testers.html")
+    @app.route("/equipment/combined-hardness-testers")
+    def equipment_combined_hardness_testers():
+        return render_template(
+            "equipment_combined_hardness_testers.html",
+            title="Поверка комбинированных твердомеров",
+            equipment_type="combined_hardness_testers"
+        )
+
+    @app.route("/equipment_portable_hardness_testers.html")
+    @app.route("/equipment/portable-hardness-testers")
+    def equipment_portable_hardness_testers():
+        return render_template(
+            "equipment_portable_hardness_testers.html",
+            title="Поверка портативных твердомеров",
+            equipment_type="portable_hardness_testers"
+        )
+
+    @app.route("/equipment_ultrasonic_hardness_testers.html")
+    @app.route("/equipment/ultrasonic-hardness-testers")
+    def equipment_ultrasonic_hardness_testers():
+        return render_template(
+            "equipment_ultrasonic_hardness_testers.html",
+            title="Поверка ультразвуковых твердомеров",
+            equipment_type="ultrasonic_hardness_testers"
+        )
+
+    @app.route("/equipment_rockwell_reference_hardness_blocks.html")
+    @app.route("/equipment/rockwell-reference-hardness-blocks")
+    def equipment_rockwell_reference_hardness_blocks():
+        return render_template(
+            "equipment_rockwell_reference_hardness_blocks.html",
+            title="Поверка эталонных мер твердости Роквелла",
+            equipment_type="rockwell_reference_hardness_blocks"
+        )
+
+    @app.route("/equipment_hand_dynamometers.html")
+    @app.route("/equipment/hand-dynamometers")
+    def equipment_hand_dynamometers():
+        return render_template(
+            "equipment_hand_dynamometers.html",
+            title="Поверка кистевых динамометров",
+            equipment_type="hand_dynamometers"
+        )
+
+    @app.route("/equipment_medical_electronic_hand_dynamometers.html")
+    @app.route("/equipment/medical-electronic-hand-dynamometers")
+    def equipment_medical_electronic_hand_dynamometers():
+        return render_template(
+            "equipment_medical_electronic_hand_dynamometers.html",
+            title="Поверка медицинских электронных ручных динамометров",
+            equipment_type="medical_electronic_hand_dynamometers"
         )
 
     # pressure equipment cards

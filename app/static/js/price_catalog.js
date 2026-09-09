@@ -1671,6 +1671,107 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "laboratory_nonautomatic_balances") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "весы эталонные и лабораторные";
+        });
+      }
+
+      if (equipmentType === "electronic_nonautomatic_balances") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "весы электронные, весы для статического взвешивания";
+        });
+      }
+
+      if (equipmentType === "static_weighing_scales") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "весы электронные, весы для статического взвешивания";
+        });
+      }
+
+      if (equipmentType === "weighing_modules") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "модули взвешивающие";
+        });
+      }
+
+      if (equipmentType === "gravimetric_moisture_analyzers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "анализаторы влажности весовые";
+        });
+      }
+
+      if (equipmentType === "grammometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "граммометры; граммометры часового типа";
+        });
+      }
+
+      if (equipmentType === "reference_general_weights") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "гири эталонные и общего назначения";
+        });
+      }
+
+      if (equipmentType === "impact_pendulum_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "копры, в том числе маятниковые";
+        });
+      }
+
       // pressure equipment cards
       if (equipmentType === "indicating_pressure_gauges") {
 

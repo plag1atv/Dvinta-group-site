@@ -875,44 +875,92 @@ def create_app() -> Flask:
                 {
                     "title": "Твердомеры универсальные",
                     "description": "Поверка универсальных, комбинированных и портативных ультразвуковых твердомеров для измерения твердости металлов и сплавов по различным шкалам.",
-                    "icon": "gauge",
+                    "icon": "circle-gauge",
                     "href": "/equipment_universal_hardness_testers.html",
                 },
                 {
                     "title": "Твердомеры комбинированные",
                     "description": "Поверка комбинированных твердомеров для измерения твердости металлов и сплавов различными методами, включая динамический и ультразвуковой.",
-                    "icon": "gauge",
+                    "icon": "combine",
                     "href": "/equipment_combined_hardness_testers.html",
                 },
                 {
                     "title": "Твердомеры портативные",
                     "description": "Поверка портативных ультразвуковых, динамических и комбинированных твердомеров для оперативного контроля твердости металлов и сплавов.",
-                    "icon": "gauge",
+                    "icon": "scan-line",
                     "href": "/equipment_portable_hardness_testers.html",
                 },
                 {
                     "title": "Твердомеры ультразвуковые",
                     "description": "Поверка ультразвуковых твердомеров для измерения твердости металлов и сплавов методом ультразвукового контактного импеданса (UCI).",
-                    "icon": "gauge",
+                    "icon": "waves",
                     "href": "/equipment_ultrasonic_hardness_testers.html",
                 },
                 {
                     "title": "Меры твердости эталонные Роквелла",
                     "description": "Поверка эталонных мер твердости Роквелла для контроля и поверки твердомеров по шкалам HRA, HRB и HRC.",
-                    "icon": "gauge",
+                    "icon": "badge-check",
                     "href": "/equipment_rockwell_reference_hardness_blocks.html",
                 },
                 {
                     "title": "Динамометры кистевые",
                     "description": "Поверка кистевых, медицинских электронных и ручных динамометров для измерения силы кисти и оценки мышечной силы.",
-                    "icon": "gauge",
+                    "icon": "hand",
                     "href": "/equipment_hand_dynamometers.html",
                 },
                 {
                     "title": "Динамометры медицинские электронные ручные",
                     "description": "Поверка медицинских электронных ручных динамометров для измерения силы кисти, оценки мышечной силы и функционального состояния пациента.",
-                    "icon": "gauge",
+                    "icon": "heart-pulse",
                     "href": "/equipment_medical_electronic_hand_dynamometers.html",
+                },
+                {
+                    "title": "Весы лабораторные неавтоматического действия, эталонные, компараторы, аналитические (электронные)",
+                    "description": "Поверка лабораторных весов неавтоматического действия, эталонных весов, компараторов массы и аналитических электронных весов различных классов точности.",
+                    "icon": "scale",
+                    "href": "/equipment_laboratory_nonautomatic_balances.html",
+                },
+                {
+                    "title": "Весы неавтоматического действия (электронные)",
+                    "description": "Поверка электронных весов неавтоматического действия и весов для статического взвешивания: настольных, платформенных, товарных и промышленных.",
+                    "icon": "scale",
+                    "href": "/equipment_electronic_nonautomatic_balances.html",
+                },
+                {
+                    "title": "Весы для статического взвешивания",
+                    "description": "Поверка настольных, товарных, платформенных и промышленных весов для статического взвешивания различных диапазонов и классов точности.",
+                    "icon": "weight",
+                    "href": "/equipment_static_weighing_scales.html",
+                },
+                {
+                    "title": "Модули взвешивающие",
+                    "description": "Поверка взвешивающих модулей для измерения массы и применения в составе весоизмерительных систем, технологического оборудования и автоматизированных комплексов.",
+                    "icon": "boxes",
+                    "href": "/equipment_weighing_modules.html",
+                },
+                {
+                    "title": "Анализаторы влажности весовые",
+                    "description": "Поверка весовых анализаторов влажности для определения массовой доли влаги в образцах методом высушивания с одновременным контролем массы.",
+                    "icon": "droplets",
+                    "href": "/equipment_gravimetric_moisture_analyzers.html",
+                },
+                {
+                    "title": "Граммометры, граммометры часового типа",
+                    "description": "Поверка граммометров и граммометров часового типа для измерения малых механических усилий в ньютонах и грамм-силах.",
+                    "icon": "circle-gauge",
+                    "href": "/equipment_grammometers.html",
+                },
+                {
+                    "title": "Гири эталонные и общего назначения",
+                    "description": "Поверка эталонных гирь и гирь общего назначения классов F1, F2 и M1 различных номиналов — от миллиграммовых гирь до гирь массой 20 кг.",
+                    "icon": "weight",
+                    "href": "/equipment_reference_general_weights.html",
+                },
+                {
+                    "title": "Копры, в том числе маятниковые",
+                    "description": "Поверка копров, в том числе маятниковых, для определения энергии разрушения и ударной вязкости материалов при испытаниях на ударный изгиб.",
+                    "icon": "hammer",
+                    "href": "/equipment_impact_pendulum_testers.html",
                 },
             ],
         },
@@ -2065,6 +2113,78 @@ def create_app() -> Flask:
             "equipment_medical_electronic_hand_dynamometers.html",
             title="Поверка медицинских электронных ручных динамометров",
             equipment_type="medical_electronic_hand_dynamometers"
+        )
+
+    @app.route("/equipment_laboratory_nonautomatic_balances.html")
+    @app.route("/equipment/laboratory-nonautomatic-balances")
+    def equipment_laboratory_nonautomatic_balances():
+        return render_template(
+            "equipment_laboratory_nonautomatic_balances.html",
+            title="Поверка лабораторных, эталонных и аналитических весов",
+            equipment_type="laboratory_nonautomatic_balances"
+        )
+
+    @app.route("/equipment_electronic_nonautomatic_balances.html")
+    @app.route("/equipment/electronic-nonautomatic-balances")
+    def equipment_electronic_nonautomatic_balances():
+        return render_template(
+            "equipment_electronic_nonautomatic_balances.html",
+            title="Поверка электронных весов неавтоматического действия",
+            equipment_type="electronic_nonautomatic_balances"
+        )
+
+    @app.route("/equipment_static_weighing_scales.html")
+    @app.route("/equipment/static-weighing-scales")
+    def equipment_static_weighing_scales():
+        return render_template(
+            "equipment_static_weighing_scales.html",
+            title="Поверка весов для статического взвешивания",
+            equipment_type="static_weighing_scales"
+        )
+
+    @app.route("/equipment_weighing_modules.html")
+    @app.route("/equipment/weighing-modules")
+    def equipment_weighing_modules():
+        return render_template(
+            "equipment_weighing_modules.html",
+            title="Поверка взвешивающих модулей",
+            equipment_type="weighing_modules"
+        )
+
+    @app.route("/equipment_gravimetric_moisture_analyzers.html")
+    @app.route("/equipment/gravimetric-moisture-analyzers")
+    def equipment_gravimetric_moisture_analyzers():
+        return render_template(
+            "equipment_gravimetric_moisture_analyzers.html",
+            title="Поверка весовых анализаторов влажности",
+            equipment_type="gravimetric_moisture_analyzers"
+        )
+
+    @app.route("/equipment_grammometers.html")
+    @app.route("/equipment/grammometers")
+    def equipment_grammometers():
+        return render_template(
+            "equipment_grammometers.html",
+            title="Поверка граммометров",
+            equipment_type="grammometers"
+        )
+
+    @app.route("/equipment_reference_general_weights.html")
+    @app.route("/equipment/reference-general-weights")
+    def equipment_reference_general_weights():
+        return render_template(
+            "equipment_reference_general_weights.html",
+            title="Поверка эталонных гирь и гирь общего назначения",
+            equipment_type="reference_general_weights"
+        )
+
+    @app.route("/equipment_impact_pendulum_testers.html")
+    @app.route("/equipment/impact-pendulum-testers")
+    def equipment_impact_pendulum_testers():
+        return render_template(
+            "equipment_impact_pendulum_testers.html",
+            title="Поверка копров, в том числе маятниковых",
+            equipment_type="impact_pendulum_testers"
         )
 
     # pressure equipment cards

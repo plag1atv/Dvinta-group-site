@@ -1772,6 +1772,83 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (equipmentType === "weighing_snow_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "снегомеры весовые";
+        });
+      }
+
+      if (equipmentType === "universal_water_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return [
+                "счётчики горячей воды",
+                "счётчики холодной воды",
+                "счётчики воды универсальные и электронные"
+            ].includes(itemName);
+        });
+      }
+
+      if (equipmentType === "electronic_water_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "счётчики воды универсальные и электронные";
+          });
+      }
+
+      if (equipmentType === "level_sensors") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "датчики уровня";
+          });
+      }
+
+      if (equipmentType === "pipette_dispensers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "дозаторы пипеточные";
+          });
+      }
+
+      if (equipmentType === "dispensers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "диспенсеры";
+          });
+      }
+
       // pressure equipment cards
       if (equipmentType === "indicating_pressure_gauges") {
 

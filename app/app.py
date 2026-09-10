@@ -962,13 +962,50 @@ def create_app() -> Flask:
                     "icon": "hammer",
                     "href": "/equipment_impact_pendulum_testers.html",
                 },
+                {
+                    "title": "Снегомеры весовые",
+                    "description": "Поверка весовых снегомеров для отбора проб снежного покрова, определения массы пробы, плотности снега и запаса воды.",
+                    "icon": "scale",
+                    "href": "/equipment_weighing_snow_gauges.html",
+                },
             ],
         },
         "flow": {
             "title": "Поверка средств измерений параметров потока, расхода, уровня и объёма веществ",
             "kicker": "Поток, расход, уровень и объём",
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
-            "cards": [],
+            "cards": [
+                {
+                    "title": "Счётчики холодной и горячей воды универсальные",
+                    "description": "Поверка счётчиков холодной и горячей воды, универсальных и электронных счётчиков для квартирного, коммунального и технологического учёта расхода воды.",
+                    "icon": "gauge",
+                    "href": "/equipment_universal_water_meters.html",
+                },
+                {
+                    "title": "Счётчики холодной и горячей воды электронные",
+                    "description": "Поверка электронных счётчиков холодной и горячей воды для квартирного, коммунального и технологического учёта объёма и расхода воды.",
+                    "icon": "gauge",
+                    "href": "/equipment_electronic_water_meters.html",
+                },
+                {
+                    "title": "Датчики уровня",
+                    "description": "Поверка датчиков уровня для измерения уровня жидкостей и других сред в резервуарах, ёмкостях и технологических установках.",
+                    "icon": "gauge",
+                    "href": "/equipment_level_sensors.html",
+                },
+                {
+                    "title": "Дозаторы, дозаторы пипеточные",
+                    "description": "Поверка одноканальных, многоканальных, электронных пипеточных дозаторов и моделей с предварительной настройкой объёма.",
+                    "icon": "gauge",
+                    "href": "/equipment_pipette_dispensers.html",
+                },
+                {
+                    "title": "Диспенсеры",
+                    "description": "Поверка лабораторных диспенсеров для точного дозирования и выдачи заданных объёмов жидкостей в диапазоне до 200 мл.",
+                    "icon": "gauge",
+                    "href": "/equipment_dispensers.html",
+                },
+            ],
         },
         "pressure": {
             "title": "Поверка средств измерений давления и вакуумных измерений",
@@ -2185,6 +2222,62 @@ def create_app() -> Flask:
             "equipment_impact_pendulum_testers.html",
             title="Поверка копров, в том числе маятниковых",
             equipment_type="impact_pendulum_testers"
+        )
+
+    @app.route("/equipment_weighing_snow_gauges.html")
+    @app.route("/equipment/weighing-snow-gauges")
+    def equipment_weighing_snow_gauges():
+        return render_template(
+            "equipment_weighing_snow_gauges.html",
+            title="Поверка весовых снегомеров",
+            equipment_type="weighing_snow_gauges"
+        )
+
+    # flow equipment cards
+
+    @app.route("/equipment_universal_water_meters.html")
+    @app.route("/equipment/universal-water-meters")
+    def equipment_universal_water_meters():
+        return render_template(
+            "equipment_universal_water_meters.html",
+            title="Поверка счётчиков холодной и горячей воды",
+            equipment_type="universal_water_meters"
+        )
+
+    @app.route("/equipment_electronic_water_meters.html")
+    @app.route("/equipment/electronic-water-meters")
+    def equipment_electronic_water_meters():
+        return render_template(
+            "equipment_electronic_water_meters.html",
+            title="Поверка электронных счётчиков холодной и горячей воды",
+            equipment_type="electronic_water_meters"
+        )
+
+    @app.route("/equipment_level_sensors.html")
+    @app.route("/equipment/level-sensors")
+    def equipment_level_sensors():
+        return render_template(
+            "equipment_level_sensors.html",
+            title="Поверка датчиков уровня",
+            equipment_type="level_sensors"
+        )
+
+    @app.route("/equipment_pipette_dispensers.html")
+    @app.route("/equipment/pipette-dispensers")
+    def equipment_pipette_dispensers():
+        return render_template(
+            "equipment_pipette_dispensers.html",
+            title="Поверка дозаторов и пипеточных дозаторов",
+            equipment_type="pipette_dispensers"
+        )
+
+    @app.route("/equipment_dispensers.html")
+    @app.route("/equipment/dispensers")
+    def equipment_dispensers():
+        return render_template(
+            "equipment_dispensers.html",
+            title="Поверка диспенсеров",
+            equipment_type="dispensers"
         )
 
     # pressure equipment cards

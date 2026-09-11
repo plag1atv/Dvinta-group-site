@@ -976,34 +976,52 @@ def create_app() -> Flask:
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
             "cards": [
                 {
-                    "title": "Счётчики холодной и горячей воды универсальные",
-                    "description": "Поверка счётчиков холодной и горячей воды, универсальных и электронных счётчиков для квартирного, коммунального и технологического учёта расхода воды.",
-                    "icon": "gauge",
-                    "href": "/equipment_universal_water_meters.html",
-                },
-                {
-                    "title": "Счётчики холодной и горячей воды электронные",
-                    "description": "Поверка электронных счётчиков холодной и горячей воды для квартирного, коммунального и технологического учёта объёма и расхода воды.",
-                    "icon": "gauge",
-                    "href": "/equipment_electronic_water_meters.html",
-                },
-                {
                     "title": "Датчики уровня",
                     "description": "Поверка датчиков уровня для измерения уровня жидкостей и других сред в резервуарах, ёмкостях и технологических установках.",
-                    "icon": "gauge",
+                    "icon": "waves",
                     "href": "/equipment_level_sensors.html",
                 },
                 {
                     "title": "Дозаторы, дозаторы пипеточные",
                     "description": "Поверка одноканальных, многоканальных, электронных пипеточных дозаторов и моделей с предварительной настройкой объёма.",
-                    "icon": "gauge",
+                    "icon": "pipette",
                     "href": "/equipment_pipette_dispensers.html",
                 },
                 {
                     "title": "Диспенсеры",
                     "description": "Поверка лабораторных диспенсеров для точного дозирования и выдачи заданных объёмов жидкостей в диапазоне до 200 мл.",
-                    "icon": "gauge",
+                    "icon": "droplets",
                     "href": "/equipment_dispensers.html",
+                },
+                {
+                    "title": "Пипетки",
+                    "description": "Поверка пипеток и микропипеток, включая градуированные и неградуированные модели, для точного измерения, отбора и переноса жидкостей.",
+                    "icon": "pipette",
+                    "href": "/equipment_pipettes.html",
+                },
+                {
+                    "title": "Микропипетки",
+                    "description": "Поверка микропипеток, включая градуированные и неградуированные модели, для точного измерения, отбора и переноса малых объёмов жидкостей.",
+                    "icon": "test-tube-diagonal",
+                    "href": "/equipment_micropipettes.html",
+                },
+                {
+                    "title": "Шприцы",
+                    "description": "Поверка измерительных шприцев и микрошприцев для точного отбора, измерения, дозирования и переноса малых объёмов жидкостей.",
+                    "icon": "syringe",
+                    "href": "/equipment_syringes.html",
+                },
+                {
+                    "title": "Микрошприцы",
+                    "description": "Поверка измерительных микрошприцев для высокоточного отбора, измерения, дозирования и переноса малых объёмов жидкостей.",
+                    "icon": "syringe",
+                    "href": "/equipment_microsyringes.html",
+                },
+                {
+                    "title": "Бюретки цифровые",
+                    "description": "Поверка цифровых бюреток для точного дозирования, титрования и измерения объёма жидкостей в лабораторной и производственной практике.",
+                    "icon": "flask-conical",
+                    "href": "/equipment_digital_burettes.html",
                 },
             ],
         },
@@ -1017,6 +1035,12 @@ def create_app() -> Flask:
                     "description": "Поверка показывающих манометров, вакуумметров и мановакуумметров для контроля избыточного и вакуумметрического давления.",
                     "icon": "gauge",
                     "href": "/equipment_indicating_pressure_gauges.html",
+                },
+                {
+                    "title": "Мановакуумметры",
+                    "description": "Поверка показывающих и сигнализирующих мановакуумметров для измерения избыточного и вакуумметрического давления воды, воздуха и кислорода.",
+                    "icon": "gauge",
+                    "href": "/equipment_manovacuummeters.html",
                 },
             ],
         },
@@ -2235,24 +2259,6 @@ def create_app() -> Flask:
 
     # flow equipment cards
 
-    @app.route("/equipment_universal_water_meters.html")
-    @app.route("/equipment/universal-water-meters")
-    def equipment_universal_water_meters():
-        return render_template(
-            "equipment_universal_water_meters.html",
-            title="Поверка счётчиков холодной и горячей воды",
-            equipment_type="universal_water_meters"
-        )
-
-    @app.route("/equipment_electronic_water_meters.html")
-    @app.route("/equipment/electronic-water-meters")
-    def equipment_electronic_water_meters():
-        return render_template(
-            "equipment_electronic_water_meters.html",
-            title="Поверка электронных счётчиков холодной и горячей воды",
-            equipment_type="electronic_water_meters"
-        )
-
     @app.route("/equipment_level_sensors.html")
     @app.route("/equipment/level-sensors")
     def equipment_level_sensors():
@@ -2280,6 +2286,51 @@ def create_app() -> Flask:
             equipment_type="dispensers"
         )
 
+    @app.route("/equipment_pipettes.html")
+    @app.route("/equipment/pipettes")
+    def equipment_pipettes():
+        return render_template(
+            "equipment_pipettes.html",
+            title="Поверка пипеток",
+            equipment_type="pipettes"
+        )
+
+    @app.route("/equipment_micropipettes.html")
+    @app.route("/equipment/micropipettes")
+    def equipment_micropipettes():
+        return render_template(
+            "equipment_micropipettes.html",
+            title="Поверка микропипеток",
+            equipment_type="micropipettes"
+        )
+
+    @app.route("/equipment_syringes.html")
+    @app.route("/equipment/syringes")
+    def equipment_syringes():
+        return render_template(
+            "equipment_syringes.html",
+            title="Поверка шприцев",
+            equipment_type="syringes"
+        )
+
+    @app.route("/equipment_microsyringes.html")
+    @app.route("/equipment/microsyringes")
+    def equipment_microsyringes():
+        return render_template(
+            "equipment_microsyringes.html",
+            title="Поверка микрошприцев",
+            equipment_type="microsyringes"
+        )
+
+    @app.route("/equipment_digital_burettes.html")
+    @app.route("/equipment/digital-burettes")
+    def equipment_digital_burettes():
+        return render_template(
+            "equipment_digital_burettes.html",
+            title="Поверка цифровых бюреток",
+            equipment_type="digital_burettes"
+        )
+
     # pressure equipment cards
     @app.route("/equipment_indicating_pressure_gauges.html")
     @app.route("/equipment/indicating-pressure-gauges")
@@ -2288,6 +2339,15 @@ def create_app() -> Flask:
             "equipment_indicating_pressure_gauges.html",
             title="Поверка манометров",
             equipment_type="indicating_pressure_gauges"
+        )
+
+    @app.route("/equipment_manovacuummeters.html")
+    @app.route("/equipment/manovacuummeters")
+    def equipment_manovacuummeters():
+        return render_template(
+            "equipment_manovacuummeters.html",
+            title="Поверка мановакуумметров",
+            equipment_type="manovacuummeters"
         )
 
     # temperature equipment cards

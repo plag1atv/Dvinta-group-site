@@ -1849,6 +1849,66 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "pipettes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "пипетки, микропипетки";
+          });
+      }
+
+      if (equipmentType === "micropipettes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "пипетки, микропипетки";
+          });
+      }
+
+      if (equipmentType === "syringes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "шприцы и микрошприцы";
+          });
+      }
+
+      if (equipmentType === "microsyringes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "шприцы и микрошприцы";
+          });
+      }
+
+      if (equipmentType === "digital_burettes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "бюретки цифровые";
+          });
+      }
+
       // pressure equipment cards
       if (equipmentType === "indicating_pressure_gauges") {
 
@@ -1868,6 +1928,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return allowedNames.includes(itemName);
         });
+      }
+
+      if (equipmentType === "manovacuummeters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "мановакуумметры показывающие/сигнализирующие";
+          });
       }
 
       // temperature equipment cards

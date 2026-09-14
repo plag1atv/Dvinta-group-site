@@ -1042,6 +1042,48 @@ def create_app() -> Flask:
                     "icon": "gauge",
                     "href": "/equipment_manovacuummeters.html",
                 },
+                {
+                    "title": "Вакуумметры",
+                    "description": "Поверка вакуумметров и образцовых вакуумметров для измерения давления ниже атмосферного, включая исполнения для воды, воздуха и кислорода.",
+                    "icon": "gauge",
+                    "href": "/equipment_vacuum_gauges.html",
+                },
+                {
+                    "title": "Манометры дифференциальные",
+                    "description": "Поверка показывающих и цифровых дифференциальных манометров для измерения разности и перепада давлений в технологических и производственных системах.",
+                    "icon": "gauge",
+                    "href": "/equipment_differential_pressure_gauges.html",
+                },
+                {
+                    "title": "Напоромеры, тягомеры, тягонапоромеры",
+                    "description": "Поверка напоромеров, тягомеров и тягонапоромеров для измерения малых избыточных и вакуумметрических давлений, тяги и напора.",
+                    "icon": "gauge",
+                    "href": "/equipment_draft_pressure_gauges.html",
+                },
+                {
+                    "title": "Термоманометры",
+                    "description": "Поверка термоманометров для одновременного измерения давления и температуры в системах отопления, водоснабжения, теплоснабжения и технологических установках.",
+                    "icon": "gauge",
+                    "href": "/equipment_thermomanometers.html",
+                },
+                {
+                    "title": "Манометры цифровые",
+                    "description": "Поверка цифровых манометров для точного измерения избыточного и вакуумметрического давления жидкостей и газов.",
+                    "icon": "gauge",
+                    "href": "/equipment_digital_pressure_gauges.html",
+                },
+                {
+                    "title": "Манометры дифференциальные цифровые",
+                    "description": "Поверка цифровых дифференциальных манометров для точного измерения разности и перепада давлений в лабораторных, вентиляционных и технологических системах.",
+                    "icon": "gauge",
+                    "href": "/equipment_digital_differential_pressure_gauges.html",
+                },
+                {
+                    "title": "Преобразователи (датчики) давления",
+                    "description": "Поверка измерительных преобразователей и датчиков давления для контроля давления жидкостей и газов и передачи измерительного сигнала в автоматизированные системы.",
+                    "icon": "gauge",
+                    "href": "/equipment_pressure_transducers.html",
+                },
             ],
         },
         "physicochemical": {
@@ -2348,6 +2390,69 @@ def create_app() -> Flask:
             "equipment_manovacuummeters.html",
             title="Поверка мановакуумметров",
             equipment_type="manovacuummeters"
+        )
+
+    @app.route("/equipment_vacuum_gauges.html")
+    @app.route("/equipment/vacuum-gauges")
+    def equipment_vacuum_gauges():
+        return render_template(
+            "equipment_vacuum_gauges.html",
+            title="Поверка вакуумметров",
+            equipment_type="vacuum_gauges"
+        )
+
+    @app.route("/equipment_differential_pressure_gauges.html")
+    @app.route("/equipment/differential-pressure-gauges")
+    def equipment_differential_pressure_gauges():
+        return render_template(
+            "equipment_differential_pressure_gauges.html",
+            title="Поверка дифференциальных манометров",
+            equipment_type="differential_pressure_gauges"
+        )
+
+    @app.route("/equipment_draft_pressure_gauges.html")
+    @app.route("/equipment/draft-pressure-gauges")
+    def equipment_draft_pressure_gauges():
+        return render_template(
+            "equipment_draft_pressure_gauges.html",
+            title="Поверка напоромеров, тягомеров и тягонапоромеров",
+            equipment_type="draft_pressure_gauges"
+        )
+
+    @app.route("/equipment_thermomanometers.html")
+    @app.route("/equipment/thermomanometers")
+    def equipment_thermomanometers():
+        return render_template(
+            "equipment_thermomanometers.html",
+            title="Поверка термоманометров",
+            equipment_type="thermomanometers"
+        )
+
+    @app.route("/equipment_digital_pressure_gauges.html")
+    @app.route("/equipment/digital-pressure-gauges")
+    def equipment_digital_pressure_gauges():
+        return render_template(
+            "equipment_digital_pressure_gauges.html",
+            title="Поверка цифровых манометров",
+            equipment_type="digital_pressure_gauges"
+        )
+
+    @app.route("/equipment_digital_differential_pressure_gauges.html")
+    @app.route("/equipment/digital-differential-pressure-gauges")
+    def equipment_digital_differential_pressure_gauges():
+        return render_template(
+            "equipment_digital_differential_pressure_gauges.html",
+            title="Поверка цифровых дифференциальных манометров",
+            equipment_type="digital_differential_pressure_gauges"
+        )
+
+    @app.route("/equipment_pressure_transducers.html")
+    @app.route("/equipment/pressure-transducers")
+    def equipment_pressure_transducers():
+        return render_template(
+            "equipment_pressure_transducers.html",
+            title="Поверка преобразователей и датчиков давления",
+            equipment_type="pressure_transducers"
         )
 
     # temperature equipment cards

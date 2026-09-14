@@ -1943,6 +1943,99 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "vacuum_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return [
+                "вакуумметры",
+                "вакуумметры образцовые"
+            ].includes(itemName);
+          });
+      }
+
+      if (equipmentType === "differential_pressure_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return [
+                "манометры дифференциальные показывающие (дифманометры)",
+                "манометры дифференциальные цифровые"
+            ].includes(itemName);
+          });
+      }
+
+      if (equipmentType === "draft_pressure_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "напоромеры, тягонапоромеры, тягомеры, манометры показывающие и сигнализирующие, манометры для низких давлений";
+          });
+      }
+
+      if (equipmentType === "thermomanometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "термоманометры";
+          });
+      }
+
+      if (equipmentType === "digital_pressure_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "манометры цифровые";
+          });
+      }
+
+      if (equipmentType === "digital_differential_pressure_gauges") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "манометры дифференциальные цифровые";
+          });
+      }
+
+      if (equipmentType === "pressure_transducers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "преобразователи давления измерительные";
+          });
+      }
+
       // temperature equipment cards
       if (equipmentType === "bimetallic_thermometers") {
 

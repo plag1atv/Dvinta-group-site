@@ -2036,6 +2036,82 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "differential_pressure_transducers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "преобразователи (датчики) давления дифференциальные";
+          });
+      }
+
+      if (equipmentType === "pressure_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "измерители давления";
+          });
+      }
+
+      if (equipmentType === "digital_pressure_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "измерители давления";
+          });
+      }
+
+      if (equipmentType === "pressure_pulse_calibration_units") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "установки для поверки каналов измерения давления и частоты пульса";
+          });
+      }
+
+      if (equipmentType === "blood_pressure_monitors") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители артериального давления и частоты пульса";
+          });
+      }
+
+      if (equipmentType === "sphygmomanometers") {
+
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "сфигмоманометры";
+          });
+      }
+
       // temperature equipment cards
       if (equipmentType === "bimetallic_thermometers") {
 

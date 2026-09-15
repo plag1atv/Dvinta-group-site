@@ -1084,6 +1084,42 @@ def create_app() -> Flask:
                     "icon": "gauge",
                     "href": "/equipment_pressure_transducers.html",
                 },
+                {
+                    "title": "Преобразователи (датчики) давления дифференциальные",
+                    "description": "Поверка дифференциальных преобразователей и датчиков давления для измерения разности и перепада давлений жидкостей и газов.",
+                    "icon": "gauge",
+                    "href": "/equipment_differential_pressure_transducers.html",
+                },
+                {
+                    "title": "Измерители давления",
+                    "description": "Поверка измерителей давления для контроля давления и разрежения жидкостей и газов в лабораторных, технологических и производственных системах.",
+                    "icon": "gauge",
+                    "href": "/equipment_pressure_meters.html",
+                },
+                {
+                    "title": "Измерители давления цифровые",
+                    "description": "Поверка цифровых измерителей давления для точного контроля давления и разрежения жидкостей и газов в лабораторных, технологических и производственных системах.",
+                    "icon": "gauge",
+                    "href": "/equipment_digital_pressure_meters.html",
+                },
+                {
+                    "title": "Установки для поверки каналов измерения давления и частоты пульса",
+                    "description": "Поверка установок УПКЧП, УПКЧП-1, УПКД-1, УПКД-2, УПКД-3 и BP Pump для контроля каналов измерения давления и частоты пульса.",
+                    "icon": "gauge",
+                    "href": "/equipment_pressure_pulse_calibration_units.html",
+                },
+                {
+                    "title": "Измерители артериального давления и частоты пульса, тонометры",
+                    "description": "Поверка механических и автоматических тонометров, измерителей артериального давления и частоты пульса для медицинского и индивидуального применения.",
+                    "icon": "gauge",
+                    "href": "/equipment_blood_pressure_monitors.html",
+                },
+                {
+                    "title": "Сфигмоманометры",
+                    "description": "Поверка сфигмоманометров для неинвазивного измерения артериального давления в медицинской практике и профессиональном применении.",
+                    "icon": "gauge",
+                    "href": "/equipment_sphygmomanometers.html",
+                },
             ],
         },
         "physicochemical": {
@@ -2453,6 +2489,60 @@ def create_app() -> Flask:
             "equipment_pressure_transducers.html",
             title="Поверка преобразователей и датчиков давления",
             equipment_type="pressure_transducers"
+        )
+
+    @app.route("/equipment_differential_pressure_transducers.html")
+    @app.route("/equipment/differential-pressure-transducers")
+    def equipment_differential_pressure_transducers():
+        return render_template(
+            "equipment_differential_pressure_transducers.html",
+            title="Поверка дифференциальных преобразователей давления",
+            equipment_type="differential_pressure_transducers"
+        )
+
+    @app.route("/equipment_pressure_meters.html")
+    @app.route("/equipment/pressure-meters")
+    def equipment_pressure_meters():
+        return render_template(
+            "equipment_pressure_meters.html",
+            title="Поверка измерителей давления",
+            equipment_type="pressure_meters"
+        )
+
+    @app.route("/equipment_digital_pressure_meters.html")
+    @app.route("/equipment/digital-pressure-meters")
+    def equipment_digital_pressure_meters():
+        return render_template(
+            "equipment_digital_pressure_meters.html",
+            title="Поверка цифровых измерителей давления",
+            equipment_type="digital_pressure_meters"
+        )
+
+    @app.route("/equipment_pressure_pulse_calibration_units.html")
+    @app.route("/equipment/pressure-pulse-calibration-units")
+    def equipment_pressure_pulse_calibration_units():
+        return render_template(
+            "equipment_pressure_pulse_calibration_units.html",
+            title="Поверка установок для каналов измерения давления и частоты пульса",
+            equipment_type="pressure_pulse_calibration_units"
+        )
+
+    @app.route("/equipment_blood_pressure_monitors.html")
+    @app.route("/equipment/blood-pressure-monitors")
+    def equipment_blood_pressure_monitors():
+        return render_template(
+            "equipment_blood_pressure_monitors.html",
+            title="Поверка тонометров и измерителей артериального давления",
+            equipment_type="blood_pressure_monitors"
+        )
+
+    @app.route("/equipment_sphygmomanometers.html")
+    @app.route("/equipment/sphygmomanometers")
+    def equipment_sphygmomanometers():
+        return render_template(
+            "equipment_sphygmomanometers.html",
+            title="Поверка сфигмоманометров",
+            equipment_type="sphygmomanometers"
         )
 
     # temperature equipment cards

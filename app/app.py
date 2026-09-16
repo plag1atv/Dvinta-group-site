@@ -1039,7 +1039,7 @@ def create_app() -> Flask:
                 {
                     "title": "Мановакуумметры",
                     "description": "Поверка показывающих и сигнализирующих мановакуумметров для измерения избыточного и вакуумметрического давления воды, воздуха и кислорода.",
-                    "icon": "gauge",
+                    "icon": "circle-gauge",
                     "href": "/equipment_manovacuummeters.html",
                 },
                 {
@@ -1051,73 +1051,73 @@ def create_app() -> Flask:
                 {
                     "title": "Манометры дифференциальные",
                     "description": "Поверка показывающих и цифровых дифференциальных манометров для измерения разности и перепада давлений в технологических и производственных системах.",
-                    "icon": "gauge",
+                    "icon": "git-compare-arrows",
                     "href": "/equipment_differential_pressure_gauges.html",
                 },
                 {
                     "title": "Напоромеры, тягомеры, тягонапоромеры",
                     "description": "Поверка напоромеров, тягомеров и тягонапоромеров для измерения малых избыточных и вакуумметрических давлений, тяги и напора.",
-                    "icon": "gauge",
+                    "icon": "waves",
                     "href": "/equipment_draft_pressure_gauges.html",
                 },
                 {
                     "title": "Термоманометры",
                     "description": "Поверка термоманометров для одновременного измерения давления и температуры в системах отопления, водоснабжения, теплоснабжения и технологических установках.",
-                    "icon": "gauge",
+                    "icon": "thermometer",
                     "href": "/equipment_thermomanometers.html",
                 },
                 {
                     "title": "Манометры цифровые",
                     "description": "Поверка цифровых манометров для точного измерения избыточного и вакуумметрического давления жидкостей и газов.",
-                    "icon": "gauge",
+                    "icon": "monitor",
                     "href": "/equipment_digital_pressure_gauges.html",
                 },
                 {
                     "title": "Манометры дифференциальные цифровые",
                     "description": "Поверка цифровых дифференциальных манометров для точного измерения разности и перепада давлений в лабораторных, вентиляционных и технологических системах.",
-                    "icon": "gauge",
+                    "icon": "sliders-horizontal",
                     "href": "/equipment_digital_differential_pressure_gauges.html",
                 },
                 {
                     "title": "Преобразователи (датчики) давления",
                     "description": "Поверка измерительных преобразователей и датчиков давления для контроля давления жидкостей и газов и передачи измерительного сигнала в автоматизированные системы.",
-                    "icon": "gauge",
+                    "icon": "radio-tower",
                     "href": "/equipment_pressure_transducers.html",
                 },
                 {
                     "title": "Преобразователи (датчики) давления дифференциальные",
                     "description": "Поверка дифференциальных преобразователей и датчиков давления для измерения разности и перепада давлений жидкостей и газов.",
-                    "icon": "gauge",
+                    "icon": "split",
                     "href": "/equipment_differential_pressure_transducers.html",
                 },
                 {
                     "title": "Измерители давления",
                     "description": "Поверка измерителей давления для контроля давления и разрежения жидкостей и газов в лабораторных, технологических и производственных системах.",
-                    "icon": "gauge",
+                    "icon": "scan-line",
                     "href": "/equipment_pressure_meters.html",
                 },
                 {
                     "title": "Измерители давления цифровые",
                     "description": "Поверка цифровых измерителей давления для точного контроля давления и разрежения жидкостей и газов в лабораторных, технологических и производственных системах.",
-                    "icon": "gauge",
+                    "icon": "binary",
                     "href": "/equipment_digital_pressure_meters.html",
                 },
                 {
                     "title": "Установки для поверки каналов измерения давления и частоты пульса",
                     "description": "Поверка установок УПКЧП, УПКЧП-1, УПКД-1, УПКД-2, УПКД-3 и BP Pump для контроля каналов измерения давления и частоты пульса.",
-                    "icon": "gauge",
+                    "icon": "activity",
                     "href": "/equipment_pressure_pulse_calibration_units.html",
                 },
                 {
                     "title": "Измерители артериального давления и частоты пульса, тонометры",
                     "description": "Поверка механических и автоматических тонометров, измерителей артериального давления и частоты пульса для медицинского и индивидуального применения.",
-                    "icon": "gauge",
+                    "icon": "heart-pulse",
                     "href": "/equipment_blood_pressure_monitors.html",
                 },
                 {
                     "title": "Сфигмоманометры",
                     "description": "Поверка сфигмоманометров для неинвазивного измерения артериального давления в медицинской практике и профессиональном применении.",
-                    "icon": "gauge",
+                    "icon": "stethoscope",
                     "href": "/equipment_sphygmomanometers.html",
                 },
             ],
@@ -1126,7 +1126,68 @@ def create_app() -> Flask:
             "title": "Поверка средств измерений физико-химического состава и свойств веществ",
             "kicker": "Физико-химический состав и свойства веществ",
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
-            "cards": [],
+            "cards": [
+                {
+                    "title": "Анализаторы, сигнализаторы паров этанола в выдыхаемом воздухе",
+                    "description": "Поверка анализаторов и сигнализаторов паров этанола в выдыхаемом воздухе, включая профессиональные алкотестеры для медицинского, предрейсового и производственного контроля.",
+                    "icon": "wind",
+                    "href": "/equipment_ethanol_breath_analyzers.html",
+                },
+                {
+                    "title": "Газоанализаторы",
+                    "description": "Поверка одноканальных и многоканальных газоанализаторов для измерения концентрации газов и паров в производственных, технологических и лабораторных условиях.",
+                    "icon": "flask-conical",
+                    "href": "/equipment_gas_analyzers.html",
+                },
+                {
+                    "title": "Сигнализаторы загазованности, газосигнализаторы, преобразователи (датчики) загазованности",
+                    "description": "Поверка сигнализаторов загазованности, газосигнализаторов и датчиков загазованности для контроля содержания горючих и токсичных газов в воздухе и технологических средах.",
+                    "icon": "triangle-alert",
+                    "href": "/equipment_gas_detectors.html",
+                },
+                {
+                    "title": "Гигрометры психрометрические",
+                    "description": "Поверка психрометрических гигрометров для измерения относительной влажности и температуры воздуха в лабораториях, медицинских, производственных и складских помещениях.",
+                    "icon": "droplets",
+                    "href": "/equipment_psychrometric_hygrometers.html",
+                },
+                {
+                    "title": "Термогигрометры",
+                    "description": "Поверка термогигрометров для одновременного измерения температуры и относительной влажности воздуха в лабораторных, производственных, складских и бытовых помещениях.",
+                    "icon": "thermometer-sun",
+                    "href": "/equipment_thermohygrometers.html",
+                },
+                {
+                    "title": "Измерители-регистраторы температуры и относительной влажности",
+                    "description": "Поверка измерителей-регистраторов температуры и относительной влажности для непрерывного контроля, регистрации и хранения параметров микроклимата.",
+                    "icon": "gauge",
+                    "href": "/equipment_temperature_humidity_loggers.html",
+                },
+                {
+                    "title": "Приборы комбинированные",
+                    "description": "Поверка комбинированных и многофункциональных приборов с несколькими измерительными каналами для лабораторного, технологического и производственного контроля.",
+                    "icon": "gauge",
+                    "href": "/equipment_combined_instruments.html",
+                },
+                {
+                    "title": "Преобразователи (датчики) влажности",
+                    "description": "Поверка преобразователей и датчиков влажности для измерения относительной влажности воздуха и передачи измерительного сигнала в технологические и автоматизированные системы.",
+                    "icon": "gauge",
+                    "href": "/equipment_humidity_transducers.html",
+                },
+                {
+                    "title": "Калибраторы влажности",
+                    "description": "Поверка калибраторов влажности для воспроизведения и контроля заданных значений относительной влажности при поверке гигрометров, термогигрометров и датчиков.",
+                    "icon": "gauge",
+                    "href": "/equipment_humidity_calibrators.html",
+                },
+                {
+                    "title": "Термопреобразователи сопротивления",
+                    "description": "Поверка термопреобразователей, термометров и термодатчиков сопротивления для измерения температуры в лабораторных, технологических и производственных системах.",
+                    "icon": "gauge",
+                    "href": "/equipment_resistance_temperature_transducers.html",
+                },
+            ],
         },
         "temperature": {
             "title": "Поверка средств измерений теплофизических и температурных измерений",
@@ -2544,6 +2605,98 @@ def create_app() -> Flask:
             title="Поверка сфигмоманометров",
             equipment_type="sphygmomanometers"
         )
+
+    # physicochemical equipment cards
+    @app.route("/equipment_ethanol_breath_analyzers.html")
+    @app.route("/equipment/ethanol-breath-analyzers")
+    def equipment_ethanol_breath_analyzers():
+        return render_template(
+            "equipment_ethanol_breath_analyzers.html",
+            title="Поверка анализаторов паров этанола в выдыхаемом воздухе",
+            equipment_type="ethanol_breath_analyzers"
+        )
+
+    @app.route("/equipment_gas_analyzers.html")
+    @app.route("/equipment/gas-analyzers")
+    def equipment_gas_analyzers():
+        return render_template(
+            "equipment_gas_analyzers.html",
+            title="Поверка газоанализаторов",
+            equipment_type="gas_analyzers"
+        )
+
+    @app.route("/equipment_gas_detectors.html")
+    @app.route("/equipment/gas-detectors")
+    def equipment_gas_detectors():
+        return render_template(
+            "equipment_gas_detectors.html",
+            title="Поверка сигнализаторов загазованности",
+            equipment_type="gas_detectors"
+        )
+
+    @app.route("/equipment_psychrometric_hygrometers.html")
+    @app.route("/equipment/psychrometric-hygrometers")
+    def equipment_psychrometric_hygrometers():
+        return render_template(
+            "equipment_psychrometric_hygrometers.html",
+            title="Поверка психрометрических гигрометров",
+            equipment_type="psychrometric_hygrometers"
+        )
+
+    @app.route("/equipment_thermohygrometers.html")
+    @app.route("/equipment/thermohygrometers")
+    def equipment_thermohygrometers():
+        return render_template(
+            "equipment_thermohygrometers.html",
+            title="Поверка термогигрометров",
+            equipment_type="thermohygrometers"
+        )
+
+    @app.route("/equipment_temperature_humidity_loggers.html")
+    @app.route("/equipment/temperature-humidity-loggers")
+    def equipment_temperature_humidity_loggers():
+        return render_template(
+            "equipment_temperature_humidity_loggers.html",
+            title="Поверка измерителей-регистраторов температуры и относительной влажности",
+            equipment_type="temperature_humidity_loggers"
+        )
+
+    @app.route("/equipment_combined_instruments.html")
+    @app.route("/equipment/combined-instruments")
+    def equipment_combined_instruments():
+        return render_template(
+            "equipment_combined_instruments.html",
+            title="Поверка комбинированных приборов",
+            equipment_type="combined_instruments"
+        )
+
+    @app.route("/equipment_humidity_transducers.html")
+    @app.route("/equipment/humidity-transducers")
+    def equipment_humidity_transducers():
+        return render_template(
+            "equipment_humidity_transducers.html",
+            title="Поверка преобразователей и датчиков влажности",
+            equipment_type="humidity_transducers"
+        )
+
+    @app.route("/equipment_humidity_calibrators.html")
+    @app.route("/equipment/humidity-calibrators")
+    def equipment_humidity_calibrators():
+        return render_template(
+            "equipment_humidity_calibrators.html",
+            title="Поверка калибраторов влажности",
+            equipment_type="humidity_calibrators"
+        )
+
+    @app.route("/equipment_resistance_temperature_transducers.html")
+    @app.route("/equipment/resistance-temperature-transducers")
+    def equipment_resistance_temperature_transducers():
+        return render_template(
+            "equipment_resistance_temperature_transducers.html",
+            title="Поверка термопреобразователей сопротивления",
+            equipment_type="resistance_temperature_transducers"
+        )
+
 
     # temperature equipment cards
     @app.route("/equipment_bimetallic_thermometers.html")

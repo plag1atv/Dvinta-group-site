@@ -2112,6 +2112,136 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      // physicochemical equipment cards
+      if (equipmentType === "ethanol_breath_analyzers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "анализаторы паров этанола в выдыхаемом воздухе, алкотестеры";
+          });
+      }
+
+      if (equipmentType === "gas_analyzers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "газоанализаторы";
+          });
+      }
+
+      if (equipmentType === "gas_detectors") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "газоанализаторы"
+                || itemName === "датчики концентрации углеводородов";
+          });
+      }
+
+      if (equipmentType === "psychrometric_hygrometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "гигрометры психрометрические";
+          });
+      }
+
+      if (equipmentType === "thermohygrometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return [
+                "гигрометры и термогигрометры бытовые, деформационные",
+                "гигрометры и термогигрометры"
+            ].includes(itemName);
+          });
+      }
+
+      if (equipmentType === "temperature_humidity_loggers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители-регистраторы температуры и относительной влажности";
+          });
+      }
+
+      if (equipmentType === "combined_instruments") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "приборы комбинированне";
+          });
+      }
+
+      if (equipmentType === "humidity_transducers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "преобразователи (датчики) влажности";
+          });
+      }
+
+      if (equipmentType === "humidity_calibrators") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "калибраторы влажности";
+          });
+      }
+
+      if (equipmentType === "resistance_temperature_transducers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "термопреобразователи (термометры, термодатчики) сопротивления";
+          });
+      }
+
+
       // temperature equipment cards
       if (equipmentType === "bimetallic_thermometers") {
 

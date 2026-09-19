@@ -2228,19 +2228,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
-      if (equipmentType === "resistance_temperature_transducers") {
-
-          items = items.filter(item => {
-            const itemName = item.name
-                .toLowerCase()
-                .replace(/\s+/g, " ")
-                .trim();
-
-            return itemName ===
-                "термопреобразователи (термометры, термодатчики) сопротивления";
-          });
-      }
-
 
       // temperature equipment cards
       if (equipmentType === "bimetallic_thermometers") {
@@ -2254,6 +2241,112 @@ document.addEventListener("DOMContentLoaded", () => {
             return itemName === "термометры биметаллические";
         });
       }
+
+      if (equipmentType === "resistance_temperature_transducers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "термопреобразователи (термометры, термодатчики) сопротивления";
+          });
+      }
+
+      if (equipmentType === "thermoelectric_transducers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "термоэлектрические преобразователи (термопары)";
+          });
+      }
+
+      if (equipmentType === "digital_thermometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "термометры цифровые";
+          });
+      }
+
+      if (equipmentType === "temperature_transducers_unified_output") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "термометры с унифицированным выходным сигналом";
+          });
+      }
+
+      if (equipmentType === "resistance_temperature_transducer_sets") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "комплекты термопреобразователей сопротивления";
+          });
+      }
+
+      if (equipmentType === "manometric_thermometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "термометры манометрические";
+          });
+      }
+
+      if (equipmentType === "glass_thermometers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return [
+                "термометры стеклянные жидкостные",
+                "термометры стеклянные"
+            ].includes(itemName);
+          });
+      }
+
+      if (equipmentType === "temperature_loggers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "логгеры, регистраторы температуры, влажности";
+          });
+      }
+
+      // time-frequency equipment cards
 
       allItems = items;
       filteredItems = items;

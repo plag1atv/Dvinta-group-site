@@ -1160,32 +1160,26 @@ def create_app() -> Flask:
                 {
                     "title": "Измерители-регистраторы температуры и относительной влажности",
                     "description": "Поверка измерителей-регистраторов температуры и относительной влажности для непрерывного контроля, регистрации и хранения параметров микроклимата.",
-                    "icon": "gauge",
+                    "icon": "chart-spline",
                     "href": "/equipment_temperature_humidity_loggers.html",
                 },
                 {
                     "title": "Приборы комбинированные",
                     "description": "Поверка комбинированных и многофункциональных приборов с несколькими измерительными каналами для лабораторного, технологического и производственного контроля.",
-                    "icon": "gauge",
+                    "icon": "sliders-horizontal",
                     "href": "/equipment_combined_instruments.html",
                 },
                 {
                     "title": "Преобразователи (датчики) влажности",
                     "description": "Поверка преобразователей и датчиков влажности для измерения относительной влажности воздуха и передачи измерительного сигнала в технологические и автоматизированные системы.",
-                    "icon": "gauge",
+                    "icon": "droplets",
                     "href": "/equipment_humidity_transducers.html",
                 },
                 {
                     "title": "Калибраторы влажности",
                     "description": "Поверка калибраторов влажности для воспроизведения и контроля заданных значений относительной влажности при поверке гигрометров, термогигрометров и датчиков.",
-                    "icon": "gauge",
+                    "icon": "settings-2",
                     "href": "/equipment_humidity_calibrators.html",
-                },
-                {
-                    "title": "Термопреобразователи сопротивления",
-                    "description": "Поверка термопреобразователей, термометров и термодатчиков сопротивления для измерения температуры в лабораторных, технологических и производственных системах.",
-                    "icon": "gauge",
-                    "href": "/equipment_resistance_temperature_transducers.html",
                 },
             ],
         },
@@ -1199,6 +1193,54 @@ def create_app() -> Flask:
                     "description": "Поверка биметаллических термометров для контроля температуры жидких, газообразных и сыпучих сред.",
                     "icon": "gauge",
                     "href": "/equipment_bimetallic_thermometers.html",
+                },
+                {
+                    "title": "Термопреобразователи сопротивления",
+                    "description": "Поверка термопреобразователей, термометров и термодатчиков сопротивления для измерения температуры в лабораторных, технологических и производственных системах.",
+                    "icon": "thermometer",
+                    "href": "/equipment_resistance_temperature_transducers.html",
+                },
+                {
+                    "title": "Преобразователи термоэлектрические",
+                    "description": "Поверка термоэлектрических преобразователей и термопар для измерения температуры в лабораторных, технологических и производственных системах.",
+                    "icon": "zap",
+                    "href": "/equipment_thermoelectric_transducers.html",
+                },
+                {
+                    "title": "Термометры цифровые",
+                    "description": "Поверка цифровых и электронных термометров для измерения температуры в лабораторных, технологических, производственных и промышленных условиях.",
+                    "icon": "monitor",
+                    "href": "/equipment_digital_thermometers.html",
+                },
+                {
+                    "title": "Термопреобразователи с унифицированным выходным сигналом",
+                    "description": "Поверка термопреобразователей с унифицированным выходным сигналом для измерения температуры и передачи нормированного электрического сигнала в системы контроля и автоматизации.",
+                    "icon": "radio-tower",
+                    "href": "/equipment_temperature_transducers_unified_output.html",
+                },
+                {
+                    "title": "Комплекты термопреобразователей сопротивления",
+                    "description": "Поверка комплектов термопреобразователей сопротивления для согласованного измерения температуры и разности температур в теплосчётчиках, тепловых узлах и технологических системах.",
+                    "icon": "git-compare-arrows",
+                    "href": "/equipment_resistance_temperature_transducer_sets.html",
+                },
+                {
+                    "title": "Термометры манометрические",
+                    "description": "Поверка манометрических термометров для дистанционного измерения температуры жидких, газообразных и других рабочих сред в технологических и производственных системах.",
+                    "icon": "circle-gauge",
+                    "href": "/equipment_manometric_thermometers.html",
+                },
+                {
+                    "title": "Термометры стеклянные",
+                    "description": "Поверка стеклянных и стеклянных жидкостных термометров для измерения температуры в лабораторных, технологических, производственных и бытовых условиях.",
+                    "icon": "test-tube",
+                    "href": "/equipment_glass_thermometers.html",
+                },
+                {
+                    "title": "Регистраторы температуры",
+                    "description": "Поверка регистраторов температуры и температурных логгеров для непрерывного измерения, регистрации и хранения температурных данных.",
+                    "icon": "chart-spline",
+                    "href": "/equipment_temperature_loggers.html",
                 },
             ],
         },
@@ -2688,15 +2730,6 @@ def create_app() -> Flask:
             equipment_type="humidity_calibrators"
         )
 
-    @app.route("/equipment_resistance_temperature_transducers.html")
-    @app.route("/equipment/resistance-temperature-transducers")
-    def equipment_resistance_temperature_transducers():
-        return render_template(
-            "equipment_resistance_temperature_transducers.html",
-            title="Поверка термопреобразователей сопротивления",
-            equipment_type="resistance_temperature_transducers"
-        )
-
 
     # temperature equipment cards
     @app.route("/equipment_bimetallic_thermometers.html")
@@ -2707,6 +2740,80 @@ def create_app() -> Flask:
             title="Поверка биметаллических термометров",
             equipment_type="bimetallic_thermometers"
         )
+
+    @app.route("/equipment_resistance_temperature_transducers.html")
+    @app.route("/equipment/resistance-temperature-transducers")
+    def equipment_resistance_temperature_transducers():
+        return render_template(
+            "equipment_resistance_temperature_transducers.html",
+            title="Поверка термопреобразователей сопротивления",
+            equipment_type="resistance_temperature_transducers"
+        )
+
+    @app.route("/equipment_thermoelectric_transducers.html")
+    @app.route("/equipment/thermoelectric-transducers")
+    def equipment_thermoelectric_transducers():
+        return render_template(
+            "equipment_thermoelectric_transducers.html",
+            title="Поверка термоэлектрических преобразователей",
+            equipment_type="thermoelectric_transducers"
+        )
+
+    @app.route("/equipment_digital_thermometers.html")
+    @app.route("/equipment/digital-thermometers")
+    def equipment_digital_thermometers():
+        return render_template(
+            "equipment_digital_thermometers.html",
+            title="Поверка цифровых термометров",
+            equipment_type="digital_thermometers"
+        )
+
+    @app.route("/equipment_temperature_transducers_unified_output.html")
+    @app.route("/equipment/temperature-transducers-unified-output")
+    def equipment_temperature_transducers_unified_output():
+        return render_template(
+            "equipment_temperature_transducers_unified_output.html",
+            title="Поверка термопреобразователей с унифицированным выходным сигналом",
+            equipment_type="temperature_transducers_unified_output"
+        )
+
+    @app.route("/equipment_resistance_temperature_transducer_sets.html")
+    @app.route("/equipment/resistance-temperature-transducer-sets")
+    def equipment_resistance_temperature_transducer_sets():
+        return render_template(
+            "equipment_resistance_temperature_transducer_sets.html",
+            title="Поверка комплектов термопреобразователей сопротивления",
+            equipment_type="resistance_temperature_transducer_sets"
+        )
+
+    @app.route("/equipment_manometric_thermometers.html")
+    @app.route("/equipment/manometric-thermometers")
+    def equipment_manometric_thermometers():
+        return render_template(
+            "equipment_manometric_thermometers.html",
+            title="Поверка манометрических термометров",
+            equipment_type="manometric_thermometers"
+        )
+
+    @app.route("/equipment_glass_thermometers.html")
+    @app.route("/equipment/glass-thermometers")
+    def equipment_glass_thermometers():
+        return render_template(
+            "equipment_glass_thermometers.html",
+            title="Поверка стеклянных термометров",
+            equipment_type="glass_thermometers"
+        )
+
+    @app.route("/equipment_temperature_loggers.html")
+    @app.route("/equipment/temperature-loggers")
+    def equipment_temperature_loggers():
+        return render_template(
+            "equipment_temperature_loggers.html",
+            title="Поверка регистраторов температуры",
+            equipment_type="temperature_loggers"
+        )
+
+    # time-frequency equipment cards
 
     # Метrology
     @app.get("/metrology/competence")

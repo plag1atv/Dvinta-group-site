@@ -1242,6 +1242,48 @@ def create_app() -> Flask:
                     "icon": "chart-spline",
                     "href": "/equipment_temperature_loggers.html",
                 },
+                {
+                    "title": "Измерители температуры многозонные",
+                    "description": "Поверка многозонных измерителей температуры, термометрических кос и комплексов измерения температуры для многоточечного контроля на технологических и производственных объектах.",
+                    "icon": "thermometer-sun",
+                    "href": "/equipment_multizone_temperature_meters.html",
+                },
+                {
+                    "title": "Косы термометрические",
+                    "description": "Поверка термометрических кос для многоточечного измерения температуры в силосах, резервуарах, ёмкостях, складах и технологических установках.",
+                    "icon": "cable",
+                    "href": "/equipment_thermometric_cables.html",
+                },
+                {
+                    "title": "Комплексы измерения температуры",
+                    "description": "Поверка комплексов измерения температуры для многоканального и многоточечного контроля температуры на технологических, производственных и промышленных объектах.",
+                    "icon": "network",
+                    "href": "/equipment_temperature_measurement_complexes.html",
+                },
+                {
+                    "title": "Измерители-регистраторы, измерители-регистраторы микропроцессорные",
+                    "description": "Поверка измерителей-регистраторов и микропроцессорных измерителей-регистраторов для измерения, регистрации, обработки и хранения контролируемых параметров.",
+                    "icon": "chart-no-axes-combined",
+                    "href": "/equipment_microprocessor_data_loggers.html",
+                },
+                {
+                    "title": "Измерители-регуляторы, измерители-регуляторы микропроцессорные",
+                    "description": "Поверка измерителей-регуляторов и микропроцессорных измерителей-регуляторов для измерения и автоматического регулирования температуры и других технологических параметров.",
+                    "icon": "sliders-horizontal",
+                    "href": "/equipment_microprocessor_controller_meters.html",
+                },
+                {
+                    "title": "Регистраторы многоканальные, регистраторы технологические, преобразователи вторичные, контроллеры",
+                    "description": "Поверка многоканальных и технологических регистраторов, вторичных преобразователей и контроллеров для измерения, преобразования, регистрации и регулирования технологических параметров.",
+                    "icon": "cpu",
+                    "href": "/equipment_multichannel_technological_recorders_controllers.html",
+                },
+                {
+                    "title": "Термостаты",
+                    "description": "Поверка жидкостных термостатов для воспроизведения, поддержания и контроля заданной температуры при поверке, калибровке и испытаниях средств измерений.",
+                    "icon": "thermometer",
+                    "href": "/equipment_thermostats.html",
+                },
             ],
         },
         "time-frequency": {
@@ -2811,6 +2853,69 @@ def create_app() -> Flask:
             "equipment_temperature_loggers.html",
             title="Поверка регистраторов температуры",
             equipment_type="temperature_loggers"
+        )
+
+    @app.route("/equipment_multizone_temperature_meters.html")
+    @app.route("/equipment/multizone-temperature-meters")
+    def equipment_multizone_temperature_meters():
+        return render_template(
+            "equipment_multizone_temperature_meters.html",
+            title="Поверка многозонных измерителей температуры",
+            equipment_type="multizone_temperature_meters"
+        )
+
+    @app.route("/equipment_thermometric_cables.html")
+    @app.route("/equipment/thermometric-cables")
+    def equipment_thermometric_cables():
+        return render_template(
+            "equipment_thermometric_cables.html",
+            title="Поверка термометрических кос",
+            equipment_type="thermometric_cables"
+        )
+
+    @app.route("/equipment_temperature_measurement_complexes.html")
+    @app.route("/equipment/temperature-measurement-complexes")
+    def equipment_temperature_measurement_complexes():
+        return render_template(
+            "equipment_temperature_measurement_complexes.html",
+            title="Поверка комплексов измерения температуры",
+            equipment_type="temperature_measurement_complexes"
+        )
+
+    @app.route("/equipment_microprocessor_data_loggers.html")
+    @app.route("/equipment/microprocessor-data-loggers")
+    def equipment_microprocessor_data_loggers():
+        return render_template(
+            "equipment_microprocessor_data_loggers.html",
+            title="Поверка измерителей-регистраторов и микропроцессорных измерителей-регистраторов",
+            equipment_type="microprocessor_data_loggers"
+        )
+
+    @app.route("/equipment_microprocessor_controller_meters.html")
+    @app.route("/equipment/microprocessor-controller-meters")
+    def equipment_microprocessor_controller_meters():
+        return render_template(
+            "equipment_microprocessor_controller_meters.html",
+            title="Поверка измерителей-регуляторов и микропроцессорных измерителей-регуляторов",
+            equipment_type="microprocessor_controller_meters"
+        )
+
+    @app.route("/equipment_multichannel_technological_recorders_controllers.html")
+    @app.route("/equipment/multichannel-technological-recorders-controllers")
+    def equipment_multichannel_technological_recorders_controllers():
+        return render_template(
+            "equipment_multichannel_technological_recorders_controllers.html",
+            title="Поверка многоканальных и технологических регистраторов, вторичных преобразователей и контроллеров",
+            equipment_type="multichannel_technological_recorders_controllers"
+        )
+
+    @app.route("/equipment_thermostats.html")
+    @app.route("/equipment/thermostats")
+    def equipment_thermostats():
+        return render_template(
+            "equipment_thermostats.html",
+            title="Поверка термостатов",
+            equipment_type="thermostats"
         )
 
     # time-frequency equipment cards

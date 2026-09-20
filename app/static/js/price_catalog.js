@@ -2346,6 +2346,97 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      if (equipmentType === "multizone_temperature_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители температуры многозонные, косы термометрические, комплексы измерения температуры";
+          });
+      }
+
+      if (equipmentType === "thermometric_cables") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители температуры многозонные, косы термометрические, комплексы измерения температуры";
+          });
+      }
+
+      if (equipmentType === "temperature_measurement_complexes") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "измерители температуры многозонные, косы термометрические, комплексы измерения температуры";
+          });
+      }
+
+      if (equipmentType === "microprocessor_data_loggers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "логгеры, регистраторы температуры, влажности";
+          });
+      }
+
+      if (equipmentType === "microprocessor_controller_meters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "измерители-регуляторы";
+          });
+      }
+
+      if (equipmentType === "multichannel_technological_recorders_controllers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return [
+                "логгеры, регистраторы температуры, влажности",
+                "измерители-регуляторы"
+            ].includes(itemName);
+          });
+      }
+
+      if (equipmentType === "thermostats") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "термостаты жидкостные";
+          });
+      }
+
       // time-frequency equipment cards
 
       allItems = items;

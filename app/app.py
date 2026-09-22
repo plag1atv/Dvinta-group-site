@@ -1290,7 +1290,56 @@ def create_app() -> Flask:
             "title": "Поверка средств измерений времени и частоты",
             "kicker": "Время и частота",
             "description": "Выберите средство измерений, чтобы узнать подробную информацию о поверке, стоимости услуг и порядке проведения работ.",
-            "cards": [],
+            "cards": [
+                {
+                    "title": "Секундомеры механические",
+                    "description": "Поверка механических секундомеров для измерения интервалов времени в лабораторных, производственных, спортивных, учебных и технологических условиях.",
+                    "icon": "timer",
+                    "href": "/equipment_mechanical_stopwatches.html",
+                },
+                {
+                    "title": "Секундомеры электронные, цифровые",
+                    "description": "Поверка электронных и цифровых секундомеров для высокоточного измерения интервалов времени в лабораторных, производственных, спортивных и технологических условиях.",
+                    "icon": "timer",
+                    "href": "/equipment_electronic_digital_stopwatches.html",
+                },
+                {
+                    "title": "Секундомеры-измерители электронные временных параметров реле и выключателей",
+                    "description": "Поверка электронных секундомеров-измерителей для контроля времени срабатывания, отпускания и переключения реле, выключателей и другой коммутационной аппаратуры.",
+                    "icon": "toggle-right",
+                    "href": "/equipment_relay_switch_timing_stopwatches.html",
+                },
+                {
+                    "title": "Секундомеры электронные с таймерным выходом",
+                    "description": "Поверка электронных секундомеров с таймерным выходом для точного измерения интервалов времени и формирования управляющего выходного сигнала.",
+                    "icon": "timer-reset",
+                    "href": "/equipment_electronic_stopwatches_timer_output.html",
+                },
+                {
+                    "title": "Установки для поверки секундомеров",
+                    "description": "Поверка установок для поверки секундомеров, предназначенных для воспроизведения и контроля интервалов времени при поверке механических, электронных и цифровых секундомеров.",
+                    "icon": "settings",
+                    "href": "/equipment_stopwatch_calibration_units.html",
+                },
+                {
+                    "title": "Пульсоксиметры, оксиметры",
+                    "description": "Поверка пульсоксиметров и оксиметров для измерения насыщения крови кислородом SpO₂ и частоты пульса в медицинских и диагностических условиях.",
+                    "icon": "heart-pulse",
+                    "href": "/equipment_pulse_oximeters.html",
+                },
+                {
+                    "title": "Приборы для определения числа падения",
+                    "description": "Поверка приборов для определения числа падения зерна, муки и продуктов их переработки для лабораторного и производственного контроля качества.",
+                    "icon": "wheat",
+                    "href": "/equipment_falling_number_instruments.html",
+                },
+                {
+                    "title": "Тестеры для испытаний, для определения прочности, линейных размеров, массы таблеток и капсул",
+                    "description": "Поверка тестеров и измерителей для определения прочности, линейных размеров, массы и усилия разрушения таблеток и капсул.",
+                    "icon": "pill",
+                    "href": "/equipment_tablet_capsule_testers.html",
+                },
+            ],
         },
     }
 
@@ -2919,6 +2968,78 @@ def create_app() -> Flask:
         )
 
     # time-frequency equipment cards
+
+    @app.route("/equipment_mechanical_stopwatches.html")
+    @app.route("/equipment/mechanical-stopwatches")
+    def equipment_mechanical_stopwatches():
+        return render_template(
+            "equipment_mechanical_stopwatches.html",
+            title="Поверка механических секундомеров",
+            equipment_type="mechanical_stopwatches"
+        )
+
+    @app.route("/equipment_electronic_digital_stopwatches.html")
+    @app.route("/equipment/electronic-digital-stopwatches")
+    def equipment_electronic_digital_stopwatches():
+        return render_template(
+            "equipment_electronic_digital_stopwatches.html",
+            title="Поверка электронных и цифровых секундомеров",
+            equipment_type="electronic_digital_stopwatches"
+        )
+
+    @app.route("/equipment_relay_switch_timing_stopwatches.html")
+    @app.route("/equipment/relay-switch-timing-stopwatches")
+    def equipment_relay_switch_timing_stopwatches():
+        return render_template(
+            "equipment_relay_switch_timing_stopwatches.html",
+            title="Поверка секундомеров-измерителей временных параметров реле и выключателей",
+            equipment_type="relay_switch_timing_stopwatches"
+        )
+
+    @app.route("/equipment_electronic_stopwatches_timer_output.html")
+    @app.route("/equipment/electronic-stopwatches-timer-output")
+    def equipment_electronic_stopwatches_timer_output():
+        return render_template(
+            "equipment_electronic_stopwatches_timer_output.html",
+            title="Поверка электронных секундомеров с таймерным выходом",
+            equipment_type="electronic_stopwatches_timer_output"
+        )
+
+    @app.route("/equipment_stopwatch_calibration_units.html")
+    @app.route("/equipment/stopwatch-calibration-units")
+    def equipment_stopwatch_calibration_units():
+        return render_template(
+            "equipment_stopwatch_calibration_units.html",
+            title="Поверка установок для поверки секундомеров",
+            equipment_type="stopwatch_calibration_units"
+        )
+
+    @app.route("/equipment_pulse_oximeters.html")
+    @app.route("/equipment/pulse-oximeters")
+    def equipment_pulse_oximeters():
+        return render_template(
+            "equipment_pulse_oximeters.html",
+            title="Поверка пульсоксиметров и оксиметров",
+            equipment_type="pulse_oximeters"
+        )
+
+    @app.route("/equipment_falling_number_instruments.html")
+    @app.route("/equipment/falling-number-instruments")
+    def equipment_falling_number_instruments():
+        return render_template(
+            "equipment_falling_number_instruments.html",
+            title="Поверка приборов для определения числа падения",
+            equipment_type="falling_number_instruments"
+        )
+
+    @app.route("/equipment_tablet_capsule_testers.html")
+    @app.route("/equipment/tablet-capsule-testers")
+    def equipment_tablet_capsule_testers():
+        return render_template(
+            "equipment_tablet_capsule_testers.html",
+            title="Поверка тестеров для испытаний таблеток и капсул",
+            equipment_type="tablet_capsule_testers"
+        )
 
     # Метrology
     @app.get("/metrology/competence")

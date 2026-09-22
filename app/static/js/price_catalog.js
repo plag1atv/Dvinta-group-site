@@ -2439,6 +2439,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // time-frequency equipment cards
 
+      if (equipmentType === "mechanical_stopwatches") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "секундомеры механические";
+          });
+      }
+
+      if (equipmentType === "electronic_digital_stopwatches") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "секундомеры электронные, цифровые";
+          });
+      }
+
+      if (equipmentType === "relay_switch_timing_stopwatches") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "секундомеры-измерители электронные временных параметров реле и выключателей";
+          });
+      }
+
+      if (equipmentType === "electronic_stopwatches_timer_output") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "секундомеры электронные с таймерным выходом";
+          });
+      }
+
+      if (equipmentType === "stopwatch_calibration_units") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "установки для поверки секундомеров";
+          });
+      }
+
+      if (equipmentType === "pulse_oximeters") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName === "пульсоксиметры, оксиметры";
+          });
+      }
+
+      if (equipmentType === "falling_number_instruments") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "приборы для определения числа падения";
+          });
+      }
+
+      if (equipmentType === "tablet_capsule_testers") {
+
+          items = items.filter(item => {
+            const itemName = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return itemName ===
+                "тестеры для испытаний, измерители для определения линейных размеров, массы таблеток и капсул";
+          });
+      }
+
       allItems = items;
       filteredItems = items;
 

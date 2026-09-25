@@ -3102,3 +3102,992 @@ body.mobile-menu-open{
     font-size: 12px;
   }
 }
+
+/* =========================================================
+   HOME — PARTNERS CAROUSEL
+   ========================================================= */
+
+.partners-section{
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ---------- Заголовок ---------- */
+
+.partners-heading{
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.partners-heading__text{
+  max-width: 660px;
+  margin: 14px auto 0;
+
+  color: rgba(var(--ink-rgb), .68);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ---------- Карусель ---------- */
+
+.partners-carousel{
+  position: relative;
+
+  width: 100%;
+  max-width: 1040px;
+  height: 300px;
+
+  margin: 32px auto 0;
+
+  outline: none;
+
+  padding-left: 70px;
+  padding-right: 70px;
+
+  box-sizing: border-box;
+}
+
+.partners-carousel__viewport{
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  border-radius: 34px;
+}
+
+.partners-carousel__track{
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  perspective: 1200px;
+}
+
+
+/* ---------- Карточка ---------- */
+
+.partner-card{
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(540px, calc(100% - 180px));
+  min-height: 190px;
+
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.98),
+      rgba(247,251,255,.96)
+    );
+
+  border: 1px solid rgba(var(--ink-rgb), .13);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 24px 60px rgba(var(--ink-rgb), .13),
+    0 8px 22px rgba(var(--ink-rgb), .08);
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.7);
+
+  filter: blur(5px);
+
+  pointer-events: none;
+
+  transition:
+    transform .55s cubic-bezier(.2,.8,.2,1),
+    opacity .45s ease,
+    filter .45s ease,
+    box-shadow .45s ease;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+/*
+  Небольшое цветное свечение внутри карточек.
+*/
+.partner-card::before{
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  right: -75px;
+  top: -90px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(6,182,212,.15) 0%,
+      rgba(14,116,144,.07) 45%,
+      rgba(14,116,144,0) 72%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ---------- Центральная активная карточка ---------- */
+
+.partner-card.is-active{
+  z-index: 5;
+
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  filter: blur(0);
+
+  pointer-events: auto;
+
+  box-shadow:
+    0 30px 70px rgba(var(--ink-rgb), .17),
+    0 10px 28px rgba(var(--ink-rgb), .10);
+}
+
+
+/* ---------- Левая карточка ---------- */
+
+.partner-card.is-prev{
+  z-index: 2;
+
+  opacity: .38;
+
+  transform:
+    translate(-92%, -50%)
+    scale(.82);
+
+  filter: blur(3px);
+}
+
+
+/* ---------- Правая карточка ---------- */
+
+.partner-card.is-next{
+  z-index: 2;
+
+  opacity: .38;
+
+  transform:
+    translate(-8%, -50%)
+    scale(.82);
+
+  filter: blur(3px);
+}
+
+
+/* ---------- Остальные карточки ---------- */
+
+.partner-card.is-hidden{
+  z-index: 0;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.68);
+
+  filter: blur(7px);
+}
+
+
+/* ---------- Содержимое карточки ---------- */
+
+.partner-card__content{
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+}
+
+
+/* ---------- Логотип ---------- */
+
+.partner-card__logo{
+  width: 155px;
+  height: 110px;
+
+  flex: 0 0 155px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px;
+
+  background: #fff;
+
+  border: 1px solid rgba(var(--ink-rgb), .09);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 24px rgba(var(--ink-rgb), .08);
+}
+
+.partner-card__logo img{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* ---------- Название ---------- */
+
+.partner-card__info{
+  min-width: 0;
+}
+
+.partner-card__label{
+  margin-bottom: 7px;
+
+  color: var(--c-600);
+
+  font-size: 11px;
+  line-height: 1.3;
+
+  font-weight: 800;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+.partner-card__name{
+  color: var(--c-900);
+
+  font-size: clamp(19px, 2vw, 24px);
+  line-height: 1.3;
+
+  font-weight: 900;
+
+  letter-spacing: -.025em;
+}
+
+
+/* =========================================================
+   СТРЕЛКИ
+   ========================================================= */
+
+.partners-carousel__arrow{
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 20;
+
+  width: 52px;
+  height: 52px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(var(--ink-rgb), .14);
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,.92);
+
+  color: var(--c-900);
+
+  box-shadow:
+    0 12px 28px rgba(var(--ink-rgb), .12);
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform .2s var(--ease-ui),
+    background-color .2s var(--ease-ui),
+    color .2s var(--ease-ui),
+    box-shadow .2s var(--ease-ui);
+}
+
+.partners-carousel__arrow svg{
+  width: 23px;
+  height: 23px;
+
+  stroke-width: 2.2;
+}
+
+.partners-carousel__arrow:hover{
+  background: var(--c-600);
+  color: #fff;
+
+  transform:
+    translateY(-50%)
+    scale(1.06);
+
+  box-shadow:
+    0 16px 34px rgba(14,116,144,.24);
+}
+
+.partners-carousel__arrow:active{
+  transform:
+    translateY(-50%)
+    scale(.96);
+}
+
+.partners-carousel__arrow--prev{
+  left: 6px;
+}
+
+.partners-carousel__arrow--next{
+  right: 6px;
+}
+
+
+/* =========================================================
+   ТОЧКИ ПОД КАРУСЕЛЬЮ
+   ========================================================= */
+
+.partners-carousel__dots{
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  transform: translateX(-50%);
+}
+
+.partners-carousel__dot{
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: rgba(var(--ink-rgb), .18);
+
+  transition:
+    width .3s var(--ease-ui),
+    background-color .3s var(--ease-ui),
+    transform .3s var(--ease-ui);
+}
+
+.partners-carousel__dot.is-active{
+  width: 24px;
+
+  background: var(--c-600);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px){
+
+  .partners-carousel{
+    height: 270px;
+    margin-top: 26px;
+  }
+
+  .partner-card{
+    width: calc(100% - 105px);
+
+    min-height: 175px;
+
+    padding: 24px;
+  }
+
+  .partner-card.is-prev{
+    transform:
+      translate(-103%, -50%)
+      scale(.80);
+  }
+
+  .partner-card.is-next{
+    transform:
+      translate(3%, -50%)
+      scale(.80);
+  }
+
+  .partner-card__content{
+    gap: 20px;
+  }
+
+  .partner-card__logo{
+    width: 125px;
+    height: 95px;
+
+    flex-basis: 125px;
+
+    padding: 12px;
+
+    border-radius: 17px;
+  }
+
+  .partners-carousel__arrow{
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+  }
+
+  .partners-carousel__arrow--prev{
+    left: 0;
+  }
+
+  .partners-carousel__arrow--next{
+    right: 0;
+  }
+
+}
+
+
+/* =========================================================
+   PARTNERS — MOBILE
+   ========================================================= */
+
+@media (max-width: 560px){
+
+  /* Сам блок */
+  .partners-section{
+    overflow: hidden;
+
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+
+  /* Заголовок */
+  .partners-heading{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .partners-heading .kicker{
+    font-size: 11px;
+  }
+
+  .partners-heading .h2{
+    margin-top: 7px !important;
+
+    font-size: clamp(26px, 8vw, 34px);
+    line-height: 1.08;
+
+    letter-spacing: -.035em;
+  }
+
+  .partners-heading__text{
+    max-width: 340px;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+
+  /* =====================================================
+     КАРУСЕЛЬ
+     ===================================================== */
+
+  .partners-carousel{
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: 330px;
+
+    margin-top: 24px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+  }
+
+
+  .partners-carousel__viewport{
+    position: relative;
+
+    width: 100%;
+    height: 270px;
+
+    overflow: visible;
+
+    border-radius: 0;
+  }
+
+
+  .partners-carousel__track{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* =====================================================
+     КАРТОЧКИ
+     ===================================================== */
+
+  .partner-card{
+    top: 50%;
+    left: 50%;
+
+    width: calc(100% - 66px);
+    max-width: 360px;
+
+    min-height: 218px;
+
+    padding: 22px 18px;
+
+    border-radius: 24px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255,255,255,.99),
+        rgba(247,251,255,.98)
+      );
+
+    border:
+      1px solid rgba(var(--ink-rgb), .11);
+
+    box-shadow:
+      0 18px 45px rgba(var(--ink-rgb), .12),
+      0 5px 16px rgba(var(--ink-rgb), .07);
+
+    transform:
+      translate(-50%, -50%)
+      scale(.8);
+
+    filter: blur(4px);
+
+    opacity: 0;
+  }
+
+
+  /* Центральная карточка */
+  .partner-card.is-active{
+    z-index: 10;
+
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    filter: blur(0);
+
+    box-shadow:
+      0 22px 52px rgba(var(--ink-rgb), .15),
+      0 7px 20px rgba(var(--ink-rgb), .08);
+  }
+
+
+  /*
+     Левая соседняя карточка.
+     Она только слегка выглядывает из-за основной.
+  */
+  .partner-card.is-prev{
+    z-index: 2;
+
+    opacity: .22;
+
+    transform:
+      translate(-86%, -50%)
+      scale(.86);
+
+    filter: blur(4px);
+  }
+
+
+  /*
+     Правая соседняя карточка.
+  */
+  .partner-card.is-next{
+    z-index: 2;
+
+    opacity: .22;
+
+    transform:
+      translate(-14%, -50%)
+      scale(.86);
+
+    filter: blur(4px);
+  }
+
+
+  .partner-card.is-hidden{
+    z-index: 0;
+
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(.75);
+
+    filter: blur(6px);
+  }
+
+
+  /* Декоративное свечение */
+  .partner-card::before{
+    width: 150px;
+    height: 150px;
+
+    right: -65px;
+    top: -65px;
+
+    opacity: .75;
+  }
+
+
+  /* =====================================================
+     СОДЕРЖИМОЕ КАРТОЧКИ
+     ===================================================== */
+
+  .partner-card__content{
+    width: 100%;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: center;
+  }
+
+
+  /* Логотип */
+  .partner-card__logo{
+    width: 150px;
+    height: 92px;
+
+    flex: 0 0 92px;
+
+    padding: 13px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.98);
+
+    box-shadow:
+      0 8px 20px rgba(var(--ink-rgb), .07);
+  }
+
+
+  .partner-card__logo img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+
+
+  /* Текст */
+  .partner-card__info{
+    width: 100%;
+  }
+
+
+  .partner-card__label{
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+  }
+
+
+  .partner-card__name{
+    max-width: 270px;
+
+    margin: 0 auto;
+
+    font-size: 19px;
+    line-height: 1.25;
+
+    letter-spacing: -.025em;
+  }
+
+
+  /* =====================================================
+     СТРЕЛКИ
+     ===================================================== */
+
+  .partners-carousel__arrow{
+    top: 135px;
+
+    z-index: 30;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.96);
+
+    border:
+      1px solid rgba(var(--ink-rgb), .12);
+
+    box-shadow:
+      0 10px 24px rgba(var(--ink-rgb), .13);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+
+  .partners-carousel__arrow svg{
+    width: 21px;
+    height: 21px;
+  }
+
+
+  .partners-carousel__arrow--prev{
+    left: 3px;
+  }
+
+
+  .partners-carousel__arrow--next{
+    right: 3px;
+  }
+
+
+  /*
+     На телефонах hover не нужен.
+     Убираем возможное "залипание".
+  */
+  .partners-carousel__arrow:hover{
+    background: rgba(255,255,255,.96);
+
+    color: var(--c-900);
+
+    transform:
+      translateY(-50%)
+      scale(1);
+
+    box-shadow:
+      0 10px 24px rgba(var(--ink-rgb), .13);
+  }
+
+
+  .partners-carousel__arrow:active{
+    background: var(--c-600);
+
+    color: #fff;
+
+    transform:
+      translateY(-50%)
+      scale(.93);
+  }
+
+
+  /* =====================================================
+     ТОЧКИ
+     ===================================================== */
+
+  .partners-carousel__dots{
+    left: 50%;
+    bottom: 4px;
+
+    gap: 7px;
+
+    transform: translateX(-50%);
+  }
+
+
+  .partners-carousel__dot{
+    width: 7px;
+    height: 7px;
+
+    background: rgba(var(--ink-rgb), .18);
+  }
+
+
+  .partners-carousel__dot.is-active{
+    width: 23px;
+
+    background: var(--c-600);
+  }
+
+}
+
+
+/* =========================================================
+   PARTNERS — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px){
+
+  .partners-section{
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+
+  .partners-heading .h2{
+    font-size: 27px;
+  }
+
+
+  .partners-heading__text{
+    max-width: 300px;
+
+    font-size: 13px;
+  }
+
+
+  .partners-carousel{
+    height: 315px;
+
+    margin-top: 20px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+
+  .partners-carousel__viewport{
+    height: 260px;
+  }
+
+
+  .partner-card{
+    width: calc(100% - 56px);
+    min-height: 210px;
+
+    padding: 20px 15px;
+
+    border-radius: 21px;
+  }
+
+
+  .partner-card__logo{
+    width: 135px;
+    height: 82px;
+
+    flex-basis: 82px;
+  }
+
+
+  .partner-card__name{
+    max-width: 230px;
+
+    font-size: 17px;
+  }
+
+
+  .partners-carousel__arrow{
+    top: 130px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+  }
+
+
+  .partners-carousel__arrow svg{
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .partners-carousel__arrow--prev{
+    left: 0;
+  }
+
+
+  .partners-carousel__arrow--next{
+    right: 0;
+  }
+
+
+  .partner-card.is-prev{
+    opacity: .16;
+
+    transform:
+      translate(-84%, -50%)
+      scale(.83);
+  }
+
+
+  .partner-card.is-next{
+    opacity: .16;
+
+    transform:
+      translate(-16%, -50%)
+      scale(.83);
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+  .partner-card,
+  .partners-carousel__arrow,
+  .partners-carousel__dot{
+    transition: none !important;
+  }
+
+}

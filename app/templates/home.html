@@ -107,6 +107,203 @@
   </div>
 </section>
 
+
+  </div>
+</section>
+
+
+<!-- PARTNERS -->
+<section class="section partners-section" aria-labelledby="partnersTitle">
+  <div class="container">
+
+    <div class="partners-heading reveal">
+      <div class="kicker">Нам доверяют</div>
+
+      <h2
+        id="partnersTitle"
+        class="h2"
+        style="margin-top:8px;"
+      >
+        С нами сотрудничают
+      </h2>
+
+      <p class="partners-heading__text">
+        Нам доверяют крупные промышленные и производственные предприятия
+      </p>
+    </div>
+
+
+    <div
+      class="partners-carousel reveal"
+      data-partners-carousel
+      tabindex="0"
+      aria-label="Наши партнёры"
+    >
+
+      <!-- Стрелка влево -->
+      <button
+        class="partners-carousel__arrow partners-carousel__arrow--prev"
+        type="button"
+        data-partners-prev
+        aria-label="Предыдущая компания"
+      >
+        <i data-lucide="chevron-left"></i>
+      </button>
+
+
+      <div class="partners-carousel__viewport">
+
+        <div class="partners-carousel__track">
+
+
+          <!-- АО «Обуховский завод» -->
+          <article
+            class="partner-card"
+            data-partner-card
+          >
+            <div class="partner-card__content">
+
+              <div class="partner-card__logo">
+                <img
+                  src="{{ url_for('static', filename='img/partners/obukhovsky-zavod.png') }}"
+                  alt="АО Обуховский завод"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+
+              <div class="partner-card__info">
+                <div class="partner-card__label">
+                  Партнёр
+                </div>
+
+                <div class="partner-card__name">
+                  АО «Обуховский завод»
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- АО «Силовые машины» -->
+          <article
+            class="partner-card"
+            data-partner-card
+          >
+            <div class="partner-card__content">
+
+              <div class="partner-card__logo">
+                <img
+                  src="{{ url_for('static', filename='img/partners/silovye-mashiny.png') }}"
+                  alt="АО Силовые машины"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+
+              <div class="partner-card__info">
+                <div class="partner-card__label">
+                  Партнёр
+                </div>
+
+                <div class="partner-card__name">
+                  АО «Силовые машины»
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- ГК «Взлет» -->
+          <article
+            class="partner-card"
+            data-partner-card
+          >
+            <div class="partner-card__content">
+
+              <div class="partner-card__logo">
+                <img
+                  src="{{ url_for('static', filename='img/partners/vzlet.png') }}"
+                  alt="ГК Взлет"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+
+              <div class="partner-card__info">
+                <div class="partner-card__label">
+                  Партнёр
+                </div>
+
+                <div class="partner-card__name">
+                  ГК «Взлет»
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- АО «Адмиралтейские верфи» -->
+          <article
+            class="partner-card"
+            data-partner-card
+          >
+            <div class="partner-card__content">
+
+              <div class="partner-card__logo">
+                <img
+                  src="{{ url_for('static', filename='img/partners/admiralteyskie-verfi.png') }}"
+                  alt="АО Адмиралтейские верфи"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+
+              <div class="partner-card__info">
+                <div class="partner-card__label">
+                  Партнёр
+                </div>
+
+                <div class="partner-card__name">
+                  АО «Адмиралтейские верфи»
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+
+        </div>
+      </div>
+
+
+      <!-- Стрелка вправо -->
+      <button
+        class="partners-carousel__arrow partners-carousel__arrow--next"
+        type="button"
+        data-partners-next
+        aria-label="Следующая компания"
+      >
+        <i data-lucide="chevron-right"></i>
+      </button>
+
+
+      <!-- Индикаторы -->
+      <div
+        class="partners-carousel__dots"
+        data-partners-dots
+        aria-hidden="true"
+      ></div>
+
+    </div>
+
+  </div>
+</section>
+
+
 <!-- CTA -->
 <section class="section">
   <div class="container">
@@ -125,5 +322,7 @@
     </div>
   </div>
 </section>
+
+<script src="{{ url_for('static', filename='js/partners-carousel.js') }}"></script>
 
 {% endblock %}

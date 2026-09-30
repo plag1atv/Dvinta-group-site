@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<section class="equipment-dev-page">
+
+  <div class="container">
+
+
+    <div class="equipment-dev-card reveal">
+
+
+      <div
+        class="equipment-dev-card__glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <a
+        href="{{ url_for('equipment') }}"
+        class="equipment-back-link"
+      >
+
+        <i data-lucide="arrow-left"></i>
+
+        Оборудование
+
+      </a>
+
+
+      <div class="equipment-dev-card__icon">
+
+        <i data-lucide="{{ section_icon }}"></i>
+
+      </div>
+
+
+      <div class="equipment-dev-card__badge">
+
+        <i data-lucide="construction"></i>
+
+        Раздел в разработке
+
+      </div>
+
+
+      <h1>
+        {{ section_title }}
+      </h1>
+
+
+      <p>
+        {{ section_description }}
+      </p>
+
+
+      <div class="equipment-dev-card__notice">
+
+        <div class="equipment-dev-card__notice-icon">
+
+          <i data-lucide="info"></i>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            Данная страница находится в разработке
+          </strong>
+
+          <span>
+            Информация появится здесь после запуска раздела.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="equipment-dev-card__buttons">
+
+
+        <a
+          href="{{ url_for('equipment') }}"
+          class="btn btn-primary"
+        >
+
+          <i data-lucide="arrow-left"></i>
+
+          Вернуться к оборудованию
+
+        </a>
+
+
+        <a
+          href="{{ url_for('contacts') }}"
+          class="btn btn-ghost"
+        >
+
+          <i data-lucide="message-circle"></i>
+
+          Связаться с нами
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<section class="equipment-verify-page">
+
+  <div class="container">
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <div class="equipment-verify-hero reveal">
+
+      <div
+        class="equipment-verify-hero__glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="equipment-verify-hero__content">
+
+        <a
+          href="{{ url_for('equipment') }}"
+          class="equipment-back-link"
+        >
+
+          <i data-lucide="arrow-left"></i>
+
+          Оборудование
+
+        </a>
+
+
+        <div
+          class="kicker"
+          style="margin-top:22px;"
+        >
+          Поверка средств измерений
+        </div>
+
+
+        <h1>
+          Поверка оборудования
+        </h1>
+
+
+        <p>
+          Выберите необходимое направление измерений.
+          После выбора откроется список оборудования,
+          которое мы принимаем на поверку.
+        </p>
+
+
+        <div class="equipment-verify-hero__features">
+
+
+          <div class="equipment-verify-feature">
+
+            <i data-lucide="badge-check"></i>
+
+            <span>
+              Аккредитованная лаборатория
+            </span>
+
+          </div>
+
+
+          <div class="equipment-verify-feature">
+
+            <i data-lucide="database"></i>
+
+            <span>
+              Передача результатов в ФГИС «Аршин»
+            </span>
+
+          </div>
+
+
+          <div class="equipment-verify-feature">
+
+            <i data-lucide="search"></i>
+
+            <span>
+              Быстрый поиск необходимого СИ
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="equipment-verify-hero__symbol">
+
+        <i data-lucide="badge-check"></i>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CATEGORY HEADER
+         ===================================================== -->
+
+    <div class="equipment-verify-head reveal">
+
+      <div class="kicker">
+        Направления поверки
+      </div>
+
+
+      <h2 class="h2">
+        Какие СИ поверяем
+      </h2>
+
+
+      <p>
+        Выберите группу средств измерений, чтобы перейти
+        к списку конкретного оборудования.
+      </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CATEGORY GRID
+         ===================================================== -->
+
+    <div class="equipment-verify-grid reveal">
+
+
+      {% for item in categories %}
+
+
+        <a
+          href="{{
+            url_for(
+              'equipment_category',
+              category_slug=item.slug
+            )
+          }}"
+          class="equipment-verify-card"
+        >
+
+
+          <div class="equipment-verify-card__header">
+
+
+            <div class="equipment-verify-card__icon">
+
+              <i data-lucide="{{ item.icon }}"></i>
+
+            </div>
+
+
+            <div class="equipment-verify-card__count">
+
+              {{ item.count }}
+
+              {% if item.count == 1 %}
+
+                позиция
+
+              {% elif item.count in [2, 3, 4] %}
+
+                позиции
+
+              {% else %}
+
+                позиций
+
+              {% endif %}
+
+            </div>
+
+
+          </div>
+
+
+          <div class="equipment-verify-card__body">
+
+
+            <h2>
+              {{ item.title }}
+            </h2>
+
+
+            <p>
+              {{ item.description }}
+            </p>
+
+
+          </div>
+
+
+          <div class="equipment-verify-card__footer">
+
+            <span>
+              Перейти к оборудованию
+            </span>
+
+
+            <div class="equipment-verify-card__arrow">
+
+              <i data-lucide="arrow-right"></i>
+
+            </div>
+
+          </div>
+
+
+        </a>
+
+
+      {% endfor %}
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HELP
+         ===================================================== -->
+
+    <div class="equipment-verify-help reveal">
+
+
+      <div class="equipment-verify-help__icon">
+
+        <i data-lucide="circle-help"></i>
+
+      </div>
+
+
+      <div class="equipment-verify-help__content">
+
+        <h2>
+          Не нашли своё оборудование?
+        </h2>
+
+        <p>
+          Свяжитесь с нами — специалисты уточнят возможность
+          проведения поверки вашего средства измерений.
+        </p>
+
+      </div>
+
+
+      <a
+        href="{{ url_for('contacts') }}"
+        class="btn btn-primary"
+      >
+
+        <i data-lucide="message-circle"></i>
+
+        Получить консультацию
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+{% endblock %}

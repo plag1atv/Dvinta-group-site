@@ -1,9 +1,13 @@
 import os
 import smtplib
 import json
+import sqlite3
+import hmac
+import time
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from email.message import EmailMessage
+from contextlib import closing
 
 
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory
@@ -54,10 +58,188 @@ def create_app() -> Flask:
     app.config["ADMIN_PASSWORD"] = os.environ.get("ADMIN_PASSWORD", "Dvinta_tpa3B_Px")
     app.config["PRICE_ITEMS_PATH"] = (Path(app.root_path) / "static" / "data" / "price_items.json"
     )
+    app.config["REVIEWS_DB_PATH"] = Path(app.instance_path) / "reviews.db"
+
+    app.config["REVIEWS_ADMIN_PASSWORD"] = os.environ.get(
+        "REVIEWS_ADMIN_PASSWORD",
+        ""
+    )
 
     @app.context_processor
     def inject_globals():
         return {"current_year": datetime.now().year}
+
+
+    # ==================== ОТЗЫВЫ ====================
+
+    def get_reviews_connection():
+        Path(app.instance_path).mkdir(
+            parents=True,
+            exist_ok=True
+        )
+
+        connection = sqlite3.connect(
+            app.config["REVIEWS_DB_PATH"],
+            timeout=10,
+        )
+
+        connection.row_factory = sqlite3.Row
+
+        connection.execute(
+            "PRAGMA busy_timeout = 5000"
+        )
+
+        return connection
+
+
+    def init_reviews_db():
+
+        with closing(
+            get_reviews_connection()
+        ) as connection:
+
+            connection.executescript(
+                """
+                CREATE TABLE IF NOT EXISTS reviews (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+                    name TEXT NOT NULL,
+
+                    body TEXT NOT NULL DEFAULT '',
+
+                    rating INTEGER NOT NULL
+                    CHECK (rating BETWEEN 1 AND 5),
+
+                    is_approved INTEGER NOT NULL DEFAULT 0,
+
+                    created_at TEXT NOT NULL,
+
+                    approved_at TEXT
+                );
+
+
+                CREATE INDEX IF NOT EXISTS idx_reviews_public
+                ON reviews (
+                    is_approved,
+                    created_at DESC
+                );
+                """
+            )
+
+            connection.commit()
+
+
+    def review_row_to_dict(row):
+
+        item = dict(row)
+
+        try:
+
+            created = datetime.fromisoformat(
+                item["created_at"]
+            )
+
+            item["display_date"] = (
+                created
+                .astimezone()
+                .strftime("%d.%m.%Y")
+            )
+
+            item["display_datetime"] = (
+                created
+                .astimezone()
+                .strftime("%d.%m.%Y %H:%M")
+            )
+
+        except (TypeError, ValueError):
+
+            item["display_date"] = ""
+            item["display_datetime"] = ""
+
+        return item
+
+
+    def get_public_reviews():
+
+        with closing(
+            get_reviews_connection()
+        ) as connection:
+
+            rows = connection.execute(
+                """
+                SELECT
+                    id,
+                    name,
+                    body,
+                    rating,
+                    is_approved,
+                    created_at,
+                    approved_at
+
+                FROM reviews
+
+                WHERE is_approved = 1
+
+                ORDER BY
+                    COALESCE(
+                        approved_at,
+                        created_at
+                    ) DESC,
+                    id DESC
+
+                LIMIT 90
+                """
+            ).fetchall()
+
+        return [
+            review_row_to_dict(row)
+            for row in rows
+        ]
+
+
+    def get_all_reviews():
+
+        with closing(
+            get_reviews_connection()
+        ) as connection:
+
+            rows = connection.execute(
+                """
+                SELECT
+                    id,
+                    name,
+                    body,
+                    rating,
+                    is_approved,
+                    created_at,
+                    approved_at
+
+                FROM reviews
+
+                ORDER BY
+                    is_approved ASC,
+                    created_at DESC,
+                    id DESC
+                """
+            ).fetchall()
+
+        return [
+            review_row_to_dict(row)
+            for row in rows
+        ]
+
+
+    def is_reviews_admin():
+
+        return (
+            session.get(
+                "reviews_admin_logged_in"
+            )
+            is True
+        )
+
+
+    init_reviews_db()
 
     # ==================== ОТПРАВКА ПИСЕМ ====================
     def send_contact_email(name: str, email: str, phone: str, message: str) -> None:
@@ -115,7 +297,388 @@ def create_app() -> Flask:
 
     @app.get("/")
     def home():
-        return render_template("home.html", title="Главная")
+
+        return render_template(
+            "home.html",
+            title="Главная",
+            reviews=get_public_reviews(),
+        )
+
+
+    # =========================================================
+    # REVIEWS
+    # =========================================================
+
+    @app.post("/reviews/submit")
+    def submit_review():
+
+        name = request.form.get(
+            "name",
+            ""
+        ).strip()
+
+        body = request.form.get(
+            "body",
+            ""
+        ).strip()
+
+        website = request.form.get(
+            "website",
+            ""
+        ).strip()
+
+
+        try:
+            rating = int(
+                request.form.get(
+                    "rating",
+                    "0"
+                )
+            )
+
+        except ValueError:
+            rating = 0
+
+
+        def go_home(status):
+
+            return redirect(
+                f"{url_for('home', review=status)}#reviews"
+            )
+
+
+        # Простая защита от спам-ботов.
+        # Обычный пользователь этого поля не видит.
+        if website:
+            return go_home("sent")
+
+
+        if (
+            len(name) < 2
+            or len(name) > 60
+        ):
+            return go_home("name")
+
+
+        if rating not in {
+            1,
+            2,
+            3,
+            4,
+            5
+        }:
+            return go_home("rating")
+
+
+        if len(body) > 1000:
+            return go_home("long")
+
+
+        # Не позволяем отправлять отзывы
+        # слишком часто из одной сессии.
+        now_ts = time.time()
+
+        last_submit = float(
+            session.get(
+                "review_last_submit",
+                0
+            )
+            or 0
+        )
+
+
+        if now_ts - last_submit < 45:
+
+            return go_home("wait")
+
+
+        created_at = (
+            datetime
+            .now(timezone.utc)
+            .isoformat(timespec="seconds")
+        )
+
+
+        try:
+
+            with closing(
+                get_reviews_connection()
+            ) as connection:
+
+                connection.execute(
+                    """
+                    INSERT INTO reviews (
+                        name,
+                        body,
+                        rating,
+                        is_approved,
+                        created_at
+                    )
+
+                    VALUES (?, ?, ?, 0, ?)
+                    """,
+                    (
+                        name,
+                        body,
+                        rating,
+                        created_at,
+                    ),
+                )
+
+                connection.commit()
+
+
+        except sqlite3.Error as exc:
+
+            print(
+                f"Ошибка сохранения отзыва: {exc}"
+            )
+
+            return go_home("error")
+
+
+        session[
+            "review_last_submit"
+        ] = now_ts
+
+
+        return go_home("sent")
+
+
+
+    # =========================================================
+    # REVIEWS ADMIN LOGIN
+    # =========================================================
+
+    @app.post("/admin/reviews/login")
+    def admin_reviews_login():
+
+        password = request.form.get(
+            "password",
+            ""
+        )
+
+        configured_password = (
+            app.config[
+                "REVIEWS_ADMIN_PASSWORD"
+            ]
+        )
+
+
+        if not configured_password:
+
+            return redirect(
+                f"{url_for('home', reviews_admin_error='setup')}#reviews"
+            )
+
+
+        if hmac.compare_digest(
+            password,
+            configured_password
+        ):
+
+            session[
+                "reviews_admin_logged_in"
+            ] = True
+
+            return redirect(
+                url_for(
+                    "admin_reviews_panel"
+                )
+            )
+
+
+        return redirect(
+            f"{url_for('home', reviews_admin_error='invalid')}#reviews"
+        )
+
+
+
+    # =========================================================
+    # REVIEWS ADMIN PANEL
+    # =========================================================
+
+    @app.get("/admin/reviews")
+    def admin_reviews_panel():
+
+        if not is_reviews_admin():
+
+            return redirect(
+                url_for("home")
+            )
+
+
+        reviews = get_all_reviews()
+
+
+        pending_count = sum(
+            1
+            for review in reviews
+            if not review["is_approved"]
+        )
+
+
+        published_count = sum(
+            1
+            for review in reviews
+            if review["is_approved"]
+        )
+
+
+        return render_template(
+            "admin_reviews_panel.html",
+
+            title="Управление отзывами",
+
+            reviews=reviews,
+
+            pending_count=pending_count,
+
+            published_count=published_count,
+        )
+
+
+
+    # =========================================================
+    # PUBLISH / HIDE REVIEW
+    # =========================================================
+
+    @app.post(
+        "/admin/reviews/<int:review_id>/status"
+    )
+    def admin_review_status(review_id):
+
+        if not is_reviews_admin():
+
+            return redirect(
+                url_for("home")
+            )
+
+
+        action = request.form.get(
+            "action",
+            ""
+        )
+
+
+        if action not in {
+            "approve",
+            "hide"
+        }:
+
+            return redirect(
+                url_for(
+                    "admin_reviews_panel"
+                )
+            )
+
+
+        is_approved = (
+            1
+            if action == "approve"
+            else 0
+        )
+
+
+        approved_at = (
+            datetime
+            .now(timezone.utc)
+            .isoformat(
+                timespec="seconds"
+            )
+            if is_approved
+            else None
+        )
+
+
+        with closing(
+            get_reviews_connection()
+        ) as connection:
+
+            connection.execute(
+                """
+                UPDATE reviews
+
+                SET
+                    is_approved = ?,
+                    approved_at = ?
+
+                WHERE id = ?
+                """,
+                (
+                    is_approved,
+                    approved_at,
+                    review_id,
+                ),
+            )
+
+            connection.commit()
+
+
+        return redirect(
+            url_for(
+                "admin_reviews_panel"
+            )
+        )
+
+
+
+    # =========================================================
+    # DELETE REVIEW
+    # =========================================================
+
+    @app.post(
+        "/admin/reviews/<int:review_id>/delete"
+    )
+    def admin_review_delete(review_id):
+
+        if not is_reviews_admin():
+
+            return redirect(
+                url_for("home")
+            )
+
+
+        with closing(
+            get_reviews_connection()
+        ) as connection:
+
+            connection.execute(
+                """
+                DELETE FROM reviews
+                WHERE id = ?
+                """,
+                (
+                    review_id,
+                ),
+            )
+
+            connection.commit()
+
+
+        return redirect(
+            url_for(
+                "admin_reviews_panel"
+            )
+        )
+
+
+
+    # =========================================================
+    # REVIEWS LOGOUT
+    # =========================================================
+
+    @app.get("/admin/reviews/logout")
+    def admin_reviews_logout():
+
+        session.pop(
+            "reviews_admin_logged_in",
+            None
+        )
+
+        return redirect(
+            url_for("home")
+        )
 
 
     @app.get("/about")
@@ -1343,16 +1906,169 @@ def create_app() -> Flask:
         },
     }
 
+    # =========================================================
+    # EQUIPMENT
+    # =========================================================
+
     @app.get("/equipment")
     def equipment():
-        return redirect(url_for("equipment_category", category_slug="geometric"))
+        return render_template(
+            "equipment.html",
+            title="Оборудование"
+        )
+
+
+    @app.get("/equipment/verification")
+    def equipment_verification():
+
+        category_meta = {
+            "geometric": {
+                "icon": "ruler",
+                "description": (
+                    "Штангенинструмент, микрометры, меры длины, "
+                    "измерительные системы и другие геометрические СИ."
+                ),
+            },
+
+            "mechanical": {
+                "icon": "settings-2",
+                "description": (
+                    "Весы, динамометры, твердомеры, испытательное "
+                    "оборудование и другие механические СИ."
+                ),
+            },
+
+            "flow": {
+                "icon": "waves",
+                "description": (
+                    "Средства измерений расхода, уровня, объёма "
+                    "жидкостей и других веществ."
+                ),
+            },
+
+            "pressure": {
+                "icon": "gauge",
+                "description": (
+                    "Манометры, вакуумметры, преобразователи давления "
+                    "и другие средства измерений давления."
+                ),
+            },
+
+            "physicochemical": {
+                "icon": "flask-conical",
+                "description": (
+                    "Средства контроля физико-химического состава "
+                    "и свойств веществ."
+                ),
+            },
+
+            "temperature": {
+                "icon": "thermometer",
+                "description": (
+                    "Термометры, термопреобразователи, регистраторы "
+                    "и другие средства температурных измерений."
+                ),
+            },
+
+            "time-frequency": {
+                "icon": "clock-3",
+                "description": (
+                    "Секундомеры, таймеры и другие средства "
+                    "измерений времени и частоты."
+                ),
+            },
+        }
+
+
+        verification_categories = []
+
+
+        for slug, category in EQUIPMENT_CATEGORIES.items():
+
+            # Пока не показываем категории,
+            # в которых ещё нет оборудования.
+            if not category.get("cards"):
+                continue
+
+            meta = category_meta.get(
+                slug,
+                {
+                    "icon": "boxes",
+                    "description": category.get(
+                        "description",
+                        "Выберите необходимое средство измерений."
+                    ),
+                }
+            )
+
+
+            verification_categories.append(
+                {
+                    "slug": slug,
+                    "title": category["kicker"],
+                    "icon": meta["icon"],
+                    "description": meta["description"],
+                    "count": len(category["cards"]),
+                }
+            )
+
+
+        return render_template(
+            "equipment_verification.html",
+            title="Поверка оборудования",
+            categories=verification_categories,
+        )
+
+
+    @app.get("/equipment/calibration")
+    def equipment_calibration():
+
+        return render_template(
+            "equipment_coming_soon.html",
+
+            title="Калибровка оборудования",
+
+            section_title="Калибровка оборудования",
+
+            section_description=(
+                "Мы готовим новый раздел с информацией "
+                "о калибровке средств измерений."
+            ),
+
+            section_icon="sliders-horizontal",
+        )
+
+
+    @app.get("/equipment/sales")
+    def equipment_sales():
+
+        return render_template(
+            "equipment_coming_soon.html",
+
+            title="Продажа оборудования",
+
+            section_title="Продажа оборудования",
+
+            section_description=(
+                "Мы готовим каталог оборудования, "
+                "доступного для заказа и поставки."
+            ),
+
+            section_icon="shopping-bag",
+        )
+
 
     @app.get("/equipment/<category_slug>")
     def equipment_category(category_slug):
+
         category = EQUIPMENT_CATEGORIES.get(category_slug)
 
+
         if category is None:
-            return redirect(url_for("metrology_verification"))
+            return redirect(
+                url_for("equipment_verification")
+            )
+
 
         return render_template(
             "equipment_category.html",

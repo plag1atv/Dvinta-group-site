@@ -1,47 +1,308 @@
 {% extends "base.html" %}
 
+
 {% block content %}
 
-<section class="equipment-page">
 
-    <div class="container">
+<!-- =========================================================
+     EQUIPMENT HUB
+     ========================================================= -->
 
-        <div class="equipment-header">
+<section class="equipment-hub">
 
-            <h1>Оборудование</h1>
+  <div class="container">
 
-            <p>
-                Выберите средство измерений, чтобы узнать подробную информацию
-                о поверке, стоимости услуг и порядке проведения работ.
-            </p>
 
+    <!-- HERO -->
+    <div class="equipment-hub-hero reveal">
+
+      <div
+        class="equipment-hub-hero__glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="equipment-hub-hero__content">
+
+        <div class="kicker">
+          ЦСМ «Двинта»
         </div>
 
 
-        <div class="equipment-grid">
+        <h1>
+          Оборудование
+        </h1>
 
-            <a href="/equipment_calipers.html" class="equipment-card">
 
-                <div class="equipment-card-icon">
-                    📏
-                </div>
+        <p>
+          Выберите необходимое направление работы
+          с измерительным оборудованием.
+        </p>
 
-                <h2>Штангенциркули</h2>
+      </div>
 
-                <p>
-                    Поверка всех типов штангенциркулей:
-                    ШЦ, ШЦЦ, ШЦК, специальные,
-                    разметочные и другие.
-                </p>
 
-                <span class="equipment-card-link">
-                    Подробнее →
-                </span>
+      <div
+        class="equipment-hub-hero__icon"
+        aria-hidden="true"
+      >
 
-            </a>
+        <div class="equipment-hub-hero__icon-inner">
+
+          <i data-lucide="boxes"></i>
 
         </div>
+
+      </div>
+
     </div>
+
+
+
+    <!-- =====================================================
+         НАПРАВЛЕНИЯ
+         ===================================================== -->
+
+    <div class="equipment-hub-head reveal">
+
+      <div class="kicker">
+        Наши направления
+      </div>
+
+      <h2 class="h2">
+        Работа с оборудованием
+      </h2>
+
+      <p>
+        Поверка средств измерений, калибровка и поставка
+        измерительного оборудования.
+      </p>
+
+    </div>
+
+
+
+    <div class="equipment-hub-grid reveal">
+
+
+      <!-- ===============================================
+           ПОВЕРКА
+           =============================================== -->
+
+      <a
+        href="{{ url_for('equipment_verification') }}"
+        class="equipment-hub-card equipment-hub-card--primary"
+      >
+
+        <div class="equipment-hub-card__top">
+
+
+          <div class="equipment-hub-card__icon">
+
+            <i data-lucide="badge-check"></i>
+
+          </div>
+
+
+          <div class="equipment-hub-card__status">
+
+            <span class="equipment-hub-card__status-dot"></span>
+
+            Доступно
+
+          </div>
+
+        </div>
+
+
+        <div class="equipment-hub-card__body">
+
+          <div class="equipment-hub-card__number">
+            01
+          </div>
+
+
+          <h2>
+            Поверка оборудования
+          </h2>
+
+
+          <p>
+            Поверка средств измерений по направлениям:
+            геометрические, механические, температурные,
+            измерения давления, расхода и другие виды СИ.
+          </p>
+
+        </div>
+
+
+        <div class="equipment-hub-card__footer">
+
+          <span>
+            Выбрать оборудование
+          </span>
+
+          <div class="equipment-hub-card__arrow">
+
+            <i data-lucide="arrow-right"></i>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- ===============================================
+           КАЛИБРОВКА
+           =============================================== -->
+
+      <a
+        href="{{ url_for('equipment_calibration') }}"
+        class="equipment-hub-card"
+      >
+
+        <div class="equipment-hub-card__top">
+
+
+          <div class="equipment-hub-card__icon">
+
+            <i data-lucide="sliders-horizontal"></i>
+
+          </div>
+
+
+          <div
+            class="
+              equipment-hub-card__status
+              equipment-hub-card__status--development
+            "
+          >
+
+            В разработке
+
+          </div>
+
+        </div>
+
+
+        <div class="equipment-hub-card__body">
+
+          <div class="equipment-hub-card__number">
+            02
+          </div>
+
+
+          <h2>
+            Калибровка оборудования
+          </h2>
+
+
+          <p>
+            Раздел с информацией о калибровке средств
+            измерений и доступных видах работ.
+          </p>
+
+        </div>
+
+
+        <div class="equipment-hub-card__footer">
+
+          <span>
+            Подробнее
+          </span>
+
+
+          <div class="equipment-hub-card__arrow">
+
+            <i data-lucide="arrow-right"></i>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- ===============================================
+           ПРОДАЖА
+           =============================================== -->
+
+      <a
+        href="{{ url_for('equipment_sales') }}"
+        class="equipment-hub-card"
+      >
+
+        <div class="equipment-hub-card__top">
+
+
+          <div class="equipment-hub-card__icon">
+
+            <i data-lucide="shopping-bag"></i>
+
+          </div>
+
+
+          <div
+            class="
+              equipment-hub-card__status
+              equipment-hub-card__status--development
+            "
+          >
+
+            В разработке
+
+          </div>
+
+        </div>
+
+
+        <div class="equipment-hub-card__body">
+
+          <div class="equipment-hub-card__number">
+            03
+          </div>
+
+
+          <h2>
+            Продажа оборудования
+          </h2>
+
+
+          <p>
+            Каталог измерительного и вспомогательного
+            оборудования для лабораторий и предприятий.
+          </p>
+
+        </div>
+
+
+        <div class="equipment-hub-card__footer">
+
+          <span>
+            Подробнее
+          </span>
+
+
+          <div class="equipment-hub-card__arrow">
+
+            <i data-lucide="arrow-right"></i>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
 </section>
+
 
 {% endblock %}

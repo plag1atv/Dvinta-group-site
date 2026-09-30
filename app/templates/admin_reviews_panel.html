@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section class="reviews-admin-page">
+
+  <div class="container">
+
+
+    <!-- HEADER -->
+
+    <div class="reviews-admin-head">
+
+      <div>
+
+        <div class="kicker">
+          Админ-панель
+        </div>
+
+
+        <h1>
+          Управление отзывами
+        </h1>
+
+
+        <p>
+          Новые отзывы сначала попадают
+          на модерацию. Здесь их можно
+          опубликовать, скрыть или удалить.
+        </p>
+
+      </div>
+
+
+
+      <div class="reviews-admin-head__actions">
+
+        <a
+          class="btn btn-ghost"
+          href="{{ url_for('home') }}"
+        >
+          <i data-lucide="house"></i>
+          На сайт
+        </a>
+
+
+        <a
+          class="btn btn-ghost"
+          href="{{ url_for('admin_reviews_logout') }}"
+        >
+          <i data-lucide="log-out"></i>
+          Выйти
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- STATISTICS -->
+
+    <div class="reviews-admin-stats">
+
+
+      <div class="reviews-admin-stat">
+
+        <div class="reviews-admin-stat__value">
+          {{ reviews|length }}
+        </div>
+
+        <div class="reviews-admin-stat__label">
+          Всего отзывов
+        </div>
+
+      </div>
+
+
+
+      <div class="reviews-admin-stat">
+
+        <div class="reviews-admin-stat__value">
+          {{ pending_count }}
+        </div>
+
+        <div class="reviews-admin-stat__label">
+          На модерации
+        </div>
+
+      </div>
+
+
+
+      <div class="reviews-admin-stat">
+
+        <div class="reviews-admin-stat__value">
+          {{ published_count }}
+        </div>
+
+        <div class="reviews-admin-stat__label">
+          Опубликовано
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- REVIEWS -->
+
+    {% if reviews %}
+
+      <div class="reviews-admin-list">
+
+
+        {% for review in reviews %}
+
+
+          <article class="admin-review-card">
+
+
+            <div class="admin-review-card__header">
+
+
+              <div class="admin-review-card__person">
+
+
+                <div class="admin-review-card__avatar">
+
+                  {{ review.name[0]|upper }}
+
+                </div>
+
+
+                <div>
+
+                  <h2>
+                    {{ review.name }}
+                  </h2>
+
+                  <div class="admin-review-card__date">
+
+                    {{ review.display_datetime }}
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+
+              {% if review.is_approved %}
+
+                <span
+                  class="
+                    admin-review-status
+                    is-published
+                  "
+                >
+                  Опубликован
+                </span>
+
+              {% else %}
+
+                <span
+                  class="
+                    admin-review-status
+                    is-pending
+                  "
+                >
+                  На модерации
+                </span>
+
+              {% endif %}
+
+
+            </div>
+
+
+
+            <!-- Stars -->
+
+            <div class="admin-review-card__stars">
+
+              {% for star in range(1,6) %}
+
+                <span
+                  class="{%
+                    if star <= review.rating
+                  %}is-active{% endif %}"
+                >
+                  ★
+                </span>
+
+              {% endfor %}
+
+            </div>
+
+
+
+            <!-- Text -->
+
+            {% if review.body %}
+
+              <p class="admin-review-card__text">
+
+                {{ review.body }}
+
+              </p>
+
+            {% else %}
+
+              <p
+                class="
+                  admin-review-card__text
+                  is-empty
+                "
+              >
+
+                Без текстового комментария.
+
+              </p>
+
+            {% endif %}
+
+
+
+            <!-- Actions -->
+
+            <div class="admin-review-card__actions">
+
+
+              <form
+                method="post"
+                action="{{
+                  url_for(
+                    'admin_review_status',
+                    review_id=review.id
+                  )
+                }}"
+              >
+
+
+                {% if review.is_approved %}
+
+                  <button
+                    class="btn btn-ghost"
+                    type="submit"
+                    name="action"
+                    value="hide"
+                  >
+                    Скрыть
+                  </button>
+
+                {% else %}
+
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    name="action"
+                    value="approve"
+                  >
+                    Опубликовать
+                  </button>
+
+                {% endif %}
+
+
+              </form>
+
+
+
+              <form
+                method="post"
+                action="{{
+                  url_for(
+                    'admin_review_delete',
+                    review_id=review.id
+                  )
+                }}"
+                onsubmit="
+                  return confirm(
+                    'Удалить этот отзыв?'
+                  );
+                "
+              >
+
+                <button
+                  class="admin-review-delete"
+                  type="submit"
+                >
+                  Удалить
+                </button>
+
+              </form>
+
+
+            </div>
+
+
+          </article>
+
+
+        {% endfor %}
+
+
+      </div>
+
+
+    {% else %}
+
+
+      <div class="reviews-admin-empty">
+
+        Отзывов пока нет.
+
+      </div>
+
+
+    {% endif %}
+
+
+  </div>
+
+</section>
+
+
+{% endblock %}

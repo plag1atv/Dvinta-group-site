@@ -323,6 +323,495 @@
   </div>
 </section>
 
+<!-- =========================================================
+     REVIEWS
+     ========================================================= -->
+
+<section
+  id="reviews"
+  class="section reviews-section"
+  data-reviews-carousel
+>
+
+  <div class="container">
+
+    <div class="reviews-shell reveal">
+
+
+      <!-- Заголовок -->
+
+      <div class="reviews-head">
+
+        <div class="reviews-head__content">
+
+          <div class="kicker">
+            Отзывы
+          </div>
+
+          <h2 class="h2">
+            Что говорят о нашей работе
+          </h2>
+
+          <p>
+            Отзывы наших клиентов о сотрудничестве
+            с ЦСМ «Двинта».
+          </p>
+
+        </div>
+
+
+        <div
+          class="reviews-nav"
+          aria-label="Листать отзывы"
+        >
+
+          <button
+            class="reviews-nav__button"
+            type="button"
+            data-reviews-prev
+            aria-label="Предыдущие отзывы"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+
+
+          <button
+            class="reviews-nav__button"
+            type="button"
+            data-reviews-next
+            aria-label="Следующие отзывы"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Карточки отзывов -->
+
+      {% if reviews %}
+
+        <div class="reviews-grid">
+
+          {% for review in reviews %}
+
+            <article
+              class="review-card"
+              data-review-card
+            >
+
+              <div class="review-card__top">
+
+                <div class="review-card__person">
+
+                  <div
+                    class="review-card__avatar"
+                    aria-hidden="true"
+                  >
+                    {{ review.name[0]|upper }}
+                  </div>
+
+
+                  <div>
+
+                    <div class="review-card__name">
+                      {{ review.name }}
+                    </div>
+
+                    <div class="review-card__date">
+                      {{ review.display_date }}
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div
+                  class="review-card__quote"
+                  aria-hidden="true"
+                >
+                  “
+                </div>
+
+              </div>
+
+
+              <div
+                class="review-card__stars"
+                aria-label="Оценка {{ review.rating }} из 5"
+              >
+
+                {% for star in range(1, 6) %}
+
+                  <span
+                    class="{% if star <= review.rating %}is-active{% endif %}"
+                  >
+                    ★
+                  </span>
+
+                {% endfor %}
+
+              </div>
+
+
+              {% if review.body %}
+
+                <p class="review-card__text">
+                  {{ review.body }}
+                </p>
+
+              {% else %}
+
+                <p
+                  class="
+                    review-card__text
+                    review-card__text--empty
+                  "
+                >
+                  Оценка без текстового комментария.
+                </p>
+
+              {% endif %}
+
+            </article>
+
+          {% endfor %}
+
+        </div>
+
+      {% else %}
+
+        <div class="reviews-empty">
+          Пока нет опубликованных отзывов.
+          Вы можете оставить первый.
+        </div>
+
+      {% endif %}
+
+
+
+      <!-- Номер страницы -->
+
+      <div class="reviews-pagination">
+
+        <span
+          class="reviews-pagination__page"
+          data-reviews-page
+        >
+          0 / 0
+        </span>
+
+      </div>
+
+
+
+      <!-- =================================================
+           ФОРМА
+           ================================================= -->
+
+      <div class="review-submit-card">
+
+
+        <div class="review-submit-card__intro">
+
+          <div class="kicker">
+            Ваше мнение важно
+          </div>
+
+          <h3>
+            Оставьте отзыв
+          </h3>
+
+          <p>
+            Укажите имя, поставьте оценку
+            от 1 до 5 звёзд. Сам текст
+            отзыва можно оставить по желанию.
+          </p>
+
+        </div>
+
+
+
+        <form
+          class="review-form"
+          method="post"
+          action="{{ url_for('submit_review') }}"
+          data-review-form
+        >
+
+          <div class="review-form__grid">
+
+
+            <!-- Имя -->
+
+            <label class="review-form__field">
+
+              <span>
+                Ваше имя
+              </span>
+
+              <input
+                type="text"
+                name="name"
+                maxlength="60"
+                autocomplete="name"
+                placeholder="Например, Александр"
+                required
+              >
+
+            </label>
+
+
+
+            <!-- Оценка -->
+
+            <div class="review-form__rating-wrap">
+
+              <div class="review-form__rating-label">
+                Ваша оценка
+              </div>
+
+
+              <div
+                class="review-rating"
+                aria-label="Оценка от 1 до 5"
+              >
+
+                <input
+                  id="review-star-5"
+                  type="radio"
+                  name="rating"
+                  value="5"
+                  required
+                >
+                <label
+                  for="review-star-5"
+                  title="5 звёзд"
+                >★</label>
+
+
+                <input
+                  id="review-star-4"
+                  type="radio"
+                  name="rating"
+                  value="4"
+                >
+                <label
+                  for="review-star-4"
+                  title="4 звезды"
+                >★</label>
+
+
+                <input
+                  id="review-star-3"
+                  type="radio"
+                  name="rating"
+                  value="3"
+                >
+                <label
+                  for="review-star-3"
+                  title="3 звезды"
+                >★</label>
+
+
+                <input
+                  id="review-star-2"
+                  type="radio"
+                  name="rating"
+                  value="2"
+                >
+                <label
+                  for="review-star-2"
+                  title="2 звезды"
+                >★</label>
+
+
+                <input
+                  id="review-star-1"
+                  type="radio"
+                  name="rating"
+                  value="1"
+                >
+                <label
+                  for="review-star-1"
+                  title="1 звезда"
+                >★</label>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- Текст -->
+
+            <label
+              class="
+                review-form__field
+                review-form__field--wide
+              "
+            >
+
+              <span>
+                Отзыв
+                <small>(по желанию)</small>
+              </span>
+
+              <textarea
+                name="body"
+                maxlength="1000"
+                placeholder="Расскажите о вашем опыте работы с нами"
+              ></textarea>
+
+            </label>
+
+          </div>
+
+
+
+          <!-- Антиспам -->
+
+          <label
+            class="review-form__trap"
+            aria-hidden="true"
+          >
+
+            Ваш сайт
+
+            <input
+              type="text"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            >
+
+          </label>
+
+
+
+          <div class="review-form__bottom">
+
+            <div class="review-form__note">
+              Отзыв появится на сайте после
+              проверки администратором.
+            </div>
+
+
+            <button
+              class="btn review-form__submit"
+              type="submit"
+            >
+
+              <i data-lucide="send"></i>
+
+              Отправить отзыв
+
+            </button>
+
+          </div>
+
+
+
+          {% set review_state = request.args.get('review') %}
+
+
+          {% if review_state == 'sent' %}
+
+            <p
+              class="
+                review-form__feedback
+                is-success
+              "
+            >
+              Спасибо! Отзыв отправлен на модерацию.
+            </p>
+
+
+          {% elif review_state == 'name' %}
+
+            <p
+              class="
+                review-form__feedback
+                is-error
+              "
+            >
+              Укажите имя длиной от 2 до 60 символов.
+            </p>
+
+
+          {% elif review_state == 'rating' %}
+
+            <p
+              class="
+                review-form__feedback
+                is-error
+              "
+            >
+              Поставьте оценку от 1 до 5 звёзд.
+            </p>
+
+
+          {% elif review_state == 'long' %}
+
+            <p
+              class="
+                review-form__feedback
+                is-error
+              "
+            >
+              Отзыв слишком длинный.
+              Максимум — 1000 символов.
+            </p>
+
+
+          {% elif review_state == 'wait' %}
+
+            <p
+              class="
+                review-form__feedback
+                is-error
+              "
+            >
+              Вы только что отправили отзыв.
+              Попробуйте немного позже.
+            </p>
+
+
+          {% elif review_state == 'error' %}
+
+            <p
+              class="
+                review-form__feedback
+                is-error
+              "
+            >
+              Не удалось сохранить отзыв.
+              Попробуйте позже.
+            </p>
+
+          {% endif %}
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script
+  src="{{ url_for('static', filename='js/reviews_carousel.js') }}"
+></script>
+
+
 <script src="{{ url_for('static', filename='js/partners-carousel.js') }}"></script>
 
 {% endblock %}

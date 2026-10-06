@@ -29,6 +29,15 @@
           <i data-lucide="send" class="w-5 h-5"></i>
           Область аккредитации
         </a>
+        <a
+          class="btn btn-primary"
+          href="{{ url_for('static', filename='docs/forma-zayavki-na-poverku-kalibrovku-si.xlsx') }}"
+          target="_blank"
+          rel="noopener"
+        >
+          <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+          Форма заявки на поверку
+        </a>
         <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
           <i data-lucide="clipboard-check" class="w-5 h-5"></i>
           Правила приёма и выдачи СИ
@@ -36,10 +45,6 @@
         <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
           <i data-lucide="russian-ruble" class="w-5 h-5"></i>
           Прайс-лист
-        </a>
-        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Консультация
         </a>
       </div>
     </div>
@@ -287,14 +292,13 @@
   <div class="container">
 
     <div class="partners-heading reveal">
-      <div class="kicker">Нам доверяют</div>
 
       <h2
         id="partnersTitle"
         class="h2"
         style="margin-top:8px;"
       >
-        С нами сотрудничают
+        Нам доверяют
       </h2>
 
       <p class="partners-heading__text">

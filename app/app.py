@@ -2019,23 +2019,420 @@ def create_app() -> Flask:
             categories=verification_categories,
         )
 
+    def make_calibration_text(text):
+        """
+        Преобразует текст карточек поверки
+        в текст для раздела калибровки.
+        """
+
+        if not text:
+            return text
+
+        replacements = [
+            (
+                "Первичная и периодическая поверка",
+                "Калибровка",
+            ),
+            (
+                "первичная и периодическая поверка",
+                "калибровка",
+            ),
+            (
+                "Первичная поверка",
+                "Калибровка",
+            ),
+            (
+                "первичная поверка",
+                "калибровка",
+            ),
+            (
+                "Периодическая поверка",
+                "Калибровка",
+            ),
+            (
+                "периодическая поверка",
+                "калибровка",
+            ),
+            (
+                "Поверка",
+                "Калибровка",
+            ),
+            (
+                "поверка",
+                "калибровка",
+            ),
+            (
+                "поверки",
+                "калибровки",
+            ),
+            (
+                "поверке",
+                "калибровке",
+            ),
+            (
+                "поверку",
+                "калибровку",
+            ),
+            (
+                "поверяем",
+                "калибруем",
+            ),
+        ]
+
+        result = text
+
+        for old, new in replacements:
+            result = result.replace(
+                old,
+                new
+            )
+
+        return result
+
+    def make_calibration_page_html(html):
+
+        if not html:
+            return html
+
+        replacements = [
+
+            # Специальные поверочные формулировки
+            (
+                "Передача во ФГИС «Аршин»",
+                "Сертификат калибровки",
+            ),
+            (
+                "Передаём сведения о результатах поверки "
+                "во ФГИС «Аршин».",
+                "По результатам работ оформляем "
+                "сертификат калибровки.",
+            ),
+            (
+                "Передаем сведения о результатах поверки "
+                "во ФГИС «Аршин».",
+                "По результатам работ оформляем "
+                "сертификат калибровки.",
+            ),
+            (
+                "Официальная поверка",
+                "Калибровка средств измерений",
+            ),
+
+            # Документы
+            (
+                "свидетельство о поверке",
+                "сертификат калибровки",
+            ),
+            (
+                "Свидетельство о поверке",
+                "Сертификат калибровки",
+            ),
+            (
+                "свидетельства о поверке",
+                "сертификата калибровки",
+            ),
+            (
+                "Свидетельства о поверке",
+                "Сертификата калибровки",
+            ),
+
+            # Заголовки и формулировки
+            (
+                "Прайс-лист на поверку",
+                "Прайс-лист на калибровку",
+            ),
+            (
+                "Частые вопросы по поверке",
+                "Частые вопросы по калибровке",
+            ),
+            (
+                "вопросы по поверке",
+                "вопросы по калибровке",
+            ),
+            (
+                "Какие ",
+                "Какие ",
+            ),
+
+            # Общие падежи
+            (
+                "Поверяем",
+                "Калибруем",
+            ),
+            (
+                "поверяем",
+                "калибруем",
+            ),
+            (
+                "Поверяются",
+                "Калибруются",
+            ),
+            (
+                "поверяются",
+                "калибруются",
+            ),
+            (
+                "Поверяют",
+                "Калибруют",
+            ),
+            (
+                "поверяют",
+                "калибруют",
+            ),
+            (
+                "Поверить",
+                "Калибровать",
+            ),
+            (
+                "поверить",
+                "калибровать",
+            ),
+            (
+                "Поверка",
+                "Калибровка",
+            ),
+            (
+                "поверка",
+                "калибровка",
+            ),
+            (
+                "Поверки",
+                "Калибровки",
+            ),
+            (
+                "поверки",
+                "калибровки",
+            ),
+            (
+                "Поверке",
+                "Калибровке",
+            ),
+            (
+                "поверке",
+                "калибровке",
+            ),
+            (
+                "Поверку",
+                "Калибровку",
+            ),
+            (
+                "поверку",
+                "калибровку",
+            ),
+            (
+                "Поверкой",
+                "Калибровкой",
+            ),
+            (
+                "поверкой",
+                "калибровкой",
+            ),
+        ]
+
+        result = html
+
+        for old, new in replacements:
+            result = result.replace(
+                old,
+                new
+            )
+
+        return result
+
+    def get_calibration_categories():
+
+        calibration_categories = {}
+
+        for category_slug, category in EQUIPMENT_CATEGORIES.items():
+
+            calibration_category = {
+                "title": make_calibration_text(
+                    category.get("title", "")
+                ),
+
+                "kicker": category.get(
+                    "kicker",
+                    ""
+                ),
+
+                "description": make_calibration_text(
+                    category.get("description", "")
+                ),
+
+                "cards": [],
+            }
+
+            for card in category.get("cards", []):
+                original_href = card.get(
+                    "href",
+                    ""
+                )
+
+                # Например:
+                # /equipment_calipers.html
+                #
+                # превращаем в:
+                # calipers
+                equipment_slug = (
+                    original_href
+                    .replace("/equipment_", "")
+                    .replace(".html", "")
+                )
+
+                calibration_card = {
+                    "title": card.get(
+                        "title",
+                        ""
+                    ),
+
+                    "description": make_calibration_text(
+                        card.get(
+                            "description",
+                            ""
+                        )
+                    ),
+
+                    "icon": card.get(
+                        "icon",
+                        "settings"
+                    ),
+
+                    "href": (
+                        f"/equipment/calibration/"
+                        f"{category_slug}/"
+                        f"{equipment_slug}"
+                    ),
+
+                    "equipment_slug": equipment_slug,
+                }
+
+                calibration_category[
+                    "cards"
+                ].append(
+                    calibration_card
+                )
+
+            calibration_categories[
+                category_slug
+            ] = calibration_category
+
+        return calibration_categories
 
     @app.get("/equipment/calibration")
     def equipment_calibration():
 
+        category_meta = {
+
+            "geometric": {
+                "icon": "ruler",
+                "description": (
+                    "Средства измерений геометрических "
+                    "величин и параметров."
+                ),
+            },
+
+            "mechanical": {
+                "icon": "settings-2",
+                "description": (
+                    "Средства измерений массы, силы, твёрдости "
+                    "и других механических величин."
+                ),
+            },
+
+            "flow": {
+                "icon": "waves",
+                "description": (
+                    "Средства измерений расхода, уровня, объёма "
+                    "жидкостей и других веществ."
+                ),
+            },
+
+            "pressure": {
+                "icon": "gauge",
+                "description": (
+                    "Манометры, вакуумметры, преобразователи давления "
+                    "и другие средства измерений давления."
+                ),
+            },
+
+            "physicochemical": {
+                "icon": "flask-conical",
+                "description": (
+                    "Средства контроля физико-химического состава "
+                    "и свойств веществ."
+                ),
+            },
+
+            "temperature": {
+                "icon": "thermometer",
+                "description": (
+                    "Термометры, термопреобразователи, регистраторы "
+                    "и другие средства температурных измерений."
+                ),
+            },
+
+            "time-frequency": {
+                "icon": "clock-3",
+                "description": (
+                    "Секундомеры, таймеры и другие средства "
+                    "измерений времени и частоты."
+                ),
+            },
+        }
+
+        calibration_data = get_calibration_categories()
+
+        calibration_categories = []
+
+        for slug, category in calibration_data.items():
+
+            if not category.get(
+                    "cards"
+            ):
+                continue
+
+            meta = category_meta.get(
+                slug,
+                {
+                    "icon": "boxes",
+
+                    "description": (
+                        "Выберите необходимое "
+                        "средство измерений."
+                    ),
+                }
+            )
+
+            calibration_categories.append(
+                {
+                    "slug": slug,
+
+                    "title": category[
+                        "kicker"
+                    ],
+
+                    "icon": meta[
+                        "icon"
+                    ],
+
+                    "description": meta[
+                        "description"
+                    ],
+
+                    "count": len(
+                        category[
+                            "cards"
+                        ]
+                    ),
+                }
+            )
+
         return render_template(
-            "equipment_coming_soon.html",
+            "equipment_calibration.html",
 
             title="Калибровка оборудования",
 
-            section_title="Калибровка оборудования",
-
-            section_description=(
-                "Мы готовим новый раздел с информацией "
-                "о калибровке средств измерений."
-            ),
-
-            section_icon="sliders-horizontal",
+            categories=calibration_categories,
         )
 
 
@@ -2056,6 +2453,114 @@ def create_app() -> Flask:
 
             section_icon="shopping-bag",
         )
+
+    @app.get("/equipment/calibration/<category_slug>")
+    def equipment_calibration_category(
+            category_slug
+    ):
+
+        calibration_categories = (
+            get_calibration_categories()
+        )
+
+        category = calibration_categories.get(
+            category_slug
+        )
+
+        if category is None:
+            return redirect(
+                url_for(
+                    "equipment_calibration"
+                )
+            )
+
+        return render_template(
+            "equipment_calibration_category.html",
+
+            title=(
+                f"Калибровка — "
+                f"{category['kicker']}"
+            ),
+
+            category=category,
+
+            equipment_type=category_slug,
+        )
+
+    @app.get(
+        "/equipment/calibration/"
+        "<category_slug>/"
+        "<equipment_slug>"
+    )
+    def equipment_calibration_item(
+            category_slug,
+            equipment_slug,
+    ):
+
+        category = EQUIPMENT_CATEGORIES.get(
+            category_slug
+        )
+
+        if category is None:
+            return redirect(
+                url_for(
+                    "equipment_calibration"
+                )
+            )
+
+        expected_href = (
+            f"/equipment_"
+            f"{equipment_slug}.html"
+        )
+
+        selected_card = None
+
+        for card in category.get(
+                "cards",
+                []
+        ):
+
+            if card.get(
+                    "href"
+            ) == expected_href:
+                selected_card = card
+
+                break
+
+        # Защита от произвольного имени шаблона
+        if selected_card is None:
+            return redirect(
+                url_for(
+                    "equipment_calibration_category",
+                    category_slug=category_slug,
+                )
+            )
+
+        template_name = (
+            f"equipment_"
+            f"{equipment_slug}.html"
+        )
+
+        calibration_title = (
+            f"Калибровка "
+            f"{selected_card['title']}"
+        )
+
+        html = render_template(
+            template_name,
+
+            title=calibration_title,
+
+            equipment_type=equipment_slug,
+
+            service_type="calibration",
+        )
+
+        html = make_calibration_page_html(
+            html
+        )
+
+        return html
 
 
     @app.get("/equipment/<category_slug>")

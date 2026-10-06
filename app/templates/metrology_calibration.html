@@ -24,19 +24,29 @@
           Оставить заявку
         </a>
 
+        <a
+          class="btn btn-primary"
+          href="{{ url_for('static', filename='docs/opk-csm-dvinta.pdf') }}"
+          target="_blank"
+          rel="noopener"
+        >
+          <i data-lucide="badge-check" class="w-5 h-5"></i>
+          Область в РСК
+        </a>
+
+        <a
+          class="btn btn-primary"
+          href="{{ url_for('static', filename='docs/forma-zayavki-na-kalibrovku-si.xlsx') }}"
+          target="_blank"
+          rel="noopener"
+        >
+          <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+          Форма заявки на калибровку
+        </a>
+
         <a class="btn btn-ghost" href="{{ url_for('metrology_acceptance_rules') }}">
           <i data-lucide="clipboard-check" class="w-5 h-5"></i>
           Правила приёма и выдачи СИ
-        </a>
-
-        <a class="btn btn-ghost" href="{{ url_for('metrology_price_list') }}">
-          <i data-lucide="russian-ruble" class="w-5 h-5"></i>
-          Прайс-лист
-        </a>
-
-        <a class="btn btn-ghost" href="{{ url_for('contacts') }}">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Консультация
         </a>
       </div>
     </div>
@@ -87,56 +97,124 @@
 
       <div class="verify-types__grid" style="margin-top:20px;">
         <div class="verify-types__col">
-          <div class="verify-type-item">
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='geometric') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="ruler" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля геометрических величин</div>
-          </div>
+            <div class="verify-type-item__text">
+              средства измерений и контроля геометрических величин
+            </div>
 
-          <div class="verify-type-item">
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='mechanical') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="settings-2" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля механических величин</div>
-          </div>
 
-          <div class="verify-type-item">
+            <div class="verify-type-item__text">
+              средства измерений и контроля механических величин
+            </div>
+
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='flow') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="waves" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля параметров потока, расхода, уровня, объёма веществ</div>
-          </div>
 
-          <div class="verify-type-item">
+            <div class="verify-type-item__text">
+              средства измерений и контроля параметров потока, расхода, уровня, объёма веществ
+            </div>
+
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='pressure') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="gauge" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля давления и вакуумных измерений</div>
-          </div>
-        </div>
+            <div class="verify-type-item__text">
+              средства измерений и контроля давления и вакуумных измерений
+            </div>
 
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
+        </div>
         <div class="verify-types__col">
-          <div class="verify-type-item">
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='physicochemical') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="flask-conical" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля физико-химического состава и свойств веществ</div>
-          </div>
+            <div class="verify-type-item__text">
+              средства измерений и контроля физико-химического состава и свойств веществ
+            </div>
 
-          <div class="verify-type-item">
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='temperature') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="thermometer" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля теплофизических и температурных измерений</div>
-          </div>
 
-          <div class="verify-type-item">
+            <div class="verify-type-item__text">
+              средства измерений и контроля теплофизических и температурных измерений
+            </div>
+
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
+          <a
+            class="verify-type-item"
+            href="{{ url_for('equipment_calibration_category', category_slug='time-frequency') }}"
+          >
             <div class="verify-type-item__icon">
               <i data-lucide="clock" class="w-5 h-5"></i>
             </div>
-            <div class="verify-type-item__text">средства измерений и контроля времени и частоты</div>
-          </div>
+
+            <div class="verify-type-item__text">
+              средства измерений и контроля времени и частоты
+            </div>
+
+            <div class="verify-type-item__more">
+              <span>Подробнее</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </a>
         </div>
       </div>
     </div>

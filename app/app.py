@@ -2681,7 +2681,6 @@ def create_app() -> Flask:
 
         return html
 
-
     @app.get("/equipment/<category_slug>")
     def equipment_category(category_slug):
 

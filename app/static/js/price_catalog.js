@@ -265,6 +265,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
+      if (
+          equipmentType ===
+          "caliper_height_gauge_verification_devices"
+        ) {
+
+          items = items.filter(item => {
+
+            const name = item.name.toLowerCase();
+
+            return (
+              name.includes("штангенциркул") ||
+              name.includes("штангенрейсмас")
+            );
+
+          });
+
+        }
+
       if (equipmentType === "pipe_calipers") {
 
           items = items.filter(item =>

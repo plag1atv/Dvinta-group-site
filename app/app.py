@@ -1906,6 +1906,45 @@ def create_app() -> Flask:
         },
     }
 
+    #Словарь для калибрвоки
+    CALIBRATION_ONLY_CARDS = {
+
+        "geometric": [
+
+            {
+                "title": (
+                    "Приспособления для поверки "
+                    "штангенциркулей и штангенрейсмасов"
+                ),
+
+                "description": (
+                    "Калибровка приспособлений для поверки "
+                    "штангенциркулей и штангенрейсмасов "
+                    "в диапазоне от 0 до 1060 мм."
+                ),
+
+                "icon": "ruler",
+
+                "equipment_slug": (
+                    "caliper_height_gauge_verification_devices"
+                ),
+
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "caliper_height_gauge_verification_devices"
+                ),
+            },
+
+        ],
+
+        "mechanical": [],
+        "flow": [],
+        "pressure": [],
+        "physicochemical": [],
+        "temperature": [],
+        "time-frequency": [],
+    }
+
     # =========================================================
     # EQUIPMENT
     # =========================================================
@@ -2246,8 +2285,12 @@ def create_app() -> Flask:
         for category_slug, category in EQUIPMENT_CATEGORIES.items():
 
             calibration_category = {
+
                 "title": make_calibration_text(
-                    category.get("title", "")
+                    category.get(
+                        "title",
+                        ""
+                    )
                 ),
 
                 "kicker": category.get(
@@ -2256,30 +2299,42 @@ def create_app() -> Flask:
                 ),
 
                 "description": make_calibration_text(
-                    category.get("description", "")
+                    category.get(
+                        "description",
+                        ""
+                    )
                 ),
 
                 "cards": [],
             }
 
-            for card in category.get("cards", []):
+            # =========================================
+            # Существующие карточки оборудования
+            # =========================================
+
+            for card in category.get(
+                    "cards",
+                    []
+            ):
                 original_href = card.get(
                     "href",
                     ""
                 )
 
-                # Например:
-                # /equipment_calipers.html
-                #
-                # превращаем в:
-                # calipers
                 equipment_slug = (
                     original_href
-                    .replace("/equipment_", "")
-                    .replace(".html", "")
+                    .replace(
+                        "/equipment_",
+                        ""
+                    )
+                    .replace(
+                        ".html",
+                        ""
+                    )
                 )
 
                 calibration_card = {
+
                     "title": card.get(
                         "title",
                         ""
@@ -2304,7 +2359,31 @@ def create_app() -> Flask:
                     ),
 
                     "equipment_slug": equipment_slug,
+
+                    "calibration_only": False,
                 }
+
+                calibration_category[
+                    "cards"
+                ].append(
+                    calibration_card
+                )
+
+            # =========================================
+            # Карточки ТОЛЬКО для калибровки
+            # =========================================
+
+            for card in CALIBRATION_ONLY_CARDS.get(
+                    category_slug,
+                    []
+            ):
+                calibration_card = (
+                    card.copy()
+                )
+
+                calibration_card[
+                    "calibration_only"
+                ] = True
 
                 calibration_category[
                     "cards"
@@ -2497,6 +2576,46 @@ def create_app() -> Flask:
             equipment_slug,
     ):
 
+        # ==========================================
+        # 1. Сначала ищем оборудование,
+        #    которое существует ТОЛЬКО в калибровке
+        # ==========================================
+
+        calibration_only_cards = (
+            CALIBRATION_ONLY_CARDS.get(
+                category_slug,
+                []
+            )
+        )
+
+        for card in calibration_only_cards:
+
+            if (
+                    card.get("equipment_slug")
+                    == equipment_slug
+            ):
+                template_name = (
+                    "calibration_equipment/"
+                    f"calibration_{equipment_slug}.html"
+                )
+
+                return render_template(
+                    template_name,
+
+                    title=(
+                        f"Калибровка "
+                        f"{card['title']}"
+                    ),
+
+                    equipment_type=equipment_slug,
+
+                    service_type="calibration",
+                )
+
+        # ==========================================
+        # 2. Обычные существующие карточки
+        # ==========================================
+
         category = EQUIPMENT_CATEGORIES.get(
             category_slug
         )
@@ -2520,14 +2639,14 @@ def create_app() -> Flask:
                 []
         ):
 
-            if card.get(
-                    "href"
-            ) == expected_href:
+            if (
+                    card.get("href")
+                    == expected_href
+            ):
                 selected_card = card
 
                 break
 
-        # Защита от произвольного имени шаблона
         if selected_card is None:
             return redirect(
                 url_for(

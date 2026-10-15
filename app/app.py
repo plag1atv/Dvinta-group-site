@@ -2693,7 +2693,6 @@ def create_app() -> Flask:
                 url_for("equipment_verification")
             )
 
-
         return render_template(
             "equipment_category.html",
             title=category["title"],

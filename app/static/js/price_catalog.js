@@ -485,6 +485,38 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
+      // Exact catalogue codes distinguish equipment with identical names.
+      const geometricCalibrationCodes = {
+        "bunsen_laboratory_stands": "1.766К",
+        "test_tube_burette_pipette_racks": "1.767К",
+        "overhead_stirrer_stand": "1.768К",
+        "verification_marking_prisms_one_groove": "1К.1.24",
+        "verification_marking_prisms_four_grooves": "1К.1.25",
+        "control_mandrels_rollers_50_300": "1К.1.21",
+        "control_mandrels_rollers_300_600": "1К.1.22",
+        "control_mandrels_rollers_600_1000": "1К.1.23",
+        "thread_radius_templates": "1.828К",
+        "profile_special_templates": "1.829К",
+        "chamfer_measuring_templates": "1.850",
+        "comb_thickness_gauges": "1.483",
+        "concrete_mix_stiffness_instruments": "1.883.1К",
+        "vb_1_instrument": "1.883.2К",
+        "vebe_instrument": "1.883.3К",
+        "krasny_concrete_mix_stiffness_instrument": "1.883.4К",
+        "measuring_instrument_tips": "1.745К"
+      };
+      if (Object.prototype.hasOwnProperty.call(geometricCalibrationCodes, equipmentType)) {
+          const expectedCode = geometricCalibrationCodes[equipmentType];
+          items = items.filter(item => item.code === expectedCode);
+      }
+
+      if (equipmentType === "general_purpose_dynamometers") {
+          items = items.filter(item =>
+              item.name.toLowerCase().replace(/\s+/g, " ").trim() ===
+                  "динамометры общего назначения"
+          );
+      }
+
       if (equipmentType === "gauge_blocks") {
 
           items = items.filter(item =>

@@ -1941,6 +1941,7 @@ def create_app() -> Flask:
                     "micrometer_verification_devices"
                 ),
             },
+
             {
                 "title": "Приспособления для проверки микрометрических глубиномеров",
                 "description": (
@@ -2212,9 +2213,159 @@ def create_app() -> Flask:
                 "equipment_slug": "measuring_head_tripods_shm1_shm2_shm3",
                 "href": "/equipment/calibration/geometric/measuring_head_tripods_shm1_shm2_shm3"
             },
+
+            {
+                "title": "Штативы лабораторные (Бунзена)",
+                "description": "Калибровка штативов лабораторных (Бунзена).",
+                "icon": "ruler",
+                "equipment_slug": "bunsen_laboratory_stands",
+                "href": "/equipment/calibration/geometric/bunsen_laboratory_stands"
+            },
+
+            {
+                "title": "Штативы лабораторные для пробирок, бюреток и пипеток",
+                "description": "Калибровка штативов лабораторных для пробирок, бюреток и пипеток.",
+                "icon": "ruler",
+                "equipment_slug": "test_tube_burette_pipette_racks",
+                "href": "/equipment/calibration/geometric/test_tube_burette_pipette_racks"
+            },
+
+            {
+                "title": "Штатив для верхнеприводных мешалок",
+                "description": "Калибровка штативов для верхнеприводных мешалок.",
+                "icon": "ruler",
+                "equipment_slug": "overhead_stirrer_stand",
+                "href": "/equipment/calibration/geometric/overhead_stirrer_stand"
+            },
+
+            {
+                "title": "Призмы поверочные и разметочные (2 шт. с 1 канавкой)",
+                "description": "Калибровка призм поверочных и разметочных (2 шт. с 1 канавкой).",
+                "icon": "ruler",
+                "equipment_slug": "verification_marking_prisms_one_groove",
+                "href": "/equipment/calibration/geometric/verification_marking_prisms_one_groove"
+            },
+
+            {
+                "title": "Призмы поверочные и разметочные (2 шт. с 4 канавками)",
+                "description": "Калибровка призм поверочных и разметочных (2 шт. с 4 канавками).",
+                "icon": "ruler",
+                "equipment_slug": "verification_marking_prisms_four_grooves",
+                "href": "/equipment/calibration/geometric/verification_marking_prisms_four_grooves"
+            },
+
+            {
+                "title": "Оправки контрольные, валики цилиндрические 50–300 мм",
+                "description": "Калибровка оправок контрольных и валиков цилиндрических 50–300 мм.",
+                "icon": "ruler",
+                "equipment_slug": "control_mandrels_rollers_50_300",
+                "href": "/equipment/calibration/geometric/control_mandrels_rollers_50_300"
+            },
+
+            {
+                "title": "Оправки контрольные, валики цилиндрические 300–600 мм",
+                "description": "Калибровка оправок контрольных и валиков цилиндрических 300–600 мм.",
+                "icon": "ruler",
+                "equipment_slug": "control_mandrels_rollers_300_600",
+                "href": "/equipment/calibration/geometric/control_mandrels_rollers_300_600"
+            },
+
+            {
+                "title": "Оправки контрольные, валики цилиндрические 600–1000 мм",
+                "description": "Калибровка оправок контрольных и валиков цилиндрических 600–1000 мм.",
+                "icon": "ruler",
+                "equipment_slug": "control_mandrels_rollers_600_1000",
+                "href": "/equipment/calibration/geometric/control_mandrels_rollers_600_1000"
+            },
+
+            {
+                "title": "Шаблоны резьбовые и радиусные",
+                "description": "Калибровка шаблонов резьбовых и радиусных.",
+                "icon": "ruler",
+                "equipment_slug": "thread_radius_templates",
+                "href": "/equipment/calibration/geometric/thread_radius_templates"
+            },
+
+            {
+                "title": "Шаблоны профильные, шаблоны специальные (по чертежам)",
+                "description": "Калибровка шаблонов профильных и специальных (по чертежам).",
+                "icon": "ruler",
+                "equipment_slug": "profile_special_templates",
+                "href": "/equipment/calibration/geometric/profile_special_templates"
+            },
+
+            {
+                "title": "Шаблоны для измерения фасок (фаскомеры)",
+                "description": "Калибровка шаблонов для измерения фасок (фаскомеров).",
+                "icon": "ruler",
+                "equipment_slug": "chamfer_measuring_templates",
+                "href": "/equipment/calibration/geometric/chamfer_measuring_templates"
+            },
+
+            {
+                "title": "Толщиномеры-гребенки",
+                "description": "Калибровка толщиномеров-гребенок.",
+                "icon": "ruler",
+                "equipment_slug": "comb_thickness_gauges",
+                "href": "/equipment/calibration/geometric/comb_thickness_gauges"
+            },
+
+            {
+                "title": "Приборы для определения жесткости бетонной смеси",
+                "description": "Калибровка приборов для определения жесткости бетонной смеси.",
+                "icon": "ruler",
+                "equipment_slug": "concrete_mix_stiffness_instruments",
+                "href": "/equipment/calibration/geometric/concrete_mix_stiffness_instruments"
+            },
+
+            {
+                "title": "Прибор ВБ-1",
+                "description": "Калибровка приборов ВБ-1.",
+                "icon": "ruler",
+                "equipment_slug": "vb_1_instrument",
+                "href": "/equipment/calibration/geometric/vb_1_instrument"
+            },
+
+            {
+                "title": "Прибор Вебе",
+                "description": "Калибровка приборов Вебе.",
+                "icon": "ruler",
+                "equipment_slug": "vebe_instrument",
+                "href": "/equipment/calibration/geometric/vebe_instrument"
+            },
+
+            {
+                "title": "Прибор Красного для определения жесткости бетонной смеси",
+                "description": "Калибровка приборов Красного для определения жесткости бетонной смеси.",
+                "icon": "ruler",
+                "equipment_slug": "krasny_concrete_mix_stiffness_instrument",
+                "href": "/equipment/calibration/geometric/krasny_concrete_mix_stiffness_instrument"
+            },
+
+            {
+                "title": "Наконечники к измерительным приборам",
+                "description": "Калибровка наконечников к измерительным приборам.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_instrument_tips",
+                "href": "/equipment/calibration/geometric/measuring_instrument_tips"
+            },
         ],
 
-        "mechanical": [],
+        "mechanical": [
+            {
+                "title": "Динамометры общего назначения",
+                "description": (
+                    "Калибровка динамометров общего назначения "
+                    "в диапазоне от 3 до 140 даН."
+                ),
+                "icon": "gauge",
+                "equipment_slug": "general_purpose_dynamometers",
+                "href": (
+                    "/equipment/calibration/mechanical/"
+                    "general_purpose_dynamometers"
+                ),
+            },
+        ],
         "flow": [],
         "pressure": [],
         "physicochemical": [],

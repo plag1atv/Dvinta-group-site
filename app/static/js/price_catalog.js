@@ -265,24 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-      if (
-          equipmentType ===
-          "caliper_height_gauge_verification_devices"
-        ) {
-
-          items = items.filter(item => {
-
-            const name = item.name.toLowerCase();
-
-            return (
-              name.includes("штангенциркул") ||
-              name.includes("штангенрейсмас")
-            );
-
-          });
-
-        }
-
       if (equipmentType === "pipe_calipers") {
 
           items = items.filter(item =>
@@ -340,6 +322,167 @@ document.addEventListener("DOMContentLoaded", () => {
                   itemName.includes("преобразователи линейных перемещений")
               );
           });
+      }
+
+      if (
+          equipmentType ===
+          "caliper_height_gauge_verification_devices"
+        ) {
+
+          items = items.filter(item => {
+
+            const name =
+              item.name.toLowerCase();
+
+            return (
+              name.includes(
+                "приспособления для проверки штангенциркулей и штангенрейсмасов"
+              )
+            );
+
+          });
+
+        }
+
+      if (equipmentType === "micrometer_verification_devices") {
+
+          items = items.filter(item => {
+            const name = item.name.toLowerCase().trim();
+
+            return name ===
+                "приспособления для проверки микрометров";
+        });
+      }
+
+      if (
+          equipmentType ===
+            "micrometric_depth_gauge_verification_devices"
+        ) {
+
+            items = items.filter(item => {
+                const name = item.name
+                    .toLowerCase()
+                    .trim();
+
+                return name ===
+                    "приспособления для проверки микрометрических глубиномеров";
+            });
+
+      }
+
+      if (
+            equipmentType ===
+            "insize_6880_depth_gauge_zero_setting_device"
+        ) {
+
+            items = items.filter(item => {
+                const name = item.name
+                    .toLowerCase()
+                    .replace(/\s+/g, " ")
+                    .trim();
+
+                return name ===
+                    "прибор для проверки глубиномеров и установки нуля 0-150 мм insize 6880-150, 6880-300";
+            });
+
+        }
+
+      if (equipmentType === "external_size_measures") {
+
+          items = items.filter(item => {
+            const name = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return name === "меры наружных размеров";
+        });
+      }
+
+      if (equipmentType === "internal_size_measures") {
+
+          items = items.filter(item => {
+            const name = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return name === "меры внутренних размеров";
+        });
+      }
+
+      if (equipmentType === "headwear_size_measurers") {
+
+          items = items.filter(item => {
+            const name = item.name
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return name ===
+                "измерители размеров головных уборов";
+        });
+      }
+
+      if (
+            equipmentType ===
+            "indicator_bore_gauge_setting_devices"
+        ) {
+
+            items = items.filter(item => {
+                const name = item.name
+                    .toLowerCase()
+                    .replace(/\s+/g, " ")
+                    .trim();
+
+                return name ===
+                    "приспособления для настройки нутромеров индикаторных";
+            });
+
+      }
+
+
+      if (equipmentType === "insize_7353_160_bore_gauge_calibration_device") {
+          items = items.filter(item => {
+              const name = item.name
+                  .toLowerCase()
+                  .replace(/\s+/g, " ")
+                  .trim();
+
+              return name ===
+                  "прибор для калибровки нутромеров 0-160 мм insize 7353-160";
+          });
+      }
+
+      // Additional geometric equipment available for calibration.
+      const geometricCalibrationNames = {
+        "ppn_20_straightness_control_device": "приспособление для контроля прямолинейности ппн-20",
+        "ppld_straightedge_verification_device": "приспособление для поверки линеек лекальных пплд",
+        "wire_roller_verification_device": "приспособление для поверки проволочек и роликов",
+        "ppkmd_gauge_block_verification_device": "приспособление для поверки кмд на измерительных машинах - ппкмд",
+        "ppizm_micrometer_head_verification_device": "приспособление с микрометрической головкой для поверки изм - ппизм",
+        "ppirb_indicator_verification_device": "приспособление для поверки и калибровки индикаторов ирб - ппирб",
+        "ppich_dial_indicator_verification_devices": "приспособление для поверки индикаторов часового типа ппич 1-100, ппич универсал",
+        "ppmg_micrometer_head_verification_device": "приспособление для поверки микрометрических головок ппмг",
+        "ppni_bore_gauge_verification_devices": "приспособление для поверки нутромеров индикаторных ппни, ппни-мини, ппични",
+        "pprp_100_surface_plate_verification_devices": "приспособления для поверки плит поверочных и разметочных ппрп-100",
+        "measuring_pins": "штифты измерительные",
+        "d312_v901_v902_v903_ud2v_instruments": "приборы моделей д312-2м, в-901м, в-902м, в-903м, уд-2в-2м",
+        "measuring_knives": "ножи измерительные",
+        "line_length_measures": "меры длины штриховые",
+        "digital_vertical_scales": "цифровые вертикальные шкалы",
+        "steel_ceramic_spheres": "сферы стальные и керамические",
+        "measuring_head_stands_c1_c2": "стойки для измерительных головок типов с-i, c-ii",
+        "measuring_head_stands_c3_c4": "стойки для измерительных головок типов с-iii, c-iv",
+        "micrometer_stands_15st_m": "стойки для микрометров 15ст-м",
+        "measuring_head_tripods_sh1_sh2_sh3": "штативы для измерительных головок типов ш-i, ш-ii, ш-iii",
+        "measuring_head_tripods_shm1_shm2_shm3": "штативы для измерительных головок типов шм-i, шм-ii, шм-iii"
+      };
+      if (Object.prototype.hasOwnProperty.call(geometricCalibrationNames, equipmentType)) {
+          const expectedName = geometricCalibrationNames[equipmentType];
+          items = items.filter(item =>
+              item.name.toLowerCase().replace(/\s+/g, " ").trim() === expectedName
+          );
       }
 
       if (equipmentType === "gauge_blocks") {

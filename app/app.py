@@ -1906,35 +1906,313 @@ def create_app() -> Flask:
         },
     }
 
-    #Словарь для калибрвоки
     CALIBRATION_ONLY_CARDS = {
-
         "geometric": [
-
             {
                 "title": (
                     "Приспособления для поверки "
                     "штангенциркулей и штангенрейсмасов"
                 ),
-
                 "description": (
                     "Калибровка приспособлений для поверки "
                     "штангенциркулей и штангенрейсмасов "
                     "в диапазоне от 0 до 1060 мм."
                 ),
-
                 "icon": "ruler",
-
                 "equipment_slug": (
                     "caliper_height_gauge_verification_devices"
                 ),
-
                 "href": (
                     "/equipment/calibration/geometric/"
                     "caliper_height_gauge_verification_devices"
                 ),
             },
 
+            {
+                "title": "Приспособления для проверки микрометров",
+                "description": (
+                    "Калибровка приспособлений для проверки микрометров "
+                    "в диапазоне от 0 до 25 мм."
+                ),
+                "icon": "settings-2",
+                "equipment_slug": "micrometer_verification_devices",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "micrometer_verification_devices"
+                ),
+            },
+
+            {
+                "title": "Приспособления для проверки микрометрических глубиномеров",
+                "description": (
+                    "Калибровка приспособлений для проверки "
+                    "микрометрических глубиномеров "
+                    "в диапазоне от 0 до 300 мм."
+                ),
+                "icon": "scan-line",
+                "equipment_slug": "micrometric_depth_gauge_verification_devices",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "micrometric_depth_gauge_verification_devices"
+                ),
+            },
+
+            {
+                "title": (
+                    "Прибор для проверки глубиномеров и установки нуля "
+                    "0-150 мм INSIZE 6880-150, 6880-300"
+                ),
+                "description": (
+                    "Калибровка приборов INSIZE 6880-150 и 6880-300 "
+                    "для проверки глубиномеров и установки нуля "
+                    "в диапазоне от 0 до 300 мм."
+                ),
+                "icon": "scan-line",
+                "equipment_slug": "insize_6880_depth_gauge_zero_setting_device",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "insize_6880_depth_gauge_zero_setting_device"
+                ),
+            },
+
+            {
+                "title": "Меры наружных размеров",
+                "description": (
+                    "Калибровка мер наружных размеров "
+                    "в диапазоне от 0 до 300 мм."
+                ),
+                "icon": "ruler",
+                "equipment_slug": "external_size_measures",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "external_size_measures"
+                ),
+            },
+
+            {
+                "title": "Меры внутренних размеров",
+                "description": (
+                    "Калибровка мер внутренних размеров "
+                    "в диапазоне от 0,09 до 300,05 мм."
+                ),
+                "icon": "ruler",
+                "equipment_slug": "internal_size_measures",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "internal_size_measures"
+                ),
+            },
+
+            {
+                "title": "Измерители размеров головных уборов",
+                "description": (
+                    "Калибровка измерителей размеров головных уборов "
+                    "в диапазоне от 0 до 650 мм."
+                ),
+                "icon": "ruler",
+                "equipment_slug": "headwear_size_measurers",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "headwear_size_measurers"
+                ),
+            },
+
+            {
+                "title": "Приспособления для настройки нутромеров индикаторных",
+                "description": (
+                    "Калибровка приспособлений для настройки "
+                    "нутромеров индикаторных "
+                    "в диапазоне от 0 до 160 мм."
+                ),
+                "icon": "gauge",
+                "equipment_slug": "indicator_bore_gauge_setting_devices",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "indicator_bore_gauge_setting_devices"
+                ),
+            },
+
+            {
+                "title": "Прибор для калибровки нутромеров 0-160 мм INSIZE 7353-160",
+                "description": (
+                    "Калибровка прибора INSIZE 7353-160 для калибровки "
+                    "и настройки нутромеров в диапазоне от 0 до 160 мм."
+                ),
+                "icon": "gauge",
+                "equipment_slug": "insize_7353_160_bore_gauge_calibration_device",
+                "href": (
+                    "/equipment/calibration/geometric/"
+                    "insize_7353_160_bore_gauge_calibration_device"
+                ),
+            },
+
+            {
+                "title": "Приспособление для контроля прямолинейности ППН-20",
+                "description": "Калибровка приспособлений для контроля прямолинейности ППН-20. Контроль прямолинейности.",
+                "icon": "ruler",
+                "equipment_slug": "ppn_20_straightness_control_device",
+                "href": "/equipment/calibration/geometric/ppn_20_straightness_control_device"
+            },
+
+            {
+                "title": "Приспособление для поверки линеек лекальных ППЛД",
+                "description": "Калибровка приспособлений для поверки линеек лекальных ППЛД. Поверка лекальных линеек.",
+                "icon": "ruler",
+                "equipment_slug": "ppld_straightedge_verification_device",
+                "href": "/equipment/calibration/geometric/ppld_straightedge_verification_device"
+            },
+
+            {
+                "title": "Приспособление для поверки проволочек и роликов",
+                "description": "Калибровка приспособлений для поверки проволочек и роликов. Поверка проволочек и роликов.",
+                "icon": "ruler",
+                "equipment_slug": "wire_roller_verification_device",
+                "href": "/equipment/calibration/geometric/wire_roller_verification_device"
+            },
+
+            {
+                "title": "Приспособление для поверки КМД на измерительных машинах - ППКМД",
+                "description": "Калибровка приспособлений для поверки КМД на измерительных машинах — ППКМД. Поверка концевых мер длины на измерительных машинах.",
+                "icon": "ruler",
+                "equipment_slug": "ppkmd_gauge_block_verification_device",
+                "href": "/equipment/calibration/geometric/ppkmd_gauge_block_verification_device"
+            },
+
+            {
+                "title": "Приспособление с микрометрической головкой для поверки ИЗМ - ППИЗМ",
+                "description": "Калибровка приспособлений с микрометрической головкой для поверки ИЗМ — ППИЗМ. Поверка ИЗМ.",
+                "icon": "ruler",
+                "equipment_slug": "ppizm_micrometer_head_verification_device",
+                "href": "/equipment/calibration/geometric/ppizm_micrometer_head_verification_device"
+            },
+
+            {
+                "title": "Приспособление для поверки и калибровки индикаторов ИРБ - ППИРБ",
+                "description": "Калибровка приспособлений для поверки и калибровки индикаторов ИРБ — ППИРБ. Поверка и калибровка индикаторов ИРБ.",
+                "icon": "ruler",
+                "equipment_slug": "ppirb_indicator_verification_device",
+                "href": "/equipment/calibration/geometric/ppirb_indicator_verification_device"
+            },
+
+            {
+                "title": "Приспособление для поверки индикаторов часового типа ППИЧ 1-100, ППИЧ Универсал",
+                "description": "Калибровка приспособлений для поверки индикаторов часового типа ППИЧ 1-100, ППИЧ Универсал. Поверка индикаторов часового типа.",
+                "icon": "ruler",
+                "equipment_slug": "ppich_dial_indicator_verification_devices",
+                "href": "/equipment/calibration/geometric/ppich_dial_indicator_verification_devices"
+            },
+
+            {
+                "title": "Приспособление для поверки микрометрических головок ППМГ",
+                "description": "Калибровка приспособлений для поверки микрометрических головок ППМГ. Поверка микрометрических головок.",
+                "icon": "ruler",
+                "equipment_slug": "ppmg_micrometer_head_verification_device",
+                "href": "/equipment/calibration/geometric/ppmg_micrometer_head_verification_device"
+            },
+
+            {
+                "title": "Приспособление для поверки нутромеров индикаторных ППНИ, ППНИ-Мини, ППИЧНИ",
+                "description": "Калибровка приспособлений для поверки нутромеров индикаторных ППНИ, ППНИ-Мини, ППИЧНИ. Поверка индикаторных нутромеров.",
+                "icon": "ruler",
+                "equipment_slug": "ppni_bore_gauge_verification_devices",
+                "href": "/equipment/calibration/geometric/ppni_bore_gauge_verification_devices"
+            },
+
+            {
+                "title": "Приспособления для поверки плит поверочных и разметочных ППРП-100",
+                "description": "Калибровка приспособлений для поверки плит поверочных и разметочных ППРП-100. Поверка поверочных и разметочных плит.",
+                "icon": "ruler",
+                "equipment_slug": "pprp_100_surface_plate_verification_devices",
+                "href": "/equipment/calibration/geometric/pprp_100_surface_plate_verification_devices"
+            },
+
+            {
+                "title": "Штифты измерительные",
+                "description": "Калибровка штифтов измерительных. Контроль размеров с применением измерительных штифтов.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_pins",
+                "href": "/equipment/calibration/geometric/measuring_pins"
+            },
+
+            {
+                "title": "Приборы моделей Д312-2М, В-901М, В-902М, В-903М, УД-2В-2М",
+                "description": "Калибровка приборов моделей Д312-2М, В-901М, В-902М, В-903М, УД-2В-2М. Определение метрологических характеристик приборов указанных моделей.",
+                "icon": "ruler",
+                "equipment_slug": "d312_v901_v902_v903_ud2v_instruments",
+                "href": "/equipment/calibration/geometric/d312_v901_v902_v903_ud2v_instruments"
+            },
+
+            {
+                "title": "Ножи измерительные",
+                "description": "Калибровка ножей измерительных. Измерительные работы с применением измерительных ножей.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_knives",
+                "href": "/equipment/calibration/geometric/measuring_knives"
+            },
+
+            {
+                "title": "Меры длины штриховые",
+                "description": "Калибровка мер длины штриховых. Измерение длины по штриховой шкале.",
+                "icon": "ruler",
+                "equipment_slug": "line_length_measures",
+                "href": "/equipment/calibration/geometric/line_length_measures"
+            },
+
+            {
+                "title": "Цифровые вертикальные шкалы",
+                "description": "Калибровка цифровых вертикальных шкал. Измерение вертикальных перемещений.",
+                "icon": "ruler",
+                "equipment_slug": "digital_vertical_scales",
+                "href": "/equipment/calibration/geometric/digital_vertical_scales"
+            },
+
+            {
+                "title": "Сферы стальные и керамические",
+                "description": "Калибровка сфер стальных и керамических. Размерный контроль с применением сфер.",
+                "icon": "ruler",
+                "equipment_slug": "steel_ceramic_spheres",
+                "href": "/equipment/calibration/geometric/steel_ceramic_spheres"
+            },
+
+            {
+                "title": "Стойки для измерительных головок типов С-I, C-II",
+                "description": "Калибровка стоек для измерительных головок типов С-I, C-II. Установка измерительных головок.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_head_stands_c1_c2",
+                "href": "/equipment/calibration/geometric/measuring_head_stands_c1_c2"
+            },
+
+            {
+                "title": "Стойки для измерительных головок типов С-III, C-IV",
+                "description": "Калибровка стоек для измерительных головок типов С-III, C-IV. Установка измерительных головок.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_head_stands_c3_c4",
+                "href": "/equipment/calibration/geometric/measuring_head_stands_c3_c4"
+            },
+
+            {
+                "title": "Стойки для микрометров 15СТ-М",
+                "description": "Калибровка стоек для микрометров 15СТ-М. Установка микрометров.",
+                "icon": "ruler",
+                "equipment_slug": "micrometer_stands_15st_m",
+                "href": "/equipment/calibration/geometric/micrometer_stands_15st_m"
+            },
+
+            {
+                "title": "Штативы для измерительных головок типов Ш-I, Ш-II, Ш-III",
+                "description": "Калибровка штативов для измерительных головок типов Ш-I, Ш-II, Ш-III. Крепление измерительных головок.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_head_tripods_sh1_sh2_sh3",
+                "href": "/equipment/calibration/geometric/measuring_head_tripods_sh1_sh2_sh3"
+            },
+
+            {
+                "title": "Штативы для измерительных головок типов ШМ-I, ШМ-II, ШМ-III",
+                "description": "Калибровка штативов для измерительных головок типов ШМ-I, ШМ-II, ШМ-III. Крепление измерительных головок.",
+                "icon": "ruler",
+                "equipment_slug": "measuring_head_tripods_shm1_shm2_shm3",
+                "href": "/equipment/calibration/geometric/measuring_head_tripods_shm1_shm2_shm3"
+            },
         ],
 
         "mechanical": [],
@@ -2285,37 +2563,21 @@ def create_app() -> Flask:
         for category_slug, category in EQUIPMENT_CATEGORIES.items():
 
             calibration_category = {
-
                 "title": make_calibration_text(
-                    category.get(
-                        "title",
-                        ""
-                    )
+                    category.get("title", "")
                 ),
-
                 "kicker": category.get(
                     "kicker",
                     ""
                 ),
-
                 "description": make_calibration_text(
-                    category.get(
-                        "description",
-                        ""
-                    )
+                    category.get("description", "")
                 ),
-
                 "cards": [],
             }
 
-            # =========================================
-            # Существующие карточки оборудования
-            # =========================================
-
-            for card in category.get(
-                    "cards",
-                    []
-            ):
+            # Обычные карточки, существующие в поверке
+            for card in category.get("cards", []):
                 original_href = card.get(
                     "href",
                     ""
@@ -2323,43 +2585,31 @@ def create_app() -> Flask:
 
                 equipment_slug = (
                     original_href
-                    .replace(
-                        "/equipment_",
-                        ""
-                    )
-                    .replace(
-                        ".html",
-                        ""
-                    )
+                    .replace("/equipment_", "")
+                    .replace(".html", "")
                 )
 
                 calibration_card = {
-
                     "title": card.get(
                         "title",
                         ""
                     ),
-
                     "description": make_calibration_text(
                         card.get(
                             "description",
                             ""
                         )
                     ),
-
                     "icon": card.get(
                         "icon",
                         "settings"
                     ),
-
                     "href": (
                         f"/equipment/calibration/"
                         f"{category_slug}/"
                         f"{equipment_slug}"
                     ),
-
                     "equipment_slug": equipment_slug,
-
                     "calibration_only": False,
                 }
 
@@ -2369,17 +2619,12 @@ def create_app() -> Flask:
                     calibration_card
                 )
 
-            # =========================================
-            # Карточки ТОЛЬКО для калибровки
-            # =========================================
-
+            # Карточки, существующие ТОЛЬКО в калибровке
             for card in CALIBRATION_ONLY_CARDS.get(
                     category_slug,
                     []
             ):
-                calibration_card = (
-                    card.copy()
-                )
+                calibration_card = card.copy()
 
                 calibration_card[
                     "calibration_only"
@@ -2576,10 +2821,9 @@ def create_app() -> Flask:
             equipment_slug,
     ):
 
-        # ==========================================
-        # 1. Сначала ищем оборудование,
-        #    которое существует ТОЛЬКО в калибровке
-        # ==========================================
+        # =====================================
+        # Карточки ТОЛЬКО для калибровки
+        # =====================================
 
         calibration_only_cards = (
             CALIBRATION_ONLY_CARDS.get(
@@ -2601,20 +2845,17 @@ def create_app() -> Flask:
 
                 return render_template(
                     template_name,
-
                     title=(
                         f"Калибровка "
                         f"{card['title']}"
                     ),
-
                     equipment_type=equipment_slug,
-
                     service_type="calibration",
                 )
 
-        # ==========================================
-        # 2. Обычные существующие карточки
-        # ==========================================
+        # =====================================
+        # Обычные существующие карточки
+        # =====================================
 
         category = EQUIPMENT_CATEGORIES.get(
             category_slug
@@ -2644,7 +2885,6 @@ def create_app() -> Flask:
                     == expected_href
             ):
                 selected_card = card
-
                 break
 
         if selected_card is None:
@@ -2656,22 +2896,16 @@ def create_app() -> Flask:
             )
 
         template_name = (
-            f"equipment_"
-            f"{equipment_slug}.html"
-        )
-
-        calibration_title = (
-            f"Калибровка "
-            f"{selected_card['title']}"
+            f"equipment_{equipment_slug}.html"
         )
 
         html = render_template(
             template_name,
-
-            title=calibration_title,
-
+            title=(
+                f"Калибровка "
+                f"{selected_card['title']}"
+            ),
             equipment_type=equipment_slug,
-
             service_type="calibration",
         )
 
@@ -2692,6 +2926,7 @@ def create_app() -> Flask:
             return redirect(
                 url_for("equipment_verification")
             )
+
 
         return render_template(
             "equipment_category.html",

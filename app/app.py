@@ -1941,7 +1941,6 @@ def create_app() -> Flask:
                     "micrometer_verification_devices"
                 ),
             },
-
             {
                 "title": "Приспособления для проверки микрометрических глубиномеров",
                 "description": (

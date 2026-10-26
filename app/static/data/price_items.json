@@ -5280,26 +5280,6 @@
     "note": ""
   },
   {
-    "id": 532,
-    "code": "1К.012",
-    "section": "27. Геометрические величины",
-    "name": "Калибры-скобы",
-    "range": "от 18…120 мм",
-    "verification_price": "-",
-    "calibration_price": "450",
-    "note": ""
-  },
-  {
-    "id": 533,
-    "code": "1К.013",
-    "section": "27. Геометрические величины",
-    "name": "Калибры-скобы",
-    "range": "120…360 мм",
-    "verification_price": "-",
-    "calibration_price": "700",
-    "note": ""
-  },
-  {
     "id": 534,
     "code": "1К.014",
     "section": "27. Геометрические величины",
@@ -6307,6 +6287,36 @@
     "range": "(3…140) даН",
     "verification_price": "",
     "calibration_price": "2560",
+    "note": ""
+  },
+  {
+    "id": 636,
+    "code": "1К.012",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-скобы",
+    "range": "от 18…120 мм",
+    "verification_price": "-",
+    "calibration_price": "450",
+    "note": ""
+  },
+  {
+    "id": 637,
+    "code": "1К.013",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-скобы",
+    "range": "120…360 мм",
+    "verification_price": "-",
+    "calibration_price": "700",
+    "note": ""
+  },
+  {
+    "id": 639,
+    "code": "1К.082",
+    "section": "27. Геометрические величины",
+    "name": "Калибры-кольца резьбовые цилиндрические ACME, STUB ACME (с исп. оптим.)",
+    "range": "2\" до 4\"",
+    "verification_price": "-",
+    "calibration_price": "4580",
     "note": ""
   }
 ]

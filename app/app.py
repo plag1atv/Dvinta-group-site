@@ -2349,6 +2349,126 @@ def create_app() -> Flask:
                 "equipment_slug": "measuring_instrument_tips",
                 "href": "/equipment/calibration/geometric/measuring_instrument_tips"
             },
+
+            {
+                "title": "Калибры гладкие цилиндрические",
+                "description": "Калибруем гладкие цилиндрические калибры для предельного контроля отверстий и валов.",
+                "icon": "ruler",
+                "equipment_slug": "plain_cylindrical_gauges",
+                "href": "/equipment/calibration/geometric/plain_cylindrical_gauges"
+            },
+
+            {
+                "title": "Калибры-скобы",
+                "description": "Выполняем калибровку калибров-скоб, которыми проверяют наружные размеры валов и других деталей без отсчёта по шкале.",
+                "icon": "ruler",
+                "equipment_slug": "limit_snap_gauges",
+                "href": "/equipment/calibration/geometric/limit_snap_gauges"
+            },
+
+            {
+                "title": "Резьбовые калибры М, G, UN",
+                "description": "Калибруем резьбовые пробки и кольца для метрической резьбы М, трубной цилиндрической G и унифицированной дюймовой UN.",
+                "icon": "ruler",
+                "equipment_slug": "metric_pipe_un_thread_gauges",
+                "href": "/equipment/calibration/geometric/metric_pipe_un_thread_gauges"
+            },
+
+            {
+                "title": "Резьбовые калибры Tr",
+                "description": "Выполняем калибровку пробок и колец для метрической трапецеидальной резьбы Tr, применяемой в винтовых передачах.",
+                "icon": "ruler",
+                "equipment_slug": "trapezoidal_thread_gauges",
+                "href": "/equipment/calibration/geometric/trapezoidal_thread_gauges"
+            },
+
+            {
+                "title": "Калибры для обсадных и колонковых труб",
+                "description": "Калибруем цилиндрические резьбовые калибры для соединений обсадных и колонковых труб.",
+                "icon": "ruler",
+                "equipment_slug": "casing_core_pipe_thread_gauges",
+                "href": "/equipment/calibration/geometric/casing_core_pipe_thread_gauges"
+            },
+
+            {
+                "title": "Резьбовые калибры ACME и STUB ACME",
+                "description": "Выполняем калибровку резьбовых пробок и колец ACME и STUB ACME для дюймовых трапецеидальных резьб с углом профиля 29°.",
+                "icon": "ruler",
+                "equipment_slug": "acme_thread_gauges",
+                "href": "/equipment/calibration/geometric/acme_thread_gauges"
+            },
+
+            {
+                "title": "Калибры резьбовые конические рабочие R, K, NPT, NPTF, W, MK, Р3, НКТ и другие",
+                "description": "Калибруем рабочие конические резьбовые калибры, которыми непосредственно контролируют резьбу изделий при изготовлении и приёмке.",
+                "icon": "ruler",
+                "equipment_slug": "working_taper_thread_gauges",
+                "href": "/equipment/calibration/geometric/working_taper_thread_gauges"
+            },
+
+            {
+                "title": "Калибры резьбовые конические контрольные R, K, NPT, NPTF, W, MK, Р3, НКТ и другие",
+                "description": "Выполняем калибровку контрольных конических резьбовых калибров, используемых для проверки соответствующих рабочих калибров.",
+                "icon": "ruler",
+                "equipment_slug": "master_taper_thread_gauges",
+                "href": "/equipment/calibration/geometric/master_taper_thread_gauges"
+            },
+
+            {
+                "title": "Калибры гладкие конические R, K, NPT, NPTF, W, MK, Г3, ГНК, ОТТГ, ОТТМ и другие",
+                "description": "Калибруем гладкие конические пробки и кольца для контроля конических поверхностей соединений.",
+                "icon": "ruler",
+                "equipment_slug": "plain_taper_gauges",
+                "href": "/equipment/calibration/geometric/plain_taper_gauges"
+            },
+
+            {
+                "title": "Калибры для конусов и шлицев",
+                "description": "Выполняем калибровку конусных калибров для инструментальных посадок и комплексных калибров для шлицевых соединений.",
+                "icon": "ruler",
+                "equipment_slug": "taper_spline_gauges",
+                "href": "/equipment/calibration/geometric/taper_spline_gauges"
+            },
+
+            {
+                "title": "Калибры для шпоночных соединений",
+                "description": "Калибруем калибры для шпоночных соединений, применяемые при контроле шпонок и пазов на валах и в ступицах.",
+                "icon": "ruler",
+                "equipment_slug": "keyway_connection_gauges",
+                "href": "/equipment/calibration/geometric/keyway_connection_gauges"
+            },
+
+            {
+                "title": "Калибры для звездообразных углублений",
+                "description": "Выполняем калибровку калибров для звездообразных углублений, которыми проверяют посадочный профиль под инструмент в головках крепежа.",
+                "icon": "ruler",
+                "equipment_slug": "star_recess_gauges",
+                "href": "/equipment/calibration/geometric/star_recess_gauges"
+            },
+
+            {
+                "title": "Нестандартные калибры по чертежам",
+                "description": "Калибруем нестандартные калибры, геометрия и допуски которых заданы рабочим чертежом.",
+                "icon": "ruler",
+                "equipment_slug": "custom_drawing_gauges",
+                "href": "/equipment/calibration/geometric/custom_drawing_gauges"
+            },
+
+            {
+                "title": "Приборы для измерения резьбы и пазов",
+                "description": "Калибруем приборы для измерения глубины резьбового участка, шага, конусности, высоты и профиля резьбы, а также её диаметров.",
+                "icon": "ruler",
+                "equipment_slug": "thread_keyway_measuring_instruments",
+                "href": "/equipment/calibration/geometric/thread_keyway_measuring_instruments"
+            },
+
+            {
+                "title": "Приборы, крепёж и конические патрубки",
+                "description": "Калибруем приборы для измерения диаметра и ширины паза, а также выполняем размерный контроль крепежа и конических патрубков.",
+                "icon": "ruler",
+                "equipment_slug": "dimension_instruments_fasteners_pipes",
+                "href": "/equipment/calibration/geometric/dimension_instruments_fasteners_pipes"
+            },
         ],
 
         "mechanical": [

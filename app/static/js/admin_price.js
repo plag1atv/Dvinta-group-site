@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function normalizeText(value) {
-    return String(value || "").toLowerCase().trim();
+    return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
   }
 
   function fillSelect(selectElement, items, withAllOption = false) {
@@ -64,17 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <article class="admin-price-item" data-id="${item.id}">
         <div class="admin-price-main">
           <div class="admin-price-meta">
-            <span>${escapeHtml(item.code || "Без кода")}</span>
+            <span class="price-multiline">${escapeHtml(item.code || "Без кода")}</span>
             <span>${escapeHtml(item.section || "Без раздела")}</span>
           </div>
 
-          <h3>${escapeHtml(item.name || "Без названия")}</h3>
+          <h3 class="price-multiline">${escapeHtml(item.name || "Без названия")}</h3>
 
-          <p>${escapeHtml(item.range || "Диапазон не указан")}</p>
+          <p class="price-multiline">${escapeHtml(item.range || "Диапазон не указан")}</p>
 
           ${
             item.note
-              ? `<p class="admin-price-note">Замечание: ${escapeHtml(item.note)}</p>`
+              ? `<p class="admin-price-note price-multiline">Замечание: ${escapeHtml(item.note)}</p>`
               : ""
           }
         </div>
@@ -82,12 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="admin-price-values">
           <div>
             <span>Поверка</span>
-            <strong>${escapeHtml(item.verification_price || "—")}</strong>
+            <strong class="price-multiline">${escapeHtml(item.verification_price || "—")}</strong>
           </div>
 
           <div>
             <span>Калибровка</span>
-            <strong>${escapeHtml(item.calibration_price || "—")}</strong>
+            <strong class="price-multiline">${escapeHtml(item.calibration_price || "—")}</strong>
           </div>
         </div>
 
@@ -105,60 +105,73 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  function createTextField(item, name, title, { wide = false, required = false } = {}) {
+    const id = `edit-${item.id}-${name}`;
+    return `
+      <div class="admin-price-field${wide ? " admin-add-wide" : ""}">
+        <div class="admin-price-field__head">
+          <label for="${id}">${escapeHtml(title)}</label>
+          <button class="admin-newline-btn" type="button" data-line-break-for="${id}"
+                  aria-label="Новая строка: ${escapeHtml(title)}" title="Вставить перенос строки в месте курсора">
+            <span aria-hidden="true">↵</span> Новая строка
+          </button>
+        </div>
+        <textarea class="admin-price-textarea" id="${id}" name="${name}" rows="${wide ? 3 : 2}"${required ? " required" : ""}>
+${escapeHtml(item[name])}</textarea>
+      </div>
+    `;
+  }
+
   function createEditForm(item) {
-  return `
-    <form class="admin-edit-form" data-id="${item.id}">
-      <h3>Редактирование позиции</h3>
+    const sections = [...new Set(allItems.map(priceItem => priceItem.section).filter(Boolean))].sort();
+    const options = sections.map(section =>
+      `<option value="${escapeHtml(section)}"${section === item.section ? " selected" : ""}>${escapeHtml(section)}</option>`
+    ).join("");
+    return `
+      <form class="admin-edit-form" data-id="${item.id}">
+        <h3>Редактирование позиции</h3>
+        <div class="admin-add-grid">
+          ${createTextField(item, "code", "Код")}
+          <label>
+            Раздел
+            <select name="section" required>
+              <option value="">Выберите раздел</option>
+              ${options}
+            </select>
+          </label>
+          ${createTextField(item, "name", "Название", { required: true })}
+          ${createTextField(item, "range", "Диапазон")}
+          ${createTextField(item, "verification_price", "Цена поверки")}
+          ${createTextField(item, "calibration_price", "Цена калибровки")}
+          ${createTextField(item, "note", "Примечание / замечание", { wide: true })}
+        </div>
+        <div class="admin-edit-actions">
+          <button class="btn btn-primary" type="submit">Сохранить изменения</button>
+          <button class="btn btn-ghost admin-cancel-edit" type="button">Отмена</button>
+        </div>
+      </form>
+    `;
+  }
 
-      <div class="admin-add-grid">
-        <label>
-          Код
-          <input name="code" type="text" value="${escapeHtml(item.code)}">
-        </label>
+  function resizeTextField(field) {
+    field.style.height = "auto";
+    field.style.height = `${Math.min(field.scrollHeight + 2, 240)}px`;
+  }
 
-        <label>
-          Раздел
-          <input name="section" type="text" value="${escapeHtml(item.section)}" required>
-        </label>
-
-        <label>
-          Название
-          <input name="name" type="text" value="${escapeHtml(item.name)}" required>
-        </label>
-
-        <label>
-          Диапазон
-          <input name="range" type="text" value="${escapeHtml(item.range)}">
-        </label>
-
-        <label>
-          Цена поверки
-          <input name="verification_price" type="text" value="${escapeHtml(item.verification_price)}">
-        </label>
-
-        <label>
-          Цена калибровки
-          <input name="calibration_price" type="text" value="${escapeHtml(item.calibration_price)}">
-        </label>
-
-        <label class="admin-add-wide">
-          Примечание / замечание
-          <textarea name="note" rows="3">${escapeHtml(item.note)}</textarea>
-        </label>
-      </div>
-
-      <div class="admin-edit-actions">
-        <button class="btn btn-primary" type="submit">
-          Сохранить изменения
-        </button>
-
-        <button class="btn btn-ghost admin-cancel-edit" type="button">
-          Отмена
-        </button>
-      </div>
-    </form>
-  `;
-}
+  // Delegation also covers dynamically created edit forms.
+  document.addEventListener("click", event => {
+    const button = event.target.closest("[data-line-break-for]");
+    if (!button) return;
+    const field = document.getElementById(button.dataset.lineBreakFor);
+    if (!field || !field.matches(".admin-price-textarea")) return;
+    field.focus({ preventScroll: true });
+    field.setRangeText("\n", field.selectionStart, field.selectionEnd, "end");
+    field.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+  document.addEventListener("input", event => {
+    if (event.target.matches(".admin-price-textarea")) resizeTextField(event.target);
+  });
+  addForm.querySelectorAll(".admin-price-textarea").forEach(resizeTextField);
 
 
   function applyFilters() {
@@ -239,13 +252,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(form);
 
     const payload = {
-      code: formData.get("code").trim(),
+      code: formData.get("code"),
       section: formData.get("section").trim(),
-      name: formData.get("name").trim(),
-      range: formData.get("range").trim(),
-      verification_price: formData.get("verification_price").trim(),
-      calibration_price: formData.get("calibration_price").trim(),
-      note: formData.get("note").trim(),
+      name: formData.get("name"),
+      range: formData.get("range"),
+      verification_price: formData.get("verification_price"),
+      calibration_price: formData.get("calibration_price"),
+      note: formData.get("note"),
     };
 
     if (!payload.section) {
@@ -253,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (!payload.name) {
+    if (!payload.name.trim()) {
       alert("Введите название товара.");
       return;
     }
@@ -291,13 +304,13 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const payload = {
-      code: addCode.value.trim(),
+      code: addCode.value,
       section: addSection.value.trim(),
-      name: addName.value.trim(),
-      range: addRange.value.trim(),
-      verification_price: addVerificationPrice.value.trim(),
-      calibration_price: addCalibrationPrice.value.trim(),
-      note: addNote.value.trim(),
+      name: addName.value,
+      range: addRange.value,
+      verification_price: addVerificationPrice.value,
+      calibration_price: addCalibrationPrice.value,
+      note: addNote.value,
     };
 
     if (!payload.section) {
@@ -305,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (!payload.name) {
+    if (!payload.name.trim()) {
       alert("Введите название товара.");
       return;
     }
@@ -328,6 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
         allItems.push(newItem);
 
         addForm.reset();
+        addForm.querySelectorAll(".admin-price-textarea").forEach(resizeTextField);
         refreshSectionSelects();
         applyFilters();
 
@@ -374,6 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       card.insertAdjacentHTML("afterend", createEditForm(item));
+      card.nextElementSibling.querySelectorAll(".admin-price-textarea").forEach(resizeTextField);
 
       return;
     }

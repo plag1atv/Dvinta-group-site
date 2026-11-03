@@ -2308,6 +2308,15 @@ html {
   }
 }
 
+/* Manual line breaks in public cards and admin previews. */
+.price-card .price-multiline,
+.admin-price-item .price-multiline {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  max-width: 100%;
+}
+
 /* Admin price panel */
 
 .admin-price-list {
@@ -2530,6 +2539,64 @@ html {
 
 .admin-add-wide {
   grid-column: 1 / -1;
+}
+
+.admin-price-field {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+}
+
+.admin-price-field__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.admin-price-field__head label {
+  display: block;
+  margin: 0;
+}
+
+.admin-newline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 1px solid rgba(56, 116, 143, .2);
+  border-radius: 8px;
+  background: #f3f8fa;
+  color: var(--c-600);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.admin-newline-btn:hover { background: #e8f2f6; }
+.admin-newline-btn:focus-visible { outline: 2px solid var(--c-600); outline-offset: 2px; }
+.admin-newline-btn > span { font-size: 16px; line-height: 1; }
+
+.admin-add-grid .admin-price-textarea {
+  min-height: 72px;
+  padding: 10px 14px;
+  line-height: 1.5;
+  resize: vertical;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.admin-add-wide .admin-price-textarea { min-height: 96px; }
+
+@media (max-width: 767px) {
+  .admin-add-grid .admin-price-textarea { font-size: 16px; }
+  .admin-newline-btn { min-height: 34px; }
 }
 
 .admin-price-note {

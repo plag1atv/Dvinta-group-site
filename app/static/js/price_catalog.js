@@ -28,7 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPage = 1;
 
   function normalizeText(value) {
-    return String(value || "").toLowerCase().trim();
+    return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
   }
 
   function getVisiblePrice(item) {
@@ -54,25 +63,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function createPriceCard(item) {
     const selectedPrice = getVisiblePrice(item);
 
-    const verificationPrice = item.verification_price || "—";
-    const calibrationPrice = item.calibration_price || "—";
-    const range = item.range || "Диапазон не указан";
+    const verificationPrice = escapeHtml(item.verification_price || "—");
+    const calibrationPrice = escapeHtml(item.calibration_price || "—");
+    const range = escapeHtml(item.range || "Диапазон не указан");
     const note = item.note || "";
-    const formattedNote = note
-      ? note
-          .replace(/\s+2\./g, "<br>2.")
-          .replace(/^1\./, "1.")
-      : "";
+    const formattedNote = escapeHtml(note);
 
     let priceHtml = `
       <div class="price-card-prices">
         <div>
           <span>Поверка</span>
-          <strong>${verificationPrice}</strong>
+          <strong class="price-multiline">${verificationPrice}</strong>
         </div>
         <div>
           <span>Калибровка</span>
-          <strong>${calibrationPrice}</strong>
+          <strong class="price-multiline">${calibrationPrice}</strong>
         </div>
       </div>
     `;
@@ -82,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="price-card-prices price-card-prices-single">
           <div>
             <span>${selectedPrice.label}</span>
-            <strong>${selectedPrice.value}</strong>
+            <strong class="price-multiline">${escapeHtml(selectedPrice.value)}</strong>
           </div>
         </div>
       `;
@@ -91,19 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return `
       <article class="price-card">
         <div class="price-card-top">
-          <span class="price-card-code">${item.code || "Без кода"}</span>
-          <span class="price-card-section">${item.section || "Раздел"}</span>
+          <span class="price-card-code price-multiline">${escapeHtml(item.code || "Без кода")}</span>
+          <span class="price-card-section">${escapeHtml(item.section || "Раздел")}</span>
         </div>
 
-        <h3>${item.name || "Без названия"}</h3>
+        <h3 class="price-multiline">${escapeHtml(item.name || "Без названия")}</h3>
 
-        <p class="price-card-range">${range}</p>
+        <p class="price-card-range price-multiline">${range}</p>
 
         ${priceHtml}
 
         ${
           note
-            ? `<p class="price-card-note">${formattedNote}</p>`
+            ? `<p class="price-card-note price-multiline">${formattedNote}</p>`
             : ""
         }
 
@@ -231,6 +236,18 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((items) => {
       const equipmentType = document.body.dataset.equipment;
+      // Match existing equipment filters independently of manual display line breaks.
+      const originalText = new WeakMap();
+      items = items.map(item => {
+        const normalized = {
+          ...item,
+          name: String(item.name || "").replace(/\s+/g, " ").trim(),
+          code: String(item.code || "").replace(/\s+/g, ""),
+        };
+        originalText.set(normalized, { name: item.name, code: item.code });
+        return normalized;
+      });
+
 
       // geometric equipment cards
       if (equipmentType === "calipers") {
@@ -515,6 +532,114 @@ document.addEventListener("DOMContentLoaded", () => {
               item.name.toLowerCase().replace(/\s+/g, " ").trim() ===
                   "динамометры общего назначения"
           );
+      }
+
+      // Group all size ranges and instrument-based ring measurements per gauge family.
+      const calibrationGaugeCodes = {
+        "plain_cylindrical_gauges": [
+          "1К.001",
+          "1К.002",
+          "1К.003",
+          "1К.004"
+        ],
+        "limit_snap_gauges": [
+          "1К.011",
+          "1К.012",
+          "1К.013",
+          "1К.014"
+        ],
+        "metric_pipe_un_thread_gauges": [
+          "1К.021",
+          "1К.022",
+          "1К.023",
+          "1К.024",
+          "1К.025",
+          "1К.026",
+          "1К.031",
+          "1К.032",
+          "1К.033",
+          "1К.034"
+        ],
+        "trapezoidal_thread_gauges": [
+          "1К.041",
+          "1К.042",
+          "1К.043",
+          "1К.044",
+          "1К.051",
+          "1К.052",
+          "1К.053",
+          "1К.054"
+        ],
+        "casing_core_pipe_thread_gauges": [
+          "1К.061"
+        ],
+        "acme_thread_gauges": [
+          "1К.071",
+          "1К.072",
+          "1К.073",
+          "1К.074",
+          "1К.081",
+          "1К.082",
+          "1К.083",
+          "1К.084"
+        ],
+        "working_taper_thread_gauges": [
+          "1К.091",
+          "1К.092",
+          "1К.093",
+          "1К.094",
+          "1К.095"
+        ],
+        "master_taper_thread_gauges": [
+          "1К.101",
+          "1К.102",
+          "1К.103",
+          "1К.104",
+          "1К.105"
+        ],
+        "plain_taper_gauges": [
+          "1К.111",
+          "1К.112",
+          "1К.113",
+          "1К.114"
+        ],
+        "taper_spline_gauges": [
+          "1К.121",
+          "1К.13"
+        ],
+        "keyway_connection_gauges": [
+          "1К.14"
+        ],
+        "star_recess_gauges": [
+          "1К.15"
+        ],
+        "custom_drawing_gauges": [
+          "1К.16"
+        ],
+        "thread_keyway_measuring_instruments": [
+          "1К.1.01",
+          "1К.1.02",
+          "1К.1.03",
+          "1К.1.04",
+          "1К.1.05",
+          "1К.1.06"
+        ],
+        "dimension_instruments_fasteners_pipes": [
+          "1К.1.07",
+          "1К.1.08",
+          "1К.1.09",
+          "1К.1.10"
+        ]
+      };
+      if (Object.prototype.hasOwnProperty.call(calibrationGaugeCodes, equipmentType)) {
+          const codes = new Set(calibrationGaugeCodes[equipmentType]);
+          items = items.filter(item => codes.has(item.code));
+          // Correct the label of a known catalogue typo in this card only.
+          if (equipmentType === "acme_thread_gauges") {
+              items = items.map(item => item.code === "1К.082"
+                  ? { ...item, name: "Калибры-кольца резьбовые цилиндрические ACME, STUB ACME (с исп. оптим.)" }
+                  : item);
+          }
       }
 
       if (equipmentType === "gauge_blocks") {
@@ -2734,6 +2859,9 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
 
+      // Restore the exact entered text after selecting the equipment group.
+      items = items.map(item => originalText.has(item)
+        ? { ...item, ...originalText.get(item) } : item);
       allItems = items;
       filteredItems = items;
 

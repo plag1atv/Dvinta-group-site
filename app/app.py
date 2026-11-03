@@ -4978,6 +4978,11 @@ def create_app() -> Flask:
         return jsonify(items)
 
 
+    def price_multiline_text(data, key):
+        value = data.get(key, "")
+        text = "" if value is None else str(value)
+        return text.replace("\r\n", "\n").replace("\r", "\n")
+
     @app.post("/admin/api/price-items")
     def admin_add_price_item():
         if not is_price_admin():
@@ -4990,16 +4995,16 @@ def create_app() -> Flask:
 
         new_item = {
             "id": new_id,
-            "code": data.get("code", "").strip(),
+            "code": price_multiline_text(data, "code"),
             "section": data.get("section", "").strip(),
-            "name": data.get("name", "").strip(),
-            "range": data.get("range", "").strip(),
-            "verification_price": data.get("verification_price", "").strip(),
-            "calibration_price": data.get("calibration_price", "").strip(),
-            "note": data.get("note", "").strip(),
+            "name": price_multiline_text(data, "name"),
+            "range": price_multiline_text(data, "range"),
+            "verification_price": price_multiline_text(data, "verification_price"),
+            "calibration_price": price_multiline_text(data, "calibration_price"),
+            "note": price_multiline_text(data, "note"),
         }
 
-        if not new_item["name"]:
+        if not new_item["name"].strip():
             return jsonify({"error": "name_required"}), 400
 
         if not new_item["section"]:
@@ -5020,15 +5025,15 @@ def create_app() -> Flask:
 
         for item in items:
             if int(item.get("id", 0)) == item_id:
-                item["code"] = data.get("code", "").strip()
+                item["code"] = price_multiline_text(data, "code")
                 item["section"] = data.get("section", "").strip()
-                item["name"] = data.get("name", "").strip()
-                item["range"] = data.get("range", "").strip()
-                item["verification_price"] = data.get("verification_price", "").strip()
-                item["calibration_price"] = data.get("calibration_price", "").strip()
-                item["note"] = data.get("note", "").strip()
+                item["name"] = price_multiline_text(data, "name")
+                item["range"] = price_multiline_text(data, "range")
+                item["verification_price"] = price_multiline_text(data, "verification_price")
+                item["calibration_price"] = price_multiline_text(data, "calibration_price")
+                item["note"] = price_multiline_text(data, "note")
 
-                if not item["name"]:
+                if not item["name"].strip():
                     return jsonify({"error": "name_required"}), 400
 
                 if not item["section"]:
